@@ -9,3 +9,11 @@ export const Card = styled.div`
   margin-bottom: 24px;
   padding: 23px;
 `;
+
+export const Container = styled.div`
+  max-width: 728px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2.4rem;
+  height: 100%;
+`;
