@@ -1,11 +1,20 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { Card as CardWrapper } from '../ui';
 
+const ImageContainer = styled.div`
+  position: relative;
+  padding-bottom: 30%;
+`;
+
 const Image = styled.img`
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
   width: 100%;
-  height: 190px;
+  background-color: #fff;
 `;
 
 const Title = styled.h2`
@@ -24,12 +33,36 @@ const Description = styled.p`
   font-weight: 300;
 `;
 
+const MetaWrapper = styled.div`
+  font-family: ${({ theme }) => theme.font.contentSans};
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: ${({ theme }) => theme.color.black.medium};
+
+  display: flex;
+
+  margin-top: 2rem;
+  justify-content: flex-end;
+  align-items: center;
+`;
+
+const MetaText = styled.p`
+  margin-left: 8px;
+`;
+
 const Card = ({ image, title, description }) => {
   return (
     <CardWrapper>
-      <Image src={image} />
+      <ImageContainer>
+        <Image src={image} width={700} height={210} />
+      </ImageContainer>
       <Title>{title}</Title>
       <Description>{description}</Description>
+      <MetaWrapper>
+        <MetaText>Jul 27, 2018</MetaText>
+        <MetaText>.</MetaText>
+        <MetaText>18 min read</MetaText>
+      </MetaWrapper>
     </CardWrapper>
   );
 };
