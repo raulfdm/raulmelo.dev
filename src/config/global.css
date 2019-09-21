@@ -1,5 +1,4 @@
 /* Meyer's Reset */
-
 html,
 body,
 div,
@@ -89,11 +88,7 @@ video {
   vertical-align: baseline;
 }
 
-html {
-  font-size: 10px;
-  color: rgba(0, 0, 0, 0.84);
-}
-
+/* MEDIUM FONTS :P */
 /* latin */
 @font-face {
   font-family: 'medium-content-serif-font';
@@ -290,4 +285,26 @@ html {
     format('woff');
   unicode-range: U+80-9F, U+A1-2009, U+200B-2013, U+2015-2017, U+201A-201B,
     U+201E-2021, U+2023-2025, U+2027-10FFFF;
+}
+
+/* CUSTOM */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  color: rgba(0, 0, 0, 0.84);
+}
+
+body {
+  min-height: 100vh;
+  position: relative;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+svg {
+  vertical-align: middle;
 }
