@@ -10,6 +10,7 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@zeit/next-css": "^1.0.1",
     "next": "9.0.6",
     "react": "16.9.0",
     "react-dom": "16.9.0",
@@ -23,6 +24,7 @@
     "@storybook/addon-viewport": "^5.2.1",
     "@storybook/addons": "^5.2.1",
     "@storybook/react": "^5.2.1",
-    "babel-loader": "^8.0.6"
+    "babel-loader": "^8.0.6",
+    "babel-plugin-styled-components": "^1.10.6"
   }
 }
