@@ -1,10 +1,11 @@
-export default {
+import { ThemeProvider as StyledThemeProvider } from 'styled-components';
+const theme = {
   font: {
     contentSans: 'medium-content-sans-serif-font',
     contentSerif: 'medium-content-serif-font',
     contentSlab: 'medium-content-slab-serif-font',
     contentTitle: 'medium-content-title-font',
-    marketingDisplay: 'medium-marketing-display-font'
+    marketingDisplay: 'medium-marketing-display-font',
   },
   color: {
     white: '#fff',
@@ -15,3 +16,9 @@ export default {
     },
   },
 };
+
+export const ThemeProvider = ({ children }) => (
+  <StyledThemeProvider theme={theme}>{children}</StyledThemeProvider>
+);
+
+export default theme;
