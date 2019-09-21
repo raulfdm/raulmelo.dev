@@ -302,6 +302,7 @@ body {
   position: relative;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  font-size: 1.6rem;
 }
 
 img,
