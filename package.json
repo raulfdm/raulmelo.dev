@@ -15,6 +15,7 @@
     "react": "16.9.0",
     "react-dom": "16.9.0",
     "styled-components": "^4.3.2",
+    "styled-icons": "^8.4.2",
     "styled-media-query": "^2.1.2"
   },
   "devDependencies": {
