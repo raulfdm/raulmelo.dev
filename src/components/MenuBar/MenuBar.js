@@ -3,17 +3,19 @@ import styled from 'styled-components';
 
 import { Container } from '../ui';
 import InputSearch from '../InputSearch';
+import ThemeSwitch from '../ThemeSwitch';
 import LogoSvg from '../LogoSvg';
 
 const MenuBarWrapper = styled.nav`
-  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 12px 0 ${({ theme, ...rest }) => theme.color.shadow};
+  border-bottom: 1px solid ${({ theme }) => theme.color.border};
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   height: 6.5rem;
   z-index: 500;
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.color.background};
 `;
 
 const CustomContainer = styled(Container)`
@@ -28,20 +30,22 @@ const DummySpace = styled.div`
   margin-bottom: 6.5rem;
 `;
 
+const LogoWrapper = styled.div`
+  flex: 1;
+`;
+
 const MenuBar = () => {
   return (
     <React.Fragment>
       <MenuBarWrapper>
         <CustomContainer>
-          <div class="u-xs-hide js-metabarLogoLeft">
+          <LogoWrapper>
             <a href="https://medium.com/" data-log-event="home">
-              <span class="svgIcon svgIcon--logoWordmark svgIcon--122x45px u-xs-show u-flex">
-                <LogoSvg />
-              </span>
-              {/* <span class="u-textScreenReader">Homepage</span> */}
+              <LogoSvg />
             </a>
-          </div>
+          </LogoWrapper>
           <InputSearch />
+          <ThemeSwitch />
         </CustomContainer>
       </MenuBarWrapper>
       <DummySpace />

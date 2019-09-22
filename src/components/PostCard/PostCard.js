@@ -22,13 +22,14 @@ const Title = styled.h2`
   font-size: 3.4rem;
   font-family: ${({ theme }) => theme.font.contentSans};
   font-weight: 600;
+  color: ${({ theme }) => theme.color.font};
   letter-spacing: -0.748px;
 `;
 
 const Description = styled.p`
   font-size: 2.4rem;
   margin-top: 1rem;
-  color: ${({ theme }) => theme.color.black.medium};
+  color: ${({ theme }) => theme.color.fontLight};
   font-family: ${({ theme }) => theme.font.contentSans};
   font-weight: 300;
 `;
@@ -37,7 +38,7 @@ const MetaWrapper = styled.div`
   font-family: ${({ theme }) => theme.font.contentSans};
   font-size: 1.6rem;
   font-weight: 300;
-  color: ${({ theme }) => theme.color.black.medium};
+  color: ${({ theme }) => theme.color.font};
 
   display: flex;
 

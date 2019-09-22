@@ -1,13 +1,12 @@
 import styled from 'styled-components';
 
 export const Card = styled.div`
-  background-color: #fff;
-  border: 1px solid ${({ theme }) => theme.color.black.light};
+  background-color: ${({ theme }) => theme.color.background};
+  border: 1px solid ${({ theme }) => theme.color.border};
   border-radius: 5px;
-  box-shadow: ${({ theme }) => theme.color.black.light} 0 1px 4px;
-  display: block;
-  margin-bottom: 24px;
-  padding: 23px;
+  box-shadow: ${({ theme }) => theme.color.shadow} 0 1px 4px;
+  margin-bottom: 2.4rem;
+  padding: 2.4rem;
 `;
 
 export const Container = styled.div`

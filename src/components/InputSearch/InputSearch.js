@@ -4,19 +4,20 @@ import styled from 'styled-components';
 import SearchIcon from '../SearchIcon';
 
 const InputWrapper = styled.div`
-  outline: #fff;
+  outline: ${({ theme }) => theme.color.background};
   display: flex;
 `;
 
 const Input = styled.input`
   width: ${({ showInput }) => (showInput ? '18rem' : '0')};
-
+  background-color: transparent;
   transition: width 140ms ease-in;
   border: none;
   font-size: 1.6rem;
   outline: inherit;
   -webkit-tap-highlight-color: transparent;
   opacity: 100;
+  color: ${({theme}) => theme.color.font};
   font-family: ${({ theme }) => theme.font.contentSans};
 
   /* border: 1px dashed tomato; */

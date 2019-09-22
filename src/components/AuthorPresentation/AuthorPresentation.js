@@ -55,7 +55,8 @@ const SocialWrapper = styled.div`
 `;
 
 const SocialLink = styled.a`
-  color: ${({ theme }) => theme.color.black.medium};
+  color: ${({ theme }) => theme.color.fontLight};
+
   position: relative;
   display: flex;
   align-items: center;
