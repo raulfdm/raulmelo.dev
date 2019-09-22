@@ -8,8 +8,12 @@ const LatestMessage = styled.p`
   font-size: 2.1rem;
   font-weight: 600;
   font-family: ${({ theme }) => theme.font.contentSans};
-  margin-top: 4rem;
-  margin-bottom: 1.2rem;
+  padding-top: 4rem;
+  padding-bottom: 1.2rem;
+`;
+
+const PageContentWrapper = styled.main`
+  padding-top: 6.5rem;
 `;
 
 const Home = () => {
@@ -27,7 +31,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <PageContentWrapper>
       <LatestMessage>Latest</LatestMessage>
       {posts.map(post => (
         <PostCard
@@ -37,7 +41,7 @@ const Home = () => {
           image={post.imgSrc}
         />
       ))}
-    </div>
+    </PageContentWrapper>
   );
 };
 
