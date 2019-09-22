@@ -8,7 +8,7 @@ collections:
     files:
       - label: 'Home'
         name: 'home'
-        file: 'content/home.md'
+        file: 'blog/lol.md'
         fields:
           - { label: 'Title', name: 'title', widget: 'string' }
           - { label: 'Publish Date', name: 'date', widget: 'datetime' }
