@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "export": "npm run build && next export"
   },
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
@@ -26,6 +27,8 @@
     "@storybook/addons": "^5.2.1",
     "@storybook/react": "^5.2.1",
     "babel-loader": "^8.0.6",
-    "babel-plugin-styled-components": "^1.10.6"
+    "babel-plugin-styled-components": "^1.10.6",
+    "frontmatter-markdown-loader": "^2.1.0",
+    "next-compose-plugins": "^2.2.0"
   }
 }
