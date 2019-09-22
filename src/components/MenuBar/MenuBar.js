@@ -23,21 +23,29 @@ const CustomContainer = styled(Container)`
   max-width: 100%;
 `;
 
+const DummySpace = styled.div`
+  height: 6.5rem;
+  margin-bottom: 6.5rem;
+`;
+
 const MenuBar = () => {
   return (
-    <MenuBarWrapper>
-      <CustomContainer>
-        <div class="u-xs-hide js-metabarLogoLeft">
-          <a href="https://medium.com/" data-log-event="home">
-            <span class="svgIcon svgIcon--logoWordmark svgIcon--122x45px u-xs-show u-flex">
-              <LogoSvg />
-            </span>
-            {/* <span class="u-textScreenReader">Homepage</span> */}
-          </a>
-        </div>
-        <InputSearch />
-      </CustomContainer>
-    </MenuBarWrapper>
+    <React.Fragment>
+      <MenuBarWrapper>
+        <CustomContainer>
+          <div class="u-xs-hide js-metabarLogoLeft">
+            <a href="https://medium.com/" data-log-event="home">
+              <span class="svgIcon svgIcon--logoWordmark svgIcon--122x45px u-xs-show u-flex">
+                <LogoSvg />
+              </span>
+              {/* <span class="u-textScreenReader">Homepage</span> */}
+            </a>
+          </div>
+          <InputSearch />
+        </CustomContainer>
+      </MenuBarWrapper>
+      <DummySpace />
+    </React.Fragment>
   );
 };
 

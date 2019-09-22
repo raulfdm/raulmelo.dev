@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import AuthorPresentation from '../src/components/AuthorPresentation';
 
 import PostCard from '../src/components/PostCard';
 
@@ -13,7 +14,9 @@ const LatestMessage = styled.p`
 `;
 
 const PageContentWrapper = styled.main`
-  padding-top: 6.5rem;
+  .customAuthorPresentation {
+    margin-bottom: 3rem;
+  }
 `;
 
 const Home = () => {
@@ -32,6 +35,13 @@ const Home = () => {
 
   return (
     <PageContentWrapper>
+      <AuthorPresentation
+        name="Raul de Melo"
+        profilePic="https://miro.medium.com/fit/c/256/256/1*6jtMoNvX_MHslzBLP4aM9g.jpeg"
+        synopsis="Developer, passionate about coding for fun, tech addicted and open-source lover ❤"
+        twitter="https://twitter.com/raul_fdm"
+        className="customAuthorPresentation"
+      />
       <LatestMessage>Latest</LatestMessage>
       {posts.map(post => (
         <PostCard

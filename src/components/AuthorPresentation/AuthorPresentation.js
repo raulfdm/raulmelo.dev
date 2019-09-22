@@ -2,7 +2,6 @@ import React from 'react';
 
 import styled, { css } from 'styled-components';
 import mediaQuery from 'styled-media-query';
-// import { Github } from 'styled-icons/boxicons-logos/Github';
 import { Twitter, Linkedin, Github } from 'styled-icons/boxicons-logos';
 
 const Wrapper = styled.div`
@@ -75,6 +74,7 @@ const SocialLink = styled.a`
 `;
 
 const AuthorPresentation = ({
+  className,
   profilePic,
   name,
   synopsis,
@@ -83,7 +83,7 @@ const AuthorPresentation = ({
   twitter,
 }) => {
   return (
-    <Wrapper>
+    <Wrapper className={className}>
       <AuthorDataWrapper>
         <AuthorName>{name}</AuthorName>
         <AuthorSynopsis>{synopsis}</AuthorSynopsis>
