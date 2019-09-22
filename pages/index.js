@@ -24,7 +24,9 @@ const Home = () => {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch('http://localhost:3001/posts');
+      const response = await fetch(
+        'https://medium-21b13.firebaseio.com/posts.json'
+      );
       const posts = await response.json();
 
       setPosts(posts);
@@ -36,11 +38,13 @@ const Home = () => {
   return (
     <PageContentWrapper>
       <AuthorPresentation
+        className="customAuthorPresentation"
         name="Raul de Melo"
         profilePic="https://miro.medium.com/fit/c/256/256/1*6jtMoNvX_MHslzBLP4aM9g.jpeg"
         synopsis="Developer, passionate about coding for fun, tech addicted and open-source lover ❤"
         twitter="https://twitter.com/raul_fdm"
-        className="customAuthorPresentation"
+        linkedIn="https://www.linkedin.com/in/raulfdm/"
+        github="https://github.com/raulfdms"
       />
       <LatestMessage>Latest</LatestMessage>
       {posts.map(post => (
