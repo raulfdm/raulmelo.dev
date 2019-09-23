@@ -1,5 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import mediaQuery from 'styled-media-query';
 
 import { Container } from '../ui';
 import InputSearch from '../InputSearch';
@@ -22,7 +23,10 @@ const CustomContainer = styled(Container)`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 100%;
+
+  ${mediaQuery.greaterThan('medium')(css`
+    max-width: 80%;
+  `)}
 `;
 
 const DummySpace = styled.div`
