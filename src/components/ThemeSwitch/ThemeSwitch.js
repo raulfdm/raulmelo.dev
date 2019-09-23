@@ -1,7 +1,7 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
-import { Lightbulb as LightBulbOn } from 'styled-icons/fa-regular/Lightbulb';
-import { Lightbulb as LightBulbOff } from 'styled-icons/fa-solid/Lightbulb';
+import { Sun } from 'styled-icons/boxicons-solid/Sun';
+import { Moon } from 'styled-icons/boxicons-solid/Moon';
 import { ThemeContext } from '../../config/theme';
 
 const Swtich = styled.button`
@@ -20,8 +20,7 @@ const ThemeSwitch = () => {
     ThemeContext
   );
 
-  const Icon =
-    currentTheme === themesAvaiable.light ? LightBulbOff : LightBulbOn;
+  const Icon = currentTheme === themesAvaiable.light ? Moon : Sun;
 
   return (
     <Swtich onClick={toggleTheme}>
