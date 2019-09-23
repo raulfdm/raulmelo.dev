@@ -1,6 +1,7 @@
 backend:
-  name: git-gateway
+  name: github
   branch: master
+  repo: raulfdm/medium-blog
 media_folder: static/img
 collections:
   - name: 'pages'
