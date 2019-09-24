@@ -5,6 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "prebuild": "yarn process-markdown",
+    "process-markdown": "processmd \"content/**/*.md\" --outputDir content --summaryOutput content/summary.json --includeBodyProps --headingIds",
     "start": "next start",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
@@ -29,6 +31,7 @@
     "babel-loader": "^8.0.6",
     "babel-plugin-styled-components": "^1.10.6",
     "frontmatter-markdown-loader": "^2.1.0",
-    "next-compose-plugins": "^2.2.0"
+    "next-compose-plugins": "^2.2.0",
+    "processmd": "^4.4.2"
   }
 }
