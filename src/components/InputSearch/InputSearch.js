@@ -17,7 +17,7 @@ const Input = styled.input`
   outline: inherit;
   -webkit-tap-highlight-color: transparent;
   opacity: 100;
-  color: ${({theme}) => theme.color.font};
+  color: ${({ theme }) => theme.color.font};
   font-family: ${({ theme }) => theme.font.contentSans};
 
   /* border: 1px dashed tomato; */
