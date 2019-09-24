@@ -1,37 +1,44 @@
 {
   "name": "my-blog",
-  "version": "0.1.0",
   "private": true,
+  "description": "Personal Medium blog",
+  "version": "0.1.0",
+  "author": "Raul Melo <melo.raulf@gmail.com>",
+  "keywords": [
+    "gatsby",
+    "blog"
+  ],
+  "license": "MIT",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "prebuild": "yarn process-markdown",
-    "process-markdown": "processmd \"content/**/*.md\" --outputDir content --summaryOutput content/summary.json --includeBodyProps --headingIds",
-    "start": "next start",
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
-    "export": "npm run build && next export"
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
-    "@zeit/next-css": "^1.0.1",
-    "next": "9.0.6",
-    "react": "16.9.0",
-    "react-dom": "16.9.0",
-    "styled-components": "^4.3.2",
+    "babel-plugin-styled-components": "^1.10.6",
+    "gatsby": "^2.15.22",
+    "gatsby-image": "^2.2.21",
+    "gatsby-plugin-manifest": "^2.2.18",
+    "gatsby-plugin-offline": "^3.0.8",
+    "gatsby-plugin-react-helmet": "^3.1.8",
+    "gatsby-plugin-sharp": "^2.2.25",
+    "gatsby-plugin-styled-components": "^3.1.6",
+    "gatsby-source-filesystem": "^2.1.26",
+    "gatsby-transformer-sharp": "^2.2.17",
+    "prop-types": "^15.7.2",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-helmet": "^5.2.1",
+    "save": "^2.4.0",
+    "styled-components": "^4.4.0",
     "styled-icons": "^8.4.2",
     "styled-media-query": "^2.1.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.6.0",
-    "@storybook/addon-actions": "^5.2.1",
-    "@storybook/addon-links": "^5.2.1",
-    "@storybook/addon-viewport": "^5.2.1",
-    "@storybook/addons": "^5.2.1",
-    "@storybook/react": "^5.2.1",
-    "babel-loader": "^8.0.6",
-    "babel-plugin-styled-components": "^1.10.6",
-    "frontmatter-markdown-loader": "^2.1.0",
-    "next-compose-plugins": "^2.2.0",
-    "processmd": "^4.4.2"
+    "prettier": "^1.18.2"
   }
 }
