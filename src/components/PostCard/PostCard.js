@@ -51,7 +51,7 @@ const MetaText = styled.p`
   margin-left: 8px;
 `;
 
-const Card = ({ image, title, description }) => {
+const Card = ({ image, title, description, date, timeToRead }) => {
   return (
     <CardWrapper>
       <ImageContainer>
@@ -60,9 +60,9 @@ const Card = ({ image, title, description }) => {
       <Title>{title}</Title>
       <Description>{description}</Description>
       <MetaWrapper>
-        <MetaText>Jul 27, 2018</MetaText>
+        <MetaText>{date}</MetaText>
         <MetaText>.</MetaText>
-        <MetaText>18 min read</MetaText>
+        <MetaText>{timeToRead} min read</MetaText>
       </MetaWrapper>
     </CardWrapper>
   );

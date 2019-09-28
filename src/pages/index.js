@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 import Layout from '../components/Layout';
 import AuthorPresentation from '../components/AuthorPresentation';
 import PostCard from '../components/PostCard';
+
+import { basicPostData } from '../data/posts';
 
 const LatestMessage = styled.p`
   letter-spacing: -0.32px;
@@ -21,20 +23,8 @@ const PageContentWrapper = styled.main`
 `;
 
 const Home = () => {
-  const [posts, setPosts] = useState([]);
-
-  useEffect(() => {
-    async function fetchData() {
-      const response = await fetch(
-        'https://medium-21b13.firebaseio.com/posts.json'
-      );
-      const posts = await response.json();
-
-      setPosts(posts);
-    }
-
-    fetchData();
-  }, []);
+  const posts = basicPostData();
+  console.log({ posts });
 
   return (
     <Layout>
@@ -49,14 +39,18 @@ const Home = () => {
           github="https://github.com/raulfdms"
         />
         <LatestMessage>Latest</LatestMessage>
-        {posts.map(post => (
-          <PostCard
-            key={post.id}
-            description={post.description}
-            title={post.title}
-            image={post.imgSrc}
-          />
-        ))}
+        {posts.map(post => {
+          return (
+            <PostCard
+              key={post.id}
+              description={post.description}
+              title={post.title}
+              date={post.date}
+              timeToRead={post.timeToRead}
+              image={post.imgSrc}
+            />
+          );
+        })}
       </PageContentWrapper>
     </Layout>
   );
