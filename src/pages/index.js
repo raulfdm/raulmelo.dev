@@ -24,7 +24,6 @@ const PageContentWrapper = styled.main`
 
 const Home = () => {
   const posts = basicPostData();
-  console.log({ posts });
 
   return (
     <Layout>
