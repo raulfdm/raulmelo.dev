@@ -47,6 +47,7 @@ const Home = () => {
               date={post.date}
               timeToRead={post.timeToRead}
               image={post.imgSrc}
+              slug={post.slug}
             />
           );
         })}
