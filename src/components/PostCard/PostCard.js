@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 import { Card as CardWrapper } from '../ui';
@@ -51,14 +52,16 @@ const MetaText = styled.p`
   margin-left: 8px;
 `;
 
-const Card = ({ image, title, description, date, timeToRead }) => {
+const Card = ({ image, title, description, date, timeToRead, slug }) => {
   return (
     <CardWrapper>
-      <ImageContainer>
-        <Image src={image} width={700} height={210} />
-      </ImageContainer>
-      <Title>{title}</Title>
-      <Description>{description}</Description>
+      <Link to={slug}>
+        <ImageContainer>
+          <Image src={image} width={700} height={210} />
+        </ImageContainer>
+        <Title>{title}</Title>
+        <Description>{description}</Description>
+      </Link>
       <MetaWrapper>
         <MetaText>{date}</MetaText>
         <MetaText>.</MetaText>
