@@ -2,7 +2,32 @@ import React from 'react';
 import { createContext, useState } from 'react';
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 
-export const ThemeContext = createContext();
+
+export type FontTheme = {
+  contentSans: string;
+  contentSerif: string;
+  contentSlab: string;
+  contentTitle: string;
+  marketingDisplay: string;
+};
+
+export type ColorTheme = {
+  background: string;
+  font: string;
+  fontMedium: string;
+  fontLight: string;
+  border: string;
+  shadow: string;
+}
+
+export type Theme = {
+  font: FontTheme;
+  color: ColorTheme
+};
+
+
+
+export const ThemeContext = createContext({});
 
 export const ThemeProvider = ({ children }) => {
   const [isLightTheme, setIsLightTheme] = useState(true);
@@ -26,7 +51,8 @@ export const ThemeProvider = ({ children }) => {
     }
   };
 
-  const theme = {
+  const theme: Theme = {
+    /* TODO: Return the whole font includding fallbacksk */
     font: {
       contentSans: 'medium-content-sans-serif-font',
       contentSerif: 'medium-content-serif-font',
