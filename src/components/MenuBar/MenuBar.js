@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import styled, { css } from 'styled-components';
 import mediaQuery from 'styled-media-query';
 
@@ -44,9 +45,9 @@ const MenuBar = () => {
       <MenuBarWrapper>
         <CustomContainer>
           <LogoWrapper>
-            <a href="https://medium.com/" data-log-event="home">
+            <Link to="/">
               <LogoSvg />
-            </a>
+            </Link>
           </LogoWrapper>
           <InputSearch />
           <ThemeSwitch />
