@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
+
 import { supportedLocales } from '../../../i18n';
 
 type HasTranslationBoxProps = {
@@ -20,10 +22,11 @@ const Box = styled.div`
 `;
 
 const HasTranslationBox = ({ translatedLinks }: HasTranslationBoxProps) => {
+  const { t } = useTranslation();
   return (
     <Box>
       {translatedLinks.length < 1 ? (
-        'Esse artigo não possui tradução'
+        t('blog.noTranslation')
       ) : (
         <>
           <span>Tem traduções para os idiomas: </span>

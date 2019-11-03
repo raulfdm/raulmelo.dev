@@ -1,5 +1,13 @@
 {
   "author": {
     "description": "Desenvolvedor, apaixonado por codar por diversão, viciado em tecnologia e amante do open-source ❤"
+  },
+  "home": {
+    "latest": "Últimos"
+  },
+  "blog":{
+    "noTranslation": "Esse artigo não possui tradução",
+    "readTime": "{{minutes}} min de leitura",
+    "readTime_plural": "{{minutes}} min de leitura"
   }
 }

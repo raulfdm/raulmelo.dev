@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
 
 import { Card as CardWrapper } from '../ui';
 
@@ -53,6 +54,7 @@ const MetaText = styled.p`
 `;
 
 const Card = ({ image, title, description, date, timeToRead, slug }) => {
+  const { t } = useTranslation();
   return (
     <CardWrapper>
       <Link to={slug}>
@@ -65,7 +67,7 @@ const Card = ({ image, title, description, date, timeToRead, slug }) => {
       <MetaWrapper>
         <MetaText>{date}</MetaText>
         <MetaText>.</MetaText>
-        <MetaText>{timeToRead} min read</MetaText>
+        <MetaText>{t('blog.readTime', { minutes: timeToRead })}</MetaText>
       </MetaWrapper>
     </CardWrapper>
   );

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
 
 import Layout from '../components/Layout';
 import AuthorPresentation from '../components/AuthorPresentation';
@@ -24,6 +25,7 @@ const PageContentWrapper = styled.main`
 
 const Home = () => {
   const posts = basicPostData();
+  const { t } = useTranslation();
 
   return (
     <Layout>
@@ -37,7 +39,7 @@ const Home = () => {
           linkedIn="https://www.linkedin.com/in/raulfdm/"
           github="https://github.com/raulfdms"
         />
-        <LatestMessage>Latest</LatestMessage>
+        <LatestMessage>{t('home.latest')}</LatestMessage>
         {posts.map(post => {
           return (
             <PostCard
