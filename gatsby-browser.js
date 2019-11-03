@@ -16,8 +16,11 @@ i18next
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    lng: 'pt-br',
-    debug: true,
+    fallbackLng: 'pt-br',
+    detection: {
+      order: ['htmlTag'],
+      caches: ['localStorage'],
+    },
     backend: {
       loadPath: `/locales/{{lng}}.json`,
     },
