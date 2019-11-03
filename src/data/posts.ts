@@ -1,10 +1,12 @@
-/* eslint react-hooks/rules-of-hooks:0 */
 import { useStaticQuery, graphql } from 'gatsby';
+import * as R from 'ramda';
 
-export const basicPostData = () => {
+import { Post, Edges } from '../types';
+
+export const basicPostData = (): Array<Post> => {
   const {
     allMarkdownRemark: { edges },
-  } = useStaticQuery(graphql`
+  }: { allMarkdownRemark: { edges: Edges } } = useStaticQuery(graphql`
     query {
       allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
         edges {
@@ -33,20 +35,23 @@ export const basicPostData = () => {
     }
   `);
 
-  const posts = edges.map(({ node }) => {
-    const { id, frontmatter, fields, timeToRead } = node;
-    const { date, description, title, featuredImage } = frontmatter;
+  const posts = edges.map(
+    ({ node }): Post => {
+      const { id, frontmatter, fields, timeToRead } = node;
+      const { date, description, title, featuredImage } = frontmatter;
 
-    return {
-      id,
-      slug: fields.slug,
-      date,
-      description,
-      title,
-      timeToRead,
-      imgSrc: featuredImage?.childImageSharp?.fluid.src || '',
-    };
-  });
+      return {
+        date,
+        description,
+        id,
+        imgSrc:
+          R.path(['childImageSharp', 'fluid', 'src'], featuredImage) || '',
+        slug: fields.slug,
+        timeToRead,
+        title,
+      };
+    }
+  );
 
   return posts;
 };

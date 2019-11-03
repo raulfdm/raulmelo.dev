@@ -2,7 +2,6 @@ import React from 'react';
 import { createContext, useState } from 'react';
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 
-
 export type FontTheme = {
   contentSans: string;
   contentSerif: string;
@@ -22,7 +21,7 @@ export type ColorTheme = {
 
 export type Theme = {
   font: FontTheme;
-  color: ColorTheme
+  color: ColorTheme;
 };
 
 

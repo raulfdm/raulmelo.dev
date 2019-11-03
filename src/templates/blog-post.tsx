@@ -1,7 +1,14 @@
 import React from 'react';
+import { css, createGlobalStyle } from 'styled-components';
+
 import Layout from '../components/Layout';
 
-import { css, createGlobalStyle } from 'styled-components';
+type PostProps = {
+  pageContext: {
+    title: string;
+    html: string;
+  };
+};
 
 const global = css`
   body {
@@ -79,14 +86,14 @@ const BlogStyle = createGlobalStyle`
   ${global}
 `;
 
-const Post = ({ pageContext, ...props }) => {
-  const { title } = pageContext;
+const Post = ({ pageContext }: PostProps) => {
+  const { title, html } = pageContext;
 
   return (
     <Layout>
       <BlogStyle />
       <h1>{title}</h1>
-      <article dangerouslySetInnerHTML={{ __html: pageContext.html }} />
+      <article dangerouslySetInnerHTML={{ __html: html }} />
     </Layout>
   );
 };

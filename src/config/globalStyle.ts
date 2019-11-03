@@ -297,7 +297,7 @@ export const fonts = css`
   }
 `;
 
-export const darkLightTheme = css``
+export const darkLightTheme = css``;
 
 const custom = css`
   /* CUSTOM */
