@@ -8,7 +8,11 @@ export const basicPostData = (): Array<Post> => {
     allMarkdownRemark: { edges },
   }: { allMarkdownRemark: { edges: Edges } } = useStaticQuery(graphql`
     query {
-      allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      allMarkdownRemark(
+        sort: { fields: [frontmatter___date], order: DESC }
+        limit: 1000
+        filter: { fields: { locale: { eq: "ptBr" } } }
+      ) {
         edges {
           node {
             id
@@ -21,13 +25,6 @@ export const basicPostData = (): Array<Post> => {
               date(formatString: "MMMM DD, YYYY")
               title
               description
-              # featuredImage {
-              #   childImageSharp {
-              #     fluid {
-              #       src
-              #     }
-              #   }
-              # }
             }
           }
         }
