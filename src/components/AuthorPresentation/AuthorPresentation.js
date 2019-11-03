@@ -4,6 +4,8 @@ import styled, { css } from 'styled-components';
 import mediaQuery from 'styled-media-query';
 import { Twitter, Linkedin, Github } from 'styled-icons/boxicons-logos';
 
+import { useTranslation } from 'react-i18next';
+
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column-reverse;
@@ -83,11 +85,13 @@ const AuthorPresentation = ({
   linkedIn,
   twitter,
 }) => {
+  const { t } = useTranslation();
+
   return (
     <Wrapper className={className}>
       <AuthorDataWrapper>
         <AuthorName>{name}</AuthorName>
-        <AuthorSynopsis>{synopsis}</AuthorSynopsis>
+        <AuthorSynopsis>{t('author.description')}</AuthorSynopsis>
         <SocialWrapper>
           {github && (
             <SocialLink href={github}>
