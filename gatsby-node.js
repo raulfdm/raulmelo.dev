@@ -9,7 +9,6 @@ const R = require('ramda');
 
 const {
   removeTrailingSlash,
-  localizedSlug,
   generateSlug,
 } = require('./src/utils/gatsby-node-helpers.js');
 
@@ -61,11 +60,16 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
     const currentLocale = supportedLocales[lang];
 
+    const directoryName = path.basename(
+      path.dirname(R.path(['fileAbsolutePath'], node))
+    );
+
     const slug = generateSlug({ lang: currentLocale, node, getNode });
 
     createNodeField({ node, name: `slug`, value: slug });
     createNodeField({ node, name: `locale`, value: lang });
     createNodeField({ node, name: `isDefault`, value: isDefault });
+    createNodeField({ node, name: `directoryName`, value: directoryName });
   }
 };
 
@@ -86,6 +90,7 @@ exports.createPages = async ({ graphql, actions }) => {
             fields {
               slug
               locale
+              directoryName
             }
             frontmatter {
               title
@@ -104,18 +109,30 @@ exports.createPages = async ({ graphql, actions }) => {
   // Create blog posts pages.
   const posts = result.data.allMarkdownRemark.edges;
 
+  const groupedByDirname = R.groupBy(function(post) {
+    return post.node.fields.directoryName;
+  }, posts);
+
   posts.forEach((post, index) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1].node;
     const next = index === 0 ? null : posts[index - 1].node;
 
     const { fields, html, frontmatter } = post.node;
-    const { locale, slug } = fields;
+    const { locale, slug, directoryName } = fields;
+
+    const translatedLinks = groupedByDirname[directoryName]
+      .filter(post => post.node.fields.locale !== locale)
+      .map(post => ({
+        locale: post.node.fields.locale,
+        slug: post.node.fields.slug,
+      }));
 
     createPage({
       path: slug,
       component: blogPostComponent,
       context: {
-        locale: locale,
+        translatedLinks,
+        locale,
         html,
         slug,
         previous,
