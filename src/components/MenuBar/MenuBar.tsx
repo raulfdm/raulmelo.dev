@@ -40,6 +40,8 @@ const LogoWrapper = styled.div`
 `;
 
 const MenuBar = () => {
+  console.log({ currentLocale });
+
   return (
     <React.Fragment>
       <MenuBarWrapper>
