@@ -10,15 +10,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/posts`,
-        name: `posts`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/static/assets/images`,
-        name: `uploads`,
+        path: `${__dirname}/blog`,
+        name: `blog`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -62,6 +55,13 @@ module.exports = {
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
         ],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-i18n',
+      options: {
+        langKeyDefault: 'en',
+        useLangKeyLayout: false,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

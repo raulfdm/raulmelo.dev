@@ -21,13 +21,13 @@ export const basicPostData = (): Array<Post> => {
               date(formatString: "MMMM DD, YYYY")
               title
               description
-              featuredImage {
-                childImageSharp {
-                  fluid {
-                    src
-                  }
-                }
-              }
+              # featuredImage {
+              #   childImageSharp {
+              #     fluid {
+              #       src
+              #     }
+              #   }
+              # }
             }
           }
         }
