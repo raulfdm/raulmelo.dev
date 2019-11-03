@@ -2,11 +2,16 @@ import React from 'react';
 import { css, createGlobalStyle } from 'styled-components';
 
 import Layout from '../components/Layout';
+import HasTranslationBox from '../components/HasTranslationBox';
 
 type PostProps = {
   pageContext: {
     title: string;
     html: string;
+    translatedLinks: {
+      locale: string;
+      slug: string;
+    }[];
   };
 };
 
@@ -87,12 +92,15 @@ const BlogStyle = createGlobalStyle`
 `;
 
 const Post = ({ pageContext }: PostProps) => {
-  const { title, html } = pageContext;
+  const { title, html, translatedLinks } = pageContext;
+  console.log(pageContext);
 
   return (
     <Layout>
       <BlogStyle />
       <h1>{title}</h1>
+      <HasTranslationBox translatedLinks={translatedLinks} />
+
       <article dangerouslySetInnerHTML={{ __html: html }} />
     </Layout>
   );
