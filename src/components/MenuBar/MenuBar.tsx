@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 import styled, { css } from 'styled-components';
 import mediaQuery from 'styled-media-query';
 import i18next from 'i18next';
+import { supportedLocales } from '../../../i18n.js';
 
 import { Container } from '../ui';
 import InputSearch from '../InputSearch';
@@ -54,8 +55,18 @@ const MenuBar = () => {
           <ThemeSwitch />
 
           <div>
-            <button onClick={() => i18next.changeLanguage('pt-br')}>PT</button>
-            <button onClick={() => i18next.changeLanguage('en')}>EN</button>
+            <button
+              onClick={() =>
+                i18next.changeLanguage(supportedLocales.ptBr.locale)
+              }
+            >
+              PT
+            </button>
+            <button
+              onClick={() => i18next.changeLanguage(supportedLocales.en.locale)}
+            >
+              EN
+            </button>
           </div>
         </CustomContainer>
       </MenuBarWrapper>
