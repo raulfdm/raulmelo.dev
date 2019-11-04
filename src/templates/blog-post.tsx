@@ -93,7 +93,6 @@ const BlogStyle = createGlobalStyle`
 
 const Post = ({ pageContext }: PostProps) => {
   const { title, html, translatedLinks } = pageContext;
-  console.log(pageContext);
 
   return (
     <Layout>
