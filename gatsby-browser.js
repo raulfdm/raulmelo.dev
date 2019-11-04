@@ -16,7 +16,8 @@ i18next
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    fallbackLng: 'pt-br',
+    debug: true,
+    fallbackLng: 'pt-BR',
     detection: {
       order: ['htmlTag'],
       caches: ['localStorage'],
