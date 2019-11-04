@@ -10,8 +10,8 @@ const supportedLocales = {
     dateFormat: 'DD/MM/YYYY',
     default: true,
     displayName: 'Português do Brasil',
-    locale: 'pt-br',
-    path: 'pt-br',
+    locale: 'pt-BR',
+    path: 'pt-BR',
   },
 };
 
