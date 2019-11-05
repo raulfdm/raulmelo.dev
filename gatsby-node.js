@@ -13,8 +13,8 @@ const {
 } = require('./src/utils/gatsby-node-helpers.js');
 
 /* TODO: Make it dynamic */
-const enJson = require('./static/locales/en.json');
-const ptBrJson = require('./static/locales/pt-BR.json');
+const enJson = require('./src/locales/en.json');
+const ptBrJson = require('./src/locales/pt-BR.json');
 
 const { supportedLocales } = require('./i18n');
 
