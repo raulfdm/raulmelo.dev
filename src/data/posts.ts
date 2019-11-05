@@ -11,7 +11,7 @@ export const basicPostData = (): Array<Post> => {
       allMarkdownRemark(
         sort: { fields: [frontmatter___date], order: DESC }
         limit: 1000
-        filter: { fields: { locale: { eq: "ptBr" } } }
+        filter: { fields: { locale: { eq: "pt-BR" } } }
       ) {
         edges {
           node {

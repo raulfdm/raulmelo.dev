@@ -14,7 +14,7 @@ const {
 
 const { supportedLocales } = require('./i18n');
 
-const DEFAULT_LOCALE = 'ptBr';
+const DEFAULT_LOCALE = 'pt-BR';
 
 exports.onCreatePage = ({ page, actions }) => {
   const { createPage, deletePage } = actions;

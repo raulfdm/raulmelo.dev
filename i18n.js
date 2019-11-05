@@ -6,7 +6,7 @@ const supportedLocales = {
     locale: 'en',
     path: 'en',
   },
-  ptBr: {
+  'pt-BR': {
     dateFormat: 'DD/MM/YYYY',
     default: true,
     displayName: 'Português do Brasil',
