@@ -54,7 +54,10 @@ const MetaText = styled.p`
 `;
 
 const Card = ({ image, title, description, date, timeToRead, slug }) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+
+  i18n.reloadResources();
+
   return (
     <CardWrapper>
       <Link to={slug}>

@@ -12,9 +12,18 @@ const {
   generateSlug,
 } = require('./src/utils/gatsby-node-helpers.js');
 
+/* Make it dynamic */
+const enJson = require('./static/locales/en.json');
+const ptBrJson = require('./static/locales/pt-BR.json');
+
 const { supportedLocales } = require('./i18n');
 
 const DEFAULT_LOCALE = 'pt-BR';
+
+const localeResources = {
+  en: enJson,
+  'pt-BR': ptBrJson,
+};
 
 exports.onCreatePage = ({ page, actions }) => {
   const { createPage, deletePage } = actions;
@@ -37,6 +46,7 @@ exports.onCreatePage = ({ page, actions }) => {
         ...page.context,
         locale: lang,
         dateFormat: currentLangOpts.dateFormat,
+        resources: localeResources,
       },
     });
   });
@@ -73,7 +83,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 };
 
-exports.createPages = async ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions, ...whatAboutHere }) => {
   const { createPage } = actions;
 
   const blogPostComponent = path.resolve('./src/templates/blog-post.tsx');
@@ -131,6 +141,7 @@ exports.createPages = async ({ graphql, actions }) => {
       path: slug,
       component: blogPostComponent,
       context: {
+        resources: localeResources,
         translatedLinks,
         locale,
         html,

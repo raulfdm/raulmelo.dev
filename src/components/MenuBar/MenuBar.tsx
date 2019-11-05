@@ -57,7 +57,7 @@ const MenuBar = () => {
           <div>
             <button
               onClick={() =>
-                i18next.changeLanguage(supportedLocales.ptBr.locale)
+                i18next.changeLanguage(supportedLocales['pt-BR'].locale)
               }
             >
               PT
