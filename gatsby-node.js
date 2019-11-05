@@ -12,7 +12,7 @@ const {
   generateSlug,
 } = require('./src/utils/gatsby-node-helpers.js');
 
-/* Make it dynamic */
+/* TODO: Make it dynamic */
 const enJson = require('./static/locales/en.json');
 const ptBrJson = require('./static/locales/pt-BR.json');
 

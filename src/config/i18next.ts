@@ -2,28 +2,20 @@ import i18n from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import { initReactI18next } from 'react-i18next';
 
+/* Since we're gonna get locales from injected on `gatsby-node`, we don't need a backend to load data */
 i18n
   .use(LanguageDetector)
-  .use(initReactI18next) // bind react-i18next to the instance
+  .use(initReactI18next)
   .init({
     fallbackLng: 'en',
     lng: 'pt-BR',
-    debug: true,
+    // debug: true,
     interpolation: {
       escapeValue: false, // not needed for react!!
     },
-
-    // react i18next special options (optional)
-    // override if needed - omit if ok with defaults
-
     react: {
       wait: true,
-      // bindI18n: 'languageChanged',
-      // bindI18nStore: '',
-      // transEmptyNodeValue: '',
-      // transSupportBasicHtmlNodes: true,
-      // transKeepBasicHtmlNodesFor: ['br', 'strong', 'i'],
-      useSuspense: false,
+      useSuspense: false, // THIS IS VERY IMPORTANT TO MAKE IT WORK!!!!
     },
   });
 export { i18n };
