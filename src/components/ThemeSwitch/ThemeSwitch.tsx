@@ -4,7 +4,7 @@ import { Sun } from 'styled-icons/boxicons-solid/Sun';
 import { Moon } from 'styled-icons/boxicons-solid/Moon';
 import { ThemeContext } from '../../config/theme';
 
-const Swtich = styled.button`
+const Switch = styled.button`
   background-color: transparent;
   border: none;
   outline: ${({ theme }) => theme.color.background};
@@ -23,9 +23,9 @@ const ThemeSwitch = () => {
   const Icon = currentTheme === themesAvaiable.light ? Moon : Sun;
 
   return (
-    <Swtich onClick={toggleTheme}>
+    <Switch onClick={toggleTheme}>
       <Icon size={21} />
-    </Swtich>
+    </Switch>
   );
 };
 
