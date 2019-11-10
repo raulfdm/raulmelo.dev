@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import Link from 'gatsby-link';
 import styled, { css } from 'styled-components';
 import mediaQuery from 'styled-media-query';
 import i18next from 'i18next';
