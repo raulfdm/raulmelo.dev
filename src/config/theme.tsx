@@ -1,10 +1,17 @@
 import React from 'react';
 import { createContext, useState } from 'react';
-import { ThemeProvider as StyledThemeProvider } from 'styled-components';
+import {
+  ThemeProvider as StyledThemeProvider,
+  DefaultTheme,
+} from 'styled-components';
+
+type ThemeProps = {
+  children: React.ReactNode;
+};
 
 export const ThemeContext = createContext({});
 
-export const ThemeProvider = ({ children }) => {
+export const ThemeProvider = ({ children }: ThemeProps) => {
   const [isLightTheme, setIsLightTheme] = useState(true);
   const themesAvaiable = {
     dark: 'dark',
@@ -20,13 +27,14 @@ export const ThemeProvider = ({ children }) => {
     if (document) {
       const $html = document.querySelector('html');
 
+      // @ts-ignore
       $html.setAttribute('data-theme', nextTheme);
 
       setIsLightTheme(!isLightTheme);
     }
   };
 
-  const theme: Theme = {
+  const theme: DefaultTheme = {
     /* TODO: Return the whole font includding fallbacksk */
     font: {
       contentSans: 'medium-content-sans-serif-font',
@@ -46,7 +54,7 @@ export const ThemeProvider = ({ children }) => {
   };
 
   return (
-    <StyledThemeProvider theme={theme} lol>
+    <StyledThemeProvider theme={theme}>
       <ThemeContext.Provider
         value={{
           toggleTheme,
