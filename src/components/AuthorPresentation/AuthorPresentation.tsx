@@ -10,6 +10,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column-reverse;
   justify-content: space-between;
+  // @ts-ignore
   ${mediaQuery.greaterThan('medium')(css`
     flex-direction: row;
   `)}
@@ -18,7 +19,7 @@ const Wrapper = styled.div`
 const ImageWrapper = styled.div`
   max-width: 8rem;
   margin-bottom: 2rem;
-
+  // @ts-ignore
   ${mediaQuery.greaterThan('medium')(css`
     max-width: 12.8rem;
     margin-left: 4rem;
@@ -76,6 +77,16 @@ const SocialLink = styled.a`
   }
 `;
 
+type Props = {
+  className?: string;
+  profilePic: string;
+  name: string;
+  synopsis: string;
+  github: string;
+  linkedIn: string;
+  twitter: string;
+};
+
 const AuthorPresentation = ({
   className,
   profilePic,
@@ -84,14 +95,14 @@ const AuthorPresentation = ({
   github,
   linkedIn,
   twitter,
-}) => {
+}: Props) => {
   const { t } = useTranslation();
 
   return (
     <Wrapper className={className}>
       <AuthorDataWrapper>
         <AuthorName>{name}</AuthorName>
-        <AuthorSynopsis>{t('author.description')}</AuthorSynopsis>
+        <AuthorSynopsis>{t('author.description', synopsis)}</AuthorSynopsis>
         <SocialWrapper>
           {github && (
             <SocialLink href={github}>

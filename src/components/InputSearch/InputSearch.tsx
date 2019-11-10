@@ -8,8 +8,14 @@ const InputWrapper = styled.div`
   display: flex;
 `;
 
-const Input = styled.input`
-  width: ${({ showInput }) => (showInput ? '18rem' : '0')};
+interface InputProps {
+  readonly showInput: boolean;
+}
+
+const Input = styled.input<InputProps>`
+  width: ${({ showInput }) => {
+    return showInput ? '18rem' : '0';
+  }};
   background-color: transparent;
   transition: width 140ms ease-in;
   border: none;
@@ -36,7 +42,13 @@ const Icon = styled(SearchIcon)`
   margin: 0 1.6rem;
 `;
 
-const InputSearch = ({ className, onChange, placeholder }) => {
+type Props = {
+  className?: string;
+  onChange?: (element: React.ChangeEvent<HTMLInputElement>) => void;
+  placeholder?: string;
+};
+
+const InputSearch = ({ className, onChange, placeholder }: Props) => {
   const [showInput, setShowInput] = useState(false);
 
   return (

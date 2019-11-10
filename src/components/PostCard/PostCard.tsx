@@ -53,7 +53,23 @@ const MetaText = styled.p`
   margin-left: 8px;
 `;
 
-const Card = ({ image, title, description, date, timeToRead, slug }) => {
+type PostCard = {
+  title: string;
+  image: string;
+  description: string;
+  slug: string;
+  date?: string;
+  timeToRead?: number;
+};
+
+const Card = ({
+  image,
+  title,
+  description,
+  date,
+  timeToRead,
+  slug,
+}: PostCard) => {
   const { t } = useTranslation();
 
   return (
