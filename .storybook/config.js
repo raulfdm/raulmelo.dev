@@ -1,11 +1,11 @@
 import React from 'react';
 import { configure, addDecorator } from '@storybook/react';
 
-import { ThemeProvider } from '../src/config/theme';
+import Layout from '../src/components/Layout';
 
 import './storybook.css';
 
-addDecorator(story => <ThemeProvider>{story()}</ThemeProvider>);
+addDecorator(story => <Layout noMenu>{story()}</Layout>);
 
 // Gatsby's Link overrides:
 // Gatsby defines a global called ___loader to prevent its method calls from creating console errors you override it here
