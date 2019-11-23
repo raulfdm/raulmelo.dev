@@ -10,7 +10,11 @@ import ThemeSwitch from '../ThemeSwitch';
 import LogoSvg from '../LogoSvg';
 
 const MenuBarWrapper = styled.nav`
-  box-shadow: 0 4px 12px 0 ${({ theme }) => theme.color.shadow};
+  ${({ theme }) => {
+    return (
+      !theme.isDarkTheme && `box-shadow: 0 4px 12px 0 ${theme.color.shadowLight}`
+    );
+  }};
   border-bottom: 1px solid ${({ theme }) => theme.color.border};
   position: absolute;
   top: 0;
