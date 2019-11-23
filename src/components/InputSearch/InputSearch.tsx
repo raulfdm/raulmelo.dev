@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { Search as SearchIcon } from 'styled-icons/evil/Search';
 
-import SearchIcon from '../SearchIcon';
+import { MenuButton } from '../MenuBar';
+import { ClickOutside } from '../ClickOutside';
 
 const InputWrapper = styled.div`
   outline: ${({ theme }) => theme.color.background};
@@ -21,25 +23,18 @@ const Input = styled.input<InputProps>`
   border: none;
   font-size: 1.6rem;
   outline: inherit;
-  -webkit-tap-highlight-color: transparent;
   opacity: 100;
   color: ${({ theme }) => theme.color.font};
   font-family: ${({ theme }) => theme.font.contentSans};
-
-  /* border: 1px dashed tomato; */
 `;
 
 const SearchButton = styled.button`
   background-color: transparent;
   border: none;
   outline: inherit;
-  /* border: 1px dashed blue; */
+
   cursor: pointer;
   font-size: 1rem;
-`;
-
-const Icon = styled(SearchIcon)`
-  margin: 0 1.6rem;
 `;
 
 type Props = {
@@ -52,17 +47,20 @@ const InputSearch = ({ className, onChange, placeholder }: Props) => {
   const [showInput, setShowInput] = useState(false);
 
   return (
-    <InputWrapper className={className}>
-      <SearchButton onClick={() => setShowInput(!showInput)}>
-        <Icon />
-      </SearchButton>
-      <Input
-        placeholder={placeholder}
-        showInput={showInput}
-        onChange={onChange}
-        /* TODO: implement on "ENTER" and mobile action */
-      />
-    </InputWrapper>
+    <ClickOutside handleClickOutside={() => setShowInput(false)}>
+      <InputWrapper className={className}>
+        <MenuButton onClick={() => setShowInput(!showInput)}>
+          <SearchIcon size={24} />
+        </MenuButton>
+
+        <Input
+          placeholder={placeholder}
+          showInput={showInput}
+          onChange={onChange}
+          /* TODO: implement on "ENTER" and mobile action */
+        />
+      </InputWrapper>
+    </ClickOutside>
   );
 };
 
