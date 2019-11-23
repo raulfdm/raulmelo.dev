@@ -4,23 +4,18 @@ import { Translate } from 'styled-icons/material/Translate';
 
 import { DropdownMenu, DropdownMenuItem } from '../DropdownMenu';
 import { MenuButton } from '../MenuBar';
-import { supportedLocales } from '../../../i18n.js';
+import { useLocale } from '../../utils/LocaleContext';
 
 export const LanguageSwitch = () => {
+  const { changeLocale, SupportedLocales } = useLocale();
   return (
     <DropdownMenu
       items={
         <>
-          <DropdownMenuItem
-            onClick={() =>
-              i18next.changeLanguage(supportedLocales['pt-BR'].locale)
-            }
-          >
+          <DropdownMenuItem onClick={() => changeLocale(SupportedLocales.PT)}>
             PT
           </DropdownMenuItem>
-          <DropdownMenuItem
-            onClick={() => i18next.changeLanguage(supportedLocales.en.locale)}
-          >
+          <DropdownMenuItem onClick={() => changeLocale(SupportedLocales.EN)}>
             EN
           </DropdownMenuItem>
         </>
