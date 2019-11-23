@@ -1,6 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const Wrapper = styled.div<{ top: number }>`
+  color: rgba(0, 0, 0, 0.84);
+  overflow: hidden;
+  padding: 15px;
+  position: fixed;
+  top: ${({ top }) => `${top}px`};
+`;
 const StyledDropdownMenu = styled.div`
   background-color: #fff;
   border-radius: 3px;
@@ -9,13 +16,6 @@ const StyledDropdownMenu = styled.div`
   overflow: auto;
   padding: 8px 0;
   position: relative;
-`;
-
-const Wrapper = styled.div`
-  color: rgba(0, 0, 0, 0.84);
-  overflow: hidden;
-  padding: 15px;
-  position: fixed;
 `;
 
 const List = styled.ul`
@@ -43,13 +43,41 @@ const ArrowUp = styled.div`
   }
 `;
 
-export const DropdownMenu = ({ children }: any) => {
+export const DropdownMenu = ({ items, children }: any) => {
+  const [isVisible, setIsVisible] = React.useState(false);
+  const inputEl = React.useRef(null);
+
+  React.useEffect(() => {
+    function handleClickOutside(event: Event) {
+      if (inputEl.current.contains(event.target)) {
+        return;
+      }
+      setIsVisible(false);
+    }
+
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   return (
-    <Wrapper>
-      <StyledDropdownMenu>
-        <List>{children}</List>
-      </StyledDropdownMenu>
-      <ArrowUp />
-    </Wrapper>
+    <>
+      {isVisible && (
+        <Wrapper top={inputEl.current.clientHeight + 20}>
+          <StyledDropdownMenu>
+            <List>{items}</List>
+          </StyledDropdownMenu>
+          <ArrowUp />
+        </Wrapper>
+      )}
+      <div ref={inputEl}>
+        {children({
+          isVisible,
+          toggleDropdown: () => setIsVisible(!isVisible),
+        })}
+      </div>
+    </>
   );
 };

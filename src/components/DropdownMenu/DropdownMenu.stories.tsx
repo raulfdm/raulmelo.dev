@@ -7,15 +7,25 @@ export default {
   component: DropdownMenu,
 };
 
-export const defaultCase = () => (
-  <DropdownMenu>
-    <DropdownMenuItem>Hello</DropdownMenuItem>
-    <DropdownMenuItem>Hi</DropdownMenuItem>
-    <DropdownSeparator />
-    <DropdownMenuItem>Hi</DropdownMenuItem>
-    <DropdownMenuItem>Hi</DropdownMenuItem>
-    <DropdownMenuItem>Hi</DropdownMenuItem>
-    <DropdownSeparator />
-    <DropdownMenuItem>Hi</DropdownMenuItem>
-  </DropdownMenu>
-);
+export const defaultCase = () => {
+  return (
+    <DropdownMenu
+      items={
+        <>
+          <DropdownMenuItem>Hello</DropdownMenuItem>
+          <DropdownMenuItem>Hi</DropdownMenuItem>
+          <DropdownSeparator />
+          <DropdownMenuItem>Hi</DropdownMenuItem>
+          <DropdownMenuItem>Hi</DropdownMenuItem>
+          <DropdownMenuItem>Hi</DropdownMenuItem>
+          <DropdownSeparator />
+          <DropdownMenuItem>Hi</DropdownMenuItem>
+        </>
+      }
+    >
+      {({ toggleDropdown }) => {
+        return <button onClick={toggleDropdown}>Click Here :)</button>;
+      }}
+    </DropdownMenu>
+  );
+};
