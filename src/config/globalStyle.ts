@@ -312,8 +312,9 @@ const custom = css`
     --font-medium: rgba(0, 0, 0, 0.76);
     --font-light: rgba(0, 0, 0, 0.54);
     --border: rgba(0, 0, 0, 0.1);
-    --shadow: rgba(0, 0, 0, 0.1);
-    --shadowLight: rgba(0, 0, 0, 0.05);
+    --shadow: rgba(0, 0, 0, 0.35);
+    --shadowLight: rgba(0, 0, 0, 0.25);
+    --shadowBright: rgba(0, 0, 0, 0.05);
   }
 
   [data-theme='dark'] {
@@ -322,14 +323,12 @@ const custom = css`
     --font-medium: rgba(255, 255, 255, 0.7);
     --font-light: rgba(255, 255, 255, 0.54);
     --border: rgba(255, 255, 255, 0.1);
-    --shadow: transparent;
-    --shadowLight: transparent;
+    --shadow: rgba(255, 255, 255, 0.35);
+    --shadowLight: rgba(255, 255, 255, 0.25);
+    --shadowBright: rgba(255, 255, 255, 0.05);
   }
 
   body {
-    /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-      Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-      'Segoe UI Symbol'; */
     font-size: 1.6rem;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;

@@ -9,29 +9,48 @@ type ThemeProps = {
   children: React.ReactNode;
 };
 
-export const ThemeContext = createContext({});
+enum ThemesAvailable {
+  DARK = 'dark',
+  LIGHT = 'light',
+}
+
+function isWindowAvailable() {
+  return typeof window !== 'undefined';
+}
+
+type ContextType = {
+  toggleTheme: () => void;
+  theme: DefaultTheme;
+  currentTheme: string;
+  isDarkTheme: boolean;
+};
+
+export const ThemeContext = createContext<Partial<ContextType>>({});
 
 export const ThemeProvider = ({ children }: ThemeProps) => {
-  const [isLightTheme, setIsLightTheme] = useState(true);
-  const themesAvailable = {
-    dark: 'dark',
-    light: 'light',
-  };
+  function getDocumentTheme() {
+    return (
+      (isWindowAvailable() &&
+        document.querySelector('html').getAttribute('data-theme')) ||
+      ThemesAvailable.LIGHT
+    );
+  }
+  const [currentTheme, setCurrentTheme] = useState(getDocumentTheme());
 
-  const currentTheme = (light = isLightTheme) =>
-    light ? themesAvailable.light : themesAvailable.dark;
+  const isDarkTheme = currentTheme === ThemesAvailable.DARK;
 
   const toggleTheme = () => {
-    const nextTheme = currentTheme(!isLightTheme);
+    const nextTheme =
+      currentTheme === ThemesAvailable.LIGHT
+        ? ThemesAvailable.DARK
+        : ThemesAvailable.LIGHT;
 
-    if (document) {
-      const $html = document.querySelector('html');
-
+    if (isWindowAvailable()) {
       // @ts-ignore
-      $html.setAttribute('data-theme', nextTheme);
-
-      setIsLightTheme(!isLightTheme);
+      document.querySelector('html').setAttribute('data-theme', nextTheme);
     }
+    /* TODO: Also save on localStorage */
+    setCurrentTheme(nextTheme);
   };
 
   function withFontFallback(fontName: string) {
@@ -41,6 +60,7 @@ export const ThemeProvider = ({ children }: ThemeProps) => {
   }
 
   const theme: DefaultTheme = {
+    isDarkTheme,
     font: {
       contentSans: withFontFallback('medium-content-sans-serif-font'),
       contentSerif: withFontFallback('medium-content-serif-font'),
@@ -55,6 +75,8 @@ export const ThemeProvider = ({ children }: ThemeProps) => {
       fontLight: 'var(--font-light)',
       border: 'var(--border)',
       shadow: 'var(--shadow)',
+      shadowLight: 'var(--shadowLight)',
+      shadowBright: 'var(--shadowBright)',
     },
   };
 
@@ -64,8 +86,8 @@ export const ThemeProvider = ({ children }: ThemeProps) => {
         value={{
           toggleTheme,
           theme,
-          currentTheme: currentTheme(),
-          themesAvailable,
+          currentTheme,
+          isDarkTheme,
         }}
       >
         {children}
