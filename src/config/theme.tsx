@@ -14,10 +14,6 @@ enum ThemesAvailable {
   LIGHT = 'light',
 }
 
-function isWindowAvailable() {
-  return typeof window !== 'undefined';
-}
-
 type ContextType = {
   toggleTheme: () => void;
   theme: DefaultTheme;
@@ -28,16 +24,16 @@ type ContextType = {
 export const ThemeContext = createContext<Partial<ContextType>>({});
 
 export const ThemeProvider = ({ children }: ThemeProps) => {
-  function getDocumentTheme() {
-    return (
-      (isWindowAvailable() &&
-        document.querySelector('html').getAttribute('data-theme')) ||
-      ThemesAvailable.LIGHT
-    );
-  }
-  const [currentTheme, setCurrentTheme] = useState(getDocumentTheme());
+  const [currentTheme, setCurrentTheme] = useState(null);
 
   const isDarkTheme = currentTheme === ThemesAvailable.DARK;
+
+  React.useEffect(() => {
+    // @ts-ignore
+    setCurrentTheme(window.__theme);
+    // @ts-ignore
+    window.__onThemeChange = () => setCurrentTheme(window.__theme);
+  }, []);
 
   const toggleTheme = () => {
     const nextTheme =
@@ -45,12 +41,8 @@ export const ThemeProvider = ({ children }: ThemeProps) => {
         ? ThemesAvailable.DARK
         : ThemesAvailable.LIGHT;
 
-    if (isWindowAvailable()) {
-      // @ts-ignore
-      document.querySelector('html').setAttribute('data-theme', nextTheme);
-    }
-    /* TODO: Also save on localStorage */
-    setCurrentTheme(nextTheme);
+    // @ts-ignore
+    window.__setPreferredTheme(nextTheme);
   };
 
   function withFontFallback(fontName: string) {
@@ -77,6 +69,7 @@ export const ThemeProvider = ({ children }: ThemeProps) => {
       shadow: 'var(--shadow)',
       shadowLight: 'var(--shadowLight)',
       shadowBright: 'var(--shadowBright)',
+      shadowMenu: 'var(--shadowMenu)',
     },
   };
 
