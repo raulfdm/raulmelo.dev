@@ -7,11 +7,11 @@ import { ThemeContext } from '../../config/theme';
 import { MenuButton } from '../MenuBar';
 
 const ThemeSwitch = () => {
-  const { toggleTheme, currentTheme, themesAvaiable } = useContext(
+  const { toggleTheme, currentTheme, themesAvailable } = useContext(
     ThemeContext
   );
 
-  const Icon = currentTheme === themesAvaiable.light ? Moon : Sun;
+  const Icon = currentTheme === themesAvailable.light ? Moon : Sun;
 
   return (
     <MenuButton onClick={toggleTheme}>

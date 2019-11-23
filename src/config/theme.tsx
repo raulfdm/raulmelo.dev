@@ -13,13 +13,13 @@ export const ThemeContext = createContext({});
 
 export const ThemeProvider = ({ children }: ThemeProps) => {
   const [isLightTheme, setIsLightTheme] = useState(true);
-  const themesAvaiable = {
+  const themesAvailable = {
     dark: 'dark',
     light: 'light',
   };
 
   const currentTheme = (light = isLightTheme) =>
-    light ? themesAvaiable.light : themesAvaiable.dark;
+    light ? themesAvailable.light : themesAvailable.dark;
 
   const toggleTheme = () => {
     const nextTheme = currentTheme(!isLightTheme);
@@ -34,14 +34,19 @@ export const ThemeProvider = ({ children }: ThemeProps) => {
     }
   };
 
+  function withFontFallback(fontName: string) {
+    return `${fontName},-apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+    sans-serif;`;
+  }
+
   const theme: DefaultTheme = {
-    /* TODO: Return the whole font includding fallbacksk */
     font: {
-      contentSans: 'medium-content-sans-serif-font',
-      contentSerif: 'medium-content-serif-font',
-      contentSlab: 'medium-content-slab-serif-font',
-      contentTitle: 'medium-content-title-font',
-      marketingDisplay: 'medium-marketing-display-font',
+      contentSans: withFontFallback('medium-content-sans-serif-font'),
+      contentSerif: withFontFallback('medium-content-serif-font'),
+      contentSlab: withFontFallback('medium-content-slab-serif-font'),
+      contentTitle: withFontFallback('medium-content-title-font'),
+      marketingDisplay: withFontFallback('medium-marketing-display-font'),
     },
     color: {
       background: 'var(--background)',
@@ -60,7 +65,7 @@ export const ThemeProvider = ({ children }: ThemeProps) => {
           toggleTheme,
           theme,
           currentTheme: currentTheme(),
-          themesAvaiable,
+          themesAvailable,
         }}
       >
         {children}
