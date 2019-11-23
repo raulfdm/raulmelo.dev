@@ -1,26 +1,31 @@
 import React from 'react';
 import styled from 'styled-components';
+import { ClickOutside } from '../ClickOutside';
 
-const Wrapper = styled.div<{ top: number }>`
-  color: rgba(0, 0, 0, 0.84);
-  overflow: hidden;
-  padding: 15px;
-  position: fixed;
-  top: ${({ top }) => `${top}px`};
+const Wrapper = styled.div`
+  color: ${props => props.theme.color.font};
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 const StyledDropdownMenu = styled.div`
-  background-color: #fff;
-  border-radius: 3px;
-  box-shadow: rgba(0, 0, 0, 0.25) 0 1px 2px, rgba(0, 0, 0, 0.35) 0 0 1px;
-  max-width: 280px;
-  overflow: auto;
-  padding: 8px 0;
   position: relative;
 `;
 
 const List = styled.ul`
+  background-color: ${props => props.theme.color.background};
+  border-radius: 3px;
+  box-shadow: ${props => props.theme.color.shadowLight} 0 1px 2px,
+    ${props => props.theme.color.shadow} 0 0 1px;
+  max-width: 280px;
+
   margin: 0;
   padding: 0;
+  position: absolute;
+  top: 20px;
+  right: 0;
+
   display: flex;
   flex-direction: column;
 `;
@@ -28,56 +33,54 @@ const List = styled.ul`
 const ArrowUp = styled.div`
   clip: rect(0, 18px, 14px, -4px);
   left: 50%;
+
   margin-left: -7px;
   position: absolute;
-  top: 1px;
+  bottom: -8px;
 
   &::after {
     content: '';
     display: block;
     width: 14px;
     height: 14px;
-    background: #fff;
-    box-shadow: -1px -1px 1px -1px rgba(0, 0, 0, 0.54);
+    background: ${props => props.theme.color.background};
+    box-shadow: -1px -1px 1px -1px ${props => props.theme.color.shadow};
     transform: rotate(45deg) translate(6px, 6px);
   }
 `;
 
-export const DropdownMenu = ({ items, children }: any) => {
+type ToggleDropdown = () => void;
+
+type RenderPropsChildren = (args: {
+  isVisible: boolean;
+  toggleDropdown: ToggleDropdown;
+}) => React.ReactNode;
+
+type Props = {
+  items: React.ReactNode;
+  children: RenderPropsChildren;
+};
+
+export const DropdownMenu = ({ items, children }: Props) => {
   const [isVisible, setIsVisible] = React.useState(false);
-  const inputEl = React.useRef(null);
-
-  React.useEffect(() => {
-    function handleClickOutside(event: Event) {
-      if (inputEl.current.contains(event.target)) {
-        return;
-      }
-      setIsVisible(false);
-    }
-
-    document.addEventListener('mousedown', handleClickOutside);
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
 
   return (
-    <>
-      {isVisible && (
-        <Wrapper top={inputEl.current.clientHeight + 20}>
-          <StyledDropdownMenu>
-            <List>{items}</List>
-          </StyledDropdownMenu>
-          <ArrowUp />
-        </Wrapper>
-      )}
-      <div ref={inputEl}>
+    <Wrapper>
+      <ClickOutside handleClickOutside={() => setIsVisible(false)}>
         {children({
           isVisible,
           toggleDropdown: () => setIsVisible(!isVisible),
         })}
-      </div>
-    </>
+      </ClickOutside>
+
+      {isVisible && (
+        <>
+          <StyledDropdownMenu>
+            <List>{items}</List>
+          </StyledDropdownMenu>
+          <ArrowUp />
+        </>
+      )}
+    </Wrapper>
   );
 };
