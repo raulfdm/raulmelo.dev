@@ -2,16 +2,19 @@ import React from 'react';
 import Link from 'gatsby-link';
 import styled, { css } from 'styled-components';
 import mediaQuery from 'styled-media-query';
-import i18next from 'i18next';
-import { supportedLocales } from '../../../i18n.js';
 
+import { LanguageSwitch } from '../LanguageSwitch';
 import { Container } from '../ui';
 import InputSearch from '../InputSearch';
 import ThemeSwitch from '../ThemeSwitch';
 import LogoSvg from '../LogoSvg';
 
 const MenuBarWrapper = styled.nav`
-  box-shadow: 0 4px 12px 0 ${({ theme }) => theme.color.shadow};
+  ${({ theme }) => {
+    return (
+      !theme.isDarkTheme && `box-shadow: 0 4px 12px 0 ${theme.color.shadowLight}`
+    );
+  }};
   border-bottom: 1px solid ${({ theme }) => theme.color.border};
   position: absolute;
   top: 0;
@@ -53,21 +56,7 @@ const MenuBar = () => {
           </LogoWrapper>
           <InputSearch />
           <ThemeSwitch />
-
-          <div>
-            <button
-              onClick={() =>
-                i18next.changeLanguage(supportedLocales['pt-BR'].locale)
-              }
-            >
-              PT
-            </button>
-            <button
-              onClick={() => i18next.changeLanguage(supportedLocales.en.locale)}
-            >
-              EN
-            </button>
-          </div>
+          <LanguageSwitch />
         </CustomContainer>
       </MenuBarWrapper>
       <DummySpace />

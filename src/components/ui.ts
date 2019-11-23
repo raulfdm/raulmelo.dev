@@ -2,9 +2,9 @@ import styled from 'styled-components';
 
 export const Card = styled.div`
   background-color: ${({ theme }) => theme.color.background};
-  border: 1px solid ${({ theme }) => theme.color.border};
   border-radius: 5px;
-  box-shadow: ${({ theme }) => theme.color.shadow} 0 1px 4px;
+  ${({ theme }) =>
+    !theme.isDark && `box-shadow: ${theme.color.shadowLight} 0 1px 4px;`}
   margin-bottom: 2.4rem;
   padding: 2.4rem;
 `;
