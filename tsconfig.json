@@ -1,19 +1,38 @@
 {
   "compilerOptions": {
-    "allowUnreachableCode": true,
-    "target": "es5",
-    "module": "commonjs",
-    "allowJs": true,
-    "jsx": "react",
-    "strict": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "src",
     "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "jsx": "react",
+    "lib": [
+      "es5",
+      "es6",
+      "es7",
+      "es2017",
+      "dom"
+    ],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noEmit": true,
+    "sourceMap": true,
+    "strictNullChecks": true,
+    "rootDir": "src",
+    "suppressImplicitAnyIndexErrors": true,
+    "strict": true,
+    "target": "es5",
   },
   "files": [
     "src/**/*"
   ],
   "exclude": [
-    ".cache/**/*",
-    "node_modules/**/*",
-    "public/**/*"
+    ".cache",
+    "node_modules",
+    "public",
+    "build"
   ]
 }
