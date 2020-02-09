@@ -13,7 +13,7 @@
     "prebuild": "rimraf public",
     "build": "gatsby build",
     "prebuild:docs": "rimraf story-docs",
-    "build:docs": "build-storybook -o story-docs",
+    "build:docs": "NODE_ENV=test build-storybook -o story-docs",
     "dev": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "prestart": "yarn build",
