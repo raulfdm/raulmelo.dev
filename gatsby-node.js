@@ -32,7 +32,7 @@ exports.onCreatePage = ({ page, actions }) => {
   // So everything in src/pages/
   deletePage(page);
 
-  Object.keys(supportedLocales).map(lang => {
+  Object.keys(supportedLocales).map((lang) => {
     const currentLangOpts = supportedLocales[lang];
 
     const localizedPath = currentLangOpts.default
@@ -71,7 +71,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     const currentLocale = supportedLocales[lang];
 
     const directoryName = path.basename(
-      path.dirname(R.path(['fileAbsolutePath'], node))
+      path.dirname(R.path(['fileAbsolutePath'], node)),
     );
 
     const slug = generateSlug({ lang: currentLocale, node, getNode });
@@ -83,7 +83,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 };
 
-exports.createPages = async ({ graphql, actions, ...whatAboutHere }) => {
+exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
   const blogPostComponent = path.resolve('./src/templates/blog-post.tsx');
@@ -131,8 +131,8 @@ exports.createPages = async ({ graphql, actions, ...whatAboutHere }) => {
     const { locale, slug, directoryName } = fields;
 
     const translatedLinks = groupedByDirname[directoryName]
-      .filter(post => post.node.fields.locale !== locale)
-      .map(post => ({
+      .filter((post) => post.node.fields.locale !== locale)
+      .map((post) => ({
         locale: post.node.fields.locale,
         slug: post.node.fields.slug,
       }));

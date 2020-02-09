@@ -1,4 +1,3 @@
-/* eslint-disable */
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
 const localizedSlug = ({ isDefault, locale, slug }) =>
