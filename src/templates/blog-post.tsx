@@ -6,9 +6,11 @@ import Layout from '../components/Layout';
 type PostProps = {
   pageContext: {
     postByLocale: {
-      [locale: string]: {
-        title: string;
-        html: string;
+      node: {
+        [locale: string]: {
+          title: string;
+          html: string;
+        };
       };
     };
     intl: {

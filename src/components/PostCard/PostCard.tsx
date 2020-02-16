@@ -82,14 +82,16 @@ const Card: React.FC<PostCard> = ({
         <Description>{description}</Description>
       </Link>
       <MetaWrapper>
-        <MetaText>
-          <FormattedDate
-            value={new Date(date)}
-            year="numeric"
-            month="short"
-            day="2-digit"
-          />
-        </MetaText>
+        {date && (
+          <MetaText>
+            <FormattedDate
+              value={new Date(date)}
+              year="numeric"
+              month="short"
+              day="2-digit"
+            />
+          </MetaText>
+        )}
         <MetaText>.</MetaText>
         <MetaText>
           <FormattedMessage

@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'gatsby-link';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import mediaQuery from 'styled-media-query';
 
 import { LanguageSwitch } from '../LanguageSwitch';
@@ -29,9 +29,9 @@ const CustomContainer = styled(Container)`
   align-items: center;
   justify-content: space-between;
 
-  ${mediaQuery.greaterThan('medium')(css`
+  ${mediaQuery.greaterThan('medium')`
     max-width: 80%;
-  `)}
+  `}
 `;
 
 const DummySpace = styled.div`
@@ -43,7 +43,7 @@ const LogoWrapper = styled.div`
   flex: 1;
 `;
 
-const MenuBar = () => {
+const MenuBar: React.FC = () => {
   return (
     <React.Fragment>
       <MenuBarWrapper>

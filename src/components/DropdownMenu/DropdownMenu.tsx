@@ -54,14 +54,16 @@ type ToggleDropdown = () => void;
 type RenderPropsChildren = (args: {
   isVisible: boolean;
   toggleDropdown: ToggleDropdown;
-}) => React.ReactNode;
+}) =>
+  | (Element & React.ReactHTMLElement<HTMLElement>)
+  | React.ReactElement<HTMLElement>;
 
 type Props = {
   items: React.ReactNode;
   children: RenderPropsChildren;
 };
 
-export const DropdownMenu = ({ items, children }: Props) => {
+export const DropdownMenu: React.FC<Props> = ({ items, children }) => {
   const [isVisible, setIsVisible] = React.useState(false);
 
   return (
@@ -69,7 +71,9 @@ export const DropdownMenu = ({ items, children }: Props) => {
       <ClickOutside handleClickOutside={() => setIsVisible(false)}>
         {children({
           isVisible,
-          toggleDropdown: () => setIsVisible(!isVisible),
+          toggleDropdown: () => {
+            setIsVisible(!isVisible);
+          },
         })}
       </ClickOutside>
 

@@ -9,16 +9,19 @@ import React from 'react';
 import Helmet from 'react-helmet';
 // import { useStaticQuery, graphql } from 'gatsby';
 
-import { Hash } from '../../old_src/types';
-
 type SEOProps = {
   title: string;
   description?: string;
   lang?: string;
-  meta?: Hash[];
+  meta?: { name: string; content: string }[];
 };
 
-const SEO: React.FC<SEOProps> = ({ description, title, meta, lang }) => {
+const SEO: React.FC<SEOProps> = ({
+  title,
+  description = '',
+  meta = [],
+  lang = 'en',
+}) => {
   // const { site } = useStaticQuery(
   //   graphql`
   //     query {
@@ -75,16 +78,9 @@ const SEO: React.FC<SEOProps> = ({ description, title, meta, lang }) => {
           name: `twitter:description`,
           content: metaDescription,
         },
-        // @ts-ignore
       ].concat(meta)}
     />
   );
-};
-
-SEO.defaultProps = {
-  lang: `en`,
-  meta: [],
-  description: ``,
 };
 
 export default SEO;

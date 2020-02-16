@@ -28,28 +28,21 @@ const Input = styled.input<InputProps>`
   font-family: ${({ theme }) => theme.font.contentSans};
 `;
 
-const SearchButton = styled.button`
-  background-color: transparent;
-  border: none;
-  outline: inherit;
-
-  cursor: pointer;
-  font-size: 1rem;
-`;
-
 type Props = {
   className?: string;
   onChange?: (element: React.ChangeEvent<HTMLInputElement>) => void;
   placeholder?: string;
 };
 
-const InputSearch = ({ className, onChange, placeholder }: Props) => {
+const InputSearch: React.FC<Props> = ({ className, onChange, placeholder }) => {
   const [showInput, setShowInput] = useState(false);
 
   return (
     <ClickOutside handleClickOutside={() => setShowInput(false)}>
       <InputWrapper className={className}>
         <MenuButton onClick={() => setShowInput(!showInput)}>
+          {/* 
+              // @ts-ignore */}
           <SearchIcon size={24} />
         </MenuButton>
 

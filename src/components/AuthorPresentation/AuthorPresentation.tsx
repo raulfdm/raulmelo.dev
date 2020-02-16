@@ -107,16 +107,22 @@ const AuthorPresentation: React.FC<Props> = ({
         <SocialWrapper>
           {github && (
             <SocialLink href={github}>
+              {/* 
+              // @ts-ignore */}
               <Github size={21} />
             </SocialLink>
           )}
           {twitter && (
             <SocialLink href={twitter}>
+              {/* 
+              // @ts-ignore */}
               <Twitter size={21} />
             </SocialLink>
           )}
           {linkedIn && (
             <SocialLink href={linkedIn}>
+              {/* 
+              // @ts-ignore */}
               <Linkedin size={21} />
             </SocialLink>
           )}

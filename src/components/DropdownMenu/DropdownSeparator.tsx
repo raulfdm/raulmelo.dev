@@ -18,4 +18,4 @@ const SeparatorWrapper = styled.li`
   height: 1px;
 `;
 
-export const DropdownSeparator = () => <SeparatorWrapper />;
+export const DropdownSeparator: React.FC = () => <SeparatorWrapper />;

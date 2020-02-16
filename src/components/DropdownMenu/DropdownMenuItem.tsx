@@ -25,10 +25,9 @@ const DropdownMenuItemWrapper = styled.li`
   }
 `;
 
-/* TODO: Refactor this props */
 type Props = {
-  children: React.ReactChildren | React.ReactNode | string;
-  onClick: () => void;
+  children: React.ReactNode;
+  onClick?: () => void;
 };
 
 export const DropdownMenuItem: React.FC<Props> = ({ children, ...props }) => {
