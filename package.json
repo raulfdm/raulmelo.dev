@@ -10,7 +10,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "prebuild": "rimraf public",
+    "prebuild": "rimraf public .cache",
     "build": "gatsby build",
     "dev": "gatsby develop",
     "prestart": "yarn build",

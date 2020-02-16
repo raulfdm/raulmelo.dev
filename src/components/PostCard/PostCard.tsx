@@ -18,6 +18,7 @@ const Image = styled.img`
   height: 100%;
   width: 100%;
   background-color: #fff;
+  padding: 1rem;
 `;
 
 const Title = styled.h2`

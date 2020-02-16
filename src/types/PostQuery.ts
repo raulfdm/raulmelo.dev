@@ -2,7 +2,9 @@ export type Frontmatter = {
   date: string;
   description: string;
   title: string;
-  featuredImage: string;
+  image: {
+    publicURL: string;
+  };
 };
 
 export type QueryNode = {
