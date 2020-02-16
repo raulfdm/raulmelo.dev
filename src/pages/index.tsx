@@ -39,7 +39,7 @@ const Home: React.FC = () => {
           profilePic="https://miro.medium.com/fit/c/256/256/1*6jtMoNvX_MHslzBLP4aM9g.jpeg"
           twitter="https://twitter.com/raul_fdm"
           linkedIn="https://www.linkedin.com/in/raulfdm/"
-          github="https://github.com/raulfdms"
+          github="https://github.com/raulfdm"
         />
         <LatestMessage>
           <FormattedMessage id="home.latest" />
