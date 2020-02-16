@@ -10,7 +10,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "prebuild": "rimraf public",
+    "prebuild": "rimraf public .cache",
     "build": "gatsby build",
     "prebuild:docs": "rimraf story-docs",
     "build:docs": "NODE_ENV=test build-storybook -o story-docs",
