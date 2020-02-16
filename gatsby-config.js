@@ -1,9 +1,4 @@
 module.exports = {
-  siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-  },
   plugins: [
     `gatsby-plugin-typescript`,
     `gatsby-plugin-react-helmet`,
@@ -59,10 +54,13 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-i18n',
+      resolve: `gatsby-plugin-intl`,
       options: {
-        langKeyDefault: 'en',
-        useLangKeyLayout: false,
+        path: `${__dirname}/src/locales`,
+        languages: [`en`, `pt-br`],
+        defaultLanguage: `pt-br`,
+        // redirect: true,
+        // redirectComponent: require.resolve(`./src/components/redirect.js`),
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

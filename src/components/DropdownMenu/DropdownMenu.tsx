@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { ClickOutside } from '../ClickOutside';
 
 const Wrapper = styled.div`
-  color: ${props => props.theme.color.font};
+  color: ${(props) => props.theme.color.font};
   position: relative;
   display: flex;
   justify-content: center;
@@ -14,10 +14,10 @@ const StyledDropdownMenu = styled.div`
 `;
 
 const List = styled.ul`
-  background-color: ${props => props.theme.color.background};
+  background-color: ${(props) => props.theme.color.background};
   border-radius: 3px;
-  box-shadow: ${props => props.theme.color.shadowLight} 0 1px 2px,
-    ${props => props.theme.color.shadow} 0 0 1px;
+  box-shadow: ${(props) => props.theme.color.shadowLight} 0 1px 2px,
+    ${(props) => props.theme.color.shadow} 0 0 1px;
   max-width: 280px;
 
   margin: 0;
@@ -43,8 +43,8 @@ const ArrowUp = styled.div`
     display: block;
     width: 14px;
     height: 14px;
-    background: ${props => props.theme.color.background};
-    box-shadow: -1px -1px 1px -1px ${props => props.theme.color.shadow};
+    background: ${(props) => props.theme.color.background};
+    box-shadow: -1px -1px 1px -1px ${(props) => props.theme.color.shadow};
     transform: rotate(45deg) translate(6px, 6px);
   }
 `;

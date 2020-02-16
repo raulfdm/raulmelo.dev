@@ -7,33 +7,33 @@
 
 import React from 'react';
 import Helmet from 'react-helmet';
-import { useStaticQuery, graphql } from 'gatsby';
+// import { useStaticQuery, graphql } from 'gatsby';
 
-import { Hash } from '../types/';
+import { Hash } from '../../old_src/types';
 
 type SEOProps = {
-  description: string;
-  lang: string;
-  meta: Hash[];
   title: string;
+  description?: string;
+  lang?: string;
+  meta?: Hash[];
 };
 
-function SEO({ description, lang, meta, title }: SEOProps) {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-          }
-        }
-      }
-    `
-  );
+const SEO: React.FC<SEOProps> = ({ description, title, meta, lang }) => {
+  // const { site } = useStaticQuery(
+  //   graphql`
+  //     query {
+  //       site {
+  //         siteMetadata {
+  //           title
+  //           description
+  //           author
+  //         }
+  //       }
+  //     }
+  //   `,
+  // );
 
-  const metaDescription = description || site.siteMetadata.description;
+  const metaDescription = description;
 
   return (
     <Helmet
@@ -41,7 +41,7 @@ function SEO({ description, lang, meta, title }: SEOProps) {
         lang,
       }}
       title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      // titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {
           name: `description`,
@@ -63,10 +63,10 @@ function SEO({ description, lang, meta, title }: SEOProps) {
           name: `twitter:card`,
           content: `summary`,
         },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
-        },
+        // {
+        //   name: `twitter:creator`,
+        //   content: site.siteMetadata.author,
+        // },
         {
           name: `twitter:title`,
           content: title,
@@ -79,7 +79,7 @@ function SEO({ description, lang, meta, title }: SEOProps) {
       ].concat(meta)}
     />
   );
-}
+};
 
 SEO.defaultProps = {
   lang: `en`,

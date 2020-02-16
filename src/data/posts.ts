@@ -3,15 +3,19 @@ import * as R from 'ramda';
 
 import { Post, Edges } from '../types';
 
-export const basicPostData = (): Array<Post> => {
+/* TODO: move to types folder */
+type Slug = string;
+type Posts = Post[];
+type PostByLocale = { [slug: string]: Posts };
+
+export const basicPostData = (): [Slug, Posts][] => {
   const {
     allMarkdownRemark: { edges },
   }: { allMarkdownRemark: { edges: Edges } } = useStaticQuery(graphql`
-    query {
+    {
       allMarkdownRemark(
         sort: { fields: [frontmatter___date], order: DESC }
         limit: 1000
-        filter: { fields: { locale: { eq: "pt-BR" } } }
       ) {
         edges {
           node {
@@ -20,9 +24,11 @@ export const basicPostData = (): Array<Post> => {
             timeToRead
             fields {
               slug
+              localizedSlug
+              locale
             }
             frontmatter {
-              date(formatString: "MMMM DD, YYYY")
+              date
               title
               description
             }
@@ -32,7 +38,8 @@ export const basicPostData = (): Array<Post> => {
     }
   `);
 
-  const posts = edges.map(
+  /* TODO: Filter posts by current locale  */
+  const posts: Posts = edges.map(
     ({ node }): Post => {
       const { id, frontmatter, fields, timeToRead } = node;
       const { date, description, title, featuredImage } = frontmatter;
@@ -44,11 +51,24 @@ export const basicPostData = (): Array<Post> => {
         imgSrc:
           R.path(['childImageSharp', 'fluid', 'src'], featuredImage) || '',
         slug: fields.slug,
+        localizedSlug: fields.localizedSlug,
+        locale: fields.locale,
         timeToRead,
         title,
       };
-    }
+    },
   );
 
-  return posts;
+  const postsBySlug = posts.reduce((result, current) => {
+    const post = result[current.slug];
+
+    if (!post) {
+      result[current.slug] = { [current.locale]: current };
+    } else {
+      result[current.slug][current.locale] = current;
+    }
+    return result;
+  }, {});
+
+  return Object.entries(postsBySlug);
 };

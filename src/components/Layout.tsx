@@ -6,12 +6,12 @@ import { Container } from './ui';
 import { GlobalStyles } from '../config/globalStyle';
 
 interface Props {
-  children: React.ReactNode;
-  noMenu: boolean;
-  noGlobals: boolean;
+  children: React.ReactNode | React.ReactChildren;
+  noMenu?: boolean;
+  noGlobals?: boolean;
 }
 
-const Layout = ({ children, noMenu, noGlobals }: Props) => {
+const Layout: React.FC<Props> = ({ children, noMenu, noGlobals }) => {
   return (
     <ThemeProvider>
       <Container>

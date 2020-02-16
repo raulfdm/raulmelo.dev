@@ -1,10 +1,11 @@
 import React from 'react';
-import Link from 'gatsby-link';
+import { FormattedMessage, FormattedDate } from 'gatsby-plugin-intl';
+import { Link } from 'gatsby';
 import styled from 'styled-components';
-import { useTranslation } from 'react-i18next';
 
 import { Card as CardWrapper } from '../ui';
 
+/* TODO: Move those styles to styled folder */
 const ImageContainer = styled.div`
   position: relative;
   padding-bottom: 30%;
@@ -62,16 +63,15 @@ type PostCard = {
   timeToRead?: number;
 };
 
-const Card = ({
+/* TODO: Accept post card instead destructured props */
+const Card: React.FC<PostCard> = ({
   image,
   title,
   description,
   date,
   timeToRead,
   slug,
-}: PostCard) => {
-  const { t } = useTranslation();
-
+}) => {
   return (
     <CardWrapper>
       <Link to={slug}>
@@ -82,9 +82,23 @@ const Card = ({
         <Description>{description}</Description>
       </Link>
       <MetaWrapper>
-        <MetaText>{date}</MetaText>
+        <MetaText>
+          <FormattedDate
+            value={new Date(date)}
+            year="numeric"
+            month="short"
+            day="2-digit"
+          />
+        </MetaText>
         <MetaText>.</MetaText>
-        <MetaText>{t('blog.readTime', { minutes: timeToRead })}</MetaText>
+        <MetaText>
+          <FormattedMessage
+            id="blog.readTime"
+            values={{
+              minutes: timeToRead,
+            }}
+          />
+        </MetaText>
       </MetaWrapper>
     </CardWrapper>
   );

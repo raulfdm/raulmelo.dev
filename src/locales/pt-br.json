@@ -5,9 +5,8 @@
   "home": {
     "latest": "Últimos"
   },
-  "blog":{
+  "blog": {
     "noTranslation": "Esse artigo não possui tradução",
-    "readTime": "{{minutes}} min de leitura",
-    "readTime_plural": "{{minutes}} min de leitura"
+    "readTime": "{minutes} min de leitura"
   }
 }

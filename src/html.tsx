@@ -1,6 +1,7 @@
 import React from 'react';
+import { PreRenderHTMLArgs } from 'gatsby';
 
-export default function HTML(props) {
+const GatsbyHTML: React.FC<PreRenderHTMLArgs & { body: string }> = (props) => {
   return (
     <html {...props.htmlAttributes} data-theme="dark">
       <head>
@@ -58,4 +59,6 @@ export default function HTML(props) {
       </body>
     </html>
   );
-}
+};
+
+export default GatsbyHTML;
