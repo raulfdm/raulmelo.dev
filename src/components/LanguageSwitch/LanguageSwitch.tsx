@@ -4,7 +4,7 @@ import { changeLocale } from 'gatsby-plugin-intl';
 
 import { DropdownMenu, DropdownMenuItem } from '../DropdownMenu';
 import { MenuButton } from '../MenuBar';
-import { LOCALES } from '../../enums/locales';
+import { LOCALES } from '../../types/Locales';
 
 export const LanguageSwitch: React.FC = () => {
   return (

@@ -6,7 +6,6 @@ import { Post, Edges } from '../types';
 /* TODO: move to types folder */
 type Slug = string;
 type Posts = Post[];
-type PostByLocale = { [slug: string]: Posts };
 
 export const basicPostData = (): [Slug, Posts][] => {
   const {

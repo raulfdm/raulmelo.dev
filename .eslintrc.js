@@ -12,6 +12,12 @@ module.exports = {
       rules: {
         'react/prop-types': 0,
         '@typescript-eslint/ban-ts-ignore': 'warn',
+        '@typescript-eslint/no-unused-vars': [
+          'warn',
+          {
+            argsIgnorePattern: '^_',
+          },
+        ],
         '@typescript-eslint/explicit-function-return-type': [
           'warn',
           {
@@ -30,6 +36,12 @@ module.exports = {
       },
       rules: {
         'react/prop-types': 'warn',
+      },
+    },
+    {
+      files: ['*.stories.tsx'],
+      rules: {
+        '@typescript-eslint/explicit-function-return-type': 0,
       },
     },
   ],

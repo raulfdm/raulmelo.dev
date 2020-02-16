@@ -5,14 +5,11 @@ import {
   DefaultTheme,
 } from 'styled-components';
 
+import { ThemesAvailable } from '../types';
+
 type ThemeProps = {
   children: React.ReactNode;
 };
-
-enum ThemesAvailable {
-  DARK = 'dark',
-  LIGHT = 'light',
-}
 
 type ContextType = {
   toggleTheme: () => void;
@@ -23,29 +20,29 @@ type ContextType = {
 
 export const ThemeContext = createContext<Partial<ContextType>>({});
 
-export const ThemeProvider = ({ children }: ThemeProps) => {
-  const [currentTheme, setCurrentTheme] = useState(null);
+export const ThemeProvider: React.FC<ThemeProps> = ({ children }) => {
+  const [currentTheme, setCurrentTheme] = useState<ThemesAvailable>(
+    ThemesAvailable.LIGHT,
+  );
 
   const isDarkTheme = currentTheme === ThemesAvailable.DARK;
 
   React.useEffect(() => {
-    // @ts-ignore
-    setCurrentTheme(window.__theme);
-    // @ts-ignore
-    window.__onThemeChange = () => setCurrentTheme(window.__theme);
+    setCurrentTheme(window['__theme']);
+
+    window['__onThemeChange'] = () => setCurrentTheme(window['__theme']);
   }, []);
 
-  const toggleTheme = () => {
+  const toggleTheme = (): void => {
     const nextTheme =
       currentTheme === ThemesAvailable.LIGHT
         ? ThemesAvailable.DARK
         : ThemesAvailable.LIGHT;
 
-    // @ts-ignore
-    window.__setPreferredTheme(nextTheme);
+    window['__setPreferredTheme'](nextTheme);
   };
 
-  function withFontFallback(fontName: string) {
+  function withFontFallback(fontName: string): string {
     return `${fontName},-apple-system, BlinkMacSystemFont,
     'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
     sans-serif;`;
