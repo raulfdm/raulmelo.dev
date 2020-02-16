@@ -1,5 +1,4 @@
 import { useStaticQuery, graphql } from 'gatsby';
-import * as R from 'ramda';
 
 import { Post, Edges } from '../types';
 
@@ -24,12 +23,14 @@ export const basicPostData = (): [Slug, Posts][] => {
             fields {
               slug
               localizedSlug
-              locale
             }
             frontmatter {
               date
               title
               description
+              image {
+                publicURL
+              }
             }
           }
         }
@@ -41,14 +42,13 @@ export const basicPostData = (): [Slug, Posts][] => {
   const posts: Posts = edges.map(
     ({ node }): Post => {
       const { id, frontmatter, fields, timeToRead } = node;
-      const { date, description, title, featuredImage } = frontmatter;
+      const { date, description, title, image } = frontmatter;
 
       return {
         date,
         description,
         id,
-        imgSrc:
-          R.path(['childImageSharp', 'fluid', 'src'], featuredImage) || '',
+        imgSrc: image.publicURL,
         slug: fields.slug,
         localizedSlug: fields.localizedSlug,
         locale: fields.locale,
