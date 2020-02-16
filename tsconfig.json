@@ -1,38 +1,33 @@
 {
   "compilerOptions": {
+    "allowJs": false,
     "allowSyntheticDefaultImports": true,
-    "baseUrl": "src",
+    "baseUrl": ".",
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
+    "importHelpers": true,
+    "incremental": true,
     "jsx": "react",
-    "lib": [
-      "es5",
-      "es6",
-      "es7",
-      "es2017",
-      "dom"
-    ],
-    "module": "commonjs",
+    "lib": ["dom", "esnext"],
+    "module": "esnext",
     "moduleResolution": "node",
-    "noImplicitAny": true,
+    "noEmit": true,
+    "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
     "noUnusedLocals": true,
-    "noEmit": true,
+    "noUnusedParameters": true,
+    "paths": {
+      "gatsby-plugin-intl": ["typings/gatsby-plugin-intl"]
+    },
+    "rootDir": ".",
+    "skipLibCheck": true,
     "sourceMap": true,
-    "strictNullChecks": true,
-    "rootDir": "src",
-    "suppressImplicitAnyIndexErrors": true,
     "strict": true,
+    "suppressImplicitAnyIndexErrors": true,
     "target": "es5",
+    "typeRoots": ["typings", "node_modules/@types"]
   },
-  "files": [
-    "src/**/*"
-  ],
-  "exclude": [
-    ".cache",
-    "node_modules",
-    "public",
-    "build"
-  ]
+  "include": ["src/**/*"],
+  "exclude": [".gitignore"]
 }
