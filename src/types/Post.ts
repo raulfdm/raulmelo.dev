@@ -6,4 +6,6 @@ export type Post = {
   slug: string;
   timeToRead: number;
   title: string;
+  locale: string;
+  localizedSlug: string;
 };

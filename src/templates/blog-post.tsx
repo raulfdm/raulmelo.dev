@@ -6,15 +6,19 @@ import HasTranslationBox from '../components/HasTranslationBox';
 
 type PostProps = {
   pageContext: {
-    title: string;
-    html: string;
-    translatedLinks: {
-      locale: string;
-      slug: string;
-    }[];
+    postByLocale: {
+      [locale: string]: {
+        title: string;
+        html: string;
+      };
+    };
+    intl: {
+      language: string;
+    };
   };
 };
 
+/* TODO: Extract into a styled file */
 const global = css`
   body {
     line-height: 1.58;
@@ -91,14 +95,27 @@ const BlogStyle = createGlobalStyle`
   ${global}
 `;
 
-const Post = ({ pageContext }: PostProps) => {
-  const { title, html, translatedLinks } = pageContext;
+const Post: React.FC<PostProps> = ({ pageContext }) => {
+  const { postByLocale, intl } = pageContext;
+
+  const post = postByLocale[intl.language];
+
+  if (!post) {
+    return (
+      <Layout>
+        <BlogStyle />
+        <h1>not found</h1>
+      </Layout>
+    );
+  }
+
+  const { title, html } = post.node;
 
   return (
     <Layout>
       <BlogStyle />
       <h1>{title}</h1>
-      <HasTranslationBox translatedLinks={translatedLinks} />
+      {/* <HasTranslationBox translatedLinks={translatedLinks} /> */}
 
       <article dangerouslySetInnerHTML={{ __html: html }} />
     </Layout>

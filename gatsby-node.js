@@ -6,87 +6,58 @@
 
 const path = require('path');
 const R = require('ramda');
+// const glob = require('glob');
 
-const {
-  removeTrailingSlash,
-  generateSlug,
-} = require('./src/utils/gatsby-node-helpers.js');
+const DEFAULT_LOCALE = 'pt-br';
 
-/* TODO: Make it dynamic */
-const enJson = require('./src/locales/en.json');
-const ptBrJson = require('./src/locales/pt-BR.json');
+const BLOGS_PATH = path.resolve(__dirname, './blog');
 
-const { supportedLocales } = require('./i18n');
+/* All file names at src/locales/ */
 
-const DEFAULT_LOCALE = 'pt-BR';
-
-const localeResources = {
-  en: enJson,
-  'pt-BR': ptBrJson,
-};
-
-exports.onCreatePage = ({ page, actions }) => {
-  const { createPage, deletePage } = actions;
-
-  // First delete the incoming page that was automatically created by Gatsby
-  // So everything in src/pages/
-  deletePage(page);
-
-  Object.keys(supportedLocales).map((lang) => {
-    const currentLangOpts = supportedLocales[lang];
-
-    const localizedPath = currentLangOpts.default
-      ? page.path
-      : `${currentLangOpts.path}${page.path}`;
-
-    return createPage({
-      ...page,
-      path: removeTrailingSlash(localizedPath),
-      context: {
-        ...page.context,
-        locale: lang,
-        dateFormat: currentLangOpts.dateFormat,
-        resources: localeResources,
-      },
-    });
-  });
-};
-
-exports.onCreateNode = ({ node, actions, getNode }) => {
+exports.onCreateNode = ({ node, actions }) => {
   const { createNodeField } = actions;
 
   if (node.internal.type === `MarkdownRemark`) {
     // Use path.basename
     // https://nodejs.org/api/path.html#path_path_basename_path_ext
-    const name = path.basename(node.fileAbsolutePath, `.md`);
+    const fileName = path.basename(node.fileAbsolutePath, `.md`);
+    /* Will be a absolute path to blog/* (e.g. <project-path>/blog/setup-react-project/ ) */
+    const postDirectoryPath = path.dirname(node.fileAbsolutePath);
+    /* Gets the relative nested folder path */
+    const folderPath = `/${path.relative(BLOGS_PATH, postDirectoryPath)}`;
+    /* if it's translated, will be index.<locale-prefix> (e.g. index.en) */
+    const isDefaultLocaleBlog = fileName === 'index';
 
-    // Check if post.name is "index" -- because that's the file for default language
-    // (In this case "en")
-    const isDefault = name === `index`;
+    const fileLocale = isDefaultLocaleBlog
+      ? DEFAULT_LOCALE
+      : fileName.split('.')[1]; /* index.en => en */
 
-    /* TODO: CHANGE THIS */
-    /* gets "en" from 'index.en' */
-    const lang = isDefault ? DEFAULT_LOCALE : name.split(`.`)[1];
+    createNodeField({
+      node,
+      name: `slug`,
+      value: folderPath,
+    });
 
-    const currentLocale = supportedLocales[lang];
+    createNodeField({
+      node,
+      name: `localizedSlug`,
+      value: `/${fileLocale}${folderPath}`,
+    });
 
-    const directoryName = path.basename(
-      path.dirname(R.path(['fileAbsolutePath'], node)),
-    );
+    createNodeField({ node, name: `locale`, value: fileLocale });
 
-    const slug = generateSlug({ lang: currentLocale, node, getNode });
-
-    createNodeField({ node, name: `slug`, value: slug });
-    createNodeField({ node, name: `locale`, value: lang });
-    createNodeField({ node, name: `isDefault`, value: isDefault });
-    createNodeField({ node, name: `directoryName`, value: directoryName });
+    createNodeField({
+      node,
+      name: `postDirectoryPath`,
+      value: postDirectoryPath,
+    });
   }
 };
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
-
   const blogPostComponent = path.resolve('./src/templates/blog-post.tsx');
+
   const result = await graphql(`
     {
       allMarkdownRemark(
@@ -97,14 +68,16 @@ exports.createPages = async ({ graphql, actions }) => {
           node {
             html
             timeToRead
-            fields {
-              slug
-              locale
-              directoryName
-            }
             frontmatter {
               title
-              date(formatString: "MMMM DD, YYYY")
+              date
+            }
+            fileAbsolutePath
+            fields {
+              locale
+              slug
+              localizedSlug
+              postDirectoryPath
             }
           }
         }
@@ -119,37 +92,50 @@ exports.createPages = async ({ graphql, actions }) => {
   // Create blog posts pages.
   const posts = result.data.allMarkdownRemark.edges;
 
-  const groupedByDirname = R.groupBy(function(post) {
-    return post.node.fields.directoryName;
-  }, posts);
+  /* It's important to notice that post X locale is 1->n
+  1 post could have n translations.
 
-  posts.forEach((post, index) => {
-    const previous = index === posts.length - 1 ? null : posts[index + 1].node;
-    const next = index === 0 ? null : posts[index - 1].node;
+  Otherwise it'll have the same posts but in different languages
+  */
+  const postsGroupedBySlug = R.groupBy((post) => post.node.fields.slug, posts);
 
-    const { fields, html, frontmatter } = post.node;
-    const { locale, slug, directoryName } = fields;
+  /* Tuple of {dirname, posts} */
+  const postEntries = Object.entries(postsGroupedBySlug);
 
-    const translatedLinks = groupedByDirname[directoryName]
-      .filter((post) => post.node.fields.locale !== locale)
-      .map((post) => ({
-        locale: post.node.fields.locale,
-        slug: post.node.fields.slug,
-      }));
+  postEntries.forEach(([slug, posts], index) => {
+    const previousIndex = index - 1;
+    const nextIndex = index + 1;
 
-    createPage({
-      path: slug,
-      component: blogPostComponent,
-      context: {
-        resources: localeResources,
-        translatedLinks,
-        locale,
-        html,
-        slug,
-        previous,
-        next,
-        ...frontmatter,
-      },
+    const previousPost = postEntries[previousIndex]
+      ? postEntries[previousIndex][1] // position 1 matches for post list
+      : null;
+
+    const nextPost = postEntries[nextIndex]
+      ? postEntries[nextIndex][1] // position 1 matches for post list
+      : null;
+
+    /* TODO: Extract this into a separeted function */
+    const postByLocale = posts.reduce((acc, post) => {
+      acc[post.node.fields.locale] = post;
+      return acc;
+    }, {});
+
+    const entries = Object.entries(postByLocale);
+
+    /* TODO: Change that implementation */
+    entries.forEach(([locale]) => {
+      const localizedSlug = `/${locale}${slug}`;
+      createPage({
+        path: localizedSlug,
+        component: blogPostComponent,
+        context: {
+          postByLocale,
+          localizedSlug,
+          slug,
+          previous: previousPost,
+          next: nextPost,
+        },
+      });
     });
   });
 };

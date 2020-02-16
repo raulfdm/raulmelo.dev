@@ -6,7 +6,7 @@ const DropdownMenuItemWrapper = styled.li`
 
   cursor: pointer;
   display: inline-block;
-  font-family: ${props => props.theme.font.contentSans};
+  font-family: ${(props) => props.theme.font.contentSans};
 
   font-size: 1.6rem;
 
@@ -21,17 +21,17 @@ const DropdownMenuItemWrapper = styled.li`
   flex: 1;
 
   &:not(:first-child) {
-    border-top: 1px solid ${props => props.theme.color.border};
+    border-top: 1px solid ${(props) => props.theme.color.border};
   }
 `;
 
-export const DropdownMenuItem = ({
-  children,
-  ...props
-}: {
+/* TODO: Refactor this props */
+type Props = {
   children: React.ReactChildren | React.ReactNode | string;
-  props: any;
-}) => {
+  onClick: () => void;
+};
+
+export const DropdownMenuItem: React.FC<Props> = ({ children, ...props }) => {
   return (
     <DropdownMenuItemWrapper {...props}>{children}</DropdownMenuItemWrapper>
   );

@@ -1,9 +1,6 @@
 import React from 'react';
 import Link from 'gatsby-link';
 import styled from 'styled-components';
-import { useTranslation } from 'react-i18next';
-
-import { supportedLocales } from '../../../i18n';
 
 type HasTranslationBoxProps = {
   translatedLinks: {
@@ -21,8 +18,10 @@ const Box = styled.div`
   font-size: 1.6rem;
 `;
 
-const HasTranslationBox = ({ translatedLinks }: HasTranslationBoxProps) => {
-  const { t } = useTranslation();
+const HasTranslationBox: React.FC<HasTranslationBoxProps> = ({
+  translatedLinks,
+}) => {
+  const t = (v) => v;
   return (
     <Box>
       {translatedLinks.length < 1 ? (
@@ -30,11 +29,11 @@ const HasTranslationBox = ({ translatedLinks }: HasTranslationBoxProps) => {
       ) : (
         <>
           <span>Tem traduções para os idiomas: </span>
-          {translatedLinks.map(link => (
+          {/* {translatedLinks.map((link) => (
             <Link key={link.locale} to={link.slug}>
               {supportedLocales[link.locale].displayName}
             </Link>
-          ))}
+          ))} */}
         </>
       )}
     </Box>

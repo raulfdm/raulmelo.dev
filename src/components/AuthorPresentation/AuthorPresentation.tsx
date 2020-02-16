@@ -1,10 +1,8 @@
 import React from 'react';
-
+import { FormattedMessage } from 'gatsby-plugin-intl';
 import styled, { css } from 'styled-components';
 import mediaQuery from 'styled-media-query';
 import { Twitter, Linkedin, Github } from 'styled-icons/boxicons-logos';
-
-import { useTranslation } from 'react-i18next';
 
 const Wrapper = styled.div`
   display: flex;
@@ -81,28 +79,31 @@ type Props = {
   className?: string;
   profilePic: string;
   name: string;
-  synopsis: string;
+  synopsis?: string;
   github: string;
   linkedIn: string;
   twitter: string;
 };
 
-const AuthorPresentation = ({
+const AuthorPresentation: React.FC<Props> = ({
   className,
   profilePic,
   name,
-  synopsis,
+  // synopsis,
   github,
   linkedIn,
   twitter,
-}: Props) => {
-  const { t } = useTranslation();
+}) => {
+  // const intl = useIntl();
 
   return (
     <Wrapper className={className}>
       <AuthorDataWrapper>
         <AuthorName>{name}</AuthorName>
-        <AuthorSynopsis>{t('author.description', synopsis)}</AuthorSynopsis>
+        {/* <AuthorSynopsis>{t('author.description', synopsis)}</AuthorSynopsis> */}
+        <AuthorSynopsis>
+          <FormattedMessage id="author.description" />
+        </AuthorSynopsis>
         <SocialWrapper>
           {github && (
             <SocialLink href={github}>

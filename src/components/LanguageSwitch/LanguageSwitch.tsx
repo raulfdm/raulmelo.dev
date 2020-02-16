@@ -1,21 +1,20 @@
 import React from 'react';
-import i18next from 'i18next';
 import { Translate } from 'styled-icons/material/Translate';
+import { changeLocale } from 'gatsby-plugin-intl';
 
 import { DropdownMenu, DropdownMenuItem } from '../DropdownMenu';
 import { MenuButton } from '../MenuBar';
-import { useLocale } from '../../utils/LocaleContext';
+import { LOCALES } from '../../enums/locales';
 
-export const LanguageSwitch = () => {
-  const { changeLocale, SupportedLocales } = useLocale();
+export const LanguageSwitch: React.FC = () => {
   return (
     <DropdownMenu
       items={
         <>
-          <DropdownMenuItem onClick={() => changeLocale(SupportedLocales.PT)}>
+          <DropdownMenuItem onClick={() => changeLocale(LOCALES.PT)}>
             PT
           </DropdownMenuItem>
-          <DropdownMenuItem onClick={() => changeLocale(SupportedLocales.EN)}>
+          <DropdownMenuItem onClick={() => changeLocale(LOCALES.EN)}>
             EN
           </DropdownMenuItem>
         </>
@@ -24,7 +23,7 @@ export const LanguageSwitch = () => {
       {({ toggleDropdown }) => {
         return (
           <MenuButton onClick={toggleDropdown}>
-            <Translate size={21} />
+            <Translate size={21} crossOrigin />
           </MenuButton>
         );
       }}

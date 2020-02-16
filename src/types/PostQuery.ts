@@ -11,6 +11,8 @@ export type QueryNode = {
   timeToRead: number;
   fields: {
     slug: string;
+    locale: string;
+    localizedSlug: string;
   };
   frontmatter: Frontmatter;
 };
