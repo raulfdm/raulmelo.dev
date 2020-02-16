@@ -32,5 +32,11 @@ module.exports = {
         'react/prop-types': 'warn',
       },
     },
+    {
+      files: ['*.stories.tsx'],
+      rules: {
+        '@typescript-eslint/explicit-function-return-type': 0,
+      },
+    },
   ],
 };
