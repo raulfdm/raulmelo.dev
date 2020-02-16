@@ -1,19 +1,20 @@
 import { useEffect, useRef, cloneElement } from 'react';
 
-export const ClickOutside = ({
+type ClickOutsideProps = {
+  handleClickOutside?: (event: Event) => void;
+  children: React.ReactHTMLElement<HTMLElement>;
+};
+
+export const ClickOutside: React.FC<ClickOutsideProps> = ({
   handleClickOutside,
   children,
-}: {
-  handleClickOutside?: (event: Event) => void;
-  children: any;
 }) => {
   const childRef = useRef(null);
 
-  const onClickOutside = (event: Event) => {
+  const onClickOutside = (event: Event): void => {
     if (childRef.current && !childRef.current.contains(event.target)) {
-      return handleClickOutside(event);
+      handleClickOutside(event);
     }
-    return null;
   };
 
   useEffect(() => {
