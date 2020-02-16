@@ -2,7 +2,6 @@ import React from 'react';
 import { css, createGlobalStyle } from 'styled-components';
 
 import Layout from '../components/Layout';
-import HasTranslationBox from '../components/HasTranslationBox';
 
 type PostProps = {
   pageContext: {
@@ -115,7 +114,6 @@ const Post: React.FC<PostProps> = ({ pageContext }) => {
     <Layout>
       <BlogStyle />
       <h1>{title}</h1>
-      {/* <HasTranslationBox translatedLinks={translatedLinks} /> */}
 
       <article dangerouslySetInnerHTML={{ __html: html }} />
     </Layout>
