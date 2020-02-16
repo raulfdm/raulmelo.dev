@@ -16,7 +16,7 @@ declare module 'styled-components' {
       font: string;
       fontMedium: string;
       fontLight: string;
-      border: string;
+      // border: string;
       shadow: string;
     };
   }
