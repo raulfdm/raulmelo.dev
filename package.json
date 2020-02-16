@@ -18,7 +18,9 @@
     "prestart": "yarn build",
     "start": "gatsby serve",
     "storybook": "start-storybook -p 6006",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "ts": "tsc --noEmit",
+    "eslint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint": "npm-run-all eslint ts"
   },
   "dependencies": {
     "gatsby": "^2.19.12",
