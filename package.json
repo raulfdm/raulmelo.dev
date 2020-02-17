@@ -22,6 +22,7 @@
   "dependencies": {
     "gatsby": "^2.19.18",
     "gatsby-image": "^2.2.41",
+    "gatsby-plugin-algolia-search": "^0.5.6",
     "gatsby-plugin-i18n": "^1.0.1",
     "gatsby-plugin-manifest": "^2.2.41",
     "gatsby-plugin-offline": "^3.0.35",
@@ -59,6 +60,7 @@
     "babel-plugin-styled-components": "^1.10.7",
     "babel-preset-gatsby": "^0.2.29",
     "babel-preset-react-app": "^9.1.1",
+    "dotenv": "^8.2.0",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-jest": "^23.7.0",
