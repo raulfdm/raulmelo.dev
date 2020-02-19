@@ -23,7 +23,7 @@ export const LanguageSwitch: React.FC = () => {
       {({ toggleDropdown }) => {
         return (
           <MenuButton onClick={toggleDropdown}>
-            <Translate size={21} crossOrigin />
+            <Translate size={21} />
           </MenuButton>
         );
       }}

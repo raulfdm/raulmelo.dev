@@ -13,8 +13,6 @@ const ThemeSwitch: React.FC = () => {
 
   return (
     <MenuButton onClick={toggleTheme}>
-      {/* 
-      // @ts-ignore */}
       <Icon size={21} />
     </MenuButton>
   );
