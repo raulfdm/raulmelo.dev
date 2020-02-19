@@ -1,6 +1,6 @@
 import React from 'react';
 import { FormattedMessage } from 'gatsby-plugin-intl';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import mediaQuery from 'styled-media-query';
 import { Twitter, Linkedin, Github } from 'styled-icons/boxicons-logos';
 
@@ -8,21 +8,19 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column-reverse;
   justify-content: space-between;
-  // @ts-ignore
-  ${mediaQuery.greaterThan('medium')(css`
+  ${mediaQuery.greaterThan('medium')`
     flex-direction: row;
-  `)}
+  `}
 `;
 
 const ImageWrapper = styled.div`
   max-width: 8rem;
   margin-bottom: 2rem;
-  // @ts-ignore
-  ${mediaQuery.greaterThan('medium')(css`
+  ${mediaQuery.greaterThan('medium')`
     max-width: 12.8rem;
     margin-left: 4rem;
     margin-bottom: 0;
-  `)}
+  `}
 `;
 
 const Image = styled.img`
@@ -107,22 +105,16 @@ const AuthorPresentation: React.FC<Props> = ({
         <SocialWrapper>
           {github && (
             <SocialLink href={github}>
-              {/* 
-              // @ts-ignore */}
               <Github size={21} />
             </SocialLink>
           )}
           {twitter && (
             <SocialLink href={twitter}>
-              {/* 
-              // @ts-ignore */}
               <Twitter size={21} />
             </SocialLink>
           )}
           {linkedIn && (
             <SocialLink href={linkedIn}>
-              {/* 
-              // @ts-ignore */}
               <Linkedin size={21} />
             </SocialLink>
           )}

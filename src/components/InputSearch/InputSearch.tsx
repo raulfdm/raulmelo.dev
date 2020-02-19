@@ -41,8 +41,6 @@ const InputSearch: React.FC<Props> = ({ className, onChange, placeholder }) => {
     <ClickOutside handleClickOutside={() => setShowInput(false)}>
       <InputWrapper className={className}>
         <MenuButton onClick={() => setShowInput(!showInput)}>
-          {/* 
-              // @ts-ignore */}
           <SearchIcon size={24} />
         </MenuButton>
 
