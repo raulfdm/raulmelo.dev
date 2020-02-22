@@ -8,5 +8,9 @@
   "blog": {
     "noTranslation": "Esse artigo não possui tradução",
     "readTime": "{minutes} min de leitura"
+  },
+  "search": {
+    "input": "O que está procurando?",
+    "stats": "{results, plural, one {# resultado} other {# resultados}} encontrados em {milliseconds}ms"
   }
 }
