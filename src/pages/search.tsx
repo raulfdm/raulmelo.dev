@@ -3,6 +3,7 @@ import algoliaSearch from 'algoliasearch/lite';
 import { InstantSearch, SearchBox, Hits, Stats } from 'react-instantsearch-dom';
 import styled from 'styled-components';
 import { useIntl, defineMessages } from 'gatsby-plugin-intl';
+import { Algolia } from 'styled-icons/boxicons-logos/Algolia';
 
 import { HitAlgolia } from '../types';
 import Layout from '../components/Layout';
@@ -70,6 +71,12 @@ const SearchBoxWrapper = styled.div`
   /* TODO: make 20px when "mobile" */
 `;
 
+const PoweredBy = styled.a`
+  color: inherit;
+  display: flex;
+  justify-content: end;
+`;
+
 const copies = defineMessages({
   stats: {
     id: 'search.stats',
@@ -119,6 +126,9 @@ const SearchPage: React.FC = () => {
               />
             )}
           />
+          <PoweredBy href="https://www.algolia.com/">
+            Powered by <Algolia size="2rem" color="#5468ff" /> Algolia
+          </PoweredBy>
         </InstantSearch>
       </SearchWrapper>
     </Layout>
