@@ -2,10 +2,10 @@ import React from 'react';
 import Link from 'gatsby-link';
 import styled from 'styled-components';
 import mediaQuery from 'styled-media-query';
+import { Search as SearchIcon } from 'styled-icons/evil/Search';
 
 import { LanguageSwitch } from '../LanguageSwitch';
 import { Container } from '../ui';
-import InputSearch from '../InputSearch';
 import ThemeSwitch from '../ThemeSwitch';
 import LogoSvg from '../LogoSvg';
 
@@ -22,6 +22,10 @@ const MenuBarWrapper = styled.nav`
   height: 6.5rem;
   z-index: 500;
   background-color: ${({ theme }) => theme.color.background};
+
+  a {
+    color: inherit;
+  }
 `;
 
 const CustomContainer = styled(Container)`
@@ -53,7 +57,9 @@ const MenuBar: React.FC = () => {
               <LogoSvg />
             </Link>
           </LogoWrapper>
-          <InputSearch />
+          <Link to="/search">
+            <SearchIcon size={24} />
+          </Link>
           <ThemeSwitch />
           <LanguageSwitch />
         </CustomContainer>
