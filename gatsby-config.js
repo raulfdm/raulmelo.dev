@@ -133,5 +133,24 @@ module.exports = {
         matchFields: ['slug', 'modified'],
       },
     },
+    {
+      resolve: `gatsby-remark-prismjs`,
+      options: {
+        aliases: {
+          env: `bash`,
+          gitignore: `none`,
+          gql: `graphql`,
+          mdx: `markdown`,
+        },
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: ['Fira Code'],
+        },
+      },
+    },
   ],
 };
