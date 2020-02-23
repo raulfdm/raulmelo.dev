@@ -1,7 +1,23 @@
 import React from 'react';
+import Img from 'gatsby-image';
+import styled from 'styled-components';
 
+import { ThemeProvider } from '../config/theme';
 import Layout from '../components/Layout';
 import { BlogGlobalStyle } from '../styles/blogPost';
+import { GlobalStyles } from '../styles';
+import { Container } from '../components/Ui';
+import { MenuBar } from '../components/MenuBar';
+
+const StyledImg = styled(Img)`
+  max-height: 400px;
+  /* TODO: double check this magic number */
+  margin-top: 42px;
+`;
+
+const ImgWrapper = styled(Container)`
+  max-width: 1192px;
+`;
 
 type PostProps = {
   pageContext: {
@@ -33,15 +49,24 @@ const Post: React.FC<PostProps> = ({ pageContext }) => {
     );
   }
 
-  const { title, html } = post.node;
+  const { html, frontmatter } = post.node;
+  const { image, title } = frontmatter;
 
   return (
-    <Layout>
+    <ThemeProvider>
+      <GlobalStyles />
       <BlogGlobalStyle />
-      <h1>{title}</h1>
-
-      <article dangerouslySetInnerHTML={{ __html: html }} />
-    </Layout>
+      <MenuBar />
+      <Container>
+        <h1>{title}</h1>
+      </Container>
+      <ImgWrapper>
+        <StyledImg fluid={image.childImageSharp.fluid} />
+      </ImgWrapper>
+      <Container>
+        <article dangerouslySetInnerHTML={{ __html: html }} />
+      </Container>
+    </ThemeProvider>
   );
 };
 

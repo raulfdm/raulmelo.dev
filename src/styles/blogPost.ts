@@ -26,8 +26,8 @@ const global = css`
       color: inherit;
       background-image: linear-gradient(
         to right,
-        rgba(0, 0, 0, 0.84) 100%,
-        rgba(0, 0, 0, 0.84) 0
+        ${({ theme }) => theme.color.font} 100%,
+        ${({ theme }) => theme.color.font} 0
       );
       background-size: 1px 1px;
       background-position: 0 calc(1em + 1px);
@@ -37,7 +37,7 @@ const global = css`
   blockquote {
     margin-left: -2rem;
     padding-left: 2.3rem;
-    box-shadow: inset 3px 0 0 0 rgba(0, 0, 0, 0.84);
+    box-shadow: inset 3px 0 0 0 ${({ theme }) => theme.color.font};
     p {
       font-style: italic;
     }
@@ -69,6 +69,10 @@ const global = css`
   h2 {
     font-size: 3.4rem;
     font-weight: 600;
+  }
+
+  a {
+    text-decoration: ${({ theme }) => theme.color.font};
   }
 `;
 

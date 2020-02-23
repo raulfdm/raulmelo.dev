@@ -36,6 +36,7 @@
     "gatsby-transformer-sharp": "^2.3.14",
     "husky": "^4.2.3",
     "netlify-cms-app": "^2.11.20",
+    "polished": "^3.4.4",
     "pretty-quick": "^2.0.1",
     "ramda": "^0.27.0",
     "react": "^16.12.0",
@@ -70,6 +71,7 @@
     "eslint-plugin-react": "^7.18.3",
     "eslint-plugin-react-hooks": "^2.4.0",
     "gatsby-plugin-intl": "^0.3.2",
+    "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-remark-copy-linked-files": "^2.1.37",
     "gatsby-remark-images": "^3.1.44",
     "gatsby-remark-prismjs": "^3.3.31",
@@ -82,6 +84,7 @@
     "prismjs": "^1.19.0",
     "react-docgen-typescript-loader": "^3.6.0",
     "rimraf": "^3.0.2",
+    "tslib": "^1.11.0",
     "typescript": "^3.7.5"
   },
   "husky": {

@@ -71,6 +71,25 @@ exports.createPages = async ({ graphql, actions }) => {
             frontmatter {
               title
               date
+              categories
+              image {
+                childImageSharp {
+                  fluid {
+                    base64
+                    tracedSVG
+                    srcWebp
+                    srcSetWebp
+                    srcSet
+                    src
+                    sizes
+                    presentationWidth
+                    presentationHeight
+                    originalName
+                    originalImg
+                    aspectRatio
+                  }
+                }
+              }
             }
             fileAbsolutePath
             fields {

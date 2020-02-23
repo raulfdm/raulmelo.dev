@@ -24,6 +24,5 @@
     "suppressImplicitAnyIndexErrors": true,
     "target": "es5"
   },
-  "include": ["./**/*.ts"],
-  "exclude": [".gitignore"]
+  "include": ["src/**/*.ts"]
 }
