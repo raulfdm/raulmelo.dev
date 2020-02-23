@@ -2,12 +2,13 @@ import React from 'react';
 import * as R from 'ramda';
 import styled from 'styled-components';
 import { FormattedMessage, useIntl } from 'gatsby-plugin-intl';
+import { graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
+import { AllMarkdownRemark, PostNode } from '../types/GraphQL';
 import AuthorPresentation from '../components/AuthorPresentation';
 import { PostCard } from '../components/PostCard';
-
-import { basicPostData } from '../data/posts';
+import { getPostsBySlug } from '../utils/';
 
 const LatestMessage = styled.p`
   letter-spacing: -0.32px;
@@ -18,22 +19,19 @@ const LatestMessage = styled.p`
   padding-bottom: 1.2rem;
 `;
 
-const PageContentWrapper = styled.main`
-  .customAuthorPresentation {
-    margin-bottom: 3rem;
-  }
+const StyledAuthorPresentation = styled(AuthorPresentation)`
+  margin-bottom: 3rem;
 `;
 
-const Home: React.FC = () => {
+const Home: React.FC<{ data: AllMarkdownRemark }> = ({ data }) => {
   const intl = useIntl();
-  const postBySlug = basicPostData();
+
+  const postBySlug = getPostsBySlug(data.allMarkdownRemark.edges);
 
   return (
     <Layout>
-      <PageContentWrapper>
-        <AuthorPresentation
-          /* TODO: use as styled */
-          className="customAuthorPresentation"
+      <main>
+        <StyledAuthorPresentation
           /* TODO: put all those infos into query */
           name="Raul de Melo"
           profilePic="https://miro.medium.com/fit/c/256/256/1*6jtMoNvX_MHslzBLP4aM9g.jpeg"
@@ -44,30 +42,75 @@ const Home: React.FC = () => {
         <LatestMessage>
           <FormattedMessage id="home.latest" />
         </LatestMessage>
-        {/* TODO: NOTE TO MYSELF: CONTROL YOURSELF THE PATH WITH LOCALE */}
         {postBySlug.map(([_, postsByLocale]) => {
           /* TODO: Move this into a helper file */
-
           const singlePostLocale = R.keys(postsByLocale);
-          const postForCurrentLocale =
+          const { node: post }: { node: PostNode } =
             postsByLocale[intl.locale] ||
             R.path(singlePostLocale, postsByLocale);
 
           return (
             <PostCard
-              key={postForCurrentLocale.id}
-              description={postForCurrentLocale.description}
-              title={postForCurrentLocale.title}
-              date={postForCurrentLocale.date}
-              timeToRead={postForCurrentLocale.timeToRead}
-              image={postForCurrentLocale.imgSrc}
-              slug={postForCurrentLocale.localizedSlug}
+              key={post.id}
+              description={post.frontmatter.description}
+              title={post.frontmatter.title}
+              date={post.frontmatter.date}
+              timeToRead={post.timeToRead}
+              image={post.frontmatter.image.childImageSharp.fluid}
+              slug={post.fields.localizedSlug}
             />
           );
         })}
-      </PageContentWrapper>
+      </main>
     </Layout>
   );
 };
+
+export const query = graphql`
+  {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      limit: 1000
+    ) {
+      edges {
+        node {
+          id
+          excerpt
+          timeToRead
+          frontmatter {
+            title
+            date
+            categories
+            description
+            image {
+              childImageSharp {
+                fluid {
+                  base64
+                  tracedSVG
+                  srcWebp
+                  srcSetWebp
+                  srcSet
+                  src
+                  sizes
+                  presentationWidth
+                  presentationHeight
+                  originalName
+                  originalImg
+                  aspectRatio
+                }
+              }
+            }
+          }
+          fileAbsolutePath
+          fields {
+            locale
+            slug
+            localizedSlug
+          }
+        }
+      }
+    }
+  }
+`;
 
 export default Home;
