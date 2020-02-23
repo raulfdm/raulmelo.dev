@@ -70,6 +70,10 @@ const global = css`
     font-size: 3.4rem;
     font-weight: 600;
   }
+
+  a {
+    text-decoration: ${({ theme }) => theme.color.font};
+  }
 `;
 
 export const BlogGlobalStyle = createGlobalStyle`
