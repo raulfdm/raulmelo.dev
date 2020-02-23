@@ -1,18 +1,12 @@
 import styled from 'styled-components';
+import Img from 'gatsby-image';
 
 export const ImageContainer = styled.div`
   position: relative;
-  padding-bottom: 30%;
 `;
 
-export const Image = styled.img`
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  background-color: #fff;
-  padding: 1rem;
+export const Image = styled(Img)`
+  max-height: 210px;
 `;
 
 export const Title = styled.h2`

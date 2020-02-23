@@ -1,13 +1,14 @@
 import React from 'react';
 import { FormattedMessage, FormattedDate } from 'gatsby-plugin-intl';
 import { Link } from 'gatsby';
-import * as S from './styled';
+import { FluidObject } from 'gatsby-image';
 
+import * as S from './styled';
 import { Card } from '../Ui';
 
 type PostCardProps = {
   title: string;
-  image: string;
+  image: FluidObject;
   description: string;
   slug: string;
   date?: string;
@@ -27,7 +28,7 @@ export const PostCard: React.FC<PostCardProps> = ({
     <Card>
       <Link to={slug}>
         <S.ImageContainer>
-          <S.Image src={image} width={700} height={210} />
+          <S.Image fluid={image} />
         </S.ImageContainer>
         <S.Title>{title}</S.Title>
         <S.Description>{description}</S.Description>
