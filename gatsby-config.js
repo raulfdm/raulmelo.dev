@@ -10,6 +10,7 @@ const myQuery = `{
         objectID: id
         excerpt(pruneLength: 5000)
         fields {
+          locale
           slug
           localizedSlug
         }
@@ -18,7 +19,22 @@ const myQuery = `{
           title
           description
           image {
-            publicURL
+            childImageSharp {
+              fluid {
+                base64
+                tracedSVG
+                srcWebp
+                srcSetWebp
+                srcSet
+                src
+                sizes
+                presentationWidth
+                presentationHeight
+                originalName
+                originalImg
+                aspectRatio
+              }
+            }
           }
         }
       }

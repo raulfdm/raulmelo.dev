@@ -119,7 +119,7 @@ const SearchPage: React.FC = () => {
               <PostCard
                 description={hit.description}
                 slug={hit.fields.localizedSlug}
-                image={hit.image.publicURL}
+                image={hit.image.childImageSharp.fluid}
                 title={hit.title}
                 timeToRead={hit.timeToRead}
                 date={hit.date}

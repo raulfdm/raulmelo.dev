@@ -1,6 +1,6 @@
 import { FluidObject } from 'gatsby-image';
 
-type FrontMatterImage = {
+export type FrontMatterImage = {
   childImageSharp: {
     fluid: FluidObject;
   };
