@@ -1,61 +1,11 @@
 import React from 'react';
 import { FormattedMessage, FormattedDate } from 'gatsby-plugin-intl';
 import { Link } from 'gatsby';
-import styled from 'styled-components';
+import * as S from './styled';
 
-import { Card as CardWrapper } from '../ui';
+import { Card } from '../ui';
 
-/* TODO: Move those styles to styled folder */
-const ImageContainer = styled.div`
-  position: relative;
-  padding-bottom: 30%;
-`;
-
-const Image = styled.img`
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  background-color: #fff;
-  padding: 1rem;
-`;
-
-const Title = styled.h2`
-  margin-top: 1.8rem;
-  font-size: 3.4rem;
-  font-family: ${({ theme }) => theme.font.contentSans};
-  font-weight: 600;
-  color: ${({ theme }) => theme.color.font};
-  letter-spacing: -0.748px;
-`;
-
-const Description = styled.p`
-  font-size: 2.4rem;
-  margin-top: 1rem;
-  color: ${({ theme }) => theme.color.fontLight};
-  font-family: ${({ theme }) => theme.font.contentSans};
-  font-weight: 300;
-`;
-
-const MetaWrapper = styled.div`
-  font-family: ${({ theme }) => theme.font.contentSans};
-  font-size: 1.6rem;
-  font-weight: 300;
-  color: ${({ theme }) => theme.color.font};
-
-  display: flex;
-
-  margin-top: 2rem;
-  justify-content: flex-end;
-  align-items: center;
-`;
-
-const MetaText = styled.p`
-  margin-left: 8px;
-`;
-
-type PostCard = {
+type PostCardProps = {
   title: string;
   image: string;
   description: string;
@@ -65,7 +15,7 @@ type PostCard = {
 };
 
 /* TODO: Accept post card instead destructured props */
-const Card: React.FC<PostCard> = ({
+export const PostCard: React.FC<PostCardProps> = ({
   image,
   title,
   description,
@@ -74,37 +24,35 @@ const Card: React.FC<PostCard> = ({
   slug,
 }) => {
   return (
-    <CardWrapper>
+    <Card>
       <Link to={slug}>
-        <ImageContainer>
-          <Image src={image} width={700} height={210} />
-        </ImageContainer>
-        <Title>{title}</Title>
-        <Description>{description}</Description>
+        <S.ImageContainer>
+          <S.Image src={image} width={700} height={210} />
+        </S.ImageContainer>
+        <S.Title>{title}</S.Title>
+        <S.Description>{description}</S.Description>
       </Link>
-      <MetaWrapper>
+      <S.MetaWrapper>
         {date && (
-          <MetaText>
+          <S.MetaText>
             <FormattedDate
               value={new Date(date)}
               year="numeric"
               month="short"
               day="2-digit"
             />
-          </MetaText>
+          </S.MetaText>
         )}
-        <MetaText>.</MetaText>
-        <MetaText>
+        <S.MetaText>.</S.MetaText>
+        <S.MetaText>
           <FormattedMessage
             id="blog.readTime"
             values={{
               minutes: timeToRead,
             }}
           />
-        </MetaText>
-      </MetaWrapper>
-    </CardWrapper>
+        </S.MetaText>
+      </S.MetaWrapper>
+    </Card>
   );
 };
-
-export default Card;
