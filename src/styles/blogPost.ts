@@ -1,4 +1,5 @@
 import { css, createGlobalStyle } from 'styled-components';
+import media from 'styled-media-query';
 
 const global = css`
   body {
@@ -12,6 +13,7 @@ const global = css`
     font-family: ${({ theme }) => theme.font.contentTitle};
     line-height: 4.8rem;
   }
+
   p {
     letter-spacing: -0.084px;
     margin-bottom: -8.28px;
@@ -34,6 +36,7 @@ const global = css`
       background-repeat: repeat-x;
     }
   }
+
   blockquote {
     margin-left: -2rem;
     padding-left: 2.3rem;
@@ -64,11 +67,36 @@ const global = css`
   h5,
   h6 {
     font-family: ${({ theme }) => theme.font.contentSans};
+    line-height: 1;
   }
 
   h2 {
     font-size: 3.4rem;
     font-weight: 600;
+  }
+
+  h1 + p,
+  h2 + p,
+  h3 + p,
+  h4 + p,
+  h5 + p,
+  h6 + p {
+    margin-top: 1.2rem;
+    ${media.greaterThan('small')`
+      margin-top: 1.8rem;
+    `}
+  }
+
+  p + h1,
+  p + h2,
+  p + h3,
+  p + h4,
+  p + h5,
+  p + h6 {
+    margin-top: 2.2rem;
+    ${media.greaterThan('small')`
+      margin-top: 3rem;
+    `}
   }
 
   a {
