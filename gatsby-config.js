@@ -18,24 +18,6 @@ const myQuery = `{
           date
           title
           description
-          image {
-            childImageSharp {
-              fluid(quality: 100, maxWidth: 1500, fit: CONTAIN) {
-                base64
-                tracedSVG
-                srcWebp
-                srcSetWebp
-                srcSet
-                src
-                sizes
-                presentationWidth
-                presentationHeight
-                originalName
-                originalImg
-                aspectRatio
-              }
-            }
-          }
         }
       }
     }

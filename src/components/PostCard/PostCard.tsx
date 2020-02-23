@@ -25,35 +25,38 @@ export const PostCard: React.FC<PostCardProps> = ({
   slug,
 }) => {
   return (
-    <Card>
-      <Link to={slug}>
-        <S.ImageContainer>
-          <S.Image fluid={image} />
-        </S.ImageContainer>
+    <Link to={slug}>
+      <Card>
+        {image && (
+          <S.ImageContainer>
+            <S.Image fluid={image} />
+          </S.ImageContainer>
+        )}
         <S.Title>{title}</S.Title>
         <S.Description>{description}</S.Description>
-      </Link>
-      <S.MetaWrapper>
-        {date && (
+
+        <S.MetaWrapper>
+          {date && (
+            <S.MetaText>
+              <FormattedDate
+                value={new Date(date)}
+                year="numeric"
+                month="short"
+                day="2-digit"
+              />
+            </S.MetaText>
+          )}
+          <S.MetaText>.</S.MetaText>
           <S.MetaText>
-            <FormattedDate
-              value={new Date(date)}
-              year="numeric"
-              month="short"
-              day="2-digit"
+            <FormattedMessage
+              id="blog.readTime"
+              values={{
+                minutes: timeToRead,
+              }}
             />
           </S.MetaText>
-        )}
-        <S.MetaText>.</S.MetaText>
-        <S.MetaText>
-          <FormattedMessage
-            id="blog.readTime"
-            values={{
-              minutes: timeToRead,
-            }}
-          />
-        </S.MetaText>
-      </S.MetaWrapper>
-    </Card>
+        </S.MetaWrapper>
+      </Card>
+    </Link>
   );
 };
