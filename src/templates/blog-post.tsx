@@ -17,6 +17,7 @@ const StyledImg = styled(Img)`
 
 const ImgWrapper = styled(Container)`
   max-width: 1192px;
+  padding-bottom: 7rem;
 `;
 
 type PostProps = {
