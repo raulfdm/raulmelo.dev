@@ -9,7 +9,7 @@
     "importHelpers": true,
     "incremental": true,
     "jsx": "react",
-    "lib": ["dom", "esnext"],
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "module": "esnext",
     "moduleResolution": "node",
     "noEmit": true,
@@ -17,17 +17,13 @@
     "noImplicitReturns": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "paths": {
-      "gatsby-plugin-intl": ["typings/gatsby-plugin-intl"]
-    },
     "rootDir": ".",
     "skipLibCheck": true,
     "sourceMap": true,
     "strict": true,
     "suppressImplicitAnyIndexErrors": true,
-    "target": "es5",
-    "typeRoots": ["typings", "node_modules/@types"]
+    "target": "es5"
   },
-  "include": ["src/**/*"],
+  "include": ["./**/*.ts"],
   "exclude": [".gitignore"]
 }
