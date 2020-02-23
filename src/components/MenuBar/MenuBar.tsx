@@ -6,7 +6,7 @@ import { Search as SearchIcon } from 'styled-icons/evil/Search';
 
 import { LanguageSwitch } from '../LanguageSwitch';
 import { Container } from '../ui';
-import ThemeSwitch from '../ThemeSwitch';
+import { ThemeSwitch } from '../ThemeSwitch';
 import LogoSvg from '../LogoSvg';
 
 const MenuBarWrapper = styled.nav`
