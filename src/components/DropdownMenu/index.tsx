@@ -1,3 +1,2 @@
 export * from './DropdownMenu';
-export * from './DropdownMenuItem';
-export * from './DropdownSeparator';
+export { DropdownSeparator, DropdownMenuItem } from './styled';

@@ -1,9 +1,9 @@
 import React from 'react';
 
-import MenuBar from './MenuBar';
+import { MenuBar } from './MenuBar';
 import { ThemeProvider } from '../config/theme';
-import { Container } from './ui';
-import { GlobalStyles } from '../config/globalStyle';
+import { Container } from './Ui';
+import { GlobalStyles } from '../styles';
 
 interface Props {
   children: React.ReactNode | React.ReactChildren;

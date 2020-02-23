@@ -1,12 +1,11 @@
 import React, { useContext } from 'react';
-
 import { Sun } from 'styled-icons/boxicons-solid/Sun';
 import { Moon } from 'styled-icons/boxicons-solid/Moon';
 
-import { ThemeContext } from '../../config/theme';
-import { MenuButton } from '../MenuBar';
+import { ThemeContext } from '../config/theme';
+import { MenuButton } from './MenuBar';
 
-const ThemeSwitch: React.FC = () => {
+export const ThemeSwitch: React.FC = () => {
   const { toggleTheme, isDarkTheme } = useContext(ThemeContext);
 
   const Icon = isDarkTheme ? Moon : Sun;
@@ -17,5 +16,3 @@ const ThemeSwitch: React.FC = () => {
     </MenuButton>
   );
 };
-
-export default ThemeSwitch;

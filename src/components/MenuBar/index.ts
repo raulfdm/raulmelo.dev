@@ -1,2 +1,2 @@
-export { default } from './MenuBar';
-export * from './MenuButton';
+export * from './MenuBar';
+export { MenuButton } from './styled';

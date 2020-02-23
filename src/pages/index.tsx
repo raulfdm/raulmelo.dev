@@ -5,7 +5,7 @@ import { FormattedMessage, useIntl } from 'gatsby-plugin-intl';
 
 import Layout from '../components/Layout';
 import AuthorPresentation from '../components/AuthorPresentation';
-import PostCard from '../components/PostCard';
+import { PostCard } from '../components/PostCard';
 
 import { basicPostData } from '../data/posts';
 

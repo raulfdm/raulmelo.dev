@@ -8,7 +8,7 @@ import { Algolia } from 'styled-icons/boxicons-logos/Algolia';
 import { HitAlgolia } from '../types';
 import Layout from '../components/Layout';
 import { algoliaConfig } from '../config/algolia';
-import PostCard from '../components/PostCard';
+import { PostCard } from '../components/PostCard';
 
 const searchClient = algoliaSearch(
   algoliaConfig.appId!,
