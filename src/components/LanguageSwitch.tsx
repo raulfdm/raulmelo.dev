@@ -2,9 +2,9 @@ import React from 'react';
 import { Translate } from 'styled-icons/material/Translate';
 import { changeLocale } from 'gatsby-plugin-intl';
 
-import { DropdownMenu, DropdownMenuItem } from '../DropdownMenu';
-import { MenuButton } from '../MenuBar';
-import { LOCALES } from '../../types/Locales';
+import { DropdownMenu, DropdownMenuItem } from './DropdownMenu';
+import { MenuButton } from './MenuBar';
+import { LOCALES } from '../types/Locales';
 
 export const LanguageSwitch: React.FC = () => {
   return (
