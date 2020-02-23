@@ -15,6 +15,7 @@
     "dev": "gatsby develop",
     "prestart": "yarn build",
     "start": "gatsby serve",
+    "test": "jest",
     "ts": "tsc --noEmit",
     "eslint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint": "npm-run-all eslint ts"
@@ -52,6 +53,7 @@
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@sub-tv/eslint-config": "^1.1.0",
     "@sub-tv/prettier-config": "^1.1.0",
+    "@types/jest": "^25.1.3",
     "@types/ramda": "^0.26.41",
     "@types/react-helmet": "^5.0.15",
     "@types/react-instantsearch-dom": "^5.2.6",
@@ -79,13 +81,15 @@
     "gatsby-remark-smartypants": "^2.1.21",
     "gatsby-transformer-remark": "^2.6.52",
     "glob": "^7.1.6",
+    "jest": "^25.1.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.19.1",
     "prismjs": "^1.19.0",
     "react-docgen-typescript-loader": "^3.6.0",
     "rimraf": "^3.0.2",
+    "ts-jest": "^25.2.1",
     "tslib": "^1.11.0",
-    "typescript": "^3.7.5"
+    "typescript": "^3.8.2"
   },
   "husky": {
     "hooks": {
