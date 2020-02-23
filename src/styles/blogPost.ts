@@ -1,5 +1,6 @@
 import { css, createGlobalStyle } from 'styled-components';
 import media from 'styled-media-query';
+import { transparentize } from 'polished';
 
 const global = css`
   body {
@@ -105,6 +106,16 @@ const global = css`
 
   .twitter-tweet {
     margin: 4rem auto !important;
+  }
+
+  .gatsby-resp-image-figcaption {
+    font-family: ${({ theme }) => theme.font.contentSans};
+    text-align: center;
+    margin: 0;
+    margin-top: 1rem;
+    line-height: 1.4;
+    font-size: 1.6rem;
+    color: ${transparentize(0.4, '#000')};
   }
 `;
 
