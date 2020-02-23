@@ -61,6 +61,7 @@
     "@typescript-eslint/parser": "^2.20.0",
     "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.0.6",
+    "babel-plugin-remove-graphql-queries": "^2.7.23",
     "babel-plugin-styled-components": "^1.10.7",
     "babel-preset-gatsby": "^0.2.29",
     "babel-preset-react-app": "^9.1.1",

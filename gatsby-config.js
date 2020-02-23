@@ -20,7 +20,7 @@ const myQuery = `{
           description
           image {
             childImageSharp {
-              fluid {
+              fluid(quality: 100, maxWidth: 1500, fit: CONTAIN) {
                 base64
                 tracedSVG
                 srcWebp
@@ -109,7 +109,11 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590,
+              maxWidth: 780,
+              // https://github.com/gatsbyjs/gatsby/issues/20000
+              // markdownCaptions: true,
+              showCaptions: true,
+              quality: 100,
             },
           },
           {
