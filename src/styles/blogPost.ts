@@ -74,6 +74,10 @@ const global = css`
   a {
     text-decoration: ${({ theme }) => theme.color.font};
   }
+
+  .twitter-tweet {
+    margin: 4rem auto !important;
+  }
 `;
 
 export const BlogGlobalStyle = createGlobalStyle`

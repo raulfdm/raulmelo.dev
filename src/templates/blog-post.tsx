@@ -36,6 +36,13 @@ type PostProps = {
 };
 
 const Post: React.FC<PostProps> = ({ pageContext }) => {
+  React.useEffect(() => {
+    /* This loads all widgets from twitter if exists. 
+    It's loaded by html.tsx (data-testid="twitter-script")
+    */
+    // @ts-ignore
+    window.twttr.widgets.load();
+  }, []);
   const { postByLocale, intl } = pageContext;
 
   const post = postByLocale[intl.language];
