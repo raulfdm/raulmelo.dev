@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import mediaQuery from 'styled-media-query';
 
-import { Container } from '../ui';
+import { Container } from '../Ui';
 
 export const MenuBarWrapper = styled.nav`
   box-shadow: 0 4px 12px 0 ${({ theme }) => theme.color.shadowMenu};

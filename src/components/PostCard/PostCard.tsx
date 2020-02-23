@@ -3,7 +3,7 @@ import { FormattedMessage, FormattedDate } from 'gatsby-plugin-intl';
 import { Link } from 'gatsby';
 import * as S from './styled';
 
-import { Card } from '../ui';
+import { Card } from '../Ui';
 
 type PostCardProps = {
   title: string;

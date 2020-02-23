@@ -2,7 +2,7 @@ import React from 'react';
 
 import { MenuBar } from './MenuBar';
 import { ThemeProvider } from '../config/theme';
-import { Container } from './ui';
+import { Container } from './Ui';
 import { GlobalStyles } from '../styles';
 
 interface Props {
