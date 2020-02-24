@@ -1,6 +1,6 @@
 ---
 title: 'Coisas que eu não sei em TI e no geral (2018)'
-date: '2019-03-02'
+date: '2019-01-04'
 image: assets/featured-image.jpg
 description: ''
 categories:
