@@ -4,16 +4,34 @@ import { InstantSearch, SearchBox, Hits, Stats } from 'react-instantsearch-dom';
 import styled from 'styled-components';
 import { useIntl, defineMessages } from 'gatsby-plugin-intl';
 import { Algolia } from 'styled-icons/boxicons-logos/Algolia';
+import debounce from 'debounce-promise';
 
-import { HitAlgolia } from '../types';
+import { HitAlgolia, RequestsAlgoliaClient } from '../types';
 import Layout from '../components/Layout';
 import { algoliaConfig } from '../config/algolia';
 import { PostCard } from '../components/PostCard';
 
-const searchClient = algoliaSearch(
+const algoliaClient = algoliaSearch(
   algoliaConfig.appId!,
   algoliaConfig.searchOnlyApiKey!,
 );
+
+const searchClient = {
+  search: debounce((requests: RequestsAlgoliaClient) => {
+    if (requests.every(({ params }) => !params.query)) {
+      return Promise.resolve({
+        results: requests.map(() => ({
+          hits: [],
+          nbHits: 0,
+          nbPages: 0,
+          processingTimeMS: 0,
+        })),
+      });
+    }
+
+    return algoliaClient.search(requests);
+  }, 500),
+};
 
 const SearchWrapper = styled.main`
   font-family: ${({ theme }) => theme.font.contentSans};
