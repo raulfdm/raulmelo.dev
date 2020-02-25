@@ -1,6 +1,5 @@
 import { css, createGlobalStyle } from 'styled-components';
 import media from 'styled-media-query';
-import { transparentize } from 'polished';
 
 const global = css`
   body {
@@ -115,7 +114,8 @@ const global = css`
     margin-top: 1rem;
     line-height: 1.4;
     font-size: 1.6rem;
-    color: ${transparentize(0.4, '#000')};
+    color: ${({ theme }) => theme.color.font};
+    opacity: 0.6;
   }
 `;
 
