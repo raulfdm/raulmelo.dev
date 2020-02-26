@@ -1,15 +1,16 @@
 import styled from 'styled-components';
 import mediaQuery from 'styled-media-query';
+import { animated } from 'react-spring';
 
 import { Container } from '../Ui';
 
-export const MenuBarWrapper = styled.nav`
+export const MenuBarWrapper = styled(animated.nav)`
   box-shadow: 0 4px 12px 0 ${({ theme }) => theme.color.shadowMenu};
 
   ${({ theme }) =>
     theme.isDarkTheme && `border-bottom: 1px solid ${theme.color.border}`};
 
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
