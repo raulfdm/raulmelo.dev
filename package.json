@@ -58,7 +58,7 @@
     "@types/react-helmet": "^5.0.15",
     "@types/react-instantsearch-dom": "^5.2.6",
     "@types/react-intl": "^3.0.0",
-    "@types/styled-components": "^4.4.3",
+    "@types/styled-components": "^5.0.1",
     "@typescript-eslint/eslint-plugin": "^2.20.0",
     "@typescript-eslint/parser": "^2.20.0",
     "awesome-typescript-loader": "^5.2.1",
