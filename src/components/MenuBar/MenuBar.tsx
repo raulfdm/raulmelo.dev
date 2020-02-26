@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'gatsby-link';
-import { useScroll } from 'react-use-gesture';
-import { useSpring } from 'react-spring';
+import { useViewportScroll, useMotionValue } from 'framer-motion';
 import { Search as SearchIcon } from 'styled-icons/evil/Search';
 
 import { LanguageSwitch } from '../LanguageSwitch';
@@ -11,41 +10,47 @@ import * as S from './styled';
 
 export const MenuBar: React.FC = () => {
   const [showMenu, setShowMenu] = React.useState(true);
+  const previousPosition = useMotionValue(0);
+  const { scrollY } = useViewportScroll();
 
-  const bind = useScroll(
-    ({ direction: [_, y] }) => {
-      /* -1 means scrolling up  */
-      const nextShowMenuState = y === -1;
+  React.useEffect(
+    () =>
+      scrollY.onChange((nextYPosition) => {
+        const yDifference = previousPosition.get() - nextYPosition;
+        /* Converts from negative to positive */
+        const absoluteY = Math.abs(yDifference);
 
-      /* Avoid multiple useless set state */
-      if (nextShowMenuState === showMenu) return;
+        /* I only want to the computation from 10 by 10
+        Otherwise it'll toggle too fast*/
+        if (absoluteY < 10) {
+          return;
+        }
 
-      setShowMenu(nextShowMenuState);
-    },
-    /* This validation is required to bypass gatsby build.
-    However client-side will works fine */
-    { domTarget: typeof window !== 'undefined' ? window : undefined },
+        /* when previous position - next position is:
+          - negative => it means scrolling down => I want to hide
+          - positive => it means scrolling up => I want to show
+         */
+
+        const shouldShow = yDifference > 0;
+        setShowMenu(shouldShow);
+        /* I need to save nextPosition to the next comparison */
+        previousPosition.set(nextYPosition);
+      }),
+    [scrollY],
   );
 
-  /* Not using First class saves TS warnings about the returning type
-  for the cases "window" isn't defined (aka building time)
-  */
-  React.useEffect(() => {
-    bind();
-  }, [bind]);
-
-  const props = useSpring({
-    transform: `translateY(${showMenu ? 0 : -100}px)`,
-    config: {
-      mass: 1,
-      tension: 300,
-      friction: 40,
-    },
-  });
+  const variants = {
+    open: { y: 0 },
+    closed: { y: '-100%' },
+  };
 
   return (
     <React.Fragment>
-      <S.MenuBarWrapper style={props}>
+      <S.MenuBarWrapper
+        animate={showMenu ? 'open' : 'closed'}
+        variants={variants}
+        transition={{ duration: 0.3, type: 'tween' }}
+      >
         <S.CustomContainer>
           <S.LogoWrapper>
             <Link to="/">

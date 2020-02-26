@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import mediaQuery from 'styled-media-query';
-import { animated } from 'react-spring';
+import { motion } from 'framer-motion';
 
 import { Container } from '../Ui';
 
-export const MenuBarWrapper = styled(animated.nav)`
+export const MenuBarWrapper = styled(motion.nav)`
   box-shadow: 0 4px 12px 0 ${({ theme }) => theme.color.shadowMenu};
 
   ${({ theme }) =>
