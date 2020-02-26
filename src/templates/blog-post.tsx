@@ -1,6 +1,9 @@
 import React from 'react';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
+import rehypeReact from 'rehype-react';
+
+import { Quote } from '../components/Ui';
 
 import { ThemeProvider } from '../config/theme';
 import Layout from '../components/Layout';
@@ -36,6 +39,12 @@ type PostProps = {
   };
 };
 
+/* Custom Components */
+const renderAst = new rehypeReact({
+  createElement: React.createElement,
+  components: { 'big-quote': Quote },
+}).Compiler;
+
 const Post: React.FC<PostProps> = ({ pageContext }) => {
   React.useEffect(() => {
     /* This loads all widgets from twitter if exists. 
@@ -57,7 +66,7 @@ const Post: React.FC<PostProps> = ({ pageContext }) => {
     );
   }
 
-  const { html, frontmatter } = post.node;
+  const { htmlAst, frontmatter } = post.node;
   const { image, title } = frontmatter;
 
   return (
@@ -71,9 +80,7 @@ const Post: React.FC<PostProps> = ({ pageContext }) => {
       <ImgWrapper>
         <StyledImg fluid={image.childImageSharp.fluid} />
       </ImgWrapper>
-      <Container>
-        <article dangerouslySetInnerHTML={{ __html: html }} />
-      </Container>
+      <Container>{renderAst(htmlAst)}</Container>
     </ThemeProvider>
   );
 };

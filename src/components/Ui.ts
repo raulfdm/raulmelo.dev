@@ -19,3 +19,21 @@ export const Container = styled.div`
   padding: 0 2.4rem;
   height: 100%;
 `;
+
+export const Quote = styled.blockquote`
+  /* Resetting global blockquote style  */
+  && {
+    margin: 0;
+    box-shadow: none;
+  }
+
+  text-rendering: optimizelegibility;
+  padding-left: 3rem;
+  font-size: 3rem;
+  line-height: 44px;
+  color: ${({ theme }) => theme.color.font};
+  opacity: 0.6;
+  font-family: ${({ theme }) => theme.font.contentTitle};
+  letter-spacing: -0.33px;
+  font-weight: 400;
+`;
