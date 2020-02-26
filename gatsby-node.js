@@ -66,7 +66,7 @@ exports.createPages = async ({ graphql, actions }) => {
       ) {
         edges {
           node {
-            html
+            htmlAst
             timeToRead
             frontmatter {
               title
