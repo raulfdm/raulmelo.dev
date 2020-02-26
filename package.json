@@ -80,7 +80,7 @@
     "gatsby-remark-prismjs": "^3.3.31",
     "gatsby-remark-responsive-iframe": "^2.2.32",
     "gatsby-remark-smartypants": "^2.1.21",
-    "gatsby-transformer-remark": "^2.6.52",
+    "gatsby-transformer-remark": "^2.6.53",
     "glob": "^7.1.6",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.19.1",
