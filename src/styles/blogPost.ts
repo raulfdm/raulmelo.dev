@@ -117,6 +117,17 @@ const global = css`
     color: ${({ theme }) => theme.color.font};
     opacity: 0.6;
   }
+
+  .copy-title-icon {
+    color: ${({ theme }) => theme.color.font};
+    svg {
+      height: 1.6rem;
+
+      ${media.greaterThan('medium')`
+        height: 2rem;
+      `}
+    }
+  }
 `;
 
 export const BlogGlobalStyle = createGlobalStyle`
