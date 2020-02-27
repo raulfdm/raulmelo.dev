@@ -92,7 +92,8 @@ const global = css`
   p + h3,
   p + h4,
   p + h5,
-  p + h6 {
+  p + h6,
+  .gif-wrapper {
     margin-top: 2.2rem;
     ${media.greaterThan('small')`
       margin-top: 3rem;
@@ -107,7 +108,8 @@ const global = css`
     margin: 4rem auto !important;
   }
 
-  .gatsby-resp-image-figcaption {
+  .gatsby-resp-image-figcaption,
+  .gif-caption {
     font-family: ${({ theme }) => theme.font.contentSans};
     text-align: center;
     margin: 0;
