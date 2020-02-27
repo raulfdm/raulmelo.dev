@@ -4,13 +4,13 @@ import styled from 'styled-components';
 import rehypeReact from 'rehype-react';
 
 import { Quote } from '../components/Ui';
-
 import { ThemeProvider } from '../config/theme';
 import Layout from '../components/Layout';
 import { BlogGlobalStyle } from '../styles/blogPost';
 import { GlobalStyles } from '../styles';
 import { Container } from '../components/Ui';
 import { MenuBar } from '../components/MenuBar';
+import { Gif } from '../components/Gif';
 
 const StyledImg = styled(Img)`
   max-height: 400px;
@@ -42,7 +42,7 @@ type PostProps = {
 /* Custom Components */
 const renderAst = new rehypeReact({
   createElement: React.createElement,
-  components: { 'big-quote': Quote },
+  components: { 'big-quote': Quote, gif: Gif },
 }).Compiler;
 
 const Post: React.FC<PostProps> = ({ pageContext }) => {

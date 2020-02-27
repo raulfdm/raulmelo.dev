@@ -34,7 +34,7 @@ Dado essa problemática, um desenvolvedor Austríaco chamado [Stefan Malzner](ht
 
 ## Mas afinal, qual a mágica por trás?
 
-<div style="width:100%;height:0;padding-bottom:92%;position:relative;"><iframe src="https://giphy.com/embed/12NUbkX6p4xOO4" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
+<gif src="https://media.giphy.com/media/12NUbkX6p4xOO4/giphy.gif" caption="Pura mágica"></gif>
 
 Como disse anteriormente, o Franz faz uso da mesma tecnologia que o Atom, onde você consegue desenvolver uma aplicação desktop utilizando as linguagens que compõe a web (HTML, CSS e JavaScript [até com frameworks JS]) e compilar para uma aplicação desktop 100% funcional. Atualmente há várias bibliotecas que conseguem fazer essa alquimia, mas a mais famosa é o [Electron](https://www.electronjs.org/).
 
@@ -44,7 +44,7 @@ Enquanto projeto em desenvolvimento, ele roda em cima do Chromium e do NodeJS. A
 
 ## É seguro?
 
-<div style="width:100%;height:0;padding-bottom:75%;position:relative;"><iframe src="https://giphy.com/embed/ANbD1CCdA3iI8" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
+<gif src="https://media.giphy.com/media/PLFUhxdKbAAEM/giphy.gif" caption="Será que..."></gif>
 
 Essa ferramenta se assemelha muito a um browser convencional. Basicamente, ela abre uma janela de navegador e chama pra você as API's web dos serviços, assim como https://web.whatsapp.com/ por exemplo.
 
@@ -64,7 +64,7 @@ Ainda sobre o reconhecimento da aplicação, a Product Hunt deu o prêmio a ele 
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Congrats to <a href="https://twitter.com/smalzner?ref_src=twsrc%5Etfw">@smalzner</a>, maker of Franz, on winning Desktop App of the Year! All your messaging apps rolled into one. <a href="https://t.co/iFOatTCPWK">https://t.co/iFOatTCPWK</a> <a href="https://t.co/e6rlHmsXJt">pic.twitter.com/e6rlHmsXJt</a></p>&mdash; Product Hunt (@ProductHunt) <a href="https://twitter.com/ProductHunt/status/811013236606767104?ref_src=twsrc%5Etfw">December 20, 2016</a></blockquote>
 
-<div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/TY7dLV4kDmZSU" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
+<gif src="https://media.giphy.com/media/TY7dLV4kDmZSU/giphy.gif" caption="yeah!"></gif>
 
 ---
 
@@ -90,7 +90,7 @@ Mas se você quiser usar mesmo assim, ele permite que você desabilite o serviç
 
 > Raul, você me convenceu! Quero usar! Comofás?
 
-<div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/l46CyxkMBFwHlJ3kk" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
+<gif src="https://media.giphy.com/media/l46CyxkMBFwHlJ3kk/giphy.gif" caption="Vem co tio!"></gif>
 
 ## Instalação
 
