@@ -37,7 +37,6 @@
     "gatsby-transformer-json": "^2.2.26",
     "gatsby-transformer-sharp": "^2.3.15",
     "husky": "^4.2.3",
-    "netlify-cms-app": "^2.11.20",
     "pretty-quick": "^2.0.1",
     "ramda": "^0.27.0",
     "react": "^16.13.0",
