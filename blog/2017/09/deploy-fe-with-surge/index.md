@@ -23,7 +23,7 @@ Como havia comentado no artigo anterior, servir online de forma fácil e prátic
 
 Então, hoje eu apresento pra vocês o Surge, que tem na sua missão:
 
-> "Publicação estática na web para devs Front-End"
+<big-quote>"Publicação estática na web para devs Front-End"</big-quote>
 
 ## A Ferramenta
 

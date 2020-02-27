@@ -48,7 +48,7 @@ O próprio Willian então escreveu [a versão dele](https://willianjusten.com.br
 
 Então eu também resolvi contar pra você as coisas que eu não sei em dentro e fora de TI.
 
-> "Só sei que nada sei, e o fato de saber isso, me coloca em vantagem sobre aqueles que acham que sabem alguma coisa." — Sócrates
+<big-quote>"Só sei que nada sei, e o fato de saber isso, me coloca em vantagem sobre aqueles que acham que sabem alguma coisa." — Sócrates<big-quote>
 
 ---
 
