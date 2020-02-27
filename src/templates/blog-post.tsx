@@ -51,7 +51,10 @@ const Post: React.FC<PostProps> = ({ pageContext }) => {
     It's loaded by html.tsx (data-testid="twitter-script")
     */
     // @ts-ignore
-    window.twttr.widgets.load();
+    if (window.twttr) {
+      // @ts-ignore
+      window.twttr.widgets.load();
+    }
   }, []);
   const { postByLocale, intl } = pageContext;
 
