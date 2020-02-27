@@ -35,7 +35,7 @@
     "gatsby-plugin-typescript": "^2.1.27",
     "gatsby-source-filesystem": "^2.1.48",
     "gatsby-transformer-json": "^2.2.26",
-    "gatsby-transformer-sharp": "^2.3.14",
+    "gatsby-transformer-sharp": "^2.3.15",
     "husky": "^4.2.3",
     "netlify-cms-app": "^2.11.20",
     "pretty-quick": "^2.0.1",
