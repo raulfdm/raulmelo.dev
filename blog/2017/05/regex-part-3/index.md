@@ -64,9 +64,7 @@ Bem, o que a engine faz é tentar encontrar o range entre o ponto-e-virgula (`;`
 
 > Mas e aí? Como fugir disso?
 
-<!-- TODO: Add post link here -->
-
-Lembra do post passado sobre meta-caracteres? Sim, o hífen é um deles! E para resolver o caso, precisamos apenas passar a nossa amiga barra invertida (`\`):
+Lembra do [post passado sobre meta-caracteres](/pt-br/2017/05/regex-part-2)? Sim, o hífen é um deles! E para resolver o caso, precisamos apenas passar a nossa amiga barra invertida (`\`):
 
 ![Pegando o hífen!](./assets/regex101-capture-hyphen.png)
 
