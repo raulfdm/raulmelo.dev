@@ -7,7 +7,14 @@ const global = css`
     font-family: ${({ theme }) => theme.font.contentSerif};
     font-size: 2.1rem;
     word-break: break-word;
+
+    padding-bottom: 3rem;
+
+    ${media.greaterThan('medium')`
+      padding-bottom:6rem;
+    `}
   }
+
   h1 {
     font-size: 4rem;
     font-family: ${({ theme }) => theme.font.contentTitle};
