@@ -108,7 +108,7 @@ const global = css`
   }
 
   a {
-    text-decoration: ${({ theme }) => theme.color.font};
+    text-decoration: underline solid ${({ theme }) => theme.color.font};
   }
 
   .twitter-tweet {
