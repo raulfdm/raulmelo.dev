@@ -43,7 +43,7 @@ Antes de falar sobre o Pages, gostaria de comentar sobre o Github. Se você é d
 
 Então, se você ainda não usa, crie uma conta lá e comece a usar porque vale muito a pena. E não deixe de colocar seu código online por vergonha ou medo de ter feito algo errado. Apenas lembre-se:
 
-> Não sinta vergonha de ser iniciante ou de errar. Os melhores um dia já o foram, já erraram e ainda erram! =p
+<big-quote>Não sinta vergonha de ser iniciante ou de errar. Os melhores um dia já o foram, já erraram e ainda erram! =p</big-quote>
 
 ---
 

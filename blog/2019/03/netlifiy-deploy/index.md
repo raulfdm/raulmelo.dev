@@ -31,11 +31,11 @@ Surpreendentemente, a Netlify foi fundada em 2014 e ela veio como um santo salva
 
 No site deles, a descrição do que eles se propõe a fazer é bem clara:
 
-> “We aim to perfect a unified platform that automates code; creating high-performance, easily-maintainable sites and web-apps. Users simply push their code and let us take care of the rest.”
+<big-quote>“We aim to perfect a unified platform that automates code; creating high-performance, easily-maintainable sites and web-apps. Users simply push their code and let us take care of the rest.”</big-quote>
 
 Se você não manja dos paranauês do inglês, aqui vai uma tradução não oficial:
 
-> “Nosso objetivo é construir uma plataforma perfeita e unificada que automatiza código; criação sites e web-apps de alta performance e de fácil manutenção. Usuários podem simplesmente mandar seu código e deixar a gente tomar conta do resto.”
+<big-quote>“Nosso objetivo é construir uma plataforma perfeita e unificada que automatiza código; criação sites e web-apps de alta performance e de fácil manutenção. Usuários podem simplesmente mandar seu código e deixar a gente tomar conta do resto.”</big-quote>
 
 Em outras palavras, o que ela diz pra você é:
 
