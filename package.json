@@ -59,7 +59,7 @@
     "@types/react-instantsearch-dom": "^5.2.6",
     "@types/react-intl": "^3.0.0",
     "@types/styled-components": "^5.0.1",
-    "@typescript-eslint/eslint-plugin": "^2.20.0",
+    "@typescript-eslint/eslint-plugin": "^2.21.0",
     "@typescript-eslint/parser": "^2.21.0",
     "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.0.6",
