@@ -1,15 +1,21 @@
 import React from 'react';
+import styled, { css } from 'styled-components';
 
 type GifProps = {
   src: string;
   caption?: string;
+  imgstyle?: string;
 };
 
-export const Gif: React.FC<GifProps> = ({ src, caption }) => {
+export const Gif: React.FC<GifProps> = ({ src, caption, imgstyle }) => {
+  const Figure = styled.figure`
+    ${imgstyle}
+    margin: 0 auto;
+  `;
   return (
-    <figure className="gif-wrapper">
+    <Figure className="gif-wrapper">
       <img src={src} alt={caption} width="100%" />
       <figcaption className="gif-caption">{caption}</figcaption>
-    </figure>
+    </Figure>
   );
 };
