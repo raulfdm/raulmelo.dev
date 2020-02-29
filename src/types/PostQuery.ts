@@ -7,6 +7,7 @@ export type Frontmatter = {
   date: string;
   description: string;
   title: string;
+  subtitle: string;
   series: FrontmatterSeries;
   image: FrontMatterImage;
 };

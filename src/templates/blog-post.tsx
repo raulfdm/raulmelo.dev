@@ -2,6 +2,7 @@ import React from 'react';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
 import rehypeReact from 'rehype-react';
+import media from 'styled-media-query';
 
 import { Quote } from '../components/Ui';
 import { ThemeProvider } from '../config/theme';
@@ -14,10 +15,41 @@ import { Gif } from '../components/Gif';
 import { Series } from '../components/Series';
 import { Frontmatter, SeriesType } from '../types';
 
+const Title = styled.h1`
+  font-size: 3.4rem;
+  font-family: ${({ theme }) => theme.font.contentTitle};
+  line-height: 1.25;
+  font-weight: 400;
+  font-style: normal;
+
+  ${media.greaterThan('medium')`
+    font-size: 4.2rem;
+  `}
+`;
+
+const Subtitle = styled.p`
+  margin-top: 0.5rem;
+  margin-bottom: 2.2rem;
+  font-size: 2.4rem;
+  line-height: 1.22;
+  letter-spacing: -0.012em;
+  font-family: ${({ theme }) => theme.font.contentSans};
+  opacity: 0.54;
+
+  ${media.greaterThan('medium')`
+    font-size: 2.8rem;
+  `}
+`;
+
 const StyledImg = styled(Img)`
   max-height: 400px;
   /* TODO: double check this magic number */
   margin-top: 42px;
+  margin-bottom: 1.56em;
+
+  ${media.greaterThan('medium')`
+    margin-bottom: 2em;
+  `}
 `;
 
 const ImgWrapper = styled(Container)`
@@ -73,15 +105,23 @@ const Post: React.FC<PostProps> = ({ pageContext }) => {
   }
 
   const { htmlAst, frontmatter } = post.node;
-  const { image, title, series: seriesInfo } = frontmatter as Frontmatter;
+  const {
+    image,
+    title,
+    subtitle,
+    series: seriesInfo,
+  } = frontmatter as Frontmatter;
 
   return (
     <ThemeProvider>
       <GlobalStyles />
       <BlogGlobalStyle />
       <MenuBar />
-      <Container>
-        <h1>{title}</h1>
+      <Container as="header">
+        <Title>{title}</Title>
+        {subtitle && <Subtitle>{subtitle}</Subtitle>}
+      </Container>
+      <Container as="section">
         {series && <Series series={series} postIndex={seriesInfo.index} />}
       </Container>
 
@@ -90,7 +130,9 @@ const Post: React.FC<PostProps> = ({ pageContext }) => {
           <StyledImg fluid={image.childImageSharp.fluid} />
         </ImgWrapper>
       )}
-      <Container>{renderAst(htmlAst)}</Container>
+      <Container className="post" as="main">
+        {renderAst(htmlAst)}
+      </Container>
     </ThemeProvider>
   );
 };
