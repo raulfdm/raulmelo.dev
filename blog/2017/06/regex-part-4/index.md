@@ -1,11 +1,16 @@
 ---
-title: 'Entendendo de uma vez por todas Expressões Regulares: Parte 4 — Quantifiers'
+title: 'Entendendo de uma vez por todas Expressões Regulares'
+subtitle: 'Quantifiers'
 date: '2017-06-06'
 image: assets/featured-img.jpeg
 description: ''
 categories:
   - regex
   - desenvolvimento
+series:
+  id: regex
+  index: 4
+  copy: Parte
 ---
 
 Fala galere, tudo em cima? Hoje é dia de mais um artigo sobre expressões regulares e hoje iremos abordar os quantifiers (quantificadores), ou seja, formas de definir quantas vezes queremos que elementos apareçam ou não em nossas expressões.

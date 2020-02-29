@@ -1,5 +1,6 @@
 ---
-title: 'Entendendo de uma vez por todas Expressões Regulares: Parte 3 — Classes de Caractere'
+title: 'Entendendo de uma vez por todas Expressões Regulares'
+subtitle: 'Classes de Caractere'
 date: '2017-05-29'
 image: assets/featured-img.png
 description: 'Chega de chutar expressões regulares.'
@@ -9,7 +10,7 @@ categories:
 series:
   id: regex
   index: 3
-  copy: Parte 3
+  copy: Parte
 ---
 
 Fala galera, belezinha? Hoje o nosso bate-papo vai ser sobre uma das principais (e mais útil) funcionalidades das expressões regulares, **classes de caracteres**.

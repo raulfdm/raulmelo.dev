@@ -1,10 +1,14 @@
+import { PostSeries } from './Series';
+import { FrontMatterImage } from './GraphQL';
+
+export type FrontmatterSeries = PostSeries | null;
+
 export type Frontmatter = {
   date: string;
   description: string;
   title: string;
-  image: {
-    publicURL: string;
-  };
+  series: FrontmatterSeries;
+  image: FrontMatterImage;
 };
 
 export type QueryNode = {

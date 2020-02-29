@@ -1,22 +1,25 @@
 import styled from 'styled-components';
 
 export const Card = styled.div`
+  --card-border-radius: 5px;
+  --card-white-space: 2.4rem;
+
   background-color: ${({ theme }) => theme.color.background};
-  border-radius: 5px;
+  border-radius: var(--card-border-radius);
   ${({ theme }) =>
     theme.isDarkTheme
       ? `border: 1px solid ${theme.color.border};`
       : `box-shadow: ${theme.color.shadowLight} 0 1px 4px;`}
 
-  margin-bottom: 2.4rem;
-  padding: 2.4rem;
+  margin-bottom: var(--card-white-space);
+  padding: var(--card-white-space);
 `;
 
 export const Container = styled.div`
   max-width: 728px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 2.4rem;
+  padding: 0 var(--card-white-space);
   height: 100%;
 `;
 

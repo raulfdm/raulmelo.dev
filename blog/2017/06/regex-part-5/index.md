@@ -1,11 +1,16 @@
 ---
-title: 'Entendendo de uma vez por todas Expressões Regulares: Parte 5 — Capturando Grupos'
+title: 'Entendendo de uma vez por todas Expressões Regulares'
+subtitle: 'Capturando Grupos'
 date: '2017-06-24'
 image: assets/featured-img.jpeg
 description: 'Chega de chutar expressões regulares.'
 categories:
   - regex
   - desenvolvimento
+series:
+  id: regex
+  index: 5
+  copy: Parte
 ---
 
 Filhos(as) de [Zion](https://matrix.fandom.com/wiki/Zion), tudo na paz? Continuando nossa saga nas Expressões Regulares, hoje iremos abordar uma funcionalidade que começa a dar vida e trazer uma real utilidade para as nossas expressões: Grupos de caracteres.

@@ -1,5 +1,6 @@
 ---
-title: 'Entendendo de uma vez por todas Expressões Regulares: Parte 1 - Introdução'
+title: 'Entendendo de uma vez por todas Expressões Regulares'
+subtitle: 'Introdução'
 date: '2017-05-21'
 image: assets/feature-img.jpeg
 description: 'Chega de chutar expressões regulares.'
@@ -9,7 +10,7 @@ categories:
 series:
   id: regex
   index: 1
-  copy: Parte 1
+  copy: Parte
 ---
 
 ## Apresentação

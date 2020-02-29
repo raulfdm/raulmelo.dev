@@ -12,5 +12,8 @@
   "search": {
     "input": "What you're looking for?",
     "stats": "{results, plural, one {# result} other {# results}} found in {milliseconds}ms"
+  },
+  "series": {
+    "sectionDescription": "Series article links"
   }
 }

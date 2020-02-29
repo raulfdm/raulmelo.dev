@@ -1,11 +1,16 @@
 ---
-title: 'Entendendo de uma vez por todas Expressões Regulares: Parte 6 — Âncoras'
+title: 'Entendendo de uma vez por todas Expressões Regulares'
+subtitle: 'Âncoras'
 date: '2017-06-26'
 image: assets/featured-img.jpeg
 description: 'Chega de chutar expressões regulares.'
 categories:
   - regex
   - desenvolvimento
+series:
+  id: regex
+  index: 6
+  copy: Parte
 ---
 
 Fala meu povo, tudo bem com vocês? Estamos quase fechando a série “Entendendo de uma vez por todas Expressões regulares”.

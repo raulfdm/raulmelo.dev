@@ -1,11 +1,16 @@
 ---
-title: 'Entendendo de uma vez por todas Expressões Regulares: Parte 7— Regex no mundo JavaScript'
+title: 'Entendendo de uma vez por todas Expressões Regulares'
+subtitle: 'Regex no mundo JavaScript'
 date: '2017-07-18'
 image: assets/featured-img.png
 description: 'Chega de chutar expressões regulares.'
 categories:
   - regex
   - desenvolvimento
+series:
+  id: regex
+  index: 7
+  copy: Parte
 ---
 
 Fala meu povo, tudo bem com vocês? Seguindo no penúltimo artigo da série regex, hoje falaremos (finalmente) sobre como utilizar as expressões regulares no mundo JavaScript.

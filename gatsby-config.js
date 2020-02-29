@@ -17,6 +17,7 @@ const myQuery = `{
         frontmatter {
           date
           title
+          subtitle
           description
         }
       }
