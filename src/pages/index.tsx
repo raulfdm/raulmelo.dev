@@ -56,7 +56,7 @@ const Home: React.FC<{ data: AllMarkdownRemark }> = ({ data }) => {
               title={post.frontmatter.title}
               date={post.frontmatter.date}
               timeToRead={post.timeToRead}
-              image={post.frontmatter.image.childImageSharp.fluid}
+              image={post.frontmatter.image?.childImageSharp?.fluid}
               slug={post.fields.localizedSlug}
             />
           );
