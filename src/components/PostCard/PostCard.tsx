@@ -14,7 +14,6 @@ type PostCardProps = {
 export const PostCard: React.FC<PostCardProps> = ({ postNode }) => {
   const { frontmatter, timeToRead, fields } = postNode;
   const { image, date, description, title, subtitle } = frontmatter;
-  console.log(postNode);
 
   return (
     <Link to={fields.slug}>
