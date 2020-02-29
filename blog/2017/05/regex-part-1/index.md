@@ -6,6 +6,10 @@ description: 'Chega de chutar expressões regulares.'
 categories:
   - regex
   - desenvolvimento
+series:
+  id: regex
+  index: 1
+  copy: Parte 1
 ---
 
 ## Apresentação

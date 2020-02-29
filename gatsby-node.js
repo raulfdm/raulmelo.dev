@@ -6,7 +6,7 @@
 
 const path = require('path');
 const R = require('ramda');
-// const glob = require('glob');
+const { getSeriesPost, seriesPath } = require('./helpers');
 
 const DEFAULT_LOCALE = 'pt-br';
 
@@ -90,6 +90,11 @@ exports.createPages = async ({ graphql, actions }) => {
                   }
                 }
               }
+              series {
+                copy
+                id
+                index
+              }
             }
             fileAbsolutePath
             fields {
@@ -121,6 +126,8 @@ exports.createPages = async ({ graphql, actions }) => {
   /* Tuple of {dirname, posts} */
   const postEntries = Object.entries(postsGroupedBySlug);
 
+  const postSeriesAvailable = getSeriesPost(posts);
+
   postEntries.forEach(([slug, posts], index) => {
     const previousIndex = index - 1;
     const nextIndex = index + 1;
@@ -142,9 +149,10 @@ exports.createPages = async ({ graphql, actions }) => {
     const entries = Object.entries(postByLocale);
 
     /* TODO: Change that implementation */
-    entries.forEach(([locale]) => {
+    entries.forEach(([locale, post]) => {
       const localizedSlug = `/${locale}${slug}`;
-      createPage({
+
+      const pageData = {
         path: localizedSlug,
         component: blogPostComponent,
         context: {
@@ -153,8 +161,18 @@ exports.createPages = async ({ graphql, actions }) => {
           slug,
           previous: previousPost,
           next: nextPost,
+          series: null,
         },
-      });
+      };
+
+      const seriesInfo = R.path(seriesPath, post);
+
+      if (seriesInfo) {
+        const { id } = seriesInfo;
+        pageData.context.series = postSeriesAvailable[id];
+      }
+
+      createPage(pageData);
     });
   });
 };
