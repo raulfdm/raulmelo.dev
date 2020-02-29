@@ -6,6 +6,10 @@ description: 'Chega de chutar expressões regulares.'
 categories:
   - regex
   - desenvolvimento
+series:
+  id: regex
+  index: 2
+  copy: Parte 2
 ---
 
 Continuando a saga mágica das Expressões Regulares, hoje vamos entender um pouco mais do que se treta meta-caracteres no mundo da Regex! Mas antes, se você ainda não viu a parte um, clica nesse link e da uma conferida!
