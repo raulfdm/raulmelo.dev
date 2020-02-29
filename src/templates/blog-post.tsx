@@ -71,6 +71,7 @@ const Post: React.FC<PostProps> = ({ pageContext }) => {
 
   const { htmlAst, frontmatter } = post.node;
   const { image, title } = frontmatter;
+  console;
 
   return (
     <ThemeProvider>
@@ -80,9 +81,11 @@ const Post: React.FC<PostProps> = ({ pageContext }) => {
       <Container>
         <h1>{title}</h1>
       </Container>
-      <ImgWrapper>
-        <StyledImg fluid={image.childImageSharp.fluid} />
-      </ImgWrapper>
+      {image && (
+        <ImgWrapper>
+          <StyledImg fluid={image.childImageSharp.fluid} />
+        </ImgWrapper>
+      )}
       <Container>{renderAst(htmlAst)}</Container>
     </ThemeProvider>
   );
