@@ -212,7 +212,7 @@ const postEdges = [
         date: '2017-05-29',
         categories: ['regex', 'desenvolvimento'],
         series: {
-          copy: 'Parte 3',
+          copy: 'Parte',
           id: 'regex',
           index: 3,
         },
@@ -237,7 +237,7 @@ const postEdges = [
         date: '2017-05-24',
         categories: ['regex', 'desenvolvimento'],
         series: {
-          copy: 'Parte 2',
+          copy: 'Parte',
           id: 'regex',
           index: 2,
         },
@@ -262,7 +262,7 @@ const postEdges = [
         date: '2017-05-21',
         categories: ['regex', 'desenvolvimento'],
         series: {
-          copy: 'Parte 1',
+          copy: 'Parte',
           id: 'regex',
           index: 1,
         },

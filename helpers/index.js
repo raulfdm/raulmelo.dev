@@ -7,13 +7,18 @@ function getSeriesPost(postEdges) {
   const hasSeries = R.path(seriesPath);
   const postsWithSeries = R.filter(hasSeries, postEdges);
 
-  const sanatizedPosts = postsWithSeries.map((post) => ({
-    subtitle: R.pathOr('no title', [...frontmatterPath, 'subtitle'], post),
-    series_id: R.path([...seriesPath, 'id'], post),
-    copy: R.path([...seriesPath, 'copy'], post),
-    index: R.path([...seriesPath, 'index'], post),
-    uri: R.path(['node', 'fields', 'localizedSlug'], post),
-  }));
+  const sanatizedPosts = postsWithSeries.map((post) => {
+    const seriesPostIndex = R.path([...seriesPath, 'index'], post);
+    const seriesCopy = R.path([...seriesPath, 'copy'], post);
+
+    return {
+      subtitle: R.pathOr('no title', [...frontmatterPath, 'subtitle'], post),
+      series_id: R.path([...seriesPath, 'id'], post),
+      copy: `${seriesCopy} ${seriesPostIndex}`,
+      index: seriesPostIndex,
+      uri: R.path(['node', 'fields', 'localizedSlug'], post),
+    };
+  });
 
   return sanatizedPosts.reduce((result, currentPost) => {
     const { series_id, index } = currentPost;
