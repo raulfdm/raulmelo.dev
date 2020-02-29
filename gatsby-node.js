@@ -70,6 +70,7 @@ exports.createPages = async ({ graphql, actions }) => {
             timeToRead
             frontmatter {
               title
+              subtitle
               date
               categories
               image {
