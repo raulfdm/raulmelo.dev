@@ -8,6 +8,7 @@ const myQuery = `{
     edges {
       node {
         objectID: id
+        timeToRead
         excerpt(pruneLength: 5000)
         fields {
           locale
@@ -27,9 +28,18 @@ const myQuery = `{
 
 const flattenData = (data) =>
   data.map(({ node: { frontmatter, ...rest } }) => {
+    const { series, subtitle, ...frontmatterData } = frontmatter;
+
+    const nextSubtitle = series
+      ? `${series.copy} ${series.index}: ${subtitle}`
+      : subtitle;
+
     return {
-      ...frontmatter,
-      date_timestamp: (new Date(frontmatter.date).getTime() / 1000).toFixed(0),
+      ...frontmatterData,
+      subtitle: nextSubtitle,
+      date_timestamp: (new Date(frontmatterData.date).getTime() / 1000).toFixed(
+        0,
+      ),
       ...rest,
     };
   });

@@ -1,38 +1,30 @@
 import React from 'react';
 import { FormattedMessage, FormattedDate } from 'gatsby-plugin-intl';
 import { Link } from 'gatsby';
-import { FluidObject } from 'gatsby-image';
 
 import * as S from './styled';
 import { Card } from '../Ui';
+import { PostNode } from 'src/types/GraphQL';
 
 type PostCardProps = {
-  title: string;
-  image: FluidObject;
-  description: string;
-  slug: string;
-  date?: string;
-  timeToRead?: number;
+  postNode: PostNode;
 };
 
 /* TODO: Accept post card instead destructured props */
-export const PostCard: React.FC<PostCardProps> = ({
-  image,
-  title,
-  description,
-  date,
-  timeToRead,
-  slug,
-}) => {
+export const PostCard: React.FC<PostCardProps> = ({ postNode }) => {
+  const { frontmatter, timeToRead, fields } = postNode;
+  const { image, date, description, title, subtitle } = frontmatter;
+
   return (
-    <Link to={slug}>
+    <Link to={fields.slug}>
       <Card>
         {image && (
           <S.ImageContainer>
-            <S.Image fluid={image} />
+            <S.Image fluid={image.childImageSharp.fluid} />
           </S.ImageContainer>
         )}
         <S.Title>{title}</S.Title>
+        {subtitle && <S.Subtitle>{subtitle}</S.Subtitle>}
         <S.Description>{description}</S.Description>
 
         <S.MetaWrapper>

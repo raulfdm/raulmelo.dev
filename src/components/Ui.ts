@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import media from 'styled-media-query';
 
 export const Card = styled.div`
   --card-border-radius: 5px;
@@ -19,8 +20,12 @@ export const Container = styled.div`
   max-width: 728px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 var(--card-white-space);
+  padding: 0 1.6rem;
   height: 100%;
+
+  ${media.greaterThan('medium')`
+   padding: 0 2.4rem;
+  `}
 `;
 
 export const Quote = styled.blockquote`

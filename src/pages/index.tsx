@@ -49,17 +49,7 @@ const Home: React.FC<{ data: AllMarkdownRemark }> = ({ data }) => {
             postsByLocale[intl.locale] ||
             R.path(singlePostLocale, postsByLocale);
 
-          return (
-            <PostCard
-              key={post.id}
-              description={post.frontmatter.description}
-              title={post.frontmatter.title}
-              date={post.frontmatter.date}
-              timeToRead={post.timeToRead}
-              image={post.frontmatter.image?.childImageSharp?.fluid}
-              slug={post.fields.localizedSlug}
-            />
-          );
+          return <PostCard key={post.id} postNode={post} />;
         })}
       </main>
     </Layout>
@@ -79,6 +69,7 @@ export const query = graphql`
           timeToRead
           frontmatter {
             title
+            subtitle
             date
             categories
             description
