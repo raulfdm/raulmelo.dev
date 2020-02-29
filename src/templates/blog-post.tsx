@@ -11,6 +11,8 @@ import { GlobalStyles } from '../styles';
 import { Container } from '../components/Ui';
 import { MenuBar } from '../components/MenuBar';
 import { Gif } from '../components/Gif';
+import { Series } from '../components/Series';
+import { Frontmatter, SeriesType } from '../types';
 
 const StyledImg = styled(Img)`
   max-height: 400px;
@@ -36,6 +38,7 @@ type PostProps = {
     intl: {
       language: string;
     };
+    series: SeriesType;
   };
 };
 
@@ -56,7 +59,7 @@ const Post: React.FC<PostProps> = ({ pageContext }) => {
       window.twttr.widgets.load();
     }
   }, []);
-  const { postByLocale, intl } = pageContext;
+  const { postByLocale, intl, series } = pageContext;
 
   const post = postByLocale[intl.language];
 
@@ -70,8 +73,7 @@ const Post: React.FC<PostProps> = ({ pageContext }) => {
   }
 
   const { htmlAst, frontmatter } = post.node;
-  const { image, title } = frontmatter;
-  console;
+  const { image, title, series: seriesInfo } = frontmatter as Frontmatter;
 
   return (
     <ThemeProvider>
@@ -80,7 +82,9 @@ const Post: React.FC<PostProps> = ({ pageContext }) => {
       <MenuBar />
       <Container>
         <h1>{title}</h1>
+        {series && <Series series={series} postIndex={seriesInfo.index} />}
       </Container>
+
       {image && (
         <ImgWrapper>
           <StyledImg fluid={image.childImageSharp.fluid} />
