@@ -8,6 +8,7 @@ const myQuery = `{
     edges {
       node {
         objectID: id
+        timeToRead
         excerpt(pruneLength: 5000)
         fields {
           locale
