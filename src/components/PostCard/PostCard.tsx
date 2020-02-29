@@ -16,7 +16,7 @@ export const PostCard: React.FC<PostCardProps> = ({ postNode }) => {
   const { image, date, description, title, subtitle } = frontmatter;
 
   return (
-    <Link to={fields.slug}>
+    <Link to={fields.localizedSlug}>
       <Card>
         {image && (
           <S.ImageContainer>
