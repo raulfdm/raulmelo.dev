@@ -16,6 +16,11 @@ jobs:
       - run: yarn lint
         name: Run ESLint
 
+      - run: yarn jest --color
+        name: Run Test
+        env:
+          CI: true
+
       - run: yarn build
         name: Build
         env:
