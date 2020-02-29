@@ -8,7 +8,7 @@ function getSeriesPost(postEdges) {
   const postsWithSeries = R.filter(hasSeries, postEdges);
 
   const sanatizedPosts = postsWithSeries.map((post) => ({
-    subtitle: R.pathOr([...frontmatterPath, 'subtitle'], post, 'no title'),
+    subtitle: R.pathOr('no title', [...frontmatterPath, 'subtitle'], post),
     series_id: R.path([...seriesPath, 'id'], post),
     copy: R.path([...seriesPath, 'copy'], post),
     index: R.path([...seriesPath, 'index'], post),

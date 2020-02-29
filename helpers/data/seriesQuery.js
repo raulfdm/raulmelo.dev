@@ -232,8 +232,8 @@ const postEdges = [
     node: {
       timeToRead: 6,
       frontmatter: {
-        title:
-          'Entendendo de uma vez por todas Expressões Regulares: Parte 2 - Metacharacters',
+        title: 'Entendendo de uma vez por todas Expressões Regulares',
+        subtitle: 'Metacharacters',
         date: '2017-05-24',
         categories: ['regex', 'desenvolvimento'],
         series: {
@@ -290,7 +290,7 @@ const expectedSeries = {
     },
     2: {
       index: 2,
-      subtitle: 'no title',
+      subtitle: 'Metacharacters',
       copy: 'Parte 2',
       uri: '/pt-br/2017/05/regex-part-2',
     },
