@@ -3,11 +3,17 @@ import Img from 'gatsby-image';
 
 export const ImageContainer = styled.div`
   position: relative;
+  margin: calc(var(--card-white-space) * -1);
+  margin-bottom: var(--card-white-space);
+  border-top-left-radius: var(--card-border-radius);
+  border-top-right-radius: var(--card-border-radius);
 `;
 
 export const Image = styled(Img)`
-  max-height: 210px;
+  height: 270px;
   margin-bottom: 1em;
+  border-top-left-radius: var(--card-border-radius);
+  border-top-right-radius: var(--card-border-radius);
 `;
 
 export const Title = styled.h2`
