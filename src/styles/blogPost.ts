@@ -48,19 +48,20 @@ const global = css`
       }
     }
 
-    hr {
+    hr,
+    .post-divider {
       border-style: none;
       font-size: 28px;
       font-weight: 300;
       margin-top: 30px;
       text-align: center;
-    }
 
-    hr::before {
-      content: '...';
-      letter-spacing: 0.6em;
-      text-indent: 0.6em;
-      line-height: 1.4;
+      &::before {
+        content: '...';
+        letter-spacing: 0.6em;
+        text-indent: 0.6em;
+        line-height: 1.4;
+      }
     }
 
     h2,
