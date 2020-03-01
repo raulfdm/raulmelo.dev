@@ -3,7 +3,7 @@ title: 'Entendendo de uma vez por todas Expressões Regulares'
 subtitle: 'Quantifiers'
 date: '2017-06-06'
 image: assets/featured-img.jpeg
-description: ''
+description: 'Explorando o que são quantifiers (contadores) e como usa-los ao nosso favor'
 categories:
   - regex
   - desenvolvimento
@@ -14,8 +14,6 @@ series:
 ---
 
 Fala galere, tudo em cima? Hoje é dia de mais um artigo sobre expressões regulares e hoje iremos abordar os quantifiers (quantificadores), ou seja, formas de definir quantas vezes queremos que elementos apareçam ou não em nossas expressões.
-
-> Lembrando: caso você seja novo por aqui, [acesse o primeiro post](/pt-br/2017/05/regex-part-1).
 
 Então simbora que a gente ta na metade já =D
 

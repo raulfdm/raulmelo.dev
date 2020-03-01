@@ -3,7 +3,7 @@ title: 'Entendendo de uma vez por todas Expressões Regulares'
 subtitle: 'Classes de Caractere'
 date: '2017-05-29'
 image: assets/featured-img.png
-description: 'Chega de chutar expressões regulares.'
+description: 'Explorando classes de caratecteres e sua utilidade nas expressões regulares.'
 categories:
   - regex
   - desenvolvimento
@@ -14,8 +14,6 @@ series:
 ---
 
 Fala galera, belezinha? Hoje o nosso bate-papo vai ser sobre uma das principais (e mais útil) funcionalidades das expressões regulares, **classes de caracteres**.
-
-Espero que estejam gostando da série e caso você seja novo por aqui, da uma olhada na parte 1, [clicando aqui](/pt-br/2017/05/regex-part-1).
 
 Sem delongas, liga teu _Pomodoro_, pega teu café/chá/chimarrão, me dê a mão (me abraça) e vem comigo!
 

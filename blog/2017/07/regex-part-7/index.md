@@ -3,7 +3,7 @@ title: 'Entendendo de uma vez por todas Expressões Regulares'
 subtitle: 'Regex no mundo JavaScript'
 date: '2017-07-18'
 image: assets/featured-img.png
-description: 'Chega de chutar expressões regulares.'
+description: 'Utilizando as expressões regulares em nosso código JavaScript.'
 categories:
   - regex
   - desenvolvimento
@@ -13,11 +13,7 @@ series:
   copy: Parte
 ---
 
-Fala meu povo, tudo bem com vocês? Seguindo no penúltimo artigo da série regex, hoje falaremos (finalmente) sobre como utilizar as expressões regulares no mundo JavaScript.
-
-Mas antes de tudo, se você chegou direto nesse tópico e ainda não tem tanta familiaridade, da uma olhada no [post](/pt-br/2017/05/regex-part-1) onde tudo começou.
-
-Sem mais delongas, _let's do it_!
+Fala meu povo, tudo bem com vocês? Seguindo no penúltimo artigo da série regex, hoje falaremos (finalmente) sobre como utilizar as expressões regulares no mundo JavaScript. _let's do it_!
 
 ---
 

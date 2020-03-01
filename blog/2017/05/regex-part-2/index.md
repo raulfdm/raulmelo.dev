@@ -3,7 +3,7 @@ title: 'Entendendo de uma vez por todas Expressões Regulares'
 subtitle: 'Metacharacters'
 date: '2017-05-24'
 image: assets/featured-img.jpeg
-description: 'Chega de chutar expressões regulares.'
+description: 'Explorando o que são e quais os principais meta-carateres do mundo das expressões regulares'
 categories:
   - regex
   - desenvolvimento

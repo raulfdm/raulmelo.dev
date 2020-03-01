@@ -2,8 +2,8 @@
 title: 'Entendendo de uma vez por todas Expressões Regulares'
 subtitle: 'Introdução'
 date: '2017-05-21'
-image: assets/feature-img.jpeg
-description: 'Chega de chutar expressões regulares.'
+image: assets/featured-img.jpeg
+description: 'Introdução à series de 7 artigos sobre expressões regulares e uma visão geral do que são expressões regulares.'
 categories:
   - regex
   - desenvolvimento
@@ -12,8 +12,6 @@ series:
   index: 1
   copy: Parte
 ---
-
-## Apresentação
 
 Fala pessoal, tudo certo? Meu nome é Raul, tenho 24 anos e sou desenvolvedor há quase 3 anos. Comecei a programar na faculdade com Java, PHP, até me deparar com o fascinante mundo do client-side e resolver abandonar um pouco o _server-side_ pra entender a mágica da força trindade HTML, CSS e Javascript.
 

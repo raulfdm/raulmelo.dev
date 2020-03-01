@@ -3,7 +3,7 @@ title: 'Entendendo de uma vez por todas Expressões Regulares'
 subtitle: 'Âncoras'
 date: '2017-06-26'
 image: assets/featured-img.jpeg
-description: 'Chega de chutar expressões regulares.'
+description: 'Entendendo o que são âncoras e como elas podem ser úteis.'
 categories:
   - regex
   - desenvolvimento
@@ -15,9 +15,7 @@ series:
 
 Fala meu povo, tudo bem com vocês? Estamos quase fechando a série “Entendendo de uma vez por todas Expressões regulares”.
 
-Hoje iremos abordar um tema que pra mim, é um dos mais difíceis no que tange à Regex: Âncoras. Mas antes, se você acabou de chegar por aqui e quer acompanhar desde o primeiro tópico, sugiro acessar o primeiro artigo ([introdução](/pt-br/2017/05/regex-part-1)).
-
-Chega de papo e vamos ao que interessa.
+Hoje iremos abordar um tema que pra mim, é um dos mais difíceis no que tange à Regex: Âncoras.
 
 ---
 

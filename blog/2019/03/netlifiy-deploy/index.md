@@ -1,5 +1,6 @@
 ---
-title: 'Subindo seu projeto FrontEnd em 2019 - Netlify'
+title: 'Subindo seu projeto Front-end gratuitamente'
+subtitle: 'Apresentando: Netlify'
 date: '2019-03-02'
 image: assets/netlify-logo.png
 description: Como colocar online seu projeto front-end usando a plataforma Netlify.
@@ -7,6 +8,10 @@ categories:
   - deploy
   - Front-end
   - Netlify
+series:
+  id: deploy-fe
+  index: 3
+  copy: Parte
 ---
 
 Fala galera, tudo tranquilo?
