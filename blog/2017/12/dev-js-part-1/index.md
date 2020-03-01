@@ -1,6 +1,6 @@
 ---
 title: 'Desenvolvedor JavaScript — do Brasil à Europa'
-subtitle: 'Ato 1 — Prólogo'
+subtitle: 'Prólogo'
 date: '2017-12-11'
 image:
 description: ''
@@ -9,6 +9,10 @@ categories:
   - carreira
   - europa
   - JavaScript
+series:
+  id: dev-js
+  index: 1
+  copy: Ato
 ---
 
 Fala dev's, tudo certo com vocês? Mais uma série de artigos começando e dessa vez eu quero compartilhar com vocês a minha história.
