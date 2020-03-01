@@ -37,5 +37,11 @@ module.exports = {
       extends: ['eslint:recommended'],
       parser: 'babel-eslint',
     },
+    {
+      files: ['*.test.*'],
+      env: {
+        jest: true,
+      },
+    },
   ],
 };

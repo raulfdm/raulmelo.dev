@@ -8,6 +8,7 @@ export type FrontMatterImage = {
 
 type FrontMatter = {
   title: string;
+  subtitle: string;
   date: string;
   categories: string[];
   description: string;

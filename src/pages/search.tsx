@@ -135,12 +135,18 @@ const SearchPage: React.FC = () => {
           <Hits
             hitComponent={({ hit }: { hit: HitAlgolia }) => (
               <PostCard
-                description={hit.description}
-                slug={hit.fields.localizedSlug}
-                image={hit.image?.childImageSharp?.fluid}
-                title={hit.title}
-                timeToRead={hit.timeToRead}
-                date={hit.date}
+                postNode={{
+                  timeToRead: hit.timeToRead,
+                  fields: {
+                    slug: hit.fields.localizedSlug,
+                  },
+                  frontmatter: {
+                    title: hit.title,
+                    subtitle: hit.subtitle,
+                    date: hit.date,
+                    description: hit.description,
+                  },
+                }}
               />
             )}
           />

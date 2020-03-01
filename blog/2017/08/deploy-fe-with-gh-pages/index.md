@@ -1,12 +1,17 @@
 ---
-title: 'Subindo seu projeto Front-end gratuitamente com Github Pages'
+title: 'Subindo seu projeto Front-end gratuitamente'
+subtitle: 'Apresentando: Github Pages'
 date: '2017-08-30'
-image: assets/gh-vs-surge.png
-description: 'Como colocar online seu projeto front-end usando Github Pages'
+image: assets/featured-img.png
+description: 'Como hospedar sua aplicação web utilizando a plataforma do Github'
 categories:
   - deploy
   - Front-end
   - Github Pages
+series:
+  id: deploy-fe
+  index: 1
+  copy: Parte
 ---
 
 Fala dev's, tudo bom com vocês? Hoje vim falar de um tema que me fez bater muito a cabeça quando estava começando no mundo da programação (mais especificamente no mundo front-end):
