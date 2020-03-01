@@ -3,7 +3,7 @@ title: 'Entendendo de uma vez por todas Expressões Regulares'
 subtitle: 'Capturando Grupos'
 date: '2017-06-24'
 image: assets/featured-img.jpeg
-description: 'Chega de chutar expressões regulares.'
+description: 'Explorando o funcionamento para captura de pedaços específicos de uma string com expressões regulares.'
 categories:
   - regex
   - desenvolvimento

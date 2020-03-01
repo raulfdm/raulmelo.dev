@@ -1,12 +1,17 @@
 ---
-title: 'Subindo seu projeto Front-end gratuitamente com Surge.sh'
+title: 'Subindo seu projeto Front-end gratuitamente'
+subtitle: 'Apresentando: Surge'
 date: '2017-09-09'
-image: assets/gh-vs-surge.png
-description: 'Como colocar online seu projeto front-end usando a plataforma Surge.'
+image: assets/featured-img.png
+description: 'Como hospedar sua aplicação web utilizando a plataforma Surge.sh'
 categories:
   - deploy
   - Front-end
   - Surge
+series:
+  id: deploy-fe
+  index: 2
+  copy: Parte
 ---
 
 Fala Dev's, tranquilidade? Mais um artigo sobre subir seu projeto front-end gratuitamente. Dessa vez eu vim apresentar pra vocês uma ferramenta que eu vi há algum tempo atrás, mas que eu só fui testar e usar recentemente.
