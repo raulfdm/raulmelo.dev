@@ -36,7 +36,18 @@ function getSeriesPost(postEdges) {
   }, {});
 }
 
+function getPreviousAndNextPostSeries(seriesData, currentIndex) {
+  const previousPost = seriesData[currentIndex - 1] || null;
+  const nextPost = seriesData[currentIndex + 1] || null;
+
+  return {
+    nextPost,
+    previousPost,
+  };
+}
+
 module.exports = {
   getSeriesPost,
   seriesPath,
+  getPreviousAndNextPostSeries,
 };

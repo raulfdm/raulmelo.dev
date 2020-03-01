@@ -6,7 +6,11 @@
 
 const path = require('path');
 const R = require('ramda');
-const { getSeriesPost, seriesPath } = require('./helpers');
+const {
+  getSeriesPost,
+  seriesPath,
+  getPreviousAndNextPostSeries,
+} = require('./helpers');
 
 const DEFAULT_LOCALE = 'pt-br';
 
@@ -129,17 +133,17 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const postSeriesAvailable = getSeriesPost(posts);
 
-  postEntries.forEach(([slug, posts], index) => {
-    const previousIndex = index - 1;
-    const nextIndex = index + 1;
+  postEntries.forEach(([slug, posts] /* index */) => {
+    // const previousIndex = index - 1;
+    // const nextIndex = index + 1;
 
-    const previousPost = postEntries[previousIndex]
-      ? postEntries[previousIndex][1] // position 1 matches for post list
-      : null;
+    // const previousPost = postEntries[previousIndex]
+    //   ? postEntries[previousIndex][1] // position 1 matches for post list
+    //   : null;
 
-    const nextPost = postEntries[nextIndex]
-      ? postEntries[nextIndex][1] // position 1 matches for post list
-      : null;
+    // const nextPost = postEntries[nextIndex]
+    //   ? postEntries[nextIndex][1] // position 1 matches for post list
+    //   : null;
 
     /* TODO: Extract this into a separeted function */
     const postByLocale = posts.reduce((acc, post) => {
@@ -160,8 +164,8 @@ exports.createPages = async ({ graphql, actions }) => {
           postByLocale,
           localizedSlug,
           slug,
-          previous: previousPost,
-          next: nextPost,
+          previousPost: null,
+          nextPost: null,
           series: null,
         },
       };
@@ -169,8 +173,15 @@ exports.createPages = async ({ graphql, actions }) => {
       const seriesInfo = R.path(seriesPath, post);
 
       if (seriesInfo) {
-        const { id } = seriesInfo;
-        pageData.context.series = postSeriesAvailable[id];
+        const { id, index } = seriesInfo;
+        const entireSeries = postSeriesAvailable[id];
+        const { context } = pageData;
+
+        pageData.context = {
+          ...context,
+          series: entireSeries,
+          ...getPreviousAndNextPostSeries(entireSeries, index),
+        };
       }
 
       createPage(pageData);
