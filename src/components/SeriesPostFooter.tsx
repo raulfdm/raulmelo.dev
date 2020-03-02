@@ -33,7 +33,7 @@ export const SeriesPostFooter: React.FC<{
           <li>
             {nextPost && (
               <Link to={nextPost.uri}>
-                {previousPost.copy}: {nextPost.subtitle} →
+                {nextPost.copy}: {nextPost.subtitle} →
               </Link>
             )}
           </li>
