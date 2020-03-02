@@ -37,13 +37,20 @@ function getSeriesPost(postEdges) {
 }
 
 function getPreviousAndNextPostSeries(seriesData, currentIndex) {
-  const previousPost = seriesData[currentIndex - 1] || null;
-  const nextPost = seriesData[currentIndex + 1] || null;
+  const seriesEntries = R.toPairs(seriesData);
+  const postArrayIndex = R.findIndex(([i]) => {
+    return i.toString() === currentIndex.toString();
+  }, seriesEntries);
 
-  return {
-    nextPost,
-    previousPost,
+  const previousPost = seriesEntries[postArrayIndex - 1] || null;
+  const nextPost = seriesEntries[postArrayIndex + 1] || null;
+
+  const result = {
+    nextPost: R.isNil(nextPost) ? null : nextPost[1],
+    previousPost: R.isNil(previousPost) ? null : previousPost[1],
   };
+
+  return result;
 }
 
 module.exports = {
