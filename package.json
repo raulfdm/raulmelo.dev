@@ -55,7 +55,7 @@
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@sub-tv/eslint-config": "^1.1.0",
     "@sub-tv/prettier-config": "^1.1.0",
-    "@types/ramda": "^0.26.42",
+    "@types/ramda": "^0.26.43",
     "@types/react-helmet": "^5.0.15",
     "@types/react-instantsearch-dom": "^5.2.6",
     "@types/react-intl": "^3.0.0",
