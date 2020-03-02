@@ -13,7 +13,8 @@ import { Container } from '../components/Ui';
 import { MenuBar } from '../components/MenuBar';
 import { Gif } from '../components/Gif';
 import { Series } from '../components/Series';
-import { Frontmatter, SeriesType } from '../types';
+import { SeriesPostFooter } from '../components/SeriesPostFooter';
+import { Frontmatter, SeriesType, PostSeries } from '../types';
 
 const Title = styled.h1`
   font-size: 3.4rem;
@@ -59,6 +60,8 @@ const ImgWrapper = styled(Container)`
 
 type PostProps = {
   pageContext: {
+    previousPost: PostSeries | null;
+    nextPost: PostSeries | null;
     postByLocale: {
       node: {
         [locale: string]: {
@@ -91,7 +94,7 @@ const Post: React.FC<PostProps> = ({ pageContext }) => {
       window.twttr.widgets.load();
     }
   }, []);
-  const { postByLocale, intl, series } = pageContext;
+  const { postByLocale, intl, series, previousPost, nextPost } = pageContext;
 
   const post = postByLocale[intl.language];
 
@@ -132,6 +135,7 @@ const Post: React.FC<PostProps> = ({ pageContext }) => {
       )}
       <Container className="post" as="main">
         {renderAst(htmlAst)}
+        <SeriesPostFooter nextPost={nextPost} previousPost={previousPost} />
       </Container>
     </ThemeProvider>
   );
