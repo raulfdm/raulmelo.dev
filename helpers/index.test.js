@@ -27,6 +27,12 @@ describe('fn: getPreviousAndNextPostSeries', () => {
       copy: 'Parte 3',
       uri: '/pt-br/2017/05/regex-part-3',
     },
+    '3.1': {
+      index: '3.1',
+      subtitle: 'no title',
+      copy: 'Parte 3.1',
+      uri: '/pt-br/2017/05/regex-part-3',
+    },
   };
 
   it('returns previus null and next index 2', () => {
@@ -43,9 +49,16 @@ describe('fn: getPreviousAndNextPostSeries', () => {
     });
   });
 
-  it('returns previous index 2 and nextPost null', () => {
+  it('returns previous index 2 and nextPost 3.1', () => {
     expect(getPreviousAndNextPostSeries(data, 3)).toEqual({
       previousPost: data['2'],
+      nextPost: data['3.1'],
+    });
+  });
+
+  it('returns previous index 2 and nextPost null', () => {
+    expect(getPreviousAndNextPostSeries(data, '3.1')).toEqual({
+      previousPost: data['3'],
       nextPost: null,
     });
   });

@@ -6,8 +6,26 @@ import { PostSeries } from '../types';
 import styled from 'styled-components';
 
 const LinksWrapper = styled.ul`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+`;
+
+const PostLinkItem = styled.li`
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+
+  &:first-child {
+    a {
+      padding-left: 1rem;
+    }
+  }
+
+  &:last-child {
+    text-align: right;
+    a {
+      padding-right: 1rem;
+    }
+  }
 `;
 
 export const SeriesPostFooter: React.FC<{
@@ -23,20 +41,26 @@ export const SeriesPostFooter: React.FC<{
       <hr className="post-divider" />
       <nav style={{ paddingTop: '2rem' }}>
         <LinksWrapper>
-          <li>
+          <PostLinkItem>
             {previousPost && (
-              <Link to={previousPost.uri}>
-                ← {previousPost.copy}: {previousPost.subtitle}
-              </Link>
+              <>
+                <span>← </span>
+                <Link to={previousPost.uri}>
+                  {previousPost.copy}: {previousPost.subtitle}
+                </Link>
+              </>
             )}
-          </li>
-          <li>
+          </PostLinkItem>
+          <PostLinkItem>
             {nextPost && (
-              <Link to={nextPost.uri}>
-                {nextPost.copy}: {nextPost.subtitle} →
-              </Link>
+              <>
+                <Link to={nextPost.uri}>
+                  {nextPost.copy}: {nextPost.subtitle}
+                </Link>
+                <span> →</span>
+              </>
             )}
-          </li>
+          </PostLinkItem>
         </LinksWrapper>
       </nav>
     </footer>
