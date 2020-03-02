@@ -115,8 +115,6 @@ const Post: React.FC<PostProps> = ({ pageContext }) => {
     series: seriesInfo,
   } = frontmatter as Frontmatter;
 
-  console.log({ previousPost, nextPost });
-
   return (
     <ThemeProvider>
       <GlobalStyles />
