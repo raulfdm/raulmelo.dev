@@ -11,8 +11,8 @@ categories:
   - JavaScript
 series:
   id: dev-js
-  index: 2
-  copy: Ato
+  index: 1
+  copy: Ato 2
 ---
 
 Acredito que boa parte das pessoas que trabalha ou gosta de tecnologia hoje em dia, quando era criança ficava curiosa com filmes de hackers, futuros distópicos ou até mesmo com ficções (há controvérsias) como Matrix.

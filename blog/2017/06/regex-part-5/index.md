@@ -9,8 +9,8 @@ categories:
   - desenvolvimento
 series:
   id: regex
-  index: 5
-  copy: Parte
+  index: 4
+  copy: Parte 5
 ---
 
 Filhos(as) de [Zion](https://matrix.fandom.com/wiki/Zion), tudo na paz? Continuando nossa saga nas Expressões Regulares, hoje iremos abordar uma funcionalidade que começa a dar vida e trazer uma real utilidade para as nossas expressões: Grupos de caracteres.

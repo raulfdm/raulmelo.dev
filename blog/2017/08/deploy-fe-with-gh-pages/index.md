@@ -10,8 +10,8 @@ categories:
   - Github Pages
 series:
   id: deploy-fe
-  index: 1
-  copy: Parte
+  index: 0
+  copy: Parte 1
 ---
 
 Fala dev's, tudo bom com vocês? Hoje vim falar de um tema que me fez bater muito a cabeça quando estava começando no mundo da programação (mais especificamente no mundo front-end):

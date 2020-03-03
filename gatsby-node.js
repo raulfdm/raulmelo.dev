@@ -133,18 +133,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const postSeriesAvailable = getSeriesPost(posts);
 
-  postEntries.forEach(([slug, posts] /* index */) => {
-    // const previousIndex = index - 1;
-    // const nextIndex = index + 1;
-
-    // const previousPost = postEntries[previousIndex]
-    //   ? postEntries[previousIndex][1] // position 1 matches for post list
-    //   : null;
-
-    // const nextPost = postEntries[nextIndex]
-    //   ? postEntries[nextIndex][1] // position 1 matches for post list
-    //   : null;
-
+  postEntries.forEach(([slug, posts]) => {
     /* TODO: Extract this into a separeted function */
     const postByLocale = posts.reduce((acc, post) => {
       acc[post.node.fields.locale] = post;
