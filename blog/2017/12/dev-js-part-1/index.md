@@ -11,8 +11,8 @@ categories:
   - JavaScript
 series:
   id: dev-js
-  index: 1
-  copy: Ato
+  index: 0
+  copy: Ato 1
 ---
 
 Fala dev's, tudo certo com vocês? Mais uma série de artigos começando e dessa vez eu quero compartilhar com vocês a minha história.

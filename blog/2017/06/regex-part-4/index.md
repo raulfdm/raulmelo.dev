@@ -9,8 +9,8 @@ categories:
   - desenvolvimento
 series:
   id: regex
-  index: 4
-  copy: Parte
+  index: 3
+  copy: Parte 4
 ---
 
 Fala galere, tudo em cima? Hoje é dia de mais um artigo sobre expressões regulares e hoje iremos abordar os quantifiers (quantificadores), ou seja, formas de definir quantas vezes queremos que elementos apareçam ou não em nossas expressões.

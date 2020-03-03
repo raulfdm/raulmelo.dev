@@ -11,8 +11,8 @@ categories:
   - JavaScript
 series:
   id: dev-js
-  index: 3.2
-  copy: Ato
+  index: 3
+  copy: Ato 3 2/2
 ---
 
 O ano era 2010. Comecei a trabalhar na farmácia do meu tio e apesar de compras online já existir há muito tempo, ainda não era como agora. Hoje, a preferência de boa parte dos usuários da internet é comprar produtos em lojas virtuais ou em sites de negócios.

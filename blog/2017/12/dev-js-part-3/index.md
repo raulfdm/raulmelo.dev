@@ -11,8 +11,8 @@ categories:
   - JavaScript
 series:
   id: dev-js
-  index: 3.1
-  copy: Ato
+  index: 2
+  copy: Ato 3 1/2
 ---
 
 > O que você quer ser quando crescer?

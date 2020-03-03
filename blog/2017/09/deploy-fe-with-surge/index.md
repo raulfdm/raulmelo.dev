@@ -10,8 +10,8 @@ categories:
   - Surge
 series:
   id: deploy-fe
-  index: 2
-  copy: Parte
+  index: 1
+  copy: Parte 2
 ---
 
 Fala Dev's, tranquilidade? Mais um artigo sobre subir seu projeto front-end gratuitamente. Dessa vez eu vim apresentar pra vocês uma ferramenta que eu vi há algum tempo atrás, mas que eu só fui testar e usar recentemente.
