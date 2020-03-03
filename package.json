@@ -24,7 +24,7 @@
     "algoliasearch": "^4.0.3",
     "debounce-promise": "^3.1.2",
     "framer-motion": "^1.8.4",
-    "gatsby": "^2.19.24",
+    "gatsby": "^2.19.25",
     "gatsby-image": "^2.2.42",
     "gatsby-plugin-algolia-search": "^0.5.6",
     "gatsby-plugin-i18n": "^1.0.1",
