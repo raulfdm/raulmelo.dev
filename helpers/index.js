@@ -14,7 +14,7 @@ function getSeriesPost(postEdges) {
     return {
       subtitle: R.pathOr('no title', [...frontmatterPath, 'subtitle'], post),
       series_id: R.path([...seriesPath, 'id'], post),
-      copy: `${seriesCopy} ${seriesPostIndex}`,
+      copy: seriesCopy,
       index: seriesPostIndex,
       uri: R.path(['node', 'fields', 'localizedSlug'], post),
     };
