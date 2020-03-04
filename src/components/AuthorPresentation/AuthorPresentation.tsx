@@ -1,6 +1,6 @@
 import React from 'react';
 import { FormattedMessage } from 'gatsby-plugin-intl';
-import { Twitter, Linkedin, Github } from 'styled-icons/boxicons-logos';
+import { Twitter, Linkedin, Github } from '@styled-icons/boxicons-logos';
 
 import * as S from './styled';
 
