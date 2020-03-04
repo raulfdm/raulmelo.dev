@@ -47,7 +47,7 @@
     "react-instantsearch-dom": "^6.3.0",
     "rehype-react": "^4.0.1",
     "styled-components": "^5.0.1",
-    "styled-icons": "^9.5.0",
+    "styled-icons": "^10.0.0",
     "styled-media-query": "^2.1.2"
   },
   "devDependencies": {
