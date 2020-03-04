@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'gatsby-link';
 import { useViewportScroll, useMotionValue } from 'framer-motion';
-import { Search as SearchIcon } from 'styled-icons/evil/Search';
+import { Search as SearchIcon } from '@styled-icons/evil/Search';
 
 import { LanguageSwitch } from '../LanguageSwitch';
 import { ThemeSwitch } from '../ThemeSwitch';

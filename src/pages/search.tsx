@@ -3,7 +3,7 @@ import algoliaSearch from 'algoliasearch/lite';
 import { InstantSearch, SearchBox, Hits, Stats } from 'react-instantsearch-dom';
 import styled from 'styled-components';
 import { useIntl, defineMessages } from 'gatsby-plugin-intl';
-import { Algolia } from 'styled-icons/boxicons-logos/Algolia';
+import { Algolia } from '@styled-icons/boxicons-logos/Algolia';
 import debounce from 'debounce-promise';
 
 import { HitAlgolia, RequestsAlgoliaClient } from '../types';
