@@ -37,7 +37,7 @@ export const Quote = styled.blockquote`
 
   text-rendering: optimizelegibility;
   padding-left: 3rem;
-  font-size: 3rem;
+  font-size: 30px;
   line-height: 44px;
   color: ${({ theme }) => theme.color.font};
   opacity: 0.6;

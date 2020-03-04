@@ -48,7 +48,8 @@
     "rehype-react": "^4.0.1",
     "styled-components": "^5.0.1",
     "styled-icons": "^10.1.0",
-    "styled-media-query": "^2.1.2"
+    "styled-media-query": "^2.1.2",
+    "typography": "^0.16.19"
   },
   "devDependencies": {
     "@babel/core": "^7.8.7",
@@ -60,6 +61,7 @@
     "@types/react-instantsearch-dom": "^5.2.6",
     "@types/react-intl": "^3.0.0",
     "@types/styled-components": "^5.0.1",
+    "@types/typography": "^0.16.3",
     "@typescript-eslint/eslint-plugin": "^2.22.0",
     "@typescript-eslint/parser": "^2.22.0",
     "awesome-typescript-loader": "^5.2.1",
