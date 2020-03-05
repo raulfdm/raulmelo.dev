@@ -95,15 +95,9 @@ Na minha concepção, física útil pra um cidadão é saber o que são as micro
 
 A propósito, acredito que muitos canais no Youtube tentam fazer isso e atingem esse objetivo de forma esplêndida, como é o caso do manual do mundo por exemplo
 
-<!-- TODO: Remove that when fix https://github.com/raulfdm/medium-blog/issues/119  -->
-<br/>
-
 <iframe width="560" height="315" src="https://www.youtube.com/embed/vX3s1w1Ihl8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Ou até mesmo o Nerdologia, que apesar de ter um foco em explicar coisas do mundo Nerd, muitas vezes respondem dúvidas que temos sobre coisas do cotidiano usando conceitos da psicologia, física, química, biologia, etc.
-
-<!-- TODO: Remove that when fix https://github.com/raulfdm/medium-blog/issues/119  -->
-<br/>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/p3IQU-PmJGU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -147,13 +141,7 @@ Foi então que o desespero começou a bater e eu comecei a pensar nisso com bast
 
 > Quais são minhas opções? #ajudaLuciano
 
-<!-- TODO: FIX THIS SPACE -->
-<br/>
-
 ## Opções
-
-<!-- TODO: FIX THIS SPACE -->
-<br/>
 
 ### Nutrição
 

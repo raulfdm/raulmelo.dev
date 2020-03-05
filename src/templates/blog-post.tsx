@@ -7,7 +7,7 @@ import media from 'styled-media-query';
 import { Quote } from '../components/Ui';
 import { ThemeProvider } from '../config/theme';
 import Layout from '../components/Layout';
-import { BlogGlobalStyle } from '../styles/blogPost';
+import { BlogGlobalStyle, pxToRem } from '../styles/blogPost';
 import { GlobalStyles } from '../styles';
 import { Container } from '../components/Ui';
 import { MenuBar } from '../components/MenuBar';
@@ -17,45 +17,38 @@ import { SeriesPostFooter } from '../components/SeriesPostFooter';
 import { Frontmatter, SeriesType, PostSeries } from '../types';
 
 const Title = styled.h1`
-  font-size: 3.4rem;
-  font-family: ${({ theme }) => theme.font.contentTitle};
-  line-height: 1.25;
-  font-weight: 400;
-  font-style: normal;
+  font-size: ${pxToRem(34)};
 
   ${media.greaterThan('medium')`
-    font-size: 4.2rem;
+    font-size: ${pxToRem(42)};
   `}
 `;
 
 const Subtitle = styled.p`
-  margin-top: 0.5rem;
-  margin-bottom: 2.2rem;
-  font-size: 2.4rem;
+  ${pxToRem(24)}
   line-height: 1.22;
   letter-spacing: -0.012em;
   font-family: ${({ theme }) => theme.font.contentSans};
   opacity: 0.54;
 
   ${media.greaterThan('medium')`
-    font-size: 2.8rem;
+    font-size: ${pxToRem(28)};
   `}
 `;
 
 const StyledImg = styled(Img)`
   max-height: 400px;
-  /* TODO: double check this magic number */
   margin-top: 42px;
-  margin-bottom: 1.56em;
+  margin-bottom: 16px;
 
   ${media.greaterThan('medium')`
-    margin-bottom: 2em;
+    margin-bottom: 20px;
   `}
 `;
 
 const ImgWrapper = styled(Container)`
   max-width: 1192px;
-  padding-bottom: 7rem;
+  padding-bottom: 50px;
 `;
 
 type PostProps = {
@@ -89,7 +82,7 @@ const Post: React.FC<PostProps> = ({ pageContext }) => {
     It's loaded by html.tsx (data-testid="twitter-script")
     */
     // @ts-ignore
-    if (window.twttr) {
+    if (window.twttr?.widgets) {
       // @ts-ignore
       window.twttr.widgets.load();
     }

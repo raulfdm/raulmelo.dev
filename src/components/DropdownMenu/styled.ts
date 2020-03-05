@@ -17,7 +17,6 @@ export const DropdownMenuList = styled.ul`
   box-shadow: ${(props) => props.theme.color.shadowLight} 0 1px 2px,
     ${(props) => props.theme.color.shadow} 0 0 1px;
   max-width: 280px;
-
   margin: 0;
   padding: 0;
   position: absolute;
@@ -34,7 +33,7 @@ export const ArrowUp = styled.div`
 
   margin-left: -7px;
   position: absolute;
-  bottom: -8px;
+  bottom: -4px;
 
   &::after {
     content: '';
@@ -49,13 +48,13 @@ export const ArrowUp = styled.div`
 
 export const DropdownMenuItem = styled.li`
   background-color: transparent;
+  margin: 0;
 
   cursor: pointer;
   display: inline-block;
   font-family: ${(props) => props.theme.font.contentSans};
 
-  font-size: 1.6rem;
-
+  font-size: 16px;
   line-height: 1.4;
   padding: 7px 25px;
   position: relative;

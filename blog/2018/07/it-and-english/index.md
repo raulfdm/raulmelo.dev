@@ -84,9 +84,6 @@ Sim jovem, faz muita diferença. E não é só pra sua carreira não, é pra sua
 
 Quando entrar nos atos em que eu conto a minha vida aqui na Holanda, falarei bem mais sobre esse tema, por hora, pause a leitura e assista esse vídeo (sério, faça isso) e você vai ter uma explicação mais profissional dos motivos:
 
-<!-- TODO: Remove that -->
-<br/>
-
 <iframe width="560" height="315" src="https://www.youtube.com/embed/MMmOLN5zBLY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 (Se tiver algum erro pra carregar o vídeo ou quiser abrir no YouTube, [clica aqui](https://www.youtube.com/watch?v=MMmOLN5zBLY). Obs.: tem legenda em português.)
@@ -228,9 +225,6 @@ Chega de papo furado, vamos às dicas.
 
 ### Coding Time
 
-<!-- TODO: Remove this -->
-<br/>
-
 #### Mensagens de Commit
 
 Essa é uma dica pra quem já consegue pelo menos escrever (mesmo que errado).
@@ -273,9 +267,6 @@ Novamente, não precisa ser perfeito, precisa ser em inglês!
 
 ### Dia-a-Dia
 
-<!-- TODO: Remove this -->
-<br/>
-
 #### Tudo em inglês
 
 Parece uma dica muito óbvia, mas eu conheço muita gente que não faz. Coloque TUDO o que for possível em inglês. Celular, computador, email, redes sociais, navegador, serviços, TUDO. Você precisa sentir familiaridade com a língua.
@@ -295,9 +286,6 @@ Assistir em inglês com legenda em português para estudar inglês não é a mel
 Vai ser complicado no começo, afinal, mudar qualquer hábito é complicado mesmo, mas depois que pegar o jeito, só terá benefícios.
 
 ### Estudos
-
-<!-- TODO: Remove this -->
-<br/>
 
 #### Repetição Espaçada
 
@@ -322,9 +310,6 @@ Abaixo você consegue ver um gráfico que mostra exatamente esse comportamento:
 ![Repetição espaçada](./assets/spaced-repetition.png)
 
 Ainda sobre esse assunto, sugiro você assistir o vídeo da Arata Academy sobre isso e procurar artigos a respeito, vale muito a pena:
-
-<!-- TODO: Remove this -->
-<br/>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/8mmN_dKrMeQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

@@ -14,7 +14,7 @@ export const MenuBarWrapper = styled(motion.nav)`
   top: 0;
   left: 0;
   right: 0;
-  height: 6.5rem;
+  height: 65px;
   z-index: 500;
   background-color: ${({ theme }) => theme.color.background};
 
@@ -34,8 +34,8 @@ export const CustomContainer = styled(Container)`
 `;
 
 export const DummySpace = styled.div`
-  height: 6.5rem;
-  margin-bottom: 6.5rem;
+  height: 65px;
+  margin-bottom: 65px;
 `;
 
 export const LogoWrapper = styled.div`

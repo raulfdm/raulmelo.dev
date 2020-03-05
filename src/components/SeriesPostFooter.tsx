@@ -1,9 +1,10 @@
 import React from 'react';
 import * as R from 'ramda';
 import { Link } from 'gatsby-plugin-intl';
+import styled from 'styled-components';
 
 import { PostSeries } from '../types';
-import styled from 'styled-components';
+import { pxToRem } from '../styles/blogPost';
 
 const LinksWrapper = styled.ul`
   display: grid;
@@ -16,14 +17,14 @@ const PostLinkItem = styled.li`
 
   &:first-child {
     a {
-      padding-left: 1rem;
+      padding-left: ${pxToRem(10)};
     }
   }
 
   &:last-child {
     text-align: right;
     a {
-      padding-right: 1rem;
+      padding-right: ${pxToRem(10)};
     }
   }
 `;
@@ -33,7 +34,7 @@ export const SeriesPostFooter: React.FC<{
   nextPost: PostSeries | null;
 }> = ({ previousPost, nextPost }) => {
   if (R.isNil(previousPost) && R.isNil(nextPost)) {
-    null;
+    return null;
   }
 
   return (
