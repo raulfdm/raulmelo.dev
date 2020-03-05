@@ -67,23 +67,6 @@ export const typography = new Typography({
   }),
 });
 
-// const global = css`
-//   .post * {
-
-//     article {
-//       a {
-//         color: inherit;
-//         background-image: linear-gradient(
-//           to right,
-//           ${({ theme }) => theme.color.font} 100%,
-//           ${({ theme }) => theme.color.font} 0
-//         );
-//         background-size: 1px 1px;
-//         background-position: 0 calc(1em + 1px);
-//         background-repeat: repeat-x;
-//       }
-//     }
-
 const global = css`
   html {
     --font-size: 16px;
