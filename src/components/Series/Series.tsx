@@ -1,9 +1,10 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import { FormattedMessage } from 'react-intl';
 
 import { SeriesType, PostSeries } from 'src/types';
+import { pxToRem } from '../../styles/blogPost';
 import { Card } from '../Ui';
-import { FormattedMessage } from 'react-intl';
 
 type SeriesProps = {
   series: SeriesType;
@@ -11,7 +12,7 @@ type SeriesProps = {
 };
 
 const SeriesWrapper = styled.div`
-  margin-top: 2.4rem;
+  margin-top: 24px;
 `;
 
 const StyledCard = styled(Card)`
@@ -48,7 +49,7 @@ const Row = styled.a<{ active: boolean }>`
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0.8rem 1.4rem;
+    padding: 8px 14px;
   }
 `;
 
@@ -57,17 +58,17 @@ const SeriesCopy = styled.p`
   border-right: 1px solid ${({ theme }) => theme.color.border};
   width: 100%;
   max-width: 100px;
-  font-size: 1.8rem;
+  font-size: ${pxToRem(18)};
 `;
 
 const PostSubtitle = styled.p`
   font-family: ${({ theme }) => theme.font.contentTitle};
-  font-size: 2.4rem;
+  font-size: ${pxToRem(24)};
 `;
 
 const SectionDescription = styled.p`
   font-family: ${({ theme }) => theme.font.contentSans};
-  margin-bottom: 1rem;
+  margin-bottom: 10px;
 `;
 
 export const Series: React.FC<SeriesProps> = ({ series, postIndex }) => {

@@ -17,14 +17,16 @@ export const Card = styled.div`
 `;
 
 export const Container = styled.div`
-  max-width: 728px;
+  --padding: 16px;
+
+  max-width: calc(768px - var(--padding));
   width: 100%;
   margin: 0 auto;
-  padding: 0 1.6rem;
+  padding: 0 var(--padding);
   height: 100%;
 
   ${media.greaterThan('medium')`
-   padding: 0 2.4rem;
+    --padding: 24px;
   `}
 `;
 
@@ -36,7 +38,7 @@ export const Quote = styled.blockquote`
   }
 
   text-rendering: optimizelegibility;
-  padding-left: 3rem;
+  padding-left: 30px;
   font-size: 30px;
   line-height: 44px;
   color: ${({ theme }) => theme.color.font};
