@@ -43,8 +43,6 @@ Foi então que, depois de muito refletir, me veio um curso na cabeça…
 
 ## Publicidade e Propaganda
 
-<br/>
-
 ![PP](./assets/pp.png)
 
 Lendo sobre profissões, descobri a profissão publicitário.
@@ -93,8 +91,6 @@ Depois de 1 semestre, resolvi trancar a faculdade e repensar a respeito de tudo�
 ---
 
 ## Técnico em Segurança do Trabalho
-
-<br/>
 
 ![Imagem meramente ilustrativa](./assets/tst.png)
 
@@ -204,11 +200,7 @@ Apesar de ter falhado na missão, aquele momento foi um dos raros momentos em mi
 
 Foi mais ou menos como essa palestra do Clóvis (Assista, sério).
 
-<br/>
-
 <iframe width="560" height="315" src="https://www.youtube.com/embed/rICKLns8p_M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-<br/>
 
 ### Programação de Fato
 

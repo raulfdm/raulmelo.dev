@@ -75,8 +75,6 @@ Minha suspeita estava certa, `relative` não me serviria.
 
 Bom, o fixed eu já sabia que não era, me sobrava o absolute. Tinha que ser ele. Corri no código e fiz a alteração:
 
-<br/>
-
 <iframe height="400" style="width: 100%;magin-top:" scrolling="no" title="raulfdm-position-absolute-3" src="https://codepen.io/yc_raulfdm/embed/eyoaqW?height=265&theme-id=dark&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/yc_raulfdm/pen/eyoaqW'>raulfdm-position-absolute-3</a> by Raul de Melo
   (<a href='https://codepen.io/yc_raulfdm'>@yc_raulfdm</a>) on <a href='https://codepen.io'>CodePen</a>.
@@ -130,8 +128,6 @@ Assim, podemos aproveitar esse comportamento e definir para a nossa div `.input-
 
 Ao fazer isso, o ~elemento ancestral posicionado~ mais próximo do nosso `.icon` será o `.input-icon`, consequentemente, o ponto que será usado para posicionar relativamente o ícone:
 
-<br/>
-
 <iframe height="265" style="width: 100%;" scrolling="no" title="raulfdm-position-absolute-4" src="https://codepen.io/yc_raulfdm/embed/eyoweV?height=265&theme-id=dark&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/yc_raulfdm/pen/eyoweV'>raulfdm-position-absolute-4</a> by Raul de Melo
   (<a href='https://codepen.io/yc_raulfdm'>@yc_raulfdm</a>) on <a href='https://codepen.io'>CodePen</a>.
@@ -143,9 +139,6 @@ Ao fazer isso, o ~elemento ancestral posicionado~ mais próximo do nosso `.icon`
 
 Agora, só resta alinhar o posicionamento do `.icon` para encaixar dentro do nosso input e definir um `padding-right` maior no `input`, para que o texto respeite o espaço do ícone:
 
-<!-- TODO: REMOVE THAT WHEN https://github.com/raulfdm/medium-blog/issues/94 gots merged -->
-<br/>
- 
 <iframe height="265" style="width: 100%;" scrolling="no" title="raulfdm-position-absolute-5" src="https://codepen.io/yc_raulfdm/embed/opOrEO?height=265&theme-id=dark&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/yc_raulfdm/pen/opOrEO'>raulfdm-position-absolute-5</a> by Raul de Melo
   (<a href='https://codepen.io/yc_raulfdm'>@yc_raulfdm</a>) on <a href='https://codepen.io'>CodePen</a>.
@@ -162,8 +155,6 @@ Quando postei esse artigo no grupo FrontEnd Brasil no facebook, um rapaz chamado
 E foi interessante porque eu já tinha usado o `translate` algumas vezes, mas nem tinha me atentado que ele serviria muito bem para esse caso.
 
 Fazendo uma leve alteração no código, temos o mesmo resultado, mas agora, independente do tamanho, ele sempre será alinhado no meio:
-
-<br/>
 
 <iframe height="265" style="width: 100%;" scrolling="no" title="raulfdm-position-absolute-6" src="https://codepen.io/yc_raulfdm/embed/QQbbJg?height=265&theme-id=dark&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/yc_raulfdm/pen/QQbbJg'>raulfdm-position-absolute-6</a> by Raul de Melo

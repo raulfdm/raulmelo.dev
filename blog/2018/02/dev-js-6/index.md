@@ -47,9 +47,6 @@ Ainda pra piorar, como em toda profissão, do ensino fundamental até a faculdad
 
 > Tipos de estudantes? Como assim?
 
-<!-- TODO: FIX THIS SPACE -->
-<br/>
-
 ### Tipos de Estudantes
 
 Você já parou pra pensar qual é a forma com que você mais aprende? Tenta lembrar de alguma matéria ou tema que você aprendeu em algum momento da sua vida e consegue lembrar até hoje. Tenta lembrar da metodologia que foi utilizada para passar esse conhecimento pra você.
@@ -204,9 +201,6 @@ PREPARADO?
 É então… geralmente a gente sempre espera um caminho mais curto, um macete, um truque, mas não jeito comparanheirx, como diria aquele velho ditado clichê: "A prática leva a perfeição".
 
 E, além de levar a perfeição, te traz experiência:
-
-<!-- TODO: Fix this space -->
-<br/>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/uqp5-F2_-lU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

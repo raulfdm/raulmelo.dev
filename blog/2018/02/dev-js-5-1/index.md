@@ -27,9 +27,6 @@ Nos trechos a seguir você vai entender como o relacionamento interpessoal e ten
 
 ## Gerenciando Documentos
 
-<!-- TODO: FIX THIS SPACE -->
-<br/>
-
 ![Gestão de documentos](./assets/doc-management.png)
 
 Quando fui convidado pra fazer entrevista nessa empresa, eu não fazia a menor ideia do que se tratava. Pensando bem, pouco importava, eu precisava de um emprego e nada mais.
@@ -91,9 +88,6 @@ Apesar de todo estresse que havia passado, insatisfação profissional e etc., c
 ---
 
 ## Networking… networking… networking…
-
-<!-- TODO: FIX THIS SPACE -->
-<br/>
 
 ![Networking — Relações](./assets/networking.png)
 
