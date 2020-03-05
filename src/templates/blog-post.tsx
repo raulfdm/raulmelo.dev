@@ -82,7 +82,7 @@ const Post: React.FC<PostProps> = ({ pageContext }) => {
     It's loaded by html.tsx (data-testid="twitter-script")
     */
     // @ts-ignore
-    if (window.twttr) {
+    if (window.twttr?.widgets) {
       // @ts-ignore
       window.twttr.widgets.load();
     }
