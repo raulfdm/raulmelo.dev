@@ -34,7 +34,7 @@ export const SeriesPostFooter: React.FC<{
   nextPost: PostSeries | null;
 }> = ({ previousPost, nextPost }) => {
   if (R.isNil(previousPost) && R.isNil(nextPost)) {
-    null;
+    return null;
   }
 
   return (
