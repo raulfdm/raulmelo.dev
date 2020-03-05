@@ -9,8 +9,8 @@ categories:
   - desenvolvimento
 series:
   id: regex
-  index: 5
-  copy: Parte
+  index: 4
+  copy: Parte 5
 ---
 
 Filhos(as) de [Zion](https://matrix.fandom.com/wiki/Zion), tudo na paz? Continuando nossa saga nas Expressões Regulares, hoje iremos abordar uma funcionalidade que começa a dar vida e trazer uma real utilidade para as nossas expressões: Grupos de caracteres.
@@ -145,9 +145,6 @@ Backreference é uma forma de fazer **referência** à um grupo que **já** foi 
 
 > Grupo n? Que história é essa?
 
-<!-- TODO: Remove this workaround when https://github.com/raulfdm/medium-blog/issues/87 gets fixed -->
-<br/>
-
 ### Número do grupo
 
 Cada grupo que definimos ganha um número, que no caso seria sua posição na expressão. Esse número, varia conforme a ordem de declaração, ou seja, o primeiro grupo ganha o número 1, o segundo ganha o número 2 e assim sucessivamente.
@@ -168,9 +165,6 @@ Fazendo uma analogia, lembra das aulas de matemática, onde temos várias expres
 > Vale comentar um comportamento que pode fazer a gente quebrar muito a cabeça e acreditar que estamos fazendo algo errado.
 >
 > Quando definimos que o grupo será “non-capturing” (?:), além dele não aparecer nos resultados, ele também **não ganha uma numeração**. Ou seja, você não conseguirá fazer referências à ele. =/
-
-<!-- TODO: Remove this workaround when https://github.com/raulfdm/medium-blog/issues/87 gets fixed -->
-<br/>
 
 ### Fazendo referência à um grupo
 

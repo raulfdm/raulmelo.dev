@@ -1,5 +1,5 @@
 import React from 'react';
-import { Translate } from 'styled-icons/material/Translate';
+import { Translate } from '@styled-icons/material/Translate';
 import { changeLocale } from 'gatsby-plugin-intl';
 
 import { DropdownMenu, DropdownMenuItem } from './DropdownMenu';

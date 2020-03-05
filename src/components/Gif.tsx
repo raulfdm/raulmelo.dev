@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 type GifProps = {
   src: string;
@@ -12,9 +12,10 @@ export const Gif: React.FC<GifProps> = ({ src, caption, imgstyle }) => {
     ${imgstyle}
     margin: 0 auto;
   `;
+
   return (
     <Figure className="gif-wrapper">
-      <img src={src} alt={caption} width="100%" />
+      <img src={src} alt={caption} width="100%" style={{ margin: 0 }} />
       <figcaption className="gif-caption">{caption}</figcaption>
     </Figure>
   );

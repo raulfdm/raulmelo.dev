@@ -9,8 +9,8 @@ categories:
   - desenvolvimento
 series:
   id: regex
-  index: 6
-  copy: Parte
+  index: 5
+  copy: Parte 6
 ---
 
 Fala meu povo, tudo bem com vocês? Estamos quase fechando a série “Entendendo de uma vez por todas Expressões regulares”.

@@ -53,9 +53,7 @@ export const ThemeProvider: React.FC<ThemeProps> = ({ children }) => {
     font: {
       contentSans: withFontFallback('medium-content-sans-serif-font'),
       contentSerif: withFontFallback('medium-content-serif-font'),
-      contentSlab: withFontFallback('medium-content-slab-serif-font'),
       contentTitle: withFontFallback('medium-content-title-font'),
-      marketingDisplay: withFontFallback('medium-marketing-display-font'),
     },
     color: {
       background: 'var(--background)',

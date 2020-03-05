@@ -9,8 +9,8 @@ categories:
   - desenvolvimento
 series:
   id: regex
-  index: 7
-  copy: Parte
+  index: 6
+  copy: Parte 7
 ---
 
 Fala meu povo, tudo bem com vocês? Seguindo no penúltimo artigo da série regex, hoje falaremos (finalmente) sobre como utilizar as expressões regulares no mundo JavaScript. _let's do it_!

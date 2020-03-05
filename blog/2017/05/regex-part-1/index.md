@@ -9,8 +9,8 @@ categories:
   - desenvolvimento
 series:
   id: regex
-  index: 1
-  copy: Parte
+  index: 0
+  copy: Parte 1
 ---
 
 Fala pessoal, tudo certo? Meu nome é Raul, tenho 24 anos e sou desenvolvedor há quase 3 anos. Comecei a programar na faculdade com Java, PHP, até me deparar com o fascinante mundo do client-side e resolver abandonar um pouco o _server-side_ pra entender a mágica da força trindade HTML, CSS e Javascript.

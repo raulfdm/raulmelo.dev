@@ -10,8 +10,8 @@ categories:
   - Netlify
 series:
   id: deploy-fe
-  index: 3
-  copy: Parte
+  index: 2
+  copy: Parte 3
 ---
 
 Fala galera, tudo tranquilo?
