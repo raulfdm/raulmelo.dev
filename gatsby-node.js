@@ -10,54 +10,18 @@ const {
   getSeriesPost,
   seriesPath,
   getPreviousAndNextPostSeries,
+  createFields,
 } = require('./helpers');
 
-const DEFAULT_LOCALE = 'pt-br';
+/* Custom Fields */
+exports.onCreateNode = createFields;
 
-const BLOGS_PATH = path.resolve(__dirname, './blog');
-
-/* All file names at src/locales/ */
-
-exports.onCreateNode = ({ node, actions }) => {
-  const { createNodeField } = actions;
-
-  if (node.internal.type === `MarkdownRemark`) {
-    // Use path.basename
-    // https://nodejs.org/api/path.html#path_path_basename_path_ext
-    const fileName = path.basename(node.fileAbsolutePath, `.md`);
-    /* Will be a absolute path to blog/* (e.g. <project-path>/blog/setup-react-project/ ) */
-    const postDirectoryPath = path.dirname(node.fileAbsolutePath);
-    /* Gets the relative nested folder path */
-    const folderPath = `/${path.relative(BLOGS_PATH, postDirectoryPath)}`;
-    /* if it's translated, will be index.<locale-prefix> (e.g. index.en) */
-    const isDefaultLocaleBlog = fileName === 'index';
-
-    const fileLocale = isDefaultLocaleBlog
-      ? DEFAULT_LOCALE
-      : fileName.split('.')[1]; /* index.en => en */
-
-    createNodeField({
-      node,
-      name: `slug`,
-      value: folderPath,
-    });
-
-    createNodeField({
-      node,
-      name: `localizedSlug`,
-      value: `/${fileLocale}${folderPath}`,
-    });
-
-    createNodeField({ node, name: `locale`, value: fileLocale });
-
-    createNodeField({
-      node,
-      name: `postDirectoryPath`,
-      value: postDirectoryPath,
-    });
-  }
-};
-
+/**
+ * This page creation is ONLY need to automatically generate
+ * all blog pages whitin the data queries.
+ * All the other existing pages are created by src/pages/x
+ * and have their own queries and logic
+ */
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
   const blogPostComponent = path.resolve('./src/templates/blog-post.tsx');
@@ -70,13 +34,21 @@ exports.createPages = async ({ graphql, actions }) => {
       ) {
         edges {
           node {
-            htmlAst
+            id
+            excerpt
             timeToRead
+            htmlAst
             frontmatter {
               title
               subtitle
               date
               categories
+              description
+              series {
+                id
+                index
+                copy
+              }
               image {
                 childImageSharp {
                   fluid(quality: 100, maxWidth: 1500, fit: CONTAIN) {
@@ -95,18 +67,10 @@ exports.createPages = async ({ graphql, actions }) => {
                   }
                 }
               }
-              series {
-                copy
-                id
-                index
-              }
             }
             fileAbsolutePath
             fields {
-              locale
               slug
-              localizedSlug
-              postDirectoryPath
             }
           }
         }
@@ -121,59 +85,35 @@ exports.createPages = async ({ graphql, actions }) => {
   // Create blog posts pages.
   const posts = result.data.allMarkdownRemark.edges;
 
-  /* It's important to notice that post X locale is 1->n
-  1 post could have n translations.
-
-  Otherwise it'll have the same posts but in different languages
-  */
-  const postsGroupedBySlug = R.groupBy((post) => post.node.fields.slug, posts);
-
-  /* Tuple of {dirname, posts} */
-  const postEntries = Object.entries(postsGroupedBySlug);
-
   const postSeriesAvailable = getSeriesPost(posts);
 
-  postEntries.forEach(([slug, posts]) => {
-    /* TODO: Extract this into a separeted function */
-    const postByLocale = posts.reduce((acc, post) => {
-      acc[post.node.fields.locale] = post;
-      return acc;
-    }, {});
+  posts.forEach((post) => {
+    const { fields } = post.node;
 
-    const entries = Object.entries(postByLocale);
+    const pageData = {
+      path: fields.slug,
+      component: blogPostComponent,
+      context: {
+        post,
+        slug: fields.slug,
+        series: null,
+      },
+    };
 
-    /* TODO: Change that implementation */
-    entries.forEach(([locale, post]) => {
-      const localizedSlug = `/${locale}${slug}`;
+    const seriesInfo = R.path(seriesPath, post);
 
-      const pageData = {
-        path: localizedSlug,
-        component: blogPostComponent,
-        context: {
-          postByLocale,
-          localizedSlug,
-          slug,
-          previousPost: null,
-          nextPost: null,
-          series: null,
-        },
+    if (seriesInfo) {
+      const { id, index } = seriesInfo;
+      const entireSeries = postSeriesAvailable[id];
+      const { context } = pageData;
+
+      pageData.context = {
+        ...context,
+        series: entireSeries,
+        ...getPreviousAndNextPostSeries(entireSeries, index),
       };
+    }
 
-      const seriesInfo = R.path(seriesPath, post);
-
-      if (seriesInfo) {
-        const { id, index } = seriesInfo;
-        const entireSeries = postSeriesAvailable[id];
-        const { context } = pageData;
-
-        pageData.context = {
-          ...context,
-          series: entireSeries,
-          ...getPreviousAndNextPostSeries(entireSeries, index),
-        };
-      }
-
-      createPage(pageData);
-    });
+    createPage(pageData);
   });
 };
