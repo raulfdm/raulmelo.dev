@@ -16,9 +16,7 @@ type FrontMatter = {
 };
 
 type PostFields = {
-  locale: string;
   slug: string;
-  localizedSlug: string;
 };
 
 export type PostNode = {
