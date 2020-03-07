@@ -5,8 +5,6 @@ import rehypeReact from 'rehype-react';
 import media from 'styled-media-query';
 
 import { Quote } from '../components/Ui';
-import { ThemeProvider } from '../config/theme';
-import Layout from '../components/Layout';
 import { BlogGlobalStyle, pxToRem } from '../styles/blogPost';
 import { GlobalStyles } from '../styles';
 import { Container } from '../components/Ui';
@@ -14,7 +12,7 @@ import { MenuBar } from '../components/MenuBar';
 import { Gif } from '../components/Gif';
 import { Series } from '../components/Series';
 import { SeriesPostFooter } from '../components/SeriesPostFooter';
-import { Frontmatter, SeriesType, PostSeries } from '../types';
+import { Frontmatter, SeriesType, PostSeries, PostEdge } from '../types';
 
 const Title = styled.h1`
   font-size: ${pxToRem(34)};
@@ -55,17 +53,7 @@ type PostProps = {
   pageContext: {
     previousPost: PostSeries | null;
     nextPost: PostSeries | null;
-    postByLocale: {
-      node: {
-        [locale: string]: {
-          title: string;
-          html: string;
-        };
-      };
-    };
-    intl: {
-      language: string;
-    };
+    post: PostEdge;
     series: SeriesType;
   };
 };
@@ -87,18 +75,7 @@ const Post: React.FC<PostProps> = ({ pageContext }) => {
       window.twttr.widgets.load();
     }
   }, []);
-  const { postByLocale, intl, series, previousPost, nextPost } = pageContext;
-
-  const post = postByLocale[intl.language];
-
-  if (!post) {
-    return (
-      <Layout>
-        <BlogGlobalStyle />
-        <h1>not found</h1>
-      </Layout>
-    );
-  }
+  const { series, post, previousPost, nextPost } = pageContext;
 
   const { htmlAst, frontmatter } = post.node;
   const {
@@ -109,7 +86,7 @@ const Post: React.FC<PostProps> = ({ pageContext }) => {
   } = frontmatter as Frontmatter;
 
   return (
-    <ThemeProvider>
+    <>
       <GlobalStyles />
       <BlogGlobalStyle />
       <MenuBar />
@@ -117,10 +94,11 @@ const Post: React.FC<PostProps> = ({ pageContext }) => {
         <Title>{title}</Title>
         {subtitle && <Subtitle>{subtitle}</Subtitle>}
       </Container>
-      <Container as="section">
-        {series && <Series series={series} postIndex={seriesInfo.index} />}
-      </Container>
-
+      {series && (
+        <Container as="section">
+          <Series series={series} postIndex={seriesInfo.index} />
+        </Container>
+      )}
       {image && (
         <ImgWrapper>
           <StyledImg fluid={image.childImageSharp.fluid} />
@@ -130,7 +108,7 @@ const Post: React.FC<PostProps> = ({ pageContext }) => {
         {renderAst(htmlAst)}
         <SeriesPostFooter nextPost={nextPost} previousPost={previousPost} />
       </Container>
-    </ThemeProvider>
+    </>
   );
 };
 
