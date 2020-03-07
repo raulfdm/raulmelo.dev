@@ -12,10 +12,10 @@ type PostCardProps = {
 
 export const PostCard: React.FC<PostCardProps> = ({ postNode }) => {
   const { frontmatter, timeToRead, fields } = postNode;
-  const { image, date, description, title, subtitle } = frontmatter;
+  const { image, date, description, title, subtitle } = frontmatter!;
 
   return (
-    <Link to={fields.slug}>
+    <Link to={fields!.slug}>
       <Card>
         {image && (
           <S.ImageContainer>
