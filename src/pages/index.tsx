@@ -4,9 +4,11 @@ import { FormattedMessage } from 'react-intl';
 import { graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
-import { AllMarkdownRemark } from '../types/GraphQL';
+import { GraphQLAllMarkdownRemarkResponse, PostEdge } from '../types';
 import AuthorPresentation from '../components/AuthorPresentation';
 import { PostCard } from '../components/PostCard';
+import { getAndSanitizePostsFromQueryResponse } from '../helpers/posts';
+import { useIntl } from '../context/react-intl';
 
 const LatestMessage = styled.p`
   letter-spacing: -0.32px;
@@ -21,8 +23,13 @@ const StyledAuthorPresentation = styled(AuthorPresentation)`
   margin-bottom: 3rem;
 `;
 
-const Home: React.FC<{ data: AllMarkdownRemark }> = ({ data }) => {
-  const posts = data?.allMarkdownRemark?.edges;
+const Home: React.FC<GraphQLAllMarkdownRemarkResponse> = ({ data }) => {
+  const { locale } = useIntl();
+
+  const posts = getAndSanitizePostsFromQueryResponse({
+    data,
+    preferredLang: locale,
+  });
 
   return (
     <Layout>
@@ -39,7 +46,9 @@ const Home: React.FC<{ data: AllMarkdownRemark }> = ({ data }) => {
           <FormattedMessage id="home.latest" />
         </LatestMessage>
         {posts &&
-          posts.map(({ node }) => <PostCard key={node.id} postNode={node} />)}
+          posts.map(({ node }: PostEdge) => (
+            <PostCard key={node.id} postNode={node} />
+          ))}
       </main>
     </Layout>
   );
@@ -84,6 +93,8 @@ export const query = graphql`
           fileAbsolutePath
           fields {
             slug
+            lang
+            commonSlug
           }
         }
       }

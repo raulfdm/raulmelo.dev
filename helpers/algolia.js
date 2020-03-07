@@ -10,6 +10,8 @@ const myQuery = `{
         excerpt(pruneLength: 5000)
         fields {
           slug
+          lang
+          commonSlug
         }
         frontmatter {
           date

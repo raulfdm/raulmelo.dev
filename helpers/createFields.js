@@ -36,6 +36,13 @@ const createFields = ({ node, actions }) => {
       name: `lang`,
       value: postLang,
     });
+
+    /* commonSlug is used to group translated versions of the same post */
+    createNodeField({
+      node,
+      name: `commonSlug`,
+      value: blogPostFolderPath,
+    });
   }
 };
 
