@@ -88,6 +88,7 @@ const pluginsList = [
       },
     },
   },
+  'gatsby-plugin-netlify-cache',
 ];
 
 if (process.env.NODE_ENV === 'production' && process.env.CI === true) {
