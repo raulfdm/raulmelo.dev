@@ -6,7 +6,7 @@ const postEdges = [
         series: null,
       },
       fields: {
-        localizedSlug: '/pt-br/2019/04/things-i-dont-know-2018',
+        slug: '/pt-br/2019/04/things-i-dont-know-2018',
       },
     },
   },
@@ -17,7 +17,7 @@ const postEdges = [
         series: null,
       },
       fields: {
-        localizedSlug: '/pt-br/2018/01/css-position',
+        slug: '/pt-br/2018/01/css-position',
       },
     },
   },
@@ -32,7 +32,7 @@ const postEdges = [
         },
       },
       fields: {
-        localizedSlug: '/pt-br/2018/01/dev-js-3-2',
+        slug: '/pt-br/2018/01/dev-js-3-2',
       },
     },
   },
@@ -47,7 +47,7 @@ const postEdges = [
         },
       },
       fields: {
-        localizedSlug: '/pt-br/2017/12/dev-js-part-3',
+        slug: '/pt-br/2017/12/dev-js-part-3',
       },
     },
   },
@@ -62,7 +62,7 @@ const postEdges = [
         },
       },
       fields: {
-        localizedSlug: '/pt-br/2017/12/dev-js-part-2',
+        slug: '/pt-br/2017/12/dev-js-part-2',
       },
     },
   },
@@ -77,7 +77,7 @@ const postEdges = [
         },
       },
       fields: {
-        localizedSlug: '/pt-br/2017/12/dev-js-part-1',
+        slug: '/pt-br/2017/12/dev-js-part-1',
       },
     },
   },
@@ -89,7 +89,7 @@ const postEdges = [
         series: null,
       },
       fields: {
-        localizedSlug: '/pt-br/2017/07/franz',
+        slug: '/pt-br/2017/07/franz',
       },
     },
   },

@@ -1,14 +1,12 @@
 import React from 'react';
-import * as R from 'ramda';
 import styled from 'styled-components';
-import { FormattedMessage, useIntl } from 'gatsby-plugin-intl';
+import { FormattedMessage } from 'react-intl';
 import { graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
-import { AllMarkdownRemark, PostNode } from '../types/GraphQL';
+import { AllMarkdownRemark } from '../types/GraphQL';
 import AuthorPresentation from '../components/AuthorPresentation';
 import { PostCard } from '../components/PostCard';
-import { getPostsBySlug } from '../utils/';
 
 const LatestMessage = styled.p`
   letter-spacing: -0.32px;
@@ -24,9 +22,7 @@ const StyledAuthorPresentation = styled(AuthorPresentation)`
 `;
 
 const Home: React.FC<{ data: AllMarkdownRemark }> = ({ data }) => {
-  const intl = useIntl();
-
-  const postBySlug = getPostsBySlug(data.allMarkdownRemark.edges);
+  const posts = data?.allMarkdownRemark?.edges;
 
   return (
     <Layout>
@@ -42,15 +38,8 @@ const Home: React.FC<{ data: AllMarkdownRemark }> = ({ data }) => {
         <LatestMessage>
           <FormattedMessage id="home.latest" />
         </LatestMessage>
-        {postBySlug.map(([_, postsByLocale]) => {
-          /* TODO: Move this into a helper file */
-          const singlePostLocale = R.keys(postsByLocale);
-          const { node: post }: { node: PostNode } =
-            postsByLocale[intl.locale] ||
-            R.path(singlePostLocale, postsByLocale);
-
-          return <PostCard key={post.id} postNode={post} />;
-        })}
+        {posts &&
+          posts.map(({ node }) => <PostCard key={node.id} postNode={node} />)}
       </main>
     </Layout>
   );
@@ -94,9 +83,7 @@ export const query = graphql`
           }
           fileAbsolutePath
           fields {
-            locale
             slug
-            localizedSlug
           }
         }
       }

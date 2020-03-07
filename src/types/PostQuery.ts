@@ -13,15 +13,16 @@ export type Frontmatter = {
 };
 
 export type QueryNode = {
+  htmlAst?: object;
   id: string;
   excerpt: string;
   timeToRead: number;
   fields: {
     slug: string;
-    locale: string;
-    localizedSlug: string;
   };
   frontmatter: Frontmatter;
 };
 
-export type Edges = Array<{ node: QueryNode }>;
+export type PostEdge = { node: QueryNode };
+
+export type Edges = Array<PostEdge>;

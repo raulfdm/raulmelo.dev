@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { MenuBar } from './MenuBar';
-import { ThemeProvider } from '../config/theme';
 import { Container } from './Ui';
 import { GlobalStyles } from '../styles';
 
@@ -13,13 +12,11 @@ interface Props {
 
 const Layout: React.FC<Props> = ({ children, noMenu, noGlobals }) => {
   return (
-    <ThemeProvider>
-      <Container>
-        {!noGlobals && <GlobalStyles />}
-        {!noMenu && <MenuBar />}
-        {children}
-      </Container>
-    </ThemeProvider>
+    <Container>
+      {!noGlobals && <GlobalStyles />}
+      {!noMenu && <MenuBar />}
+      {children}
+    </Container>
   );
 };
 

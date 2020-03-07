@@ -7,5 +7,4 @@ export type Post = {
   timeToRead: number;
   title: string;
   locale: string;
-  localizedSlug: string;
 };

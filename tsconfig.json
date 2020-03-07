@@ -9,7 +9,7 @@
     "importHelpers": true,
     "jsx": "react",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "module": "esnext",
+    "module": "CommonJS",
     "moduleResolution": "node",
     "noEmit": true,
     "noFallthroughCasesInSwitch": true,
@@ -21,7 +21,8 @@
     "sourceMap": true,
     "strict": true,
     "suppressImplicitAnyIndexErrors": true,
-    "target": "es5"
+    "target": "ES2016",
+    "resolveJsonModule": true
   },
-  "include": ["src/**/*.ts"]
+  "include": ["src/**/*.ts", "src/context/react-intl.tsx"]
 }
