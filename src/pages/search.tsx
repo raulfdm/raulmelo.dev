@@ -2,7 +2,7 @@ import React from 'react';
 import algoliaSearch from 'algoliasearch/lite';
 import { InstantSearch, SearchBox, Hits, Stats } from 'react-instantsearch-dom';
 import styled from 'styled-components';
-import { useIntl, defineMessages } from 'gatsby-plugin-intl';
+import { useIntl, defineMessages } from 'react-intl';
 import { Algolia } from '@styled-icons/boxicons-logos/Algolia';
 import debounce from 'debounce-promise';
 
@@ -138,7 +138,7 @@ const SearchPage: React.FC = () => {
                 postNode={{
                   timeToRead: hit.timeToRead,
                   fields: {
-                    slug: hit.fields.localizedSlug,
+                    slug: hit.fields.slug,
                   },
                   frontmatter: {
                     title: hit.title,

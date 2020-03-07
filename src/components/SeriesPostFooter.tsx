@@ -1,6 +1,6 @@
 import React from 'react';
 import * as R from 'ramda';
-import { Link } from 'gatsby-plugin-intl';
+import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 import { PostSeries } from '../types';

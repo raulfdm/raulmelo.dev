@@ -1,20 +1,22 @@
 import React from 'react';
 import { Translate } from '@styled-icons/material/Translate';
-import { changeLocale } from 'gatsby-plugin-intl';
 
 import { DropdownMenu, DropdownMenuItem } from './DropdownMenu';
 import { MenuButton } from './MenuBar';
 import { LOCALES } from '../types/Locales';
+import { useIntl } from '../context/react-intl';
 
 export const LanguageSwitch: React.FC = () => {
+  const { switchLocale } = useIntl();
+
   return (
     <DropdownMenu
       items={
         <>
-          <DropdownMenuItem onClick={() => changeLocale(LOCALES.PT)}>
+          <DropdownMenuItem onClick={() => switchLocale(LOCALES.PT)}>
             PT
           </DropdownMenuItem>
-          <DropdownMenuItem onClick={() => changeLocale(LOCALES.EN)}>
+          <DropdownMenuItem onClick={() => switchLocale(LOCALES.EN)}>
             EN
           </DropdownMenuItem>
         </>
