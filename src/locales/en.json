@@ -1,12 +1,12 @@
 {
-  "author": {
-    "description": "Developer, passionate about coding for fun, tech addicted and open-source lover ❤"
+  "siteData": {
+    "title": "Personal website and blog.",
+    "description": "Developer, writer in my spare time, Tech addicted, open-source lover and do believes the only way to transform lives is through education."
   },
   "home": {
     "latest": "Latest"
   },
   "blog": {
-    "noTranslation": "There's no translation for this article",
     "readTime": "{minutes} min read"
   },
   "search": {

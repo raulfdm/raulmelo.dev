@@ -27,7 +27,7 @@ const AuthorPresentation: React.FC<Props> = ({
       <S.AuthorDataWrapper>
         <S.AuthorName>{name}</S.AuthorName>
         <S.AuthorSynopsis>
-          <FormattedMessage id="author.description" />
+          <FormattedMessage id="siteData.description" />
         </S.AuthorSynopsis>
         <S.SocialWrapper>
           {github && (
