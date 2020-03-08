@@ -115,7 +115,7 @@ const Post: React.FC<PostProps> = ({ pageContext }) => {
       exit="exit"
       variants={pageTransitionVariants}
     >
-      <SEO title={title} description={pageDescription} img={image.publicURL} />
+      <SEO title={title} description={pageDescription} img={image?.publicURL} />
       <GlobalStyles />
       <BlogGlobalStyle />
       <MenuBar />
