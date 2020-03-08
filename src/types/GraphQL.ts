@@ -9,7 +9,7 @@ export type FrontMatterImage = {
   };
 };
 
-type FrontMatter = {
+export type Frontmatter = {
   title: string;
   subtitle: string;
   date: string;
@@ -38,7 +38,7 @@ export type PostNode = {
   id?: string;
   timeToRead?: number;
   fields?: PostFields;
-  frontmatter?: FrontMatter;
+  frontmatter?: Frontmatter;
   translations?: PostTranslations;
 };
 

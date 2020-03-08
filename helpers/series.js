@@ -36,25 +36,7 @@ function getSeriesPost(postEdges) {
   }, {});
 }
 
-function getPreviousAndNextPostSeries(seriesData, currentIndex) {
-  const seriesEntries = R.toPairs(seriesData);
-  const postArrayIndex = R.findIndex(([i]) => {
-    return i.toString() === currentIndex.toString();
-  }, seriesEntries);
-
-  const previousPost = seriesEntries[postArrayIndex - 1] || null;
-  const nextPost = seriesEntries[postArrayIndex + 1] || null;
-
-  const result = {
-    nextPost: R.isNil(nextPost) ? null : nextPost[1],
-    previousPost: R.isNil(previousPost) ? null : previousPost[1],
-  };
-
-  return result;
-}
-
 module.exports = {
   getSeriesPost,
   seriesPath,
-  getPreviousAndNextPostSeries,
 };

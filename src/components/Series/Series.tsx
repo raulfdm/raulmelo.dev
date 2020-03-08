@@ -1,42 +1,62 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
+import { transparentize } from 'polished';
 
 import { SeriesType, PostSeries } from 'src/types';
 import { pxToRem } from '../../styles/blogPost';
 import { Card } from '../Ui';
+import media from 'styled-media-query';
 
 type SeriesProps = {
   series: SeriesType;
   postIndex: Extract<PostSeries, 'index'>;
+  title: string;
 };
 
-const SeriesWrapper = styled.div`
-  margin-top: 24px;
-`;
-
-const StyledCard = styled(Card)`
+const SeriesWrapper = styled(Card)`
+  margin: 24px 0;
   padding: 0;
+  --common-padding: 10px 16px;
 `;
 
-const Row = styled.a<{ active: boolean }>`
-  text-decoration: none;
-  display: flex;
+const SeriesInfo = styled.div`
+  margin: 0;
+  padding: var(--common-padding);
+  border-bottom: 1px solid ${({ theme }) => theme.color.border};
+  cursor: default;
+  font-weight: bold;
+
+  font-size: ${pxToRem(18)};
+  line-height: 1.4;
+
+  ${media.greaterThan('medium')`
+    font-size: ${pxToRem(20)};
+  `}
+`;
+
+const SeriesList = styled.ul`
+  margin: 0;
+`;
+
+const SeriesItem = styled.li`
   cursor: pointer;
-  ${({ active }) =>
-    active &&
-    css`
-      background-color: rgba(3, 168, 124, 1);
-      color: white;
-    `};
+  font-family: ${({ theme }) => theme.font.contentSans};
 
-  &:not(:last-child) {
-    border-bottom: 1px solid ${({ theme }) => theme.color.border};
+  font-size: ${pxToRem(16)};
+  margin: 0;
+  padding: 0;
+
+  ${media.greaterThan('medium')`
+    font-size: ${pxToRem(18)};
+  `}
+
+  &.active {
+    background-color: rgba(3, 168, 124, 1);
+    color: white;
   }
-
-  &:first-child {
-    border-top-left-radius: var(--card-border-radius);
-    border-top-right-radius: var(--card-border-radius);
+  &:hover:not(.active) {
+    background-color: ${transparentize(0.8, 'rgba(3, 168, 124, 1)')};
   }
 
   &:last-child {
@@ -44,51 +64,42 @@ const Row = styled.a<{ active: boolean }>`
     border-bottom-right-radius: var(--card-border-radius);
   }
 
-  .content {
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 8px 14px;
+  a {
+    text-decoration: none;
+    padding: var(--common-padding);
+    display: block;
   }
 `;
 
-const SeriesCopy = styled.p`
-  font-family: ${({ theme }) => theme.font.contentSans};
-  border-right: 1px solid ${({ theme }) => theme.color.border};
-  width: 100%;
-  max-width: 100px;
-  font-size: ${pxToRem(18)};
-`;
-
-const PostSubtitle = styled.p`
-  font-family: ${({ theme }) => theme.font.contentTitle};
-  font-size: ${pxToRem(24)};
-`;
-
-const SectionDescription = styled.p`
-  font-family: ${({ theme }) => theme.font.contentSans};
-  margin-bottom: 10px;
-`;
-
-export const Series: React.FC<SeriesProps> = ({ series, postIndex }) => {
+export const Series: React.FC<SeriesProps> = ({ series, postIndex, title }) => {
   const postSeries = Object.entries(series);
 
   return (
     <SeriesWrapper>
-      <SectionDescription>
-        <FormattedMessage id="series.sectionDescription" />
-      </SectionDescription>
-      <StyledCard>
+      <SeriesInfo>
+        {title} (
+        <FormattedMessage
+          id="series.sectionDescription"
+          values={{
+            seriesAmount: postSeries.length,
+          }}
+        />
+        )
+      </SeriesInfo>
+      <SeriesList>
         {postSeries.map(([index, post]: [string, PostSeries]) => {
           return (
-            <Row key={index} href={post.uri} active={index == postIndex}>
-              <SeriesCopy className="content">{post.copy}</SeriesCopy>
-              <PostSubtitle className="content">{post.subtitle}</PostSubtitle>
-            </Row>
+            <SeriesItem
+              key={index}
+              className={index == postIndex ? 'active' : ''}
+            >
+              <a href={post.uri}>
+                {post.copy} - {post.subtitle}
+              </a>
+            </SeriesItem>
           );
         })}
-      </StyledCard>
+      </SeriesList>
     </SeriesWrapper>
   );
 };

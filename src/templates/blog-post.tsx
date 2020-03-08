@@ -11,7 +11,6 @@ import { Container } from '../components/Ui';
 import { MenuBar } from '../components/MenuBar';
 import { Gif } from '../components/Gif';
 import { Series } from '../components/Series';
-import { SeriesPostFooter } from '../components/SeriesPostFooter';
 import { Frontmatter, SeriesType, PostSeries, PostEdge } from '../types';
 
 const Title = styled.h1`
@@ -51,7 +50,6 @@ const ImgWrapper = styled(Container)`
 
 type PostProps = {
   pageContext: {
-    previousPost: PostSeries | null;
     nextPost: PostSeries | null;
     post: PostEdge;
     series: SeriesType;
@@ -75,7 +73,7 @@ const Post: React.FC<PostProps> = ({ pageContext }) => {
       window.twttr.widgets.load();
     }
   }, []);
-  const { series, post, previousPost, nextPost } = pageContext;
+  const { series, post } = pageContext;
 
   const { htmlAst, frontmatter } = post.node;
   const {
@@ -84,6 +82,25 @@ const Post: React.FC<PostProps> = ({ pageContext }) => {
     subtitle,
     series: seriesInfo,
   } = frontmatter as Frontmatter;
+
+  const SeriesSection: React.FC<{ noDivider?: boolean }> = ({
+    noDivider = false,
+  }) => {
+    return (
+      series && (
+        <>
+          {!noDivider && <hr />}
+          <Container as="section">
+            <Series
+              series={series}
+              postIndex={seriesInfo.index}
+              title={title}
+            />
+          </Container>
+        </>
+      )
+    );
+  };
 
   return (
     <>
@@ -94,11 +111,7 @@ const Post: React.FC<PostProps> = ({ pageContext }) => {
         <Title>{title}</Title>
         {subtitle && <Subtitle>{subtitle}</Subtitle>}
       </Container>
-      {series && (
-        <Container as="section">
-          <Series series={series} postIndex={seriesInfo.index} />
-        </Container>
-      )}
+      <SeriesSection noDivider />
       {image && (
         <ImgWrapper>
           <StyledImg fluid={image.childImageSharp.fluid} />
@@ -106,8 +119,9 @@ const Post: React.FC<PostProps> = ({ pageContext }) => {
       )}
       <Container className="post" as="main">
         {renderAst(htmlAst)}
-        <SeriesPostFooter nextPost={nextPost} previousPost={previousPost} />
+        <SeriesSection />
       </Container>
+      <br />
     </>
   );
 };
