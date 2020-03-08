@@ -9,6 +9,11 @@
   "blog": {
     "readTime": "{minutes} min de leitura"
   },
+  "404": {
+    "title": "404 - Página não encontrada",
+    "subtitle": "Essa claramente não é a página que você está procurando.",
+    "description": "Parece que a página que você está procurando ou não existe, ou o link que você pegou está quebrado ou inválido. Clica no logo para ir para a página inicial."
+  },
   "search": {
     "input": "O que está procurando?",
     "stats": "{results, plural, one {# resultado} other {# resultados}} encontrados em {milliseconds}ms"
