@@ -39,7 +39,16 @@ export const customGlobals = css`
 
     min-height: 100vh;
     position: relative;
-    background-color: var(--background);
+  }
+
+  body,
+  #___gatsby,
+  #gatsby-focus-wrapper {
+    background-color: ${({ theme }) => theme.color.background};
+    color: ${({ theme }) => theme.color.font};
+
+    transition: background-color 0.2s ease, color 0.2s ease, fill 0.2s ease,
+      opacity 0.2s ease;
   }
 
   img,
