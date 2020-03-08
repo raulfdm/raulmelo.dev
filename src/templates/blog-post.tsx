@@ -12,6 +12,7 @@ import { MenuBar } from '../components/MenuBar';
 import { Gif } from '../components/Gif';
 import { Series } from '../components/Series';
 import { Frontmatter, SeriesType, PostSeries, PostEdge } from '../types';
+import SEO from '../components/SEO';
 
 const Title = styled.h1`
   font-size: ${pxToRem(34)};
@@ -80,6 +81,7 @@ const Post: React.FC<PostProps> = ({ pageContext }) => {
     image,
     title,
     subtitle,
+    description,
     series: seriesInfo,
   } = frontmatter as Frontmatter;
 
@@ -102,8 +104,12 @@ const Post: React.FC<PostProps> = ({ pageContext }) => {
     );
   };
 
+  const pageDescription =
+    description || `${title}${subtitle ? ` - ${subtitle}` : ''}`;
+
   return (
     <>
+      <SEO title={title} description={pageDescription} img={image.publicURL} />
       <GlobalStyles />
       <BlogGlobalStyle />
       <MenuBar />

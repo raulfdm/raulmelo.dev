@@ -41,6 +41,7 @@ const SEO: React.FC<SEOProps> = ({
   `);
 
   const url = `${siteUrl}${slug ? slug : ''}`;
+  const imgUrl = `${siteUrl}${img}`;
 
   return (
     <Helmet
@@ -93,11 +94,11 @@ const SEO: React.FC<SEOProps> = ({
             ? [
                 {
                   property: `og:image`,
-                  content: img,
+                  content: imgUrl,
                 },
                 {
                   name: `twitter:image:src`,
-                  content: img,
+                  content: imgUrl,
                 },
               ]
             : [],

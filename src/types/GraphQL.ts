@@ -4,6 +4,7 @@ import { PostSeries } from './Series';
 export type FrontmatterSeries = PostSeries | null;
 
 export type FrontMatterImage = {
+  publicURL?: string;
   childImageSharp: {
     fluid: FluidObject;
   };
