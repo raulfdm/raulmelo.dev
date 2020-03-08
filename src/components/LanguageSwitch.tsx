@@ -1,5 +1,5 @@
 import React from 'react';
-import { Translate } from '@styled-icons/material/Translate';
+import { Language } from '@styled-icons/material/Language';
 
 import { DropdownMenu, DropdownMenuItem } from './DropdownMenu';
 import { MenuButton } from './MenuBar';
@@ -25,7 +25,7 @@ export const LanguageSwitch: React.FC = () => {
       {({ toggleDropdown }) => {
         return (
           <MenuButton onClick={toggleDropdown}>
-            <Translate size={21} />
+            <Language size={21} />
           </MenuButton>
         );
       }}
