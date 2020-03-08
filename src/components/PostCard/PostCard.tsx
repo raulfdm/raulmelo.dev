@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormattedMessage, FormattedDate } from 'gatsby-plugin-intl';
+import { FormattedMessage, FormattedDate } from 'react-intl';
 import { Link } from 'gatsby';
 
 import * as S from './styled';
@@ -10,13 +10,12 @@ type PostCardProps = {
   postNode: PostNode;
 };
 
-/* TODO: Accept post card instead destructured props */
 export const PostCard: React.FC<PostCardProps> = ({ postNode }) => {
   const { frontmatter, timeToRead, fields } = postNode;
-  const { image, date, description, title, subtitle } = frontmatter;
+  const { image, date, description, title, subtitle } = frontmatter!;
 
   return (
-    <Link to={fields.localizedSlug}>
+    <Link to={fields!.slug}>
       <Card>
         {image && (
           <S.ImageContainer>

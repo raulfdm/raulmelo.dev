@@ -1,4 +1,7 @@
 import { FluidObject } from 'gatsby-image';
+import { PostSeries } from './Series';
+
+export type FrontmatterSeries = PostSeries | null;
 
 export type FrontMatterImage = {
   childImageSharp: {
@@ -6,26 +9,37 @@ export type FrontMatterImage = {
   };
 };
 
-type FrontMatter = {
+export type Frontmatter = {
   title: string;
   subtitle: string;
   date: string;
   categories: string[];
   description: string;
+  series: FrontmatterSeries;
   image: FrontMatterImage;
 };
 
 type PostFields = {
-  locale: string;
   slug: string;
-  localizedSlug: string;
+  lang: string;
+  commonSlug: string;
 };
 
+export type PostTranslation = {
+  slug: string;
+  lang: string;
+};
+
+export type PostTranslations = PostTranslation[];
+
 export type PostNode = {
-  id: string;
-  timeToRead: number;
-  fields: PostFields;
-  frontmatter: FrontMatter;
+  htmlAst?: object;
+  excerpt?: string;
+  id?: string;
+  timeToRead?: number;
+  fields?: PostFields;
+  frontmatter?: Frontmatter;
+  translations?: PostTranslations;
 };
 
 export type PostEdge = {
@@ -38,4 +52,8 @@ export type AllMarkdownRemark = {
   allMarkdownRemark: {
     edges: PostEdges;
   };
+};
+
+export type GraphQLAllMarkdownRemarkResponse = {
+  data: AllMarkdownRemark;
 };

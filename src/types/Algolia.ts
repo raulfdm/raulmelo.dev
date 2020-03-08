@@ -2,7 +2,7 @@
 export type HitAlgolia = {
   description: string;
   fields: {
-    localizedSlug: string;
+    slug: string;
   };
   title: string;
   subtitle: string | null;
