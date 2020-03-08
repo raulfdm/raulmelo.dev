@@ -49,11 +49,27 @@ export type PostEdge = {
 export type PostEdges = PostEdge[];
 
 export type AllMarkdownRemark = {
-  allMarkdownRemark: {
-    edges: PostEdges;
-  };
+  edges: PostEdges;
 };
 
-export type GraphQLAllMarkdownRemarkResponse = {
-  data: AllMarkdownRemark;
+export type SocialSiteMetadata = {
+  github: string;
+  twitter: string;
+  linkedIn: string;
+};
+
+export type SiteMetadata = {
+  profilePic: string;
+  siteUrl: string;
+  social: SocialSiteMetadata;
+  author: string;
+};
+
+export type GraphQLResponse = {
+  data: {
+    allMarkdownRemark: AllMarkdownRemark;
+    site?: {
+      siteMetadata: SiteMetadata;
+    };
+  };
 };
