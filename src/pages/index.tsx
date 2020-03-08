@@ -1,14 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, defineMessages } from 'react-intl';
 import { graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
-import { GraphQLAllMarkdownRemarkResponse, PostEdge } from '../types';
+import { GraphQLResponse, PostEdge } from '../types';
 import AuthorPresentation from '../components/AuthorPresentation';
 import { PostCard } from '../components/PostCard';
 import { getAndSanitizePostsFromQueryResponse } from '../helpers/posts';
 import { useIntl } from '../context/react-intl';
+import SEO from '../components/SEO';
 
 const LatestMessage = styled.p`
   letter-spacing: -0.32px;
@@ -23,24 +24,39 @@ const StyledAuthorPresentation = styled(AuthorPresentation)`
   margin-bottom: 3rem;
 `;
 
-const Home: React.FC<GraphQLAllMarkdownRemarkResponse> = ({ data }) => {
-  const { locale } = useIntl();
+const messages = defineMessages({
+  description: {
+    id: 'siteData.description',
+  },
+  title: {
+    id: 'siteData.title',
+  },
+});
+
+const Home: React.FC<GraphQLResponse> = ({ data }) => {
+  const { locale, formatMessage } = useIntl();
 
   const posts = getAndSanitizePostsFromQueryResponse({
     data,
     preferredLang: locale,
   });
 
+  const { profilePic, social } = data.site.siteMetadata;
+
   return (
     <Layout>
+      <SEO
+        lang={locale}
+        description={formatMessage(messages.description)}
+        title={formatMessage(messages.title)}
+      />
       <main>
         <StyledAuthorPresentation
-          /* TODO: put all those infos into query */
           name="Raul de Melo"
-          profilePic="https://miro.medium.com/fit/c/256/256/1*6jtMoNvX_MHslzBLP4aM9g.jpeg"
-          twitter="https://twitter.com/raul_fdm"
-          linkedIn="https://www.linkedin.com/in/raulfdm/"
-          github="https://github.com/raulfdm"
+          profilePic={profilePic}
+          twitter={social.twitter}
+          linkedIn={social.linkedIn}
+          github={social.github}
         />
         <LatestMessage>
           <FormattedMessage id="home.latest" />
@@ -96,6 +112,17 @@ export const query = graphql`
             lang
             commonSlug
           }
+        }
+      }
+    }
+    site {
+      siteMetadata {
+        profilePic
+        siteUrl
+        social {
+          github
+          linkedIn
+          twitter
         }
       }
     }
