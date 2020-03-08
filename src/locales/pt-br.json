@@ -14,6 +14,6 @@
     "stats": "{results, plural, one {# resultado} other {# resultados}} encontrados em {milliseconds}ms"
   },
   "series": {
-    "sectionDescription": "Links dos artigos da série"
+    "sectionDescription": "Série em {seriesAmount} partes"
   }
 }

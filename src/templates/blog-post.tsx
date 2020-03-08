@@ -121,6 +121,7 @@ const Post: React.FC<PostProps> = ({ pageContext }) => {
         {renderAst(htmlAst)}
         <SeriesSection />
       </Container>
+      <br />
     </>
   );
 };
