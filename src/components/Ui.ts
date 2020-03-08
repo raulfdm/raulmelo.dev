@@ -7,10 +7,12 @@ export const Card = styled.div`
 
   background-color: ${({ theme }) => theme.color.background};
   border-radius: var(--card-border-radius);
-  ${({ theme }) =>
-    theme.isDarkTheme
-      ? `border: 1px solid ${theme.color.border};`
-      : `box-shadow: ${theme.color.shadowLight} 0 1px 4px;`}
+
+  border: ${({ theme }) =>
+    theme.isDarkTheme ? `1px solid ${theme.color.border}` : 'none'};
+  box-shadow: ${({ theme }) =>
+      theme.isDarkTheme ? 'transparent' : theme.color.shadowLight}
+    0 1px 4px;
 
   margin-bottom: var(--card-white-space);
   padding: var(--card-white-space);

@@ -7,16 +7,17 @@ import { Container } from '../Ui';
 export const MenuBarWrapper = styled(motion.nav)`
   box-shadow: 0 4px 12px 0 ${({ theme }) => theme.color.shadowMenu};
 
-  ${({ theme }) =>
-    theme.isDarkTheme && `border-bottom: 1px solid ${theme.color.border}`};
-
+  border-bottom: ${({ theme }) =>
+    theme.isDarkTheme ? `1px solid ${theme.color.border}` : 'none'};
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   height: 65px;
   z-index: 500;
+
   background-color: ${({ theme }) => theme.color.background};
+  transition: background-color 0.2s ease;
 
   a {
     color: inherit;
