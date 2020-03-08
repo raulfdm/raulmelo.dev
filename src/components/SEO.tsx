@@ -1,6 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
+import { defineMessages } from 'react-intl';
 
 import { useIntl } from '../context/react-intl';
 
@@ -12,6 +13,15 @@ type SEOProps = {
   meta?: { name: string; content: string }[];
 };
 
+const messages = defineMessages({
+  title: {
+    id: 'siteData.title',
+  },
+  description: {
+    id: 'siteData.description',
+  },
+});
+
 const SEO: React.FC<SEOProps> = ({
   title,
   description,
@@ -19,7 +29,7 @@ const SEO: React.FC<SEOProps> = ({
   img,
   slug,
 }) => {
-  const { locale } = useIntl();
+  const { locale, formatMessage } = useIntl();
   const {
     site: {
       siteMetadata: { title: officialTitle, author, siteUrl },
@@ -40,8 +50,10 @@ const SEO: React.FC<SEOProps> = ({
     }
   `);
 
-  const url = `${siteUrl}${slug ? slug : ''}`;
-  const imgUrl = `${siteUrl}${img}`;
+  const metaUrl = `${siteUrl}${slug ? slug : ''}`;
+  const metaIrlUrl = `${siteUrl}${img}`;
+  const metaTitle = title || formatMessage(messages.title);
+  const metaDescription = description || formatMessage(messages.description);
 
   return (
     <Helmet
@@ -49,23 +61,23 @@ const SEO: React.FC<SEOProps> = ({
         lang: locale,
       }}
       title={officialTitle}
-      titleTemplate={title ? `%s | ${title}` : ''}
+      titleTemplate={`%s | ${metaTitle}`}
       meta={[
         {
           name: `description`,
-          content: description,
+          content: metaDescription,
         },
         {
           property: `og:title`,
-          content: title,
+          content: metaTitle,
         },
         {
           property: `og:description`,
-          content: description,
+          content: metaDescription,
         },
         {
           property: 'og:url',
-          content: url,
+          content: metaUrl,
         },
 
         {
@@ -82,11 +94,11 @@ const SEO: React.FC<SEOProps> = ({
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: metaTitle,
         },
         {
           name: `twitter:description`,
-          content: description,
+          content: metaDescription,
         },
       ]
         .concat(
@@ -94,11 +106,11 @@ const SEO: React.FC<SEOProps> = ({
             ? [
                 {
                   property: `og:image`,
-                  content: imgUrl,
+                  content: metaIrlUrl,
                 },
                 {
                   name: `twitter:image:src`,
-                  content: imgUrl,
+                  content: metaIrlUrl,
                 },
               ]
             : [],
