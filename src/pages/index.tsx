@@ -46,7 +46,6 @@ const Home: React.FC<GraphQLResponse> = ({ data }) => {
   return (
     <Layout>
       <SEO
-        lang={locale}
         description={formatMessage(messages.description)}
         title={formatMessage(messages.title)}
       />

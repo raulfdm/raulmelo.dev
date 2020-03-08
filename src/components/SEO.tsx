@@ -2,10 +2,11 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
+import { useIntl } from '../context/react-intl';
+
 type SEOProps = {
   title: string;
   description: string;
-  lang: string;
   slug?: string;
   img?: string;
   meta?: { name: string; content: string }[];
@@ -15,10 +16,10 @@ const SEO: React.FC<SEOProps> = ({
   title,
   description,
   meta = [],
-  lang,
   img,
   slug,
 }) => {
+  const { locale } = useIntl();
   const {
     site: {
       siteMetadata: { title: officialTitle, author, siteUrl },
@@ -44,7 +45,7 @@ const SEO: React.FC<SEOProps> = ({
   return (
     <Helmet
       htmlAttributes={{
-        lang,
+        lang: locale,
       }}
       title={officialTitle}
       titleTemplate={title ? `%s | ${title}` : ''}
