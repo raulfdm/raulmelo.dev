@@ -6,12 +6,7 @@
 
 const path = require('path');
 const R = require('ramda');
-const {
-  getSeriesPost,
-  seriesPath,
-  getPreviousAndNextPostSeries,
-  createFields,
-} = require('./helpers');
+const { getSeriesPost, seriesPath, createFields } = require('./helpers');
 
 /* Custom Fields */
 exports.onCreateNode = createFields;
@@ -105,14 +100,13 @@ exports.createPages = async ({ graphql, actions }) => {
     const seriesInfo = R.path(seriesPath, post);
 
     if (seriesInfo) {
-      const { id, index } = seriesInfo;
+      const { id } = seriesInfo;
       const entireSeries = postSeriesAvailable[id];
       const { context } = pageData;
 
       pageData.context = {
         ...context,
         series: entireSeries,
-        ...getPreviousAndNextPostSeries(entireSeries, index),
       };
     }
 
