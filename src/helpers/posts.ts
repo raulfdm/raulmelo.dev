@@ -1,7 +1,7 @@
 import * as R from 'ramda';
 
 import {
-  GraphQLAllMarkdownRemarkResponse,
+  GraphQLResponse,
   PostEdges,
   PostEdge,
   PostTranslations,
@@ -27,7 +27,7 @@ function postEdgeToTranslate(postEdge: PostEdge): PostTranslation {
 
 type Options = {
   preferredLang: string;
-} & GraphQLAllMarkdownRemarkResponse;
+} & GraphQLResponse;
 
 export const getAndSanitizePostsFromQueryResponse = ({
   data,

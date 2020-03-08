@@ -99,11 +99,18 @@ if (process.env.NODE_ENV === 'production' && process.env.CI === true) {
 }
 
 module.exports = {
-  /* TODO: Fix that */
   siteMetadata: {
-    title: `Gatsby`,
-    siteUrl: `https://www.gatsbyjs.org`,
-    description: `Blazing fast modern site generator for React`,
+    title: 'Raul Melo',
+    author: 'Raul Melo',
+    siteUrl: 'https://raul-melo-medium.netlify.com/',
+    profilePic:
+      'https://miro.medium.com/fit/c/256/256/1*6jtMoNvX_MHslzBLP4aM9g.jpeg',
+    social: {
+      twitter: 'https://twitter.com/raul_fdm',
+      linkedIn: 'https://www.linkedin.com/in/raulfdm/',
+      github: 'https://github.com/raulfdm',
+    },
+    // description: `Blazing fast modern site generator for React`,
   },
   plugins: pluginsList,
 };

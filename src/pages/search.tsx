@@ -10,6 +10,7 @@ import { HitAlgolia, RequestsAlgoliaClient } from '../types';
 import Layout from '../components/Layout';
 import { algoliaConfig } from '../config/algolia';
 import { PostCard } from '../components/PostCard';
+import SEO from '../components/SEO';
 
 const algoliaClient = algoliaSearch(
   algoliaConfig.appId!,
@@ -109,6 +110,7 @@ const SearchPage: React.FC = () => {
 
   return (
     <Layout>
+      <SEO />
       <SearchWrapper>
         <InstantSearch
           searchClient={searchClient}
