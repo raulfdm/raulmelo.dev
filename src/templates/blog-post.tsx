@@ -3,8 +3,9 @@ import Img from 'gatsby-image';
 import styled from 'styled-components';
 import rehypeReact from 'rehype-react';
 import media from 'styled-media-query';
+import { motion } from 'framer-motion';
 
-import { Quote } from '../components/Ui';
+import { Quote, pageTransitionVariants } from '../components/Ui';
 import { BlogGlobalStyle, pxToRem } from '../styles/blogPost';
 import { GlobalStyles } from '../styles';
 import { Container } from '../components/Ui';
@@ -12,6 +13,7 @@ import { MenuBar } from '../components/MenuBar';
 import { Gif } from '../components/Gif';
 import { Series } from '../components/Series';
 import { Frontmatter, SeriesType, PostSeries, PostEdge } from '../types';
+import SEO from '../components/SEO';
 
 const Title = styled.h1`
   font-size: ${pxToRem(34)};
@@ -80,6 +82,7 @@ const Post: React.FC<PostProps> = ({ pageContext }) => {
     image,
     title,
     subtitle,
+    description,
     series: seriesInfo,
   } = frontmatter as Frontmatter;
 
@@ -102,8 +105,17 @@ const Post: React.FC<PostProps> = ({ pageContext }) => {
     );
   };
 
+  const pageDescription =
+    description || `${title}${subtitle ? ` - ${subtitle}` : ''}`;
+
   return (
-    <>
+    <motion.div
+      initial="exit"
+      animate="enter"
+      exit="exit"
+      variants={pageTransitionVariants}
+    >
+      <SEO title={title} description={pageDescription} img={image.publicURL} />
       <GlobalStyles />
       <BlogGlobalStyle />
       <MenuBar />
@@ -122,7 +134,7 @@ const Post: React.FC<PostProps> = ({ pageContext }) => {
         <SeriesSection />
       </Container>
       <br />
-    </>
+    </motion.div>
   );
 };
 

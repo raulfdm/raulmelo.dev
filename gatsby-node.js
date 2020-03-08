@@ -45,6 +45,7 @@ exports.createPages = async ({ graphql, actions }) => {
                 copy
               }
               image {
+                publicURL
                 childImageSharp {
                   fluid(quality: 100, maxWidth: 1500, fit: CONTAIN) {
                     base64

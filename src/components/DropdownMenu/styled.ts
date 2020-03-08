@@ -33,7 +33,7 @@ export const ArrowUp = styled.div`
 
   margin-left: -7px;
   position: absolute;
-  bottom: -4px;
+  bottom: -8px;
 
   &::after {
     content: '';

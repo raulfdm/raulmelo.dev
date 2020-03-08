@@ -1,13 +1,18 @@
 {
-  "author": {
-    "description": "Desenvolvedor, apaixonado por codar por diversão, viciado em tecnologia e amante do open-source ❤"
+  "siteData": {
+    "title": "Site pessoal e blog",
+    "description": "Desenvolvedor, escritor nas horas vagas, viciado em tecnologia, amante do open-source e acredita que transformação de vida só acontece com educação."
   },
   "home": {
     "latest": "Últimos"
   },
   "blog": {
-    "noTranslation": "Esse artigo não possui tradução",
     "readTime": "{minutes} min de leitura"
+  },
+  "404": {
+    "title": "404 - Página não encontrada",
+    "subtitle": "Essa claramente não é a página que você está procurando.",
+    "description": "Parece que a página que você está procurando ou não existe, ou o link que você pegou está quebrado ou inválido. Clica no logo para ir para a página inicial."
   },
   "search": {
     "input": "O que está procurando?",
