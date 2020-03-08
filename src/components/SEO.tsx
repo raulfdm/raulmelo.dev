@@ -5,8 +5,8 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { useIntl } from '../context/react-intl';
 
 type SEOProps = {
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
   slug?: string;
   img?: string;
   meta?: { name: string; content: string }[];
