@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
 import { transparentize } from 'polished';
+import { Link } from 'gatsby';
 
 import { SeriesType, PostSeries } from 'src/types';
 import { pxToRem } from '../../styles/blogPost';
@@ -93,9 +94,9 @@ export const Series: React.FC<SeriesProps> = ({ series, postIndex, title }) => {
               key={index}
               className={index == postIndex ? 'active' : ''}
             >
-              <a href={post.uri}>
+              <Link to={post.uri}>
                 {post.copy} - {post.subtitle}
-              </a>
+              </Link>
             </SeriesItem>
           );
         })}

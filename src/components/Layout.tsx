@@ -1,7 +1,8 @@
 import React from 'react';
+import { AnimatePresence } from 'framer-motion';
 
 import { MenuBar } from './MenuBar';
-import { Container } from './Ui';
+import { Container, pageTransitionVariants } from './Ui';
 import { GlobalStyles } from '../styles';
 
 interface Props {
@@ -12,11 +13,18 @@ interface Props {
 
 const Layout: React.FC<Props> = ({ children, noMenu, noGlobals }) => {
   return (
-    <Container>
-      {!noGlobals && <GlobalStyles />}
-      {!noMenu && <MenuBar />}
-      {children}
-    </Container>
+    <AnimatePresence exitBeforeEnter>
+      <Container
+        initial="exit"
+        animate="enter"
+        exit="exit"
+        variants={pageTransitionVariants}
+      >
+        {!noGlobals && <GlobalStyles />}
+        {!noMenu && <MenuBar />}
+        {children}
+      </Container>
+    </AnimatePresence>
   );
 };
 

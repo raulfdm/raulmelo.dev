@@ -3,8 +3,9 @@ import Img from 'gatsby-image';
 import styled from 'styled-components';
 import rehypeReact from 'rehype-react';
 import media from 'styled-media-query';
+import { motion } from 'framer-motion';
 
-import { Quote } from '../components/Ui';
+import { Quote, pageTransitionVariants } from '../components/Ui';
 import { BlogGlobalStyle, pxToRem } from '../styles/blogPost';
 import { GlobalStyles } from '../styles';
 import { Container } from '../components/Ui';
@@ -108,7 +109,12 @@ const Post: React.FC<PostProps> = ({ pageContext }) => {
     description || `${title}${subtitle ? ` - ${subtitle}` : ''}`;
 
   return (
-    <>
+    <motion.div
+      initial="exit"
+      animate="enter"
+      exit="exit"
+      variants={pageTransitionVariants}
+    >
       <SEO title={title} description={pageDescription} img={image.publicURL} />
       <GlobalStyles />
       <BlogGlobalStyle />
@@ -128,7 +134,7 @@ const Post: React.FC<PostProps> = ({ pageContext }) => {
         <SeriesSection />
       </Container>
       <br />
-    </>
+    </motion.div>
   );
 };
 

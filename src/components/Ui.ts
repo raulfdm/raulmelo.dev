@@ -1,5 +1,21 @@
 import styled from 'styled-components';
 import media from 'styled-media-query';
+import { motion } from 'framer-motion';
+
+export const pageTransitionAnimation = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
+  exit: { opacity: 0 },
+};
+
+export const pageTransitionVariants = {
+  exit: {
+    opacity: 0,
+  },
+  enter: {
+    opacity: 1,
+  },
+};
 
 export const Card = styled.div`
   --card-border-radius: 5px;
@@ -18,7 +34,7 @@ export const Card = styled.div`
   padding: var(--card-white-space);
 `;
 
-export const Container = styled.div`
+export const Container = styled(motion.div)`
   --padding: 16px;
 
   max-width: calc(768px - var(--padding));
