@@ -44,6 +44,7 @@ exports.createPages = async ({ graphql, actions }) => {
                 index
                 copy
               }
+              image_caption
               image {
                 publicURL
                 childImageSharp {

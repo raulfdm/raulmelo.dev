@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import rehypeReact from 'rehype-react';
 import media from 'styled-media-query';
 import { motion } from 'framer-motion';
+import { defineMessages } from 'react-intl';
 
 import { Quote, pageTransitionVariants } from '../components/Ui';
 import { BlogGlobalStyle, pxToRem } from '../styles/blogPost';
@@ -14,6 +15,7 @@ import { Gif } from '../components/Gif';
 import { Series } from '../components/Series';
 import { Frontmatter, SeriesType, PostSeries, PostEdge } from '../types';
 import SEO from '../components/SEO';
+import { useIntl } from '../context/react-intl';
 
 const Title = styled.h1`
   font-size: ${pxToRem(34)};
@@ -36,13 +38,8 @@ const Subtitle = styled.p`
 `;
 
 const StyledImg = styled(Img)`
-  max-height: 400px;
+  max-height: 600px;
   margin-top: 42px;
-  margin-bottom: 16px;
-
-  ${media.greaterThan('medium')`
-    margin-bottom: 20px;
-  `}
 `;
 
 const ImgWrapper = styled(Container)`
@@ -64,7 +61,14 @@ const renderAst = new rehypeReact({
   components: { 'big-quote': Quote, gif: Gif },
 }).Compiler;
 
+const messages = defineMessages({
+  featuredImageLabel: {
+    id: 'blog.featuredImage',
+  },
+});
+
 const Post: React.FC<PostProps> = ({ pageContext }) => {
+  const { formatMessage } = useIntl();
   React.useEffect(() => {
     /* This loads all widgets from twitter if exists. 
     It's loaded by html.tsx (data-testid="twitter-script")
@@ -80,6 +84,7 @@ const Post: React.FC<PostProps> = ({ pageContext }) => {
   const { htmlAst, frontmatter } = post.node;
   const {
     image,
+    image_caption: imageCaption,
     title,
     subtitle,
     description,
@@ -125,8 +130,12 @@ const Post: React.FC<PostProps> = ({ pageContext }) => {
       </Container>
       <SeriesSection noDivider />
       {image && (
-        <ImgWrapper>
-          <StyledImg fluid={image.childImageSharp.fluid} />
+        <ImgWrapper
+          role="img"
+          aria-label={formatMessage(messages.featuredImageLabel)}
+        >
+          <StyledImg fluid={image.childImageSharp.fluid} alt={imageCaption} />
+          {imageCaption && <p className="img-caption">{imageCaption}</p>}
         </ImgWrapper>
       )}
       <Container className="post" as="main">

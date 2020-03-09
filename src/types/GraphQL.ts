@@ -18,6 +18,7 @@ export type Frontmatter = {
   description: string;
   series: FrontmatterSeries;
   image: FrontMatterImage;
+  image_caption: string;
 };
 
 type PostFields = {
