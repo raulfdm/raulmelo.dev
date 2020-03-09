@@ -67,3 +67,6 @@ yarn-error.log*
 public/
 .cache/
 .vscode/
+
+# Local Netlify folder
+.netlify
