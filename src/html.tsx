@@ -11,6 +11,7 @@ const GatsbyHTML: React.FC<PreRenderHTMLArgs & { body: string }> = (props) => {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
+        <link rel="stylesheet" href="/fonts/fonts.css" />
 
         {props.headComponents}
       </head>
