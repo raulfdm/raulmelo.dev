@@ -15,18 +15,25 @@ const pluginsList = [
   `gatsby-transformer-sharp`,
   `gatsby-plugin-sharp`,
   `gatsby-transformer-json`,
-  // {
-  //   resolve: `gatsby-plugin-manifest`,
-  //   options: {
-  //     name: `gatsby-starter-default`,
-  //     short_name: `starter`,
-  //     start_url: `/`,
-  //     background_color: `#663399`,
-  //     theme_color: `#663399`,
-  //     display: `minimal-ui`,
-  //     icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
-  //   },
-  // },
+  {
+    resolve: `gatsby-plugin-manifest`,
+    options: {
+      name: `Raul Melo - Site pessoal e Blog`,
+      short_name: `Raul Melo`,
+      start_url: `/`,
+      background_color: `#ffffff`,
+      theme_color: `#ffffff`,
+      display: `minimal-ui`,
+      icon: `static/logo.png`, // This path is relative to the root of the site.
+      localize: [
+        {
+          lang: `en`,
+          name: `Raul Melo - Personal website and Blog`,
+          short_name: `Raul Melo`,
+        },
+      ],
+    },
+  },
   {
     resolve: `gatsby-plugin-styled-components`,
     options: {
@@ -68,7 +75,7 @@ const pluginsList = [
   },
   // this (optional) plugin enables Progressive Web App + Offline functionality
   // To learn more, visit: https://gatsby.dev/offline
-  // `gatsby-plugin-offline`,
+  `gatsby-plugin-offline`,
   {
     resolve: `gatsby-remark-prismjs`,
     options: {
@@ -95,6 +102,14 @@ if (process.env.NODE_ENV === 'production' && process.env.CI === true) {
   pluginsList.push({
     resolve: `gatsby-plugin-algolia-search`,
     options: algoliaSetupOptions,
+  });
+
+  pluginsList.push({
+    resolve: 'gatsby-plugin-google-analytics',
+    options: {
+      trackingId: 'UA-160048702-1',
+      head: false,
+    },
   });
 }
 

@@ -19,7 +19,7 @@ export const pageTransitionVariants = {
 
 export const Card = styled.div`
   --card-border-radius: 5px;
-  --card-white-space: 2.4rem;
+  --card-white-space: 1.6rem;
 
   background-color: ${({ theme }) => theme.color.background};
   border-radius: var(--card-border-radius);
@@ -32,6 +32,10 @@ export const Card = styled.div`
 
   margin-bottom: var(--card-white-space);
   padding: var(--card-white-space);
+
+  ${media.greaterThan('medium')`
+    --card-white-space: 2.4rem;
+  `}
 `;
 
 export const Container = styled(motion.div)`

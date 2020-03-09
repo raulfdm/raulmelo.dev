@@ -56,7 +56,7 @@ export const typography = new Typography({
       textAlign: 'center',
       transform: 'translateX(-71px)',
     },
-    '.gatsby-resp-image-figcaption,.gif-caption': {
+    '.gatsby-resp-image-figcaption,.gif-caption,.img-caption': {
       ...adjustFontSizeTo('16px'),
       fontFamily: 'medium-content-sans-serif-font',
       textAlign: 'center',

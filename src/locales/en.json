@@ -7,7 +7,8 @@
     "latest": "Latest"
   },
   "blog": {
-    "readTime": "{minutes} min read"
+    "readTime": "{minutes} min read",
+    "featuredImage": "Featured image"
   },
   "404": {
     "title": "404 - Page not found",
