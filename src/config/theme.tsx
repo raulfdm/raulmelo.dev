@@ -42,18 +42,18 @@ export const ThemeProvider: React.FC<ThemeProps> = ({ children }) => {
     window['__setPreferredTheme'](nextTheme);
   };
 
-  function withFontFallback(fontName: string): string {
-    return `${fontName},-apple-system, BlinkMacSystemFont,
+  function withFontFallback(fontName: string, serif: boolean): string {
+    return `"${fontName}",-apple-system, BlinkMacSystemFont,
     'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
-    sans-serif;`;
+    ${serif ? '' : 'sans-'}serif;`;
   }
 
   const theme: DefaultTheme = {
     isDarkTheme,
     font: {
-      contentSans: withFontFallback('medium-content-sans-serif-font'),
-      contentSerif: withFontFallback('medium-content-serif-font'),
-      contentTitle: withFontFallback('medium-content-title-font'),
+      contentSans: withFontFallback('content-sans-serif', false),
+      contentSerif: withFontFallback('content-serif', true),
+      contentTitle: withFontFallback('content-title', true),
     },
     color: {
       background: 'var(--background)',
