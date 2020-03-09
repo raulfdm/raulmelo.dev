@@ -13,28 +13,6 @@ export const fonts = css`
       U+2022, U+2026;
   }
 
-  /* rest */
-  @font-face {
-    font-family: 'medium-content-serif-font';
-    font-weight: 400;
-    font-style: italic;
-    src: url('https://glyph.medium.com/font/81d2bf1/3k-4f_4h-6bt_6bv-6c3_6c5-6c7_6ca-6cb_6ce-6ch_6cj-6cl_6cn-nvnj/charter-400-italic.woff')
-      format('woff');
-    unicode-range: U+80-9F, U+A1-2009, U+200B-2013, U+2015-2017, U+201A-201B,
-      U+201E-2021, U+2023-2025, U+2027-10FFFF;
-  }
-
-  /* rest */
-  @font-face {
-    font-family: 'medium-content-serif-font';
-    font-weight: 400;
-    font-style: normal;
-    src: url('https://glyph.medium.com/font/be78681/3k-4f_4h-6bt_6bv-6c3_6c5-6c7_6ca-6cb_6ce-6ch_6cj-6cl_6cn-nvnj/charter-400-normal.woff')
-      format('woff');
-    unicode-range: U+80-9F, U+A1-2009, U+200B-2013, U+2015-2017, U+201A-201B,
-      U+201E-2021, U+2023-2025, U+2027-10FFFF;
-  }
-
   /* latin */
   @font-face {
     font-family: 'medium-content-serif-font';
@@ -57,17 +35,6 @@ export const fonts = css`
       U+2022, U+2026;
   }
 
-  /* rest */
-  @font-face {
-    font-family: 'medium-content-serif-font';
-    font-weight: 700;
-    font-style: italic;
-    src: url('https://glyph.medium.com/font/77a0c0c/3k-4f_4h-6bt_6bv-6c3_6c5-6c7_6ca-6cb_6ce-6ch_6cj-6cl_6cn-nvnj/charter-700-italic.woff')
-      format('woff');
-    unicode-range: U+80-9F, U+A1-2009, U+200B-2013, U+2015-2017, U+201A-201B,
-      U+201E-2021, U+2023-2025, U+2027-10FFFF;
-  }
-
   /* latin */
   @font-face {
     font-family: 'medium-content-serif-font';
@@ -77,17 +44,6 @@ export const fonts = css`
       format('woff');
     unicode-range: U+0-7F, U+A0, U+200A, U+2014, U+2018, U+2019, U+201C, U+201D,
       U+2022, U+2026;
-  }
-
-  /* rest */
-  @font-face {
-    font-family: 'medium-content-serif-font';
-    font-weight: 700;
-    font-style: normal;
-    src: url('https://glyph.medium.com/font/f50d520/3k-4f_4h-6bt_6bv-6c3_6c5-6c7_6ca-6cb_6ce-6ch_6cj-6cl_6cn-nvnj/charter-700-normal.woff')
-      format('woff');
-    unicode-range: U+80-9F, U+A1-2009, U+200B-2013, U+2015-2017, U+201A-201B,
-      U+201E-2021, U+2023-2025, U+2027-10FFFF;
   }
 
   /* latin */
@@ -101,17 +57,6 @@ export const fonts = css`
       U+2022, U+2026;
   }
 
-  /* rest */
-  @font-face {
-    font-family: 'medium-content-title-font';
-    font-weight: 400;
-    font-style: normal;
-    src: url('https://glyph.medium.com/font/78ce731/3k-4f_4h-6bt_6bv-6c3_6c5-6c7_6ca-6cb_6ce-6ch_6cj-6cl_6cn-nvnj/fell-400-normal.woff')
-      format('woff');
-    unicode-range: U+80-9F, U+A1-2009, U+200B-2013, U+2015-2017, U+201A-201B,
-      U+201E-2021, U+2023-2025, U+2027-10FFFF;
-  }
-
   /* latin */
   @font-face {
     font-family: 'medium-content-slab-serif-font';
@@ -123,28 +68,6 @@ export const fonts = css`
       U+2022, U+2026;
   }
 
-  /* rest */
-  @font-face {
-    font-family: 'medium-content-slab-serif-font';
-    font-weight: 300;
-    font-style: italic;
-    src: url('https://glyph.medium.com/font/24e0824/3k-4f_4h-6bt_6bv-6c3_6c5-6c7_6ca-6cb_6ce-6ch_6cj-6cl_6cn-nvnj/marat-sans-300-italic.woff')
-      format('woff');
-    unicode-range: U+80-9F, U+A1-2009, U+200B-2013, U+2015-2017, U+201A-201B,
-      U+201E-2021, U+2023-2025, U+2027-10FFFF;
-  }
-
-  /* rest */
-  @font-face {
-    font-family: 'medium-content-sans-serif-font';
-    font-weight: 400;
-    font-style: normal;
-    src: url('https://glyph.medium.com/font/d8659c9/3k-4f_4h-6bt_6bv-6c3_6c5-6c7_6ca-6cb_6ce-6ch_6cj-6cl_6cn-nvnj/marat-sans-400-normal.woff')
-      format('woff');
-    unicode-range: U+80-9F, U+A1-2009, U+200B-2013, U+2015-2017, U+201A-201B,
-      U+201E-2021, U+2023-2025, U+2027-10FFFF;
-  }
-
   /* latin */
   @font-face {
     font-family: 'medium-content-sans-serif-font';
@@ -154,17 +77,6 @@ export const fonts = css`
       format('woff');
     unicode-range: U+0-7F, U+A0, U+200A, U+2014, U+2018, U+2019, U+201C, U+201D,
       U+2022, U+2026;
-  }
-
-  /* rest */
-  @font-face {
-    font-family: 'medium-content-sans-serif-font';
-    font-weight: 600;
-    font-style: normal;
-    src: url('https://glyph.medium.com/font/6f4b679/3k-4f_4h-6bt_6bv-6c3_6c5-6c7_6ca-6cb_6ce-6ch_6cj-6cl_6cn-nvnj/marat-sans-600-normal.woff')
-      format('woff');
-    unicode-range: U+80-9F, U+A1-2009, U+200B-2013, U+2015-2017, U+201A-201B,
-      U+201E-2021, U+2023-2025, U+2027-10FFFF;
   }
 
   /* latin */
@@ -187,16 +99,5 @@ export const fonts = css`
       format('woff');
     unicode-range: U+0-7F, U+A0, U+200A, U+2014, U+2018, U+2019, U+201C, U+201D,
       U+2022, U+2026;
-  }
-
-  /* rest */
-  @font-face {
-    font-family: 'medium-marketing-display-font';
-    font-weight: 500;
-    font-style: normal;
-    src: url('https://glyph.medium.com/font/b6752aa/3k-4f_4h-6bt_6bv-6c3_6c5-6c7_6ca-6cb_6ce-6ch_6cj-6cl_6cn-nvnj/noe-display-500-normal.woff')
-      format('woff');
-    unicode-range: U+80-9F, U+A1-2009, U+200B-2013, U+2015-2017, U+201A-201B,
-      U+201E-2021, U+2023-2025, U+2027-10FFFF;
   }
 `;
