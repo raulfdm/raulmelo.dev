@@ -3,6 +3,7 @@ title: 'Entendendo de uma vez por todas Expressões Regulares'
 subtitle: 'Introdução'
 date: '2017-05-21'
 image: assets/featured-img.jpeg
+image_caption: ''
 description: 'Introdução à series de 7 artigos sobre expressões regulares e uma visão geral do que são expressões regulares.'
 categories:
   - regex
