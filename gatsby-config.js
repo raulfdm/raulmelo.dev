@@ -96,6 +96,14 @@ if (process.env.NODE_ENV === 'production' && process.env.CI === true) {
     resolve: `gatsby-plugin-algolia-search`,
     options: algoliaSetupOptions,
   });
+
+  pluginsList.push({
+    resolve: 'gatsby-plugin-google-analytics',
+    options: {
+      trackingId: 'UA-160048702-1',
+      head: false,
+    },
+  });
 }
 
 module.exports = {
