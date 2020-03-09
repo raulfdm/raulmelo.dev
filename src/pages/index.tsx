@@ -41,7 +41,7 @@ const Home: React.FC<GraphQLResponse> = ({ data }) => {
     preferredLang: locale,
   });
 
-  const { profilePic, social } = data.site.siteMetadata;
+  const { profilePic, social, author } = data.site.siteMetadata;
 
   return (
     <Layout>
@@ -51,7 +51,7 @@ const Home: React.FC<GraphQLResponse> = ({ data }) => {
       />
       <main>
         <StyledAuthorPresentation
-          name="Raul de Melo"
+          name={author}
           profilePic={profilePic}
           twitter={social.twitter}
           linkedIn={social.linkedIn}
@@ -88,7 +88,7 @@ export const query = graphql`
             description
             image {
               childImageSharp {
-                fluid(quality: 100, maxWidth: 1500, fit: CONTAIN) {
+                fluid(quality: 60, maxWidth: 700, fit: CONTAIN) {
                   base64
                   tracedSVG
                   srcWebp
@@ -117,6 +117,7 @@ export const query = graphql`
     site {
       siteMetadata {
         profilePic
+        author
         siteUrl
         social {
           github
