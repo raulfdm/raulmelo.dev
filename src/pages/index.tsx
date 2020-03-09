@@ -41,7 +41,7 @@ const Home: React.FC<GraphQLResponse> = ({ data }) => {
     preferredLang: locale,
   });
 
-  const { profilePic, social } = data.site.siteMetadata;
+  const { profilePic, social, author } = data.site.siteMetadata;
 
   return (
     <Layout>
@@ -51,7 +51,7 @@ const Home: React.FC<GraphQLResponse> = ({ data }) => {
       />
       <main>
         <StyledAuthorPresentation
-          name="Raul de Melo"
+          name={author}
           profilePic={profilePic}
           twitter={social.twitter}
           linkedIn={social.linkedIn}
@@ -117,6 +117,7 @@ export const query = graphql`
     site {
       siteMetadata {
         profilePic
+        author
         siteUrl
         social {
           github
