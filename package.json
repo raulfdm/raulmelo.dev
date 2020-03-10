@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@formatjs/intl-pluralrules": "^1.5.2",
-    "algoliasearch": "^4.0.3",
+    "algoliasearch": "^4.1.0",
     "debounce-promise": "^3.1.2",
     "flat": "^5.0.0",
     "framer-motion": "^1.9.1",
