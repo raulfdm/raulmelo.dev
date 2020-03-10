@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './styles/fonts.css';
 import './styles/panda-prismjs.css';
 import { IntlContextProvider } from './context/react-intl';
 import { ThemeProvider } from './config/theme';
