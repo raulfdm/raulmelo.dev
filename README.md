@@ -1,5 +1,11 @@
 # Personal Website and Blog
 
+<p align="center">
+  <a href="https://github.com/sub-tv/sub-tv-cli/actions" title="Github Actions">
+    <img src="https://github.com/raulfdm/raulmelo.dev/workflows/Node.js%20CI/badge.svg" alt="Build bagde">
+  </a>
+</p>
+
 > Medium asks you to pay to read my articles? No problem, just hold my beer.
 
 ## Language
@@ -12,7 +18,7 @@ The default language is my mother lang, PT-BR 🇧🇷 but I already prepare the
 - [Gatsby started default](https://github.com/gatsbyjs/gatsby-starter-default);
 - [Styled components](https://styled-components.com/);
 - [Styled Icons](styled-icons.js.org/);
-- [`gatsby-plugin-intl`](https://www.gatsbyjs.org/packages/gatsby-plugin-intl/) which uses under the hood [React Inlt](https://github.com/formatjs/react-intl)
+- [React Inlt](https://github.com/formatjs/react-intl) for locales
 
 ## How to run
 
