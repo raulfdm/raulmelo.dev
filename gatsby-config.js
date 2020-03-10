@@ -98,7 +98,8 @@ const pluginsList = [
   'gatsby-plugin-netlify-cache',
 ];
 
-if (process.env.NODE_ENV === 'production' && process.env.CI === true) {
+/* Defined based on branch name inside ./github/workflows/cy.yml */
+if (process.env.ENVIRONMENT === 'production') {
   pluginsList.push({
     resolve: `gatsby-plugin-algolia-search`,
     options: algoliaSetupOptions,
