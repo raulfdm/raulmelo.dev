@@ -1,12 +1,12 @@
 # Personal Website and Blog
 
+> Medium asks you to pay to read my articles? No problem, just hold my beer.
+
 <p align="center">
   <a href="https://github.com/sub-tv/sub-tv-cli/actions" title="Github Actions">
     <img src="https://github.com/raulfdm/raulmelo.dev/workflows/Node.js%20CI/badge.svg" alt="Build bagde">
   </a>
 </p>
-
-> Medium asks you to pay to read my articles? No problem, just hold my beer.
 
 ## Language
 
