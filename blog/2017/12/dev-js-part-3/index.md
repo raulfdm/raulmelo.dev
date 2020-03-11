@@ -95,11 +95,11 @@ Na minha concepção, física útil pra um cidadão é saber o que são as micro
 
 A propósito, acredito que muitos canais no Youtube tentam fazer isso e atingem esse objetivo de forma esplêndida, como é o caso do manual do mundo por exemplo
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/vX3s1w1Ihl8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<yt src="https://www.youtube.com/embed/vX3s1w1Ihl8"></yt>
 
 Ou até mesmo o Nerdologia, que apesar de ter um foco em explicar coisas do mundo Nerd, muitas vezes respondem dúvidas que temos sobre coisas do cotidiano usando conceitos da psicologia, física, química, biologia, etc.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/p3IQU-PmJGU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<yt src="https://www.youtube.com/embed/p3IQU-PmJGU"></yt>
 
 Enfim, não sou pedagogo, muito menos especialista em educação. Essa é só minha opinião (que não vale mais que a sua) sobre essa realidade, baseado nas coisas que a gente tem que aprender depois de adulto na ESCOLA DA VIDA!
 

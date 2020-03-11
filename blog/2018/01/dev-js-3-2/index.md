@@ -200,7 +200,7 @@ Apesar de ter falhado na missão, aquele momento foi um dos raros momentos em mi
 
 Foi mais ou menos como essa palestra do Clóvis (Assista, sério).
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/rICKLns8p_M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<yt src="https://www.youtube.com/embed/rICKLns8p_M"><yt>
 
 ### Programação de Fato
 

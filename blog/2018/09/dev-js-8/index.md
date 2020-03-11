@@ -221,7 +221,7 @@ Por fim, eu destinava todo mês do meu salário, algo em torno 10~20% do valor l
 
 No final de dois anos, meu investimento total foi algo em torno de 4 mil reais e consegui lucrar mais mil e pouco (14% ao ano), o que, se você for parar pra ver, foi bem rentável, uma vez que tive 0 risco e com um taxa de rendimento de mais que o dobro da poupança.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/XkWVHFZ4IF8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<yt src="https://www.youtube.com/embed/XkWVHFZ4IF8"><yt>
 
 Mas apesar de ter usado essa estratégia do Tesouro, hoje eu faria diferente e é essa dica que eu quero dar aqui.
 

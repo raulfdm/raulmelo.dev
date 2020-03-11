@@ -16,6 +16,7 @@ import { Series } from '../components/Series';
 import { Frontmatter, SeriesType, PostSeries, PostEdge } from '../types';
 import SEO from '../components/SEO';
 import { useIntl } from '../context/react-intl';
+import { YouTubeVideo } from '../components/YouTubeVideo';
 
 const Title = styled.h1`
   font-size: 34px;
@@ -59,7 +60,7 @@ type PostProps = {
 /* Custom Components */
 const renderAst = new rehypeReact({
   createElement: React.createElement,
-  components: { 'big-quote': Quote, gif: Gif },
+  components: { 'big-quote': Quote, gif: Gif, yt: YouTubeVideo },
 }).Compiler;
 
 const messages = defineMessages({
