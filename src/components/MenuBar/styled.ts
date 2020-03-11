@@ -36,7 +36,11 @@ export const CustomContainer = styled(Container)`
 
 export const DummySpace = styled.div`
   height: 65px;
-  margin-bottom: 65px;
+  margin-bottom: 35px;
+
+  ${mediaQuery.greaterThan('medium')`
+    margin-bottom: 65px;
+  `}
 `;
 
 export const LogoWrapper = styled.div`
@@ -48,6 +52,7 @@ export const MenuButton = styled.button`
   border: none;
   outline: ${({ theme }) => theme.color.background};
   cursor: pointer;
+  width: 45px;
 
   svg {
     color: ${({ theme }) => theme.color.font};

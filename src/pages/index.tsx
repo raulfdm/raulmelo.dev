@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { FormattedMessage, defineMessages } from 'react-intl';
 import { graphql } from 'gatsby';
+import mediaQuery from 'styled-media-query';
 
 import Layout from '../components/Layout';
 import { GraphQLResponse, PostEdge } from '../types';
@@ -16,7 +17,6 @@ const LatestMessage = styled.p`
   font-size: 2.1rem;
   font-weight: 600;
   font-family: ${({ theme }) => theme.font.contentSans};
-  padding-top: 4rem;
   padding-bottom: 1.2rem;
 `;
 

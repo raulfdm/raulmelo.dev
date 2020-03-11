@@ -34,13 +34,19 @@ export const AuthorDataWrapper = styled.div`
 
 export const AuthorName = styled.h1`
   letter-spacing: -0.93px;
-  font-size: 3.6rem;
+  font-size: 2.6rem;
   font-family: ${({ theme }) => theme.font.contentSans};
   font-weight: 600;
+
+  ${mediaQuery.greaterThan('medium')`
+    flex-direction: row;
+    font-size: 3.6rem;
+  `}
 `;
 
 export const AuthorSynopsis = styled.p`
   font-size: 1.8rem;
+  line-height: 24px;
   font-weight: 400;
   font-family: ${({ theme }) => theme.font.contentSans};
 `;
