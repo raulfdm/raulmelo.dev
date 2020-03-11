@@ -1,12 +1,12 @@
 import styled from 'styled-components';
-import mediaQuery from 'styled-media-query';
+import media from 'styled-media-query';
 
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column-reverse;
   justify-content: space-between;
 
-  ${mediaQuery.greaterThan('medium')`
+  ${media.greaterThan('medium')`
     flex-direction: row;
   `}
 `;
@@ -15,7 +15,7 @@ export const ImageWrapper = styled.div`
   max-width: 8rem;
   margin-bottom: 2rem;
 
-  ${mediaQuery.greaterThan('medium')`
+  ${media.greaterThan('medium')`
     max-width: 12.8rem;
     margin-left: 4rem;
     margin-bottom: 0;
@@ -38,7 +38,7 @@ export const AuthorName = styled.h1`
   font-family: ${({ theme }) => theme.font.contentSans};
   font-weight: 600;
 
-  ${mediaQuery.greaterThan('medium')`
+  ${media.greaterThan('medium')`
     flex-direction: row;
     font-size: 3.6rem;
   `}

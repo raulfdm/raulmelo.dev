@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { useIntl, defineMessages } from 'react-intl';
 import { Algolia } from '@styled-icons/boxicons-logos/Algolia';
 import debounce from 'debounce-promise';
+import media from 'styled-media-query';
 
 import { HitAlgolia, RequestsAlgoliaClient } from '../types';
 import Layout from '../components/Layout';
@@ -48,7 +49,7 @@ const SearchWrapper = styled.main`
   .ais-SearchBox-input {
     border: 0;
     border-bottom: 1px solid var(--border);
-    font-size: 34px;
+    font-size: 24px;
     color: var(--font);
     height: 50px;
     width: 100%;
@@ -56,6 +57,10 @@ const SearchWrapper = styled.main`
     font-family: inherit;
     font-weight: 300;
     background-color: transparent !important;
+
+    ${media.greaterThan('medium')`
+    font-size: 34px;
+    `}
   }
 
   .ais-SearchBox-reset {

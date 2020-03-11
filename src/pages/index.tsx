@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { FormattedMessage, defineMessages } from 'react-intl';
 import { graphql } from 'gatsby';
-import mediaQuery from 'styled-media-query';
 
 import Layout from '../components/Layout';
 import { GraphQLResponse, PostEdge } from '../types';
