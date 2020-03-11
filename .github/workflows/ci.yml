@@ -39,6 +39,7 @@ jobs:
       - run: yarn build
         name: Build
         env:
+          NODE_ENV: production
           ENVIRONMENT: ${{ contains(github.ref, 'master') && 'production' || 'staging'}}
           GATSBY_ALGOLIA_APP_ID: ${{ secrets.GATSBY_ALGOLIA_APP_ID }}
           GATSBY_ALGOLIA_SEARCH_KEY: ${{ secrets.GATSBY_ALGOLIA_SEARCH_KEY }}
