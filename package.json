@@ -40,7 +40,7 @@
     "gatsby-remark-autolink-headers": "^2.1.25",
     "gatsby-source-filesystem": "^2.1.48",
     "gatsby-transformer-json": "^2.2.26",
-    "gatsby-transformer-sharp": "^2.3.16",
+    "gatsby-transformer-sharp": "^2.3.18",
     "husky": "^4.2.3",
     "polished": "^3.4.4",
     "pretty-quick": "^2.0.1",
