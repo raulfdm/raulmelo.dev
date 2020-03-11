@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import mediaQuery from 'styled-media-query';
+import media from 'styled-media-query';
 import { motion } from 'framer-motion';
 
 import { Container } from '../Ui';
@@ -29,14 +29,23 @@ export const CustomContainer = styled(Container)`
   align-items: center;
   justify-content: space-between;
 
-  ${mediaQuery.greaterThan('medium')`
+  ${media.greaterThan('medium')`
+    max-width: 90%;
+    padding: 0;
+  `}
+
+  ${media.greaterThan('large')`
     max-width: 80%;
   `}
 `;
 
 export const DummySpace = styled.div`
   height: 65px;
-  margin-bottom: 65px;
+  margin-bottom: 35px;
+
+  ${media.greaterThan('medium')`
+    margin-bottom: 65px;
+  `}
 `;
 
 export const LogoWrapper = styled.div`
@@ -48,6 +57,7 @@ export const MenuButton = styled.button`
   border: none;
   outline: ${({ theme }) => theme.color.background};
   cursor: pointer;
+  width: 45px;
 
   svg {
     color: ${({ theme }) => theme.color.font};

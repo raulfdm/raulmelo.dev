@@ -1,8 +1,9 @@
 import { css, createGlobalStyle } from 'styled-components';
+import media from 'styled-media-query';
 
 import Typography from 'typography';
 
-const baseFontSize = '21px';
+const baseFontSize = '18px';
 
 export function pxToRem(px: string | number): string {
   const baseNumber = parseInt(baseFontSize);
@@ -15,21 +16,21 @@ export const typography = new Typography({
   baseLineHeight: 1.58,
   includeNormalize: true,
   headerFontFamily: [
-    'medium-content-sans-serif-font',
+    'content-sans-serif',
     'Helvetica Neue',
     'Segoe UI',
     'Helvetica',
     'Arial',
     'sans-serif',
   ],
-  bodyFontFamily: ['medium-content-serif-font', 'Georgia', 'serif'],
+  bodyFontFamily: ['content-serif', 'Georgia', 'serif'],
   bodyColor: 'var(--font)',
   overrideStyles: ({ rhythm, adjustFontSizeTo }) => ({
     h1: {
       ...adjustFontSizeTo('42px'),
       marginBottom: pxToRem(10),
       fontWeight: 400,
-      fontFamily: 'medium-content-title-font',
+      fontFamily: 'content-title',
     },
     'h2,h3,h4,h5,h6': {
       marginBottom: rhythm(1 / 2),
@@ -58,7 +59,7 @@ export const typography = new Typography({
     },
     '.gatsby-resp-image-figcaption,.gif-caption,.img-caption': {
       ...adjustFontSizeTo('16px'),
-      fontFamily: 'medium-content-sans-serif-font',
+      fontFamily: 'content-sans-serif',
       textAlign: 'center',
       margin: 0,
       marginTop: adjustFontSizeTo('16px').fontSize,
@@ -68,9 +69,6 @@ export const typography = new Typography({
 });
 
 const global = css`
-  html {
-    --font-size: 16px;
-  }
   ${typography.toString()};
 
   body {
@@ -97,6 +95,11 @@ const global = css`
   .twitter-tweet {
     margin: ${typography.adjustFontSizeTo('40px').fontSize} auto !important;
   }
+  ${media.greaterThan('medium')`
+    html {
+      font-size: 131.25%
+    }
+  `}
 `;
 
 export const BlogGlobalStyle = createGlobalStyle`

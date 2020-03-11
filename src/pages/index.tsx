@@ -16,7 +16,6 @@ const LatestMessage = styled.p`
   font-size: 2.1rem;
   font-weight: 600;
   font-family: ${({ theme }) => theme.font.contentSans};
-  padding-top: 4rem;
   padding-bottom: 1.2rem;
 `;
 
