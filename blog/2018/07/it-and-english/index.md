@@ -84,7 +84,7 @@ Sim jovem, faz muita diferença. E não é só pra sua carreira não, é pra sua
 
 Quando entrar nos atos em que eu conto a minha vida aqui na Holanda, falarei bem mais sobre esse tema, por hora, pause a leitura e assista esse vídeo (sério, faça isso) e você vai ter uma explicação mais profissional dos motivos:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/MMmOLN5zBLY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<yt src="https://www.youtube.com/embed/MMmOLN5zBLY"><yt>
 
 (Se tiver algum erro pra carregar o vídeo ou quiser abrir no YouTube, [clica aqui](https://www.youtube.com/watch?v=MMmOLN5zBLY). Obs.: tem legenda em português.)
 
@@ -311,7 +311,7 @@ Abaixo você consegue ver um gráfico que mostra exatamente esse comportamento:
 
 Ainda sobre esse assunto, sugiro você assistir o vídeo da Arata Academy sobre isso e procurar artigos a respeito, vale muito a pena:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/8mmN_dKrMeQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<yt src="https://www.youtube.com/embed/8mmN_dKrMeQ"><yt>
 
 Lembrando que essa técnica não serve só para estudar inglês. Ela pode ser aplicada em qualquer área de estudo.
 
