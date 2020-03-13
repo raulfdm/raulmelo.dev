@@ -116,7 +116,7 @@ Deu pra entender a seriedade do problema? No dia 12 de Março de 2020 a OMS decl
 
 O Corona tem o mesmo comportamento da gripe comum quando o assunto é transmissão.
 
-![Infográfico do ciclo de transmissão. Fonte: O Globo](./assets/ciclo-.jpeg)
+![Infográfico do ciclo de transmissão. Fonte: O Globo](./assets/ciclo-coronavirus.jpeg)
 
 Uma pessoa infectada com o corona pode passar pra outras duas ou três pessoas. Ou seja, se ele dobra a cada ciclo de transmissão, em um cenário onde temos 100 pessoas infectadas e o isolamento não está acontecendo, os casos vão escalando pra, 200, 400, 800, 1600, 3200, 6400...e assim por diante.
 
