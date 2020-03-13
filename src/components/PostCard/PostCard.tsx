@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 
 import * as S from './styled';
 import { Card } from '../Ui';
-import { PostNode } from 'src/types/GraphQL';
+import { PostNode } from '../../types/GraphQL';
 
 type PostCardProps = {
   postNode: PostNode;

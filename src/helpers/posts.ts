@@ -6,7 +6,7 @@ import {
   PostEdge,
   PostTranslations,
   PostTranslation,
-} from 'src/types';
+} from '../types';
 
 function createTranslationsField(
   postEdge: PostEdge,
