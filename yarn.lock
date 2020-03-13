@@ -1975,6 +1975,11 @@
   resolved "https://registry.yarnpkg.com/@types/configstore/-/configstore-2.1.1.tgz#cd1e8553633ad3185c3f2f239ecff5d2643e92b6"
   integrity sha1-zR6FU2M60xhcPy8jns/10mQ+krY=
 
+"@types/debounce-promise@^3.1.1":
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/@types/debounce-promise/-/debounce-promise-3.1.1.tgz#38fcb523f7d11d521fca2e8ccb43f0982fbf5ce7"
+  integrity sha512-eOSiMKpPYI5Cx5tmx4xQ1e0bLz9n56NVv4ao0YQcYtIJYZjdoCDFvZwIQgXDiFHU5SFtKtN2vcqx5ZIXvj1Ccg==
+
 "@types/debug@^0.0.30":
   version "0.0.30"
   resolved "https://registry.yarnpkg.com/@types/debug/-/debug-0.0.30.tgz#dc1e40f7af3b9c815013a7860e6252f6352a84df"
@@ -2183,6 +2188,13 @@
   dependencies:
     "@types/prop-types" "*"
     csstype "^2.2.0"
+
+"@types/rehype-react@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@types/rehype-react/-/rehype-react-4.0.0.tgz#55b71cc7329b6effb8f66b8ea08c2d016680db97"
+  integrity sha512-t4fsoAYXRGGUTWesgb+eLdTEjGdFy4d5Cmz9ct2XwgUkmsAns6si9jkQ/FOrxMB/SUQ9ax0ZkKgXmHeIM7XkKg==
+  dependencies:
+    "@types/react" "*"
 
 "@types/rimraf@^2.0.2":
   version "2.0.3"
