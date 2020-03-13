@@ -39,7 +39,7 @@ export const typography = new Typography({
       lineHeight: rhythm(1),
     },
     blockquote: {
-      marginLeft: '-20px',
+      marginLeft: '-12px',
       paddingLeft: '23px',
       boxShadow: `inset 3px 0 0 0 var(--font)`,
     },
@@ -95,9 +95,14 @@ const global = css`
   .twitter-tweet {
     margin: ${typography.adjustFontSizeTo('40px').fontSize} auto !important;
   }
+
   ${media.greaterThan('medium')`
     html {
       font-size: 131.25%
+    }
+
+    blockquote{
+      margin-left: -20px;
     }
   `}
 `;
