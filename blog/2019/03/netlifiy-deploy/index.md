@@ -206,7 +206,7 @@ Mas vamos entender cada opção para caso seu projeto seja diferente, você poss
 
 - **Build command**. Lembra que a gente teve que rodar o comando `yarn build` para gerar nossos arquivos finais? Se a gente abrir o package json deste projeto, o comando `build` está mapeado justamente para `gatsby build`:
 
-```json
+```json:title=package.json
 {
   //...
   "scripts": {
