@@ -8,9 +8,7 @@ declare module 'styled-components' {
     font: {
       contentSans: string;
       contentSerif: string;
-      contentSlab: string;
       contentTitle: string;
-      marketingDisplay: string;
     };
     color: {
       background: string;

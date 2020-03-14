@@ -12,19 +12,19 @@ export type FrontMatterImage = {
 
 export type Frontmatter = {
   title: string;
-  subtitle: string;
+  subtitle?: string;
   date: string;
-  categories: string[];
-  description: string;
-  series: FrontmatterSeries;
-  image: FrontMatterImage;
-  image_caption: string;
+  categories?: string[];
+  description?: string;
+  series?: FrontmatterSeries;
+  image?: FrontMatterImage;
+  image_caption?: string;
 };
 
 type PostFields = {
   slug: string;
-  lang: string;
-  commonSlug: string;
+  lang?: string;
+  commonSlug?: string;
 };
 
 export type PostTranslation = {

@@ -6,7 +6,7 @@ import {
   PostEdge,
   PostTranslations,
   PostTranslation,
-} from 'src/types';
+} from '../types';
 
 function createTranslationsField(
   postEdge: PostEdge,
@@ -19,8 +19,9 @@ function createTranslationsField(
 
 function postEdgeToTranslate(postEdge: PostEdge): PostTranslation {
   const { lang, slug } = postEdge.node.fields!;
+
   return {
-    lang,
+    lang: lang!,
     slug,
   };
 }

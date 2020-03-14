@@ -5,8 +5,6 @@ import {
   DefaultTheme,
 } from 'styled-components';
 
-import { ThemesAvailable } from '../types';
-
 type ThemeProps = {
   children: React.ReactNode;
 };
@@ -21,25 +19,22 @@ type ContextType = {
 export const ThemeContext = createContext<Partial<ContextType>>({});
 
 export const ThemeProvider: React.FC<ThemeProps> = ({ children }) => {
-  const [currentTheme, setCurrentTheme] = useState<ThemesAvailable>(
-    ThemesAvailable.LIGHT,
-  );
+  const [currentTheme, setCurrentTheme] = useState<
+    keyof typeof ThemesAvailable
+  >('light');
 
-  const isDarkTheme = currentTheme === ThemesAvailable.DARK;
+  const isDarkTheme = currentTheme === 'dark';
 
   React.useEffect(() => {
-    setCurrentTheme(window['__theme']);
+    setCurrentTheme(window.__theme);
 
-    window['__onThemeChange'] = () => setCurrentTheme(window['__theme']);
+    window.__onThemeChange = () => setCurrentTheme(window.__theme);
   }, []);
 
   const toggleTheme = (): void => {
-    const nextTheme =
-      currentTheme === ThemesAvailable.LIGHT
-        ? ThemesAvailable.DARK
-        : ThemesAvailable.LIGHT;
+    const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
 
-    window['__setPreferredTheme'](nextTheme);
+    window.__setPreferredTheme(nextTheme);
   };
 
   function withFontFallback(fontName: string, serif: boolean): string {

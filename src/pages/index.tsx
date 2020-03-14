@@ -40,6 +40,10 @@ const Home: React.FC<GraphQLResponse> = ({ data }) => {
     preferredLang: locale,
   });
 
+  if (!data.site) {
+    throw new Error('Home: site info is empty');
+  }
+
   const { profilePic, social, author } = data.site.siteMetadata;
 
   return (

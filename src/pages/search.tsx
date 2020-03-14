@@ -149,7 +149,7 @@ const SearchPage: React.FC = () => {
                   },
                   frontmatter: {
                     title: hit.title,
-                    subtitle: hit.subtitle,
+                    subtitle: hit.subtitle ?? '',
                     date: hit.date,
                     description: hit.description,
                   },

@@ -3,15 +3,15 @@ import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
 import { transparentize } from 'polished';
 import { Link } from 'gatsby';
+import media from 'styled-media-query';
 
-import { SeriesType, PostSeries } from 'src/types';
+import { SeriesType, PostSeries } from '../../types';
 import { pxToRem } from '../../styles/blogPost';
 import { Card } from '../Ui';
-import media from 'styled-media-query';
 
 type SeriesProps = {
   series: SeriesType;
-  postIndex: Extract<PostSeries, 'index'>;
+  postIndex: PostSeries['index'];
   title: string;
 };
 
@@ -92,7 +92,7 @@ export const Series: React.FC<SeriesProps> = ({ series, postIndex, title }) => {
           return (
             <SeriesItem
               key={index}
-              className={index == postIndex ? 'active' : ''}
+              className={index === postIndex.toString() ? 'active' : ''}
             >
               <Link to={post.uri}>
                 {post.copy} - {post.subtitle}
