@@ -4,10 +4,24 @@
 	Panda syntax for Prism theme by Siamak Mokhtari (https://github.com/siamak/atom-panda-syntax)
 */
 
+html {
+  --black: #292a2b;
+  --yellow: #d9d336;
+  --orange: #ffb86c;
+  --gray-light: #e6e6e6;
+  --gray: #676b79;
+  --gray-dark: #5b5d5f;
+  --blue: #45a9f9;
+  --blue-green: #19f9d8;
+  --rosy: #ff75b5;
+  --pink: #ff4b82;
+}
+
 code[class*='language-'],
-pre[class*='language-'] {
-  background: #292a2b;
-  color: #e6e6e6;
+pre[class*='language-'],
+.gatsby-code-title {
+  background: var(--black);
+  color: var(--gray-light);
   font-family: 'Fira Code', 'Operator Mono', 'Source Sans Pro', Menlo, Monaco,
     Consolas, Courier New, monospace;
   direction: ltr;
@@ -24,13 +38,20 @@ pre[class*='language-'] {
   width: 100%;
 }
 
+.gatsby-code-title {
+  padding: 0.5rem 1rem;
+  background-color: var(--black);
+  font-size: 0.75rem;
+  border-bottom: 1px solid rgb(217, 215, 224, 0.2);
+}
+
 pre[class*='language-'] code {
   float: left;
 }
 
 pre[class*='language-'],
 :not(pre) > code[class*='language-'] {
-  background: #292a2b;
+  background: var(--black);
 }
 
 pre[class*='language-'] {
@@ -50,13 +71,13 @@ pre[class*='language-'] {
 .token.doctype,
 .token.cdata {
   font-style: italic;
-  color: #676b79;
+  color: var(--gray);
 }
 
 .token.selector,
 .token.operator,
 .token.punctuation {
-  color: #e6e6e6;
+  color: var(--gray-light);
 }
 
 .token.namespace {
@@ -65,14 +86,14 @@ pre[class*='language-'] {
 
 .token.tag,
 .token.boolean {
-  color: #ffb86c;
+  color: var(--orange);
 }
 
 .token.atrule,
 .token.attr-value,
 .token.hex,
 .token.string {
-  color: #19f9d8;
+  color: var(--blue-green);
 }
 
 .token.property,
@@ -80,33 +101,33 @@ pre[class*='language-'] {
 .token.url,
 .token.attr-name,
 .token.keyword {
-  color: #ff75b5;
+  color: var(--rosy);
 }
 
 .token.regex {
-  color: #19f9d8;
+  color: var(--blue-green);
 }
 
 .token.function,
 .token.class-name {
-  color: #45a9f9;
+  color: var(--blue);
 }
 
 .token.constant {
-  color: #ff75b5;
+  color: var(--rosy);
 }
 
 .token.variable {
-  color: #ff75b5;
+  color: var(--rosy);
 }
 
 .token.number {
-  color: #19f9d8;
+  color: var(--blue-green);
 }
 
 .token.important,
 .token.deliminator {
-  color: #ff4b82;
+  color: var(--pink);
 }
 
 pre[data-line] {
@@ -155,14 +176,14 @@ pre[data-line] {
 
 .line-numbers-rows span {
   padding-right: 10px;
-  border-right: 3px #d9d336 solid;
+  border-right: 3px var(--yellow) solid;
 }
 
 .gatsby-highlight-code-line {
-  background-color: #5b5d5f;
+  background-color: var(--gray-dark);
   display: block;
   margin-right: -1rem;
   margin-left: -1rem;
   padding-left: 0.75em;
-  border-left: 0.25em solid #ff75b5;
+  border-left: 0.25em solid var(--rosy);
 }
