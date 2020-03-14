@@ -19,8 +19,9 @@ function createTranslationsField(
 
 function postEdgeToTranslate(postEdge: PostEdge): PostTranslation {
   const { lang, slug } = postEdge.node.fields!;
+
   return {
-    lang,
+    lang: lang!,
     slug,
   };
 }

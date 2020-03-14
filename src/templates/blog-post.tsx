@@ -103,7 +103,7 @@ const Post: React.FC<PostProps> = ({ pageContext }) => {
           <Container as="section">
             <Series
               series={series}
-              postIndex={seriesInfo.index}
+              postIndex={seriesInfo!.index}
               title={title}
             />
           </Container>
