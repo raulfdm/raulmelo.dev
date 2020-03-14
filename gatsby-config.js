@@ -83,6 +83,9 @@ module.exports = {
               className: `copy-title-icon`,
             },
           },
+          {
+            resolve: 'gatsby-remark-code-titles',
+          },
           `gatsby-remark-prismjs`,
           `gatsby-remark-smartypants`,
         ],
