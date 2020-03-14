@@ -60,8 +60,8 @@ pre[class*='language-'] {
 }
 
 :not(pre) > code[class*='language-'] {
-  padding: 5px 10px;
-  line-height: 1;
+  line-height: inherit;
+  padding: 2px 5px;
   border-radius: 3px;
 }
 
