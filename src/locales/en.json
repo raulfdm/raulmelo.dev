@@ -4,7 +4,11 @@
     "description": "Developer, writer in my spare time, Tech addicted, open-source lover and do believes the only way to transform lives is through education."
   },
   "home": {
-    "latest": "Latest"
+    "filter": {
+      "all": "Latest",
+      "single": "Single posts",
+      "series": "Series"
+    }
   },
   "blog": {
     "readTime": "{minutes} min read",

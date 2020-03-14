@@ -1,23 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FormattedMessage, defineMessages } from 'react-intl';
+import { defineMessages } from 'react-intl';
 import { graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
-import { GraphQLResponse, PostEdge } from '../types';
+import { GraphQLResponse } from '../types';
 import AuthorPresentation from '../components/AuthorPresentation';
-import { PostCard } from '../components/PostCard';
 import { getAndSanitizePostsFromQueryResponse } from '../helpers/posts';
 import { useIntl } from '../context/react-intl';
 import SEO from '../components/SEO';
-
-const LatestMessage = styled.p`
-  letter-spacing: -0.32px;
-  font-size: 2.1rem;
-  font-weight: 600;
-  font-family: ${({ theme }) => theme.font.contentSans};
-  padding-bottom: 1.2rem;
-`;
+import { Filter } from '../components/Home/Filter';
+import { PostFilters } from '../components/Home/types';
+import { Posts } from '../components/Home/Posts';
 
 const StyledAuthorPresentation = styled(AuthorPresentation)`
   margin-bottom: 3rem;
@@ -34,6 +28,7 @@ const messages = defineMessages({
 
 const Home: React.FC<GraphQLResponse> = ({ data }) => {
   const { locale, formatMessage } = useIntl();
+  const [filter, setFilter] = React.useState<PostFilters>('series');
 
   const posts = getAndSanitizePostsFromQueryResponse({
     data,
@@ -60,13 +55,8 @@ const Home: React.FC<GraphQLResponse> = ({ data }) => {
           linkedIn={social.linkedIn}
           github={social.github}
         />
-        <LatestMessage>
-          <FormattedMessage id="home.latest" />
-        </LatestMessage>
-        {posts &&
-          posts.map(({ node }: PostEdge) => (
-            <PostCard key={node.id} postNode={node} />
-          ))}
+        <Filter setFilter={setFilter} currentFilter={filter} />
+        <Posts posts={posts} filter={filter} />
       </main>
     </Layout>
   );
@@ -84,6 +74,9 @@ export const query = graphql`
           excerpt
           timeToRead
           frontmatter {
+            series {
+              id
+            }
             title
             subtitle
             date

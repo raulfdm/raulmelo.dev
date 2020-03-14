@@ -4,7 +4,11 @@
     "description": "Desenvolvedor, escritor nas horas vagas, viciado em tecnologia, amante do open-source e acredita que transformação de vida só acontece com educação."
   },
   "home": {
-    "latest": "Últimos"
+    "filter": {
+      "all": "Últimos",
+      "single": "Posts individuais",
+      "series": "Séries"
+    }
   },
   "blog": {
     "readTime": "{minutes} min de leitura",
