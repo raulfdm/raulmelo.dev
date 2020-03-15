@@ -28,7 +28,7 @@ const messages = defineMessages({
 
 const Home: React.FC<GraphQLResponse> = ({ data }) => {
   const { locale, formatMessage } = useIntl();
-  const [filter, setFilter] = React.useState<PostFilters>('series');
+  const [filter, setFilter] = React.useState<PostFilters>('all');
 
   const posts = getAndSanitizePostsFromQueryResponse({
     data,
