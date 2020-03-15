@@ -80,11 +80,6 @@ export const Posts: React.FC<{ filter: PostFilters; posts: PostEdges }> = ({
                   velocity: -200,
                 },
               }}
-              layoutTransition={{
-                type: 'spring',
-                damping: 20,
-                stiffness: 300,
-              }}
             >
               <PostCard postNode={node} />
             </motion.li>
