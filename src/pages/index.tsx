@@ -42,23 +42,27 @@ const Home: React.FC<GraphQLResponse> = ({ data }) => {
   const { profilePic, social, author } = data.site.siteMetadata;
 
   return (
-    <Layout>
+    <>
       <SEO
+        url="/"
+        lang={locale}
         description={formatMessage(messages.description)}
         title={formatMessage(messages.title)}
       />
-      <main>
-        <StyledAuthorPresentation
-          name={author}
-          profilePic={profilePic}
-          twitter={social.twitter}
-          linkedIn={social.linkedIn}
-          github={social.github}
-        />
-        <Filter setFilter={setFilter} currentFilter={filter} />
-        <Posts posts={posts} filter={filter} />
-      </main>
-    </Layout>
+      <Layout>
+        <main>
+          <StyledAuthorPresentation
+            name={author}
+            profilePic={profilePic}
+            twitter={social.twitter}
+            linkedIn={social.linkedIn}
+            github={social.github}
+          />
+          <Filter setFilter={setFilter} currentFilter={filter} />
+          <Posts posts={posts} filter={filter} />
+        </main>
+      </Layout>
+    </>
   );
 };
 
@@ -71,7 +75,6 @@ export const query = graphql`
       edges {
         node {
           id
-          excerpt
           timeToRead
           frontmatter {
             series {
@@ -114,7 +117,6 @@ export const query = graphql`
       siteMetadata {
         profilePic
         author
-        siteUrl
         social {
           github
           linkedIn

@@ -36,24 +36,28 @@ const messages = defineMessages({
 });
 
 const NotFoundPage: React.FC = () => {
-  const { formatMessage } = useIntl();
+  const { locale, formatMessage } = useIntl();
 
   return (
-    <Layout>
+    <>
       <SEO
+        lang={locale}
+        url="/404"
         title={formatMessage(messages.title)}
         description={formatMessage(messages.title)}
       />
-      <Wrapper>
-        <Title>Oops!</Title>
-        <Subtitle>
-          <FormattedMessage id="404.subtitle" />
-        </Subtitle>
-        <Description>
-          <FormattedMessage id="404.description" />
-        </Description>
-      </Wrapper>
-    </Layout>
+      <Layout>
+        <Wrapper>
+          <Title>Oops!</Title>
+          <Subtitle>
+            <FormattedMessage id="404.subtitle" />
+          </Subtitle>
+          <Description>
+            <FormattedMessage id="404.description" />
+          </Description>
+        </Wrapper>
+      </Layout>
+    </>
   );
 };
 

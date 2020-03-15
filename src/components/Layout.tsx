@@ -4,6 +4,7 @@ import { AnimatePresence } from 'framer-motion';
 import { MenuBar } from './MenuBar';
 import { Container, pageTransitionVariants } from './Ui';
 import { GlobalStyles } from '../styles';
+import { ThemeProvider } from '../config/theme';
 
 interface Props {
   children: React.ReactNode | React.ReactChildren;
@@ -14,16 +15,18 @@ interface Props {
 const Layout: React.FC<Props> = ({ children, noMenu, noGlobals }) => {
   return (
     <AnimatePresence exitBeforeEnter>
-      <Container
-        initial="exit"
-        animate="enter"
-        exit="exit"
-        variants={pageTransitionVariants}
-      >
-        {!noGlobals && <GlobalStyles />}
-        {!noMenu && <MenuBar />}
-        {children}
-      </Container>
+      <ThemeProvider>
+        <Container
+          initial="exit"
+          animate="enter"
+          exit="exit"
+          variants={pageTransitionVariants}
+        >
+          {!noGlobals && <GlobalStyles />}
+          {!noMenu && <MenuBar />}
+          {children}
+        </Container>
+      </ThemeProvider>
     </AnimatePresence>
   );
 };
