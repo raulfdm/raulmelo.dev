@@ -19,9 +19,9 @@ const localizedMessages = {
 const supportedLanguages: string[] = [LOCALES.PT, LOCALES.EN];
 
 export const IntlContextProvider: React.FC = ({ children }) => {
-  const [language, setLanguage] = useLocalStorage<LOCALES | undefined>(
-    'raul-melo.dev__lang',
-  );
+  const [language = LOCALES.EN, setLanguage] = useLocalStorage<
+    LOCALES | undefined
+  >('raul-melo.dev__lang');
 
   function switchLocale(nextLanguage: LOCALES): void {
     const isSupported = supportedLanguages.includes(nextLanguage);
@@ -29,24 +29,9 @@ export const IntlContextProvider: React.FC = ({ children }) => {
   }
 
   React.useEffect(() => {
-    if (language) {
-      return;
-    }
     const navigatorLang = navigator.language.replace(/-.*/, '');
     switchLocale(navigatorLang as LOCALES);
   }, []);
-
-  /**
-   * For the first render and no language on locale storage
-   * I don't want to show anything.
-   * Although the useEffect will run, on "componentDidMount"
-   * and set the user browser lang on local storage.
-   * In the next render it'll finally show
-   *  */
-
-  if (!language) {
-    return null;
-  }
 
   const messages = flat(localizedMessages[language!]) as Record<string, string>;
 
