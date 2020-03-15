@@ -1,48 +1,29 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
-import { defineMessages } from 'react-intl';
 
-import { useIntl } from '../context/react-intl';
+import defaultImage from '../../static/me.jpg';
 
 type SEOProps = {
-  title?: string;
-  description?: string;
-  slug?: string;
-  img?: string;
-  meta?: { name: string; content: string }[];
+  title: string;
+  description: string;
+  image?: string;
+  url: string;
+  lang: string;
+  isBlogPost?: boolean;
 };
 
-const messages = defineMessages({
-  title: {
-    id: 'siteData.title',
-  },
-  description: {
-    id: 'siteData.description',
-  },
-});
-
-const SEO: React.FC<SEOProps> = ({
-  title,
-  description,
-  meta = [],
-  img,
-  slug,
-}) => {
-  const { locale, formatMessage } = useIntl();
+const SEO: React.FC<SEOProps> = (props) => {
   const {
     site: {
-      siteMetadata: { title: officialTitle, author, siteUrl },
+      siteMetadata: { social, siteUrl },
     },
   } = useStaticQuery(graphql`
     {
       site {
         siteMetadata {
           siteUrl
-          title
           social {
-            github
-            linkedIn
             twitter
           }
         }
@@ -50,73 +31,37 @@ const SEO: React.FC<SEOProps> = ({
     }
   `);
 
-  const metaUrl = `${siteUrl}${slug ? slug : ''}`;
-  const metaIrlUrl = `${siteUrl}${img}`;
-  const metaTitle = title || formatMessage(messages.title);
-  const metaDescription = description || formatMessage(messages.description);
+  const { title, description, url, image, lang, isBlogPost = false } = props;
+
+  const metaImg = `${siteUrl}${image || defaultImage}`;
+  const metaUrl = `${siteUrl}${url}`;
 
   return (
     <Helmet
       htmlAttributes={{
-        lang: locale,
+        lang,
       }}
-      title={officialTitle}
-      titleTemplate={`%s | ${metaTitle}`}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:title`,
-          content: metaTitle,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: 'og:url',
-          content: metaUrl,
-        },
+    >
+      {/* General tags */}
+      <title>{title}</title>
+      <meta name="description" content={description} />
+      <meta name="image" content={metaImg} />
 
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: author,
-        },
-        {
-          name: `twitter:title`,
-          content: metaTitle,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-      ]
-        .concat(
-          img
-            ? [
-                {
-                  property: `og:image`,
-                  content: metaIrlUrl,
-                },
-                {
-                  name: `twitter:image:src`,
-                  content: metaIrlUrl,
-                },
-              ]
-            : [],
-        )
-        .concat(meta)}
-    />
+      {/* OpenGraph tags */}
+      <meta property="og:url" content={metaUrl} />
+      <meta property="og:type" content={isBlogPost ? 'article' : 'website'} />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:image" content={metaImg} />
+
+      {/* Twitter Card tags */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:creator" content={social.twitter} />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={metaImg} />
+      <meta name="twitter:image" content={metaImg} />
+    </Helmet>
   );
 };
 

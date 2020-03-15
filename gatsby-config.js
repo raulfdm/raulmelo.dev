@@ -10,7 +10,7 @@ module.exports = {
   siteMetadata: {
     title: 'Raul Melo',
     author: 'Raul Melo',
-    siteUrl: 'https://raul-melo-medium.netlify.com/',
+    siteUrl: 'https://raulmelo.dev',
     profilePic:
       'https://miro.medium.com/fit/c/256/256/1*6jtMoNvX_MHslzBLP4aM9g.jpeg',
     social: {
@@ -20,8 +20,7 @@ module.exports = {
     },
   },
   plugins: [
-    `gatsby-plugin-styled-components`,
-    `gatsby-plugin-typescript`,
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -30,6 +29,8 @@ module.exports = {
         name: `blog`,
       },
     },
+    `gatsby-plugin-styled-components`,
+    `gatsby-plugin-typescript`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-json`,

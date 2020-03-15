@@ -17,6 +17,7 @@ import { Frontmatter, SeriesType, PostSeries, PostEdge } from '../types';
 import SEO from '../components/SEO';
 import { useIntl } from '../context/react-intl';
 import { YouTubeVideo } from '../components/YouTubeVideo';
+import { ThemeProvider } from '../config/theme';
 
 const Title = styled.h1`
   font-size: 34px;
@@ -83,7 +84,7 @@ const Post: React.FC<PostProps> = ({ pageContext }) => {
   }, []);
   const { series, post } = pageContext;
 
-  const { htmlAst, frontmatter } = post.node;
+  const { htmlAst, frontmatter, excerpt, fields } = post.node;
   const {
     image,
     image_caption: imageCaption,
@@ -112,40 +113,50 @@ const Post: React.FC<PostProps> = ({ pageContext }) => {
     );
   };
 
-  const pageDescription =
-    description || `${title}${subtitle ? ` - ${subtitle}` : ''}`;
-
   return (
-    <motion.div
-      initial="exit"
-      animate="enter"
-      exit="exit"
-      variants={pageTransitionVariants}
-    >
-      <SEO title={title} description={pageDescription} img={image?.publicURL} />
-      <GlobalStyles />
-      <BlogGlobalStyle />
-      <MenuBar />
-      <Container as="header">
-        <Title>{title}</Title>
-        {subtitle && <Subtitle>{subtitle}</Subtitle>}
-      </Container>
-      <SeriesSection noDivider />
-      {image && (
-        <ImgWrapper
-          role="img"
-          aria-label={formatMessage(messages.featuredImageLabel)}
+    <>
+      <SEO
+        title={title}
+        description={description || excerpt!}
+        lang={fields?.lang!}
+        url={fields?.slug!}
+        image={image?.publicURL}
+      />
+      <ThemeProvider>
+        <motion.div
+          initial="exit"
+          animate="enter"
+          exit="exit"
+          variants={pageTransitionVariants}
         >
-          <StyledImg fluid={image.childImageSharp.fluid} alt={imageCaption} />
-          {imageCaption && <p className="img-caption">{imageCaption}</p>}
-        </ImgWrapper>
-      )}
-      <Container className="post" as="main">
-        {renderAst(htmlAst)}
-        <SeriesSection />
-      </Container>
-      <br />
-    </motion.div>
+          <GlobalStyles />
+          <BlogGlobalStyle />
+          <MenuBar />
+          <Container as="header">
+            <Title>{title}</Title>
+            {subtitle && <Subtitle>{subtitle}</Subtitle>}
+          </Container>
+          <SeriesSection noDivider />
+          {image && (
+            <ImgWrapper
+              role="img"
+              aria-label={formatMessage(messages.featuredImageLabel)}
+            >
+              <StyledImg
+                fluid={image.childImageSharp.fluid}
+                alt={imageCaption}
+              />
+              {imageCaption && <p className="img-caption">{imageCaption}</p>}
+            </ImgWrapper>
+          )}
+          <Container className="post" as="main">
+            {renderAst(htmlAst)}
+            <SeriesSection />
+          </Container>
+          <br />
+        </motion.div>
+      </ThemeProvider>
+    </>
   );
 };
 

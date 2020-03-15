@@ -1,5 +1,6 @@
 import { css, createGlobalStyle } from 'styled-components';
 import media from 'styled-media-query';
+import { pandaPrismStyles } from './prims-panda-theme';
 
 import Typography from 'typography';
 
@@ -105,6 +106,8 @@ const global = css`
       margin-left: -20px;
     }
   `}
+
+  ${pandaPrismStyles};
 `;
 
 export const BlogGlobalStyle = createGlobalStyle`

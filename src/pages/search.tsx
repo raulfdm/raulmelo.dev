@@ -110,59 +110,75 @@ const copies = defineMessages({
   },
 });
 
+const messages = defineMessages({
+  description: {
+    id: 'siteData.description',
+  },
+  title: {
+    id: 'siteData.title',
+  },
+});
+
 const SearchPage: React.FC = () => {
-  const intl = useIntl();
+  const { formatMessage, locale } = useIntl();
 
   return (
-    <Layout>
-      <SEO />
-      <SearchWrapper>
-        <InstantSearch
-          searchClient={searchClient}
-          indexName={algoliaConfig.indexName!}
-        >
-          <SearchBoxWrapper>
-            <SearchBox
-              searchAsYouType
-              autoFocus
-              translations={{ placeholder: intl.formatMessage(copies.input) }}
-            />
-            <Stats
-              translations={{
-                stats(results, milliseconds) {
-                  return intl.formatMessage(copies.stats, {
-                    results,
-                    milliseconds,
-                  });
-                },
-              }}
-            />
-          </SearchBoxWrapper>
-
-          <Hits
-            hitComponent={({ hit }: { hit: HitAlgolia }) => (
-              <PostCard
-                postNode={{
-                  timeToRead: hit.timeToRead,
-                  fields: {
-                    slug: hit.fields.slug,
-                  },
-                  frontmatter: {
-                    title: hit.title,
-                    subtitle: hit.subtitle ?? '',
-                    date: hit.date,
-                    description: hit.description,
+    <>
+      <SEO
+        lang={locale}
+        url="/search"
+        description={formatMessage(messages.description)}
+        title={formatMessage(messages.title)}
+      />
+      <Layout>
+        <SearchWrapper>
+          <InstantSearch
+            searchClient={searchClient}
+            indexName={algoliaConfig.indexName!}
+          >
+            <SearchBoxWrapper>
+              <SearchBox
+                searchAsYouType
+                autoFocus
+                translations={{ placeholder: formatMessage(copies.input) }}
+              />
+              <Stats
+                translations={{
+                  stats(results, milliseconds) {
+                    return formatMessage(copies.stats, {
+                      results,
+                      milliseconds,
+                    });
                   },
                 }}
               />
-            )}
-          />
-          <PoweredBy href="https://www.algolia.com/">
-            Powered by <Algolia size="2rem" color="#5468ff" /> Algolia
-          </PoweredBy>
-        </InstantSearch>
-      </SearchWrapper>
-    </Layout>
+            </SearchBoxWrapper>
+
+            <Hits
+              hitComponent={({ hit }: { hit: HitAlgolia }) => (
+                <PostCard
+                  postNode={{
+                    timeToRead: hit.timeToRead,
+                    fields: {
+                      slug: hit.fields.slug,
+                    },
+                    frontmatter: {
+                      title: hit.title,
+                      subtitle: hit.subtitle ?? '',
+                      date: hit.date,
+                      description: hit.description,
+                    },
+                  }}
+                />
+              )}
+            />
+            <PoweredBy href="https://www.algolia.com/">
+              Powered by <Algolia size="2rem" color="#5468ff" /> Algolia
+            </PoweredBy>
+          </InstantSearch>
+        </SearchWrapper>
+      </Layout>
+    </>
   );
 };
 
