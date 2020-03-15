@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { PostEdge, PostEdges } from '../../types';
 import { PostCard } from '../PostCard';
 import { PostFilters } from './types';
+import { filterFirstSeriesPost } from './helpers/posts';
 
 const LatestMessage = styled(motion.p)`
   letter-spacing: -0.32px;
@@ -33,7 +34,7 @@ export const Posts: React.FC<{ filter: PostFilters; posts: PostEdges }> = ({
     },
     series: {
       localeId: 'home.filter.series',
-      posts: posts.filter((post) => !R.isNil(post.node.frontmatter?.series)),
+      posts: filterFirstSeriesPost(posts),
     },
     single: {
       localeId: 'home.filter.single',
