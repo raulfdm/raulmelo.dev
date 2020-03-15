@@ -2,8 +2,9 @@
 title: 'Desenvolvedor JavaScript — do Brasil à Europa'
 subtitle: 'Prólogo'
 date: '2017-12-11'
-image:
-description: ''
+image: assets/featured-img.jpg
+image_caption: 'Font: Unsplash'
+description: 'A história da minha trajetória de uma pessoa sem profissão no Brasil até me tornar um desenvolvedor na Holanda.'
 categories:
   - desenvolvimento
   - carreira

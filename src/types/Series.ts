@@ -1,4 +1,5 @@
 export type PostSeries = {
+  id: string;
   index: number;
   subtitle: string;
   copy: string;

@@ -6,7 +6,7 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import { GraphQLResponse } from '../types';
 import AuthorPresentation from '../components/AuthorPresentation';
-import { getAndSanitizePostsFromQueryResponse } from '../helpers/posts';
+import { getAndSanitizePostsFromQueryResponse } from '../components/Home/helpers/posts';
 import { useIntl } from '../context/react-intl';
 import SEO from '../components/SEO';
 import { Filter } from '../components/Home/Filter';
@@ -28,7 +28,7 @@ const messages = defineMessages({
 
 const Home: React.FC<GraphQLResponse> = ({ data }) => {
   const { locale, formatMessage } = useIntl();
-  const [filter, setFilter] = React.useState<PostFilters>('series');
+  const [filter, setFilter] = React.useState<PostFilters>('all');
 
   const posts = getAndSanitizePostsFromQueryResponse({
     data,
