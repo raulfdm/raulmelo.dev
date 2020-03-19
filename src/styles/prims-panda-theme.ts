@@ -286,7 +286,8 @@ export const pandaPrismStyles = css`
     content: 'bash';
   }
 
-  .gatsby-highlight pre[class='language-yaml']::before {
+  .gatsby-highlight pre[class='language-yaml']::before,
+  .gatsby-highlight pre[class='language-yml']::before {
     content: 'yaml';
     background: #ffa8df;
   }
