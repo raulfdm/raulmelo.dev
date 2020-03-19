@@ -72,8 +72,7 @@ export const MetaWrapper = styled.div`
   margin-top: 1em;
   color: ${({ theme }) => theme.color.font};
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  justify-content: space-between;
 
   ${media.greaterThan('medium')`
     margin-top: 1em;
@@ -81,6 +80,27 @@ export const MetaWrapper = styled.div`
   `}
 `;
 
+export const PostDetails = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+`;
+
 export const MetaText = styled.p`
   margin-left: 8px;
+`;
+
+export const Flags = styled.div`
+  display: flex;
+`;
+
+export const Flag = styled.div`
+  width: 24px;
+  margin-right: 10px;
+
+  svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
 `;
