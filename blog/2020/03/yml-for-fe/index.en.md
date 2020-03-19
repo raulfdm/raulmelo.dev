@@ -1,0 +1,424 @@
+---
+title: 'YAML for Front-enders'
+subtitle: 'A small guide to help you write and read those files'
+date: '2020-03-19'
+image: assets/featured-img.png
+categories:
+  - yml
+  - introduction
+---
+
+More and more, we, front-enders need to learn about different areas to become better professionals and less dependent on others for simple things.
+
+If you start a career as FE, you might see a lot of `.yml` files like `.travis.yml` (for Travis Build), `.gitlab-ci.yml` (for git lab CI), etc. but, let's be honest, what the hell?
+
+Why would people use this kind of file? What's the benefit of it? How does this thing work?
+
+So, the goal from this article is to introduce you to the `YAML` structure and give you more confidence to understand, read and change a file like this when you need it.
+
+After all, we tend to feel very uncomfortable and frustrated and we need to do something and we can't even understand what's that.
+
+---
+
+## But first, What its YAML?
+
+According to [the official website](https://yaml.org/), Yaml is:
+
+<big-quote>"YAML (a recursive acronym for "YAML Ain't Markup Language") is a human friendly data serialization standard for all programming languages."</big-quote>
+
+Heavily used to write configuration files, which explains A LOT, right?
+
+People were tired to have a bunch of configs nobody could understand until someone just say:
+
+> What if we could somehow write our configuration like a "cake recipe"? I mean minimum bare text, very straight forward?
+
+Boom, in May 2001 Yaml was created.
+
+---
+
+## YAML vs JSON
+
+Surprisingly (or not really), Yaml is a superset of our well-known buddy JSON.
+
+> "Superset is A programming language that contains all the features of a given language and has been expanded or enhanced to include other features as well." - [Font](https://encyclopedia2.thefreedictionary.com/superset)
+
+If I could give you a perspective of what it means I would say:
+
+> In a FE world, Yaml would matches for TypeScript while JSON for JavaScript
+
+To better understand how this would be even possible let's see this example:
+
+```json:title=tsconfig.json
+{
+  "compilerOptions": {
+    "module": "system",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "outFile": "../../built/local/tsc.js",
+    "sourceMap": false,
+    "types": ["node", "lodash", "express"]
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
+}
+```
+
+This is a `tsconfig.json` example. very easy to read, we can easily identify what's what but... it has some limitations, like:
+
+- Can't create variables;
+- Can't use external variables (e.g. environment variables)
+- Override values;
+
+In JS world, if we can create a `.json` a configuration file, we almost always also can create a `.js` (like `.eslintrc` or `.eslint.js`) which allows us to mitigate the CONS mentioned before.
+
+But then, if you're using other programing language, JS files isn't an option. And it's at this point Yaml starts to shine.
+
+If we'd have to re-write the `tsconfig.json` in `YAML` syntax and having the exactly result, it'd be like:
+
+```yaml:title=tsconfig.yml
+compilerOptions:
+  module: system
+  noImplicitAny: true
+  removeComments: true
+  preserveConstEnums: true
+  outFile: '../../built/local/tsc.js'
+  sourceMap: false
+  types:
+    - node
+    - lodash
+    - express
+include:
+  - src/**/*
+exclude:
+  - node_modules
+  - '**/*.spec.ts'
+```
+
+> Note this is only an example. You cannot write your `tsconfig` in YAML! 😜
+
+I hope you're starting to get the idea from these files.
+
+---
+
+## Concepts, Types and Syntax
+
+Now, let's dive deep a bit in the concept of the language.
+
+### Indentation
+
+<!-- prettier-ignore -->
+In Yaml, indentation **do matter**. It uses _whitespace indentation_ to nest information. By whitespace, keep in mind `tab` is not allowed.
+
+If you're like me and uses tab for everything, install some plugin in your IDE to replace your tabs for spaces (like [editorconfig](https://editorconfig.org/)). Doing that, when you hit a tab, it'll automatically replace your tab by space and you don't even need to use your space bar! ;)
+
+### Root
+
+Since indentation really matters here, if there's no space before the first declaration YAML will understand that's the root (level 0) of your file:
+
+```yml
+person:
+  age: 20
+```
+
+Like we have in JSON with the first `{` curly brackets:
+
+```json{1}
+{
+  "person": {
+    "age": 20
+  }
+}
+```
+
+### Key/Value
+
+Like in JSON/JS, `YAML` also uses the `key/value` syntax and you can use in various ways:
+
+```yml
+key: value
+key_one: value one
+key one: value # This works but it's weird
+'my key': somekey
+```
+
+### Comments
+
+To write a comment you just have to use `#` followed by your message.
+
+```yml
+# I'm a comment
+person: # I'm also a comment
+  age: 20
+```
+
+This is cool to document some decision or make a note. Unfortunately, we can't do this with JSON.
+
+### Lists
+
+There're 2 ways to write lists:
+
+#### JSON way: array of strings
+
+Remember Yaml is a JSON's superset? we can use its syntax:
+
+```yml
+people: ['Anne', 'John', 'Max']
+```
+
+#### Hyphen syntax
+
+The most common (and probably recommended)
+
+```yml
+people:
+  - Anne
+  - John
+  - Max
+```
+
+## Strings
+
+There're a few ways to declare a string in Yaml:
+
+<!-- prettier-ignore -->
+```yml
+company: Google # Single words, no quotes
+full_name: John Foo Bar Doe # Full sentence, no quotes
+name: 'John' # Using single quotes
+surname: "Christian Meyer" # Using double quotes
+```
+
+While in JSON we would have only a way to use double quotes:
+
+```json
+{
+  "company": "Google",
+  "full_name": "John Foo Bar Doe",
+  "name": "John",
+  "surname": "Christian Meyer"
+}
+```
+
+As a suggestion, prefer to use quotes when you want to use **any** special character like `_`, `@`, etc.
+
+### Numbers
+
+Like in any programming language, we have 2 types of number: Integer and Float:
+
+```yml
+year: 2019 # Integer
+nodeVersion: 10.8 # Float
+```
+
+### Node Anchors (variables-ish)
+
+An anchor is a mechanism to create a group of data (an object) that can be injected or extended from other objects.
+
+Let's imagine you need to create a configuration for your CI. It'll have both `production` and `staging` environment. As you can imagine, they share almost the same base settings.
+
+In JSON world, we would have to duplicate these configs:
+
+```json
+{
+  "production": {
+    "node_version": "13.0.0",
+    "os": "ubuntu",
+    "package_manager": "yarn",
+    "run": ["yarn install", "NODE_ENV=${ENVIRONMENT} yarn build"],
+    "env": {
+      "ENVIRONMENT": "production"
+    }
+  },
+  "staging": {
+    "node_version": "13.0.0",
+    "os": "ubuntu",
+    "package_manager": "yarn",
+    "run": ["yarn install", "NODE_ENV=${ENVIRONMENT} yarn build"],
+    "env": {
+      "ENVIRONMENT": "staging"
+    }
+  }
+}
+```
+
+Copy and paste are also annoying, especially when you have to change something in all places it's been used those Infos.
+
+Anchors came to solve that problem. We can:
+
+1. First, create our anchor
+
+```yml{3}
+# I name it as "base-config" but it can be whatever
+# &base will be the "variable name" you'll use in the injection
+base-config: &base
+  node_version: 13.0.0
+  os: ubuntu
+  package_manager: yarn
+  run:
+    - yarn install
+    - NODE_ENV=${ENVIRONMENT} yarn build
+```
+
+2. Then, injecting the anchor created in the level we want to have to see these values being injected:
+
+```yml{11,17}
+base-config: &base
+  node_version: 13.0.0
+  os: ubuntu
+  package_manager: yarn
+  run:
+    - yarn install
+    - NODE_ENV=${ENVIRONMENT} yarn build
+
+production:
+  # I'm injecting all "base" attributes and values inside production
+  <<: *base
+  env:
+    - ENVIRONMENT: production
+
+staging:
+  # I'm injecting all "base" attributes and values inside staging
+  <<: *base
+  env:
+    - ENVIRONMENT: staging
+```
+
+Looks simpler, right? And also easier to maintain.
+
+If you copy this code and paste into a "Yaml to JSON converter" online tool you'll see the same code as I mentioned early in the JSON example but within the addition of the base config:
+
+```json{8-29}
+{
+  "base-config": {
+    "node_version": "13.0.0",
+    "os": "ubuntu",
+    "package_manager": "yarn",
+    "run": ["yarn install", "NODE_ENV=${ENVIRONMENT} yarn build"]
+  },
+  "production": {
+    "node_version": "13.0.0",
+    "os": "ubuntu",
+    "package_manager": "yarn",
+    "run": ["yarn install", "NODE_ENV=${ENVIRONMENT} yarn build"],
+    "env": [
+      {
+        "ENVIRONMENT": "production"
+      }
+    ]
+  },
+  "staging": {
+    "node_version": "13.0.0",
+    "os": "ubuntu",
+    "package_manager": "yarn",
+    "run": ["yarn install", "NODE_ENV=${ENVIRONMENT} yarn build"],
+    "env": [
+      {
+        "ENVIRONMENT": "staging"
+      }
+    ]
+  }
+}
+```
+
+### JSON syntax (yes, JSON)
+
+As explained before a superset of a language is the base language PLUS some extra features, which means we could write a `Yaml` file in JSON way
+
+<!-- prettier-ignore -->
+```yml
+{
+  "details": {
+    "company": {
+      "name": "Google",
+      "year": 2019,
+      "active": true
+    },
+    "employees": [
+      "Anne",
+      "John",
+      "Max"
+    ]
+  }
+}
+```
+
+> Doubting? Copy this code and paste [it here](https://onlineyamltools.com/convert-yaml-to-json)
+
+If you convert this YAML to JSON, you'll have the same structure:
+
+```json
+{
+  "details": {
+    "company": {
+      "name": "Google",
+      "year": 2019,
+      "active": true
+    },
+    "employees": ["Anne", "John", "Max"]
+  }
+}
+```
+
+### Shell/Bash environment
+
+As I told at the beginning of this article, it's very common `.yml` files are used as config files for many things, but especially for CI/CD environment.
+
+For those, you'll have to describe how the machine/docker should work, what should be installed, ran, etc.
+
+Commonly, all those environments are Linux, which means you'll also have access to the environment itself.
+
+On GitLab CI, for instance, you can specify on a global level environment variables you want to have available for the whole process:
+
+```yml{1-2,8}
+variables:
+  NODE_IMAGE: node:10
+
+stages:
+  - build
+
+test:
+  image: $NODE_IMAGE
+  stage: build
+```
+
+Note that the syntax to use variables by `$` isn't from YAML but `shell/bash`.
+
+What GitLab CI does is getting everything you'd defined in `variables` and creates `shell` variables.
+
+Some other platforms also inject other values like commit ref, branch name, build time, author and also secret keys defined outside the configuration:
+
+```yml{11}
+variables:
+  NODE_IMAGE: node:10
+
+stages:
+  - build
+
+test:
+  image: $NODE_IMAGE
+  stage: build
+  artifacts:
+    name: $CI_COMMIT_REF_NAME
+```
+
+In the example above, we're using a `$CI_COMMIT_REF_NAME` external environment variable that GitLab CI platform makes available which describes `The branch or tag name for which project is built`.
+
+---
+
+## Conclusion
+
+I hope you now understand a bit more about YAML and at least feel comfortable reading and write your files.
+
+Keep in mind that what you'll have access to or not, the limitations will be determined by the platform you're using. Travis defines a different configuration than GitLab CI or CircleCI for example.
+
+Always check the documentation from the platform you're working on to see what's possible or not to be done! :)
+
+---
+
+## References
+
+- [YAML Website](https://yaml.org/). (You can find parses for all languages there);
+- [Learn X in Y Minutes: YAML](https://learnxinyminutes.com/docs/yaml/): Here a whole guide/introduction about everything YAML can do for you;
+- [JSON ←→ YAML Online converter](https://www.json2yaml.com/): Useful to visualize what generates what and create a better understanding;
+- [YAML by Wikipedia](https://en.wikipedia.org/wiki/YAML)
