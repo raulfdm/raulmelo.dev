@@ -1073,10 +1073,10 @@
   dependencies:
     "@formatjs/intl-utils" "^2.2.0"
 
-"@formatjs/intl-pluralrules@^1.5.2":
-  version "1.5.2"
-  resolved "https://registry.yarnpkg.com/@formatjs/intl-pluralrules/-/intl-pluralrules-1.5.2.tgz#3e37f38e21b6a30c484e9138187d0a1a4b0d1f76"
-  integrity sha512-kxCufLRBOaj9x4PP2QrYmYSmr2WfJnBmUx/6eaajuaHlXTfXvLD1Dz/s1YBXHipOlorh51ehHQPoRgrOCNNpkA==
+"@formatjs/intl-pluralrules@^1.5.3":
+  version "1.5.3"
+  resolved "https://registry.yarnpkg.com/@formatjs/intl-pluralrules/-/intl-pluralrules-1.5.3.tgz#eb7ebea49340a4cc52437a8480b0c284bfa8f20b"
+  integrity sha512-piBxSgQLRcaM754lwEjnNWqtMZfqPTjLGp9qqE1pktNUge46Ub10WToos9qYssKuuxy4RzKUeklvSsxwhcT1ZQ==
   dependencies:
     "@formatjs/intl-utils" "^2.2.0"
 
