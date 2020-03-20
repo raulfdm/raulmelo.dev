@@ -2258,7 +2258,7 @@
   dependencies:
     "@types/yargs-parser" "*"
 
-"@typescript-eslint/eslint-plugin@^2.23.0", "@typescript-eslint/eslint-plugin@^2.24.0":
+"@typescript-eslint/eslint-plugin@^2.24.0":
   version "2.24.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/eslint-plugin/-/eslint-plugin-2.24.0.tgz#a86cf618c965a462cddf3601f594544b134d6d68"
   integrity sha512-wJRBeaMeT7RLQ27UQkDFOu25MqFOBus8PtOa9KaT5ZuxC1kAsd7JEHqWt4YXuY9eancX0GK9C68i5OROnlIzBA==
@@ -6605,10 +6605,10 @@ fragment-cache@^0.2.1:
   dependencies:
     map-cache "^0.2.2"
 
-framer-motion@2.0.0-beta.10:
-  version "2.0.0-beta.10"
-  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-2.0.0-beta.10.tgz#076d48533a2e42b86f975fc72810a5ed521275f7"
-  integrity sha512-ajZN0nXoUkz5eyu/5RPyeYh2T+z6nxrHKH8w2dguuWQMX6lP+H29vTczwYWUR5XHyncfmkSMbMoNbC3lB48DjQ==
+framer-motion@2.0.0-beta.13:
+  version "2.0.0-beta.13"
+  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-2.0.0-beta.13.tgz#1b0a7faff2d6076490e8473ebf1d397b783b56c5"
+  integrity sha512-1FKl+e5Yq/rQNj+v90po1hIy7plLheFDc3BaKh0WJke76Nk4RAYN/0JkL5HIyfQFxG79PL63Jl6i7s9Af0GsgA==
   dependencies:
     "@popmotion/easing" "^1.0.2"
     "@popmotion/popcorn" "^0.4.2"
