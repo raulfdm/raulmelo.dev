@@ -67,7 +67,7 @@
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-jest": "^23.8.2",
     "eslint-plugin-react": "^7.19.0",
-    "eslint-plugin-react-hooks": "^2.5.0",
+    "eslint-plugin-react-hooks": "^2.5.1",
     "gatsby": "^2.19.45",
     "gatsby-image": "^2.2.45",
     "gatsby-plugin-algolia-search": "^0.5.6",
