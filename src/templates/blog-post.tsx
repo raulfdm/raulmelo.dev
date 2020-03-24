@@ -12,7 +12,7 @@ import { GlobalStyles } from '../styles';
 import { Container } from '../components/Ui';
 import { MenuBar } from '../components/MenuBar';
 import { Gif } from '../components/Gif';
-import { Series } from '../components/Series';
+import { SeriesMenu } from '../components/Blog/SeriesMenu';
 import { Frontmatter, SeriesType, PostSeries, PostEdge } from '../types';
 import SEO from '../components/SEO';
 import { useIntl } from '../context/react-intl';
@@ -102,7 +102,7 @@ const Post: React.FC<PostProps> = ({ pageContext }) => {
         <>
           {!noDivider && <hr />}
           <Container as="section">
-            <Series
+            <SeriesMenu
               series={series}
               postIndex={seriesInfo!.index}
               title={title}

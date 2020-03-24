@@ -5,9 +5,13 @@ import { pandaPrismStyles } from './prims-panda-theme';
 import Typography from 'typography';
 
 const baseFontSize = '18px';
+const baseFontSizeHigherThanMobile = '21px';
 
-export function pxToRem(px: string | number): string {
-  const baseNumber = parseInt(baseFontSize);
+export function pxToRem(px: string | number, mobile = true): string {
+  const baseNumber = parseInt(
+    mobile ? baseFontSize : baseFontSizeHigherThanMobile,
+  );
+
   const pxInNumber = parseInt(px.toString());
   return `${pxInNumber / baseNumber}rem`;
 }
@@ -42,7 +46,7 @@ export const typography = new Typography({
     blockquote: {
       marginLeft: '-12px',
       paddingLeft: '23px',
-      boxShadow: `inset 3px 0 0 0 var(--font)`,
+      boxShadow: `inset 3px 0 0 -1px var(--font)`,
     },
     'blockquote > p': {
       fontStyle: 'italic',
