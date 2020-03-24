@@ -75,7 +75,7 @@
     "gatsby-plugin-i18n": "^1.0.1",
     "gatsby-plugin-manifest": "^2.2.46",
     "gatsby-plugin-offline": "^3.0.42",
-    "gatsby-plugin-react-helmet": "^3.1.23",
+    "gatsby-plugin-react-helmet": "^3.2.1",
     "gatsby-plugin-sharp": "^2.4.12",
     "gatsby-plugin-sitemap": "^2.2.29",
     "gatsby-plugin-styled-components": "^3.1.20",
