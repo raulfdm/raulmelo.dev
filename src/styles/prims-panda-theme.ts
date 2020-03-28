@@ -62,10 +62,12 @@ export const pandaPrismStyles = css`
     border-radius: 3px;
   }
 
+  /* Inline code */
   :not(pre) > code[class*='language-'] {
     line-height: inherit;
     padding: 2px 5px;
     border-radius: 3px;
+    word-break: break-all;
   }
 
   .token.comment,
