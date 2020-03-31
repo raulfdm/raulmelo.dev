@@ -35,7 +35,7 @@
     "react-instantsearch-dom": "^6.4.0",
     "react-intl": "^4.3.1",
     "react-use": "^13.27.1",
-    "rehype-react": "^5.0.0",
+    "rehype-react": "^5.0.1",
     "styled-components": "^5.0.1",
     "styled-icons": "^10.2.1",
     "styled-media-query": "^2.1.2",
