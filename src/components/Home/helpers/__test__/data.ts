@@ -42,7 +42,7 @@ export const filterFirstSeriesPost = [
         title: 'CSS Basics: Position Absolute e Relative',
         subtitle: null,
         series: null,
-        date: '2018/01/29',
+        date: '2018-01-29',
       },
     },
   },

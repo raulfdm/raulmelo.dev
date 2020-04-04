@@ -1,6 +1,6 @@
 ---
 title: 'CSS Basics: Position Absolute e Relative'
-date: '2018/01/29'
+date: '2018-01-29'
 image: assets/featured-img.png
 description: 'Entendendo como usar position absolute e relative no CSS'
 categories:
