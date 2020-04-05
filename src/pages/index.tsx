@@ -1,68 +1,19 @@
 import React from 'react';
-import styled from 'styled-components';
-import { defineMessages } from 'react-intl';
+import * as R from 'ramda';
 import { graphql } from 'gatsby';
 
-import Layout from '../components/Layout';
-import { GraphQLResponse } from '../types';
-import AuthorPresentation from '../components/AuthorPresentation';
-import { getAndSanitizePostsFromQueryResponse } from '../components/Home/helpers/posts';
-import { useIntl } from '../context/react-intl';
-import SEO from '../components/SEO';
-import { Filter } from '../components/Home/Filter';
-import { PostFilters } from '../components/Home/types';
-import { Posts } from '../components/Home/Posts';
-
-const StyledAuthorPresentation = styled(AuthorPresentation)`
-  margin-bottom: 3rem;
-`;
-
-const messages = defineMessages({
-  description: {
-    id: 'siteData.description',
-  },
-  title: {
-    id: 'siteData.title',
-  },
-});
+import HomeTemplate from '../templates/home';
+import { GraphQLResponse, PostEdges } from '../types';
 
 const Home: React.FC<GraphQLResponse> = ({ data }) => {
-  const { locale, formatMessage } = useIntl();
-  const [filter, setFilter] = React.useState<PostFilters>('all');
-
-  const posts = getAndSanitizePostsFromQueryResponse({
-    data,
-    preferredLang: locale,
-  });
-
-  if (!data.site) {
-    throw new Error('Home: site info is empty');
-  }
-
-  const { profilePic, social, author } = data.site.siteMetadata;
+  const postEdges = R.path(['allMarkdownRemark', 'edges'], data) as PostEdges;
 
   return (
-    <>
-      <SEO
-        url="/"
-        lang={locale}
-        description={formatMessage(messages.description)}
-        title={formatMessage(messages.title)}
-      />
-      <Layout>
-        <main>
-          <StyledAuthorPresentation
-            name={author}
-            profilePic={profilePic}
-            twitter={social.twitter}
-            linkedIn={social.linkedIn}
-            github={social.github}
-          />
-          <Filter setFilter={setFilter} currentFilter={filter} />
-          <Posts posts={posts} filter={filter} />
-        </main>
-      </Layout>
-    </>
+    <HomeTemplate
+      pageContext={{
+        postEdges,
+      }}
+    />
   );
 };
 
@@ -110,17 +61,6 @@ export const query = graphql`
             lang
             commonSlug
           }
-        }
-      }
-    }
-    site {
-      siteMetadata {
-        profilePic
-        author
-        social {
-          github
-          linkedIn
-          twitter
         }
       }
     }

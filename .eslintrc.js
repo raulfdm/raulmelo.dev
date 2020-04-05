@@ -41,6 +41,7 @@ module.exports = {
       files: ['*.test.*'],
       env: {
         jest: true,
+        es6: true,
       },
     },
   ],

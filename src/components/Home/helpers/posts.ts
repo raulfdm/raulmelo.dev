@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-ignore */
 import * as R from 'ramda';
 import {
-  GraphQLResponse,
   PostEdges,
   PostEdge,
   PostTranslations,
@@ -28,24 +27,20 @@ function postEdgeToTranslate(postEdge: PostEdge): PostTranslation {
 
 type Options = {
   preferredLang: string;
-} & GraphQLResponse;
+  postEdges: PostEdges;
+};
 
 export const getAndSanitizePostsFromQueryResponse = ({
-  data,
+  postEdges,
   preferredLang,
 }: Options): PostEdges => {
-  const edges: PostEdges | undefined = R.path(
-    ['allMarkdownRemark', 'edges'],
-    data,
-  );
-
-  if (!edges) {
+  if (!postEdges) {
     return [];
   }
 
   const postByCommonSlug = R.groupBy(
     (edge: PostEdge) => edge.node.fields?.commonSlug!,
-    edges,
+    postEdges,
   );
 
   const slugPostPairs = R.toPairs(postByCommonSlug);

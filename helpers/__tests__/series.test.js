@@ -1,5 +1,5 @@
-const { getSeriesPost } = require('.');
-const { postEdges } = require('./data/seriesQuery');
+const { getSeriesPost } = require('../');
+const { postEdges } = require('./__mocks__/seriesQuery');
 
 describe('fn: getSeriesPost', () => {
   it('group all found series', () => {

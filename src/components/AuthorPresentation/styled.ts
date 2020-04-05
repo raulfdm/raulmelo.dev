@@ -5,6 +5,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column-reverse;
   justify-content: space-between;
+  margin-bottom: 3rem;
 
   ${media.greaterThan('medium')`
     flex-direction: row;

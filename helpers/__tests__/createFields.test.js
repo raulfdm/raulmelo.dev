@@ -1,4 +1,4 @@
-const { createFields, BLOGS_PATH, DEFAULT_LANG } = require('./createFields');
+const { createFields, BLOGS_PATH, DEFAULT_LANG } = require('../createFields');
 
 describe('fn: createFields', () => {
   describe('pt post', () => {

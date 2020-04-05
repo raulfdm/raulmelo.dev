@@ -1,31 +1,37 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { Twitter, Linkedin, Github } from '@styled-icons/boxicons-logos';
+import { useStaticQuery, graphql } from 'gatsby';
 
 import * as S from './styled';
 
-type Props = {
-  className?: string;
-  github: string;
-  linkedIn: string;
-  name: string;
-  profilePic: string;
-  synopsis?: string;
-  twitter: string;
-};
+const AuthorPresentation: React.FC = () => {
+  const data = useStaticQuery(graphql`
+    {
+      site {
+        siteMetadata {
+          profilePic
+          author
+          social {
+            github
+            linkedIn
+            twitter
+          }
+        }
+      }
+    }
+  `);
 
-const AuthorPresentation: React.FC<Props> = ({
-  className,
-  github,
-  linkedIn,
-  name,
-  profilePic,
-  twitter,
-}) => {
+  const {
+    author,
+    profilePic,
+    social: { github, linkedIn, twitter },
+  } = data.site.siteMetadata;
+
   return (
-    <S.Wrapper className={className}>
+    <S.Wrapper>
       <S.AuthorDataWrapper>
-        <S.AuthorName>{name}</S.AuthorName>
+        <S.AuthorName>{author}</S.AuthorName>
         <S.AuthorSynopsis>
           <FormattedMessage id="siteData.description" />
         </S.AuthorSynopsis>
