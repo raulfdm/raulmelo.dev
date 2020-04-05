@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-ignore */
 import * as R from 'ramda';
 import {
-  GraphQLResponse,
   PostEdges,
   PostEdge,
   PostTranslations,

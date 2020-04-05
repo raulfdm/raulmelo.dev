@@ -8,8 +8,8 @@ import { PostFilters } from '../components/Home/types';
 import AuthorPresentation from '../components/AuthorPresentation';
 import Layout from '../components/Layout';
 import { Filter } from '../components/Home/Filter';
-
 import { Posts } from '../components/Home/Posts';
+import { PostEdges } from '../types';
 
 const messages = defineMessages({
   description: {
@@ -20,7 +20,15 @@ const messages = defineMessages({
   },
 });
 
-export const HomeTemplate = ({ postEdges, social, author, profilePic }) => {
+type HomeTemplateType = {
+  pageContext: {
+    postEdges: PostEdges;
+  };
+};
+
+const HomeTemplate: React.FC<HomeTemplateType> = ({ pageContext }) => {
+  const { postEdges } = pageContext;
+
   const [filter, setFilter] = React.useState<PostFilters>('all');
   const { locale, formatMessage } = useIntl();
 
@@ -40,13 +48,7 @@ export const HomeTemplate = ({ postEdges, social, author, profilePic }) => {
 
       <Layout>
         <main>
-          <AuthorPresentation
-            name={author}
-            profilePic={profilePic}
-            twitter={social.twitter}
-            linkedIn={social.linkedIn}
-            github={social.github}
-          />
+          <AuthorPresentation />
           <Filter setFilter={setFilter} currentFilter={filter} />
           <Posts posts={posts} filter={filter} />
         </main>
@@ -54,3 +56,5 @@ export const HomeTemplate = ({ postEdges, social, author, profilePic }) => {
     </>
   );
 };
+
+export default HomeTemplate;

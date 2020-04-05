@@ -1,28 +1,18 @@
 import React from 'react';
 import * as R from 'ramda';
 import { graphql } from 'gatsby';
-import { HomeTemplate } from '../templates/home';
 
-import { GraphQLResponse, SiteMetadata } from '../types';
+import HomeTemplate from '../templates/home';
+import { GraphQLResponse, PostEdges } from '../types';
 
 const Home: React.FC<GraphQLResponse> = ({ data }) => {
-  if (!data.site) {
-    throw new Error('Home: site info is empty');
-  }
-
-  const { profilePic, social, author } = R.path(
-    ['site', 'siteMetadata'],
-    data,
-  ) as SiteMetadata;
-
-  const postEdges = R.path(['allMarkdownRemark', 'edges'], data);
+  const postEdges = R.path(['allMarkdownRemark', 'edges'], data) as PostEdges;
 
   return (
     <HomeTemplate
-      profilePic={profilePic}
-      author={author}
-      social={social}
-      postEdges={postEdges}
+      pageContext={{
+        postEdges,
+      }}
     />
   );
 };
@@ -71,17 +61,6 @@ export const query = graphql`
             lang
             commonSlug
           }
-        }
-      }
-    }
-    site {
-      siteMetadata {
-        profilePic
-        author
-        social {
-          github
-          linkedIn
-          twitter
         }
       }
     }

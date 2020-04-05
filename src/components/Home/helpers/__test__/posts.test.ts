@@ -106,7 +106,7 @@ describe('fn: getAndSanitizePostsFromQueryResponse', () => {
 
     expect(
       getAndSanitizePostsFromQueryResponse({
-        data: data.getAndSanitizePostsFromQueryResponse as any,
+        postEdges: data.getAndSanitizePostsFromQueryResponse as any,
         preferredLang: 'pt',
       }),
     ).toEqual(expectedDefaultPt);
@@ -163,7 +163,7 @@ describe('fn: getAndSanitizePostsFromQueryResponse', () => {
 
     expect(
       getAndSanitizePostsFromQueryResponse({
-        data: data.getAndSanitizePostsFromQueryResponse as any,
+        postEdges: data.getAndSanitizePostsFromQueryResponse as any,
         preferredLang: 'en',
       }),
     ).toEqual(expectedDefaultPt);
