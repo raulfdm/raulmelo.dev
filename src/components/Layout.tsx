@@ -10,9 +10,15 @@ interface Props {
   children: React.ReactNode | React.ReactChildren;
   noMenu?: boolean;
   noGlobals?: boolean;
+  className?: string;
 }
 
-const Layout: React.FC<Props> = ({ children, noMenu, noGlobals }) => {
+const Layout: React.FC<Props> = ({
+  children,
+  noMenu,
+  noGlobals,
+  className,
+}) => {
   return (
     <AnimatePresence exitBeforeEnter>
       <ThemeProvider>
@@ -21,6 +27,7 @@ const Layout: React.FC<Props> = ({ children, noMenu, noGlobals }) => {
           animate="enter"
           exit="exit"
           variants={pageTransitionVariants}
+          className={className}
         >
           {!noGlobals && <GlobalStyles />}
           {!noMenu && <MenuBar />}
