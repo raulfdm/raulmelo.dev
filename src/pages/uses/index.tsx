@@ -9,18 +9,6 @@ import usesPt from './uses.md';
 import usesEn from './uses.en.md';
 import { LOCALES } from '../../types/Locales';
 
-const List = styled.ul`
-  li {
-    ul {
-      margin-left: 2em;
-      margin-top: 10px;
-      li {
-        list-style: '✓ ';
-      }
-    }
-  }
-`;
-
 const StyledLayout = styled(Layout)``;
 
 const Uses: React.FC = () => {
