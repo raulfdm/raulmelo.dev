@@ -10,20 +10,20 @@ Although, there are a bunch of things I use in both environments. Here they are:
 
 ### [Software](common-software)
 
-- Google Chrome
-- [Firefox Developer Edition](https://www.mozilla.org/en-US/firefox/developer/)
-- [VSCode](https://code.visualstudio.com/)
-- [Franz](https://meetfranz.com/) - messaging app that combines all message services like slack, email, discord, etc.
-- [OBS Studio](https://obsproject.com/) - To record screen
-- [Figma](https://www.figma.com/) - to create designs
-- [Notion](https://www.notion.so/) - to keep notes, write drafts and organize myself
-- [1Password](https://1password.com/) - password manager
-- [VLC](https://www.videolan.org/vlc/index.html) - to watch **any** kind of video
+- Google Chrome;
+- [Firefox Developer Edition](https://www.mozilla.org/en-US/firefox/developer/);
+- [VSCode](https://code.visualstudio.com/);
+- [Franz](https://meetfranz.com/) - messaging app that combines all message services like slack, email, discord, etc.';
+- [OBS Studio](https://obsproject.com/) - To record screen;
+- [Figma](https://www.figma.com/) - to create designs;
+- [Notion](https://www.notion.so/) - to keep notes, write drafts and organize myself;
+- [1Password](https://1password.com/) - password manager;
+- [VLC](https://www.videolan.org/vlc/index.html) - to watch **any** kind of video;
 
 ### [Peripherals](common-peripherals)
 
-- Keyboard [Vinpok Taptek](https://www.vinpok.com/products/vinpok-taptek-thinnest-wireless-mac-mechanical-keyboard)
-- [Sony WH-1000XM3](https://www.sony.com/electronics/headband-headphones/wh-1000xm3) - Noise canceling bluetooth
+- Keyboard [Vinpok Taptek](https://www.vinpok.com/products/vinpok-taptek-thinnest-wireless-mac-mechanical-keyboard);
+- [Sony WH-1000XM3](https://www.sony.com/electronics/headband-headphones/wh-1000xm3) - noise canceling bluetooth;
 
 ---
 
@@ -31,25 +31,25 @@ Although, there are a bunch of things I use in both environments. Here they are:
 
 ### [Hardware](work-hardware)
 
-- MacBook PRO 2019 15-inch
-- Intel Core i7 2.6GHz
-- 16GB RAM DDR
-- Radeon Pro 555X 4GB
+- MacBook PRO 2019 15-inch;
+- Intel Core i7 2.6GHz;
+- 16GB RAM DDR;
+- Radeon Pro 555X 4GB;
 
 ### [Software](work-software)
 
-- [iTerm2](https://www.iterm2.com/) - Amazing macOS terminal
-- [zsh + "Oh My ZSH!"](https://ohmyz.sh/) - Terminal framework
-- [Alfred4](https://www.alfredapp.com/) - Without powerpack - This is an amazing search bar tool that helps you find files, open apps, search at google, etc.
-- [Bartender3](https://www.macbartender.com/) - menu bar icons organizer
-- [RunCat](https://apps.apple.com/us/app/runcat/id1429033973?mt=12) - shows nicely the CPU usage
-- [BeFocused](https://apps.apple.com/us/app/be-focused-focus-timer/id973134470?mt=12) - timer to do [pomodoro technique](https://en.wikipedia.org/wiki/Pomodoro_Technique)
-- [Clipy](https://github.com/Clipy/Clipy) - open-source clipboard extension. Allow you to keep the history of your CTRL + C
-- [PixelSnap](https://getpixelsnap.com/) - measure distance for element in the screen
-- [Relax](https://www.dangercove.com/relax/) - an app that mutes your speakers when you disconnect a headset or sleep the laptop. Helpful for the cases you just open your laptop and it starts to play something loud
-- [Kap](https://getkap.co/) - a tool to capture screen and export to GIF or MP4
-- [magnet](https://apps.apple.com/us/app/magnet/id441258766?mt=12) - Window layout manager
-- [runjs](https://runjs.dev/) - local JavaScript REPL. I use it when I need to run a JS code quickly
+- [iTerm2](https://www.iterm2.com/) - amazing macOS terminal;
+- [zsh + "Oh My ZSH!"](https://ohmyz.sh/) - terminal framework;
+- [Alfred4](https://www.alfredapp.com/) (no powerpack) - this is an amazing search bar tool that helps you find files, open apps, search at google, etc.;
+- [Bartender3](https://www.macbartender.com/) - menu bar icons organizer;
+- [RunCat](https://apps.apple.com/us/app/runcat/id1429033973?mt=12) - shows nicely the CPU usage;
+- [BeFocused](https://apps.apple.com/us/app/be-focused-focus-timer/id973134470?mt=12) - timer to do [pomodoro technique](https://en.wikipedia.org/wiki/Pomodoro_Technique);
+- [Clipy](https://github.com/Clipy/Clipy) - open-source clipboard extension. Allow you to keep the history of your CTRL + C;
+- [PixelSnap](https://getpixelsnap.com/) - measure distance for element in the screen;
+- [Relax](https://www.dangercove.com/relax/) - an app that mutes your speakers when you disconnect a headset or sleep the laptop. Helpful for the cases you just open your laptop and it starts to play something loud;
+- [Kap](https://getkap.co/) - a tool to capture screen and export to GIF or MP4;
+- [magnet](https://apps.apple.com/us/app/magnet/id441258766?mt=12) - window layout manager;
+- [runjs](https://runjs.dev/) - local JavaScript REPL. I use it when I need to run a JS code quickly;
 
 ---
 
@@ -65,33 +65,37 @@ Anyways, here's my home setup:
 
 ### [Hardware](home-hardware)
 
-- Intel Core i7-8700K 3.7GHz
-- Corsair Vengeance LPX 16GB RAM DDR4
-- HD 1TB Seagate Barracuda
-- SSD 256GB Samsung 860 Evo
-- MSI GeForce RTX 2060
+- Intel Core i7-8700K 3.7GHz;
+- Corsair Vengeance LPX 16GB RAM DDR4;
+- HD 1TB Seagate Barracuda;
+- SSD 256GB Samsung 860 Evo;
+- MSI GeForce RTX 2060;
 
 ### [Software](home-software)
 
-- Windows 10 (Insider)
-- [Windows Terminal](https://github.com/microsoft/terminal)
-- Ubuntu 18^
-- Ubuntu terminal: [zsh + "Oh My ZSH!"](https://ohmyz.sh/)
-- [lightshot](https://app.prntscr.com/en/index.html) - take screenshot
-- [1Clipboard](http://1clipboard.io/) - clipboard extension. Allow you keep history of your CTRL + C
+- Windows 10 (Insider);
+- [Windows Terminal](https://github.com/microsoft/terminal);
+- Ubuntu 18^;
+- Ubuntu terminal: [zsh + "Oh My ZSH!"](https://ohmyz.sh/);
+- [lightshot](https://app.prntscr.com/en/index.html) - take screenshot;
+- [1Clipboard](http://1clipboard.io/) - clipboard extension. Allow you keep history of your CTRL + C;
 
 ### [Peripherals](home-peripherals)
 
-- Monitor [MSI Optix MAG24C - 24" - 144hz - Curved](https://www.msi.com/Monitor/Optix-MAG24C.html)
-- [Sennheiser GSP 300 Gaming Headset](https://www.trustedreviews.com/reviews/sennheiser-gsp-300)
+- Monitor [MSI Optix MAG24C - 24" - 144hz - Curved](https://www.msi.com/Monitor/Optix-MAG24C.html);
+- [Sennheiser GSP 300 Gaming Headset](https://www.trustedreviews.com/reviews/sennheiser-gsp-300);
 
 ### [Miscellaneous](home-misc)
 
-- Chair [Secretlab Titan - Fabric](https://secretlab.eu/collections/titan-series)
+- Chair [Secretlab Titan - Fabric](https://secretlab.eu/collections/titan-series);
 
 ---
 
 ## VSCode Setup
+
+## Font
+
+- [Fira Code](https://github.com/tonsky/FiraCode) - open-source code font with ligatures which makes easier to read code;
 
 ### Theme
 
