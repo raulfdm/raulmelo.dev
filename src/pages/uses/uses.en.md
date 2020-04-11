@@ -8,7 +8,7 @@ I like to have a different environment separated from my work. This helps me to 
 
 Although, there are a bunch of things I use in both environments. Here they are:
 
-### [Software](common-software)
+### Software
 
 - Google Chrome;
 - [Firefox Developer Edition](https://www.mozilla.org/en-US/firefox/developer/);
@@ -20,7 +20,7 @@ Although, there are a bunch of things I use in both environments. Here they are:
 - [1Password](https://1password.com/) - password manager;
 - [VLC](https://www.videolan.org/vlc/index.html) - to watch **any** kind of video;
 
-### [Peripherals](common-peripherals)
+### Peripherals
 
 - Keyboard [Vinpok Taptek](https://www.vinpok.com/products/vinpok-taptek-thinnest-wireless-mac-mechanical-keyboard);
 - [Sony WH-1000XM3](https://www.sony.com/electronics/headband-headphones/wh-1000xm3) - noise canceling bluetooth;
@@ -29,14 +29,14 @@ Although, there are a bunch of things I use in both environments. Here they are:
 
 ## Work environment (macOS)
 
-### [Hardware](work-hardware)
+### Hardware
 
 - MacBook PRO 2019 15-inch;
 - Intel Core i7 2.6GHz;
 - 16GB RAM DDR;
 - Radeon Pro 555X 4GB;
 
-### [Software](work-software)
+### Software
 
 - [iTerm2](https://www.iterm2.com/) - amazing macOS terminal;
 - [zsh + "Oh My ZSH!"](https://ohmyz.sh/) - terminal framework;
@@ -63,7 +63,7 @@ It allows me to have the perfect world where I can use Windows to do things not 
 
 Anyways, here's my home setup:
 
-### [Hardware](home-hardware)
+### Hardware
 
 - Intel Core i7-8700K 3.7GHz;
 - Corsair Vengeance LPX 16GB RAM DDR4;
@@ -71,7 +71,7 @@ Anyways, here's my home setup:
 - SSD 256GB Samsung 860 Evo;
 - MSI GeForce RTX 2060;
 
-### [Software](home-software)
+### Software
 
 - Windows 10 (Insider);
 - [Windows Terminal](https://github.com/microsoft/terminal);
@@ -80,12 +80,12 @@ Anyways, here's my home setup:
 - [lightshot](https://app.prntscr.com/en/index.html) - take screenshot;
 - [1Clipboard](http://1clipboard.io/) - clipboard extension. Allow you keep history of your CTRL + C;
 
-### [Peripherals](home-peripherals)
+### Peripherals
 
 - Monitor [MSI Optix MAG24C - 24" - 144hz - Curved](https://www.msi.com/Monitor/Optix-MAG24C.html);
 - [Sennheiser GSP 300 Gaming Headset](https://www.trustedreviews.com/reviews/sennheiser-gsp-300);
 
-### [Miscellaneous](home-misc)
+### Miscellaneous
 
 - Chair [Secretlab Titan - Fabric](https://secretlab.eu/collections/titan-series);
 

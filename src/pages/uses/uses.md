@@ -2,13 +2,13 @@
 
 Bateu a curiosidade sobre meu setup? Os programas que uso no dia-a-dia? Aqui vai uma lista pra você checkar.
 
-## Commons
+## Comum
 
 Eu gosto de ter um ambiente separado do meu trabalho. Isso me ajuda a sentir que não estou "sempre trabalhando" e nem que "estou fazendo algo pessoal e não preciso ficar tão focado".
 
 Porém, vários coisas são comuns em ambos ambientes:
 
-### [Software](common-software)
+### Software
 
 - Google Chrome;
 - [Firefox Developer Edition](https://www.mozilla.org/en-US/firefox/developer/);
@@ -20,7 +20,7 @@ Porém, vários coisas são comuns em ambos ambientes:
 - [1Password](https://1password.com/) - gerenciador de senhas;
 - [VLC](https://www.videolan.org/vlc/index.html) - pra assistir **qualquer** tipo de video;
 
-### [Periféricos](common-peripherals)
+### Periféricos
 
 - Teclado [Vinpok Taptek](https://www.vinpok.com/products/vinpok-taptek-thinnest-wireless-mac-mechanical-keyboard)
 - [Sony WH-1000XM3](https://www.sony.com/electronics/headband-headphones/wh-1000xm3) - headfone bluetooth com cancelamento de ruído ativo;
@@ -29,14 +29,14 @@ Porém, vários coisas são comuns em ambos ambientes:
 
 ## Work environment (macOS)
 
-### [Hardware](work-hardware)
+### Hardware
 
 - MacBook PRO 2019 15-inch;
 - Intel Core i7 2.6GHz;
 - 16GB RAM DDR;
 - Radeon Pro 555X 4GB;
 
-### [Software](work-software)
+### Software
 
 - [iTerm2](https://www.iterm2.com/) - O melhor terminal pra macOS;
 - [zsh + "Oh My ZSH!"](https://ohmyz.sh/) - terminal framework;
@@ -63,7 +63,7 @@ Isso me permite ter o mundo ideal onde eu posso usar o Windows pra fazer qualque
 
 Enfim, aqui vai meu setup de casa.
 
-### [Hardware](home-hardware)
+### Hardware
 
 - Intel Core i7-8700K 3.7GHz
 - Corsair Vengeance LPX 16GB RAM DDR4
@@ -71,7 +71,7 @@ Enfim, aqui vai meu setup de casa.
 - SSD 256GB Samsung 860 Evo
 - MSI GeForce RTX 2060
 
-### [Software](home-software)
+### Software
 
 - Windows 10 (Insider)
 - [Windows Terminal](https://github.com/microsoft/terminal)
@@ -80,12 +80,12 @@ Enfim, aqui vai meu setup de casa.
 - [lightshot](https://app.prntscr.com/en/index.html) - capturar screenshot
 - [1Clipboard](http://1clipboard.io/) - extensão do clipboard. Permite manter histórico do meu CTRL + C
 
-### [Periféricos](home-peripherals)
+### Periféricos
 
 - Monitor [MSI Optix MAG24C - 24" - 144hz - Curved](https://www.msi.com/Monitor/Optix-MAG24C.html)
 - [Sennheiser GSP 300 Gaming Headset](https://www.trustedreviews.com/reviews/sennheiser-gsp-300)
 
-### [Outros](home-misc)
+### Outros
 
 - Cadeira [Secretlab Titan - Fabric](https://secretlab.eu/collections/titan-series)
 
@@ -97,13 +97,13 @@ Enfim, aqui vai meu setup de casa.
 
 - [Fira Code](https://github.com/tonsky/FiraCode) - fonte open-source com símbolos que ajudam a ler melhor o código;
 
-### [Temas](vscode-theme)
+### Temas
 
 - Cores (trabalho): [Bear Theme](https://marketplace.visualstudio.com/items?itemName=dahong.theme-bear)
 - Cores (casa): [Panda Theme](https://marketplace.visualstudio.com/items?itemName=tinkertrain.theme-panda)
 - Ícones: [Material Theme Icons](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
 
-### [Plugins](vscode-plugins)
+### Plugins
 
 - [Better TOML](https://marketplace.visualstudio.com/items?itemName=bungcip.better-toml) - TOML language support
 - [Bracket Pair Colorizer](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer) - permite você visualizar com cores onde começa e termina o escopo da função, objeto;
@@ -140,4 +140,4 @@ Enfim, aqui vai meu setup de casa.
 - [vscode-faker](https://marketplace.visualstudio.com/items?itemName=deerawan.vscode-faker) - gera dados falsos para mockar objetos, etc.;
 - [vscode-styled-components](https://marketplace.visualstudio.com/items?itemName=jpoissonnier.vscode-styled-components) - suporte para styled-components;
 - [WakaTime](https://marketplace.visualstudio.com/items?itemName=WakaTime.vscode-wakatime) - gera métricas sobre o tempo que você trabalhou em cada projeto no VSCode;
-- [XML](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-xml) - suporte de arquivos XML.**kz**
+- [XML](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-xml) - suporte de arquivos XML.
