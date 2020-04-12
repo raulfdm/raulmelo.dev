@@ -251,7 +251,7 @@ Agora é só salvar e já pode acessar a nova URL:
 
 ![Site com a nova URL](./assets/netlify-new-site-url-online.png)
 
-Por padrão, sempre será o nome que você escolheu `.netlify.com`.
+Por padrão, sempre será o nome que você escolheu `.netlify.app`.
 
 Caso você tenha um domínio próprio, ainda no `Site Settings`, existe uma sessão específica para isso.
 
@@ -445,4 +445,4 @@ Qualquer dúvida, feedback ou sugestão, manda aqui nos comentários que eu leio
 Um grande abraço.
 
 - [Link do repositório](https://github.com/devraul/netlify-gatsby)
-- [Site do artigo](https://awesome-netlify-gatsby.netlify.com/)
+- [Site do artigo](https://awesome-netlify-gatsby.netlify.app/)
