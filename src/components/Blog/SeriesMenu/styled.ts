@@ -108,11 +108,7 @@ export const Item = styled(motion.li)`
 `;
 
 export const MenuFooter = styled(CommonInfo)`
-  padding-top: ${({ expanded }) => {
-    console.log(expanded);
-    return expanded ? '10px' : '0';
-  }};
-
+  padding-top: ${({ expanded }) => (expanded ? '10px' : '0')};
   font-family: ${({ theme }) => theme.font.contentSans};
   font-weight: normal;
   opacity: 0.67;
