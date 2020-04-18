@@ -69,7 +69,7 @@
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^3.0.0",
     "gatsby": "^2.20.22",
-    "gatsby-image": "^2.3.2",
+    "gatsby-image": "^2.3.3",
     "gatsby-plugin-algolia-search": "^0.5.7",
     "gatsby-plugin-google-analytics": "^2.2.2",
     "gatsby-plugin-i18n": "^1.0.1",
