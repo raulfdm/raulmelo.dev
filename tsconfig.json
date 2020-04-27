@@ -15,7 +15,11 @@
     "skipLibCheck": true,
     "strict": true,
     "strictNullChecks": true,
-    "target": "ESNext"
+    "target": "ESNext",
+    "baseUrl": "src",
+    "paths": {
+      "test-utils": ["./utils/test-utils"]
+    }
   },
   "typeRoots": ["node_modules/@types", "types"]
 }

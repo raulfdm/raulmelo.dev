@@ -4,7 +4,7 @@ import { AnimatePresence } from 'framer-motion';
 import { MenuBar } from './MenuBar';
 import { Container, pageTransitionVariants } from './Ui';
 import { GlobalStyles } from '../styles';
-import { ThemeProvider } from '../config/theme';
+import { ThemeProvider } from '../context/theme';
 
 interface Props {
   children: React.ReactNode | React.ReactChildren;

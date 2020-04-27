@@ -17,7 +17,7 @@ import { Frontmatter, SeriesType, PostSeries, PostEdge } from '../types';
 import SEO from '../components/SEO';
 import { useIntl } from '../context/react-intl';
 import { YouTubeVideo } from '../components/YouTubeVideo';
-import { ThemeProvider } from '../config/theme';
+import { ThemeProvider } from '../context/theme';
 
 const Title = styled.h1`
   font-size: 34px;
