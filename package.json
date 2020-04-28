@@ -90,7 +90,7 @@
     "gatsby-remark-responsive-iframe": "^2.3.4",
     "gatsby-remark-smartypants": "^2.3.0",
     "gatsby-source-filesystem": "^2.3.0",
-    "gatsby-transformer-json": "^2.3.4",
+    "gatsby-transformer-json": "^2.4.0",
     "gatsby-transformer-remark": "^2.7.4",
     "gatsby-transformer-sharp": "^2.4.7",
     "html-loader": "^1.1.0",
