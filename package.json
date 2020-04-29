@@ -22,7 +22,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@formatjs/intl-pluralrules": "^1.5.5",
+    "@formatjs/intl-pluralrules": "^1.5.7",
     "algoliasearch": "^4.2.0",
     "debounce-promise": "^3.1.2",
     "flat": "^5.0.0",
