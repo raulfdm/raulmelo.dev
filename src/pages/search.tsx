@@ -136,7 +136,6 @@ const SearchPage: React.FC = () => {
             searchClient={searchClient}
             indexName={algoliaConfig.indexName!}
           >
-            <p>Dummy</p>
             <SearchBoxWrapper>
               <SearchBox
                 searchAsYouType
