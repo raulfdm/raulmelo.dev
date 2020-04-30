@@ -91,13 +91,9 @@ export const Item = styled(motion.li)`
     background-color: rgba(3, 168, 124, 1);
     color: white;
   }
+
   &:hover:not(.active) {
     background-color: ${transparentize(0.8, 'rgba(3, 168, 124, 1)')};
-  }
-
-  &:last-child {
-    border-bottom-left-radius: var(--card-border-radius);
-    border-bottom-right-radius: var(--card-border-radius);
   }
 
   a {
@@ -106,6 +102,8 @@ export const Item = styled(motion.li)`
     display: block;
   }
 `;
+
+Item.displayName = 'SeriesMenuItem';
 
 export const MenuFooter = styled(CommonInfo)`
   padding-top: ${({ expanded }) => (expanded ? '10px' : '0')};
