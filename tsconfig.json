@@ -18,7 +18,8 @@
     "target": "ESNext",
     "baseUrl": "src",
     "paths": {
-      "test-utils": ["./utils/test-utils"]
+      "test-utils": ["./utils/test-utils"],
+      "components/*": ["./components/*"]
     }
   },
   "typeRoots": ["node_modules/@types", "types"]

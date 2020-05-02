@@ -64,8 +64,16 @@ module.exports = {
   // maxWorkers: "50%",
 
   // An array of directory names to be searched recursively up from the requiring module's location
-  moduleDirectories: ['node_modules', 'src/utils', __dirname],
+  moduleDirectories: [
+    'node_modules',
+    'src',
+    'src/utils',
+    'src/context',
+    'src/components',
+    __dirname,
+  ],
 
+  modulePaths: ['<rootDir>/context'],
   // An array of file extensions your modules use
   // moduleFileExtensions: [
   //   "js",

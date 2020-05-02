@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FeaturedImage /> renders gatsby image with default alt 1`] = `
+.c1 {
+  max-height: 600px;
+  margin-top: 42px;
+}
+
+.c0 {
+  --padding: 16px;
+  max-width: calc(768px - var(--padding));
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--padding);
+  height: 100%;
+  max-width: 1192px;
+  padding-bottom: 50px;
+}
+
+@media (min-width:768px) {
+  .c0 {
+    --padding: 24px;
+  }
+}
+
+<div>
+  <div
+    aria-label="Featured image"
+    class="Ui__Container-ea7492-1 c0"
+    data-testid="featured-image-wrapper"
+    role="img"
+  >
+    <div
+      class="c1 gatsby-image-wrapper"
+      style="position: relative; overflow: hidden;"
+    >
+      <div
+        aria-hidden="true"
+        style="width: 100%; padding-bottom: 46.4%;"
+      />
+      <img
+        alt=""
+        aria-hidden="true"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsSAAALEgHS3X78AAABuElEQVQoz21Sy0oDMRSdf3HvD4gLv0DwAxTElbgSRAR3CuJjIbhxoSgudFUURVS6ERV8FKSl+MBqi23pQ2urM9NJZpLM8SZjoVbDhJO5N/fk3IcVCMAPQrP1ORAhZAgoAC1fC0GfXooucF8ZGw80SkipYFkWrPaggFDHNGoM5Vfb2ISK/IrwpRLiNitRqCkioIeVtpMYusR82U4IejEie32qY3UyjoXhPcRWbsB4JCuRERhYdNA7/YWeqQYypSBSG0b+MOxQyLkyjqPNJOaJbKxnHXNDu8g91o1959RB/0wZkxtV9E7kcZywjV2Q0pDke1x2EPoRYSKeRWz5Csujh9iaPUOjzo39NOmga/AefeMP6B5J4SJtQ+fkeAIuk3Apk18pt+qoic8P7rC/do18poaffGA7TezEC1jafsb2SR4e46ZEWqGQAAv+IdQOzwuQSidxlbhEuVrRXGAUnM3l8PFWpIaV8F4toFgsUkOU8Te5MPtPlzmhy5TptqTOCXpBSD0WyvhsT5r09JhoMj1HnAIrDQ8262iKIHTo8tunRyMh0b70v0tFd30QKiKO6saoPE0uf2oYEX4DSDWIAcrW75AAAAAASUVORK5CYII="
+        style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 1; transition-delay: 500ms;"
+      />
+      <img
+        alt=""
+        aria-hidden="true"
+        src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='400'%20height='185'%20viewBox='0%200%20400%20185'%20preserveAspectRatio='none'%3e%3cpath%20d='M116%2040a39%2039%200%2000-3%2071c8%204%2024%204%2032%200s15-11%2019-19%204-24%200-32-11-15-18-19c-8-3-22-4-30-1m119-1c-6%201-12%208-14%2014l-1%2025%201%2020%203%204c5%208%209%2010%2033%2010h21l4-3c10-6%2010-8%2011-32l-1-24c-2-6-8-12-14-14h-43m-117%209c-7%203-14%2010-17%2016l-1%205%2018%2018%2018%2018%204-1c9-4%2017-14%2019-23v-5h-9c-10%200-10%200-10%203%200%202%200%202%207%202s7%200%204%206c-2%205-7%209-11%2011l-3%201-16-15-15-16%201-3c3-7%2014-14%2022-14%204%200%2012%203%2016%207%204%203%205%204%207%201%201-1%201-2-1-4-8-8-22-11-33-7m120%208c-3%204-3%2010%201%2013%202%202%203%203%203%2010%201%207%203%2011%205%2011l4%203c2%203%207%203%209%200%203-3%202-5%200-8-4-3-6-3-9%201l-3%203-2-2c-1-1-2-3-2-7%200-5%200-5%202-4l5%203c4%204%206%204%209%200s4-4%206-1c4%206%2011%204%2011-2%200-7-7-9-11-3-2%203-3%203-6-1-4-4-5-4-9%200-3%203-3%203-5%201v-2c3-1%207-6%207-9%200-7-10-11-15-6m4%200c-4%202-6%206-3%2010%202%204%208%204%2010%201%205-6%200-13-7-11M99%2081c2%2012%2013%2023%2025%2025h5l-15-14-15-15v4m8%2044c-3%202-4%203-4%206%200%205%206%208%2010%204%202-2%202-2%203%200%203%203%207%202%208-2%200-3%200-4-3-4h-4l-5%201c-3%200-4%202-1%202v1c-3%202-5%200-5-3%200-2%201-2%204-2%205%200%205-2%201-3h-4m29%204c0%204%200%204-2%203s-2-1-1-2c2%200%202%200%201-1h-3c-1%200-1%203%201%204l1%201-1%201h-2c0%202%203%202%204%201h9c4-2%201-9-3-7l-1-2-1-3c-2%200-2%201-2%205'%20fill='%23d3d3d3'%20fill-rule='evenodd'/%3e%3c/svg%3e"
+        style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 1; transition-delay: 500ms;"
+      />
+      <picture>
+        <source
+          sizes="(max-width: 1500px) 100vw, 1500px"
+          srcset="/static/174ca29b67ba581dded040aa60140943/be31c/featured-img.webp 375w,
+/static/174ca29b67ba581dded040aa60140943/6714f/featured-img.webp 750w,
+/static/174ca29b67ba581dded040aa60140943/00194/featured-img.webp 1500w,
+/static/174ca29b67ba581dded040aa60140943/e2a8d/featured-img.webp 1920w"
+          type="image/webp"
+        />
+        <source
+          sizes="(max-width: 1500px) 100vw, 1500px"
+          srcset="/static/174ca29b67ba581dded040aa60140943/f0ce6/featured-img.png 375w,
+/static/174ca29b67ba581dded040aa60140943/8443a/featured-img.png 750w,
+/static/174ca29b67ba581dded040aa60140943/b37fb/featured-img.png 1500w,
+/static/174ca29b67ba581dded040aa60140943/a3795/featured-img.png 1920w"
+        />
+        <img
+          alt="Featured image"
+          loading="lazy"
+          sizes="(max-width: 1500px) 100vw, 1500px"
+          src="/static/174ca29b67ba581dded040aa60140943/b37fb/featured-img.png"
+          srcset="/static/174ca29b67ba581dded040aa60140943/f0ce6/featured-img.png 375w,
+/static/174ca29b67ba581dded040aa60140943/8443a/featured-img.png 750w,
+/static/174ca29b67ba581dded040aa60140943/b37fb/featured-img.png 1500w,
+/static/174ca29b67ba581dded040aa60140943/a3795/featured-img.png 1920w"
+          style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0; transition: opacity 500ms;"
+        />
+      </picture>
+      <noscript>
+        &lt;picture&gt;&lt;source type='image/webp' srcset="/static/174ca29b67ba581dded040aa60140943/be31c/featured-img.webp 375w,
+/static/174ca29b67ba581dded040aa60140943/6714f/featured-img.webp 750w,
+/static/174ca29b67ba581dded040aa60140943/00194/featured-img.webp 1500w,
+/static/174ca29b67ba581dded040aa60140943/e2a8d/featured-img.webp 1920w" sizes="(max-width: 1500px) 100vw, 1500px" /&gt;&lt;source srcset="/static/174ca29b67ba581dded040aa60140943/f0ce6/featured-img.png 375w,
+/static/174ca29b67ba581dded040aa60140943/8443a/featured-img.png 750w,
+/static/174ca29b67ba581dded040aa60140943/b37fb/featured-img.png 1500w,
+/static/174ca29b67ba581dded040aa60140943/a3795/featured-img.png 1920w" sizes="(max-width: 1500px) 100vw, 1500px" /&gt;&lt;img loading="lazy" sizes="(max-width: 1500px) 100vw, 1500px" srcset="/static/174ca29b67ba581dded040aa60140943/f0ce6/featured-img.png 375w,
+/static/174ca29b67ba581dded040aa60140943/8443a/featured-img.png 750w,
+/static/174ca29b67ba581dded040aa60140943/b37fb/featured-img.png 1500w,
+/static/174ca29b67ba581dded040aa60140943/a3795/featured-img.png 1920w" src="/static/174ca29b67ba581dded040aa60140943/b37fb/featured-img.png" alt="Featured image" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/&gt;&lt;/picture&gt;
+      </noscript>
+    </div>
+  </div>
+</div>
+`;

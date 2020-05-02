@@ -1,12 +1,11 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { ArrowIosDownwardOutline } from '@styled-icons/evaicons-outline/ArrowIosDownwardOutline';
-
-import { Link } from 'gatsby';
-import * as S from './styled';
-
-import { SeriesType, PostSeries } from '../../../types';
 import { AnimatePresence } from 'framer-motion';
+import { Link } from 'gatsby';
+
+import * as S from './styled';
+import { SeriesType, PostSeries } from '../../../types';
 import { Card } from '../../Ui';
 
 type SeriesProps = {
@@ -24,7 +23,7 @@ export const SeriesMenu: React.FC<SeriesProps> = ({
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (
-    <S.Card>
+    <S.Card data-testid="series-menu">
       <S.Wrapper>
         <S.Info expanded={isOpen} onClick={() => setIsOpen(!isOpen)}>
           <span>{title}</span>

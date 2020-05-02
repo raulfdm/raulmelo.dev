@@ -29,6 +29,7 @@ module.exports = {
         name: `blog`,
       },
     },
+    `gatsby-alias-imports`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-typescript`,
     `gatsby-transformer-sharp`,

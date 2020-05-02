@@ -73,7 +73,7 @@ export const typography = new Typography({
   }),
 });
 
-const global = css`
+const blogGlobal = css`
   ${typography.toString()};
 
   body {
@@ -115,5 +115,5 @@ const global = css`
 `;
 
 export const BlogGlobalStyle = createGlobalStyle`
-  ${global}
+  ${blogGlobal}
 `;
