@@ -95,7 +95,7 @@ Even not being a CI expert, I have figured out a bunch of stuff by myself readin
 
 To enable this feature, be sure you have installed gatsby version 2.20.4 or higher.
 
-After that, you need to specify an environment variable named `GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES` to true in your build context, like:
+After that, you need to specify an environment variable named **GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES** to true in your build context, like:
 
 ```shell
 GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true yarn gatsby build
