@@ -20,7 +20,8 @@ const activeStyles = css`
 
 const FilterItem = styled(motion.li)<{ active?: boolean }>`
   padding-right: 20px;
-  font-family: content-sans-serif;
+  font-size: 14px;
+  font-family: ${({ theme }) => theme.font.contentSans};
   color: ${({ theme }) => theme.color.fontLight};
   cursor: pointer;
 

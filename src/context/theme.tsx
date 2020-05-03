@@ -18,6 +18,12 @@ type ContextType = {
 
 export const ThemeContext = createContext<Partial<ContextType>>({});
 
+export const FONTS = {
+  contentSans: 'Open Sans',
+  contentSerif: 'Merriweather',
+  contentTitle: 'content-title',
+};
+
 export const ThemeProvider: React.FC<ThemeProps> = ({ children }) => {
   const [currentTheme, setCurrentTheme] = useState<
     keyof typeof ThemesAvailable
@@ -46,8 +52,8 @@ export const ThemeProvider: React.FC<ThemeProps> = ({ children }) => {
   const theme: DefaultTheme = {
     isDarkTheme,
     font: {
-      contentSans: withFontFallback('content-sans-serif', false),
-      contentSerif: withFontFallback('content-serif', true),
+      contentSans: withFontFallback(FONTS.contentSans, false),
+      contentSerif: withFontFallback(FONTS.contentSerif, true),
       contentTitle: withFontFallback('content-title', true),
     },
     color: {

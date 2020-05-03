@@ -3,9 +3,10 @@ import media from 'styled-media-query';
 import { pandaPrismStyles } from './prims-panda-theme';
 
 import Typography from 'typography';
+import { FONTS } from 'context/theme';
 
 const baseFontSize = '18px';
-const baseFontSizeHigherThanMobile = '21px';
+const baseFontSizeHigherThanMobile = '18px';
 
 export function pxToRem(px: string | number, mobile = true): string {
   const baseNumber = parseInt(
@@ -21,14 +22,14 @@ export const typography = new Typography({
   baseLineHeight: 1.58,
   includeNormalize: true,
   headerFontFamily: [
-    'content-sans-serif',
+    FONTS.contentSans,
     'Helvetica Neue',
     'Segoe UI',
     'Helvetica',
     'Arial',
     'sans-serif',
   ],
-  bodyFontFamily: ['content-serif', 'Georgia', 'serif'],
+  bodyFontFamily: [FONTS.contentSerif, 'Georgia', 'serif'],
   bodyColor: 'var(--font)',
   overrideStyles: ({ rhythm, adjustFontSizeTo }) => ({
     h1: {
@@ -44,6 +45,7 @@ export const typography = new Typography({
       lineHeight: rhythm(1),
     },
     blockquote: {
+      fontWeight: 300,
       marginLeft: '-12px',
       paddingLeft: '23px',
       boxShadow: `inset 3px 0 0 -1px var(--font)`,
@@ -64,7 +66,7 @@ export const typography = new Typography({
     },
     '.gatsby-resp-image-figcaption,.gif-caption,.img-caption': {
       ...adjustFontSizeTo('16px'),
-      fontFamily: 'content-sans-serif',
+      fontFamily: FONTS.contentSans,
       textAlign: 'center',
       margin: 0,
       marginTop: adjustFontSizeTo('16px').fontSize,
@@ -73,6 +75,14 @@ export const typography = new Typography({
   }),
 });
 
+const fontSizeInPercenetage = (desiredPx: string): string => {
+  const defaultBrowserFontSize = 16;
+  const desiredNumber = parseInt(desiredPx.replace('px', ''));
+
+  const result = (desiredNumber * 100) / defaultBrowserFontSize;
+
+  return `${result}%`;
+};
 const blogGlobal = css`
   ${typography.toString()};
 
@@ -103,7 +113,7 @@ const blogGlobal = css`
 
   ${media.greaterThan('medium')`
     html {
-      font-size: 131.25%
+      /* font-size: ${fontSizeInPercenetage(baseFontSizeHigherThanMobile)} */
     }
 
     blockquote{

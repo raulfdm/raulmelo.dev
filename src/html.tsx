@@ -11,7 +11,6 @@ const GatsbyHTML: React.FC<PreRenderHTMLArgs & { body: string }> = (props) => {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes} className="dark">

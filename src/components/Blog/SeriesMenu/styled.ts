@@ -79,12 +79,12 @@ export const Item = styled(motion.li)`
   cursor: pointer;
   font-family: ${({ theme }) => theme.font.contentSans};
 
-  font-size: ${pxToRem(16)};
+  font-size: ${pxToRem(14)};
   margin: 0;
   padding: 0;
 
   ${media.greaterThan('medium')`
-    font-size: ${pxToRem(18, false)};
+    font-size: ${pxToRem(16, false)};
   `}
 
   &.active {

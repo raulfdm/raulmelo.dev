@@ -108,7 +108,11 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Fira Code'],
+          families: [
+            'Fira Code',
+            'Merriweather:400,700',
+            'Open Sans:300,400,500,700',
+          ],
         },
       },
     },
