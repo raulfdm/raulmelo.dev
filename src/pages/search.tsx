@@ -155,22 +155,25 @@ const SearchPage: React.FC = () => {
             </SearchBoxWrapper>
 
             <Hits
-              hitComponent={({ hit }: { hit: HitAlgolia }) => (
-                <PostCard
-                  postNode={{
-                    timeToRead: hit.timeToRead,
-                    fields: {
-                      slug: hit.fields.slug,
-                    },
-                    frontmatter: {
-                      title: hit.title,
-                      subtitle: hit.subtitle ?? '',
-                      date: hit.date,
-                      description: hit.description,
-                    },
-                  }}
-                />
-              )}
+              hitComponent={({ hit }: { hit: HitAlgolia }) => {
+                const { title, subtitle, date, description, ...rest } = hit;
+
+                const frontmatter = {
+                  title: title,
+                  subtitle: subtitle ?? '',
+                  date: date,
+                  description: description,
+                };
+
+                return (
+                  <PostCard
+                    postNode={{
+                      frontmatter,
+                      ...rest,
+                    }}
+                  />
+                );
+              }}
             />
             <PoweredBy href="https://www.algolia.com/">
               Powered by <Algolia size="2rem" color="#5468ff" /> Algolia

@@ -57,9 +57,9 @@ export const MenuBar: React.FC = () => {
               <LogoSvg />
             </Link>
           </S.LogoWrapper>
-          {/* <Link to="/search">
+          <Link to="/search">
             <SearchIcon size={24} />
-          </Link> */}
+          </Link>
           <ThemeSwitch />
           <LanguageSwitch />
         </S.CustomContainer>
