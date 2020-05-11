@@ -5,3 +5,5 @@ blog
 content
 public
 static
+
+types/graphql-types.ts

@@ -15,6 +15,8 @@ module.exports = {
       rules: {
         'react/prop-types': 0,
         '@typescript-eslint/ban-ts-ignore': 'warn',
+        camelcase: 'off',
+        '@typescript-eslint/camelcase': 0,
         '@typescript-eslint/no-unused-vars': [
           'warn',
           {
@@ -42,6 +44,9 @@ module.exports = {
       env: {
         jest: true,
         es6: true,
+      },
+      rules: {
+        '@typescript-eslint/no-explicit-any': 0,
       },
     },
   ],

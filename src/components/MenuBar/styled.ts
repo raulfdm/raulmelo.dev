@@ -3,6 +3,7 @@ import media from 'styled-media-query';
 import { motion } from 'framer-motion';
 
 import { Container } from '../Ui';
+import { Link } from 'gatsby';
 
 export const MenuBarWrapper = styled(motion.nav)`
   box-shadow: 0 4px 12px 0 ${({ theme }) => theme.color.shadowMenu};
@@ -22,6 +23,13 @@ export const MenuBarWrapper = styled(motion.nav)`
   a {
     color: inherit;
   }
+`;
+
+export const TextLink = styled(Link)`
+  font-weight: bold;
+  font-family: ${({ theme }) => theme.font.contentSerif};
+  margin-right: 8px;
+  font-size: 14px;
 `;
 
 export const CustomContainer = styled(Container)`

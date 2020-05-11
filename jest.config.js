@@ -70,6 +70,7 @@ module.exports = {
     'src/utils',
     'src/context',
     'src/components',
+    'types/',
     __dirname,
   ],
 

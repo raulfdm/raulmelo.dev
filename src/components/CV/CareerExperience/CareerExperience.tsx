@@ -1,0 +1,43 @@
+import React from 'react';
+
+import { DataJsonCareer_History } from 'graphql-types';
+import { deepMemo } from 'utils/components';
+import { Project } from '../shared/Project';
+import { SectionTitle, Section, SectionBody } from '../shared/Section';
+
+export const CareerExperience: React.FC<{
+  data: DataJsonCareer_History;
+}> = deepMemo(({ data }) => {
+  const { jobs, section_title } = data;
+
+  return (
+    <Section>
+      <SectionTitle>{section_title}</SectionTitle>
+      <SectionBody>
+        {jobs!.map((job) => {
+          const {
+            role,
+            id,
+            company,
+            end_date,
+            is_actual,
+            start_date,
+            description,
+          } = job!;
+
+          return (
+            <Project
+              key={id!}
+              description={description!}
+              title={role!}
+              subtitle={company!}
+              endDate={end_date}
+              onGoing={!!is_actual}
+              startDate={start_date}
+            />
+          );
+        })}
+      </SectionBody>
+    </Section>
+  );
+});

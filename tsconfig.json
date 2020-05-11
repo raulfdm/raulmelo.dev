@@ -4,11 +4,12 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "importHelpers": true,
-    "jsx": "react",
+    "jsx": "preserve",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "module": "CommonJS",
+    "module": "ESNext",
     "moduleResolution": "node",
     "noEmit": true,
+    "noEmitOnError": false,
     "preserveConstEnums": true,
     "removeComments": true,
     "resolveJsonModule": true,
@@ -16,10 +17,14 @@
     "strict": true,
     "strictNullChecks": true,
     "target": "ESNext",
-    "baseUrl": "src",
+    "baseUrl": ".",
     "paths": {
-      "test-utils": ["./utils/test-utils"],
-      "components/*": ["./components/*"]
+      "test-utils": ["src/utils/test-utils"],
+      "types": ["src/types"],
+      "graphql-types": ["./types/graphql-types.ts"],
+      "components/*": ["src/components/*"],
+      "utils/*": ["src/utils/*"],
+      "context/*": ["src/context/*"]
     }
   },
   "typeRoots": ["node_modules/@types", "types"]

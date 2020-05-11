@@ -35,9 +35,36 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-json`,
+    {
+      resolve: `gatsby-plugin-graphql-codegen`,
+      options: {
+        fileName: `types/graphql-types.ts`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/data`,
+        name: 'data',
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     `gatsby-plugin-offline`,
+    {
+      resolve: 'gatsby-plugin-tinacms',
+      options: {
+        sidebar: {
+          hidden: process.env.NODE_ENV === 'production',
+          position: 'displace',
+        },
+        plugins: [
+          'gatsby-tinacms-git',
+          'gatsby-tinacms-remark',
+          'gatsby-tinacms-json',
+        ],
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

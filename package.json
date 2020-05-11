@@ -22,9 +22,13 @@
     "test": "jest"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
     "@formatjs/intl-pluralrules": "^1.5.7",
     "algoliasearch": "^4.2.0",
+    "dayjs": "^1.8.26",
     "debounce-promise": "^3.1.2",
+    "emotion-theming": "^10.0.27",
     "flat": "^5.0.0",
     "framer-motion": "2.0.0-beta.56",
     "polished": "^3.5.2",
@@ -33,9 +37,11 @@
     "react-dom": "^16.13.1",
     "react-helmet": "^6.0.0",
     "react-instantsearch-dom": "^6.4.0",
-    "react-intl": "^4.5.1",
+    "react-intl": "^4.5.3",
+    "react-markdown": "^4.3.1",
     "react-use": "^14.2.0",
     "rehype-react": "^5.0.1",
+    "smoothscroll-polyfill": "^0.4.4",
     "styled-components": "^5.1.0",
     "styled-icons": "^10.2.1",
     "styled-media-query": "^2.1.2",
@@ -61,6 +67,7 @@
     "@types/typography": "^0.16.3",
     "@typescript-eslint/eslint-plugin": "^2.30.0",
     "@typescript-eslint/parser": "^2.30.0",
+    "babel-plugin-emotion": "^10.0.33",
     "babel-plugin-remove-graphql-queries": "^2.9.0",
     "babel-plugin-styled-components": "^1.10.7",
     "babel-preset-gatsby": "^0.4.0",
@@ -75,6 +82,7 @@
     "gatsby-image": "^2.4.0",
     "gatsby-plugin-algolia-search": "^0.5.7",
     "gatsby-plugin-google-analytics": "^2.3.0",
+    "gatsby-plugin-graphql-codegen": "^2.7.1",
     "gatsby-plugin-i18n": "^1.0.1",
     "gatsby-plugin-manifest": "^2.4.1",
     "gatsby-plugin-offline": "^3.2.0",
@@ -82,6 +90,7 @@
     "gatsby-plugin-sharp": "^2.6.0",
     "gatsby-plugin-sitemap": "^2.4.1",
     "gatsby-plugin-styled-components": "^3.3.0",
+    "gatsby-plugin-tinacms": "^0.1.34",
     "gatsby-plugin-typescript": "^2.4.0",
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-remark-autolink-headers": "^2.3.0",
@@ -92,6 +101,9 @@
     "gatsby-remark-responsive-iframe": "^2.4.1",
     "gatsby-remark-smartypants": "^2.3.0",
     "gatsby-source-filesystem": "^2.3.0",
+    "gatsby-tinacms-git": "^0.4.8",
+    "gatsby-tinacms-json": "^0.8.19",
+    "gatsby-tinacms-remark": "^0.7.14",
     "gatsby-transformer-json": "^2.4.0",
     "gatsby-transformer-remark": "^2.8.4",
     "gatsby-transformer-sharp": "^2.5.0",
@@ -104,11 +116,13 @@
     "prettier": "^2.0.5",
     "pretty-quick": "^2.0.1",
     "prismjs": "^1.20.0",
+    "sanitize.css": "^11.0.0",
     "typescript": "^3.8.3"
   },
   "resolutions": {
     "acorn": "^6.4.1",
-    "minimist": "^1.2.3"
+    "minimist": "^1.2.3",
+    "moment": "2.24.0"
   },
   "husky": {
     "hooks": {
