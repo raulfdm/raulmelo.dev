@@ -100,5 +100,6 @@ export function filterFirstSeriesPost(edges: PostEdges): PostEdges {
     R.toPairs,
     getSeriesHeadsFromPairs,
     sortDescFinalPosts,
+    //@ts-ignore
   )(edges) as PostEdges;
 }
