@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { DataJsonCareer_History } from 'graphql-types';
+import { CvJsonCareer_History } from 'graphql-types';
 import { deepMemo } from 'utils/components';
 import { Project } from '../shared/Project';
 import { SectionTitle, Section, SectionBody } from '../shared/Section';
 
 export const CareerExperience: React.FC<{
-  data: DataJsonCareer_History;
+  data: CvJsonCareer_History;
 }> = deepMemo(({ data }) => {
   const { jobs, section_title } = data;
 

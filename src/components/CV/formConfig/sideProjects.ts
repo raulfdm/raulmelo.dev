@@ -1,5 +1,5 @@
 import { sectionTitleField } from './common';
-import { DataJsonSide_ProjectsProjects } from 'graphql-types';
+import { CvJsonSide_ProjectsProjects } from 'graphql-types';
 import { idGenerator } from '../utils';
 
 export const sideProjects = {
@@ -12,7 +12,7 @@ export const sideProjects = {
       label: 'Projects',
       name: 'projects',
       component: 'group-list',
-      itemProps: (item: DataJsonSide_ProjectsProjects) => ({
+      itemProps: (item: CvJsonSide_ProjectsProjects) => ({
         key: item.id,
         label: item.name,
       }),

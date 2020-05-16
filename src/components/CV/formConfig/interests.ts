@@ -1,4 +1,4 @@
-import { DataJsonInterestsValues } from 'graphql-types';
+import { CvJsonInterestsValues } from 'graphql-types';
 import { sectionTitleField } from './common';
 import { idGenerator } from '../utils';
 
@@ -12,7 +12,7 @@ export const interests = {
       label: 'List of Interests',
       name: 'values',
       component: 'group-list',
-      itemProps: (item: DataJsonInterestsValues) => ({
+      itemProps: (item: CvJsonInterestsValues) => ({
         key: item.id,
         label: item.name,
       }),

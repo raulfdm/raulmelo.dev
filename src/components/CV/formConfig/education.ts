@@ -1,8 +1,8 @@
 import {
-  DataJsonEducationFormal,
-  DataJsonEducationLanguages,
-  DataJsonEducationExtra_CoursesPlatforms,
-  DataJsonEducationExtra_CoursesPlatformsCoursesFilterInput,
+  CvJsonEducationFormal,
+  CvJsonEducationLanguages,
+  CvJsonEducationExtra_CoursesPlatforms,
+  CvJsonEducationExtra_CoursesPlatformsCoursesFilterInput,
 } from 'graphql-types';
 import { sectionTitleField } from './common';
 import { idGenerator } from '../utils';
@@ -17,7 +17,7 @@ export const education = {
       label: 'Formal Education',
       name: 'formal',
       component: 'group-list',
-      itemProps: (item: DataJsonEducationFormal) => ({
+      itemProps: (item: CvJsonEducationFormal) => ({
         key: item.id,
         label: item.foundation,
       }),
@@ -55,7 +55,7 @@ export const education = {
       label: 'Languages',
       name: 'languages',
       component: 'group-list',
-      itemProps: (item: DataJsonEducationLanguages) => ({
+      itemProps: (item: CvJsonEducationLanguages) => ({
         key: item.id,
         label: item.name,
       }),
@@ -87,7 +87,7 @@ export const education = {
           label: 'Platforms',
           name: 'platforms',
           component: 'group-list',
-          itemProps: (item: DataJsonEducationExtra_CoursesPlatforms) => ({
+          itemProps: (item: CvJsonEducationExtra_CoursesPlatforms) => ({
             key: item.id,
             label: item.name,
           }),
@@ -107,7 +107,7 @@ export const education = {
               name: 'courses',
               component: 'group-list',
               itemProps: (
-                item: DataJsonEducationExtra_CoursesPlatformsCoursesFilterInput,
+                item: CvJsonEducationExtra_CoursesPlatformsCoursesFilterInput,
               ) => ({
                 key: item.id,
                 label:

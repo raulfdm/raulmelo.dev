@@ -1,5 +1,5 @@
 import { sectionTitleField } from './common';
-import { DataJsonCareer_HistoryJobs } from 'graphql-types';
+import { CvJsonCareer_HistoryJobs } from 'graphql-types';
 import { idGenerator } from '../utils';
 
 export const careerExperience = {
@@ -13,7 +13,7 @@ export const careerExperience = {
       label: 'Career History',
       name: 'jobs',
       component: 'group-list',
-      itemProps: (item: DataJsonCareer_HistoryJobs) => ({
+      itemProps: (item: CvJsonCareer_HistoryJobs) => ({
         key: item.id,
         label: item.company,
       }),

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-import { DataJsonEducationFormal, Maybe } from 'graphql-types';
+import { CvJsonEducationFormal, Maybe } from 'graphql-types';
 import { RangeDate } from 'components/CV/shared/RangeDate';
 import { CourseList } from 'components/CV/shared/Ui';
 
@@ -19,7 +19,7 @@ const Company = styled.p`
   display: inline;
 `;
 
-export const Formal: React.FC<{ data: Maybe<DataJsonEducationFormal[]> }> = ({
+export const Formal: React.FC<{ data: Maybe<CvJsonEducationFormal[]> }> = ({
   data,
 }) => {
   return (

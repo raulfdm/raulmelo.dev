@@ -2,7 +2,7 @@ import React from 'react';
 import * as R from 'ramda';
 
 import { deepMemo } from 'utils/components';
-import { DataJsonInfo } from 'graphql-types';
+import { CvJsonInfo } from 'graphql-types';
 
 import { styled, css } from '../styles';
 import { Section } from '../shared/Section';
@@ -78,7 +78,7 @@ function formatUrlToDisplay(url: string): string {
   return R.pipe(www, http, https)(url);
 }
 
-export const Info: React.FC<{ data: DataJsonInfo }> = deepMemo(({ data }) => {
+export const Info: React.FC<{ data: CvJsonInfo }> = deepMemo(({ data }) => {
   const { name, phone, city, email, linkedIn, github } = data;
 
   return (

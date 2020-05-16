@@ -2,9 +2,9 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 import {
-  DataJsonTechnical_Skills,
-  DataJsonTechnical_SkillsSkills,
-  DataJsonTechnical_SkillsSkillsTechnologies,
+  CvJsonTechnical_Skills,
+  CvJsonTechnical_SkillsSkills,
+  CvJsonTechnical_SkillsSkillsTechnologies,
 } from 'graphql-types';
 import { deepMemo } from 'utils/components';
 import { SectionTitle, Section, SectionBody } from '../shared/Section';
@@ -34,21 +34,21 @@ const Skill = styled.li`
 `;
 
 export const TechnicalSkills: React.FC<{
-  data: DataJsonTechnical_Skills;
+  data: CvJsonTechnical_Skills;
 }> = deepMemo(({ data }) => {
   const { section_title, skills } = data;
   return (
     <Section>
       <SectionTitle>{section_title}</SectionTitle>
       <SectionBody>
-        {(skills as DataJsonTechnical_SkillsSkills[]).map((skill) => {
+        {(skills as CvJsonTechnical_SkillsSkills[]).map((skill) => {
           const { id, group_name, technologies } = skill!;
 
           return (
             <Group key={id!}>
               <Title>{group_name}</Title>
               <List>
-                {(technologies as DataJsonTechnical_SkillsSkillsTechnologies[]).map(
+                {(technologies as CvJsonTechnical_SkillsSkillsTechnologies[]).map(
                   (tech) => (
                     <Skill key={tech.id!}>{tech.name}</Skill>
                   ),

@@ -1,11 +1,11 @@
 import React from 'react';
 
 import { Section, SectionTitle, SectionBody } from '../shared/Section';
-import { DataJsonSide_Projects } from 'graphql-types';
+import { CvJsonSide_Projects } from 'graphql-types';
 import { deepMemo } from 'utils/components';
 import { Project } from '../shared/Project';
 
-export const SideProjects: React.FC<{ data: DataJsonSide_Projects }> = deepMemo(
+export const SideProjects: React.FC<{ data: CvJsonSide_Projects }> = deepMemo(
   ({ data }) => {
     const { section_title, projects } = data;
     return (

@@ -1,8 +1,7 @@
 import React from 'react';
 import { useLocalJsonForm } from 'gatsby-tinacms-json';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
-import styled from '@emotion/styled';
 import { ThemeProvider } from 'emotion-theming';
 import 'sanitize.css/sanitize.css';
 import { ArrowheadUp } from '@styled-icons/evaicons-solid/ArrowheadUp';
@@ -19,60 +18,20 @@ import {
   SideProjects,
 } from 'components/CV';
 import { JsonNode } from 'types';
-import { DataJson } from 'graphql-types';
+import { CvJsonEdge, CvJson } from 'graphql-types';
 import { theme, GlobalCVStyles } from 'components/CV/styles';
+import { CVMain, HomeLink, ScrollToTopButton } from 'components/CV/UI';
+import { useIntl } from 'context/react-intl';
 
 if (typeof window !== `undefined`) {
   scrollPolyfill();
 }
 
-const CVMain = styled.main`
-  max-width: 798px;
-  width: 100%;
-  padding: 0 14px;
-  margin: 0 auto;
-  position: relative;
-  padding-top: 46px;
-
-  @media screen and (min-width: 515px) {
-    padding: 0 16px;
-    padding-top: 26px;
-  }
-`;
-
-const HomeLink = styled(Link)`
-  position: absolute;
-  left: 12px;
-  top: 12px;
-  z-index: 9;
-
-  @media print {
-    display: none;
-  }
-`;
-
-const ScrollToTopButton = styled.button`
-  position: fixed;
-  bottom: 16px;
-  right: 16px;
-  box-shadow: 2px 2px 7px -3px rgba(0, 0, 0, 0.6);
-  border: none;
-  background-color: #fff;
-  border-radius: 50%;
-  width: 35px;
-  height: 35px;
-  padding: 5px;
-  cursor: pointer;
-  transition: transform 0.1s ease-in-out;
-
-  &:hover {
-    transform: scale(1.1);
-  }
-`;
-
 type CvPageProps = {
   data: {
-    dataJson: JsonNode;
+    allCvJson: {
+      edges: CvJsonEdge[];
+    };
   };
 };
 
@@ -81,8 +40,13 @@ const moveToTop = (): void => {
 };
 
 const CvPage: React.FC<CvPageProps> = ({ data: apiData }) => {
-  const [data]: [DataJson, unknown] = useLocalJsonForm(
-    apiData.dataJson,
+  const { locale } = useIntl();
+  const dataByLocale = apiData.allCvJson.edges.find(
+    (e) => e.node.lang === locale,
+  )!;
+
+  const [data]: [CvJson, unknown] = useLocalJsonForm(
+    (dataByLocale.node as unknown) as JsonNode,
     FormConfig,
   );
 
@@ -117,88 +81,93 @@ const CvPage: React.FC<CvPageProps> = ({ data: apiData }) => {
 
 export const pageQuery = graphql`
   query DataQuery {
-    dataJson(path: { eq: "/cv" }) {
-      fileRelativePath
-      rawJson
-      info {
-        name
-        phone
-        city
-        email
-        linkedIn
-        github
-      }
-      side_projects {
-        section_title
-        projects {
-          id
-          name
-          start_date
-          end_date
-          description
-          is_ongoing
-          show
-        }
-      }
-      career_summary {
-        section_title
-        description
-      }
-      technical_skills {
-        section_title
-        skills {
-          id
-          technologies {
-            id
+    allCvJson(filter: { path: { eq: "/cv" } }) {
+      edges {
+        node {
+          lang
+          fileRelativePath
+          rawJson
+          info {
             name
+            phone
+            city
+            email
+            linkedIn
+            github
           }
-          group_name
-        }
-      }
-      education {
-        section_title
-        formal {
-          id
-          foundation
-          start_date
-          end_date
-          title
-        }
-        languages {
-          id
-          name
-          proficiency
-        }
-        extra_courses {
-          section_title
-          platforms {
-            id
-            name
-            courses {
+          side_projects {
+            section_title
+            projects {
               id
               name
-              hours
+              start_date
+              end_date
+              description
+              is_ongoing
+              show
             }
           }
-        }
-      }
-      career_history {
-        section_title
-        jobs {
-          id
-          role
-          description
-          company
-          end_date
-          is_actual
-          start_date
-        }
-      }
-      interests {
-        section_title
-        values {
-          id
-          name
+          career_summary {
+            section_title
+            description
+          }
+          technical_skills {
+            section_title
+            skills {
+              id
+              technologies {
+                id
+                name
+              }
+              group_name
+            }
+          }
+          education {
+            section_title
+            formal {
+              id
+              foundation
+              start_date
+              end_date
+              title
+            }
+            languages {
+              id
+              name
+              proficiency
+            }
+            extra_courses {
+              section_title
+              platforms {
+                id
+                name
+                courses {
+                  id
+                  name
+                  hours
+                }
+              }
+            }
+          }
+          career_history {
+            section_title
+            jobs {
+              id
+              role
+              description
+              company
+              end_date
+              is_actual
+              start_date
+            }
+          }
+          interests {
+            section_title
+            values {
+              id
+              name
+            }
+          }
         }
       }
     }

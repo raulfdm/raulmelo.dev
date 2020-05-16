@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-import { DataJsonInterests } from 'graphql-types';
+import { CvJsonInterests } from 'graphql-types';
 import { Section, SectionTitle, SectionBody } from '../shared/Section';
 
 const InterestItem = styled.li`
@@ -11,7 +11,7 @@ const InterestItem = styled.li`
   }
 `;
 
-export const Interests: React.FC<{ data: DataJsonInterests }> = ({ data }) => {
+export const Interests: React.FC<{ data: CvJsonInterests }> = ({ data }) => {
   const { section_title, values } = data;
 
   return (

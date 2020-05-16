@@ -1,7 +1,7 @@
 import { sectionTitleField } from './common';
 import {
-  DataJsonTechnical_SkillsSkills,
-  DataJsonTechnical_SkillsSkillsTechnologies,
+  CvJsonTechnical_SkillsSkills,
+  CvJsonTechnical_SkillsSkillsTechnologies,
 } from 'graphql-types';
 import { idGenerator } from '../utils';
 
@@ -15,7 +15,7 @@ export const technicalSkills = {
       label: 'Skills',
       name: 'skills',
       component: 'group-list',
-      itemProps: (item: DataJsonTechnical_SkillsSkills) => ({
+      itemProps: (item: CvJsonTechnical_SkillsSkills) => ({
         key: item.id,
         label: item.group_name,
       }),
@@ -34,7 +34,7 @@ export const technicalSkills = {
           label: 'Technology',
           name: 'technologies',
           component: 'group-list',
-          itemProps: (item: DataJsonTechnical_SkillsSkillsTechnologies) => ({
+          itemProps: (item: CvJsonTechnical_SkillsSkillsTechnologies) => ({
             key: item.id,
             label: item.name,
           }),

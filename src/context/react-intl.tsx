@@ -7,7 +7,7 @@ import { LOCALES } from '../types/Locales';
 import enMessages from '../locales/en.json';
 import ptMessages from '../locales/pt-br.json';
 
-type CustomIntlShape = { switchLocale(nextLocale: LOCALES): void };
+type CustomIntlShape = { switchToPortuguese(): void; switchToEnglish(): void };
 
 const IntlContext = React.createContext<CustomIntlShape | undefined>(undefined);
 
@@ -35,9 +35,17 @@ export const IntlContextProvider: React.FC = ({ children }) => {
 
   const messages = flat(localizedMessages[language!]) as Record<string, string>;
 
+  function switchToEnglish(): void {
+    switchLocale(LOCALES.EN);
+  }
+
+  function switchToPortuguese(): void {
+    switchLocale(LOCALES.PT);
+  }
+
   return (
     <IntlProvider locale={language!} messages={messages}>
-      <IntlContext.Provider value={{ switchLocale }}>
+      <IntlContext.Provider value={{ switchToPortuguese, switchToEnglish }}>
         {children}
       </IntlContext.Provider>
     </IntlProvider>
