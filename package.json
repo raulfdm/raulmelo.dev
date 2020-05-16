@@ -74,7 +74,7 @@
     "dotenv": "8.2.0",
     "eslint": "7.0.0",
     "eslint-config-prettier": "6.11.0",
-    "eslint-plugin-jest": "23.11.0",
+    "eslint-plugin-jest": "23.13.0",
     "eslint-plugin-react": "7.20.0",
     "eslint-plugin-react-hooks": "4.0.2",
     "gatsby": "2.21.33",
