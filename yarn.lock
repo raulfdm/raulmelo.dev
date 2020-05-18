@@ -2742,10 +2742,10 @@
   resolved "https://registry.yarnpkg.com/@types/configstore/-/configstore-2.1.1.tgz#cd1e8553633ad3185c3f2f239ecff5d2643e92b6"
   integrity sha1-zR6FU2M60xhcPy8jns/10mQ+krY=
 
-"@types/debounce-promise@3.1.1":
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/@types/debounce-promise/-/debounce-promise-3.1.1.tgz#38fcb523f7d11d521fca2e8ccb43f0982fbf5ce7"
-  integrity sha512-eOSiMKpPYI5Cx5tmx4xQ1e0bLz9n56NVv4ao0YQcYtIJYZjdoCDFvZwIQgXDiFHU5SFtKtN2vcqx5ZIXvj1Ccg==
+"@types/debounce-promise@3.1.2":
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/@types/debounce-promise/-/debounce-promise-3.1.2.tgz#e28b8578e859d1943fe1850ce300c6acda1f7af3"
+  integrity sha512-MRQEy2LooG621ln0JOQXjcVIZWWY2VkefIxeO1cpO57tCnYAQdmq+b7CMw7pQC6RCc1itfcdwJKdF9/y4cLoZA==
 
 "@types/debug@^0.0.30":
   version "0.0.30"
