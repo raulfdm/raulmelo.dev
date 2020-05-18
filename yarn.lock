@@ -15042,10 +15042,10 @@ react-universal-interface@^0.6.0:
   dependencies:
     tslib "^1.9.3"
 
-react-use@15.0.1:
-  version "15.0.1"
-  resolved "https://registry.yarnpkg.com/react-use/-/react-use-15.0.1.tgz#917506c4b01e463ff7aec892fcd16a9b96a98cb9"
-  integrity sha512-NQPn8lbdadyhwbQ3OLJEPPZ0Gi2WNlDI9Xpv6h6Z2JHHhYG9udRS0OBzqJxgdlVewDRMJ/5Fewhz0RDsFBQcTA==
+react-use@15.0.2:
+  version "15.0.2"
+  resolved "https://registry.yarnpkg.com/react-use/-/react-use-15.0.2.tgz#10e3dc9b0f740e867bd379829c53b31be6f1905b"
+  integrity sha512-SDlbuS14yYeAEUo84gIwNMFZi3zEMhlki7QPS2ObF8/RAjqFk2E//BkMb+VchK939ZvNeUey6L6bbwO6cRxkjA==
   dependencies:
     "@types/js-cookie" "2.2.6"
     "@xobotyi/scrollbar-width" "1.9.5"
