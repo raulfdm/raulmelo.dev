@@ -13,10 +13,11 @@ module.exports = {
         browser: true,
       },
       rules: {
-        'react/prop-types': 0,
-        '@typescript-eslint/ban-ts-ignore': 'warn',
+        'react/prop-types': 'off',
         camelcase: 'off',
-        '@typescript-eslint/camelcase': 0,
+        '@typescript-eslint/camelcase': 'off',
+        '@typescript-eslint/explicit-module-boundary-types': 'off',
+        '@typescript-eslint/no-non-null-asserted-optional-chain': 'warn',
         '@typescript-eslint/no-unused-vars': [
           'warn',
           {

@@ -35,7 +35,7 @@ export type PostTranslation = {
 export type PostTranslations = PostTranslation[];
 
 export type PostNode = {
-  htmlAst?: object;
+  htmlAst?: unknown;
   excerpt?: string;
   id?: string;
   timeToRead?: number;
