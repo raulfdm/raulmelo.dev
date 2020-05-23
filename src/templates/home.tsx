@@ -1,10 +1,10 @@
 import React from 'react';
 import { defineMessages } from 'react-intl';
 
+import { useHomeState } from 'components/Home/useHomeState';
 import SEO from '../components/SEO';
 import { useIntl } from '../context/react-intl';
 import { getAndSanitizePostsFromQueryResponse } from '../components/Home/helpers/posts';
-import { PostFilters } from '../components/Home/types';
 import AuthorPresentation from '../components/AuthorPresentation';
 import Layout from '../components/Layout';
 import { Filter } from '../components/Home/Filter';
@@ -29,11 +29,14 @@ type HomeTemplateType = {
 const HomeTemplate: React.FC<HomeTemplateType> = ({ pageContext }) => {
   const { postEdges } = pageContext;
 
-  const [filter, setFilter] = React.useState<PostFilters>('all');
+  const { hasMore, loadMore, postsToRender, filter, setFilter } = useHomeState(
+    postEdges,
+  );
+
   const { locale, formatMessage } = useIntl();
 
   const posts = getAndSanitizePostsFromQueryResponse({
-    postEdges,
+    postEdges: postsToRender,
     preferredLang: locale,
   });
 
@@ -50,7 +53,12 @@ const HomeTemplate: React.FC<HomeTemplateType> = ({ pageContext }) => {
         <main>
           <AuthorPresentation />
           <Filter setFilter={setFilter} currentFilter={filter} />
-          <Posts posts={posts} filter={filter} />
+          <Posts
+            posts={posts}
+            filter={filter}
+            loadMore={loadMore}
+            hasMore={hasMore}
+          />
         </main>
       </Layout>
     </>

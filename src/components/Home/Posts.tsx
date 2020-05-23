@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import * as R from 'ramda';
 import { FormattedMessage } from 'react-intl';
 import { motion, AnimatePresence } from 'framer-motion';
+import InfiniteScroll from 'react-infinite-scroll-component';
 
 import { PostEdge, PostEdges } from '../../types';
 import { PostCard } from '../PostCard';
@@ -21,10 +22,12 @@ const PostList = styled.ul`
   list-style: none;
 `;
 
-export const Posts: React.FC<{ filter: PostFilters; posts: PostEdges }> = ({
-  filter,
-  posts,
-}) => {
+export const Posts: React.FC<{
+  filter: PostFilters;
+  posts: PostEdges;
+  loadMore: () => void;
+  hasMore: boolean;
+}> = ({ filter, posts, loadMore, hasMore }) => {
   if (!posts) return null;
 
   const filters = {
@@ -65,26 +68,33 @@ export const Posts: React.FC<{ filter: PostFilters; posts: PostEdges }> = ({
       </LatestMessage>
 
       <PostList>
-        <AnimatePresence exitBeforeEnter>
-          {chosenSet.posts.map(({ node }: PostEdge, index) => (
-            <motion.li
-              key={node.id}
-              custom={index}
-              variants={itemsAnimationVariants}
-              initial="hidden"
-              animate="visible"
-              exit="hidden"
-              transition={{
-                opacity: {
-                  stiffness: 1000,
-                  velocity: -200,
-                },
-              }}
-            >
-              <PostCard postNode={node} />
-            </motion.li>
-          ))}
-        </AnimatePresence>
+        <InfiniteScroll
+          dataLength={chosenSet.posts.length}
+          next={loadMore}
+          hasMore={hasMore}
+          loader={<></>}
+        >
+          <AnimatePresence>
+            {chosenSet.posts.map(({ node }: PostEdge, index) => (
+              <motion.li
+                key={node.id}
+                custom={index}
+                variants={itemsAnimationVariants}
+                initial="hidden"
+                animate="visible"
+                exit="hidden"
+                transition={{
+                  opacity: {
+                    stiffness: 1000,
+                    velocity: -200,
+                  },
+                }}
+              >
+                <PostCard postNode={node} />
+              </motion.li>
+            ))}
+          </AnimatePresence>
+        </InfiniteScroll>
       </PostList>
     </>
   );
