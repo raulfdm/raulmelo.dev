@@ -8558,10 +8558,10 @@ gatsby-tinacms-json@0.8.23:
   dependencies:
     slash "^3.0.0"
 
-gatsby-tinacms-remark@0.7.19:
-  version "0.7.19"
-  resolved "https://registry.yarnpkg.com/gatsby-tinacms-remark/-/gatsby-tinacms-remark-0.7.19.tgz#8a6f98108d661ebc9a624dfb48da7c176802bbf6"
-  integrity sha512-2+qdggm/DGiMzu+LLv3iZLKVRJL8lt9Y5vCv85gezBAuW1WpUm4U+ZtQ0jntcsAohApgBQyjx0trCOlCnoMapQ==
+gatsby-tinacms-remark@0.7.20:
+  version "0.7.20"
+  resolved "https://registry.yarnpkg.com/gatsby-tinacms-remark/-/gatsby-tinacms-remark-0.7.20.tgz#b1092f87dc98f4e05e510bef22d50964d5e65ab5"
+  integrity sha512-eUjnRSd2n1G9P7x8G/FJoKNeJRQW/uJ67YxhAL706qF1iPfARVilVTQNT1/u78XE7wdURJ6NLOUAHc83epCriQ==
   dependencies:
     "@types/js-yaml" "^3.12.3"
     gray-matter "^4.0.2"
