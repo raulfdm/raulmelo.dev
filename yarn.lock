@@ -13565,10 +13565,10 @@ pify@^4.0.1:
   resolved "https://registry.yarnpkg.com/pify/-/pify-4.0.1.tgz#4b2cd25c50d598735c50292224fd8c6df41e3231"
   integrity sha512-uB80kBFb/tfd68bVleG9T5GGsGPjJrLAUpR5PZIrhBnIaRTQRjqdJSsIKkOP6OAIFbj7GOrcudc5pNjZ+geV2g==
 
-pin-dependencies-checker@1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/pin-dependencies-checker/-/pin-dependencies-checker-1.0.3.tgz#9675c0eb2d3e6fd67ae88eb6fcc3e412d1b22288"
-  integrity sha512-pet9kSgphEZpXk13Xxaf7bnto6mJdjgEHvfrQw7Haglux2DYYOqBpH2SvkU1fkkDCyXb5w21bsu+cGgBJKp0Lw==
+pin-dependencies-checker@1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/pin-dependencies-checker/-/pin-dependencies-checker-1.0.4.tgz#a83cfd28c40d10156d5cf01e81b8a87917a61298"
+  integrity sha512-2eLPAFx01QRa2E4pM5H2DanuCp9TN/r2ECjHAya4vK9Q0ltY8YQj0U9qN8ntTGKo1kI8EpKLH70X6b9g3iub4Q==
   dependencies:
     node-args "~2.1.8"
 
