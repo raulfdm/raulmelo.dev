@@ -1,7 +1,7 @@
 const singlePost = {
   api: {
     data: {
-      allMarkdownRemark: {
+      allMdx: {
         edges: [
           {
             node: {
@@ -23,7 +23,7 @@ const singlePost = {
                 description: '',
               },
               fileAbsolutePath:
-                '/home/raulfdm/development/medium-blog/blog/2020/03/dev-js-9/index.md',
+                '/home/raulfdm/development/medium-blog/blog/2020/03/dev-js-9/index..mdx',
               fields: {
                 slug: '/2020/03/dev-js-9',
                 lang: 'pt',
@@ -52,7 +52,7 @@ const singlePost = {
             description: '',
           },
           fileAbsolutePath:
-            '/home/raulfdm/development/medium-blog/blog/2020/03/dev-js-9/index.md',
+            '/home/raulfdm/development/medium-blog/blog/2020/03/dev-js-9/index..mdx',
           fields: {
             slug: '/2020/03/dev-js-9',
             lang: 'pt',
@@ -69,7 +69,7 @@ const singlePost = {
 const twoPosts = {
   api: {
     data: {
-      allMarkdownRemark: {
+      allMdx: {
         edges: [
           {
             node: {

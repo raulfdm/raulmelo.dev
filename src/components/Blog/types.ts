@@ -1,10 +1,4 @@
-import {
-  SeriesType,
-  PostSeries,
-  PostEdge,
-  FrontmatterSeries,
-  Frontmatter,
-} from '../../types';
+import { SeriesType, PostSeries, PostEdge, Frontmatter } from '../../types';
 
 export type BlogPostProps = {
   pageContext: {

@@ -29,6 +29,13 @@ module.exports = {
         name: `blog`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/data/uses`,
+        name: `uses`,
+      },
+    },
     `gatsby-alias-imports`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-typescript`,
@@ -84,9 +91,10 @@ module.exports = {
     },
     {
       /* Resolve markdown -> html */
-      resolve: `gatsby-transformer-remark`,
+      resolve: `gatsby-plugin-mdx`,
       options: {
-        plugins: [
+        extensions: [`.mdx`, `.md`],
+        gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
             options: {

@@ -8,16 +8,17 @@ async function createBlogPost({ graphql, createPage }) {
 
   const result = await graphql(`
     {
-      allMarkdownRemark(
+      allMdx(
         sort: { fields: [frontmatter___date], order: DESC }
         limit: 1000
+        filter: { fileAbsolutePath: { regex: "//blog//" } }
       ) {
         edges {
           node {
             id
+            body
             excerpt
             timeToRead
-            htmlAst
             frontmatter {
               title
               subtitle
@@ -67,7 +68,7 @@ async function createBlogPost({ graphql, createPage }) {
   }
 
   // Create blog posts pages.
-  const posts = result.data.allMarkdownRemark.edges;
+  const posts = result.data.allMdx.edges;
 
   const postSeriesAvailable = getSeriesPost(posts);
 
@@ -106,9 +107,10 @@ async function createYearPage({ graphql, createPage }) {
 
   const data = await graphql(`
     {
-      allMarkdownRemark(
+      allMdx(
         sort: { fields: [frontmatter___date], order: DESC }
         limit: 1000
+        filter: { fileAbsolutePath: { regex: "//blog//" } }
       ) {
         edges {
           node {
@@ -156,7 +158,7 @@ async function createYearPage({ graphql, createPage }) {
 
   function groupAndCreate(dateGroupPattern) {
     const postsByYear = R.pipe(
-      R.path(['data', 'allMarkdownRemark', 'edges']),
+      R.path(['data', 'allMdx', 'edges']),
       R.groupBy((edge) => dateGroupPattern(edge.node.frontmatter.date)),
     )(data);
 

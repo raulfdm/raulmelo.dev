@@ -1,5 +1,4 @@
 import { css, createGlobalStyle } from 'styled-components';
-import media from 'styled-media-query';
 import { pandaPrismStyles } from './prims-panda-theme';
 
 import Typography from 'typography';
@@ -44,26 +43,6 @@ export const typography = new Typography({
     p: {
       lineHeight: rhythm(1),
     },
-    blockquote: {
-      fontWeight: 300,
-      marginLeft: '-12px',
-      paddingLeft: '23px',
-      boxShadow: `inset 3px 0 0 -1px var(--font)`,
-    },
-    'blockquote > p': {
-      fontStyle: 'italic',
-    },
-    'hr, .post-divider': {
-      position: 'relative',
-      fontStyle: 'italic',
-      fontSize: '28px',
-      fontWeight: '300',
-      marginTop: '0',
-      height: '39px',
-      backgroundColor: 'transparent',
-      textAlign: 'center',
-      transform: 'translateX(-71px)',
-    },
     '.gatsby-resp-image-figcaption,.gif-caption,.img-caption': {
       ...adjustFontSizeTo('16px'),
       fontFamily: FONTS.contentSans,
@@ -75,31 +54,11 @@ export const typography = new Typography({
   }),
 });
 
-const fontSizeInPercenetage = (desiredPx: string): string => {
-  const defaultBrowserFontSize = 16;
-  const desiredNumber = parseInt(desiredPx.replace('px', ''));
-
-  const result = (desiredNumber * 100) / defaultBrowserFontSize;
-
-  return `${result}%`;
-};
 const blogGlobal = css`
   ${typography.toString()};
 
   body {
     font: unset;
-  }
-
-  hr,
-  .post-divider {
-    &::before {
-      content: '...';
-      letter-spacing: 0.6em;
-      text-indent: 0.6em;
-      line-height: 1.4;
-      position: absolute;
-      top: -13%;
-    }
   }
 
   /* Set back  */
@@ -110,16 +69,6 @@ const blogGlobal = css`
   .twitter-tweet {
     margin: ${typography.adjustFontSizeTo('40px').fontSize} auto !important;
   }
-
-  ${media.greaterThan('medium')`
-    html {
-      /* font-size: ${fontSizeInPercenetage(baseFontSizeHigherThanMobile)} */
-    }
-
-    blockquote{
-      margin-left: -20px;
-    }
-  `}
 
   ${pandaPrismStyles};
 `;

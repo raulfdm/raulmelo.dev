@@ -35,7 +35,7 @@ export type PostTranslation = {
 export type PostTranslations = PostTranslation[];
 
 export type PostNode = {
-  htmlAst?: unknown;
+  body?: string;
   excerpt?: string;
   id?: string;
   timeToRead?: number;
@@ -69,7 +69,7 @@ export type SiteMetadata = {
 
 export type GraphQLResponse = {
   data: {
-    allMarkdownRemark: AllMarkdownRemark;
+    allMdx: AllMarkdownRemark;
     site?: {
       siteMetadata: SiteMetadata;
     };

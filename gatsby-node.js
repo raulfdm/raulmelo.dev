@@ -27,7 +27,7 @@ exports.onCreateWebpackConfig = ({ actions }) => {
     module: {
       rules: [
         {
-          test: /\.md$/,
+          test: /\.mdx?$/,
           use: [
             {
               loader: 'html-loader',

@@ -6,7 +6,7 @@ import HomeTemplate from '../templates/home';
 import { GraphQLResponse, PostEdges } from '../types';
 
 const Home: React.FC<GraphQLResponse> = ({ data }) => {
-  const postEdges = R.path(['allMarkdownRemark', 'edges'], data) as PostEdges;
+  const postEdges = R.path(['allMdx', 'edges'], data) as PostEdges;
 
   return (
     <HomeTemplate
@@ -19,9 +19,10 @@ const Home: React.FC<GraphQLResponse> = ({ data }) => {
 
 export const query = graphql`
   {
-    allMarkdownRemark(
+    allMdx(
       sort: { fields: [frontmatter___date], order: DESC }
       limit: 1000
+      filter: { fileAbsolutePath: { regex: "//blog//" } }
     ) {
       edges {
         node {
