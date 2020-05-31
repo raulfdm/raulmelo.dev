@@ -45,19 +45,19 @@ jobs:
           restore-keys: |
             ${{ runner.OS }}-public-gatsby
 
-      - run: yarn install --pure-lockfile
-        name: Install dependencies
+      - name: Install dependencies
+        run: yarn install --pure-lockfile
 
-      - run: yarn lint
-        name: Run ESLint
+      - name: Run ESLint
+        run: yarn lint
 
-      - run: yarn jest --color
-        name: Run Test
+      - name: Run Test
+        run: yarn jest --color
         env:
           CI: true
 
-      - run: yarn build --log-pages
-        name: Build
+      - name: Build
+        run: yarn build --log-pages
         env:
           # incremental builds
           # https://www.gatsbyjs.org/docs/page-build-optimizations-for-incremental-data-changes/
@@ -68,6 +68,9 @@ jobs:
           GATSBY_ALGOLIA_SEARCH_KEY: ${{ secrets.GATSBY_ALGOLIA_SEARCH_KEY }}
           ALGOLIA_ADMIN_KEY: ${{ secrets.ALGOLIA_ADMIN_KEY }}
           GATSBY_ALGOLIA_INDEX_NAME: ${{ secrets.GATSBY_ALGOLIA_INDEX_NAME }}
+
+      - name: Lighthouse CI
+        run: npx @lhci/cli@0.4.x autorun --upload.target=temporary-public-storage
 
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v1.0
