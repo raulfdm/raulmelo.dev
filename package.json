@@ -19,7 +19,8 @@
     "ts": "tsc --noEmit",
     "eslint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint": "npm-run-all eslint ts",
-    "test": "jest"
+    "test": "jest",
+    "test:e2e": "cypress open"
   },
   "dependencies": {
     "@emotion/core": "10.0.28",
@@ -53,6 +54,7 @@
     "@mdx-js/react": "1.6.5",
     "@sub-tv/eslint-config": "1.1.0",
     "@sub-tv/prettier-config": "1.1.0",
+    "@testing-library/cypress": "6.0.0",
     "@testing-library/jest-dom": "5.9.0",
     "@testing-library/react": "10.2.0",
     "@testing-library/react-hooks": "3.2.1",
@@ -64,6 +66,7 @@
     "@types/react-instantsearch-dom": "6.3.0",
     "@types/react-intl": "3.0.0",
     "@types/styled-components": "5.1.0",
+    "@types/testing-library__cypress": "5.0.5",
     "@types/typography": "0.16.3",
     "@typescript-eslint/eslint-plugin": "3.1.0",
     "@typescript-eslint/parser": "3.1.0",
@@ -72,9 +75,11 @@
     "babel-plugin-remove-graphql-queries": "2.9.2",
     "babel-plugin-styled-components": "1.10.7",
     "babel-preset-gatsby": "0.4.7",
+    "cypress": "4.7.0",
     "dotenv": "8.2.0",
     "eslint": "7.1.0",
     "eslint-config-prettier": "6.11.0",
+    "eslint-plugin-cypress": "2.11.1",
     "eslint-plugin-jest": "23.13.2",
     "eslint-plugin-react": "7.20.0",
     "eslint-plugin-react-hooks": "4.0.4",

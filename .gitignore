@@ -73,3 +73,4 @@ public/
 
 # Miscellaneous
 .history
+cypress/videos/

@@ -1,6 +1,13 @@
 module.exports = {
   overrides: [
     {
+      files: ['*.js'],
+      plugins: ['cypress'],
+      env: {
+        'cypress/globals': true,
+      },
+    },
+    {
       files: ['*.ts', '*.tsx'],
       extends: ['plugin:react/recommended', '@sub-tv/eslint-config'],
       plugins: ['react-hooks'],
