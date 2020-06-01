@@ -47,7 +47,7 @@
     "typography": "0.16.19"
   },
   "devDependencies": {
-    "@babel/core": "7.10.1",
+    "@babel/core": "7.10.2",
     "@babel/plugin-proposal-class-properties": "7.10.1",
     "@babel/preset-typescript": "7.10.1",
     "@mdx-js/react": "1.6.5",
