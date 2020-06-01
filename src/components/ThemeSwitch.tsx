@@ -11,7 +11,7 @@ export const ThemeSwitch: React.FC = () => {
   const Icon = isDarkTheme ? Moon : Sun;
 
   return (
-    <MenuButton onClick={toggleTheme}>
+    <MenuButton onClick={toggleTheme} data-testid="theme-switch">
       <Icon size={21} />
     </MenuButton>
   );

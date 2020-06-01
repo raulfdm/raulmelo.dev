@@ -50,15 +50,18 @@ export const MenuBar: React.FC = () => {
         animate={showMenu ? 'open' : 'closed'}
         variants={variants}
         transition={{ duration: 0.3, type: 'tween' }}
+        data-testid="menu-bar"
       >
         <S.CustomContainer>
-          <S.LogoWrapper>
+          <S.LogoWrapper data-testid="menu-bar__logo">
             <Link to="/">
               <LogoSvg />
             </Link>
           </S.LogoWrapper>
-          <S.TextLink to="/cv">/CV</S.TextLink>
-          <Link to="/search">
+          <S.TextLink to="/cv" data-testid="menu-bar__cv">
+            /CV
+          </S.TextLink>
+          <Link to="/search" data-testid="menu-bar__search">
             <SearchIcon size={24} />
           </Link>
           <ThemeSwitch />

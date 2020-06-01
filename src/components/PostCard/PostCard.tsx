@@ -28,7 +28,7 @@ export const PostCard: React.FC<PostCardProps> = ({ postNode }) => {
     : null;
 
   return (
-    <Link to={fields!.slug}>
+    <Link to={fields!.slug} data-testid="post-card">
       <Card>
         {image && (
           <S.ImageContainer>
