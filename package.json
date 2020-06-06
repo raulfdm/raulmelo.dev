@@ -105,7 +105,7 @@
     "gatsby-remark-smartypants": "2.3.2",
     "gatsby-source-filesystem": "2.3.8",
     "gatsby-tinacms-git": "0.5.1",
-    "gatsby-tinacms-json": "0.8.24",
+    "gatsby-tinacms-json": "0.8.25",
     "gatsby-tinacms-remark": "0.8.0",
     "gatsby-transformer-json": "2.4.3",
     "gatsby-transformer-sharp": "2.5.3",
