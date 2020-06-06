@@ -20,7 +20,7 @@ const Layout: React.FC<Props> = ({
   className,
 }) => {
   return (
-    <AnimatePresence exitBeforeEnter>
+    <AnimatePresence exitBeforeEnter initial={false}>
       <ThemeProvider>
         <Container
           initial="exit"

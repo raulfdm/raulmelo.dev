@@ -74,7 +74,7 @@ export const Posts: React.FC<{
           hasMore={hasMore}
           loader={<></>}
         >
-          <AnimatePresence>
+          <AnimatePresence initial={false}>
             {chosenSet.posts.map(({ node }: PostEdge, index) => (
               <motion.li
                 key={node.id}
