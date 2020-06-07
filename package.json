@@ -134,8 +134,7 @@
   },
   "resolutions": {
     "acorn": "^6.4.1",
-    "minimist": "^1.2.3",
-    "moment": "2.24.0"
+    "minimist": "^1.2.3"
   },
   "husky": {
     "hooks": {
