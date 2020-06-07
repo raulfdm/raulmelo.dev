@@ -1,11 +1,40 @@
-name: Node.js CI
+name: Platform
 
 on: [push]
 
 jobs:
-  build:
+  install-dependencies:
     runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
 
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - name: Yarn cache directory
+        id: yarn-cache-dir
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - name: Yarn cache
+        uses: actions/cache@v2
+        id: yarn-cache
+        with:
+          path: |
+            ${{ steps.yarn-cache-dir.outputs.dir }}
+            **/node_modules
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Install dependencies
+        run: yarn install --pure-lockfile
+        env:
+          CYPRESS_INSTALL_BINARY: 0
+
+  build:
+    needs: install-dependencies
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
@@ -17,44 +46,26 @@ jobs:
         run: echo "::set-output name=dir::$(yarn cache dir)"
 
       - name: Yarn cache
-        uses: actions/cache@v1
+        uses: actions/cache@v2
         id: yarn-cache
         with:
-          path: ${{ steps.yarn-cache-dir.outputs.dir }}
+          path: |
+            ${{ steps.yarn-cache-dir.outputs.dir }}
+            **/node_modules
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
 
-      # In order to make gatsby incremental build works, it's necessary .cache
-      # and public folder.
       - name: Gatsby Cache Folder
-        uses: actions/cache@v1
+        uses: actions/cache@v2
         id: gatsby-cache-folder
         with:
-          path: .cache
+          path: |
+            .cache
+            public/
           key: ${{ runner.os }}-cache-gatsby
           restore-keys: |
             ${{ runner.os }}-cache-gatsby
-
-      - name: Gatsby Public Folder
-        uses: actions/cache@v1
-        id: gatsby-public-folder
-        with:
-          path: public/
-          key: ${{ runner.os }}-public-gatsby
-          restore-keys: |
-            ${{ runner.OS }}-public-gatsby
-
-      - name: Install dependencies
-        run: yarn install --pure-lockfile
-
-      - name: Run ESLint
-        run: yarn lint
-
-      - name: Run Test
-        run: yarn jest --color
-        env:
-          CI: true
 
       - name: Build
         run: yarn build --log-pages
@@ -69,11 +80,76 @@ jobs:
           ALGOLIA_ADMIN_KEY: ${{ secrets.ALGOLIA_ADMIN_KEY }}
           GATSBY_ALGOLIA_INDEX_NAME: ${{ secrets.GATSBY_ALGOLIA_INDEX_NAME }}
 
-      - name: Lighthouse CI
-        run: npx @lhci/cli@0.4.x autorun --upload.target=temporary-public-storage
+  lint-and-unit:
+    needs: install-dependencies
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - name: Yarn cache directory
+        id: yarn-cache-dir
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - name: Yarn cache
+        uses: actions/cache@v2
+        id: yarn-cache
+        with:
+          path: |
+            ${{ steps.yarn-cache-dir.outputs.dir }}
+            **/node_modules
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Run ESLint
+        run: yarn lint
+
+      - name: Run Test
+        run: yarn jest --color
+        env:
+          CI: true
+
+  deploy-and-e2e:
+    runs-on: ubuntu-latest
+    needs: [lint-and-unit, build]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - name: Yarn cache directory
+        id: yarn-cache-dir
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - name: Yarn cache
+        uses: actions/cache@v2
+        id: yarn-cache
+        with:
+          path: |
+            ${{ steps.yarn-cache-dir.outputs.dir }}
+            **/node_modules
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Gatsby Cache Folder
+        uses: actions/cache@v2
+        id: gatsby-cache-folder
+        with:
+          path: |
+            .cache
+            public/
+          key: ${{ runner.os }}-cache-gatsby
+          restore-keys: |
+            ${{ runner.os }}-cache-gatsby
 
       - name: Deploy to Netlify
-        uses: nwtgck/actions-netlify@v1.0
+        uses: nwtgck/actions-netlify@v1.1
+        id: deploy
         with:
           publish-dir: './public'
           production-branch: master
@@ -81,3 +157,11 @@ jobs:
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v1
+        with:
+          browser: chrome
+          headless: true
+        env:
+          CYPRESS_BASE_URL: ${{ steps.deploy.outputs.deploy-url }}

@@ -20,13 +20,12 @@
     "baseUrl": ".",
     "paths": {
       "test-utils": ["src/utils/test-utils"],
-      "types": ["src/types"],
+      "types": ["src/types", "cypress", "@types/testing-library__cypress"],
       "graphql-types": ["./types/graphql-types.ts"],
       "components/*": ["src/components/*"],
       "utils/*": ["src/utils/*"],
       "context/*": ["src/context/*"],
-      "layouts/*": ["src/layouts/*"],
-      "types": ["cypress", "@types/testing-library__cypress"]
+      "layouts/*": ["src/layouts/*"]
     }
   },
   "typeRoots": ["node_modules/@types", "types", "cypress"]

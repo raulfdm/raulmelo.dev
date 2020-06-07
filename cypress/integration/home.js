@@ -1,8 +1,10 @@
 /// <reference types="cypress" />
 
+import { getFullUrl } from '../support/helpers';
+
 describe('Home', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:8000/');
+    cy.visit(getFullUrl());
   });
 
   describe('Menu Bar', () => {
@@ -17,7 +19,7 @@ describe('Home', () => {
       logoEl.find('svg').should('exist');
       logoEl.click();
 
-      cy.url().should('eq', 'http://localhost:8000/');
+      cy.url().should('eq', getFullUrl());
     });
 
     it('Includes CV page link which redirects to "/cv"', () => {
