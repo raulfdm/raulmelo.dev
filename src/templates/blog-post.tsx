@@ -18,6 +18,8 @@ import SEO from '../components/SEO';
 import { ThemeProvider } from '../context/theme';
 import LayoutBlog from 'layouts/blog';
 
+const Main = Container.withComponent('main');
+
 const BlogPost: React.FC<BlogPostProps> = ({ pageContext }) => {
   useTwitterScript();
 
@@ -57,10 +59,10 @@ const BlogPost: React.FC<BlogPostProps> = ({ pageContext }) => {
             <Header />
             <SeriesSection noDivider />
             <FeaturedImage />
-            <Container className="post" as="main">
+            <Main className="post">
               <MDXRenderer>{body!}</MDXRenderer>
               <SeriesSection />
-            </Container>
+            </Main>
           </BlogContextProvider>
         </motion.div>
       </ThemeProvider>

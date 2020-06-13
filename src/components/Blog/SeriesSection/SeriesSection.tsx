@@ -9,19 +9,21 @@ interface SeriesSection {
   noDivider?: boolean;
 }
 
+const Section = Container.withComponent('section');
+
 export const SeriesSection = ({ noDivider = false }: SeriesSection) => {
   const { series, seriesInfo, title } = useBlogContext();
 
   return series ? (
     <>
       {!noDivider && <Divider data-testid="series-section-divider" />}
-      <Container as="section" data-testid="series-section">
+      <Section data-testid="series-section">
         <SeriesMenu
           series={series}
           postIndex={seriesInfo!.index}
           title={title}
         />
-      </Container>
+      </Section>
     </>
   ) : null;
 };

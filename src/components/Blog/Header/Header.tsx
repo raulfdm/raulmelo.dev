@@ -26,14 +26,17 @@ const Subtitle = styled.p`
   `}
 `;
 
+const HeaderComponent = Container.withComponent('header');
+
 export const Header = () => {
   const { title, subtitle } = useBlogContext();
+
   return (
-    <Container as="header" data-testid="header">
+    <HeaderComponent data-testid="header">
       <Title data-testid="header-title">{title}</Title>
       {subtitle && (
         <Subtitle data-testid="header-subtitle">{subtitle}</Subtitle>
       )}
-    </Container>
+    </HeaderComponent>
   );
 };
