@@ -3,7 +3,7 @@ import { PreRenderHTMLArgs } from 'gatsby';
 
 const GatsbyHTML: React.FC<PreRenderHTMLArgs & { body: string }> = (props) => {
   return (
-    <html {...props.htmlAttributes} data-theme="dark">
+    <html {...props.htmlAttributes}>
       <head>
         <meta charSet="utf-8" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
