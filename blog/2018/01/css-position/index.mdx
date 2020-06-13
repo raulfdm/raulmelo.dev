@@ -41,23 +41,14 @@ Mas, dado a estrutura e estilos dos elementos já de cada componente, meu result
 
 Para ilustrar melhor, vou simular o ambiente de forma bem simples e usar exemplos direto com Codepen:
 
-<iframe
-  height="400"
-  style="width: 100%;"
-  scrolling="no"
-  title="raulfdm-position-absolute-1"
-  src="https://codepen.io/yc_raulfdm/embed/MrRdXe?height=265&theme-id=dark&default-tab=result"
-  frameborder="no"
-  allowtransparency="true"
-  allowfullscreen="true"
->
+<CodePen src="https://codepen.io/yc_raulfdm/embed/MrRdXe?height=265&theme-id=dark&default-tab=result">
   See the Pen{' '}
   <a href="https://codepen.io/yc_raulfdm/pen/MrRdXe">
     raulfdm-position-absolute-1
   </a>{' '}
   by Raul de Melo (<a href="https://codepen.io/yc_raulfdm">@yc_raulfdm</a>) on{' '}
   <a href="https://codepen.io">CodePen</a>.
-</iframe>
+</CodePen>
 
 ---
 
@@ -67,23 +58,14 @@ Bom, assim como vários outros temas, eu tinha um conhecimento superficial de co
 
 Então arrisquei um um `relative`, afinal sabia que, após definido as coordenadas (top, bottom, left, right), ele se alinharia relativamente à sua posição:
 
-<iframe
-  height="400"
-  style="width: 100%;"
-  scrolling="no"
-  title="raulfdm-position-absolute-2"
-  src="https://codepen.io/yc_raulfdm/embed/aExrPL?height=380&theme-id=dark&default-tab=result"
-  frameborder="no"
-  allowtransparency="true"
-  allowfullscreen="true"
->
+<CodePen src="https://codepen.io/yc_raulfdm/embed/aExrPL?height=380&theme-id=dark&default-tab=result">
   See the Pen{' '}
   <a href="https://codepen.io/yc_raulfdm/pen/aExrPL">
     raulfdm-position-absolute-2
   </a>{' '}
   by Raul de Melo (<a href="https://codepen.io/yc_raulfdm">@yc_raulfdm</a>) on{' '}
   <a href="https://codepen.io">CodePen</a>.
-</iframe>
+</CodePen>
 
 Tinha dado certo parcialmente, era só fazer uns ajustes no `width`, mas… parecia meio estranho. Era como se o elemento estivesse ali, na mesma posição anterior, mas sua exibição fosse descolada.
 
@@ -101,23 +83,14 @@ Minha suspeita estava certa, `relative` não me serviria.
 
 Bom, o fixed eu já sabia que não era, me sobrava o absolute. Tinha que ser ele. Corri no código e fiz a alteração:
 
-<iframe
-  height="400"
-  style="width: 100%;magin-top:"
-  scrolling="no"
-  title="raulfdm-position-absolute-3"
-  src="https://codepen.io/yc_raulfdm/embed/eyoaqW?height=265&theme-id=dark&default-tab=result"
-  frameborder="no"
-  allowtransparency="true"
-  allowfullscreen="true"
->
+<CodePen src="https://codepen.io/yc_raulfdm/embed/eyoaqW?height=265&theme-id=dark&default-tab=result">
   See the Pen{' '}
   <a href="https://codepen.io/yc_raulfdm/pen/eyoaqW">
     raulfdm-position-absolute-3
   </a>{' '}
   by Raul de Melo (<a href="https://codepen.io/yc_raulfdm">@yc_raulfdm</a>) on{' '}
   <a href="https://codepen.io">CodePen</a>.
-</iframe>
+</CodePen>
 
 <BigQuote>
   Que? Meu ícone foi parar lá na pqp… O que diabos estou fazendo de errado?
@@ -136,7 +109,7 @@ E aí eu fiquei tipo:
 <Gif
   src="https://media.giphy.com/media/tu54GM19sqJOw/giphy.gif"
   caption="whaaat"
-></Gif>
+/>
 
 > Mas que merda é um elemento ancestral e pior, o que é um elemento ancestral posicionado?
 
@@ -159,7 +132,7 @@ O elemento com `position: absolute` vai ser relativo ao elemento ancestral (qual
 <Gif
   src="https://media.giphy.com/media/xT0xeJpnrWC4XWblEk/giphy.gif"
   caption="wooooaaahhh"
-></Gif>
+/>
 
 ---
 
@@ -175,23 +148,14 @@ Assim, podemos aproveitar esse comportamento e definir para a nossa div `.input-
 
 Ao fazer isso, o ~elemento ancestral posicionado~ mais próximo do nosso `.icon` será o `.input-icon`, consequentemente, o ponto que será usado para posicionar relativamente o ícone:
 
-<iframe
-  height="265"
-  style="width: 100%;"
-  scrolling="no"
-  title="raulfdm-position-absolute-4"
-  src="https://codepen.io/yc_raulfdm/embed/eyoweV?height=265&theme-id=dark&default-tab=result"
-  frameborder="no"
-  allowtransparency="true"
-  allowfullscreen="true"
->
+<CodePen src="https://codepen.io/yc_raulfdm/embed/eyoweV?height=265&theme-id=dark&default-tab=result">
   See the Pen{' '}
   <a href="https://codepen.io/yc_raulfdm/pen/eyoweV">
     raulfdm-position-absolute-4
   </a>{' '}
   by Raul de Melo (<a href="https://codepen.io/yc_raulfdm">@yc_raulfdm</a>) on{' '}
   <a href="https://codepen.io">CodePen</a>.
-</iframe>
+</CodePen>
 
 ---
 
@@ -199,23 +163,14 @@ Ao fazer isso, o ~elemento ancestral posicionado~ mais próximo do nosso `.icon`
 
 Agora, só resta alinhar o posicionamento do `.icon` para encaixar dentro do nosso input e definir um `padding-right` maior no `input`, para que o texto respeite o espaço do ícone:
 
-<iframe
-  height="265"
-  style="width: 100%;"
-  scrolling="no"
-  title="raulfdm-position-absolute-5"
-  src="https://codepen.io/yc_raulfdm/embed/opOrEO?height=265&theme-id=dark&default-tab=result"
-  frameborder="no"
-  allowtransparency="true"
-  allowfullscreen="true"
->
+<CodePen src="https://codepen.io/yc_raulfdm/embed/opOrEO?height=265&theme-id=dark&default-tab=result">
   See the Pen{' '}
   <a href="https://codepen.io/yc_raulfdm/pen/opOrEO">
     raulfdm-position-absolute-5
   </a>{' '}
   by Raul de Melo (<a href="https://codepen.io/yc_raulfdm">@yc_raulfdm</a>) on{' '}
   <a href="https://codepen.io">CodePen</a>.
-</iframe>
+</CodePen>
 
 ---
 
@@ -229,23 +184,14 @@ E foi interessante porque eu já tinha usado o `translate` algumas vezes, mas ne
 
 Fazendo uma leve alteração no código, temos o mesmo resultado, mas agora, independente do tamanho, ele sempre será alinhado no meio:
 
-<iframe
-  height="265"
-  style="width: 100%;"
-  scrolling="no"
-  title="raulfdm-position-absolute-6"
-  src="https://codepen.io/yc_raulfdm/embed/QQbbJg?height=265&theme-id=dark&default-tab=result"
-  frameborder="no"
-  allowtransparency="true"
-  allowfullscreen="true"
->
+<CodePen src="https://codepen.io/yc_raulfdm/embed/QQbbJg?height=265&theme-id=dark&default-tab=result">
   See the Pen{' '}
   <a href="https://codepen.io/yc_raulfdm/pen/QQbbJg">
     raulfdm-position-absolute-6
   </a>{' '}
   by Raul de Melo (<a href="https://codepen.io/yc_raulfdm">@yc_raulfdm</a>) on{' '}
   <a href="https://codepen.io">CodePen</a>.
-</iframe>
+</CodePen>
 
 Achei deverás interessante e importante, muito obrigado pela colaboração! =D
 
