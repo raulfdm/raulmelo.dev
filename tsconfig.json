@@ -28,5 +28,6 @@
       "layouts/*": ["src/layouts/*"]
     }
   },
-  "typeRoots": ["node_modules/@types", "types", "cypress"]
+  "typeRoots": ["node_modules/@types", "types", "cypress"],
+  "exclude": [".cache", "public", "node_modules"]
 }
