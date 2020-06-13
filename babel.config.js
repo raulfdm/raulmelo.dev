@@ -1,7 +1,6 @@
 module.exports = {
-  presets: ['babel-preset-gatsby'],
+  presets: ['babel-preset-gatsby', '@emotion/babel-preset-css-prop'],
   plugins: [
-    'babel-plugin-styled-components',
     [
       'emotion',
       {
