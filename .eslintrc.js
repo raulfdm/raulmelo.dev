@@ -10,7 +10,7 @@ module.exports = {
     {
       files: ['*.ts', '*.tsx'],
       extends: ['plugin:react/recommended', '@sub-tv/eslint-config'],
-      plugins: ['react-hooks'],
+      plugins: ['react-hooks', 'emotion'],
       settings: {
         react: {
           version: 'detect',
