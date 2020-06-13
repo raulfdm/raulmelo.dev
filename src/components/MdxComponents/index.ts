@@ -5,10 +5,12 @@ import { Divider } from './Divider';
 import { Blockquote } from './Blockquote';
 import * as Headings from './Headings';
 import { Paragraph } from './Paragraph';
+import { CodePen } from './CodePen';
 
 export const blogComponents = {
   BigQuote,
   Gif,
+  CodePen,
   YouTubeVideo,
   hr: Divider,
   blockquote: Blockquote,
