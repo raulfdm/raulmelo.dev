@@ -28,23 +28,19 @@ describe('<Header />', () => {
     const titleEl = getByText(title);
     expect(titleEl).toBeInTheDocument();
     expect(titleEl).toMatchInlineSnapshot(`
-      .c0 {
+      .emotion-0 {
         font-size: 34px;
         line-height: 40px;
       }
 
       @media (min-width:768px) {
-
-      }
-
-      @media (min-width:768px) {
-        .c0 {
+        .emotion-0 {
           font-size: 42px;
         }
       }
 
       <h1
-        class="c0"
+        class="emotion-0"
         data-testid="header-title"
       >
         some title
@@ -66,7 +62,7 @@ describe('<Header />', () => {
 
     expect(subtitleEl).toBeInTheDocument();
     expect(subtitleEl).toMatchInlineSnapshot(`
-      .c0 {
+      .emotion-0 {
         font-size: 24px;
         line-height: 1.22;
         -webkit-letter-spacing: -0.012em;
@@ -78,21 +74,13 @@ describe('<Header />', () => {
       }
 
       @media (min-width:768px) {
-
-      }
-
-      @media (min-width:768px) {
-
-      }
-
-      @media (min-width:768px) {
-        .c0 {
+        .emotion-0 {
           font-size: 28px;
         }
       }
 
       <p
-        class="c0"
+        class="emotion-0"
         data-testid="header-subtitle"
       >
         some subtitle

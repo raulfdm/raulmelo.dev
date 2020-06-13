@@ -1,12 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<FeaturedImage /> renders gatsby image with default alt 1`] = `
-.c1 {
-  max-height: 600px;
-  margin-top: 42px;
-}
-
-.c0 {
+.emotion-1 {
   --padding: 16px;
   max-width: calc(768px - var(--padding));
   width: 100%;
@@ -18,20 +13,25 @@ exports[`<FeaturedImage /> renders gatsby image with default alt 1`] = `
 }
 
 @media (min-width:768px) {
-  .c0 {
+  .emotion-1 {
     --padding: 24px;
   }
+}
+
+.emotion-0 {
+  max-height: 600px;
+  margin-top: 42px;
 }
 
 <div>
   <div
     aria-label="Featured image"
-    class="Ui__Container-ea7492-1 c0"
+    class="emotion-1"
     data-testid="featured-image-wrapper"
     role="img"
   >
     <div
-      class="c1 gatsby-image-wrapper"
+      class="emotion-0 gatsby-image-wrapper"
       style="position: relative; overflow: hidden;"
     >
       <div

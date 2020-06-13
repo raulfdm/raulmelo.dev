@@ -19,14 +19,14 @@ describe('<Gif />', () => {
     const el = getByTestId('gif-figure');
 
     expect(el).toMatchInlineSnapshot(`
-      .c0 {
-        background-color: blue;
+      .emotion-0 {
         margin: 0 auto;
         margin-bottom: 20px;
+        background-color: blue;
       }
 
       <figure
-        class="c0 gif-wrapper"
+        class="gif-wrapper emotion-0"
         data-testid="gif-figure"
       >
         <img
