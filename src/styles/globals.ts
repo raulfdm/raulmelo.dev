@@ -44,8 +44,8 @@ export const customGlobals = css`
   body,
   #___gatsby,
   #gatsby-focus-wrapper {
-    background-color: ${({ theme }) => theme.color.background};
-    color: ${({ theme }) => theme.color.font};
+    background-color: var(--background);
+    color: var(--font);
 
     transition: background-color 0.2s ease, color 0.2s ease, fill 0.2s ease,
       opacity 0.2s ease;

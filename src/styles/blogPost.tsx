@@ -3,7 +3,7 @@ import Typography from 'typography';
 
 import { css, Global } from 'styles/emotion';
 import { pandaPrismStyles } from './prims-panda-theme';
-import { FONTS } from 'context/theme';
+import { FONTS } from 'styles/theme';
 
 const baseFontSize = '18px';
 const baseFontSizeHigherThanMobile = '18px';

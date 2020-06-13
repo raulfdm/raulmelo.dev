@@ -1,6 +1,7 @@
 import React from 'react';
 import { createContext, useState } from 'react';
 import { EmotionThemeProvider, SiteTheme } from 'styles/emotion';
+import { theme } from 'styles/theme';
 
 type ThemeProps = {
   children: React.ReactNode;
@@ -13,19 +14,7 @@ type ContextType = {
   isDarkTheme: boolean;
 };
 
-function withFontFallback(fontName: string, serif: boolean): string {
-  return `"${fontName}",-apple-system, BlinkMacSystemFont,
-  'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
-  ${serif ? '' : 'sans-'}serif;`;
-}
-
 export const ThemeContext = createContext<Partial<ContextType>>({});
-
-export const FONTS = {
-  contentSans: 'Open Sans',
-  contentSerif: 'Merriweather',
-  contentTitle: 'content-title',
-};
 
 export const ThemeProvider: React.FC<ThemeProps> = ({ children }) => {
   const [currentTheme, setCurrentTheme] = useState<
@@ -46,32 +35,14 @@ export const ThemeProvider: React.FC<ThemeProps> = ({ children }) => {
     window.__setPreferredTheme(nextTheme);
   };
 
-  const theme: SiteTheme = {
-    isDarkTheme,
-    font: {
-      contentSans: withFontFallback(FONTS.contentSans, false),
-      contentSerif: withFontFallback(FONTS.contentSerif, true),
-      contentTitle: withFontFallback('content-title', true),
-    },
-    color: {
-      background: 'var(--background)',
-      font: 'var(--font)',
-      fontMedium: 'var(--font-medium)',
-      fontLight: 'var(--font-light)',
-      border: 'var(--border)',
-      shadow: 'var(--shadow)',
-      shadowLight: 'var(--shadowLight)',
-      shadowBright: 'var(--shadowBright)',
-      shadowMenu: 'var(--shadowMenu)',
-    },
-  };
+  const enhancedTheme = { ...(theme as SiteTheme), isDarkTheme };
 
   return (
-    <EmotionThemeProvider theme={theme}>
+    <EmotionThemeProvider theme={enhancedTheme}>
       <ThemeContext.Provider
         value={{
           toggleTheme,
-          theme,
+          theme: enhancedTheme,
           currentTheme,
           isDarkTheme,
         }}

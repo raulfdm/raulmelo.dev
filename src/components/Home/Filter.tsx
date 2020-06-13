@@ -3,6 +3,7 @@ import { FormattedMessage } from 'react-intl';
 import { motion } from 'framer-motion';
 
 import { css, styled } from 'styles/emotion';
+import { theme } from 'styles/theme';
 import { PostFilters } from './types';
 
 const FilterNav = styled.nav`
@@ -14,8 +15,8 @@ const FilterList = styled.ul`
 `;
 
 const activeStyles = css`
-  color: ${({ theme }) => theme.color.font};
-  border-bottom: 1px solid ${({ theme }) => theme.color.font};
+  color: ${theme.color?.font};
+  border-bottom: 1px solid ${theme.color?.font};
 `;
 
 const FilterItem = styled(motion.li)<{ active?: boolean }>`
