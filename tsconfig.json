@@ -20,6 +20,8 @@
     "baseUrl": ".",
     "paths": {
       "test-utils": ["src/utils/test-utils"],
+      "styles/*": ["src/styles/*"],
+      "config/*": ["src/config/*"],
       "types": ["src/types", "cypress", "@types/testing-library__cypress"],
       "graphql-types": ["./types/graphql-types.ts"],
       "components/*": ["src/components/*"],
