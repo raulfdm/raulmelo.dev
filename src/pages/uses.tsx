@@ -4,9 +4,9 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { graphql } from 'gatsby';
 import { UsesQuery } from 'graphql-types';
 
-import Layout from '../../components/Layout';
-import { BlogGlobalStyle } from '../../styles/blogPost';
-import { useIntl } from '../../context/react-intl';
+import Layout from 'components/Layout';
+import { BlogGlobalStyle } from 'styles/blogPost';
+import { useIntl } from 'context/react-intl';
 
 const StyledLayout = styled(Layout)``;
 
