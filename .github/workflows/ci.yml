@@ -6,10 +6,10 @@ jobs:
   install-dependencies:
     runs-on: ubuntu-latest
     steps:
-      - name: Get actual code
+      - name: Check branch code
         uses: actions/checkout@v2
 
-      - name: Setup Node Environment
+      - name: Setup Node
         uses: actions/setup-node@v1
         with:
           node-version: 12
@@ -25,6 +25,7 @@ jobs:
           path: |
             ${{ steps.yarn-cache-dir.outputs.dir }}
             **/node_modules
+            ~/.cache
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
@@ -32,14 +33,14 @@ jobs:
       - name: Install dependencies
         run: yarn install --pure-lockfile
 
-  build:
+  build-deploy-e2e:
     needs: install-dependencies
     runs-on: ubuntu-latest
     steps:
-      - name: Get actual code
+      - name: Check branch code
         uses: actions/checkout@v2
 
-      - name: Setup Node Environment
+      - name: Setup Node
         uses: actions/setup-node@v1
         with:
           node-version: 12
@@ -55,20 +56,21 @@ jobs:
           path: |
             ${{ steps.yarn-cache-dir.outputs.dir }}
             **/node_modules
+            ~/.cache
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
 
       - name: Gatsby Cache Folder
         uses: actions/cache@v2
-        id: gatsby-cache-folder
+        id: gatsby-public-folder
         with:
           path: |
+            public
             .cache
-            public/
-          key: ${{ runner.os }}-cache-gatsby
+          key: ${{ runner.os }}-public-gatsby-${{ github.ref }}
           restore-keys: |
-            ${{ runner.os }}-cache-gatsby
+            ${{ runner.OS }}-public-gatsby-
 
       - name: Build
         run: yarn build --log-pages
@@ -83,8 +85,24 @@ jobs:
           ALGOLIA_ADMIN_KEY: ${{ secrets.ALGOLIA_ADMIN_KEY }}
           GATSBY_ALGOLIA_INDEX_NAME: ${{ secrets.GATSBY_ALGOLIA_INDEX_NAME }}
 
+      - name: Save public folder as artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: public
+          path: public/**/*
+
+      - name: Save .cache as artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: .cache
+          path: .cache/**/*
+
+      # These 2 steps is only happening here and not in a another step
+      # Because it seems there's no way to force update a cache.
+      # It means that even if I setup the gatsby cache up here
+      # for the next step it'll use the old version of it.
       - name: Deploy to Netlify
-        uses: nwtgck/actions-netlify@v1.1
+        uses: nwtgck/actions-netlify@v1
         id: deploy
         with:
           publish-dir: './public'
@@ -95,32 +113,19 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
 
-      - name: Cypress run (E2E)
-        uses: cypress-io/github-action@v1
-        with:
-          browser: chrome
-          headless: true
+      - name: Cypress run
+        run: yarn cypress run
         env:
           CYPRESS_BASE_URL: ${{ steps.deploy.outputs.deploy-url }}
-
-      - uses: actions/upload-artifact@v2
-        with:
-          name: site
-          path: public/**/*
-
-      - uses: actions/upload-artifact@v2
-        with:
-          name: cache
-          path: .cache/**/*
 
   lint-and-unit:
     needs: install-dependencies
     runs-on: ubuntu-latest
     steps:
-      - name: Get actual code
+      - name: Check branch code
         uses: actions/checkout@v2
 
-      - name: Setup Node Environment
+      - name: Setup Node
         uses: actions/setup-node@v1
         with:
           node-version: 12
@@ -136,6 +141,7 @@ jobs:
           path: |
             ${{ steps.yarn-cache-dir.outputs.dir }}
             **/node_modules
+            ~/.cache
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
