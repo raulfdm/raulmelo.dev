@@ -1,10 +1,10 @@
-import styled from 'styled-components';
 import media from 'styled-media-query';
 import { transparentize } from 'polished';
 import { motion } from 'framer-motion';
 
-import { pxToRem } from '../../../styles/blogPost';
-import { Card as DefaultCard } from '../../Ui';
+import { styled } from 'styles/emotion';
+import { pxToRem } from 'styles/blogPost';
+import { Card as DefaultCard } from 'components/Ui';
 
 export const Card = styled(DefaultCard)`
   padding: 0;
@@ -40,36 +40,14 @@ export const Info = styled(CommonInfo)`
   justify-content: space-between;
 `;
 
-type Expanded = {
-  expanded: boolean;
-};
-
-export const ExpanderButton = styled(motion.button).attrs<Expanded>(
-  (props) => ({
-    initial: 'collapsed',
-    animate: props.expanded ? 'collapsed' : 'open',
-    variants: {
-      open: { rotate: '0deg' },
-      collapsed: { rotate: '180deg' },
-    },
-  }),
-)<Expanded>`
+export const ExpanderButton = styled(motion.button)`
   border: none;
   background-color: transparent;
   padding: 0;
   color: ${({ theme }) => theme.color.font};
 `;
 
-export const List = styled(motion.ul).attrs({
-  initial: 'collapsed',
-  animate: 'open',
-  exit: 'collapsed',
-  variants: {
-    open: { opacity: 1, height: 'auto' },
-    collapsed: { opacity: 0, height: 0 },
-  },
-  transition: { ease: [0.4, 0, 0.2, 1] },
-})`
+export const List = styled(motion.ul)`
   margin: 0;
   border-top: ${({ theme }) => `1px solid ${theme.color.border}`};
   border-bottom: ${({ theme }) => `1px solid ${theme.color.border}`};

@@ -1,4 +1,4 @@
-import { css } from 'styled-components';
+import { css } from 'styles/emotion';
 
 export const globalFonts = css`
   /* Regular Characters */

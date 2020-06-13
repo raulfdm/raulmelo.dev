@@ -1,11 +1,11 @@
 import React from 'react';
-import styled from 'styled-components';
+
+import { styled } from 'styles/emotion';
 
 const Logo = styled.svg`
   fill: ${({ theme }) => theme.color.font};
 `;
 
-/* Medium logo (it might be replaced in the future ofc) */
 const LogoSvg: React.FC = (props) => (
   <Logo width="122" height="45" viewBox="0 0 55 10" fill="none" {...props}>
     <path

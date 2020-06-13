@@ -1,17 +1,17 @@
 import React from 'react';
 import algoliaSearch from 'algoliasearch/lite';
 import { InstantSearch, SearchBox, Hits, Stats } from 'react-instantsearch-dom';
-import styled from 'styled-components';
 import { useIntl, defineMessages } from 'react-intl';
 import { Algolia } from '@styled-icons/boxicons-logos/Algolia';
 import debounce from 'debounce-promise';
 import media from 'styled-media-query';
 
-import { HitAlgolia, RequestsAlgoliaClient } from '../types';
-import Layout from '../components/Layout';
-import { algoliaConfig } from '../config/algolia';
-import { PostCard } from '../components/PostCard';
-import SEO from '../components/SEO';
+import { styled } from 'styles/emotion';
+import { HitAlgolia, RequestsAlgoliaClient } from 'types';
+import Layout from 'components/Layout';
+import { algoliaConfig } from 'config/algolia';
+import { PostCard } from 'components/PostCard';
+import SEO from 'components/SEO';
 
 const algoliaClient = algoliaSearch(
   algoliaConfig.appId!,

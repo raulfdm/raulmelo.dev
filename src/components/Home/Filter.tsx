@@ -2,7 +2,7 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { motion } from 'framer-motion';
 
-import styled, { css } from 'styled-components';
+import { css, styled } from 'styles/emotion';
 import { PostFilters } from './types';
 
 const FilterNav = styled.nav`

@@ -4,9 +4,9 @@ import { ArrowIosDownwardOutline } from '@styled-icons/evaicons-outline/ArrowIos
 import { AnimatePresence } from 'framer-motion';
 import { Link } from 'gatsby';
 
+import { Card } from 'components/Ui';
+import { SeriesType, PostSeries } from 'types';
 import * as S from './styled';
-import { SeriesType, PostSeries } from '../../../types';
-import { Card } from '../../Ui';
 
 type SeriesProps = {
   series: SeriesType;
@@ -27,13 +27,29 @@ export const SeriesMenu: React.FC<SeriesProps> = ({
       <S.Wrapper>
         <S.Info expanded={isOpen} onClick={() => setIsOpen(!isOpen)}>
           <span>{title}</span>
-          <S.ExpanderButton expanded={isOpen}>
+          <S.ExpanderButton
+            initial="collapsed"
+            animate={isOpen ? 'collapsed' : 'open'}
+            variants={{
+              open: { rotate: '0deg' },
+              collapsed: { rotate: '180deg' },
+            }}
+          >
             <ArrowIosDownwardOutline size={21} />
           </S.ExpanderButton>
         </S.Info>
         <AnimatePresence initial={false}>
           {isOpen && (
-            <S.List>
+            <S.List
+              initial="collapsed"
+              animate="open"
+              exit="collapsed"
+              variants={{
+                open: { opacity: 1, height: 'auto' },
+                collapsed: { opacity: 0, height: 0 },
+              }}
+              transition={{ ease: [0.4, 0, 0.2, 1] }}
+            >
               {postSeries.map(([index, post]: [string, PostSeries]) => {
                 return (
                   <S.Item

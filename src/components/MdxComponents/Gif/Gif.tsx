@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { css, FlattenSimpleInterpolation } from 'styled-components';
+import { styled, css } from 'styles/emotion';
 
 type GifProps = {
   src: string;
@@ -7,8 +7,7 @@ type GifProps = {
   imgStyle?: string;
 };
 
-const Figure = styled.figure<{ extraStyles?: FlattenSimpleInterpolation }>`
-  ${({ extraStyles }) => extraStyles};
+const Figure = styled.figure`
   margin: 0 auto;
   margin-bottom: 20px;
 `;
@@ -17,7 +16,7 @@ export const Gif: React.FC<GifProps> = ({ src, caption, imgStyle }) => {
   return (
     <Figure
       className="gif-wrapper"
-      extraStyles={css`
+      css={css`
         ${imgStyle};
       `}
       data-testid="gif-figure"

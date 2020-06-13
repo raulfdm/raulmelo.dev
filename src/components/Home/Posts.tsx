@@ -1,12 +1,12 @@
 import React from 'react';
-import styled from 'styled-components';
 import * as R from 'ramda';
 import { FormattedMessage } from 'react-intl';
 import { motion, AnimatePresence } from 'framer-motion';
-import { InfiniteScroll } from 'components/InfiniteScroll';
 
-import { PostEdge, PostEdges } from '../../types';
-import { PostCard } from '../PostCard';
+import { InfiniteScroll } from 'components/InfiniteScroll';
+import { styled } from 'styles/emotion';
+import { PostEdge, PostEdges } from 'types';
+import { PostCard } from 'components/PostCard';
 import { PostFilters } from './types';
 import { filterFirstSeriesPost } from './helpers/posts';
 

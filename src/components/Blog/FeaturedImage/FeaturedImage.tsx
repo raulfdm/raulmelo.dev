@@ -1,11 +1,11 @@
 import React from 'react';
-import styled from 'styled-components';
 import Img from 'gatsby-image';
 import { defineMessages } from 'react-intl';
 
+import { styled } from 'styles/emotion';
 import { Frontmatter } from 'types';
 import { useIntl } from 'context/react-intl';
-import { Container } from '../../Ui';
+import { Container } from 'components/Ui';
 import { useBlogContext } from '../blogContext';
 
 const StyledImg = styled(Img)`

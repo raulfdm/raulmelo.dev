@@ -1,7 +1,8 @@
-import { css, createGlobalStyle } from 'styled-components';
-import { pandaPrismStyles } from './prims-panda-theme';
-
+import React from 'react';
 import Typography from 'typography';
+
+import { css, Global } from 'styles/emotion';
+import { pandaPrismStyles } from './prims-panda-theme';
 import { FONTS } from 'context/theme';
 
 const baseFontSize = '18px';
@@ -54,16 +55,17 @@ export const typography = new Typography({
   }),
 });
 
+/* 
+  Set back
+  a {
+    text-decoration: underline solid ${({ theme }) => theme.color.font};
+  }
+*/
 const blogGlobal = css`
   ${typography.toString()};
 
   body {
     font: unset;
-  }
-
-  /* Set back  */
-  a {
-    text-decoration: underline solid ${({ theme }) => theme.color.font};
   }
 
   .twitter-tweet {
@@ -73,6 +75,4 @@ const blogGlobal = css`
   ${pandaPrismStyles};
 `;
 
-export const BlogGlobalStyle = createGlobalStyle`
-  ${blogGlobal}
-`;
+export const BlogGlobalStyle = () => <Global styles={blogGlobal} />;

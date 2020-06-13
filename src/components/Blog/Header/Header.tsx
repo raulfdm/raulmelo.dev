@@ -1,8 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
 import media from 'styled-media-query';
 
-import { Container } from '../../Ui';
+import { styled } from 'styles/emotion';
+import { Container } from 'components/Ui';
 import { useBlogContext } from '../blogContext';
 
 const Title = styled.h1`

@@ -1,9 +1,6 @@
 import React from 'react';
 import { createContext, useState } from 'react';
-import {
-  ThemeProvider as StyledThemeProvider,
-  DefaultTheme,
-} from 'styled-components';
+import { EmotionThemeProvider, SiteTheme } from 'styles/emotion';
 
 type ThemeProps = {
   children: React.ReactNode;
@@ -11,10 +8,16 @@ type ThemeProps = {
 
 type ContextType = {
   toggleTheme: () => void;
-  theme: DefaultTheme;
+  theme: SiteTheme;
   currentTheme: string;
   isDarkTheme: boolean;
 };
+
+function withFontFallback(fontName: string, serif: boolean): string {
+  return `"${fontName}",-apple-system, BlinkMacSystemFont,
+  'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+  ${serif ? '' : 'sans-'}serif;`;
+}
 
 export const ThemeContext = createContext<Partial<ContextType>>({});
 
@@ -43,13 +46,7 @@ export const ThemeProvider: React.FC<ThemeProps> = ({ children }) => {
     window.__setPreferredTheme(nextTheme);
   };
 
-  function withFontFallback(fontName: string, serif: boolean): string {
-    return `"${fontName}",-apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
-    ${serif ? '' : 'sans-'}serif;`;
-  }
-
-  const theme: DefaultTheme = {
+  const theme: SiteTheme = {
     isDarkTheme,
     font: {
       contentSans: withFontFallback(FONTS.contentSans, false),
@@ -70,7 +67,7 @@ export const ThemeProvider: React.FC<ThemeProps> = ({ children }) => {
   };
 
   return (
-    <StyledThemeProvider theme={theme}>
+    <EmotionThemeProvider theme={theme}>
       <ThemeContext.Provider
         value={{
           toggleTheme,
@@ -81,6 +78,6 @@ export const ThemeProvider: React.FC<ThemeProps> = ({ children }) => {
       >
         {children}
       </ThemeContext.Provider>
-    </StyledThemeProvider>
+    </EmotionThemeProvider>
   );
 };
