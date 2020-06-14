@@ -1,7 +1,6 @@
 import React from 'react';
-import media from 'styled-media-query';
 
-import { styled } from 'styles/emotion';
+import { styled, media } from 'styles/emotion';
 import { Container } from 'components/Ui';
 import { useBlogContext } from '../blogContext';
 

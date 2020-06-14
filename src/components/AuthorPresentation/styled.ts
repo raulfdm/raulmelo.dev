@@ -1,6 +1,4 @@
-import media from 'styled-media-query';
-
-import { styled } from 'styles/emotion';
+import { styled, media } from 'styles/emotion';
 
 export const Wrapper = styled.div`
   display: flex;

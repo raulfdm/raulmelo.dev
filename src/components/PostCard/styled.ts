@@ -1,7 +1,6 @@
 import Img from 'gatsby-image';
-import media from 'styled-media-query';
 
-import { styled } from 'styles/emotion';
+import { styled, media } from 'styles/emotion';
 
 export const ImageContainer = styled.div`
   position: relative;

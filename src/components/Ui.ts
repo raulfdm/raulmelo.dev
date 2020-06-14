@@ -1,7 +1,6 @@
-import media from 'styled-media-query';
 import { motion } from 'framer-motion';
 
-import { styled } from 'styles/emotion';
+import { styled, media } from 'styles/emotion';
 
 export const pageTransitionAnimation = {
   initial: { opacity: 0 },

@@ -4,9 +4,8 @@ import { InstantSearch, SearchBox, Hits, Stats } from 'react-instantsearch-dom';
 import { useIntl, defineMessages } from 'react-intl';
 import { Algolia } from '@styled-icons/boxicons-logos/Algolia';
 import debounce from 'debounce-promise';
-import media from 'styled-media-query';
 
-import { styled } from 'styles/emotion';
+import { styled, media } from 'styles/emotion';
 import { HitAlgolia, RequestsAlgoliaClient } from 'types';
 import Layout from 'components/Layout';
 import { algoliaConfig } from 'config/algolia';

@@ -1,8 +1,7 @@
-import media from 'styled-media-query';
 import { transparentize } from 'polished';
 import { motion } from 'framer-motion';
 
-import { styled } from 'styles/emotion';
+import { styled, media } from 'styles/emotion';
 import { pxToRem } from 'styles/blogPost';
 import { Card as DefaultCard } from 'components/Ui';
 

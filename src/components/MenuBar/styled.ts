@@ -1,8 +1,7 @@
-import media from 'styled-media-query';
 import { motion } from 'framer-motion';
 import { Link } from 'gatsby';
 
-import { styled } from 'styles/emotion';
+import { styled, media } from 'styles/emotion';
 import { Container } from 'components/Ui';
 
 export const MenuBarWrapper = styled(motion.nav)`
