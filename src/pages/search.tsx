@@ -58,7 +58,7 @@ const SearchWrapper = styled.main`
     background-color: transparent !important;
 
     ${media.greaterThan('medium')`
-    font-size: 34px;
+      font-size: 34px;
     `}
   }
 
@@ -89,9 +89,11 @@ const SearchWrapper = styled.main`
 `;
 
 const SearchBoxWrapper = styled.div`
-  padding-bottom: 40px;
+  padding-bottom: 20px;
 
-  /* TODO: make 20px when "mobile" */
+  ${media.greaterThan('medium')`
+    padding-bottom: 40px;
+  `};
 `;
 
 const PoweredBy = styled.a`
