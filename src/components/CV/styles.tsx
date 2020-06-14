@@ -1,5 +1,5 @@
 import React from 'react';
-import { css, Global } from '@emotion/core';
+import { css, Global } from 'styles/emotion';
 import emotionStyled, { CreateStyled } from '@emotion/styled';
 
 export const theme = {
@@ -26,9 +26,8 @@ export const theme = {
   },
 };
 
+export * from 'styles/emotion';
 export const styled = emotionStyled as CreateStyled<typeof theme>;
-
-export { css } from '@emotion/core';
 
 const globalCss = css`
   html,
