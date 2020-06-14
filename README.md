@@ -16,7 +16,7 @@ The default language is my mother lang, PT-BR 🇧🇷 but I already prepare the
 
 - TypeScript
 - [Gatsby started default](https://github.com/gatsbyjs/gatsby-starter-default);
-- [Styled components](https://styled-components.com/);
+- [Emotion](https://emotion.sh/docs/introduction);
 - [Styled Icons](styled-icons.js.org/);
 - [React Inlt](https://github.com/formatjs/react-intl) for locales
 
