@@ -4,7 +4,7 @@ import { getFullUrl } from '../support/helpers';
 
 describe('Home', () => {
   beforeEach(() => {
-    cy.visit(getFullUrl());
+    cy.visit('/');
   });
 
   describe('Menu Bar', () => {
