@@ -15740,15 +15740,15 @@ react-tinacms-inline@^0.7.0:
     react-dismissible "^1.2.0"
     react-textarea-autosize ">=7.1"
 
-react-universal-interface@^0.6.0:
+react-universal-interface@^0.6.2:
   version "0.6.2"
   resolved "https://registry.yarnpkg.com/react-universal-interface/-/react-universal-interface-0.6.2.tgz#5e8d438a01729a4dbbcbeeceb0b86be146fe2b3b"
   integrity sha512-dg8yXdcQmvgR13RIlZbTRQOoUrDciFVoSBZILwjE2LFISxZZ8loVJKAkuzswl5js8BHda79bIb2b84ehU8IjXw==
 
-react-use@15.2.2:
-  version "15.2.2"
-  resolved "https://registry.yarnpkg.com/react-use/-/react-use-15.2.2.tgz#e07ba018109f93ee6154915fbaf85ffee9638ff1"
-  integrity sha512-ews+RJXkJPokAHKXzLl0NLO9lMaiLy8SyhUydO8gFRajuBdsUUKS/HAEmQPlPQ4QxKf7ckgTpA2zO/IUztczwQ==
+react-use@15.3.0:
+  version "15.3.0"
+  resolved "https://registry.yarnpkg.com/react-use/-/react-use-15.3.0.tgz#42946aa6e7bf571104173439cc7b7e26a4ca4c51"
+  integrity sha512-4fFSn2eVbmRPlxHFeBy8uiCyrwMzavMs4hvzeDUFszijda9ZM6S0ElleqKHS+SmwpMFEFIk7dIzzJQZzJYcAXw==
   dependencies:
     "@types/js-cookie" "2.2.6"
     "@xobotyi/scrollbar-width" "1.9.5"
@@ -15757,7 +15757,7 @@ react-use@15.2.2:
     fast-shallow-equal "^1.0.0"
     js-cookie "^2.2.1"
     nano-css "^5.2.1"
-    react-universal-interface "^0.6.0"
+    react-universal-interface "^0.6.2"
     resize-observer-polyfill "^1.5.1"
     screenfull "^5.0.0"
     set-harmonic-interval "^1.0.1"
