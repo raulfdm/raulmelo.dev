@@ -1,4 +1,5 @@
 export type Maybe<T> = T | null;
+export type Exact<T extends { [key: string]: any }> = { [K in keyof T]: T[K] };
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
   ID: string;
@@ -2580,6 +2581,8 @@ export type QueryAllSitePageArgs = {
 export type QuerySiteArgs = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
+  port?: Maybe<DateQueryOperatorInput>;
+  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -2718,6 +2721,8 @@ export type QueryAllSitePluginArgs = {
 export type Site = Node & {
   buildTime?: Maybe<Scalars['Date']>;
   siteMetadata?: Maybe<SiteSiteMetadata>;
+  port?: Maybe<Scalars['Date']>;
+  host?: Maybe<Scalars['String']>;
   polyfill?: Maybe<Scalars['Boolean']>;
   pathPrefix?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
@@ -2728,6 +2733,14 @@ export type Site = Node & {
 
 
 export type SiteBuildTimeArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
+export type SitePortArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
@@ -2924,6 +2937,8 @@ export type SiteFieldsEnum =
   | 'siteMetadata___social___twitter'
   | 'siteMetadata___social___linkedIn'
   | 'siteMetadata___social___github'
+  | 'port'
+  | 'host'
   | 'polyfill'
   | 'pathPrefix'
   | 'id'
@@ -3016,6 +3031,8 @@ export type SiteFieldsEnum =
 export type SiteFilterInput = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
+  port?: Maybe<DateQueryOperatorInput>;
+  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -4239,7 +4256,7 @@ export type StringQueryOperatorInput = {
   glob?: Maybe<Scalars['String']>;
 };
 
-export type Unnamed_1_QueryVariables = {};
+export type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type Unnamed_1_Query = { site?: Maybe<{ siteMetadata?: Maybe<(
@@ -4247,7 +4264,7 @@ export type Unnamed_1_Query = { site?: Maybe<{ siteMetadata?: Maybe<(
       & { social?: Maybe<Pick<SiteSiteMetadataSocial, 'github' | 'linkedIn' | 'twitter'>> }
     )> }> };
 
-export type Unnamed_2_QueryVariables = {};
+export type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type Unnamed_2_Query = { site?: Maybe<{ siteMetadata?: Maybe<(
@@ -4255,7 +4272,7 @@ export type Unnamed_2_Query = { site?: Maybe<{ siteMetadata?: Maybe<(
       & { social?: Maybe<Pick<SiteSiteMetadataSocial, 'twitter'>> }
     )> }> };
 
-export type DataQueryQueryVariables = {};
+export type DataQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type DataQueryQuery = { allCvJson: { edges: Array<{ node: (
@@ -4287,7 +4304,7 @@ export type DataQueryQuery = { allCvJson: { edges: Array<{ node: (
         )> }
       ) }> } };
 
-export type Unnamed_3_QueryVariables = {};
+export type Unnamed_3_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type Unnamed_3_Query = { allMdx: { edges: Array<{ node: (
@@ -4298,7 +4315,7 @@ export type Unnamed_3_Query = { allMdx: { edges: Array<{ node: (
         )>, fields?: Maybe<Pick<MdxFields, 'slug' | 'lang' | 'commonSlug'>> }
       ) }> } };
 
-export type UsesQueryVariables = {};
+export type UsesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type UsesQuery = { allMdx: { edges: Array<{ node: (

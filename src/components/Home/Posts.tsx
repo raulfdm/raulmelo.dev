@@ -1,5 +1,4 @@
 import React from 'react';
-import * as R from 'ramda';
 import { FormattedMessage } from 'react-intl';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -8,7 +7,6 @@ import { styled } from 'styles/emotion';
 import { PostEdge, PostEdges } from 'types';
 import { PostCard } from 'components/PostCard';
 import { PostFilters } from './types';
-import { filterFirstSeriesPost } from './helpers/posts';
 
 const LatestMessage = styled(motion.p)`
   letter-spacing: -0.32px;
@@ -30,22 +28,11 @@ export const Posts: React.FC<{
 }> = ({ filter, posts, loadMore, hasMore }) => {
   if (!posts) return null;
 
-  const filters = {
-    all: {
-      localeId: 'home.filter.all',
-      posts,
-    },
-    series: {
-      localeId: 'home.filter.series',
-      posts: filterFirstSeriesPost(posts),
-    },
-    single: {
-      localeId: 'home.filter.single',
-      posts: posts.filter((post) => R.isNil(post.node.frontmatter?.series)),
-    },
+  const filterLocale = {
+    all: 'home.filter.all',
+    series: 'home.filter.series',
+    single: 'home.filter.single',
   };
-
-  const chosenSet = filters[filter];
 
   const itemsAnimationVariants = {
     visible: (index: number) => ({
@@ -64,7 +51,7 @@ export const Posts: React.FC<{
   return (
     <>
       <LatestMessage initial={{ scale: 0 }} animate={{ scale: 1 }}>
-        <FormattedMessage id={chosenSet.localeId} />
+        <FormattedMessage id={filterLocale[filter]} />
       </LatestMessage>
 
       <InfiniteScroll
@@ -74,7 +61,7 @@ export const Posts: React.FC<{
         Component={PostList}
       >
         <AnimatePresence initial={false}>
-          {chosenSet.posts.map(({ node }: PostEdge, index) => (
+          {posts.map(({ node }: PostEdge, index) => (
             <motion.li
               key={node.id}
               custom={index}

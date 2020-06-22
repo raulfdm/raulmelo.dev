@@ -1,7 +1,9 @@
 import { PostEdges } from 'types';
 import React from 'react';
+import * as R from 'ramda';
 
 import { PostFilters } from '../types';
+import { filterFirstSeriesPost } from '../helpers/posts';
 
 type ActionType =
   | {
@@ -18,22 +20,55 @@ type StateType = {
   currentPosition: number;
   allPosts: PostEdges;
   filter: PostFilters;
+  postByFilter: {
+    all: PostEdges;
+    single: PostEdges;
+    series: PostEdges;
+  };
+};
+
+export type UseHomeStateReturnType = Pick<
+  StateType,
+  'hasMore' | 'filter' | 'postsToRender'
+> & {
+  loadMore: () => void;
+  setFilter: (nextFilter: PostFilters) => void;
 };
 
 const THRESHOLD = 5;
 
+function getPostsByActiveFilter(
+  posts: PostEdges,
+  activeFilter: PostFilters,
+): PostEdges {
+  let nextFilteredPosts: PostEdges = posts;
+
+  if (activeFilter === 'series') {
+    nextFilteredPosts = filterFirstSeriesPost(posts);
+  }
+
+  if (activeFilter === 'single') {
+    nextFilteredPosts = posts.filter((post) =>
+      R.isNil(post.node.frontmatter?.series),
+    );
+  }
+
+  return nextFilteredPosts;
+}
+
 export function reducer(state: StateType, action: ActionType): StateType {
   switch (action.type) {
     case 'LOAD_MORE': {
-      const { currentPosition, allPosts, postsToRender } = state;
-      const nextPosition = currentPosition + THRESHOLD;
+      const { currentPosition, postsToRender, filter, postByFilter } = state;
 
-      const nextPosts = allPosts.slice(currentPosition, nextPosition);
+      const posts = postByFilter[filter];
+      const nextPosition = currentPosition + THRESHOLD;
+      const nextPosts = posts.slice(currentPosition, nextPosition);
 
       return {
         ...state,
         currentPosition: nextPosition,
-        hasMore: allPosts.length > nextPosition,
+        hasMore: postsToRender.length > nextPosition,
         postsToRender: ([] as PostEdges)
           .concat(postsToRender)
           .concat(nextPosts),
@@ -41,27 +76,36 @@ export function reducer(state: StateType, action: ActionType): StateType {
     }
 
     case 'FILTER': {
-      return { ...state, filter: action.payload };
+      const { postByFilter } = state;
+      return {
+        ...state,
+        filter: action.payload,
+        postsToRender: postByFilter[action.payload],
+      };
     }
     default:
       throw new Error('unknown action type');
   }
 }
 
-export function useHomeState(
-  postEdges: PostEdges,
-): Pick<StateType, 'hasMore' | 'filter' | 'postsToRender'> & {
-  loadMore: () => void;
-  setFilter: (nextFilter: PostFilters) => void;
-} {
+export function useHomeState(postEdges: PostEdges): UseHomeStateReturnType {
+  const initialFilter = 'all';
   const [{ hasMore, postsToRender, filter }, dispatch] = React.useReducer(
     reducer,
     {
       currentPosition: THRESHOLD,
       hasMore: postEdges.length > THRESHOLD,
-      postsToRender: postEdges.slice(0, THRESHOLD),
+      postsToRender: getPostsByActiveFilter(postEdges, initialFilter).slice(
+        0,
+        THRESHOLD,
+      ),
       allPosts: postEdges,
       filter: 'all',
+      postByFilter: {
+        all: getPostsByActiveFilter(postEdges, 'all'),
+        series: getPostsByActiveFilter(postEdges, 'series'),
+        single: getPostsByActiveFilter(postEdges, 'single'),
+      },
     },
   );
 
