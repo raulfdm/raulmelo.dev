@@ -111,7 +111,7 @@
     "gatsby-remark-prismjs": "3.5.5",
     "gatsby-remark-responsive-iframe": "2.4.5",
     "gatsby-remark-smartypants": "2.3.4",
-    "gatsby-source-filesystem": "2.3.11",
+    "gatsby-source-filesystem": "2.3.13",
     "gatsby-tinacms-git": "0.5.4",
     "gatsby-tinacms-json": "0.8.28",
     "gatsby-tinacms-remark": "0.8.3",
