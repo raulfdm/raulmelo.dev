@@ -76,11 +76,12 @@ export function reducer(state: StateType, action: ActionType): StateType {
     }
 
     case 'FILTER': {
-      const { postByFilter } = state;
+      const { postByFilter, currentPosition } = state;
+
       return {
         ...state,
         filter: action.payload,
-        postsToRender: postByFilter[action.payload],
+        postsToRender: postByFilter[action.payload].slice(0, currentPosition),
       };
     }
     default:
