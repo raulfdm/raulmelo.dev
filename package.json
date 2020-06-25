@@ -78,7 +78,7 @@
     "babel-plugin-ramda": "2.0.0",
     "babel-plugin-remove-graphql-queries": "2.9.5",
     "babel-preset-gatsby": "0.4.11",
-    "cypress": "4.8.0",
+    "cypress": "4.9.0",
     "dotenv": "8.2.0",
     "eslint": "7.2.0",
     "eslint-config-prettier": "6.11.0",
