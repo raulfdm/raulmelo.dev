@@ -50,7 +50,7 @@
     "typography": "0.16.19"
   },
   "devDependencies": {
-    "@babel/core": "7.10.2",
+    "@babel/core": "7.10.3",
     "@babel/plugin-proposal-class-properties": "7.10.1",
     "@babel/preset-typescript": "7.10.1",
     "@emotion/babel-preset-css-prop": "10.0.27",
