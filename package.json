@@ -59,7 +59,7 @@
     "@sub-tv/prettier-config": "1.1.0",
     "@testing-library/cypress": "6.0.0",
     "@testing-library/jest-dom": "5.10.1",
-    "@testing-library/react": "10.2.1",
+    "@testing-library/react": "10.4.3",
     "@testing-library/react-hooks": "3.3.0",
     "@types/debounce-promise": "3.1.2",
     "@types/flat": "5.0.1",
