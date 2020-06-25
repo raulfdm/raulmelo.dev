@@ -103,7 +103,7 @@
     "gatsby-plugin-sharp": "2.6.13",
     "gatsby-plugin-sitemap": "2.4.5",
     "gatsby-plugin-tinacms": "0.2.2",
-    "gatsby-plugin-typescript": "2.4.6",
+    "gatsby-plugin-typescript": "2.4.8",
     "gatsby-plugin-web-font-loader": "1.0.4",
     "gatsby-remark-autolink-headers": "2.3.5",
     "gatsby-remark-code-titles": "1.1.0",
