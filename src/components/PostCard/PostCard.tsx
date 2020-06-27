@@ -3,11 +3,21 @@ import * as R from 'ramda';
 import { FormattedMessage, FormattedDate } from 'react-intl';
 import { Link } from 'gatsby';
 
-import * as S from './styled';
-import { Card } from '../Ui';
+import {
+  Body,
+  DateAndTime,
+  Flag,
+  Flags,
+  Image,
+  ImageContainer,
+  Subtitle,
+  Title,
+} from './styled';
+import { Card, Tag, Tags } from '../Ui';
 import { PostNode } from '../../types/GraphQL';
 import { BrazilFlag, UnitedKingdomFlag } from '../Icons';
 import { LOCALES } from '../../types/Locales';
+import { tagUri } from 'utils/routing';
 
 type PostCardProps = {
   postNode: PostNode;
@@ -20,7 +30,7 @@ const flagsMap = {
 
 export const PostCard: React.FC<PostCardProps> = ({ postNode }) => {
   const { frontmatter, timeToRead, fields, translations } = postNode;
-  const { image, date, description, title, subtitle } = frontmatter!;
+  const { image, date, title, subtitle, categories } = frontmatter!;
 
   const PostLangFlag = flagsMap[fields!.lang as LOCALES];
   const TranslationLangFlag = translations
@@ -28,51 +38,57 @@ export const PostCard: React.FC<PostCardProps> = ({ postNode }) => {
     : null;
 
   return (
-    <Link to={fields!.slug} data-testid="post-card">
-      <Card>
-        {image && (
-          <S.ImageContainer>
-            <S.Image fluid={image.childImageSharp.fluid} />
-          </S.ImageContainer>
-        )}
-        <S.Title>{title}</S.Title>
-        {subtitle && <S.Subtitle>{subtitle}</S.Subtitle>}
-        <S.Description>{description}</S.Description>
+    <Card>
+      {image && (
+        <ImageContainer>
+          <Image fluid={image.childImageSharp.fluid} />
+        </ImageContainer>
+      )}
+      <Body>
+        <Title>
+          <Link to={fields!.slug} data-testid="post-card">
+            {title}
+          </Link>
+        </Title>
 
-        <S.MetaWrapper>
-          <S.Flags>
-            <S.Flag>
-              <PostLangFlag />
-            </S.Flag>
-            {TranslationLangFlag && (
-              <S.Flag>
-                <TranslationLangFlag />
-              </S.Flag>
-            )}
-          </S.Flags>
-          <S.PostDetails>
-            {date && (
-              <S.MetaText>
-                <FormattedDate
-                  value={new Date(date)}
-                  year="numeric"
-                  month="short"
-                  day="2-digit"
-                />
-              </S.MetaText>
-            )}
-            <S.MetaText>.</S.MetaText>
-            <S.MetaText>
-              <FormattedMessage
-                id="blog.readTime"
-                values={{
-                  minutes: timeToRead,
-                }}
-              />
-            </S.MetaText>
-          </S.PostDetails>
-        </S.MetaWrapper>
-      </Card>
-    </Link>
+        <DateAndTime>
+          <time dateTime={date}>
+            <FormattedDate
+              value={new Date(date)}
+              year="numeric"
+              month="short"
+              day="2-digit"
+            />
+          </time>{' '}
+          <span>.</span>{' '}
+          <FormattedMessage
+            id="blog.readTime"
+            values={{
+              minutes: timeToRead,
+            }}
+          />
+        </DateAndTime>
+        {subtitle && <Subtitle>{subtitle}</Subtitle>}
+
+        <Tags>
+          {categories?.map((category) => (
+            <Tag key={category}>
+              <Link to={tagUri(category)}>{category}</Link>
+            </Tag>
+          ))}
+        </Tags>
+
+        <Flags>
+          <Flag>
+            <PostLangFlag />
+          </Flag>
+          {TranslationLangFlag && (
+            <Flag>
+              <TranslationLangFlag />
+            </Flag>
+          )}
+        </Flags>
+      </Body>
+    </Card>
   );
 };

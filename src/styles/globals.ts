@@ -1,4 +1,5 @@
 import { css } from 'styles/emotion';
+import { darken } from 'polished';
 
 export const customGlobals = css`
   /* CUSTOM */
@@ -17,6 +18,8 @@ export const customGlobals = css`
     --shadowLight: rgba(0, 0, 0, 0.25);
     --shadowBright: rgba(0, 0, 0, 0.05);
     --shadowMenu: rgba(0, 0, 0, 0.05);
+    --tag: rgb(242, 242, 242);
+    --tagHover: ${darken(0.1, 'rgb(242, 242, 242)')};
   }
 
   body.dark {
@@ -29,6 +32,8 @@ export const customGlobals = css`
     --shadowLight: rgba(255, 255, 255, 0.25);
     --shadowBright: rgba(255, 255, 255, 0.05);
     --shadowMenu: '';
+    --tag: rgb(21, 32, 43);
+    --tagHover: ${darken(0.4, 'rgb(242, 242, 242)')};
   }
 
   body {

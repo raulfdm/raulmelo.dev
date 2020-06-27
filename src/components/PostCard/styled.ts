@@ -1,5 +1,4 @@
 import Img from 'gatsby-image';
-
 import { styled, media } from 'styles/emotion';
 
 export const ImageContainer = styled.div`
@@ -21,9 +20,15 @@ export const Image = styled(Img)`
   `}
 `;
 
+export const Body = styled.div`
+  a {
+    position: relative;
+    z-index: 1;
+  }
+`;
+
 export const Title = styled.h3`
   margin: 0;
-  margin-bottom: 5px;
   line-height: 1.3;
   font-size: 2rem;
   font-weight: 600;
@@ -35,6 +40,15 @@ export const Title = styled.h3`
     line-height: 1.12;
     letter-spacing: -0.022em;
   `}
+`;
+
+export const DateAndTime = styled.span`
+  display: inline-block;
+  vertical-align: middle;
+  margin: 4px 0 10px;
+  color: ${({ theme }) => theme.color.font};
+  font-family: ${({ theme }) => theme.font.contentSans};
+  font-size: 1.4rem;
 `;
 
 export const Subtitle = styled.p`
@@ -49,49 +63,17 @@ export const Subtitle = styled.p`
   `}
 `;
 
-export const Description = styled.p`
-  font-weight: 400;
-  overflow-wrap: break-word;
-  font-size: 1.4rem;
-  font-family: ${({ theme }) => theme.font.contentSerif};
-  margin-top: 16px;
-
-  ${media.greaterThan('medium')`
-    font-size: 1.8rem;
-    margin-top: 18px;
-  `}
-`;
-
-export const MetaWrapper = styled.div`
-  font-family: ${({ theme }) => theme.font.contentSans};
-  font-size: 1.4rem;
-  margin-top: 1em;
-  color: ${({ theme }) => theme.color.font};
-  display: flex;
-  justify-content: space-between;
-
-  ${media.greaterThan('medium')`
-    margin-top: 1em;
-  `}
-`;
-
-export const PostDetails = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-`;
-
-export const MetaText = styled.p`
-  margin-left: 8px;
-`;
-
 export const Flags = styled.div`
   display: flex;
+  justify-content: end;
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
 `;
 
 export const Flag = styled.div`
   width: 24px;
-  margin-right: 10px;
+  margin-left: 10px;
 
   svg {
     display: block;
