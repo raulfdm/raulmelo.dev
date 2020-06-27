@@ -53,7 +53,7 @@ export const customGlobals = css`
     color: var(--font);
 
     transition: background-color 0.2s ease, color 0.2s ease, fill 0.2s ease,
-      opacity 0.2s ease;
+      opacity 0.2s ease, color 0.2s ease, border 0.2s ease;
   }
 
   img,
