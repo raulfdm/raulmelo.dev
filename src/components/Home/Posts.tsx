@@ -8,7 +8,15 @@ import { PostEdge, PostEdges } from 'types';
 import { PostCard } from 'components/PostCard';
 import { PostFilters } from './types';
 
-const LatestMessage = styled(motion.p)`
+type PostsProps = {
+  filter: PostFilters;
+  posts: PostEdges;
+  loadMore: () => void;
+  hasMore: boolean;
+  customTitle?: string;
+};
+
+const PostsTitle = styled(motion.h2)`
   letter-spacing: -0.32px;
   font-size: 2.1rem;
   font-weight: 600;
@@ -20,12 +28,13 @@ const PostList = styled.ul`
   list-style: none;
 `;
 
-export const Posts: React.FC<{
-  filter: PostFilters;
-  posts: PostEdges;
-  loadMore: () => void;
-  hasMore: boolean;
-}> = ({ filter, posts, loadMore, hasMore }) => {
+export const Posts: React.FC<PostsProps> = ({
+  filter,
+  posts,
+  loadMore,
+  hasMore,
+  customTitle,
+}) => {
   if (!posts) return null;
 
   const filterLocale = {
@@ -50,9 +59,9 @@ export const Posts: React.FC<{
 
   return (
     <>
-      <LatestMessage initial={{ scale: 0 }} animate={{ scale: 1 }}>
-        <FormattedMessage id={filterLocale[filter]} />
-      </LatestMessage>
+      <PostsTitle initial={{ scale: 0 }} animate={{ scale: 1 }}>
+        {customTitle || <FormattedMessage id={filterLocale[filter]} />}
+      </PostsTitle>
 
       <InfiniteScroll
         threshold={500}

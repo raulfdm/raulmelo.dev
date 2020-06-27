@@ -25,5 +25,8 @@
   },
   "series": {
     "sectionDescription": "Série em {seriesAmount} partes"
+  },
+  "tag": {
+    "title": "Posts com a tag \"{tag}\""
   }
 }
