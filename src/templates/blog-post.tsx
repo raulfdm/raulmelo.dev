@@ -8,15 +8,15 @@ import { SeriesSection } from 'components/Blog/SeriesSection';
 import { BlogPostProps } from 'components/Blog/types';
 import { BlogContextProvider } from 'components/Blog/blogContext';
 import { useTwitterScript } from 'components/Blog/useTwitterScript';
-import { pageTransitionVariants } from '../components/Ui';
+import LayoutBlog from 'layouts/blog';
+import { pageTransitionVariants, Tags, Tag } from '../components/Ui';
 import { BlogGlobalStyle } from '../styles/blogPost';
 import { GlobalStyles } from '../styles';
-import { Container } from '../components/Ui';
+import { Container, LineDivider } from '../components/Ui';
 import { MenuBar } from '../components/MenuBar';
 import { Frontmatter } from '../types';
 import SEO from '../components/SEO';
 import { ThemeProvider } from '../context/theme';
-import LayoutBlog from 'layouts/blog';
 
 const Main = Container.withComponent('main');
 
@@ -32,6 +32,7 @@ const BlogPost: React.FC<BlogPostProps> = ({ pageContext }) => {
     subtitle,
     description,
     series: seriesInfo,
+    categories,
   } = frontmatter as Frontmatter;
 
   return (
@@ -62,6 +63,12 @@ const BlogPost: React.FC<BlogPostProps> = ({ pageContext }) => {
             <Main className="post">
               <MDXRenderer>{body!}</MDXRenderer>
               <SeriesSection />
+              <LineDivider />
+              <Tags>
+                {categories?.map((category) => (
+                  <Tag key={category} tag={category} />
+                ))}
+              </Tags>
             </Main>
           </BlogContextProvider>
         </motion.div>
