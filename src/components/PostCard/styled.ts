@@ -21,7 +21,7 @@ export const Image = styled(Img)`
   `}
 `;
 
-export const Title = styled.h2`
+export const Title = styled.h3`
   margin: 0;
   margin-bottom: 5px;
   line-height: 1.3;
