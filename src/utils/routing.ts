@@ -7,5 +7,5 @@ const sanitizeCategory = R.pipe(
 );
 
 export function tagUri(tag: string): string {
-  return `/tag/${sanitizeCategory(tag)}`;
+  return `/tags/${sanitizeCategory(tag)}`;
 }

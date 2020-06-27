@@ -237,7 +237,7 @@ const tagPagePosts = {
   },
   expects: [
     {
-      path: '/tag/front-end',
+      path: '/tags/front-end',
       component: tagTemplate,
       context: {
         postEdges: [
@@ -289,7 +289,7 @@ const tagPagePosts = {
       },
     },
     {
-      path: '/tag/ci-cd',
+      path: '/tags/ci-cd',
       component: tagTemplate,
       context: {
         postEdges: [
@@ -319,7 +319,7 @@ const tagPagePosts = {
       },
     },
     {
-      path: '/tag/github-actions',
+      path: '/tags/github-actions',
       component: tagTemplate,
       context: {
         postEdges: [
@@ -349,7 +349,7 @@ const tagPagePosts = {
       },
     },
     {
-      path: '/tag/desenvolvimento',
+      path: '/tags/desenvolvimento',
       component: tagTemplate,
       context: {
         postEdges: [
@@ -386,7 +386,7 @@ const tagPagePosts = {
       },
     },
     {
-      path: '/tag/carreira',
+      path: '/tags/carreira',
       component: tagTemplate,
       context: {
         postEdges: [
@@ -423,7 +423,7 @@ const tagPagePosts = {
       },
     },
     {
-      path: '/tag/europa',
+      path: '/tags/europa',
       component: tagTemplate,
       context: {
         postEdges: [
@@ -460,7 +460,7 @@ const tagPagePosts = {
       },
     },
     {
-      path: '/tag/javascript',
+      path: '/tags/javascript',
       component: tagTemplate,
       context: {
         postEdges: [
@@ -497,7 +497,7 @@ const tagPagePosts = {
       },
     },
     {
-      path: '/tag/yml',
+      path: '/tags/yml',
       component: tagTemplate,
       context: {
         postEdges: [
@@ -528,7 +528,7 @@ const tagPagePosts = {
       },
     },
     {
-      path: '/tag/introduction',
+      path: '/tags/introduction',
       component: tagTemplate,
       context: {
         postEdges: [
@@ -559,7 +559,7 @@ const tagPagePosts = {
       },
     },
     {
-      path: '/tag/saude',
+      path: '/tags/saude',
       component: tagTemplate,
       context: {
         postEdges: [
@@ -590,7 +590,7 @@ const tagPagePosts = {
       },
     },
     {
-      path: '/tag/coronavirus',
+      path: '/tags/coronavirus',
       component: tagTemplate,
       context: {
         postEdges: [
@@ -621,7 +621,7 @@ const tagPagePosts = {
       },
     },
     {
-      path: '/tag/brasil',
+      path: '/tags/brasil',
       component: tagTemplate,
       context: {
         postEdges: [
