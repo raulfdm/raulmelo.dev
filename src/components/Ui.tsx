@@ -79,7 +79,7 @@ const StyledTag = styled.li`
 
   > a {
     display: inline-block;
-    margin: 2px 8px;
+    padding: 2px 8px;
     text-decoration: none;
   }
 `;
