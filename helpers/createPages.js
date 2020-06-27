@@ -263,7 +263,7 @@ async function createTagPage({ graphql, createPage }) {
     return result;
   }, {});
 
-  Object.entries(categoriesPosts).forEach(([_, categoryPosts]) => {
+  Object.entries(categoriesPosts).forEach(([, categoryPosts]) => {
     createPage({
       path: `/tag/${categoryPosts.name}`,
       component: tagTemplate,
