@@ -17,7 +17,6 @@ import { Card, Tag, Tags } from '../Ui';
 import { PostNode } from '../../types/GraphQL';
 import { BrazilFlag, UnitedKingdomFlag } from '../Icons';
 import { LOCALES } from '../../types/Locales';
-import { tagUri } from 'utils/routing';
 
 type PostCardProps = {
   postNode: PostNode;
@@ -72,9 +71,7 @@ export const PostCard: React.FC<PostCardProps> = ({ postNode }) => {
 
         <Tags>
           {categories?.map((category) => (
-            <Tag key={category}>
-              <Link to={tagUri(category)}>{category}</Link>
-            </Tag>
+            <Tag key={category} tag={category} />
           ))}
         </Tags>
 

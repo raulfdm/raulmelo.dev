@@ -1,6 +1,9 @@
+import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'gatsby';
 
 import { styled, media } from 'styles/emotion';
+import { tagUri } from 'utils/routing';
 
 export const pageTransitionAnimation = {
   initial: { opacity: 0 },
@@ -60,7 +63,7 @@ export const Tags = styled.ul`
   }
 `;
 
-export const Tag = styled.li`
+const StyledTag = styled.li`
   background-color: var(--tag);
   border: 1px solid var(--tagHover);
   font-size: 12px;
@@ -77,5 +80,16 @@ export const Tag = styled.li`
   > a {
     display: inline-block;
     margin: 2px 8px;
+    text-decoration: none;
   }
+`;
+
+export const Tag: React.FC<{ tag: string }> = ({ tag }) => (
+  <StyledTag>
+    <Link to={tagUri(tag)}>{tag}</Link>
+  </StyledTag>
+);
+
+export const LineDivider = styled.hr`
+  margin: 2rem 0;
 `;
