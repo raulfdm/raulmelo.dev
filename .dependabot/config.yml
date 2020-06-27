@@ -3,6 +3,6 @@ update_configs:
   - package_manager: 'javascript'
     directory: '/'
     update_schedule: 'daily'
-    target_branch: 'master'
+    target_branch: 'main'
     default_assignees:
       - 'raulfdm'

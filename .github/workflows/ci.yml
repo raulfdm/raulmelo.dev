@@ -79,7 +79,7 @@ jobs:
           # https://www.gatsbyjs.org/docs/page-build-optimizations-for-incremental-data-changes/
           GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES: true
           NODE_ENV: production
-          ENVIRONMENT: ${{ contains(github.ref, 'master') && 'production' || 'staging'}}
+          ENVIRONMENT: ${{ contains(github.ref, 'main') && 'production' || 'staging'}}
           GATSBY_ALGOLIA_APP_ID: ${{ secrets.GATSBY_ALGOLIA_APP_ID }}
           GATSBY_ALGOLIA_SEARCH_KEY: ${{ secrets.GATSBY_ALGOLIA_SEARCH_KEY }}
           ALGOLIA_ADMIN_KEY: ${{ secrets.ALGOLIA_ADMIN_KEY }}
@@ -107,7 +107,7 @@ jobs:
         with:
           publish-dir: './public'
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          production-branch: master
+          production-branch: main
           deploy-message: 'Deploy from GitHub Actions'
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
