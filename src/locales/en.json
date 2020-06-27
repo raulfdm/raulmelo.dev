@@ -25,5 +25,8 @@
   },
   "series": {
     "sectionDescription": "{seriesAmount} Part Series"
+  },
+  "tag": {
+    "title": "All posts for \"{tag}\""
   }
 }
