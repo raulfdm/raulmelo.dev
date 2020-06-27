@@ -1,11 +1,13 @@
 const path = require('path');
 const R = require('ramda');
 
+const homeTemplate = path.resolve('./src/templates/home.tsx');
+const blogPostComponent = path.resolve('./src/templates/blog-post.tsx');
+const tagTemplate = path.resolve('./src/templates/tag.tsx');
+
 const { getSeriesPost, seriesPath } = require('./series');
 
 async function createBlogPost({ graphql, createPage }) {
-  const blogPostComponent = path.resolve('./src/templates/blog-post.tsx');
-
   const result = await graphql(`
     {
       allMdx(
@@ -103,8 +105,6 @@ async function createBlogPost({ graphql, createPage }) {
 }
 
 async function createYearPage({ graphql, createPage }) {
-  const homeTemplate = path.resolve('./src/templates/home.tsx');
-
   const data = await graphql(`
     {
       allMdx(
@@ -182,7 +182,102 @@ async function createYearPage({ graphql, createPage }) {
   groupAndCreate((date) => date.substr(0, 7).replace('-', '/')); // year + month (ie. 2020-03)
 }
 
+async function createTagPage({ graphql, createPage }) {
+  const data = await graphql(`
+    {
+      allMdx(
+        sort: { fields: [frontmatter___date], order: DESC }
+        limit: 1000
+        filter: { fileAbsolutePath: { regex: "//blog//" } }
+      ) {
+        edges {
+          node {
+            id
+            timeToRead
+            frontmatter {
+              series {
+                id
+              }
+              title
+              subtitle
+              date
+              categories
+              description
+              image {
+                childImageSharp {
+                  fluid(quality: 60, maxWidth: 700, fit: CONTAIN) {
+                    base64
+                    tracedSVG
+                    srcWebp
+                    srcSetWebp
+                    srcSet
+                    src
+                    sizes
+                    presentationWidth
+                    presentationHeight
+                    originalName
+                    originalImg
+                    aspectRatio
+                  }
+                }
+              }
+            }
+            fileAbsolutePath
+            fields {
+              slug
+              lang
+              commonSlug
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  const edges = R.path(['data', 'allMdx', 'edges'], data);
+
+  const allCategories = R.pipe(
+    R.map((edge) => edge.node.frontmatter.categories),
+    R.flatten,
+    R.uniq,
+  )(edges);
+
+  const sanitizeCategories = R.pipe(
+    R.toLower,
+    R.replace('/', '-'),
+    R.replace(/\s/, '-'),
+  );
+
+  const categoriesPosts = allCategories.reduce((result, category) => {
+    const categoryNodes = edges.filter(({ node }) =>
+      node.frontmatter.categories
+        .map(R.toLower)
+        .includes(category.toLowerCase()),
+    );
+
+    result[category] = {
+      name: sanitizeCategories(category),
+      nodes: categoryNodes,
+    };
+
+    return result;
+  }, {});
+
+  Object.entries(categoriesPosts).forEach(([_, categoryPosts]) => {
+    createPage({
+      path: `/tag/${categoryPosts.name}`,
+      component: tagTemplate,
+      context: {
+        postEdges: categoryPosts.nodes,
+        category: categoryPosts.name,
+      },
+    });
+  });
+}
+
 module.exports = {
   createBlogPost,
   createYearPage,
+  createTagPage,
+  tagTemplate,
 };
