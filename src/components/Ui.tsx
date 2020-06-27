@@ -92,5 +92,5 @@ export const Tag: React.FC<{ tag: string }> = ({ tag }) => (
 
 export const LineDivider = styled.hr`
   margin: 2rem 0;
-  background-color: --var(--border);
+  background-color: ${({ theme }) => theme.color.border};
 `;
