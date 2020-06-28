@@ -30,6 +30,7 @@ export const Image = styled.img`
 export const AuthorDataWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  max-width: 600px;
 `;
 
 export const AuthorName = styled.h1`
