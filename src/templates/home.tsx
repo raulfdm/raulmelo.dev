@@ -50,16 +50,14 @@ const HomeTemplate: React.FC<HomeTemplateType> = ({ pageContext }) => {
       />
 
       <Layout>
-        <main>
-          <AuthorPresentation />
-          <Filter setFilter={setFilter} currentFilter={filter} />
-          <Posts
-            posts={posts}
-            filter={filter}
-            loadMore={loadMore}
-            hasMore={hasMore}
-          />
-        </main>
+        <AuthorPresentation />
+        <Filter setFilter={setFilter} currentFilter={filter} />
+        <Posts
+          posts={posts}
+          filter={filter}
+          loadMore={loadMore}
+          hasMore={hasMore}
+        />
       </Layout>
     </>
   );

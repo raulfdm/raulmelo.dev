@@ -39,17 +39,15 @@ export const Card = styled.div`
   `}
 `;
 
-export const Container = styled(motion.div)`
-  --padding: 16px;
-
-  max-width: calc(768px - var(--padding));
+export const Container = styled(motion.main)`
+  max-width: 860px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 var(--padding);
+  padding: 0 16px;
   height: 100%;
 
   ${media.greaterThan('medium')`
-    --padding: 24px;
+    padding: 0;
   `}
 `;
 
