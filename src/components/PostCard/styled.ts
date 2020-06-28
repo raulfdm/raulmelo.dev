@@ -1,5 +1,9 @@
 import Img from 'gatsby-image';
+
 import { styled, media } from 'styles/emotion';
+import { Card } from 'components/Ui';
+
+export const StyledCard = Card.withComponent('article');
 
 export const ImageContainer = styled.div`
   position: relative;

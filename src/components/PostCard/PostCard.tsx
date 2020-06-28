@@ -12,8 +12,9 @@ import {
   ImageContainer,
   Subtitle,
   Title,
+  StyledCard,
 } from './styled';
-import { Card, Tag, Tags } from '../Ui';
+import { Tag, Tags } from '../Ui';
 import { PostNode } from '../../types/GraphQL';
 import { BrazilFlag, UnitedKingdomFlag } from '../Icons';
 import { LOCALES } from '../../types/Locales';
@@ -38,7 +39,7 @@ export const PostCard: React.FC<PostCardProps> = ({ postNode }) => {
     : null;
 
   return (
-    <Card>
+    <StyledCard>
       {image && (
         <ImageContainer>
           <Image fluid={image.childImageSharp.fluid} />
@@ -89,6 +90,6 @@ export const PostCard: React.FC<PostCardProps> = ({ postNode }) => {
           )}
         </Flags>
       </Body>
-    </Card>
+    </StyledCard>
   );
 };
