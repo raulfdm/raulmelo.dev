@@ -104,84 +104,6 @@ async function createBlogPost({ graphql, createPage }) {
   });
 }
 
-async function createYearPage({ graphql, createPage }) {
-  const data = await graphql(`
-    {
-      allMdx(
-        sort: { fields: [frontmatter___date], order: DESC }
-        limit: 1000
-        filter: { fileAbsolutePath: { regex: "//blog//" } }
-      ) {
-        edges {
-          node {
-            id
-            timeToRead
-            frontmatter {
-              series {
-                id
-              }
-              title
-              subtitle
-              date
-              tags
-              description
-              image {
-                childImageSharp {
-                  fluid(quality: 60, maxWidth: 700, fit: CONTAIN) {
-                    base64
-                    tracedSVG
-                    srcWebp
-                    srcSetWebp
-                    srcSet
-                    src
-                    sizes
-                    presentationWidth
-                    presentationHeight
-                    originalName
-                    originalImg
-                    aspectRatio
-                  }
-                }
-              }
-            }
-            fileAbsolutePath
-            fields {
-              slug
-              lang
-              commonSlug
-            }
-          }
-        }
-      }
-    }
-  `);
-
-  function groupAndCreate(dateGroupPattern) {
-    const postsByYear = R.pipe(
-      R.path(['data', 'allMdx', 'edges']),
-      R.groupBy((edge) => dateGroupPattern(edge.node.frontmatter.date)),
-    )(data);
-
-    for (let yearPosts of R.toPairs(postsByYear)) {
-      const [year, edges] = yearPosts;
-
-      const pageData = {
-        path: `/${year}`,
-        component: homeTemplate,
-        context: {
-          postEdges: edges,
-        },
-      };
-
-      createPage(pageData);
-    }
-  }
-
-  /* TODO: Test it */
-  groupAndCreate((date) => date.substr(0, 4)); // year only (ie. 2020)
-  groupAndCreate((date) => date.substr(0, 7).replace('-', '/')); // year + month (ie. 2020-03)
-}
-
 async function createTagPage({ graphql, createPage }) {
   const data = await graphql(`
     {
@@ -275,7 +197,6 @@ async function createTagPage({ graphql, createPage }) {
 
 module.exports = {
   createBlogPost,
-  createYearPage,
   createTagPage,
   tagTemplate,
 };

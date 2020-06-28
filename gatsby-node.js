@@ -4,12 +4,7 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-const {
-  createFields,
-  createBlogPost,
-  createYearPage,
-  createTagPage,
-} = require('./helpers');
+const { createFields, createBlogPost, createTagPage } = require('./helpers');
 
 /* Custom Fields */
 exports.onCreateNode = createFields;
@@ -24,7 +19,6 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
   await createBlogPost({ graphql, createPage });
-  await createYearPage({ graphql, createPage });
   await createTagPage({ graphql, createPage });
 };
 
