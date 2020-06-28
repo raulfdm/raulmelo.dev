@@ -56,10 +56,9 @@ export const Container = styled(motion.div)`
 export const Tags = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  grid-gap: 8px;
 
   && {
-    margin: 16px 0 28px;
+    margin: 16px 0 20px;
   }
 `;
 
@@ -70,8 +69,9 @@ const StyledTag = styled.li`
   font-family: ${({ theme }) => theme.font.contentSans};
   border-radius: 2px;
   text-align: center;
-
   transition: background 0.1s ease-in-out;
+  margin-right: 8px;
+  margin-bottom: 8px;
 
   &:hover {
     background-color: var(--tagHover);
