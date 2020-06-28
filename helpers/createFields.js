@@ -14,20 +14,19 @@ const createFields = ({ node, actions }) => {
 
     const postDirectoryPath = path.dirname(node.fileAbsolutePath);
 
-    /* Gets the relative nested folder path */
-    const blogPostFolderPath = `/${path.relative(
-      BLOGS_PATH,
-      postDirectoryPath,
-    )}`;
-
     /* if it's translated, will be "index.<locale-prefix>" (e.g. index.en) */
     const isDefaultLanguage = fileName === 'index';
     const postLang = getFileLanguageForSlug(fileName);
 
+    /* Gets the relative nested folder path */
+    const postPath = path.relative(BLOGS_PATH, postDirectoryPath);
+    const localePath = isDefaultLanguage ? '' : `${postLang}/`;
+    const blogPostFolderPath = `/blog/${localePath}${postPath}`;
+
     createNodeField({
       node,
       name: `slug`,
-      value: `${isDefaultLanguage ? '' : `/${postLang}`}${blogPostFolderPath}`,
+      value: blogPostFolderPath,
     });
 
     /* lang is used to avoid showing twice a post which has translation */

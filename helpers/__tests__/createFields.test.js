@@ -6,7 +6,7 @@ describe('fn: createFields', () => {
       internal: {
         type: 'Mdx',
       },
-      fileAbsolutePath: `${BLOGS_PATH}/2017/05/regex-part-1/index.mdx`,
+      fileAbsolutePath: `${BLOGS_PATH}/regex-part-1/index.mdx`,
     };
 
     const createNodeField = jest.fn();
@@ -24,7 +24,7 @@ describe('fn: createFields', () => {
       expect(createNodeField.mock.calls[0][0]).toEqual({
         node,
         name: 'slug',
-        value: '/2017/05/regex-part-1',
+        value: '/blog/regex-part-1',
       });
     });
 
@@ -60,7 +60,7 @@ describe('fn: createFields', () => {
       expect(createNodeField.mock.calls[0][0]).toEqual({
         node,
         name: 'slug',
-        value: '/en/2017/05/regex-part-1',
+        value: '/blog/en/2017/05/regex-part-1',
       });
     });
 
