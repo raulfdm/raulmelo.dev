@@ -6,22 +6,16 @@ import { Container, pageTransitionVariants } from './Ui';
 import { GlobalStyles } from '../styles';
 import { ThemeProvider } from '../context/theme';
 
-interface Props {
+interface LayoutProps {
   children: React.ReactNode | React.ReactChildren;
-  noMenu?: boolean;
-  noGlobals?: boolean;
   className?: string;
 }
 
-const Layout: React.FC<Props> = ({
-  children,
-  noMenu,
-  noGlobals,
-  className,
-}) => {
+const Layout: React.FC<LayoutProps> = ({ children, className }) => {
   return (
     <AnimatePresence exitBeforeEnter initial={false}>
       <ThemeProvider>
+        <MenuBar />
         <Container
           initial="exit"
           animate="enter"
@@ -29,18 +23,12 @@ const Layout: React.FC<Props> = ({
           variants={pageTransitionVariants}
           className={className}
         >
-          {!noGlobals && <GlobalStyles />}
-          {!noMenu && <MenuBar />}
+          <GlobalStyles />
           {children}
         </Container>
       </ThemeProvider>
     </AnimatePresence>
   );
-};
-
-Layout.defaultProps = {
-  noMenu: false,
-  noGlobals: false,
 };
 
 export default Layout;
