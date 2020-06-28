@@ -1,26 +1,6 @@
-import { styled, css } from 'styles/emotion';
+import { styled } from 'styles/emotion';
 
-const headingLinkStyle = css`
-  cursor: text;
-
-  &:hover {
-    .copy-title-icon svg {
-      visibility: visible;
-    }
-  }
-
-  .copy-title-icon {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translateX(-100%);
-    padding-right: 4px;
-
-    svg {
-      visibility: hidden;
-    }
-  }
-`;
+import { headingLinkStyle } from 'components/Ui';
 
 export const h1 = styled.h1`
   ${headingLinkStyle};

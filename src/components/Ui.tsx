@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'gatsby';
 
-import { styled, media } from 'styles/emotion';
+import { styled, media, css } from 'styles/emotion';
 import { tagUri } from 'utils/routing';
 
 export const pageTransitionAnimation = {
@@ -93,4 +93,26 @@ export const Tag: React.FC<{ tag: string }> = ({ tag }) => (
 export const LineDivider = styled.hr`
   margin: 2rem 0;
   background-color: ${({ theme }) => theme.color.border};
+`;
+
+export const headingLinkStyle = css`
+  cursor: text;
+  display: inline-block;
+
+  &:hover {
+    .copy-title-icon svg {
+      visibility: visible;
+    }
+  }
+
+  .copy-title-icon {
+    position: absolute;
+    top: -2px;
+    right: -28px;
+    padding-left: 4px;
+
+    svg {
+      visibility: hidden;
+    }
+  }
 `;

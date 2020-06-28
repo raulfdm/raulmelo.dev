@@ -4,6 +4,7 @@ import Typography from 'typography';
 import { css, Global } from 'styles/emotion';
 import { pandaPrismStyles } from './prims-panda-theme';
 import { FONTS, theme } from 'styles/theme';
+import { headingLinkStyle } from 'components/Ui';
 
 const baseFontSize = '18px';
 const baseFontSizeHigherThanMobile = '18px';
@@ -68,6 +69,15 @@ const blogGlobal = css`
 
   .twitter-tweet {
     margin: ${typography.adjustFontSizeTo('40px').fontSize} auto !important;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    ${headingLinkStyle}
   }
 
   ${pandaPrismStyles};
