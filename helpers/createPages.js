@@ -1,7 +1,6 @@
 const path = require('path');
 const R = require('ramda');
 
-const homeTemplate = path.resolve('./src/templates/home.tsx');
 const blogPostComponent = path.resolve('./src/templates/blog-post.tsx');
 const tagTemplate = path.resolve('./src/templates/tag.tsx');
 

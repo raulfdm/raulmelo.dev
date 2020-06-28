@@ -496,4 +496,4 @@ const tagPagePosts = {
   ],
 };
 
-module.exports = { singlePost, twoPosts, tagPagePosts };
+module.exports = { tagPagePosts };
