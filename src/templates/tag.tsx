@@ -13,7 +13,7 @@ import { PostEdges } from '../types';
 type TagTemplateProps = {
   pageContext: {
     postEdges: PostEdges;
-    category: string;
+    tag: string;
   };
   uri: string;
 };
@@ -31,7 +31,7 @@ const messages = defineMessages({
 });
 
 const TagTemplate: React.FC<TagTemplateProps> = ({ pageContext, uri }) => {
-  const { postEdges, category } = pageContext;
+  const { postEdges, tag } = pageContext;
 
   const { hasMore, loadMore, postsToRender, filter } = useHomeState(postEdges);
 
@@ -55,7 +55,7 @@ const TagTemplate: React.FC<TagTemplateProps> = ({ pageContext, uri }) => {
         <main>
           <AuthorPresentation />
           <Posts
-            customTitle={formatMessage(messages.postsTitle, { tag: category })}
+            customTitle={formatMessage(messages.postsTitle, { tag: tag })}
             posts={posts}
             filter={filter}
             loadMore={loadMore}

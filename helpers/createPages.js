@@ -25,7 +25,7 @@ async function createBlogPost({ graphql, createPage }) {
               title
               subtitle
               date
-              categories
+              tags
               description
               series {
                 id
@@ -123,7 +123,7 @@ async function createYearPage({ graphql, createPage }) {
               title
               subtitle
               date
-              categories
+              tags
               description
               image {
                 childImageSharp {
@@ -201,7 +201,7 @@ async function createTagPage({ graphql, createPage }) {
               title
               subtitle
               date
-              categories
+              tags
               description
               image {
                 childImageSharp {
@@ -236,40 +236,38 @@ async function createTagPage({ graphql, createPage }) {
 
   const edges = R.path(['data', 'allMdx', 'edges'], data);
 
-  const allCategories = R.pipe(
-    R.map((edge) => edge.node.frontmatter.categories),
+  const allTags = R.pipe(
+    R.map((edge) => edge.node.frontmatter.tags),
     R.flatten,
     R.uniq,
   )(edges);
 
-  const sanitizeCategories = R.pipe(
+  const sanitizeTags = R.pipe(
     R.toLower,
     R.replace('/', '-'),
     R.replace(/\s/, '-'),
   );
 
-  const categoriesPosts = allCategories.reduce((result, category) => {
-    const categoryNodes = edges.filter(({ node }) =>
-      node.frontmatter.categories
-        .map(R.toLower)
-        .includes(category.toLowerCase()),
+  const tagsPosts = allTags.reduce((result, tag) => {
+    const tagNodes = edges.filter(({ node }) =>
+      node.frontmatter.tags.map(R.toLower).includes(tag.toLowerCase()),
     );
 
-    result[category] = {
-      name: sanitizeCategories(category),
-      nodes: categoryNodes,
+    result[tag] = {
+      name: sanitizeTags(tag),
+      nodes: tagNodes,
     };
 
     return result;
   }, {});
 
-  Object.entries(categoriesPosts).forEach(([, categoryPosts]) => {
+  Object.entries(tagsPosts).forEach(([, tagPosts]) => {
     createPage({
-      path: `/tags/${categoryPosts.name}`,
+      path: `/tags/${tagPosts.name}`,
       component: tagTemplate,
       context: {
-        postEdges: categoryPosts.nodes,
-        category: categoryPosts.name,
+        postEdges: tagPosts.nodes,
+        tag: tagPosts.name,
       },
     });
   });

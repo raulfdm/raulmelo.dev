@@ -16,12 +16,7 @@ const singlePost = {
                 title: 'Desenvolvedor JavaScript — do Brasil à Europa',
                 subtitle: 'Vida na Irlanda: Chegada e rotina de estudos',
                 date: '2020-03-25',
-                categories: [
-                  'desenvolvimento',
-                  'carreira',
-                  'europa',
-                  'JavaScript',
-                ],
+                tags: ['desenvolvimento', 'carreira', 'europa', 'JavaScript'],
                 description: '',
               },
               fileAbsolutePath:
@@ -50,7 +45,7 @@ const singlePost = {
             title: 'Desenvolvedor JavaScript — do Brasil à Europa',
             subtitle: 'Vida na Irlanda: Chegada e rotina de estudos',
             date: '2020-03-25',
-            categories: ['desenvolvimento', 'carreira', 'europa', 'JavaScript'],
+            tags: ['desenvolvimento', 'carreira', 'europa', 'JavaScript'],
             description: '',
           },
           fileAbsolutePath:
@@ -147,7 +142,7 @@ const tagPagePosts = {
                 title: 'Gatsby Incremental Builds and Github Actions',
                 subtitle: 'A quick setup to increase your build performance',
                 date: '2020-04-28',
-                categories: ['front-end', 'ci/cd', 'github actions'],
+                tags: ['front-end', 'ci/cd', 'github actions'],
                 description: null,
               },
               fileAbsolutePath:
@@ -170,12 +165,7 @@ const tagPagePosts = {
                 title: 'Desenvolvedor JavaScript — do Brasil à Europa',
                 subtitle: 'Vida na Irlanda: Chegada e rotina de estudos',
                 date: '2020-03-25',
-                categories: [
-                  'desenvolvimento',
-                  'carreira',
-                  'europa',
-                  'JavaScript',
-                ],
+                tags: ['desenvolvimento', 'carreira', 'europa', 'JavaScript'],
                 description: '',
               },
               fileAbsolutePath:
@@ -197,7 +187,7 @@ const tagPagePosts = {
                 subtitle:
                   'A small guide to help you write and read those files',
                 date: '2020-03-19',
-                categories: ['yml', 'introduction', 'front-end'],
+                tags: ['yml', 'introduction', 'front-end'],
                 description: null,
               },
               fileAbsolutePath:
@@ -219,7 +209,7 @@ const tagPagePosts = {
                 subtitle:
                   'Algumas informações básicas e links para se manter informado',
                 date: '2020-03-13',
-                categories: ['saude', 'coronavirus', 'brasil'],
+                tags: ['saude', 'coronavirus', 'brasil'],
                 description: '',
               },
               fileAbsolutePath:
@@ -250,7 +240,7 @@ const tagPagePosts = {
                 title: 'Gatsby Incremental Builds and Github Actions',
                 subtitle: 'A quick setup to increase your build performance',
                 date: '2020-04-28',
-                categories: ['front-end', 'ci/cd', 'github actions'],
+                tags: ['front-end', 'ci/cd', 'github actions'],
                 description: null,
               },
               fileAbsolutePath:
@@ -272,7 +262,7 @@ const tagPagePosts = {
                 subtitle:
                   'A small guide to help you write and read those files',
                 date: '2020-03-19',
-                categories: ['yml', 'introduction', 'front-end'],
+                tags: ['yml', 'introduction', 'front-end'],
                 description: null,
               },
               fileAbsolutePath:
@@ -285,7 +275,7 @@ const tagPagePosts = {
             },
           },
         ],
-        category: 'front-end',
+        tag: 'front-end',
       },
     },
     {
@@ -302,7 +292,7 @@ const tagPagePosts = {
                 title: 'Gatsby Incremental Builds and Github Actions',
                 subtitle: 'A quick setup to increase your build performance',
                 date: '2020-04-28',
-                categories: ['front-end', 'ci/cd', 'github actions'],
+                tags: ['front-end', 'ci/cd', 'github actions'],
                 description: null,
               },
               fileAbsolutePath:
@@ -315,7 +305,7 @@ const tagPagePosts = {
             },
           },
         ],
-        category: 'ci-cd',
+        tag: 'ci-cd',
       },
     },
     {
@@ -332,7 +322,7 @@ const tagPagePosts = {
                 title: 'Gatsby Incremental Builds and Github Actions',
                 subtitle: 'A quick setup to increase your build performance',
                 date: '2020-04-28',
-                categories: ['front-end', 'ci/cd', 'github actions'],
+                tags: ['front-end', 'ci/cd', 'github actions'],
                 description: null,
               },
               fileAbsolutePath:
@@ -345,7 +335,7 @@ const tagPagePosts = {
             },
           },
         ],
-        category: 'github-actions',
+        tag: 'github-actions',
       },
     },
     {
@@ -364,12 +354,7 @@ const tagPagePosts = {
                 title: 'Desenvolvedor JavaScript — do Brasil à Europa',
                 subtitle: 'Vida na Irlanda: Chegada e rotina de estudos',
                 date: '2020-03-25',
-                categories: [
-                  'desenvolvimento',
-                  'carreira',
-                  'europa',
-                  'JavaScript',
-                ],
+                tags: ['desenvolvimento', 'carreira', 'europa', 'JavaScript'],
                 description: '',
               },
               fileAbsolutePath:
@@ -382,7 +367,7 @@ const tagPagePosts = {
             },
           },
         ],
-        category: 'desenvolvimento',
+        tag: 'desenvolvimento',
       },
     },
     {
@@ -401,12 +386,7 @@ const tagPagePosts = {
                 title: 'Desenvolvedor JavaScript — do Brasil à Europa',
                 subtitle: 'Vida na Irlanda: Chegada e rotina de estudos',
                 date: '2020-03-25',
-                categories: [
-                  'desenvolvimento',
-                  'carreira',
-                  'europa',
-                  'JavaScript',
-                ],
+                tags: ['desenvolvimento', 'carreira', 'europa', 'JavaScript'],
                 description: '',
               },
               fileAbsolutePath:
@@ -419,7 +399,7 @@ const tagPagePosts = {
             },
           },
         ],
-        category: 'carreira',
+        tag: 'carreira',
       },
     },
     {
@@ -438,12 +418,7 @@ const tagPagePosts = {
                 title: 'Desenvolvedor JavaScript — do Brasil à Europa',
                 subtitle: 'Vida na Irlanda: Chegada e rotina de estudos',
                 date: '2020-03-25',
-                categories: [
-                  'desenvolvimento',
-                  'carreira',
-                  'europa',
-                  'JavaScript',
-                ],
+                tags: ['desenvolvimento', 'carreira', 'europa', 'JavaScript'],
                 description: '',
               },
               fileAbsolutePath:
@@ -456,7 +431,7 @@ const tagPagePosts = {
             },
           },
         ],
-        category: 'europa',
+        tag: 'europa',
       },
     },
     {
@@ -475,12 +450,7 @@ const tagPagePosts = {
                 title: 'Desenvolvedor JavaScript — do Brasil à Europa',
                 subtitle: 'Vida na Irlanda: Chegada e rotina de estudos',
                 date: '2020-03-25',
-                categories: [
-                  'desenvolvimento',
-                  'carreira',
-                  'europa',
-                  'JavaScript',
-                ],
+                tags: ['desenvolvimento', 'carreira', 'europa', 'JavaScript'],
                 description: '',
               },
               fileAbsolutePath:
@@ -493,7 +463,7 @@ const tagPagePosts = {
             },
           },
         ],
-        category: 'javascript',
+        tag: 'javascript',
       },
     },
     {
@@ -511,7 +481,7 @@ const tagPagePosts = {
                 subtitle:
                   'A small guide to help you write and read those files',
                 date: '2020-03-19',
-                categories: ['yml', 'introduction', 'front-end'],
+                tags: ['yml', 'introduction', 'front-end'],
                 description: null,
               },
               fileAbsolutePath:
@@ -524,7 +494,7 @@ const tagPagePosts = {
             },
           },
         ],
-        category: 'yml',
+        tag: 'yml',
       },
     },
     {
@@ -542,7 +512,7 @@ const tagPagePosts = {
                 subtitle:
                   'A small guide to help you write and read those files',
                 date: '2020-03-19',
-                categories: ['yml', 'introduction', 'front-end'],
+                tags: ['yml', 'introduction', 'front-end'],
                 description: null,
               },
               fileAbsolutePath:
@@ -555,7 +525,7 @@ const tagPagePosts = {
             },
           },
         ],
-        category: 'introduction',
+        tag: 'introduction',
       },
     },
     {
@@ -573,7 +543,7 @@ const tagPagePosts = {
                 subtitle:
                   'Algumas informações básicas e links para se manter informado',
                 date: '2020-03-13',
-                categories: ['saude', 'coronavirus', 'brasil'],
+                tags: ['saude', 'coronavirus', 'brasil'],
                 description: '',
               },
               fileAbsolutePath:
@@ -586,7 +556,7 @@ const tagPagePosts = {
             },
           },
         ],
-        category: 'saude',
+        tag: 'saude',
       },
     },
     {
@@ -604,7 +574,7 @@ const tagPagePosts = {
                 subtitle:
                   'Algumas informações básicas e links para se manter informado',
                 date: '2020-03-13',
-                categories: ['saude', 'coronavirus', 'brasil'],
+                tags: ['saude', 'coronavirus', 'brasil'],
                 description: '',
               },
               fileAbsolutePath:
@@ -617,7 +587,7 @@ const tagPagePosts = {
             },
           },
         ],
-        category: 'coronavirus',
+        tag: 'coronavirus',
       },
     },
     {
@@ -635,7 +605,7 @@ const tagPagePosts = {
                 subtitle:
                   'Algumas informações básicas e links para se manter informado',
                 date: '2020-03-13',
-                categories: ['saude', 'coronavirus', 'brasil'],
+                tags: ['saude', 'coronavirus', 'brasil'],
                 description: '',
               },
               fileAbsolutePath:
@@ -648,7 +618,7 @@ const tagPagePosts = {
             },
           },
         ],
-        category: 'brasil',
+        tag: 'brasil',
       },
     },
   ],

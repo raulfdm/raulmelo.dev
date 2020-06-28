@@ -1,11 +1,11 @@
 import * as R from 'ramda';
 
-const sanitizeCategory = R.pipe(
+const sanitizeTag = R.pipe(
   R.toLower,
   R.replace('/', '-'),
   R.replace(/\s/, '-'),
 );
 
 export function tagUri(tag: string): string {
-  return `/tags/${sanitizeCategory(tag)}`;
+  return `/tags/${sanitizeTag(tag)}`;
 }

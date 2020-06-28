@@ -35,7 +35,7 @@ export const query = graphql`
             title
             subtitle
             date
-            categories
+            tags
             description
             image {
               childImageSharp {

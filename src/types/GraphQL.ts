@@ -14,7 +14,7 @@ export type Frontmatter = {
   title: string;
   subtitle?: string;
   date: string;
-  categories?: string[];
+  tags?: string[];
   description?: string;
   series?: FrontmatterSeries;
   image?: FrontMatterImage;

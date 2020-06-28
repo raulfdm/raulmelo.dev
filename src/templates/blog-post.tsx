@@ -32,7 +32,7 @@ const BlogPost: React.FC<BlogPostProps> = ({ pageContext }) => {
     subtitle,
     description,
     series: seriesInfo,
-    categories,
+    tags,
   } = frontmatter as Frontmatter;
 
   return (
@@ -65,8 +65,8 @@ const BlogPost: React.FC<BlogPostProps> = ({ pageContext }) => {
               <SeriesSection />
               <LineDivider />
               <Tags>
-                {categories?.map((category) => (
-                  <Tag key={category} tag={category} />
+                {tags?.map((tag) => (
+                  <Tag key={tag} tag={tag} />
                 ))}
               </Tags>
             </Main>

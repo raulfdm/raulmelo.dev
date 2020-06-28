@@ -29,9 +29,9 @@ const flagsMap = {
 
 export const PostCard: React.FC<PostCardProps> = ({ postNode }) => {
   const { frontmatter, timeToRead, fields, translations } = postNode;
-  const { image, date, title, subtitle, categories } = frontmatter!;
+  const { image, date, title, subtitle, tags } = frontmatter!;
 
-  const shouldRenderCategories = !R.pipe(R.isNil, R.isEmpty)(categories);
+  const shouldRenderTags = !R.pipe(R.isNil, R.isEmpty)(tags);
   const PostLangFlag = flagsMap[fields!.lang as LOCALES];
   const TranslationLangFlag = translations
     ? flagsMap[R.head(translations)!.lang as LOCALES]
@@ -70,10 +70,10 @@ export const PostCard: React.FC<PostCardProps> = ({ postNode }) => {
         </DateAndTime>
         {subtitle && <Subtitle>{subtitle}</Subtitle>}
 
-        {shouldRenderCategories && (
+        {shouldRenderTags && (
           <Tags>
-            {categories?.map((category) => (
-              <Tag key={category} tag={category} />
+            {tags?.map((tag) => (
+              <Tag key={tag} tag={tag} />
             ))}
           </Tags>
         )}
