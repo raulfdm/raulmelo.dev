@@ -85,7 +85,7 @@
     "eslint-plugin-cypress": "2.11.1",
     "eslint-plugin-emotion": "10.0.27",
     "eslint-plugin-jest": "23.17.1",
-    "eslint-plugin-react": "7.20.0",
+    "eslint-plugin-react": "7.20.3",
     "eslint-plugin-react-hooks": "4.0.4",
     "gatsby": "2.23.11",
     "gatsby-alias-imports": "1.0.4",
