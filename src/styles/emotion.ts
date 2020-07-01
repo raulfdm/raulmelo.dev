@@ -25,4 +25,4 @@ export const styled = defaultStyled as CreateStyled<SiteTheme>;
 export { css, Global } from '@emotion/core';
 export { ThemeProvider as EmotionThemeProvider } from 'emotion-theming';
 
-export const media = generateMedia({ ...defaultBreakpoints, medium: '860px' });
+export const media = generateMedia({ ...defaultBreakpoints, medium: '768px' });
