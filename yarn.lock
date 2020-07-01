@@ -8718,10 +8718,10 @@ gatsby-cli@^2.12.51:
     yargs "^15.3.1"
     yurnalist "^1.1.2"
 
-gatsby-core-utils@^1.3.7, gatsby-core-utils@^1.3.8:
-  version "1.3.8"
-  resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-1.3.8.tgz#e6d15d8cb24fa7e16a0af01a5e262ac9c4f31913"
-  integrity sha512-wVUqF8/DQMhiCyIKxVKjeDp4aN8x4/f+e/gS78sgaU0fleUpMMbQmeV+ASLh0Kk11yFs0fl4+EWWLFCHY2sWmg==
+gatsby-core-utils@^1.3.10, gatsby-core-utils@^1.3.7, gatsby-core-utils@^1.3.8:
+  version "1.3.10"
+  resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-1.3.10.tgz#f283b9c0c5281e678d3b8b77cf46ef3992971d3f"
+  integrity sha512-JtGP7lrbJanatO1j04mECRP7CHlnlexhS3KYUROQdcwxBvyIikkHYOt4FqS4FAQ6y6MqOvM1/uvpkbQbBx154Q==
   dependencies:
     ci-info "2.0.0"
     configstore "^5.0.1"
@@ -8821,13 +8821,13 @@ gatsby-plugin-i18n@1.0.1:
     graphql "^0.11.7"
     ptz-i18n "^1.0.0"
 
-gatsby-plugin-manifest@2.4.13:
-  version "2.4.13"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.4.13.tgz#49e4ed03f46f0d9bbcdd4a9dc4be8d2fb68ecb30"
-  integrity sha512-GLp8E2DEzfNr1DFHTSPnoAGMGoSEe6zN99YgeelswxGwirncHcAGLiIiaHPfrrtxTy/3AVhNkSHH38c4SUjuZw==
+gatsby-plugin-manifest@2.4.16:
+  version "2.4.16"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.4.16.tgz#e2776a7067a5a96c275a44970207eb3cab803bdc"
+  integrity sha512-HqAaEyM5Bafpw5KuSbfwyjj4IQ1AlCGxwoP0IqgKxbwnEyYP7XoHddpUw+atSjlVtz6gy43mXPKleUDFZ79l/g==
   dependencies:
-    "@babel/runtime" "^7.10.2"
-    gatsby-core-utils "^1.3.7"
+    "@babel/runtime" "^7.10.3"
+    gatsby-core-utils "^1.3.10"
     semver "^5.7.1"
     sharp "^0.25.1"
 
