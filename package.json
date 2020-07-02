@@ -116,7 +116,7 @@
     "gatsby-tinacms-git": "0.5.6",
     "gatsby-tinacms-json": "0.8.29",
     "gatsby-tinacms-remark": "0.8.4",
-    "gatsby-transformer-json": "2.4.7",
+    "gatsby-transformer-json": "2.4.9",
     "gatsby-transformer-sharp": "2.5.9",
     "html-loader": "1.1.0",
     "husky": "4.2.5",
