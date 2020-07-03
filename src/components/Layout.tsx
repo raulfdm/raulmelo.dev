@@ -11,12 +11,14 @@ interface LayoutProps {
   className?: string;
 }
 
+const Main = Container.withComponent('main');
+
 const Layout: React.FC<LayoutProps> = ({ children, className }) => {
   return (
     <AnimatePresence exitBeforeEnter initial={false}>
       <ThemeProvider>
         <MenuBar />
-        <Container
+        <Main
           initial="exit"
           animate="enter"
           exit="exit"
@@ -25,7 +27,7 @@ const Layout: React.FC<LayoutProps> = ({ children, className }) => {
         >
           <GlobalStyles />
           {children}
-        </Container>
+        </Main>
       </ThemeProvider>
     </AnimatePresence>
   );
