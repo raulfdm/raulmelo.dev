@@ -1,45 +1,59 @@
 import React from 'react';
 import * as R from 'ramda';
-import { FormattedMessage, FormattedDate } from 'react-intl';
+import { FormattedMessage, FormattedDate, defineMessages } from 'react-intl';
 import { Link } from 'gatsby';
 
 import {
   Body,
   DateAndTime,
-  Flag,
-  Flags,
   Image,
   ImageContainer,
   Subtitle,
   Title,
-  StyledCard,
+  PostCardWrapper,
 } from './styled';
 import { Tag, Tags } from '../Ui';
 import { PostNode } from '../../types/GraphQL';
-import { BrazilFlag, UnitedKingdomFlag } from '../Icons';
 import { LOCALES } from '../../types/Locales';
+import { useIntl } from 'context/react-intl';
 
 type PostCardProps = {
   postNode: PostNode;
 };
 
-const flagsMap = {
-  [LOCALES.PT]: BrazilFlag,
-  [LOCALES.EN]: UnitedKingdomFlag,
-};
+const messages = defineMessages({
+  [LOCALES.PT]: {
+    id: 'locales.pt',
+  },
+  [LOCALES.EN]: {
+    id: 'locales.en',
+  },
+});
 
 export const PostCard: React.FC<PostCardProps> = ({ postNode }) => {
+  const { formatMessage } = useIntl();
   const { frontmatter, timeToRead, fields, translations } = postNode;
   const { image, date, title, subtitle, tags } = frontmatter!;
 
   const shouldRenderTags = !R.pipe(R.isNil, R.isEmpty)(tags);
-  const PostLangFlag = flagsMap[fields!.lang as LOCALES];
-  const TranslationLangFlag = translations
-    ? flagsMap[R.head(translations)!.lang as LOCALES]
-    : null;
+
+  function generateLanguagesText(): string {
+    const firstLanguage = messages[fields?.lang as 'pt' | 'en'];
+    function getPostAvailableTranslation(): null | string {
+      if (!translations) return null;
+
+      return R.head(translations)!.lang;
+    }
+    const languages = [firstLanguage, getPostAvailableTranslation()]
+      .filter((l) => l)
+      .map((l) => formatMessage(l as { id: string }))
+      .join('/');
+
+    return `(${languages})`;
+  }
 
   return (
-    <StyledCard>
+    <PostCardWrapper>
       {image && (
         <ImageContainer>
           <Image fluid={image.childImageSharp.fluid} />
@@ -67,7 +81,8 @@ export const PostCard: React.FC<PostCardProps> = ({ postNode }) => {
             values={{
               minutes: timeToRead,
             }}
-          />
+          />{' '}
+          {generateLanguagesText()}
         </DateAndTime>
         {subtitle && <Subtitle>{subtitle}</Subtitle>}
 
@@ -78,18 +93,7 @@ export const PostCard: React.FC<PostCardProps> = ({ postNode }) => {
             ))}
           </Tags>
         )}
-
-        <Flags>
-          <Flag>
-            <PostLangFlag />
-          </Flag>
-          {TranslationLangFlag && (
-            <Flag>
-              <TranslationLangFlag />
-            </Flag>
-          )}
-        </Flags>
       </Body>
-    </StyledCard>
+    </PostCardWrapper>
   );
 };

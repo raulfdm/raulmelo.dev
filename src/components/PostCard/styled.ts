@@ -63,22 +63,3 @@ export const Subtitle = styled.p`
     font-size: 2.2rem;
   `}
 `;
-
-export const Flags = styled.div`
-  display: flex;
-  justify-content: end;
-  position: absolute;
-  right: 8px;
-  bottom: 8px;
-`;
-
-export const Flag = styled.div`
-  width: 24px;
-  margin-left: 10px;
-
-  svg {
-    display: block;
-    max-width: 100%;
-    height: auto;
-  }
-`;

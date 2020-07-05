@@ -34,5 +34,9 @@
   },
   "tag": {
     "title": "All posts for \"{tag}\""
+  },
+  "locales": {
+    "pt": "Portuguese",
+    "en": "English"
   }
 }

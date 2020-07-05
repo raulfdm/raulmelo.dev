@@ -34,5 +34,9 @@
   },
   "tag": {
     "title": "Posts com a tag \"{tag}\""
+  },
+  "locales": {
+    "pt": "Português",
+    "en": "Inglês"
   }
 }
