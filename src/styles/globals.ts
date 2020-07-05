@@ -1,5 +1,9 @@
 import { css } from 'styles/emotion';
-import { darken } from 'polished';
+
+export const themeBackgroundColor = {
+  dark: 'rgb(21, 32, 43)',
+  light: 'rgb(255, 255, 255)',
+};
 
 export const customGlobals = css`
   *:focus {
@@ -13,7 +17,7 @@ export const customGlobals = css`
 
   body,
   body.light {
-    --background: rgb(255, 255, 255);
+    --background: ${themeBackgroundColor.light};
     --font: rgb(0, 0, 0, 0.84);
     --font-medium: rgba(0, 0, 0, 0.76);
     --font-light: rgba(0, 0, 0, 0.54);
@@ -22,12 +26,10 @@ export const customGlobals = css`
     --shadowLight: rgba(0, 0, 0, 0.25);
     --shadowBright: rgba(0, 0, 0, 0.05);
     --shadowMenu: rgba(0, 0, 0, 0.05);
-    --tag: rgb(242, 242, 242);
-    --tagHover: ${darken(0.1, 'rgb(242, 242, 242)')};
   }
 
   body.dark {
-    --background: rgb(21, 32, 43);
+    --background: ${themeBackgroundColor.dark};
     --font: rgba(255, 255, 255, 1);
     --font-medium: rgba(255, 255, 255, 0.7);
     --font-light: rgba(255, 255, 255, 0.54);
@@ -36,8 +38,6 @@ export const customGlobals = css`
     --shadowLight: rgba(255, 255, 255, 0.25);
     --shadowBright: rgba(255, 255, 255, 0.05);
     --shadowMenu: '';
-    --tag: rgb(21, 32, 43);
-    --tagHover: ${darken(0.4, 'rgb(242, 242, 242)')};
   }
 
   body {
