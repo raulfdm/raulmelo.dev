@@ -103,13 +103,15 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: [`.mdx`, `.md`],
+        /* THIS IS WORKAROUND
+        https://github.com/gatsbyjs/gatsby/issues/16239#issuecomment-594516446
+        */
+        remarkPlugins: [require(`remark-unwrap-images`)],
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 780,
-              // https://github.com/gatsbyjs/gatsby/issues/20000
-              // markdownCaptions: true,
+              maxWidth: 768,
               showCaptions: true,
               quality: 100,
             },
