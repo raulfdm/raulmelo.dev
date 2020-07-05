@@ -7,8 +7,6 @@ exports[`<FeaturedImage /> renders gatsby image with default alt 1`] = `
   margin: 0 auto;
   padding: 0 16px;
   height: 100%;
-  max-width: 1192px;
-  padding-bottom: 50px;
 }
 
 @media (min-width:768px) {
@@ -17,13 +15,18 @@ exports[`<FeaturedImage /> renders gatsby image with default alt 1`] = `
   }
 }
 
+.emotion-1.emotion-1 {
+  max-width: 1192px;
+  padding-bottom: 50px;
+}
+
 .emotion-0 {
   max-height: 600px;
   margin-top: 42px;
 }
 
 <div>
-  <main
+  <div
     aria-label="Featured image"
     class="emotion-1"
     data-testid="featured-image-wrapper"
@@ -90,6 +93,6 @@ exports[`<FeaturedImage /> renders gatsby image with default alt 1`] = `
 /static/174ca29b67ba581dded040aa60140943/a3795/featured-img.png 1920w" src="/static/174ca29b67ba581dded040aa60140943/b37fb/featured-img.png" alt="Featured image" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/&gt;&lt;/picture&gt;
       </noscript>
     </div>
-  </main>
+  </div>
 </div>
 `;

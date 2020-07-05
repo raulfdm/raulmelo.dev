@@ -1,10 +1,11 @@
 import React from 'react';
-import { AnimatePresence } from 'framer-motion';
 
 import { MenuBar } from './MenuBar';
 import { Container, pageTransitionVariants } from './Ui';
 import { GlobalStyles } from '../styles';
 import { ThemeProvider } from '../context/theme';
+import { SideMenu } from './SideMenu';
+import { styled, media, SiteTheme } from 'styles/emotion';
 
 interface LayoutProps {
   children: React.ReactNode | React.ReactChildren;
@@ -13,23 +14,33 @@ interface LayoutProps {
 
 const Main = Container.withComponent('main');
 
+const StyledMain = styled(Main)`
+  && {
+    padding-top: ${({ theme }) => `calc(35px + ${theme.sizes.menuBar.height})`};
+
+    ${media.greaterThan('medium')`
+      padding-top: ${({ theme }: { theme: SiteTheme }) =>
+        `calc(35px + ${theme.sizes.menuBar.height})`};
+    `}
+  }
+`;
+
 const Layout: React.FC<LayoutProps> = ({ children, className }) => {
   return (
-    <AnimatePresence exitBeforeEnter initial={false}>
-      <ThemeProvider>
-        <MenuBar />
-        <Main
-          initial="exit"
-          animate="enter"
-          exit="exit"
-          variants={pageTransitionVariants}
-          className={className}
-        >
-          <GlobalStyles />
-          {children}
-        </Main>
-      </ThemeProvider>
-    </AnimatePresence>
+    <ThemeProvider>
+      <MenuBar />
+      <StyledMain
+        initial="exit"
+        animate="enter"
+        exit="exit"
+        variants={pageTransitionVariants}
+        className={className}
+      >
+        <GlobalStyles />
+        {children}
+      </StyledMain>
+      <SideMenu />
+    </ThemeProvider>
   );
 };
 

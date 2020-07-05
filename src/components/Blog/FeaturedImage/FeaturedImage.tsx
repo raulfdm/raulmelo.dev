@@ -14,8 +14,10 @@ const StyledImg = styled(Img)`
 `;
 
 const ImgWrapper = styled(Container)`
-  max-width: 1192px;
-  padding-bottom: 50px;
+  && {
+    max-width: 1192px;
+    padding-bottom: 50px;
+  }
 `;
 
 interface FeaturedImageProps {

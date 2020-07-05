@@ -17,8 +17,21 @@ import { MenuBar } from '../components/MenuBar';
 import { Frontmatter } from '../types';
 import SEO from '../components/SEO';
 import { ThemeProvider } from '../context/theme';
+import { styled, media, SiteTheme } from 'styles/emotion';
+import { SideMenu } from 'components/SideMenu';
 
 const Main = Container.withComponent('main');
+
+const Article = styled(motion.article)`
+  && {
+    padding-top: ${({ theme }) => `calc(35px + ${theme.sizes.menuBar.height})`};
+
+    ${media.greaterThan('medium')`
+      padding-top: ${({ theme }: { theme: SiteTheme }) =>
+        `calc(35px + ${theme.sizes.menuBar.height})`};
+    `}
+  }
+`;
 
 const BlogPost: React.FC<BlogPostProps> = ({ pageContext }) => {
   useTwitterScript();
@@ -45,15 +58,15 @@ const BlogPost: React.FC<BlogPostProps> = ({ pageContext }) => {
         image={image?.publicURL}
       />
       <ThemeProvider>
-        <motion.div
+        <MenuBar />
+        <GlobalStyles />
+        <BlogGlobalStyle />
+        <Article
           initial="exit"
           animate="enter"
           exit="exit"
           variants={pageTransitionVariants}
         >
-          <GlobalStyles />
-          <BlogGlobalStyle />
-          <MenuBar />
           <BlogContextProvider
             value={{ series, seriesInfo, title, subtitle, image, imageCaption }}
           >
@@ -71,7 +84,8 @@ const BlogPost: React.FC<BlogPostProps> = ({ pageContext }) => {
               </Tags>
             </Main>
           </BlogContextProvider>
-        </motion.div>
+        </Article>
+        <SideMenu />
       </ThemeProvider>
     </LayoutBlog>
   );
