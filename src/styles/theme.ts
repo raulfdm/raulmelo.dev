@@ -1,10 +1,13 @@
 import { SiteTheme } from 'styles/emotion';
 
-function withFontFallback(fontName: string, serif: boolean): string {
-  return `"${fontName}",-apple-system, BlinkMacSystemFont,
-  'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
-  ${serif ? '' : 'sans-'}serif;`;
-}
+const fontFallback = {
+  serif(font: string) {
+    return `'${font}', serif`;
+  },
+  sansSerif(font: string) {
+    return `'${font}', sans-serif;`;
+  },
+};
 
 export const FONTS = {
   contentSans: 'Open Sans',
@@ -14,9 +17,9 @@ export const FONTS = {
 
 export const theme: Partial<SiteTheme> = {
   font: {
-    contentSans: withFontFallback(FONTS.contentSans, false),
-    contentSerif: withFontFallback(FONTS.contentSerif, true),
-    contentTitle: withFontFallback('content-title', true),
+    contentSans: fontFallback.sansSerif('Open Sans'),
+    contentSerif: fontFallback.serif('Merriweather'),
+    contentTitle: fontFallback.serif('content-title'),
   },
   color: {
     background: 'var(--background)',
