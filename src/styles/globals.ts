@@ -2,6 +2,10 @@ import { css } from 'styles/emotion';
 import { darken } from 'polished';
 
 export const customGlobals = css`
+  *:focus {
+    outline-color: var(--font);
+  }
+
   /* CUSTOM */
   html {
     font-size: 10px;
