@@ -14,6 +14,12 @@
     "readTime": "{minutes} min de leitura",
     "featuredImage": "Imagem de destaque"
   },
+  "sideMenu": {
+    "home": "Início",
+    "cv": "Currículo (inglês)",
+    "search": "Busca",
+    "uses": "Usos"
+  },
   "404": {
     "title": "404 - Página não encontrada",
     "subtitle": "Essa claramente não é a página que você está procurando.",

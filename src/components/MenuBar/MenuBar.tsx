@@ -1,12 +1,12 @@
 import React from 'react';
 import Link from 'gatsby-link';
 import { useViewportScroll, useMotionValue } from 'framer-motion';
-import { Search as SearchIcon } from '@styled-icons/evil/Search';
 
 import { LanguageSwitch } from '../LanguageSwitch';
 import { ThemeSwitch } from '../ThemeSwitch';
 import LogoSvg from '../LogoSvg';
 import * as S from './styled';
+import { SideMenuNavIcon } from 'components/SideMenu';
 
 export const MenuBar: React.FC = () => {
   const [showMenu, setShowMenu] = React.useState(true);
@@ -58,17 +58,12 @@ export const MenuBar: React.FC = () => {
               <LogoSvg />
             </Link>
           </S.LogoWrapper>
-          <S.TextLink to="/cv" data-testid="menu-bar__cv">
-            /CV
-          </S.TextLink>
-          <Link to="/search" data-testid="menu-bar__search">
-            <SearchIcon size={24} />
-          </Link>
+
           <ThemeSwitch />
           <LanguageSwitch />
+          <SideMenuNavIcon />
         </S.CustomContainer>
       </S.MenuBarWrapper>
-      <S.DummySpace />
     </React.Fragment>
   );
 };

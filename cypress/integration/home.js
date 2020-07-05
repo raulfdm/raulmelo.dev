@@ -22,18 +22,6 @@ describe('Home', () => {
       cy.url().should('eq', getFullUrl());
     });
 
-    it('Includes CV page link which redirects to "/cv"', () => {
-      cy.findByTestId('menu-bar__cv').click();
-
-      cy.url().should('include', '/cv');
-    });
-
-    it('Includes search icon which redirects to "/search"', () => {
-      cy.findByTestId('menu-bar__search').click();
-
-      cy.url().should('include', '/search');
-    });
-
     describe('Theme Switcher', () => {
       it('renders in the page', () => {
         const themeSwitchEl = cy.findByTestId('theme-switch');
@@ -54,6 +42,36 @@ describe('Home', () => {
     describe.skip('Language switch', () => {
       it('select portuguese', () => {});
       it('select english', () => {});
+    });
+
+    describe('side bar navigation', () => {
+      it('home link redirects to "/"', () => {
+        cy.findByTestId('side-menu-button').click();
+        cy.findByTestId('side-menu-home-link').click();
+
+        cy.location('pathname').should('equal', '/');
+      });
+
+      it('search link redirects to "/search"', () => {
+        cy.findByTestId('side-menu-button').click();
+        cy.findByTestId('side-menu-search-link').click();
+
+        cy.location('pathname').should('equal', '/search');
+      });
+
+      it('uses link redirects to "/uses"', () => {
+        cy.findByTestId('side-menu-button').click();
+        cy.findByTestId('side-menu-uses-link').click();
+
+        cy.location('pathname').should('equal', '/uses');
+      });
+
+      it('curriculum link redirects to "/cv"', () => {
+        cy.findByTestId('side-menu-button').click();
+        cy.findByTestId('side-menu-cv-link').click();
+
+        cy.location('pathname').should('equal', '/cv');
+      });
     });
 
     describe.skip('Author presentation', () => {

@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 import { styled, media } from 'styles/emotion';
 import { Container } from 'components/Ui';
 
-export const MenuBarWrapper = styled(motion.nav)`
+export const MenuBarWrapper = styled(motion.section)`
   box-shadow: 0 4px 12px 0 ${({ theme }) => theme.color.shadowMenu};
 
   border-bottom: ${({ theme }) =>
@@ -43,15 +43,6 @@ export const CustomContainer = styled(Container)`
 
   ${media.greaterThan('large')`
     max-width: 80%;
-  `}
-`;
-
-export const DummySpace = styled.div`
-  height: 65px;
-  margin-bottom: 35px;
-
-  ${media.greaterThan('medium')`
-    margin-bottom: 65px;
   `}
 `;
 

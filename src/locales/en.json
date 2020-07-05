@@ -10,6 +10,12 @@
       "series": "Series"
     }
   },
+  "sideMenu": {
+    "home": "Home",
+    "cv": "Curriculum",
+    "search": "Search",
+    "uses": "Uses"
+  },
   "blog": {
     "readTime": "{minutes} min read",
     "featuredImage": "Featured image"
