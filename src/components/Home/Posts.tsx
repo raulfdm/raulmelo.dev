@@ -28,6 +28,10 @@ const PostList = styled.ul`
   list-style: none;
 `;
 
+const PostListItem = styled(motion.li)`
+  margin-bottom: 3rem;
+`;
+
 export const Posts: React.FC<PostsProps> = ({
   filter,
   posts,
@@ -71,7 +75,7 @@ export const Posts: React.FC<PostsProps> = ({
       >
         <AnimatePresence initial={false}>
           {posts.map(({ node }: PostEdge, index) => (
-            <motion.li
+            <PostListItem
               key={node.id}
               custom={index}
               variants={itemsAnimationVariants}
@@ -86,7 +90,7 @@ export const Posts: React.FC<PostsProps> = ({
               }}
             >
               <PostCard postNode={node} />
-            </motion.li>
+            </PostListItem>
           ))}
         </AnimatePresence>
       </InfiniteScroll>

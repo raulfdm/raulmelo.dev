@@ -56,35 +56,31 @@ export const Tags = styled.ul`
   flex-wrap: wrap;
 
   && {
-    margin: 16px 0 20px;
+    padding: 16px 0;
   }
 `;
 
 const StyledTag = styled.li`
-  background-color: var(--tag);
-  border: 1px solid var(--tagHover);
-  font-size: 12px;
+  font-size: 14px;
   font-family: ${({ theme }) => theme.font.contentSans};
   border-radius: 2px;
   text-align: center;
-  transition: background 0.1s ease-in-out;
-  margin-right: 8px;
-  margin-bottom: 8px;
+  transition: font-weight 0.2s ease-in-out;
 
   &:hover {
-    background-color: var(--tagHover);
+    font-weight: bold;
   }
 
   > a {
     display: inline-block;
-    padding: 2px 8px;
-    text-decoration: none;
+    padding-right: 16px;
+    text-decoration: underline;
   }
 `;
 
 export const Tag: React.FC<{ tag: string }> = ({ tag }) => (
   <StyledTag>
-    <Link to={tagUri(tag)}>{tag}</Link>
+    <Link to={tagUri(tag)}>#{tag}</Link>
   </StyledTag>
 );
 

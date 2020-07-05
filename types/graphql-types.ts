@@ -3728,6 +3728,8 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___path'
   | 'pluginCreator___pluginOptions___name'
   | 'pluginCreator___pluginOptions___fileName'
+  | 'pluginCreator___pluginOptions___sidebar___hidden'
+  | 'pluginCreator___pluginOptions___sidebar___position'
   | 'pluginCreator___pluginOptions___short_name'
   | 'pluginCreator___pluginOptions___start_url'
   | 'pluginCreator___pluginOptions___background_color'
@@ -3750,8 +3752,6 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___aliases___mdx'
   | 'pluginCreator___pluginOptions___google___families'
   | 'pluginCreator___pluginOptions___pathCheck'
-  | 'pluginCreator___pluginOptions___sidebar___hidden'
-  | 'pluginCreator___pluginOptions___sidebar___position'
   | 'pluginCreator___nodeAPIs'
   | 'pluginCreator___browserAPIs'
   | 'pluginCreator___ssrAPIs'
@@ -3950,6 +3950,8 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___path'
   | 'pluginOptions___name'
   | 'pluginOptions___fileName'
+  | 'pluginOptions___sidebar___hidden'
+  | 'pluginOptions___sidebar___position'
   | 'pluginOptions___short_name'
   | 'pluginOptions___start_url'
   | 'pluginOptions___background_color'
@@ -3972,8 +3974,6 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___aliases___mdx'
   | 'pluginOptions___google___families'
   | 'pluginOptions___pathCheck'
-  | 'pluginOptions___sidebar___hidden'
-  | 'pluginOptions___sidebar___position'
   | 'nodeAPIs'
   | 'browserAPIs'
   | 'ssrAPIs'
@@ -4093,6 +4093,7 @@ export type SitePluginPluginOptions = {
   path?: Maybe<Scalars['String']>;
   name?: Maybe<Scalars['String']>;
   fileName?: Maybe<Scalars['String']>;
+  sidebar?: Maybe<SitePluginPluginOptionsSidebar>;
   short_name?: Maybe<Scalars['String']>;
   start_url?: Maybe<Scalars['String']>;
   background_color?: Maybe<Scalars['String']>;
@@ -4109,7 +4110,6 @@ export type SitePluginPluginOptions = {
   aliases?: Maybe<SitePluginPluginOptionsAliases>;
   google?: Maybe<SitePluginPluginOptionsGoogle>;
   pathCheck?: Maybe<Scalars['Boolean']>;
-  sidebar?: Maybe<SitePluginPluginOptionsSidebar>;
 };
 
 export type SitePluginPluginOptionsAliases = {
@@ -4131,6 +4131,7 @@ export type SitePluginPluginOptionsFilterInput = {
   path?: Maybe<StringQueryOperatorInput>;
   name?: Maybe<StringQueryOperatorInput>;
   fileName?: Maybe<StringQueryOperatorInput>;
+  sidebar?: Maybe<SitePluginPluginOptionsSidebarFilterInput>;
   short_name?: Maybe<StringQueryOperatorInput>;
   start_url?: Maybe<StringQueryOperatorInput>;
   background_color?: Maybe<StringQueryOperatorInput>;
@@ -4147,7 +4148,6 @@ export type SitePluginPluginOptionsFilterInput = {
   aliases?: Maybe<SitePluginPluginOptionsAliasesFilterInput>;
   google?: Maybe<SitePluginPluginOptionsGoogleFilterInput>;
   pathCheck?: Maybe<BooleanQueryOperatorInput>;
-  sidebar?: Maybe<SitePluginPluginOptionsSidebarFilterInput>;
 };
 
 export type SitePluginPluginOptionsGoogle = {

@@ -5,23 +5,20 @@ import { Card } from 'components/Ui';
 
 export const StyledCard = Card.withComponent('article');
 
+export const PostCardWrapper = styled.article``;
+
 export const ImageContainer = styled.div`
   position: relative;
-  margin: calc(var(--card-white-space) * -1);
-  margin-bottom: var(--card-white-space);
-  border-top-left-radius: var(--card-border-radius);
-  border-top-right-radius: var(--card-border-radius);
+  border-radius: 5px;
+  border: ${({ theme }) =>
+    theme.isDarkTheme ? `1px solid ${theme.color.border}` : 'none'};
+  box-shadow: ${({ theme }) =>
+    theme.isDarkTheme ? 'transparent' : theme.color.shadowLight};
 `;
 
 export const Image = styled(Img)`
-  max-height: 200px;
-  margin-bottom: 1em;
-  border-top-left-radius: var(--card-border-radius);
-  border-top-right-radius: var(--card-border-radius);
-
-  ${media.greaterThan('medium')`
-    max-height: 270px;
-  `}
+  max-height: 329px;
+  border-radius: 5px;
 `;
 
 export const Body = styled.div`
