@@ -32,4 +32,9 @@ export const theme: Partial<SiteTheme> = {
     shadowBright: 'var(--shadowBright)',
     shadowMenu: 'var(--shadowMenu)',
   },
+  sizes: {
+    menuBar: {
+      height: '65px',
+    },
+  },
 };

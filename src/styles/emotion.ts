@@ -19,6 +19,11 @@ export interface SiteTheme {
     shadowBright: string;
     shadowMenu: string;
   };
+  sizes: {
+    menuBar: {
+      height: string;
+    };
+  };
 }
 
 export const styled = defaultStyled as CreateStyled<SiteTheme>;
