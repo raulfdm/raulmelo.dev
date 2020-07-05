@@ -22,7 +22,6 @@ export const DropdownMenuList = styled.ul`
   position: absolute;
   top: 20px;
   right: 0;
-
   display: flex;
   flex-direction: column;
 `;
@@ -30,7 +29,6 @@ export const DropdownMenuList = styled.ul`
 export const ArrowUp = styled.div`
   clip: rect(0, 18px, 14px, -4px);
   left: 50%;
-
   margin-left: -7px;
   position: absolute;
   bottom: -8px;
@@ -49,20 +47,16 @@ export const ArrowUp = styled.div`
 export const DropdownMenuItem = styled.li`
   background-color: transparent;
   margin: 0;
-
+  text-align: center;
   cursor: pointer;
   display: inline-block;
   font-family: ${(props) => props.theme.font.contentSans};
-
   font-size: 16px;
   line-height: 1.4;
   padding: 7px 25px;
   position: relative;
-
   transition: background-color 0.1s, border-color 0.1s, color 0.1s, fill 0.1s;
-
   white-space: nowrap;
-
   flex: 1;
 
   &:not(:first-of-type) {
@@ -72,7 +66,6 @@ export const DropdownMenuItem = styled.li`
 
 export const DropdownSeparator = styled.li`
   border-top: 1px solid rgba(0, 0, 0, 0.05);
-  /* border-width: 0; */
   display: block;
   font-size: 18px;
   font-weight: 300;
@@ -83,6 +76,5 @@ export const DropdownSeparator = styled.li`
   padding: 0 15px;
   text-align: left;
   white-space: nowrap;
-
   height: 1px;
 `;
