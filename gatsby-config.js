@@ -44,6 +44,13 @@ module.exports = {
     `gatsby-transformer-json`,
     `gatsby-plugin-emotion`,
     {
+      resolve: `gatsby-plugin-web-vitals`,
+      options: {
+        trackingId: 'UA-160048702-1',
+        debug: !isProduction,
+      },
+    },
+    {
       resolve: `gatsby-plugin-graphql-codegen`,
       options: {
         fileName: `types/graphql-types.ts`,

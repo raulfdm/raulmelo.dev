@@ -1177,6 +1177,13 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
+"@babel/runtime@^7.9.6":
+  version "7.10.4"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.10.4.tgz#a6724f1a6b8d2f6ea5236dbfe58c7d7ea9c5eb99"
+  integrity sha512-UpTN5yUJr9b4EX2CnGNWIvER7Ab83ibv0pcvvHc4UOdrBI5jb8bj+32cCwPX6xu0mt2daFNjYhoi+X7beH0RSw==
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
 "@babel/standalone@^7.10.3":
   version "7.10.3"
   resolved "https://registry.yarnpkg.com/@babel/standalone/-/standalone-7.10.3.tgz#aaabbf0fcfc82d595d3e1b9467b201d1a33a6e64"
@@ -9114,6 +9121,14 @@ gatsby-plugin-web-font-loader@1.0.4:
     babel-runtime "^6.26.0"
     webfontloader "^1.6.28"
 
+gatsby-plugin-web-vitals@1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-web-vitals/-/gatsby-plugin-web-vitals-1.0.3.tgz#4f385e20ec846f722e4030ef0002add77fc2b65c"
+  integrity sha512-H1mY+YEnim8IV5QQtwKKPRiUsIBYnyuA8uStOqJ2bXIPWs+e2Zpf9/RVw5c6ZBMeYr/5akeRyi0HJ7kB7Gwt6Q==
+  dependencies:
+    "@babel/runtime" "^7.9.6"
+    web-vitals "^0.2.1"
+
 gatsby-react-router-scroll@^3.0.7:
   version "3.0.7"
   resolved "https://registry.yarnpkg.com/gatsby-react-router-scroll/-/gatsby-react-router-scroll-3.0.7.tgz#53e9e4e81dfde94c23d724f8e6b4778db9d7edb1"
@@ -13262,7 +13277,7 @@ mkdirp@^1.0.3, mkdirp@^1.0.4:
   resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-1.0.4.tgz#3eb5ed62622756d79a5f0e2a221dfebad75c2f7e"
   integrity sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==
 
-mobx-react-lite@2:
+mobx-react-lite@2, mobx-react-lite@^2.0.7:
   version "2.0.7"
   resolved "https://registry.yarnpkg.com/mobx-react-lite/-/mobx-react-lite-2.0.7.tgz#1bfb3b4272668e288047cf0c7940b14e91cba284"
   integrity sha512-YKAh2gThC6WooPnVZCoC+rV1bODAKFwkhxikzgH18wpBjkgTkkR9Sb0IesQAH5QrAEH/JQVmy47jcpQkf2Au3Q==
@@ -19433,6 +19448,11 @@ web-namespaces@^1.0.0, web-namespaces@^1.1.2:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/web-namespaces/-/web-namespaces-1.1.4.tgz#bc98a3de60dadd7faefc403d1076d529f5e030ec"
   integrity sha512-wYxSGajtmoP4WxfejAPIr4l0fVh+jeMXZb08wNc0tMg6xsfZXj3cECqIK0G7ZAqUq0PP8WlMDtaOGVBTAWztNw==
+
+web-vitals@^0.2.1:
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/web-vitals/-/web-vitals-0.2.3.tgz#950adea6da9e3cfd3ee2ffe868c7126a6d87b2d1"
+  integrity sha512-6idlbUoL38El+QS320Qz6h4QSZLaWw3CHiJWBtQDmFGs72ro+fnukfavTxTdQSlsaoaBuNL/0bqlIhfdtlrx4A==
 
 webfontloader@^1.6.28:
   version "1.6.28"
