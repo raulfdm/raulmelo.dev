@@ -73,7 +73,7 @@ const StyledTag = styled.li`
 
   > a {
     display: inline-block;
-    padding-right: 16px;
+    margin-right: 16px;
     text-decoration: underline;
   }
 `;
