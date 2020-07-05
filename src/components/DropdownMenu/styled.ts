@@ -65,7 +65,7 @@ export const DropdownMenuItem = styled.li`
 
   flex: 1;
 
-  &:not(:first-child) {
+  &:not(:first-of-type) {
     border-top: 1px solid ${(props) => props.theme.color.border};
   }
 `;
