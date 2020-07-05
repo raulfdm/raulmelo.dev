@@ -14,15 +14,14 @@
     "clean": "gatsby clean",
     "build": "gatsby build",
     "dev": "gatsby develop",
-    "dev:e2e": "PORT=9000 gatsby develop",
+    "dev:e2e": "PORT=8000 gatsby develop",
     "prestart": "yarn build",
     "start": "gatsby serve",
-    "start:e2e": "PORT=9000 gatsby serve",
     "ts": "tsc --noEmit",
     "eslint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint": "npm-run-all eslint ts",
     "test": "jest",
-    "test:e2e": "CYPRESS_BASE_URL=http://localhost:9000 cypress open"
+    "test:e2e": "CYPRESS_BASE_URL=http://localhost:8000 cypress open"
   },
   "dependencies": {
     "@emotion/core": "10.0.28",
