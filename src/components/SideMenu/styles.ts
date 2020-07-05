@@ -50,6 +50,6 @@ export const OpacityLayer = styled(motion.div)`
   bottom: 0;
   right: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.8);
   z-index: 1;
 `;
