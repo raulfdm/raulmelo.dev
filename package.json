@@ -121,7 +121,7 @@
     "gatsby-tinacms-json": "0.8.30",
     "gatsby-tinacms-remark": "0.8.5",
     "gatsby-transformer-json": "2.4.10",
-    "gatsby-transformer-sharp": "2.5.9",
+    "gatsby-transformer-sharp": "2.5.10",
     "html-loader": "1.1.0",
     "husky": "4.2.5",
     "jest": "26.1.0",
