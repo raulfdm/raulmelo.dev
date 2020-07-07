@@ -9,6 +9,7 @@ import AuthorPresentation from '../components/AuthorPresentation';
 import Layout from '../components/Layout';
 import { Posts } from '../components/Home/Posts';
 import { PostEdges } from '../types';
+import { titleWithNameAndJobTitle } from 'utils/seo';
 
 type TagTemplateProps = {
   pageContext: {
@@ -20,12 +21,9 @@ type TagTemplateProps = {
 
 const messages = defineMessages({
   description: {
-    id: 'siteData.description',
+    id: 'tag.description',
   },
   title: {
-    id: 'siteData.title',
-  },
-  postsTitle: {
     id: 'tag.title',
   },
 });
@@ -47,15 +45,17 @@ const TagTemplate: React.FC<TagTemplateProps> = ({ pageContext, uri }) => {
       <SEO
         url={uri}
         lang={locale}
-        description={formatMessage(messages.description)}
-        title={formatMessage(messages.title)}
+        description={titleWithNameAndJobTitle(
+          formatMessage(messages.description, { tag }),
+        )}
+        title={titleWithNameAndJobTitle(formatMessage(messages.title, { tag }))}
       />
 
       <Layout>
         <main>
           <AuthorPresentation />
           <Posts
-            customTitle={formatMessage(messages.postsTitle, { tag: tag })}
+            customTitle={formatMessage(messages.title, { tag })}
             posts={posts}
             filter={filter}
             loadMore={loadMore}

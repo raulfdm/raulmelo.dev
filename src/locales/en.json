@@ -33,7 +33,8 @@
     "sectionDescription": "{seriesAmount} Part Series"
   },
   "tag": {
-    "title": "All posts for \"{tag}\""
+    "title": "All posts for \"{tag}\"",
+    "description": "Check all blog posts I've written related to \"{tag}\"."
   },
   "locales": {
     "pt": "Portuguese",

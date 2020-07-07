@@ -56,6 +56,7 @@ const BlogPost: React.FC<BlogPostProps> = ({ pageContext }) => {
         lang={fields?.lang!}
         url={fields?.slug!}
         image={image?.publicURL}
+        isBlogPost
       />
       <ThemeProvider>
         <MenuBar />
