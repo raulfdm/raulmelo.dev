@@ -31,7 +31,15 @@ const SEO: React.FC<SEOProps> = (props) => {
     }
   `);
 
-  const { title, description, url, image, lang, isBlogPost = false } = props;
+  const {
+    title,
+    description,
+    url,
+    image,
+    lang,
+    isBlogPost = false,
+    children,
+  } = props;
 
   const metaImg = `${siteUrl}${image || defaultImage}`;
   const metaUrl = `${siteUrl}${url}`;
@@ -61,6 +69,8 @@ const SEO: React.FC<SEOProps> = (props) => {
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={metaImg} />
       <meta name="twitter:image" content={metaImg} />
+
+      {children}
     </Helmet>
   );
 };
