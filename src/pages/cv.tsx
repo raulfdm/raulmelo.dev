@@ -1,7 +1,6 @@
 import React from 'react';
 import { useLocalJsonForm } from 'gatsby-tinacms-json';
 import { graphql } from 'gatsby';
-import { Helmet } from 'react-helmet';
 import { ThemeProvider } from 'emotion-theming';
 import 'sanitize.css/sanitize.css';
 import { ArrowheadUp } from '@styled-icons/evaicons-solid/ArrowheadUp';
@@ -22,6 +21,8 @@ import { CvJsonEdge, CvJson } from 'graphql-types';
 import { theme, GlobalCVStyles } from 'components/CV/styles';
 import { CVMain, HomeLink, ScrollToTopButton } from 'components/CV/UI';
 import { useIntl } from 'context/react-intl';
+import SEO from 'components/SEO';
+import { titleWithNameAndJobTitle } from 'utils/seo';
 
 if (typeof window !== `undefined`) {
   scrollPolyfill();
@@ -52,16 +53,20 @@ const CvPage: React.FC<CvPageProps> = ({ data: apiData }) => {
 
   return (
     <>
+      <GlobalCVStyles />
+      <SEO
+        title={titleWithNameAndJobTitle('Curriculum')}
+        description="Raul Melo is a Software Developer focused on client-side. Have over 5 years of experience building websites and applications. Check my CV for more info."
+        url="/cv"
+        lang="en"
+      >
+        <link
+          href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Raleway:wght@400;700&display=swap"
+          rel="stylesheet"
+        />
+      </SEO>
       <HomeLink to="/">Back to home</HomeLink>
       <CVMain>
-        <Helmet>
-          <link
-            href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Raleway:wght@400;700&display=swap"
-            rel="stylesheet"
-          />
-        </Helmet>
-        <GlobalCVStyles />
-
         <ThemeProvider theme={theme}>
           <Info data={data.info!} />
           <CareerSummary data={data.career_summary!} />
