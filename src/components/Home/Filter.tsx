@@ -7,7 +7,10 @@ import { theme } from 'styles/theme';
 import { PostFilters } from './types';
 
 const FilterList = styled.ul`
-  display: flex;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(3, max-content);
+
   && {
     border-bottom: 1px solid ${({ theme }) => theme.color.border};
     margin-bottom: 30px;
@@ -20,7 +23,6 @@ const activeStyles = css`
 `;
 
 const FilterItem = styled(motion.li)<{ active?: boolean }>`
-  padding-right: 20px;
   font-size: 14px;
   font-family: ${({ theme }) => theme.font.contentSans};
   color: ${({ theme }) => theme.color.fontLight};
