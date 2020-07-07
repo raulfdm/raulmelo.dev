@@ -3,8 +3,10 @@ const R = require('ramda');
 
 const { algoliaSetupOptions } = require('./helpers');
 
-/* Defined based on branch name inside ./github/workflows/cy.yml */
-const isProduction = R.path(['env', 'ENVIRONMENT'], process) === 'production';
+const nodeEnv = R.propEq('NODE_ENV', 'production')(process.env);
+const ciEnv = R.propEq('ENVIRONMENT', 'production')(process.env);
+
+const isProduction = ciEnv || nodeEnv;
 
 module.exports = {
   siteMetadata: {
@@ -69,7 +71,7 @@ module.exports = {
       resolve: 'gatsby-plugin-tinacms',
       options: {
         sidebar: {
-          hidden: process.env.NODE_ENV === 'production',
+          hidden: isProduction,
           position: 'displace',
         },
         plugins: [
