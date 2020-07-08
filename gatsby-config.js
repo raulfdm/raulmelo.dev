@@ -67,20 +67,21 @@ module.exports = {
     },
     // `gatsby-plugin-remove-serviceworker`,
     `gatsby-plugin-offline`,
-    {
-      resolve: 'gatsby-plugin-tinacms',
-      options: {
-        sidebar: {
-          hidden: isProduction,
-          position: 'displace',
-        },
-        plugins: [
-          'gatsby-tinacms-git',
-          'gatsby-tinacms-remark',
-          'gatsby-tinacms-json',
-        ],
-      },
-    },
+    // Disable until gets fixed hiden option
+    // {
+    //   resolve: 'gatsby-plugin-tinacms',
+    //   options: {
+    //     sidebar: {
+    //       hidden: isProduction,
+    //       position: 'displace',
+    //     },
+    //     plugins: [
+    //       'gatsby-tinacms-git',
+    //       'gatsby-tinacms-remark',
+    //       'gatsby-tinacms-json',
+    //     ],
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
