@@ -119,7 +119,7 @@
     "gatsby-source-filesystem": "2.3.18",
     "gatsby-tinacms-git": "0.5.6",
     "gatsby-tinacms-json": "0.8.31",
-    "gatsby-tinacms-remark": "0.8.5",
+    "gatsby-tinacms-remark": "0.8.6",
     "gatsby-transformer-json": "2.4.10",
     "gatsby-transformer-sharp": "2.5.10",
     "html-loader": "1.1.0",
