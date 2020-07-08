@@ -19,6 +19,7 @@ import SEO from '../components/SEO';
 import { ThemeProvider } from '../context/theme';
 import { styled, media, SiteTheme } from 'styles/emotion';
 import { SideMenu } from 'components/SideMenu';
+import { joinSubtitleAndDescription } from 'utils/seo';
 
 const Main = Container.withComponent('main');
 
@@ -52,7 +53,10 @@ const BlogPost: React.FC<BlogPostProps> = ({ pageContext }) => {
     <LayoutBlog>
       <SEO
         title={title}
-        description={description || excerpt!}
+        description={joinSubtitleAndDescription(
+          description || excerpt!,
+          subtitle,
+        )}
         lang={fields?.lang!}
         url={fields?.slug!}
         image={image?.publicURL}
