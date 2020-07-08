@@ -2,6 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
+import { getCanonicalLink } from 'utils/seo';
 import defaultImage from '../../static/me.jpg';
 
 type SEOProps = {
@@ -11,6 +12,7 @@ type SEOProps = {
   url: string;
   lang: string;
   isBlogPost?: boolean;
+  setCanonical?: boolean;
 };
 
 const SEO: React.FC<SEOProps> = (props) => {
@@ -38,11 +40,12 @@ const SEO: React.FC<SEOProps> = (props) => {
     image,
     lang,
     isBlogPost = false,
+    setCanonical = true,
     children,
   } = props;
 
   const metaImg = `${siteUrl}${image || defaultImage}`;
-  const metaUrl = `${siteUrl}${url}`;
+  const metaUrl = getCanonicalLink({ siteUrl, uri: url });
 
   return (
     <Helmet
@@ -54,6 +57,7 @@ const SEO: React.FC<SEOProps> = (props) => {
       <title>{title}</title>
       <meta name="description" content={description} />
       <meta name="image" content={metaImg} />
+      {setCanonical && <link rel="canonical" href={metaUrl} />}
 
       {/* OpenGraph tags */}
       <meta property="og:url" content={metaUrl} />
