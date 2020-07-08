@@ -102,7 +102,7 @@ jobs:
       # It means that even if I setup the gatsby cache up here
       # for the next step it'll use the old version of it.
       - name: Deploy to Netlify
-        uses: nwtgck/actions-netlify@v1
+        uses: nwtgck/actions-netlify@v1.1
         id: deploy
         with:
           publish-dir: './public'
