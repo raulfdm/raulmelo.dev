@@ -8882,10 +8882,10 @@ gatsby-telemetry@^1.3.17, gatsby-telemetry@^1.3.18:
     node-fetch "2.6.0"
     uuid "3.4.0"
 
-gatsby-tinacms-git@0.5.6:
-  version "0.5.6"
-  resolved "https://registry.yarnpkg.com/gatsby-tinacms-git/-/gatsby-tinacms-git-0.5.6.tgz#65d5237b098827792bf464220c47b55058553ad1"
-  integrity sha512-SX3MeTFY7tg4J1d2758Rlnht+fQkt0ZHg+fJkgSE809SJo5fvMiNKhOKd6LTY56Cy7p0ihL3UeUdQjToOf+gZA==
+gatsby-tinacms-git@0.5.7:
+  version "0.5.7"
+  resolved "https://registry.yarnpkg.com/gatsby-tinacms-git/-/gatsby-tinacms-git-0.5.7.tgz#c850ea3b3ead4a1948d8e8576a661d23be3399ca"
+  integrity sha512-8MT+4mjxbeEBNj/VZb3jyUjFbqOT5JIBX3HOk3roz9OdPhmfy8qz+Sp1QbjN96P5KXaHi9CXqcB122n77c29TA==
   dependencies:
     "@tinacms/api-git" "^0.7.0"
     "@tinacms/git-client" "^0.6.7"
