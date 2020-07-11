@@ -146,7 +146,7 @@ const plugins = [
     options: {
       sidebar: {
         position: 'displace',
-        hidden: isProduction,
+        hidden: true,
       },
       plugins: [
         'gatsby-tinacms-git',
