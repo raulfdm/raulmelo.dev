@@ -4,6 +4,11 @@ import { CvJsonCareer_History } from 'graphql-types';
 import { deepMemo } from 'utils/components';
 import { Project } from '../shared/Project';
 import { SectionTitle, Section, SectionBody } from '../shared/Section';
+import { styled } from 'styles/emotion';
+
+const StyledSection = styled(Section)`
+  page-break-before: always;
+`;
 
 export const CareerExperience: React.FC<{
   data: CvJsonCareer_History;
@@ -11,7 +16,7 @@ export const CareerExperience: React.FC<{
   const { jobs, section_title } = data;
 
   return (
-    <Section>
+    <StyledSection>
       <SectionTitle>{section_title}</SectionTitle>
       <SectionBody>
         {jobs!.map((job) => {
@@ -38,6 +43,6 @@ export const CareerExperience: React.FC<{
           );
         })}
       </SectionBody>
-    </Section>
+    </StyledSection>
   );
 });

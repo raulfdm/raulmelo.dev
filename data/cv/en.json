@@ -21,7 +21,7 @@
         "company": "Blendle",
         "start_date": "2019-11-01T00:00:00.000Z",
         "end_date": "",
-        "description": "Blendle is a Dutch online news platform that aggregates articles from a variety of newspapers and magazines and sells them on a pay-per-article basis. The key differences to similar websites are the participation by otherwise commercially unrelated news services in a single platform and the ability for registered users to easily pay a small price per article. It has been called an \"iTunes for news\" and a \"micropayments-for-news pioneer\" in various media.\n\nThere, I am currently responsible for:\n\n* Maintaining and improving all existing front-end apps\n* Proposing solutions to better scale up the client-side of Blendle;\n* Implementing new client side solutions designed by the strategy team to improve our conversion rate and provide better experience to our web users.",
+        "description": "Blendle is a Dutch company founded in 2013 by Marten Blankesteijn Alexander Klöpping which provides a rich experience for reading news articles and magazines or listening articles in podcast format without ads and with one subscription. \n\nThere, I am currently responsible for:\n\n* Improving and maintain all existing micro-frontend apps;\n* Implementing solutions to better scale up the client-side of Blendle;\n* Architecting technical solutions to support Growth team with strategies  to improve our conversion rate and provide a better experience to our web users;\n* Creating beautiful and pixel-perfect landing pages.",
         "is_actual": true,
         "id": "j2ridpc06"
       },
@@ -31,7 +31,7 @@
         "company": "YoungCapital",
         "start_date": "2017-11-01T00:00:00.000Z",
         "end_date": "2019-10-31T00:00:00.000Z",
-        "description": "YoungCapital is a Dutch company founded in 2000 by Hugo de Koning, Bram Bosveld and Rogier Thewessen. Its main goal is to offer the best recruiting service with focus on online job search.\n\nThere, I was currently for:\n\n* Implementing new projects using the whole React Environment;\n* Creating and maintaining our internal React Component Library using our internal style guide;\n* Maintaining the already existing projects;\n* Supporting junior developers with features and bugs;\n* Analyzing new technologies to verify the newest and best solutions to further create strategies for implementation or refactor of several projects.",
+        "description": "YoungCapital is a Dutch company founded in 2000 by Hugo de Koning, Bram Bosveld, and Rogier Thewessen. Its main goal is to offer the best recruiting service with a focus on an online job search.\n\nThere, I was responsible for:\n\n* Implementing new projects using React Ecosystems (router, redux, etc);\n* Core maintainer of an internal React component library using internal style guide to speed up application development;\n* Maintaining existing projects;\n* Supporting junior developers with features and bugs via technical discussions and pair programming;\n* Helping managers to take project decisions due to technical company limitations.\n\n\nOne of my biggest proud there was helping create a JavaScript 101 training for Ruby developers, Product Owners, and managers. There, once a week I and 4 colleagues taught JS Fundamentals with presentations and mentored exercises.",
         "is_actual": false
       },
       {
@@ -40,7 +40,7 @@
         "company": "Freelancer",
         "start_date": "2016-12-01T00:00:00.000Z",
         "end_date": "2018-04-01T00:00:00.000Z",
-        "description": "As a Freelancer, I got most of my projects through recommendations within my network.\n\nMy tasks usually encompass:\n\n* Implementing features required by the clients; - Implementing Rest (Representational State Transfer) API using Node + Express (sometimes GraphQL);\n* Creating SPA's (Single Page Applications) using React (and when necessary Redux);\n* Developing websites using vanilla JS and the core web functionalities (HTML, CSS);\n* Architecting the whole development and deployment process;\n* Fixing production bugs;\n* Converting PSD/Sketch/Zeplin layouts into web pages; Always providing a high quality source code, well organized, tested and documented.",
+        "description": "As a Freelancer, I worked as a third party Full Stack developer but the great majority of my work was Front end related.\n\nMy tasks usually encompass:\n\n- Implementing Rest (Representational State Transfer) API using Node + Express (sometimes GraphQL);\n- Creating SPA's (Single Page Applications) using React (and when necessary Redux);\n- Developing websites using vanilla JS, HTML, and CSS;\n- Architecting the whole development and deployment process;\n- Fixing production bugs with forms, layout, and application behavior;\n- Converting PSD/Sketch/Zeplin layouts into web pages.\n\nIn all cases, I always provided a high-quality source code, well organized, tested, documented, and versioned controlled by git to help out my clients and other developers to understand and maintain.",
         "is_actual": false
       }
     ]
@@ -162,10 +162,6 @@
             "id": "pgbduqm6b"
           },
           {
-            "name": "Photoshop",
-            "id": "hamm2asri"
-          },
-          {
             "name": "Git",
             "id": "y1f36g5sc"
           }
@@ -200,9 +196,17 @@
         ]
       },
       {
-        "group_name": "Task Runners",
+        "group_name": "Task Runners and Bundlers",
         "id": "rvsadd406",
         "technologies": [
+          {
+            "name": "Rollup",
+            "id": "et5d99pbw"
+          },
+          {
+            "name": "Webpack",
+            "id": "hptfxakv2"
+          },
           {
             "name": "Gulp",
             "id": "yh8atogmc"
@@ -242,12 +246,16 @@
     "section_title": "Interests",
     "values": [
       {
-        "name": "Open-source and coding for fun",
+        "name": "Open-source and share my solutions",
         "id": "wbkkgf04w"
       },
       {
         "name": "Teach about my learnings",
         "id": "ungf6uqwc"
+      },
+      {
+        "name": "Life quality",
+        "id": "2n2yrqfg4"
       },
       {
         "name": "Sports and dance",
@@ -256,6 +264,10 @@
       {
         "name": "Music",
         "id": "cb80ny74n"
+      },
+      {
+        "name": "Games",
+        "id": "u3ixzb1nz"
       }
     ]
   },
@@ -263,18 +275,18 @@
     "section_title": "Education and Languages",
     "formal": [
       {
-        "title": "Systems Information",
-        "foundation": "University of Ribeirão Preto (UNAERP)",
-        "start_date": "2013-08-01T00:00:00.000Z",
-        "id": "ikmz37tcp",
-        "end_date": "2020-05-05T00:00:00.000Z"
-      },
-      {
         "title": "Computer Software Engineering",
         "foundation": "FreeCodeCamp",
         "start_date": "2017-05-01T00:00:00.000Z",
         "end_date": "2017-12-30T00:00:00.000Z",
         "id": "6213x27c0"
+      },
+      {
+        "title": "Systems Information",
+        "foundation": "University of Ribeirão Preto (UNAERP)",
+        "start_date": "2013-08-01T00:00:00.000Z",
+        "id": "ikmz37tcp",
+        "end_date": "2016-12-01T00:00:00Z"
       }
     ],
     "languages": [
@@ -346,10 +358,10 @@
     "section_title": "Side Projects",
     "projects": [
       {
-        "name": "Tibia Character - GraphQL API",
-        "start_date": "2017-02-01T00:00:00.000Z",
-        "end_date": "2017-02-28T00:00:00.000Z",
-        "description": "This project was built in order to make easy to retrieve information about characters on Tibia (MMORPG). The user can send a GraphQL query containing the character name and the application will make a data-scrapping on the official game website, organize all those information and send it back.The API was built using NodeJS + ExpressJS + GraphQL and deployed on Heroku. Documentation is available at [https://github.com/raulfdm/tibia-api](https://github.com/raulfdm/tibia-api \"https://github.com/raulfdm/tibia-api\").",
+        "name": "SubTV - Series and movies subtitles via Terminal",
+        "start_date": "2020-01-01T00:00:00Z",
+        "end_date": "2020-02-01T00:00:00Z",
+        "description": "The idea behind this project came to automate my manual process of downloading movies and series subtitles.\n\nIn the first version (in 2017) of it, I did some reverse engineering on the website I used to download my subtitles and checking their API for getting subtitles but also I needed to scrap information about what episodes and series they had available. Although it was working perfectly, the website I used has a very limited amount of subtitles available.\n\nIn the second version of the CLI, I took a step further and refactor the whole CLI to use [opensubtitles.org](https://www.opensubtitles.org) API, which has a so much bigger database but also subtitles for movies and documentaries. Also, since they have a very limited and restricted API, I also needed to create a server to be a proxy for all requests made by the CLI uses.\n\nYou can check the source code and the ideas in https://github.com/sub-tv",
         "is_ongoing": false,
         "show": true,
         "id": "io8xhcgxq"

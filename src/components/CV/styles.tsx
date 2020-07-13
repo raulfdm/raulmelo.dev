@@ -76,21 +76,26 @@ const globalCss = css`
 const printGlobals = css`
   @media print {
     @page {
+      size: auto;
       margin: 0;
-      padding: 0;
-      margin: 1cm;
+      padding: 1cm 1cm 1cm 1cm;
+      margin: 0;
       size: A4;
     }
 
     html {
       max-width: 21cm;
-      font-size: 12px;
+      font-size: 16px;
       padding: 0;
-      margin: 0;
+      margin: 0 auto;
     }
 
     button {
       display: none !important;
+    }
+
+    a {
+      text-decoration: none;
     }
   }
 `;
