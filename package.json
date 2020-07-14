@@ -98,7 +98,7 @@
     "gatsby-plugin-graphql-codegen": "2.7.1",
     "gatsby-plugin-i18n": "1.0.1",
     "gatsby-plugin-manifest": "2.4.18",
-    "gatsby-plugin-mdx": "1.2.22",
+    "gatsby-plugin-mdx": "1.2.25",
     "gatsby-plugin-netlify": "2.3.11",
     "gatsby-plugin-offline": "3.2.17",
     "gatsby-plugin-react-helmet": "3.3.9",
