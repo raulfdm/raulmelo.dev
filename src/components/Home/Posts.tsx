@@ -16,7 +16,7 @@ type PostsProps = {
   customTitle?: string;
 };
 
-const PostsTitle = styled(motion.h2)`
+const PostsTitle = styled.h2`
   letter-spacing: -0.32px;
   font-size: 2.1rem;
   font-weight: 600;
@@ -63,7 +63,7 @@ export const Posts: React.FC<PostsProps> = ({
 
   return (
     <>
-      <PostsTitle initial={{ scale: 0 }} animate={{ scale: 1 }}>
+      <PostsTitle>
         {customTitle || <FormattedMessage id={filterLocale[filter]} />}
       </PostsTitle>
 
