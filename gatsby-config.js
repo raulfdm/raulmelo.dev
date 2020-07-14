@@ -65,7 +65,7 @@ const plugins = [
       start_url: `/`,
       background_color: `#ffffff`,
       theme_color: `#ffffff`,
-      display: `minimal-ui`,
+      display: `standalone`,
       icon: `static/logo.png`, // This path is relative to the root of the site.
       localize: [
         {
