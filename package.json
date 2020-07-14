@@ -78,7 +78,7 @@
     "babel-eslint": "10.1.0",
     "babel-plugin-emotion": "10.0.33",
     "babel-plugin-ramda": "2.0.0",
-    "babel-plugin-remove-graphql-queries": "2.9.12",
+    "babel-plugin-remove-graphql-queries": "2.9.13",
     "babel-preset-gatsby": "0.5.1",
     "cypress": "4.10.0",
     "dotenv": "8.2.0",
