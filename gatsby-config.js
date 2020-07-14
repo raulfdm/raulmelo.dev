@@ -56,7 +56,6 @@ const plugins = [
       name: 'data',
     },
   },
-  // `gatsby-plugin-remove-serviceworker`,
   `gatsby-plugin-offline`,
   {
     resolve: `gatsby-plugin-manifest`,
@@ -144,9 +143,9 @@ const plugins = [
   {
     resolve: 'gatsby-plugin-tinacms',
     options: {
+      enabled: !isProduction,
       sidebar: {
         position: 'displace',
-        hidden: true,
       },
       plugins: [
         'gatsby-tinacms-git',
