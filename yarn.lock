@@ -8937,10 +8937,10 @@ gatsby-tinacms-remark@0.8.6:
     react-tinacms-inline "^0.10.1"
     slash "^3.0.0"
 
-gatsby-transformer-json@2.4.10:
-  version "2.4.10"
-  resolved "https://registry.yarnpkg.com/gatsby-transformer-json/-/gatsby-transformer-json-2.4.10.tgz#cd1edc186eddb13f029ba2bdeee73aa9af9317be"
-  integrity sha512-K03GerPcIhG6NgzxDpgA1v86xfA4K1sfPi2YnZG1L9sZAAsbrTaioiGhK0jWy4P00XweASPJQzgiHXGlvbEfeg==
+gatsby-transformer-json@2.4.11:
+  version "2.4.11"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-json/-/gatsby-transformer-json-2.4.11.tgz#aeae29b0fa546a4443582499adfe3c9a04fd7295"
+  integrity sha512-eOZHf/azsIqz7pqYyPBdwk2jqiviaFZwuRQWYxfRpvyohPdSMAgrKgLreJaORfjt0+i3saRBXmkIFDq4Q0iJTA==
   dependencies:
     "@babel/runtime" "^7.10.3"
     bluebird "^3.7.2"
