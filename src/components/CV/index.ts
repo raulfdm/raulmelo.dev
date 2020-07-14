@@ -1,5 +1,3 @@
-export * from './formConfig';
-
 export * from './Info';
 export * from './CareerSummary';
 export * from './CareerExperience';

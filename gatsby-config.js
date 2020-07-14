@@ -141,24 +141,6 @@ const plugins = [
     },
   },
   `gatsby-transformer-json`,
-  /* TODO: This is disabled until TinaCMS fixes loading assets and code
-  in production https://github.com/tinacms/tinacms/issues/1325#issuecomment-658370081
-  */
-  // {
-  //   resolve: 'gatsby-plugin-tinacms',
-  //   options: {
-  //     enabled: !isProduction,
-  //     sidebar: {
-  //       position: 'displace',
-  //     },
-  //     plugins: [
-  //       'gatsby-tinacms-git',
-  //       'gatsby-tinacms-remark',
-  //       'gatsby-tinacms-json',
-  //       'gatsby-transformer-json',
-  //     ],
-  //   },
-  // },
 ];
 
 if (isProduction) {

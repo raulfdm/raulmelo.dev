@@ -38,8 +38,6 @@ export type CvJson = Node & {
   parent?: Maybe<Node>;
   children: Array<Node>;
   internal: Internal;
-  path?: Maybe<Scalars['String']>;
-  lang?: Maybe<Scalars['String']>;
   info?: Maybe<CvJsonInfo>;
   career_summary?: Maybe<CvJsonCareer_Summary>;
   career_history?: Maybe<CvJsonCareer_History>;
@@ -47,8 +45,6 @@ export type CvJson = Node & {
   interests?: Maybe<CvJsonInterests>;
   education?: Maybe<CvJsonEducation>;
   side_projects?: Maybe<CvJsonSide_Projects>;
-  rawJson?: Maybe<Scalars['String']>;
-  fileRelativePath?: Maybe<Scalars['String']>;
 };
 
 export type CvJsonCareer_History = {
@@ -198,8 +194,8 @@ export type CvJsonEducationFormal = {
   title?: Maybe<Scalars['String']>;
   foundation?: Maybe<Scalars['String']>;
   start_date?: Maybe<Scalars['Date']>;
-  id?: Maybe<Scalars['String']>;
   end_date?: Maybe<Scalars['Date']>;
+  id?: Maybe<Scalars['String']>;
 };
 
 
@@ -222,8 +218,8 @@ export type CvJsonEducationFormalFilterInput = {
   title?: Maybe<StringQueryOperatorInput>;
   foundation?: Maybe<StringQueryOperatorInput>;
   start_date?: Maybe<DateQueryOperatorInput>;
-  id?: Maybe<StringQueryOperatorInput>;
   end_date?: Maybe<DateQueryOperatorInput>;
+  id?: Maybe<StringQueryOperatorInput>;
 };
 
 export type CvJsonEducationFormalFilterListInput = {
@@ -333,8 +329,6 @@ export type CvJsonFieldsEnum =
   | 'internal___mediaType'
   | 'internal___owner'
   | 'internal___type'
-  | 'path'
-  | 'lang'
   | 'info___name'
   | 'info___phone'
   | 'info___city'
@@ -368,8 +362,8 @@ export type CvJsonFieldsEnum =
   | 'education___formal___title'
   | 'education___formal___foundation'
   | 'education___formal___start_date'
-  | 'education___formal___id'
   | 'education___formal___end_date'
+  | 'education___formal___id'
   | 'education___languages'
   | 'education___languages___name'
   | 'education___languages___proficiency'
@@ -387,17 +381,13 @@ export type CvJsonFieldsEnum =
   | 'side_projects___projects___description'
   | 'side_projects___projects___is_ongoing'
   | 'side_projects___projects___show'
-  | 'side_projects___projects___id'
-  | 'rawJson'
-  | 'fileRelativePath';
+  | 'side_projects___projects___id';
 
 export type CvJsonFilterInput = {
   id?: Maybe<StringQueryOperatorInput>;
   parent?: Maybe<NodeFilterInput>;
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
-  path?: Maybe<StringQueryOperatorInput>;
-  lang?: Maybe<StringQueryOperatorInput>;
   info?: Maybe<CvJsonInfoFilterInput>;
   career_summary?: Maybe<CvJsonCareer_SummaryFilterInput>;
   career_history?: Maybe<CvJsonCareer_HistoryFilterInput>;
@@ -405,8 +395,6 @@ export type CvJsonFilterInput = {
   interests?: Maybe<CvJsonInterestsFilterInput>;
   education?: Maybe<CvJsonEducationFilterInput>;
   side_projects?: Maybe<CvJsonSide_ProjectsFilterInput>;
-  rawJson?: Maybe<StringQueryOperatorInput>;
-  fileRelativePath?: Maybe<StringQueryOperatorInput>;
 };
 
 export type CvJsonGroupConnection = {
@@ -1353,8 +1341,6 @@ export type FileFieldsEnum =
   | 'childCvJson___internal___mediaType'
   | 'childCvJson___internal___owner'
   | 'childCvJson___internal___type'
-  | 'childCvJson___path'
-  | 'childCvJson___lang'
   | 'childCvJson___info___name'
   | 'childCvJson___info___phone'
   | 'childCvJson___info___city'
@@ -1386,8 +1372,8 @@ export type FileFieldsEnum =
   | 'childCvJson___education___formal___title'
   | 'childCvJson___education___formal___foundation'
   | 'childCvJson___education___formal___start_date'
-  | 'childCvJson___education___formal___id'
   | 'childCvJson___education___formal___end_date'
+  | 'childCvJson___education___formal___id'
   | 'childCvJson___education___languages'
   | 'childCvJson___education___languages___name'
   | 'childCvJson___education___languages___proficiency'
@@ -1402,9 +1388,7 @@ export type FileFieldsEnum =
   | 'childCvJson___side_projects___projects___description'
   | 'childCvJson___side_projects___projects___is_ongoing'
   | 'childCvJson___side_projects___projects___show'
-  | 'childCvJson___side_projects___projects___id'
-  | 'childCvJson___rawJson'
-  | 'childCvJson___fileRelativePath';
+  | 'childCvJson___side_projects___projects___id';
 
 export type FileFilterInput = {
   sourceInstanceName?: Maybe<StringQueryOperatorInput>;
@@ -2160,10 +2144,6 @@ export type MdxFieldsEnum =
   | 'frontmatter___image___childMdx___children'
   | 'frontmatter___image___childCvJson___id'
   | 'frontmatter___image___childCvJson___children'
-  | 'frontmatter___image___childCvJson___path'
-  | 'frontmatter___image___childCvJson___lang'
-  | 'frontmatter___image___childCvJson___rawJson'
-  | 'frontmatter___image___childCvJson___fileRelativePath'
   | 'frontmatter___tags'
   | 'frontmatter___description'
   | 'frontmatter___series___id'
@@ -2581,8 +2561,6 @@ export type QueryAllSitePageArgs = {
 export type QuerySiteArgs = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
-  port?: Maybe<DateQueryOperatorInput>;
-  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -2655,8 +2633,6 @@ export type QueryCvJsonArgs = {
   parent?: Maybe<NodeFilterInput>;
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
-  path?: Maybe<StringQueryOperatorInput>;
-  lang?: Maybe<StringQueryOperatorInput>;
   info?: Maybe<CvJsonInfoFilterInput>;
   career_summary?: Maybe<CvJsonCareer_SummaryFilterInput>;
   career_history?: Maybe<CvJsonCareer_HistoryFilterInput>;
@@ -2664,8 +2640,6 @@ export type QueryCvJsonArgs = {
   interests?: Maybe<CvJsonInterestsFilterInput>;
   education?: Maybe<CvJsonEducationFilterInput>;
   side_projects?: Maybe<CvJsonSide_ProjectsFilterInput>;
-  rawJson?: Maybe<StringQueryOperatorInput>;
-  fileRelativePath?: Maybe<StringQueryOperatorInput>;
 };
 
 
@@ -2721,8 +2695,6 @@ export type QueryAllSitePluginArgs = {
 export type Site = Node & {
   buildTime?: Maybe<Scalars['Date']>;
   siteMetadata?: Maybe<SiteSiteMetadata>;
-  port?: Maybe<Scalars['Date']>;
-  host?: Maybe<Scalars['String']>;
   polyfill?: Maybe<Scalars['Boolean']>;
   pathPrefix?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
@@ -2733,14 +2705,6 @@ export type Site = Node & {
 
 
 export type SiteBuildTimeArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-
-export type SitePortArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
@@ -2937,8 +2901,6 @@ export type SiteFieldsEnum =
   | 'siteMetadata___social___twitter'
   | 'siteMetadata___social___linkedIn'
   | 'siteMetadata___social___github'
-  | 'port'
-  | 'host'
   | 'polyfill'
   | 'pathPrefix'
   | 'id'
@@ -3031,8 +2993,6 @@ export type SiteFieldsEnum =
 export type SiteFilterInput = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
-  port?: Maybe<DateQueryOperatorInput>;
-  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -3717,21 +3677,9 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___resolve'
   | 'pluginCreator___name'
   | 'pluginCreator___version'
-  | 'pluginCreator___pluginOptions___plugins'
-  | 'pluginCreator___pluginOptions___plugins___resolve'
-  | 'pluginCreator___pluginOptions___plugins___id'
-  | 'pluginCreator___pluginOptions___plugins___name'
-  | 'pluginCreator___pluginOptions___plugins___version'
-  | 'pluginCreator___pluginOptions___plugins___nodeAPIs'
-  | 'pluginCreator___pluginOptions___plugins___browserAPIs'
-  | 'pluginCreator___pluginOptions___plugins___pluginFilepath'
   | 'pluginCreator___pluginOptions___path'
   | 'pluginCreator___pluginOptions___name'
-  | 'pluginCreator___pluginOptions___trackingId'
-  | 'pluginCreator___pluginOptions___debug'
   | 'pluginCreator___pluginOptions___fileName'
-  | 'pluginCreator___pluginOptions___sidebar___hidden'
-  | 'pluginCreator___pluginOptions___sidebar___position'
   | 'pluginCreator___pluginOptions___short_name'
   | 'pluginCreator___pluginOptions___start_url'
   | 'pluginCreator___pluginOptions___background_color'
@@ -3753,6 +3701,17 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___aliases___gql'
   | 'pluginCreator___pluginOptions___aliases___mdx'
   | 'pluginCreator___pluginOptions___google___families'
+  | 'pluginCreator___pluginOptions___appId'
+  | 'pluginCreator___pluginOptions___apiKey'
+  | 'pluginCreator___pluginOptions___indexName'
+  | 'pluginCreator___pluginOptions___queries'
+  | 'pluginCreator___pluginOptions___queries___query'
+  | 'pluginCreator___pluginOptions___queries___indexName'
+  | 'pluginCreator___pluginOptions___chunkSize'
+  | 'pluginCreator___pluginOptions___enablePartialUpdates'
+  | 'pluginCreator___pluginOptions___matchFields'
+  | 'pluginCreator___pluginOptions___trackingId'
+  | 'pluginCreator___pluginOptions___head'
   | 'pluginCreator___pluginOptions___pathCheck'
   | 'pluginCreator___nodeAPIs'
   | 'pluginCreator___browserAPIs'
@@ -3941,21 +3900,9 @@ export type SitePluginFieldsEnum =
   | 'resolve'
   | 'name'
   | 'version'
-  | 'pluginOptions___plugins'
-  | 'pluginOptions___plugins___resolve'
-  | 'pluginOptions___plugins___id'
-  | 'pluginOptions___plugins___name'
-  | 'pluginOptions___plugins___version'
-  | 'pluginOptions___plugins___nodeAPIs'
-  | 'pluginOptions___plugins___browserAPIs'
-  | 'pluginOptions___plugins___pluginFilepath'
   | 'pluginOptions___path'
   | 'pluginOptions___name'
-  | 'pluginOptions___trackingId'
-  | 'pluginOptions___debug'
   | 'pluginOptions___fileName'
-  | 'pluginOptions___sidebar___hidden'
-  | 'pluginOptions___sidebar___position'
   | 'pluginOptions___short_name'
   | 'pluginOptions___start_url'
   | 'pluginOptions___background_color'
@@ -3977,6 +3924,18 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___aliases___gql'
   | 'pluginOptions___aliases___mdx'
   | 'pluginOptions___google___families'
+  | 'pluginOptions___appId'
+  | 'pluginOptions___apiKey'
+  | 'pluginOptions___indexName'
+  | 'pluginOptions___queries'
+  | 'pluginOptions___queries___query'
+  | 'pluginOptions___queries___indexName'
+  | 'pluginOptions___queries___settings___attributesToSnippet'
+  | 'pluginOptions___chunkSize'
+  | 'pluginOptions___enablePartialUpdates'
+  | 'pluginOptions___matchFields'
+  | 'pluginOptions___trackingId'
+  | 'pluginOptions___head'
   | 'pluginOptions___pathCheck'
   | 'nodeAPIs'
   | 'browserAPIs'
@@ -4093,13 +4052,9 @@ export type SitePluginPackageJsonPeerDependenciesFilterListInput = {
 };
 
 export type SitePluginPluginOptions = {
-  plugins?: Maybe<Array<Maybe<SitePluginPluginOptionsPlugins>>>;
   path?: Maybe<Scalars['String']>;
   name?: Maybe<Scalars['String']>;
-  trackingId?: Maybe<Scalars['String']>;
-  debug?: Maybe<Scalars['Boolean']>;
   fileName?: Maybe<Scalars['String']>;
-  sidebar?: Maybe<SitePluginPluginOptionsSidebar>;
   short_name?: Maybe<Scalars['String']>;
   start_url?: Maybe<Scalars['String']>;
   background_color?: Maybe<Scalars['String']>;
@@ -4115,6 +4070,15 @@ export type SitePluginPluginOptions = {
   extensions?: Maybe<Array<Maybe<Scalars['String']>>>;
   aliases?: Maybe<SitePluginPluginOptionsAliases>;
   google?: Maybe<SitePluginPluginOptionsGoogle>;
+  appId?: Maybe<Scalars['String']>;
+  apiKey?: Maybe<Scalars['String']>;
+  indexName?: Maybe<Scalars['String']>;
+  queries?: Maybe<Array<Maybe<SitePluginPluginOptionsQueries>>>;
+  chunkSize?: Maybe<Scalars['Int']>;
+  enablePartialUpdates?: Maybe<Scalars['Boolean']>;
+  matchFields?: Maybe<Array<Maybe<Scalars['String']>>>;
+  trackingId?: Maybe<Scalars['String']>;
+  head?: Maybe<Scalars['Boolean']>;
   pathCheck?: Maybe<Scalars['Boolean']>;
 };
 
@@ -4133,13 +4097,9 @@ export type SitePluginPluginOptionsAliasesFilterInput = {
 };
 
 export type SitePluginPluginOptionsFilterInput = {
-  plugins?: Maybe<SitePluginPluginOptionsPluginsFilterListInput>;
   path?: Maybe<StringQueryOperatorInput>;
   name?: Maybe<StringQueryOperatorInput>;
-  trackingId?: Maybe<StringQueryOperatorInput>;
-  debug?: Maybe<BooleanQueryOperatorInput>;
   fileName?: Maybe<StringQueryOperatorInput>;
-  sidebar?: Maybe<SitePluginPluginOptionsSidebarFilterInput>;
   short_name?: Maybe<StringQueryOperatorInput>;
   start_url?: Maybe<StringQueryOperatorInput>;
   background_color?: Maybe<StringQueryOperatorInput>;
@@ -4155,6 +4115,15 @@ export type SitePluginPluginOptionsFilterInput = {
   extensions?: Maybe<StringQueryOperatorInput>;
   aliases?: Maybe<SitePluginPluginOptionsAliasesFilterInput>;
   google?: Maybe<SitePluginPluginOptionsGoogleFilterInput>;
+  appId?: Maybe<StringQueryOperatorInput>;
+  apiKey?: Maybe<StringQueryOperatorInput>;
+  indexName?: Maybe<StringQueryOperatorInput>;
+  queries?: Maybe<SitePluginPluginOptionsQueriesFilterListInput>;
+  chunkSize?: Maybe<IntQueryOperatorInput>;
+  enablePartialUpdates?: Maybe<BooleanQueryOperatorInput>;
+  matchFields?: Maybe<StringQueryOperatorInput>;
+  trackingId?: Maybe<StringQueryOperatorInput>;
+  head?: Maybe<BooleanQueryOperatorInput>;
   pathCheck?: Maybe<BooleanQueryOperatorInput>;
 };
 
@@ -4182,38 +4151,28 @@ export type SitePluginPluginOptionsLocalizeFilterListInput = {
   elemMatch?: Maybe<SitePluginPluginOptionsLocalizeFilterInput>;
 };
 
-export type SitePluginPluginOptionsPlugins = {
-  resolve?: Maybe<Scalars['String']>;
-  id?: Maybe<Scalars['String']>;
-  name?: Maybe<Scalars['String']>;
-  version?: Maybe<Scalars['String']>;
-  nodeAPIs?: Maybe<Array<Maybe<Scalars['String']>>>;
-  browserAPIs?: Maybe<Array<Maybe<Scalars['String']>>>;
-  pluginFilepath?: Maybe<Scalars['String']>;
+export type SitePluginPluginOptionsQueries = {
+  query?: Maybe<Scalars['String']>;
+  indexName?: Maybe<Scalars['String']>;
+  settings?: Maybe<SitePluginPluginOptionsQueriesSettings>;
 };
 
-export type SitePluginPluginOptionsPluginsFilterInput = {
-  resolve?: Maybe<StringQueryOperatorInput>;
-  id?: Maybe<StringQueryOperatorInput>;
-  name?: Maybe<StringQueryOperatorInput>;
-  version?: Maybe<StringQueryOperatorInput>;
-  nodeAPIs?: Maybe<StringQueryOperatorInput>;
-  browserAPIs?: Maybe<StringQueryOperatorInput>;
-  pluginFilepath?: Maybe<StringQueryOperatorInput>;
+export type SitePluginPluginOptionsQueriesFilterInput = {
+  query?: Maybe<StringQueryOperatorInput>;
+  indexName?: Maybe<StringQueryOperatorInput>;
+  settings?: Maybe<SitePluginPluginOptionsQueriesSettingsFilterInput>;
 };
 
-export type SitePluginPluginOptionsPluginsFilterListInput = {
-  elemMatch?: Maybe<SitePluginPluginOptionsPluginsFilterInput>;
+export type SitePluginPluginOptionsQueriesFilterListInput = {
+  elemMatch?: Maybe<SitePluginPluginOptionsQueriesFilterInput>;
 };
 
-export type SitePluginPluginOptionsSidebar = {
-  hidden?: Maybe<Scalars['Boolean']>;
-  position?: Maybe<Scalars['String']>;
+export type SitePluginPluginOptionsQueriesSettings = {
+  attributesToSnippet?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
-export type SitePluginPluginOptionsSidebarFilterInput = {
-  hidden?: Maybe<BooleanQueryOperatorInput>;
-  position?: Maybe<StringQueryOperatorInput>;
+export type SitePluginPluginOptionsQueriesSettingsFilterInput = {
+  attributesToSnippet?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePluginSortInput = {
@@ -4286,34 +4245,31 @@ export type Unnamed_2_Query = { site?: Maybe<{ siteMetadata?: Maybe<(
 export type DataQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type DataQueryQuery = { allCvJson: { edges: Array<{ node: (
-        Pick<CvJson, 'lang' | 'fileRelativePath' | 'rawJson'>
-        & { info?: Maybe<Pick<CvJsonInfo, 'name' | 'phone' | 'city' | 'email' | 'linkedIn' | 'github'>>, side_projects?: Maybe<(
-          Pick<CvJsonSide_Projects, 'section_title'>
-          & { projects?: Maybe<Array<Maybe<Pick<CvJsonSide_ProjectsProjects, 'id' | 'name' | 'start_date' | 'end_date' | 'description' | 'is_ongoing' | 'show'>>>> }
-        )>, career_summary?: Maybe<Pick<CvJsonCareer_Summary, 'section_title' | 'description'>>, technical_skills?: Maybe<(
-          Pick<CvJsonTechnical_Skills, 'section_title'>
-          & { skills?: Maybe<Array<Maybe<(
-            Pick<CvJsonTechnical_SkillsSkills, 'id' | 'group_name'>
-            & { technologies?: Maybe<Array<Maybe<Pick<CvJsonTechnical_SkillsSkillsTechnologies, 'id' | 'name'>>>> }
-          )>>> }
-        )>, education?: Maybe<(
-          Pick<CvJsonEducation, 'section_title'>
-          & { formal?: Maybe<Array<Maybe<Pick<CvJsonEducationFormal, 'id' | 'foundation' | 'start_date' | 'end_date' | 'title'>>>>, languages?: Maybe<Array<Maybe<Pick<CvJsonEducationLanguages, 'id' | 'name' | 'proficiency'>>>>, extra_courses?: Maybe<(
-            Pick<CvJsonEducationExtra_Courses, 'section_title'>
-            & { platforms?: Maybe<Array<Maybe<(
-              Pick<CvJsonEducationExtra_CoursesPlatforms, 'id' | 'name'>
-              & { courses?: Maybe<Array<Maybe<Pick<CvJsonEducationExtra_CoursesPlatformsCourses, 'id' | 'name' | 'hours'>>>> }
-            )>>> }
-          )> }
-        )>, career_history?: Maybe<(
-          Pick<CvJsonCareer_History, 'section_title'>
-          & { jobs?: Maybe<Array<Maybe<Pick<CvJsonCareer_HistoryJobs, 'id' | 'role' | 'description' | 'company' | 'end_date' | 'is_actual' | 'start_date'>>>> }
-        )>, interests?: Maybe<(
-          Pick<CvJsonInterests, 'section_title'>
-          & { values?: Maybe<Array<Maybe<Pick<CvJsonInterestsValues, 'id' | 'name'>>>> }
-        )> }
-      ) }> } };
+export type DataQueryQuery = { cvJson?: Maybe<{ info?: Maybe<Pick<CvJsonInfo, 'name' | 'phone' | 'city' | 'email' | 'linkedIn' | 'github'>>, side_projects?: Maybe<(
+      Pick<CvJsonSide_Projects, 'section_title'>
+      & { projects?: Maybe<Array<Maybe<Pick<CvJsonSide_ProjectsProjects, 'id' | 'name' | 'start_date' | 'end_date' | 'description' | 'is_ongoing' | 'show'>>>> }
+    )>, career_summary?: Maybe<Pick<CvJsonCareer_Summary, 'section_title' | 'description'>>, technical_skills?: Maybe<(
+      Pick<CvJsonTechnical_Skills, 'section_title'>
+      & { skills?: Maybe<Array<Maybe<(
+        Pick<CvJsonTechnical_SkillsSkills, 'id' | 'group_name'>
+        & { technologies?: Maybe<Array<Maybe<Pick<CvJsonTechnical_SkillsSkillsTechnologies, 'id' | 'name'>>>> }
+      )>>> }
+    )>, education?: Maybe<(
+      Pick<CvJsonEducation, 'section_title'>
+      & { formal?: Maybe<Array<Maybe<Pick<CvJsonEducationFormal, 'id' | 'foundation' | 'start_date' | 'end_date' | 'title'>>>>, languages?: Maybe<Array<Maybe<Pick<CvJsonEducationLanguages, 'id' | 'name' | 'proficiency'>>>>, extra_courses?: Maybe<(
+        Pick<CvJsonEducationExtra_Courses, 'section_title'>
+        & { platforms?: Maybe<Array<Maybe<(
+          Pick<CvJsonEducationExtra_CoursesPlatforms, 'id' | 'name'>
+          & { courses?: Maybe<Array<Maybe<Pick<CvJsonEducationExtra_CoursesPlatformsCourses, 'id' | 'name' | 'hours'>>>> }
+        )>>> }
+      )> }
+    )>, career_history?: Maybe<(
+      Pick<CvJsonCareer_History, 'section_title'>
+      & { jobs?: Maybe<Array<Maybe<Pick<CvJsonCareer_HistoryJobs, 'id' | 'role' | 'description' | 'company' | 'end_date' | 'is_actual' | 'start_date'>>>> }
+    )>, interests?: Maybe<(
+      Pick<CvJsonInterests, 'section_title'>
+      & { values?: Maybe<Array<Maybe<Pick<CvJsonInterestsValues, 'id' | 'name'>>>> }
+    )> }> };
 
 export type Unnamed_3_QueryVariables = Exact<{ [key: string]: never; }>;
 
