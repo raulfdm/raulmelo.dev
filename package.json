@@ -25,7 +25,7 @@
   "dependencies": {
     "@emotion/core": "10.0.28",
     "@emotion/styled": "10.0.27",
-    "@formatjs/intl-pluralrules": "3.1.0",
+    "@formatjs/intl-pluralrules": "3.2.3",
     "algoliasearch": "4.3.0",
     "dayjs": "1.8.29",
     "debounce-promise": "3.1.2",
