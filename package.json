@@ -89,7 +89,7 @@
     "eslint-plugin-jest": "23.18.0",
     "eslint-plugin-react": "7.20.3",
     "eslint-plugin-react-hooks": "4.0.8",
-    "gatsby": "2.24.2",
+    "gatsby": "2.24.3",
     "gatsby-alias-imports": "1.0.4",
     "gatsby-image": "2.4.13",
     "gatsby-plugin-algolia-search": "0.5.7",
