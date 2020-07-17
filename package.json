@@ -104,7 +104,7 @@
     "gatsby-plugin-react-helmet": "3.3.10",
     "gatsby-plugin-sharp": "2.6.19",
     "gatsby-plugin-sitemap": "2.4.11",
-    "gatsby-plugin-typescript": "2.4.14",
+    "gatsby-plugin-typescript": "2.4.15",
     "gatsby-plugin-web-font-loader": "1.0.4",
     "gatsby-plugin-web-vitals": "1.0.3",
     "gatsby-remark-autolink-headers": "2.3.11",
