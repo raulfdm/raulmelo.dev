@@ -2219,6 +2219,24 @@
     style-value-types "^3.1.7"
     tslib "^1.10.0"
 
+"@prefresh/core@^0.7.2":
+  version "0.7.2"
+  resolved "https://registry.yarnpkg.com/@prefresh/core/-/core-0.7.2.tgz#982a530cd26b1c466786e92b2abfa03aa8c29f56"
+  integrity sha512-K01Yx3cWY+A4Cb61cJ93swmFS2ZaeCD2uRg8dvaUAw/6oZvtEPrqzueVRjjavkRdwhIuOwqHbCg4scSbo7jE/A==
+
+"@prefresh/utils@^0.2.1":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@prefresh/utils/-/utils-0.2.1.tgz#1446082c87f1ef61b0c407f1bd0e79726fb5ab45"
+  integrity sha512-Ju7WHncqUKsaFp7yAFoNSR2jdr0bjqr8AwV06LtpFmwliPe4IDGRcBGhofg+SY9yld3FUF1JWmEoUOfCyCGRhA==
+
+"@prefresh/webpack@^0.8.1":
+  version "0.8.2"
+  resolved "https://registry.yarnpkg.com/@prefresh/webpack/-/webpack-0.8.2.tgz#e789437189aaded81eaa083455078b39c5f1922a"
+  integrity sha512-c4YsahgvnaOsSu9IW12yixiYfEKbC+DjqVPSezAhN0B5wXtoaTelEY5vmPSY3bFjcFiqnWXA1NJ49WbQ5ozAcw==
+  dependencies:
+    "@prefresh/core" "^0.7.2"
+    "@prefresh/utils" "^0.2.1"
+
 "@reach/router@^1.3.4":
   version "1.3.4"
   resolved "https://registry.yarnpkg.com/@reach/router/-/router-1.3.4.tgz#d2574b19370a70c80480ed91f3da840136d10f8c"
@@ -8382,6 +8400,14 @@ gatsby-plugin-page-creator@^2.3.17:
     lodash "^4.17.15"
     micromatch "^3.1.10"
 
+gatsby-plugin-preact@4.0.9:
+  version "4.0.9"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-preact/-/gatsby-plugin-preact-4.0.9.tgz#57f91036b9136efb2dc2e86ab7125a48561b2b4a"
+  integrity sha512-4OT75UHqIU/aNJuqFgqVSuwz4y7wi29lKF2PcGpszNgwFmdX2/Y0eK8P386FXrREmg3dgymeokMu1xlIbY+BXA==
+  dependencies:
+    "@prefresh/webpack" "^0.8.1"
+    react-refresh "^0.8.2"
+
 gatsby-plugin-react-helmet@3.3.10:
   version "3.3.10"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-react-helmet/-/gatsby-plugin-react-helmet-3.3.10.tgz#ba2f84715cc2471606b90327c7c3ba11c5287bc7"
@@ -14260,6 +14286,18 @@ potrace@^2.1.6:
   dependencies:
     jimp "^0.10.2"
 
+preact-render-to-string@5.1.10:
+  version "5.1.10"
+  resolved "https://registry.yarnpkg.com/preact-render-to-string/-/preact-render-to-string-5.1.10.tgz#cce03d73b166c550148af9dedc9e06fdf6820f8a"
+  integrity sha512-40svy7NDe5Qe0ymdsIC11f0hZb05MeTSUqqIaWJ5DEFCh/sF86KcpRW0kN/ymGYDVVUCfv9qFrVuLCXR7aQxgQ==
+  dependencies:
+    pretty-format "^3.8.0"
+
+preact@10.4.6:
+  version "10.4.6"
+  resolved "https://registry.yarnpkg.com/preact/-/preact-10.4.6.tgz#86cc43396e4bdd755726a2b4b1f0529e78067cd3"
+  integrity sha512-80WJfXH53yyINig5Wza/8MD9n4lMg9G6aN00ws0ptsAaY/Fu/M7xW4zICf7OLfocVltxS30wvNQ8oIbUyZS1tw==
+
 prebuild-install@^5.3.4:
   version "5.3.5"
   resolved "https://registry.yarnpkg.com/prebuild-install/-/prebuild-install-5.3.5.tgz#e7e71e425298785ea9d22d4f958dbaccf8bb0e1b"
@@ -14338,6 +14376,11 @@ pretty-format@^26.1.0:
     ansi-regex "^5.0.0"
     ansi-styles "^4.0.0"
     react-is "^16.12.0"
+
+pretty-format@^3.8.0:
+  version "3.8.0"
+  resolved "https://registry.yarnpkg.com/pretty-format/-/pretty-format-3.8.0.tgz#bfbed56d5e9a776645f4b1ff7aa1a3ac4fa3c385"
+  integrity sha1-v77VbV6ad2ZF9LH/eqGjrE+jw4U=
 
 pretty-quick@2.0.1:
   version "2.0.1"
@@ -14822,6 +14865,11 @@ react-refresh@^0.7.0:
   version "0.7.2"
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.7.2.tgz#f30978d21eb8cac6e2f2fde056a7d04f6844dd50"
   integrity sha512-u5l7fhAJXecWUJzVxzMRU2Zvw8m4QmDNHlTrT5uo3KBlYBhmChd7syAakBoay1yIiVhx/8Fi7a6v6kQZfsw81Q==
+
+react-refresh@^0.8.2:
+  version "0.8.3"
+  resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.8.3.tgz#721d4657672d400c5e3c75d063c4a85fb2d5d68f"
+  integrity sha512-X8jZHc7nCMjaCqoU+V2I0cOhNW+QMBwSUkeXnTi8IPe6zaRWfn60ZzvFDZqWPfmSJfjub7dDW1SP0jaHWLu/hg==
 
 react-side-effect@^2.1.0:
   version "2.1.0"

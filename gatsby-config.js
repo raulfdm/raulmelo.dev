@@ -141,6 +141,7 @@ const plugins = [
     },
   },
   `gatsby-transformer-json`,
+  `gatsby-plugin-preact`,
 ];
 
 if (isProduction) {
