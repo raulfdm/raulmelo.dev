@@ -24,7 +24,7 @@ export type Frontmatter = {
 type PostFields = {
   slug: string;
   lang?: string;
-  commonSlug?: string;
+  postFolderName?: string;
 };
 
 export type PostTranslation = {

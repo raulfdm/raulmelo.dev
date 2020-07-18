@@ -66,7 +66,7 @@ describe('fn: getAndSanitizePostsFromQueryResponse', () => {
           fields: {
             slug: '/2019/03/netlifiy-deploy',
             lang: 'pt',
-            commonSlug: '/2019/03/netlifiy-deploy',
+            postFolderName: '/2019/03/netlifiy-deploy',
           },
           translations: [
             {
@@ -85,7 +85,7 @@ describe('fn: getAndSanitizePostsFromQueryResponse', () => {
           fields: {
             slug: '/2019/04/things-i-dont-know-2018',
             lang: 'pt',
-            commonSlug: '/2019/04/things-i-dont-know-2018',
+            postFolderName: '/2019/04/things-i-dont-know-2018',
           },
         },
       },
@@ -98,7 +98,7 @@ describe('fn: getAndSanitizePostsFromQueryResponse', () => {
           fields: {
             slug: '/2018/01/css-position',
             lang: 'pt',
-            commonSlug: '/2018/01/css-position',
+            postFolderName: '/2018/01/css-position',
           },
         },
       },
@@ -123,7 +123,7 @@ describe('fn: getAndSanitizePostsFromQueryResponse', () => {
           fields: {
             slug: '/en/2019/03/netlifiy-deploy',
             lang: 'en',
-            commonSlug: '/2019/03/netlifiy-deploy',
+            postFolderName: '/2019/03/netlifiy-deploy',
           },
           translations: [
             {
@@ -142,7 +142,7 @@ describe('fn: getAndSanitizePostsFromQueryResponse', () => {
           fields: {
             slug: '/2019/04/things-i-dont-know-2018',
             lang: 'pt',
-            commonSlug: '/2019/04/things-i-dont-know-2018',
+            postFolderName: '/2019/04/things-i-dont-know-2018',
           },
         },
       },
@@ -155,7 +155,7 @@ describe('fn: getAndSanitizePostsFromQueryResponse', () => {
           fields: {
             slug: '/2018/01/css-position',
             lang: 'pt',
-            commonSlug: '/2018/01/css-position',
+            postFolderName: '/2018/01/css-position',
           },
         },
       },

@@ -60,7 +60,7 @@ export const query = graphql`
           fields {
             slug
             lang
-            commonSlug
+            postFolderName
           }
         }
       }

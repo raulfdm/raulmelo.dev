@@ -36,11 +36,11 @@ const createFields = ({ node, actions }) => {
       value: postLang,
     });
 
-    /* commonSlug is used to group translated versions of the same post */
+    /* postFolderName is used to group translated versions of the same post */
     createNodeField({
       node,
-      name: `commonSlug`,
-      value: blogPostFolderPath,
+      name: `postFolderName`,
+      value: postPath,
     });
   }
 };

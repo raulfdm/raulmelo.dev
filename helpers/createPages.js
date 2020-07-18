@@ -6,6 +6,63 @@ const tagTemplate = path.resolve('./src/templates/tag.tsx');
 
 const { getSeriesPost, seriesPath } = require('./series');
 
+function bindPostWithItsTranslations(posts) {
+  const groupByFolderName = R.groupBy(
+    (edge) => edge.node.fields.postFolderName,
+  );
+
+  const entries = Object.entries(groupByFolderName(posts));
+
+  function updateEdgeWithTranslations(edge, translations) {
+    console.log(translations);
+    return {
+      node: {
+        ...edge.node,
+        nonGraphQLData: {
+          translations,
+        },
+      },
+    };
+  }
+
+  const updatedPosts = entries.reduce((result, [, postsList]) => {
+    if (postsList.length === 1) {
+      const singlePostEdge = R.head(postsList);
+      result.push(updateEdgeWithTranslations(singlePostEdge, null));
+    } else {
+      /**
+       * NOTE
+       * This implementation has a limitation for 2 languages.
+       * if one day I had more than one then I do need to rethink that
+       */
+      const first = R.head(postsList);
+      const second = R.last(postsList);
+      const getFields = R.path(['node', 'fields']);
+
+      const updatedFirst = updateEdgeWithTranslations(first, [
+        {
+          lang: getFields(second).lang,
+          slug: getFields(second).slug,
+        },
+      ]);
+
+      const updatedSecond = updateEdgeWithTranslations(second, [
+        {
+          lang: getFields(first).lang,
+          slug: getFields(first).slug,
+        },
+      ]);
+
+      result.push(updatedFirst);
+      result.push(updatedSecond);
+    }
+
+    return result;
+  }, []);
+
+  return updatedPosts;
+}
+
 async function createBlogPost({ graphql, createPage }) {
   const result = await graphql(`
     {
@@ -56,7 +113,7 @@ async function createBlogPost({ graphql, createPage }) {
             fields {
               slug
               lang
-              commonSlug
+              postFolderName
             }
           }
         }
@@ -71,10 +128,12 @@ async function createBlogPost({ graphql, createPage }) {
   // Create blog posts pages.
   const posts = result.data.allMdx.edges;
 
-  const postSeriesAvailable = getSeriesPost(posts);
+  const postsWithTranslations = bindPostWithItsTranslations(posts);
 
-  posts.forEach((post) => {
-    const { fields } = post.node;
+  const postSeriesAvailable = getSeriesPost(postsWithTranslations);
+
+  postsWithTranslations.forEach((post) => {
+    const { fields, nonGraphQLData } = post.node;
 
     const pageData = {
       path: fields.slug,
@@ -83,6 +142,7 @@ async function createBlogPost({ graphql, createPage }) {
         post,
         slug: fields.slug,
         series: null,
+        ...nonGraphQLData,
       },
     };
 
@@ -147,7 +207,7 @@ async function createTagPage({ graphql, createPage }) {
             fields {
               slug
               lang
-              commonSlug
+              postFolderName
             }
           }
         }
@@ -198,4 +258,5 @@ module.exports = {
   createBlogPost,
   createTagPage,
   tagTemplate,
+  bindPostWithItsTranslations,
 };

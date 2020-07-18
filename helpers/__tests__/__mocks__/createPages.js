@@ -22,7 +22,7 @@ const tagPagePosts = {
               fields: {
                 slug: '/en/2020/04/cache-gatsby-github-actions',
                 lang: 'en',
-                commonSlug: '/2020/04/cache-gatsby-github-actions',
+                postFolderName: '/2020/04/cache-gatsby-github-actions',
               },
             },
           },
@@ -45,7 +45,7 @@ const tagPagePosts = {
               fields: {
                 slug: '/2020/03/dev-js-9',
                 lang: 'pt',
-                commonSlug: '/2020/03/dev-js-9',
+                postFolderName: '/2020/03/dev-js-9',
               },
             },
           },
@@ -67,7 +67,7 @@ const tagPagePosts = {
               fields: {
                 slug: '/en/2020/03/yml-for-fe',
                 lang: 'en',
-                commonSlug: '/2020/03/yml-for-fe',
+                postFolderName: '/2020/03/yml-for-fe',
               },
             },
           },
@@ -89,7 +89,7 @@ const tagPagePosts = {
               fields: {
                 slug: '/2020/03/13/corona-virus-overview',
                 lang: 'pt',
-                commonSlug: '/2020/03/13/corona-virus-overview',
+                postFolderName: '/2020/03/13/corona-virus-overview',
               },
             },
           },
@@ -120,7 +120,7 @@ const tagPagePosts = {
               fields: {
                 slug: '/en/2020/04/cache-gatsby-github-actions',
                 lang: 'en',
-                commonSlug: '/2020/04/cache-gatsby-github-actions',
+                postFolderName: '/2020/04/cache-gatsby-github-actions',
               },
             },
           },
@@ -142,7 +142,7 @@ const tagPagePosts = {
               fields: {
                 slug: '/en/2020/03/yml-for-fe',
                 lang: 'en',
-                commonSlug: '/2020/03/yml-for-fe',
+                postFolderName: '/2020/03/yml-for-fe',
               },
             },
           },
@@ -172,7 +172,7 @@ const tagPagePosts = {
               fields: {
                 slug: '/en/2020/04/cache-gatsby-github-actions',
                 lang: 'en',
-                commonSlug: '/2020/04/cache-gatsby-github-actions',
+                postFolderName: '/2020/04/cache-gatsby-github-actions',
               },
             },
           },
@@ -202,7 +202,7 @@ const tagPagePosts = {
               fields: {
                 slug: '/en/2020/04/cache-gatsby-github-actions',
                 lang: 'en',
-                commonSlug: '/2020/04/cache-gatsby-github-actions',
+                postFolderName: '/2020/04/cache-gatsby-github-actions',
               },
             },
           },
@@ -234,7 +234,7 @@ const tagPagePosts = {
               fields: {
                 slug: '/2020/03/dev-js-9',
                 lang: 'pt',
-                commonSlug: '/2020/03/dev-js-9',
+                postFolderName: '/2020/03/dev-js-9',
               },
             },
           },
@@ -266,7 +266,7 @@ const tagPagePosts = {
               fields: {
                 slug: '/2020/03/dev-js-9',
                 lang: 'pt',
-                commonSlug: '/2020/03/dev-js-9',
+                postFolderName: '/2020/03/dev-js-9',
               },
             },
           },
@@ -298,7 +298,7 @@ const tagPagePosts = {
               fields: {
                 slug: '/2020/03/dev-js-9',
                 lang: 'pt',
-                commonSlug: '/2020/03/dev-js-9',
+                postFolderName: '/2020/03/dev-js-9',
               },
             },
           },
@@ -330,7 +330,7 @@ const tagPagePosts = {
               fields: {
                 slug: '/2020/03/dev-js-9',
                 lang: 'pt',
-                commonSlug: '/2020/03/dev-js-9',
+                postFolderName: '/2020/03/dev-js-9',
               },
             },
           },
@@ -361,7 +361,7 @@ const tagPagePosts = {
               fields: {
                 slug: '/en/2020/03/yml-for-fe',
                 lang: 'en',
-                commonSlug: '/2020/03/yml-for-fe',
+                postFolderName: '/2020/03/yml-for-fe',
               },
             },
           },
@@ -392,7 +392,7 @@ const tagPagePosts = {
               fields: {
                 slug: '/en/2020/03/yml-for-fe',
                 lang: 'en',
-                commonSlug: '/2020/03/yml-for-fe',
+                postFolderName: '/2020/03/yml-for-fe',
               },
             },
           },
@@ -423,7 +423,7 @@ const tagPagePosts = {
               fields: {
                 slug: '/2020/03/13/corona-virus-overview',
                 lang: 'pt',
-                commonSlug: '/2020/03/13/corona-virus-overview',
+                postFolderName: '/2020/03/13/corona-virus-overview',
               },
             },
           },
@@ -454,7 +454,7 @@ const tagPagePosts = {
               fields: {
                 slug: '/2020/03/13/corona-virus-overview',
                 lang: 'pt',
-                commonSlug: '/2020/03/13/corona-virus-overview',
+                postFolderName: '/2020/03/13/corona-virus-overview',
               },
             },
           },
@@ -485,7 +485,7 @@ const tagPagePosts = {
               fields: {
                 slug: '/2020/03/13/corona-virus-overview',
                 lang: 'pt',
-                commonSlug: '/2020/03/13/corona-virus-overview',
+                postFolderName: '/2020/03/13/corona-virus-overview',
               },
             },
           },

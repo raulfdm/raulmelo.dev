@@ -1264,7 +1264,7 @@ export type FileFieldsEnum =
   | 'childMdx___wordCount___words'
   | 'childMdx___fields___slug'
   | 'childMdx___fields___lang'
-  | 'childMdx___fields___commonSlug'
+  | 'childMdx___fields___postFolderName'
   | 'childMdx___id'
   | 'childMdx___parent___id'
   | 'childMdx___parent___parent___id'
@@ -2072,7 +2072,7 @@ export type MdxEdge = {
 export type MdxFields = {
   slug?: Maybe<Scalars['String']>;
   lang?: Maybe<Scalars['String']>;
-  commonSlug?: Maybe<Scalars['String']>;
+  postFolderName?: Maybe<Scalars['String']>;
 };
 
 export type MdxFieldsEnum = 
@@ -2164,7 +2164,7 @@ export type MdxFieldsEnum =
   | 'wordCount___words'
   | 'fields___slug'
   | 'fields___lang'
-  | 'fields___commonSlug'
+  | 'fields___postFolderName'
   | 'id'
   | 'parent___id'
   | 'parent___parent___id'
@@ -2255,7 +2255,7 @@ export type MdxFieldsEnum =
 export type MdxFieldsFilterInput = {
   slug?: Maybe<StringQueryOperatorInput>;
   lang?: Maybe<StringQueryOperatorInput>;
-  commonSlug?: Maybe<StringQueryOperatorInput>;
+  postFolderName?: Maybe<StringQueryOperatorInput>;
 };
 
 export type MdxFilterInput = {
@@ -3052,6 +3052,7 @@ export type SitePageContext = {
   post?: Maybe<SitePageContextPost>;
   slug?: Maybe<Scalars['String']>;
   series?: Maybe<SitePageContextSeries>;
+  translations?: Maybe<Array<Maybe<SitePageContextTranslations>>>;
   postEdges?: Maybe<Array<Maybe<SitePageContextPostEdges>>>;
   tag?: Maybe<Scalars['String']>;
 };
@@ -3060,6 +3061,7 @@ export type SitePageContextFilterInput = {
   post?: Maybe<SitePageContextPostFilterInput>;
   slug?: Maybe<StringQueryOperatorInput>;
   series?: Maybe<SitePageContextSeriesFilterInput>;
+  translations?: Maybe<SitePageContextTranslationsFilterListInput>;
   postEdges?: Maybe<SitePageContextPostEdgesFilterListInput>;
   tag?: Maybe<StringQueryOperatorInput>;
 };
@@ -3091,13 +3093,13 @@ export type SitePageContextPostEdgesNode = {
 export type SitePageContextPostEdgesNodeFields = {
   slug?: Maybe<Scalars['String']>;
   lang?: Maybe<Scalars['String']>;
-  commonSlug?: Maybe<Scalars['String']>;
+  postFolderName?: Maybe<Scalars['String']>;
 };
 
 export type SitePageContextPostEdgesNodeFieldsFilterInput = {
   slug?: Maybe<StringQueryOperatorInput>;
   lang?: Maybe<StringQueryOperatorInput>;
-  commonSlug?: Maybe<StringQueryOperatorInput>;
+  postFolderName?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePageContextPostEdgesNodeFilterInput = {
@@ -3194,18 +3196,19 @@ export type SitePageContextPostNode = {
   frontmatter?: Maybe<SitePageContextPostNodeFrontmatter>;
   fileAbsolutePath?: Maybe<Scalars['String']>;
   fields?: Maybe<SitePageContextPostNodeFields>;
+  nonGraphQLData?: Maybe<SitePageContextPostNodeNonGraphQlData>;
 };
 
 export type SitePageContextPostNodeFields = {
   slug?: Maybe<Scalars['String']>;
   lang?: Maybe<Scalars['String']>;
-  commonSlug?: Maybe<Scalars['String']>;
+  postFolderName?: Maybe<Scalars['String']>;
 };
 
 export type SitePageContextPostNodeFieldsFilterInput = {
   slug?: Maybe<StringQueryOperatorInput>;
   lang?: Maybe<StringQueryOperatorInput>;
-  commonSlug?: Maybe<StringQueryOperatorInput>;
+  postFolderName?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePageContextPostNodeFilterInput = {
@@ -3216,6 +3219,7 @@ export type SitePageContextPostNodeFilterInput = {
   frontmatter?: Maybe<SitePageContextPostNodeFrontmatterFilterInput>;
   fileAbsolutePath?: Maybe<StringQueryOperatorInput>;
   fields?: Maybe<SitePageContextPostNodeFieldsFilterInput>;
+  nonGraphQLData?: Maybe<SitePageContextPostNodeNonGraphQlDataFilterInput>;
 };
 
 export type SitePageContextPostNodeFrontmatter = {
@@ -3298,6 +3302,28 @@ export type SitePageContextPostNodeFrontmatterSeriesFilterInput = {
   id?: Maybe<StringQueryOperatorInput>;
   index?: Maybe<IntQueryOperatorInput>;
   copy?: Maybe<StringQueryOperatorInput>;
+};
+
+export type SitePageContextPostNodeNonGraphQlData = {
+  translations?: Maybe<Array<Maybe<SitePageContextPostNodeNonGraphQlDataTranslations>>>;
+};
+
+export type SitePageContextPostNodeNonGraphQlDataFilterInput = {
+  translations?: Maybe<SitePageContextPostNodeNonGraphQlDataTranslationsFilterListInput>;
+};
+
+export type SitePageContextPostNodeNonGraphQlDataTranslations = {
+  lang?: Maybe<Scalars['String']>;
+  slug?: Maybe<Scalars['String']>;
+};
+
+export type SitePageContextPostNodeNonGraphQlDataTranslationsFilterInput = {
+  lang?: Maybe<StringQueryOperatorInput>;
+  slug?: Maybe<StringQueryOperatorInput>;
+};
+
+export type SitePageContextPostNodeNonGraphQlDataTranslationsFilterListInput = {
+  elemMatch?: Maybe<SitePageContextPostNodeNonGraphQlDataTranslationsFilterInput>;
 };
 
 export type SitePageContextSeries = {
@@ -3482,6 +3508,20 @@ export type SitePageContextSeriesFilterInput = {
   _10?: Maybe<SitePageContextSeries_10FilterInput>;
 };
 
+export type SitePageContextTranslations = {
+  lang?: Maybe<Scalars['String']>;
+  slug?: Maybe<Scalars['String']>;
+};
+
+export type SitePageContextTranslationsFilterInput = {
+  lang?: Maybe<StringQueryOperatorInput>;
+  slug?: Maybe<StringQueryOperatorInput>;
+};
+
+export type SitePageContextTranslationsFilterListInput = {
+  elemMatch?: Maybe<SitePageContextTranslationsFilterInput>;
+};
+
 export type SitePageEdge = {
   next?: Maybe<SitePage>;
   node: SitePage;
@@ -3631,6 +3671,9 @@ export type SitePageFieldsEnum =
   | 'context___series____10___copy'
   | 'context___series____10___index'
   | 'context___series____10___uri'
+  | 'context___translations'
+  | 'context___translations___lang'
+  | 'context___translations___slug'
   | 'context___postEdges'
   | 'context___postEdges___node___id'
   | 'context___postEdges___node___timeToRead'
@@ -4279,7 +4322,7 @@ export type Unnamed_3_Query = { allMdx: { edges: Array<{ node: (
         & { frontmatter?: Maybe<(
           Pick<MdxFrontmatter, 'title' | 'subtitle' | 'date' | 'tags' | 'description'>
           & { series?: Maybe<Pick<MdxFrontmatterSeries, 'id'>>, image?: Maybe<{ childImageSharp?: Maybe<{ fluid?: Maybe<Pick<ImageSharpFluid, 'base64' | 'tracedSVG' | 'srcWebp' | 'srcSetWebp' | 'srcSet' | 'src' | 'sizes' | 'presentationWidth' | 'presentationHeight' | 'originalName' | 'originalImg' | 'aspectRatio'>> }> }> }
-        )>, fields?: Maybe<Pick<MdxFields, 'slug' | 'lang' | 'commonSlug'>> }
+        )>, fields?: Maybe<Pick<MdxFields, 'slug' | 'lang' | 'postFolderName'>> }
       ) }> } };
 
 export type UsesQueryVariables = Exact<{ [key: string]: never; }>;

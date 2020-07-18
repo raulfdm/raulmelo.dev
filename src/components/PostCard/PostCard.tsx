@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import React from 'react';
 import * as R from 'ramda';
 import { FormattedMessage, FormattedDate, defineMessages } from 'react-intl';
@@ -14,7 +15,7 @@ import {
 } from './styled';
 import { Tag, Tags } from '../Ui';
 import { PostNode } from '../../types/GraphQL';
-import { LOCALES } from '../../types/Locales';
+import { LOCALES, LocaleValues } from '../../types/Locales';
 import { useIntl } from 'context/react-intl';
 
 type PostCardProps = {
@@ -38,16 +39,21 @@ export const PostCard: React.FC<PostCardProps> = ({ postNode }) => {
   const shouldRenderTags = !R.pipe(R.isNil, R.isEmpty)(tags);
 
   function generateLanguagesText(): string {
-    const firstLanguage = messages[fields?.lang as 'pt' | 'en'];
+    const firstLanguage = messages[fields?.lang as LocaleValues];
+
     function getPostAvailableTranslation(): null | string {
       if (!translations) return null;
+      const postLang = R.head(translations)!.lang as LocaleValues;
 
-      return R.head(translations)!.lang;
+      // TODO: FIX
+      // @ts-ignore
+      return messages[postLang as LocaleValues];
     }
+
     const languages = [firstLanguage, getPostAvailableTranslation()]
       .filter((l) => l)
       .map((l) => formatMessage(l as { id: string }))
-      .join('/');
+      .join(' / ');
 
     return `(${languages})`;
   }

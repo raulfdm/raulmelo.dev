@@ -34,12 +34,12 @@ export const getAndSanitizePostsFromQueryResponse = ({
     return [];
   }
 
-  const postByCommonSlug = R.groupBy(
-    (edge: PostEdge) => edge.node.fields?.commonSlug!,
+  const postByPostFolderName = R.groupBy(
+    (edge: PostEdge) => edge.node.fields?.postFolderName!,
     postEdges,
   );
 
-  const slugPostPairs = R.toPairs(postByCommonSlug);
+  const slugPostPairs = R.toPairs(postByPostFolderName);
 
   const edgesWithTranslations = slugPostPairs.reduce((result, [, posts]) => {
     if (posts.length === 1) {

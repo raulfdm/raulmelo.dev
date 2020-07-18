@@ -12,7 +12,7 @@ const myQuery = `{
         fields {
           slug
           lang
-          commonSlug
+          postFolderName
         }
         frontmatter {
           date
