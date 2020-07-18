@@ -2,18 +2,9 @@ module.exports = {
   presets: ['babel-preset-gatsby'],
   plugins: [
     [
-      [
-        'babel-plugin-styled-components',
-        {
-          pure: true,
-        },
-      ],
+      'babel-plugin-styled-components',
       {
-        // sourceMap is on by default but source maps are dead code eliminated in production
-        sourceMap: true,
-        autoLabel: process.env.NODE_ENV !== 'production',
-        labelFormat: '[local]',
-        cssPropOptimization: true,
+        pure: true,
       },
     ],
     [
