@@ -29,16 +29,16 @@ type HomeTemplateType = {
 const HomeTemplate: React.FC<HomeTemplateType> = ({ pageContext }) => {
   const { postEdges } = pageContext;
 
-  const { hasMore, loadMore, postsToRender, filter, setFilter } = useHomeState(
-    postEdges,
-  );
-
   const { locale, formatMessage } = useIntl();
 
   const posts = getAndSanitizePostsFromQueryResponse({
-    postEdges: postsToRender,
+    postEdges,
     preferredLang: locale,
   });
+
+  const { hasMore, loadMore, postsToRender, filter, setFilter } = useHomeState(
+    posts,
+  );
 
   return (
     <>
@@ -53,7 +53,7 @@ const HomeTemplate: React.FC<HomeTemplateType> = ({ pageContext }) => {
         <AuthorPresentation />
         <Filter setFilter={setFilter} currentFilter={filter} />
         <Posts
-          posts={posts}
+          posts={postsToRender}
           filter={filter}
           loadMore={loadMore}
           hasMore={hasMore}
