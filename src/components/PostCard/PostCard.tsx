@@ -24,10 +24,10 @@ type PostCardProps = {
 
 const messages = defineMessages({
   [LOCALES.PT]: {
-    id: 'locales.pt',
+    id: 'languages.pt',
   },
   [LOCALES.EN]: {
-    id: 'locales.en',
+    id: 'languages.en',
   },
 });
 

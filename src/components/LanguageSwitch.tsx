@@ -14,10 +14,10 @@ export const LanguageSwitch: React.FC = () => {
       items={
         <>
           <DropdownMenuItem onClick={switchToEnglish}>
-            <FormattedMessage id="locales.en" />
+            <FormattedMessage id="languages.en" />
           </DropdownMenuItem>
           <DropdownMenuItem onClick={switchToPortuguese}>
-            <FormattedMessage id="locales.pt" />
+            <FormattedMessage id="languages.pt" />
           </DropdownMenuItem>
         </>
       }

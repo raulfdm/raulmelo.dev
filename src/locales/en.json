@@ -36,7 +36,7 @@
     "title": "All posts for \"{tag}\"",
     "description": "Check all blog posts I've written related to \"{tag}\"."
   },
-  "locales": {
+  "languages": {
     "pt": "Portuguese",
     "en": "English"
   }

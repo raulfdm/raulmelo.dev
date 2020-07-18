@@ -36,7 +36,7 @@
     "title": "Posts com a tag \"{tag}\"",
     "description": "Veja todas as tags que escrevi com relacionados com a tag \"{tag}\"."
   },
-  "locales": {
+  "languages": {
     "pt": "Português",
     "en": "Inglês"
   }
