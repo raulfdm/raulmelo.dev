@@ -1,4 +1,4 @@
-import { SiteTheme } from 'styles/emotion';
+import { SiteTheme } from './styled';
 
 const fontFallback = {
   serif(font: string) {
@@ -15,7 +15,8 @@ export const FONTS = {
   contentTitle: 'content-title',
 };
 
-export const theme: Partial<SiteTheme> = {
+export const theme: SiteTheme = {
+  isDarkTheme: false,
   font: {
     contentSans: fontFallback.sansSerif('Open Sans'),
     contentSerif: fontFallback.serif('Merriweather'),

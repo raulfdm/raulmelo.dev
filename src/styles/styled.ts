@@ -1,4 +1,3 @@
-import defaultStyled, { CreateStyled } from '@emotion/styled';
 import { generateMedia, defaultBreakpoints } from 'styled-media-query';
 
 export interface SiteTheme {
@@ -27,8 +26,11 @@ export interface SiteTheme {
   };
 }
 
-export const styled = defaultStyled as CreateStyled<SiteTheme>;
-export { css, Global } from '@emotion/core';
-export { ThemeProvider as EmotionThemeProvider } from 'emotion-theming';
+export {
+  default as styled,
+  css,
+  createGlobalStyle,
+  ThemeProvider as StyledThemeProvider,
+} from 'styled-components';
 
 export const media = generateMedia({ ...defaultBreakpoints, medium: '768px' });
