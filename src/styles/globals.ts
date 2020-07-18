@@ -26,6 +26,7 @@ export const customGlobals = css`
     --shadowLight: rgba(0, 0, 0, 0.25);
     --shadowBright: rgba(0, 0, 0, 0.05);
     --shadowMenu: rgba(0, 0, 0, 0.05);
+    --infoBox: #fbf9e0;
   }
 
   body.dark {
@@ -38,6 +39,7 @@ export const customGlobals = css`
     --shadowLight: rgba(255, 255, 255, 0.25);
     --shadowBright: rgba(255, 255, 255, 0.05);
     --shadowMenu: '';
+    --infoBox: #233648;
   }
 
   body {

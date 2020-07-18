@@ -31,6 +31,7 @@ export const theme: Partial<SiteTheme> = {
     shadowLight: 'var(--shadowLight)',
     shadowBright: 'var(--shadowBright)',
     shadowMenu: 'var(--shadowMenu)',
+    infoBox: 'var(--infoBox)',
   },
   sizes: {
     menuBar: {

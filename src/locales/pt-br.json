@@ -12,7 +12,10 @@
   },
   "blog": {
     "readTime": "{minutes} min de leitura",
-    "featuredImage": "Imagem de destaque"
+    "featuredImage": "Imagem de destaque",
+    "availableTranslations": {
+      "text": "Traduzido em:"
+    }
   },
   "sideMenu": {
     "home": "Início",

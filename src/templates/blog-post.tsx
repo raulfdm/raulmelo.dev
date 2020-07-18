@@ -20,6 +20,7 @@ import { ThemeProvider } from '../context/theme';
 import { styled, media, SiteTheme } from 'styles/emotion';
 import { SideMenu } from 'components/SideMenu';
 import { joinSubtitleAndDescription } from 'utils/seo';
+import { AvailableTranslations } from 'components/Blog/AvailableTranslations';
 
 const Main = Container.withComponent('main');
 
@@ -37,8 +38,8 @@ const Article = styled(motion.article)`
 const BlogPost: React.FC<BlogPostProps> = ({ pageContext }) => {
   useTwitterScript();
 
-  const { series, post } = pageContext;
-  const { body, frontmatter, excerpt, fields } = post.node;
+  const { series, post, translations } = pageContext;
+  const { body, frontmatter, excerpt, fields } = post!.node!;
   const {
     image,
     image_caption: imageCaption,
@@ -73,9 +74,18 @@ const BlogPost: React.FC<BlogPostProps> = ({ pageContext }) => {
           variants={pageTransitionVariants}
         >
           <BlogContextProvider
-            value={{ series, seriesInfo, title, subtitle, image, imageCaption }}
+            value={{
+              series,
+              seriesInfo,
+              title,
+              subtitle,
+              image,
+              imageCaption,
+              translations,
+            }}
           >
             <Header />
+            <AvailableTranslations />
             <SeriesSection noDivider />
             <FeaturedImage />
             <Main className="post">

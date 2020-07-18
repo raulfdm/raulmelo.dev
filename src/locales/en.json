@@ -18,7 +18,10 @@
   },
   "blog": {
     "readTime": "{minutes} min read",
-    "featuredImage": "Featured image"
+    "featuredImage": "Featured image",
+    "availableTranslations": {
+      "text": "Translated into:"
+    }
   },
   "404": {
     "title": "404 - Page not found",

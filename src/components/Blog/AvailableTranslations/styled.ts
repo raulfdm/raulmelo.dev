@@ -1,0 +1,13 @@
+import { styled } from 'styles/emotion';
+import { Container } from 'components/Ui';
+
+export const Wrapper = Container.withComponent('div');
+
+export const Phrase = styled.p`
+  margin: 0;
+  padding: 1em;
+  background-color: ${({ theme }) => theme.color.infoBox};
+  border: 1px solid ${({ theme }) => theme.color.border};
+  border-radius: 0.75em;
+  font-size: 14px;
+`;

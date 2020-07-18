@@ -18,6 +18,7 @@ export interface SiteTheme {
     shadowLight: string;
     shadowBright: string;
     shadowMenu: string;
+    infoBox: string;
   };
   sizes: {
     menuBar: {
