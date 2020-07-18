@@ -36,13 +36,21 @@ describe('<AvailableTranslations />', () => {
     expect(linkElements).toHaveLength(2);
     expect(linkElements).toMatchInlineSnapshot(`
       Array [
-        <a
+        @media (min-width:768px) {
+
+      }
+
+      <a
           data-testid="blog-available-translations-link"
           href="/post"
         >
           Portuguese
         </a>,
-        <a
+        @media (min-width:768px) {
+
+      }
+
+      <a
           data-testid="blog-available-translations-link"
           href="/en/post"
         >
