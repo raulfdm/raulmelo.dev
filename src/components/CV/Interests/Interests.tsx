@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from '@emotion/styled';
+import { styled } from 'styles/styled';
 
 import { CvJsonInterests } from 'graphql-types';
 import { Section, SectionTitle, SectionBody } from '../shared/Section';

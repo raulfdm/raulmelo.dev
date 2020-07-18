@@ -1,5 +1,6 @@
-import styled from '@emotion/styled';
 import { Link } from 'gatsby';
+
+import { styled } from 'components/CV/styles';
 
 export const CVMain = styled.main`
   max-width: 798px;

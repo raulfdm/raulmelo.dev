@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 import { styled, media, SiteTheme } from 'styles/styled';
 import { MenuBar } from './MenuBar';
@@ -12,9 +13,7 @@ interface LayoutProps {
   className?: string;
 }
 
-const Main = Container.withComponent('main');
-
-const StyledMain = styled(Main)`
+const Main = styled(Container)`
   && {
     padding-top: ${({ theme }) => `calc(35px + ${theme.sizes.menuBar.height})`};
 
@@ -29,7 +28,8 @@ const Layout: React.FC<LayoutProps> = ({ children, className }) => {
   return (
     <ThemeProvider>
       <MenuBar />
-      <StyledMain
+      <Main
+        as={motion.main}
         initial="exit"
         animate="enter"
         exit="exit"
@@ -38,7 +38,7 @@ const Layout: React.FC<LayoutProps> = ({ children, className }) => {
       >
         <GlobalStyles />
         {children}
-      </StyledMain>
+      </Main>
       <SideMenu />
     </ThemeProvider>
   );

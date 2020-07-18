@@ -1,6 +1,6 @@
 import React from 'react';
-import styled from '@emotion/styled';
 
+import { styled } from 'components/CV/styles';
 import {
   CvJsonTechnical_Skills,
   CvJsonTechnical_SkillsSkills,

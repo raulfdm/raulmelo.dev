@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { ThemeProvider } from 'emotion-theming';
+import { StyledThemeProvider } from 'styles/styled';
 import 'sanitize.css/sanitize.css';
 import { ArrowheadUp } from '@styled-icons/evaicons-solid/ArrowheadUp';
 
@@ -45,7 +45,7 @@ const CvPage: React.FC<CvPageProps> = ({ data: { cvJson } }) => {
       </SEO>
       <HomeLink to="/">Back to home</HomeLink>
       <CVMain>
-        <ThemeProvider theme={theme}>
+        <StyledThemeProvider theme={theme as any}>
           <Info data={cvJson.info!} />
           <CareerSummary data={cvJson.career_summary!} />
           <TechnicalSkills data={cvJson.technical_skills!} />
@@ -53,7 +53,7 @@ const CvPage: React.FC<CvPageProps> = ({ data: { cvJson } }) => {
           <SideProjects data={cvJson.side_projects!} />
           <Education data={cvJson.education!} />
           <Interests data={cvJson.interests!} />
-        </ThemeProvider>
+        </StyledThemeProvider>
         <ScrollToTopButton onClick={moveToTop}>
           <ArrowheadUp size={21} />
         </ScrollToTopButton>

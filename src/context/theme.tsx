@@ -1,6 +1,6 @@
 import React from 'react';
 import { createContext, useState } from 'react';
-import { EmotionThemeProvider, SiteTheme } from 'styles/styled';
+import { StyledThemeProvider, SiteTheme } from 'styles/styled';
 import { theme } from 'styles/theme';
 import { themeBackgroundColor } from 'styles/globals';
 
@@ -45,7 +45,7 @@ export const ThemeProvider: React.FC<ThemeProps> = ({ children }) => {
   const enhancedTheme = { ...(theme as SiteTheme), isDarkTheme };
 
   return (
-    <EmotionThemeProvider theme={enhancedTheme}>
+    <StyledThemeProvider theme={enhancedTheme}>
       <ThemeContext.Provider
         value={{
           toggleTheme,
@@ -56,6 +56,6 @@ export const ThemeProvider: React.FC<ThemeProps> = ({ children }) => {
       >
         {children}
       </ThemeContext.Provider>
-    </EmotionThemeProvider>
+    </StyledThemeProvider>
   );
 };

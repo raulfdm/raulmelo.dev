@@ -1,6 +1,6 @@
 import React from 'react';
-import styled from '@emotion/styled';
 
+import { styled } from 'components/CV/styles';
 import { CourseList } from 'components/CV/shared/Ui';
 import { deepMemo } from 'utils/components';
 import { CvJsonEducationLanguages } from 'graphql-types';

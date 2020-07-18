@@ -1,7 +1,6 @@
-import React from 'react';
 import Typography from 'typography';
 
-import { css, Global } from 'styles/styled';
+import { css, createGlobalStyle } from 'styles/styled';
 import { pandaPrismStyles } from './prims-panda-theme';
 import { FONTS, theme } from 'styles/theme';
 import { headingLinkStyle } from 'components/Ui';
@@ -83,4 +82,6 @@ const blogGlobal = css`
   ${pandaPrismStyles};
 `;
 
-export const BlogGlobalStyle = () => <Global styles={blogGlobal} />;
+export const BlogGlobalStyle = createGlobalStyle`
+  ${blogGlobal};
+`;

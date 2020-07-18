@@ -3,7 +3,6 @@ import * as R from 'ramda';
 
 import { deepMemo } from 'utils/components';
 import { CvJsonInfo } from 'graphql-types';
-
 import { styled, css } from '../styles';
 import { Section } from '../shared/Section';
 

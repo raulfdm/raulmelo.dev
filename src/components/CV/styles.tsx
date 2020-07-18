@@ -1,6 +1,5 @@
-import React from 'react';
-import { css, Global } from 'styles/styled';
-import emotionStyled, { CreateStyled } from '@emotion/styled';
+import { styled as defaultStyled, css, createGlobalStyle } from 'styles/styled';
+import { ThemedStyledInterface } from 'styled-components';
 
 export const theme = {
   color: {
@@ -26,8 +25,12 @@ export const theme = {
   },
 };
 
+export type CvTheme = typeof theme;
+
 export * from 'styles/styled';
-export const styled = emotionStyled as CreateStyled<typeof theme>;
+export const styled = (defaultStyled as unknown) as ThemedStyledInterface<
+  CvTheme
+>;
 
 const globalCss = css`
   html,
@@ -100,11 +103,7 @@ const printGlobals = css`
   }
 `;
 
-export const GlobalCVStyles = (): JSX.Element => (
-  <Global
-    styles={css`
-      ${printGlobals};
-      ${globalCss};
-    `}
-  />
-);
+export const GlobalCVStyles = createGlobalStyle`
+  ${printGlobals};
+  ${globalCss};
+`;
