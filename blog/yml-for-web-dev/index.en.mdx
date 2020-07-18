@@ -15,19 +15,19 @@ If you start a career as FE, you might see a lot of `.yml` files like `.travis.y
 
 Why would people use this kind of file? What's the benefit of it? How does this thing work?
 
-So, the goal from this article is to introduce you to the `YAML` structure and give you more confidence to understand, read and change a file like this when you need it.
+So, the goal of this article is to introduce you to the `YAML` structure and give you more confidence to understand, read, and change a file like this when you need it.
 
 After all, we tend to feel very uncomfortable and frustrated and we need to do something and we can't even understand what's that.
 
 ---
 
-## But first, What its YAML?
+## But first, What is YAML?
 
 According to [the official website](https://yaml.org/), Yaml is:
 
 <BigQuote>
-  "YAML (a recursive acronym for "YAML Ain't Markup Language") is a human
-  friendly data serialization standard for all programming languages."
+  "YAML (a recursive acronym for "YAML Ain't Markup Language") is a
+  human-friendly data serialization standard for all programming languages."
 </BigQuote>
 
 Heavily used to write configuration files, which explains A LOT, right?
@@ -105,20 +105,20 @@ I hope you're starting to get the idea from these files.
 
 ---
 
-## Concepts, Types and Syntax
+## Concepts, Types, and Syntax
 
 Now, let's dive deep a bit in the concept of the language.
 
 ### Indentation
 
 <!-- prettier-ignore -->
-In Yaml, indentation **do matter**. It uses _whitespace indentation_ to nest information. By whitespace, keep in mind `tab` is not allowed.
+In Yaml, indentation **does matter**. It uses _whitespace indentation_ to nest information. By whitespace, keep in mind `tab` is not allowed.
 
 If you're like me and uses tab for everything, install some plugin in your IDE to replace your tabs for spaces (like [editorconfig](https://editorconfig.org/)). Doing that, when you hit a tab, it'll automatically replace your tab by space and you don't even need to use your space bar! ;)
 
 ### Root
 
-Since indentation really matters here, if there's no space before the first declaration YAML will understand that's the root (level 0) of your file:
+Since indentation matters here, if there's no space before the first declaration YAML will understand that's the root (level 0) of your file:
 
 ```yml
 person:
@@ -219,7 +219,7 @@ nodeVersion: 10.8 # Float
 
 An anchor is a mechanism to create a group of data (an object) that can be injected or extended from other objects.
 
-Let's imagine you need to create a configuration for your CI. It'll have both `production` and `staging` environment. As you can imagine, they share almost the same base settings.
+Let's imagine you need to create a configuration for your CI. It'll have both `production` and `staging` environments. As you can imagine, they share almost the same base settings.
 
 In JSON world, we would have to duplicate these configs:
 
@@ -406,7 +406,7 @@ test:
     name: $CI_COMMIT_REF_NAME
 ```
 
-In the example above, we're using a `$CI_COMMIT_REF_NAME` external environment variable that GitLab CI platform makes available which describes `The branch or tag name for which project is built`.
+In the example above, we're using a `$CI_COMMIT_REF_NAME` external environment variable that GitLab CI platform makes available which describes `The branch or tag name for which the project is built`.
 
 ---
 
