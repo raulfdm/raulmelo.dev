@@ -1,8 +1,13 @@
 module.exports = {
-  presets: ['babel-preset-gatsby', '@emotion/babel-preset-css-prop'],
+  presets: ['babel-preset-gatsby'],
   plugins: [
     [
-      'emotion',
+      [
+        'babel-plugin-styled-components',
+        {
+          pure: true,
+        },
+      ],
       {
         // sourceMap is on by default but source maps are dead code eliminated in production
         sourceMap: true,
@@ -22,7 +27,7 @@ module.exports = {
     test: {
       presets: ['@babel/preset-typescript'],
       /* Cannot use ESM within node environment */
-      plugins: ['ramda'],
+      plugins: ['ramda', 'babel-plugin-styled-components'],
     },
   },
 };

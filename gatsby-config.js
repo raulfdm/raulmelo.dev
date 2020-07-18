@@ -42,7 +42,6 @@ const plugins = [
   `gatsby-transformer-sharp`,
   `gatsby-plugin-sharp`,
   `gatsby-transformer-json`,
-  `gatsby-plugin-emotion`,
   {
     resolve: `gatsby-plugin-graphql-codegen`,
     options: {
