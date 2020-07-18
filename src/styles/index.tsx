@@ -1,16 +1,11 @@
-import React from 'react';
-import { Global, css } from 'styles/emotion';
+import { createGlobalStyle } from './styled';
 
 import { customGlobals } from './globals';
 import { resets } from './reset';
 import { globalFonts } from './fonts';
 
-export const GlobalStyles = () => (
-  <Global
-    styles={css`
-      ${resets};
-      ${customGlobals};
-      ${globalFonts};
-    `}
-  />
-);
+export const GlobalStyles = createGlobalStyle`
+  ${resets};
+  ${customGlobals};
+  ${globalFonts};
+`;

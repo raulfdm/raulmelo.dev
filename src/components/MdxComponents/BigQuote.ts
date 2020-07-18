@@ -1,4 +1,4 @@
-import { styled, media } from 'styles/emotion';
+import { styled, media } from 'styles/styled';
 
 export const BigQuote = styled.blockquote`
   /* Resetting global blockquote style  */

@@ -1,6 +1,6 @@
 import React from 'react';
 import { createContext, useState } from 'react';
-import { EmotionThemeProvider, SiteTheme } from 'styles/emotion';
+import { EmotionThemeProvider, SiteTheme } from 'styles/styled';
 import { theme } from 'styles/theme';
 import { themeBackgroundColor } from 'styles/globals';
 

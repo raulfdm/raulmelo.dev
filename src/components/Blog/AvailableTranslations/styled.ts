@@ -1,4 +1,4 @@
-import { styled } from 'styles/emotion';
+import { styled } from 'styles/styled';
 import { Container } from 'components/Ui';
 
 export const Wrapper = Container.withComponent('div');

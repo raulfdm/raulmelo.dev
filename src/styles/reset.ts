@@ -1,4 +1,4 @@
-import { css } from 'styles/emotion';
+import { css } from 'styles/styled';
 
 export const resets = css`
   /* RESOURCE: https://dev.to/hankchizljaw/a-modern-css-reset-6p3 */

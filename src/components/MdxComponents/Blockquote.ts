@@ -1,4 +1,4 @@
-import { styled, media } from 'styles/emotion';
+import { styled, media } from 'styles/styled';
 
 export const Blockquote = styled.blockquote`
   font-weight: 300;

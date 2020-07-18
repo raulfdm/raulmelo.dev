@@ -1,4 +1,4 @@
-import { styled } from 'styles/emotion';
+import { styled } from 'styles/styled';
 
 export const Divider = styled.hr`
   position: relative;

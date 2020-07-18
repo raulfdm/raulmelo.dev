@@ -1,7 +1,7 @@
 import React from 'react';
 import Typography from 'typography';
 
-import { css, Global } from 'styles/emotion';
+import { css, Global } from 'styles/styled';
 import { pandaPrismStyles } from './prims-panda-theme';
 import { FONTS, theme } from 'styles/theme';
 import { headingLinkStyle } from 'components/Ui';

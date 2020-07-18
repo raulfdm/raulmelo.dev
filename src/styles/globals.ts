@@ -1,4 +1,4 @@
-import { css } from 'styles/emotion';
+import { css } from 'styles/styled';
 
 export const themeBackgroundColor = {
   dark: 'rgb(21, 32, 43)',

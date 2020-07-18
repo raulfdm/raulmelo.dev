@@ -1,7 +1,7 @@
 import { transparentize } from 'polished';
 import { motion } from 'framer-motion';
 
-import { styled, media } from 'styles/emotion';
+import { styled, media } from 'styles/styled';
 import { pxToRem } from 'styles/blogPost';
 import { Card as DefaultCard } from 'components/Ui';
 

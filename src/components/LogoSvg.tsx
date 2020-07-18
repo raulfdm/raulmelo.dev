@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { styled } from 'styles/emotion';
+import { styled } from 'styles/styled';
 
 const Logo = styled.svg`
   fill: ${({ theme }) => theme.color.font};

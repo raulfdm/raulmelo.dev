@@ -2,7 +2,7 @@ import React from 'react';
 import Img from 'gatsby-image';
 import { defineMessages } from 'react-intl';
 
-import { styled } from 'styles/emotion';
+import { styled } from 'styles/styled';
 import { Frontmatter } from 'types';
 import { useIntl } from 'context/react-intl';
 import { Container } from 'components/Ui';

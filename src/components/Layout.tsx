@@ -1,11 +1,11 @@
 import React from 'react';
 
+import { styled, media, SiteTheme } from 'styles/styled';
 import { MenuBar } from './MenuBar';
 import { Container, pageTransitionVariants } from './Ui';
 import { GlobalStyles } from '../styles';
 import { ThemeProvider } from '../context/theme';
 import { SideMenu } from './SideMenu';
-import { styled, media, SiteTheme } from 'styles/emotion';
 
 interface LayoutProps {
   children: React.ReactNode | React.ReactChildren;

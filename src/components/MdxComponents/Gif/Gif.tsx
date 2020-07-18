@@ -1,5 +1,5 @@
 import React from 'react';
-import { styled, css } from 'styles/emotion';
+import { styled, css } from 'styles/styled';
 
 type GifProps = {
   src: string;

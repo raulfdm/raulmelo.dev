@@ -4,7 +4,7 @@ import { CvJsonCareer_History } from 'graphql-types';
 import { deepMemo } from 'utils/components';
 import { Project } from '../shared/Project';
 import { SectionTitle, Section, SectionBody } from '../shared/Section';
-import { styled } from 'styles/emotion';
+import { styled } from 'styles/styled';
 
 const StyledSection = styled(Section)`
   page-break-before: always;
