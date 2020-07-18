@@ -3,11 +3,15 @@ import { IntlProvider, IntlShape, useIntl as officialUseItl } from 'react-intl';
 import flat from 'flat';
 import { useLocalStorage } from 'react-use';
 
-import { LOCALES } from '../types/Locales';
+import { LOCALES, LocaleValues } from '../types/Locales';
 import enMessages from '../locales/en.json';
 import ptMessages from '../locales/pt-br.json';
 
-type CustomIntlShape = { switchToPortuguese(): void; switchToEnglish(): void };
+type CustomIntlShape = {
+  switchToPortuguese(): void;
+  switchToEnglish(): void;
+  switchLocale(nextLocale: LocaleValues): void;
+};
 
 const IntlContext = React.createContext<CustomIntlShape | undefined>(undefined);
 
@@ -45,7 +49,9 @@ export const IntlContextProvider: React.FC = ({ children }) => {
 
   return (
     <IntlProvider locale={language!} messages={messages}>
-      <IntlContext.Provider value={{ switchToPortuguese, switchToEnglish }}>
+      <IntlContext.Provider
+        value={{ switchToPortuguese, switchToEnglish, switchLocale }}
+      >
         {children}
       </IntlContext.Provider>
     </IntlProvider>
