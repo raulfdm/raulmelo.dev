@@ -14,7 +14,6 @@ function bindPostWithItsTranslations(posts) {
   const entries = Object.entries(groupByFolderName(posts));
 
   function updateEdgeWithTranslations(edge, translations) {
-    console.log(translations);
     return {
       node: {
         ...edge.node,
