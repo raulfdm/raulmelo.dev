@@ -34,13 +34,13 @@ describe('<Header />', () => {
       }
 
       @media (min-width:768px) {
-        .c0 {
-          font-size: 42px;
-        }
+
       }
 
       @media (min-width:768px) {
-
+        .c0 {
+          font-size: 42px;
+        }
       }
 
       <h1
@@ -82,13 +82,13 @@ describe('<Header />', () => {
       }
 
       @media (min-width:768px) {
-        .c0 {
-          font-size: 28px;
-        }
+
       }
 
       @media (min-width:768px) {
-
+        .c0 {
+          font-size: 28px;
+        }
       }
 
       <p
