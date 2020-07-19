@@ -37,6 +37,7 @@ const plugins = [
       name: `uses`,
     },
   },
+  `gatsby-plugin-styled-components`,
   `gatsby-alias-imports`,
   `gatsby-plugin-typescript`,
   `gatsby-transformer-sharp`,
@@ -140,8 +141,6 @@ const plugins = [
     },
   },
   `gatsby-transformer-json`,
-  `gatsby-plugin-preact`,
-  `gatsby-plugin-styled-components`,
 ];
 
 if (isProduction) {
