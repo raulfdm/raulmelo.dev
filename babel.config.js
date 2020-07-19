@@ -1,12 +1,7 @@
 module.exports = {
   presets: ['babel-preset-gatsby'],
   plugins: [
-    [
-      'babel-plugin-styled-components',
-      {
-        pure: true,
-      },
-    ],
+    'babel-plugin-styled-components',
     [
       'ramda',
       {
