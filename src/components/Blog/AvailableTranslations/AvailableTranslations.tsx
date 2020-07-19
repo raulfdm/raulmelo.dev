@@ -1,12 +1,14 @@
 import React, { Fragment } from 'react';
-import { useBlogContext } from '../blogContext';
 import { Link } from 'gatsby';
 import { defineMessages, FormattedMessage } from 'react-intl';
+
+import { LocaleValues } from 'src/types/Locales';
 import { useIntl } from 'context/react-intl';
 import { SitePageContextTranslations } from 'graphql-types';
-import { LocaleValues } from 'src/types/Locales';
 import R from 'ramda';
-import { Phrase, Wrapper } from './styled';
+import { Container } from 'components/Ui';
+import { useBlogContext } from '../blogContext';
+import { Phrase } from './styled';
 
 const messages = defineMessages({
   en: {
@@ -39,7 +41,7 @@ export const AvailableTranslations = () => {
   const separator = ' • ';
 
   return (
-    <Wrapper data-testid="blog-available-translations">
+    <Container data-testid="blog-available-translations" as="div">
       <Phrase>
         <span>
           <FormattedMessage id="blog.availableTranslations.text" />{' '}
@@ -59,6 +61,6 @@ export const AvailableTranslations = () => {
           </Fragment>
         ))}
       </Phrase>
-    </Wrapper>
+    </Container>
   );
 };

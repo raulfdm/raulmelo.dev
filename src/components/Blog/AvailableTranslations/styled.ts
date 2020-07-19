@@ -1,7 +1,4 @@
 import { styled } from 'styles/styled';
-import { Container } from 'components/Ui';
-
-export const Wrapper = Container.withComponent('div');
 
 export const Phrase = styled.p`
   margin: 0;

@@ -1,9 +1,6 @@
 import Img from 'gatsby-image';
 
 import { styled, media } from 'styles/styled';
-import { Card } from 'components/Ui';
-
-export const StyledCard = Card.withComponent('article');
 
 export const PostCardWrapper = styled.article``;
 

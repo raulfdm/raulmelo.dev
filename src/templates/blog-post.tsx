@@ -22,8 +22,6 @@ import { SideMenu } from 'components/SideMenu';
 import { joinSubtitleAndDescription } from 'utils/seo';
 import { AvailableTranslations } from 'components/Blog/AvailableTranslations';
 
-const Main = Container.withComponent('main');
-
 const Article = styled(motion.article)`
   && {
     padding-top: ${({ theme }) => `calc(35px + ${theme.sizes.menuBar.height})`};
@@ -88,7 +86,7 @@ const BlogPost: React.FC<BlogPostProps> = ({ pageContext }) => {
             <AvailableTranslations />
             <SeriesSection noDivider />
             <FeaturedImage />
-            <Main className="post">
+            <Container as="main" className="post">
               <MDXRenderer>{body!}</MDXRenderer>
               <SeriesSection />
               <LineDivider />
@@ -97,7 +95,7 @@ const BlogPost: React.FC<BlogPostProps> = ({ pageContext }) => {
                   <Tag key={tag} tag={tag} />
                 ))}
               </Tags>
-            </Main>
+            </Container>
           </BlogContextProvider>
         </Article>
         <SideMenu />
