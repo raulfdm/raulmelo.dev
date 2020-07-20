@@ -29,7 +29,7 @@
     "dayjs": "1.8.29",
     "debounce-promise": "3.1.2",
     "flat": "5.0.0",
-    "framer-motion": "2.0.0",
+    "framer-motion": "2.1.0",
     "gatsby-plugin-styled-components": "3.3.10",
     "lodash.throttle": "4.1.1",
     "mobx": "5.15.4",
