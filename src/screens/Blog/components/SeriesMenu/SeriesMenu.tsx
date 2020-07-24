@@ -4,7 +4,7 @@ import { ArrowIosDownwardOutline } from '@styled-icons/evaicons-outline/ArrowIos
 import { AnimatePresence } from 'framer-motion';
 import { Link } from 'gatsby';
 
-import { Card } from 'components/Ui';
+import { Card } from '@components/Ui';
 import { SeriesType, PostSeries } from 'types';
 import * as S from './styled';
 

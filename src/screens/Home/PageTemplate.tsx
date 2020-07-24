@@ -2,11 +2,11 @@ import React from 'react';
 import { defineMessages } from 'react-intl';
 
 import { useHomeState } from '@screens/Home/hooks/useHomeState';
-import SEO from 'components/SEO';
+import SEO from '@components/SEO';
 import { useIntl } from 'context/react-intl';
 import { getAndSanitizePostsFromQueryResponse } from '@screens/Home/helpers/posts';
 import AuthorPresentation from '@screens/Home/components/AuthorPresentation';
-import Layout from 'components/Layout';
+import Layout from '@components/Layout';
 import { Filter } from '@screens/Home/components/Filter';
 import { Posts } from '@screens/Home/components/Posts';
 import { PostEdges } from 'types';

@@ -2,10 +2,10 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { motion, AnimatePresence } from 'framer-motion';
 
-import { InfiniteScroll } from 'components/InfiniteScroll';
+import { InfiniteScroll } from '@components/InfiniteScroll';
 import { styled } from '@styles/styled';
 import { PostEdge, PostEdges } from 'types';
-import { PostCard } from 'components/PostCard';
+import { PostCard } from '@components/PostCard';
 import { PostFilters } from '@screens/Home/types';
 
 type PostsProps = {

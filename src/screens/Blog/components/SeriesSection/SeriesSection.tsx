@@ -3,7 +3,7 @@ import React from 'react';
 import { SeriesMenu } from '@screens/Blog/components/SeriesMenu';
 import { useBlogContext } from '@screens/Blog/hooks/useBlogContext';
 import { Divider } from '@screens/Blog/components/MdxComponents/Divider';
-import { Container } from 'components/Ui';
+import { Container } from '@components/Ui';
 
 interface SeriesSection {
   noDivider?: boolean;

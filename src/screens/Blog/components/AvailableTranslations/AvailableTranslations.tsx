@@ -6,7 +6,7 @@ import R from 'ramda';
 import { LocaleValues } from 'src/types/Locales';
 import { useIntl } from 'context/react-intl';
 import { SitePageContextTranslations } from 'graphql-types';
-import { Container } from 'components/Ui';
+import { Container } from '@components/Ui';
 import { useBlogContext } from '@screens/Blog/hooks/useBlogContext';
 import { Phrase } from './styled';
 

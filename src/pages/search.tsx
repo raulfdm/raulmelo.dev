@@ -7,10 +7,10 @@ import debounce from 'debounce-promise';
 
 import { styled, media } from '@styles/styled';
 import { HitAlgolia, RequestsAlgoliaClient } from 'types';
-import Layout from 'components/Layout';
+import Layout from '@components/Layout';
 import { algoliaConfig } from 'config/algolia';
-import { PostCard } from 'components/PostCard';
-import SEO from 'components/SEO';
+import { PostCard } from '@components/PostCard';
+import SEO from '@components/SEO';
 
 const algoliaClient = algoliaSearch(
   algoliaConfig.appId!,

@@ -1,6 +1,6 @@
 import { styled } from '@styles/styled';
 
-import { headingLinkStyle } from 'components/Ui';
+import { headingLinkStyle } from '@components/Ui';
 
 export const h1 = styled.h1`
   ${headingLinkStyle};

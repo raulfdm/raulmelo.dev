@@ -6,7 +6,7 @@ import { LanguageSwitch } from '../LanguageSwitch';
 import { ThemeSwitch } from '../ThemeSwitch';
 import LogoSvg from '../LogoSvg';
 import * as S from './styled';
-import { SideMenuNavIcon } from 'components/SideMenu';
+import { SideMenuNavIcon } from '@components/SideMenu';
 
 export const MenuBar: React.FC = () => {
   const [showMenu, setShowMenu] = React.useState(true);
