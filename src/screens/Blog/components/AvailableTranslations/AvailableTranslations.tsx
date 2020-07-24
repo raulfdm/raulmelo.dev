@@ -1,13 +1,13 @@
 import React, { Fragment } from 'react';
 import { Link } from 'gatsby';
 import { defineMessages, FormattedMessage } from 'react-intl';
+import R from 'ramda';
 
 import { LocaleValues } from 'src/types/Locales';
 import { useIntl } from 'context/react-intl';
 import { SitePageContextTranslations } from 'graphql-types';
-import R from 'ramda';
 import { Container } from 'components/Ui';
-import { useBlogContext } from '../blogContext';
+import { useBlogContext } from '@screens/Blog/hooks/useBlogContext';
 import { Phrase } from './styled';
 
 const messages = defineMessages({

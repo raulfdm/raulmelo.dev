@@ -2,25 +2,25 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
-import { Header } from 'components/Blog/Header';
-import { FeaturedImage } from 'components/Blog/FeaturedImage';
-import { SeriesSection } from 'components/Blog/SeriesSection';
-import { BlogPostProps } from 'components/Blog/types';
-import { BlogContextProvider } from 'components/Blog/blogContext';
-import { useTwitterScript } from 'components/Blog/useTwitterScript';
-import LayoutBlog from 'layouts/blog';
-import { pageTransitionVariants, Tags, Tag } from '../components/Ui';
-import { BlogGlobalStyle } from '../styles/blogPost';
-import { GlobalStyles } from '../styles';
-import { Container, LineDivider } from '../components/Ui';
-import { MenuBar } from '../components/MenuBar';
-import { Frontmatter } from '../types';
-import SEO from '../components/SEO';
-import { ThemeProvider } from '../context/theme';
+import { Header } from '@screens/Blog/components/Header';
+import { FeaturedImage } from '@screens/Blog/components/FeaturedImage';
+import { SeriesSection } from '@screens/Blog/components/SeriesSection';
+import { BlogPostProps } from '@screens/Blog/types';
+import { BlogContextProvider } from '@screens/Blog/context';
+import { useTwitterScript } from 'hooks/useTwitterScript';
+import LayoutBlog from '@screens/Blog/Layout';
+import { pageTransitionVariants, Tags, Tag } from 'components/Ui';
+import { BlogGlobalStyle } from 'styles/blogPost';
+import { GlobalStyles } from 'styles/index';
+import { Container, LineDivider } from 'components/Ui';
+import { MenuBar } from 'components/MenuBar';
+import { Frontmatter } from 'types';
+import SEO from 'components/SEO';
+import { ThemeProvider } from 'context/theme';
 import { styled, media, SiteTheme } from 'styles/styled';
 import { SideMenu } from 'components/SideMenu';
 import { joinSubtitleAndDescription } from 'utils/seo';
-import { AvailableTranslations } from 'components/Blog/AvailableTranslations';
+import { AvailableTranslations } from '@screens/Blog/components/AvailableTranslations';
 
 const Article = styled(motion.article)`
   && {
@@ -33,7 +33,7 @@ const Article = styled(motion.article)`
   }
 `;
 
-const BlogPost: React.FC<BlogPostProps> = ({ pageContext }) => {
+const BlogPostPageTemplate: React.FC<BlogPostProps> = ({ pageContext }) => {
   useTwitterScript();
 
   const { series, post, translations } = pageContext;
@@ -104,4 +104,4 @@ const BlogPost: React.FC<BlogPostProps> = ({ pageContext }) => {
   );
 };
 
-export default BlogPost;
+export default BlogPostPageTemplate;

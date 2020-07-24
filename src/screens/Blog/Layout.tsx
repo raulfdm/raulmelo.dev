@@ -1,6 +1,7 @@
 import React from 'react';
 import { MDXProvider } from '@mdx-js/react';
-import { blogComponents } from '../components/MdxComponents';
+
+import { blogComponents } from '@screens/Blog/components/MdxComponents';
 
 export default function LayoutBlog({
   children,

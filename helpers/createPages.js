@@ -1,7 +1,7 @@
 const path = require('path');
 const R = require('ramda');
 
-const blogPostComponent = path.resolve('./src/templates/blog-post.tsx');
+const blogPostComponent = path.resolve('./src/screens/Blog/PageTemplate.tsx');
 const tagTemplate = path.resolve('./src/templates/tag.tsx');
 
 const { getSeriesPost, seriesPath } = require('./series');

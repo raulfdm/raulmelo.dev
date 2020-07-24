@@ -3,10 +3,10 @@ import { mocked } from 'ts-jest/utils';
 
 import { render, screen } from 'test-utils';
 
-import { useBlogContext } from '../blogContext';
+import { useBlogContext } from '@screens/Blog/hooks/useBlogContext';
 import { AvailableTranslations } from '.';
 
-jest.mock('../blogContext');
+jest.mock('@screens/Blog/context');
 
 const mockedUseBlogContext = mocked(useBlogContext);
 

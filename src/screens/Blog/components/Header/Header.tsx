@@ -1,8 +1,8 @@
 import React from 'react';
 
+import { useBlogContext } from '@screens/Blog/hooks/useBlogContext';
 import { styled, media } from 'styles/styled';
 import { Container } from 'components/Ui';
-import { useBlogContext } from '../blogContext';
 
 const Title = styled.h1`
   font-size: 34px;

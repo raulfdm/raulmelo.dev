@@ -1,9 +1,9 @@
 import React from 'react';
 
+import { SeriesMenu } from '@screens/Blog/components/SeriesMenu';
+import { useBlogContext } from '@screens/Blog/hooks/useBlogContext';
+import { Divider } from '@screens/Blog/components/MdxComponents/Divider';
 import { Container } from 'components/Ui';
-import { SeriesMenu } from '../SeriesMenu';
-import { useBlogContext } from '../blogContext';
-import { Divider } from 'components/MdxComponents/Divider';
 
 interface SeriesSection {
   noDivider?: boolean;

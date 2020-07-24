@@ -1,9 +1,9 @@
 import React from 'react';
 import { render, screen } from 'test-utils';
 
+import { BlogPostContext } from '@screens/Blog/types';
+import { BlogContextProvider } from '@screens/Blog/context';
 import { SeriesSection } from '.';
-import { BlogPostContext } from '../types';
-import { BlogContextProvider } from '../blogContext';
 import { mockedSeries, mockedSeriesInfo } from './__mocks__/mockedData';
 
 function renderWithContext(

@@ -1,5 +1,5 @@
 import { SitePageContext } from 'graphql-types';
-import { Frontmatter } from '../../types';
+import { Frontmatter } from 'types';
 
 export type BlogPostProps = {
   pageContext: SitePageContext;

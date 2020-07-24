@@ -1,10 +1,10 @@
 import React from 'react';
 import { render } from 'test-utils';
 
+import { BlogContextProvider } from '@screens/Blog/context';
+import { BlogPostContext } from '@screens/Blog/types';
 import { mockedImage } from './__mocks__/mockData';
 import { FeaturedImage } from '.';
-import { BlogContextProvider } from '../blogContext';
-import { BlogPostContext } from '../types';
 
 function renderWithContext(contextValues?: Partial<BlogPostContext>) {
   return render(
