@@ -7,7 +7,7 @@ import { FeaturedImage } from '@screens/Blog/components/FeaturedImage';
 import { SeriesSection } from '@screens/Blog/components/SeriesSection';
 import { BlogPostProps } from '@screens/Blog/types';
 import { BlogContextProvider } from '@screens/Blog/context';
-import { useTwitterScript } from 'hooks/useTwitterScript';
+import { useTwitterScript } from '@hooks/useTwitterScript';
 import LayoutBlog from '@screens/Blog/Layout';
 import { pageTransitionVariants, Tags, Tag } from '@components/Ui';
 import { BlogGlobalStyle } from '@styles/blogPost';

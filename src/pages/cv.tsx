@@ -5,7 +5,7 @@ import { ArrowheadUp } from '@styled-icons/evaicons-solid/ArrowheadUp';
 
 import SEO from '@components/SEO';
 import { titleWithNameAndJobTitle } from '@utils/seo';
-import { useScrollToTop } from 'hooks/useScrollToTop';
+import { useScrollToTop } from '@hooks/useScrollToTop';
 import {
   Info,
   CareerSummary,
