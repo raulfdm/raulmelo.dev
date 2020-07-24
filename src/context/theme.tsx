@@ -1,8 +1,8 @@
 import React from 'react';
 import { createContext, useState } from 'react';
 import { StyledThemeProvider, SiteTheme } from '@styles/styled';
-import { theme } from 'styles/theme';
-import { themeBackgroundColor } from 'styles/globals';
+import { theme } from '@styles/theme';
+import { themeBackgroundColor } from '@styles/globals';
 
 type ThemeProps = {
   children: React.ReactNode;

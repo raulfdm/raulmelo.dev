@@ -2,7 +2,7 @@ import React from 'react';
 import { PreRenderHTMLArgs } from 'gatsby';
 
 import { twitterScript, themeHandlerScript } from 'config/global-scripts';
-import { themeBackgroundColor } from 'styles/globals';
+import { themeBackgroundColor } from '@styles/globals';
 
 const GatsbyHTML: React.FC<PreRenderHTMLArgs & { body: string }> = (props) => {
   return (

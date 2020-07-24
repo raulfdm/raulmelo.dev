@@ -4,7 +4,7 @@ import { graphql } from 'gatsby';
 import { UsesQuery } from 'graphql-types';
 
 import Layout from '@components/Layout';
-import { BlogGlobalStyle } from 'styles/blogPost';
+import { BlogGlobalStyle } from '@styles/blogPost';
 import { useIntl } from 'context/react-intl';
 
 const Uses: React.FC<{ data: UsesQuery }> = ({ data }) => {
