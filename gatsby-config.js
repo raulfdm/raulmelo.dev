@@ -38,7 +38,14 @@ const plugins = [
     },
   },
   `gatsby-plugin-styled-components`,
-  `gatsby-alias-imports`,
+  {
+    resolve: `gatsby-alias-imports`,
+    options: {
+      aliases: {
+        '@screens': `src/screens`,
+      },
+    },
+  },
   `gatsby-plugin-typescript`,
   `gatsby-transformer-sharp`,
   `gatsby-plugin-sharp`,
