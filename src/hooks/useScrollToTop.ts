@@ -8,6 +8,8 @@ const moveToTop = (): void => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 };
 
-export function useScrollToTop() {
+export function useScrollToTop(): {
+  moveToTop: typeof moveToTop;
+} {
   return { moveToTop };
 }
