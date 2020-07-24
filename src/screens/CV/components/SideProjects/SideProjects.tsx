@@ -1,9 +1,13 @@
 import React from 'react';
 
-import { Section, SectionTitle, SectionBody } from '../shared/Section';
+import {
+  Section,
+  SectionTitle,
+  SectionBody,
+} from '@screens/CV/components/shared/Section';
 import { CvJsonSide_Projects } from 'graphql-types';
 import { deepMemo } from 'utils/components';
-import { Project } from '../shared/Project';
+import { Project } from '@screens/CV/components/shared/Project';
 
 export const SideProjects: React.FC<{ data: CvJsonSide_Projects }> = deepMemo(
   ({ data }) => {

@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { styled } from 'components/CV/styles';
 import { CvJsonEducationFormal, Maybe } from 'graphql-types';
-import { RangeDate } from 'components/CV/shared/RangeDate';
-import { CourseList } from 'components/CV/shared/Ui';
+import { styled } from '@screens/CV/styled';
+import { RangeDate } from '@screens/CV/components/shared/RangeDate';
+import { CourseList } from '@screens/CV/components/shared/Ui';
 
 const FormalItem = styled.li``;
 

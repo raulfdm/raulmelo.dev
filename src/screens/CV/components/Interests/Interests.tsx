@@ -1,8 +1,12 @@
 import React from 'react';
-import { styled } from 'styles/styled';
 
+import { styled } from '@screens/CV/styled';
 import { CvJsonInterests } from 'graphql-types';
-import { Section, SectionTitle, SectionBody } from '../shared/Section';
+import {
+  Section,
+  SectionTitle,
+  SectionBody,
+} from '@screens/CV/components/shared/Section';
 
 const InterestItem = styled.li`
   display: block;

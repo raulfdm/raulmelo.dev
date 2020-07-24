@@ -2,8 +2,12 @@ import React from 'react';
 
 import { CvJsonCareer_History } from 'graphql-types';
 import { deepMemo } from 'utils/components';
-import { Project } from '../shared/Project';
-import { SectionTitle, Section, SectionBody } from '../shared/Section';
+import { Project } from '@screens/CV/components/shared/Project';
+import {
+  SectionTitle,
+  Section,
+  SectionBody,
+} from '@screens/CV/components/shared/Section';
 import { styled } from 'styles/styled';
 
 const StyledSection = styled(Section)`

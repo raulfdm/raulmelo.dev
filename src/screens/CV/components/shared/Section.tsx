@@ -1,4 +1,4 @@
-import { styled, css } from '../styles';
+import { styled, css } from '@screens/CV/styled';
 
 export const Section = styled.section`
   margin-bottom: 16px;

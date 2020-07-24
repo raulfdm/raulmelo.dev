@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { styled } from 'components/CV/styles';
-import { CourseList } from 'components/CV/shared/Ui';
+import { styled } from 'styles/styled';
+import { CourseList } from '@screens/CV/components/shared/Ui';
 import {
   CvJsonEducationExtra_Courses,
   CvJsonEducationExtra_CoursesPlatforms,

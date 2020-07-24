@@ -3,7 +3,11 @@ import ReactMarkdown from 'react-markdown';
 
 import { CvJsonCareer_Summary } from 'graphql-types';
 import { deepMemo } from 'utils/components';
-import { Section, SectionTitle, SectionBody } from '../shared/Section';
+import {
+  Section,
+  SectionTitle,
+  SectionBody,
+} from '@screens/CV/components/shared/Section';
 
 export const CareerSummary: React.FC<{
   data: CvJsonCareer_Summary;

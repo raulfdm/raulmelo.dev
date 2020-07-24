@@ -1,6 +1,6 @@
 import { Link } from 'gatsby';
 
-import { styled } from 'components/CV/styles';
+import { styled } from '@screens/CV/styled';
 
 export const CVMain = styled.main`
   max-width: 798px;

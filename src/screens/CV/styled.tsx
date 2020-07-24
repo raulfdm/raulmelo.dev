@@ -1,5 +1,5 @@
-import { styled as defaultStyled, css, createGlobalStyle } from 'styles/styled';
 import { ThemedStyledInterface } from 'styled-components';
+import { styled as defaultStyled, css, createGlobalStyle } from 'styles/styled';
 
 export const theme = {
   color: {

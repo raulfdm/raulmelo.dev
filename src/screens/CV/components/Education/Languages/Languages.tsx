@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { styled } from 'components/CV/styles';
-import { CourseList } from 'components/CV/shared/Ui';
+import { styled } from '@screens/CV/styled';
+import { CourseList } from '@screens/CV/components/shared/Ui';
 import { deepMemo } from 'utils/components';
 import { CvJsonEducationLanguages } from 'graphql-types';
 

@@ -1,4 +1,4 @@
-import { styled } from '../styles';
+import { styled } from '@screens/CV/styled';
 
 export const CourseList = styled.ul`
   display: flex;
