@@ -8,7 +8,7 @@ import debounce from 'debounce-promise';
 import { styled, media } from '@styles/styled';
 import { HitAlgolia, RequestsAlgoliaClient } from '@app-types';
 import Layout from '@components/Layout';
-import { algoliaConfig } from 'config/algolia';
+import { algoliaConfig } from '@config/algolia';
 import { PostCard } from '@components/PostCard';
 import SEO from '@components/SEO';
 
