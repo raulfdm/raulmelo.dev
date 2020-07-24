@@ -3,7 +3,7 @@ import { defineMessages } from 'react-intl';
 
 import { useHomeState } from '@screens/Home/hooks/useHomeState';
 import SEO from '@components/SEO';
-import { useIntl } from 'context/react-intl';
+import { useIntl } from '@context/react-intl';
 import { getAndSanitizePostsFromQueryResponse } from '@screens/Home/helpers/posts';
 import AuthorPresentation from '@screens/Home/components/AuthorPresentation';
 import Layout from '@components/Layout';

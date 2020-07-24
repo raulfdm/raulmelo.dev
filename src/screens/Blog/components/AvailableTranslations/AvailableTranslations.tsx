@@ -4,7 +4,7 @@ import { defineMessages, FormattedMessage } from 'react-intl';
 import R from 'ramda';
 
 import { LocaleValues } from 'src/types/Locales';
-import { useIntl } from 'context/react-intl';
+import { useIntl } from '@context/react-intl';
 import { SitePageContextTranslations } from '@app-types/graphql';
 import { Container } from '@components/Ui';
 import { useBlogContext } from '@screens/Blog/hooks/useBlogContext';

@@ -16,7 +16,7 @@ import { Container, LineDivider } from '@components/Ui';
 import { MenuBar } from '@components/MenuBar';
 import { Frontmatter } from '@app-types';
 import SEO from '@components/SEO';
-import { ThemeProvider } from 'context/theme';
+import { ThemeProvider } from '@context/theme';
 import { styled, media, SiteTheme } from '@styles/styled';
 import { SideMenu } from '@components/SideMenu';
 import { joinSubtitleAndDescription } from 'utils/seo';

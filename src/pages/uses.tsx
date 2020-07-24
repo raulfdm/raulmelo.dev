@@ -5,7 +5,7 @@ import { UsesQuery } from '@app-types/graphql';
 
 import Layout from '@components/Layout';
 import { BlogGlobalStyle } from '@styles/blogPost';
-import { useIntl } from 'context/react-intl';
+import { useIntl } from '@context/react-intl';
 
 const Uses: React.FC<{ data: UsesQuery }> = ({ data }) => {
   const { locale } = useIntl();
