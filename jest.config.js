@@ -2,17 +2,16 @@
 // https://jestjs.io/docs/en/configuration.html
 
 module.exports = {
-  moduleDirectories: [
-    'node_modules',
-    'src',
-    'src/utils',
-    'src/context',
-    'src/components',
-    'types/',
-    __dirname,
-  ],
+  /* This fixes custom TS aliases imports while testing */
   moduleNameMapper: {
     '^@screens/(.*)': '<rootDir>/src/screens/$1',
+    '^@utils/test': '<rootDir>/src/utils/test-utils.tsx',
+    '^@utils/(.*)': '<rootDir>/src/utils/$1',
+    '^@hooks/(.*)': '<rootDir>/src/hooks/$1',
+    '^@config/(.*)': '<rootDir>/src/config/$1',
+    '^@styles/(.*)': '<rootDir>/src/styles/$1',
+    '^@context/(.*)': '<rootDir>/src/context/$1',
+    '^@components/(.*)': '<rootDir>/src/components/$1',
   },
   modulePaths: ['<rootDir>/context'],
   setupFilesAfterEnv: ['./src/setupTest.ts'],
