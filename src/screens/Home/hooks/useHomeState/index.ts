@@ -2,8 +2,8 @@ import { PostEdges } from 'types';
 import React from 'react';
 import * as R from 'ramda';
 
-import { PostFilters } from '../types';
-import { filterFirstSeriesPost } from '../helpers/posts';
+import { PostFilters } from '@screens/Home/types';
+import { filterFirstSeriesPost } from '@screens/Home/helpers/posts';
 
 type ActionType =
   | {

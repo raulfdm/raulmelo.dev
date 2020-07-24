@@ -6,7 +6,7 @@ import { InfiniteScroll } from 'components/InfiniteScroll';
 import { styled } from 'styles/styled';
 import { PostEdge, PostEdges } from 'types';
 import { PostCard } from 'components/PostCard';
-import { PostFilters } from './types';
+import { PostFilters } from '@screens/Home/types';
 
 type PostsProps = {
   filter: PostFilters;

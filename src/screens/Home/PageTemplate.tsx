@@ -1,15 +1,15 @@
 import React from 'react';
 import { defineMessages } from 'react-intl';
 
-import { useHomeState } from 'components/Home/useHomeState';
-import SEO from '../components/SEO';
-import { useIntl } from '../context/react-intl';
-import { getAndSanitizePostsFromQueryResponse } from '../components/Home/helpers/posts';
-import AuthorPresentation from '../components/AuthorPresentation';
-import Layout from '../components/Layout';
-import { Filter } from '../components/Home/Filter';
-import { Posts } from '../components/Home/Posts';
-import { PostEdges } from '../types';
+import { useHomeState } from '@screens/Home/hooks/useHomeState';
+import SEO from 'components/SEO';
+import { useIntl } from 'context/react-intl';
+import { getAndSanitizePostsFromQueryResponse } from '@screens/Home/helpers/posts';
+import AuthorPresentation from '@screens/Home/components/AuthorPresentation';
+import Layout from 'components/Layout';
+import { Filter } from '@screens/Home/components/Filter';
+import { Posts } from '@screens/Home/components/Posts';
+import { PostEdges } from 'types';
 
 const messages = defineMessages({
   description: {
@@ -20,13 +20,13 @@ const messages = defineMessages({
   },
 });
 
-type HomeTemplateType = {
+type HomePageTemplateType = {
   pageContext: {
     postEdges: PostEdges;
   };
 };
 
-const HomeTemplate: React.FC<HomeTemplateType> = ({ pageContext }) => {
+const HomePageTemplate: React.FC<HomePageTemplateType> = ({ pageContext }) => {
   const { postEdges } = pageContext;
 
   const { locale, formatMessage } = useIntl();
@@ -63,4 +63,4 @@ const HomeTemplate: React.FC<HomeTemplateType> = ({ pageContext }) => {
   );
 };
 
-export default HomeTemplate;
+export default HomePageTemplate;

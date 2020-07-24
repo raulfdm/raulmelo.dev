@@ -4254,14 +4254,6 @@ export type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type Unnamed_1_Query = { site?: Maybe<{ siteMetadata?: Maybe<(
-      Pick<SiteSiteMetadata, 'profilePic' | 'author'>
-      & { social?: Maybe<Pick<SiteSiteMetadataSocial, 'github' | 'linkedIn' | 'twitter'>> }
-    )> }> };
-
-export type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type Unnamed_2_Query = { site?: Maybe<{ siteMetadata?: Maybe<(
       Pick<SiteSiteMetadata, 'siteUrl'>
       & { social?: Maybe<Pick<SiteSiteMetadataSocial, 'twitter'>> }
     )> }> };
@@ -4295,10 +4287,10 @@ export type DataQueryQuery = { cvJson?: Maybe<{ info?: Maybe<Pick<CvJsonInfo, 'n
       & { values?: Maybe<Array<Maybe<Pick<CvJsonInterestsValues, 'id' | 'name'>>>> }
     )> }> };
 
-export type Unnamed_3_QueryVariables = Exact<{ [key: string]: never; }>;
+export type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type Unnamed_3_Query = { allMdx: { edges: Array<{ node: (
+export type Unnamed_2_Query = { allMdx: { edges: Array<{ node: (
         Pick<Mdx, 'id' | 'timeToRead' | 'fileAbsolutePath'>
         & { frontmatter?: Maybe<(
           Pick<MdxFrontmatter, 'title' | 'subtitle' | 'date' | 'tags' | 'description'>
@@ -4313,3 +4305,11 @@ export type UsesQuery = { allMdx: { edges: Array<{ node: (
         Pick<Mdx, 'id' | 'body'>
         & { fields?: Maybe<Pick<MdxFields, 'lang'>> }
       ) }> } };
+
+export type Unnamed_3_QueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type Unnamed_3_Query = { site?: Maybe<{ siteMetadata?: Maybe<(
+      Pick<SiteSiteMetadata, 'profilePic' | 'author'>
+      & { social?: Maybe<Pick<SiteSiteMetadataSocial, 'github' | 'linkedIn' | 'twitter'>> }
+    )> }> };

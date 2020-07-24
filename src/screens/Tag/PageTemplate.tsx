@@ -1,14 +1,14 @@
 import React from 'react';
 import { defineMessages } from 'react-intl';
 
-import { useHomeState } from 'components/Home/useHomeState';
-import SEO from '../components/SEO';
-import { useIntl } from '../context/react-intl';
-import { getAndSanitizePostsFromQueryResponse } from '../components/Home/helpers/posts';
-import AuthorPresentation from '../components/AuthorPresentation';
-import Layout from '../components/Layout';
-import { Posts } from '../components/Home/Posts';
-import { PostEdges } from '../types';
+import { useHomeState } from '@screens/Home/hooks/useHomeState';
+import SEO from 'components/SEO';
+import { useIntl } from 'context/react-intl';
+import { getAndSanitizePostsFromQueryResponse } from '@screens/Home/helpers/posts';
+import AuthorPresentation from '@screens/Home/components/AuthorPresentation';
+import Layout from 'components/Layout';
+import { Posts } from '@screens/Home/components/Posts';
+import { PostEdges } from 'types';
 import { titleWithNameAndJobTitle } from 'utils/seo';
 
 type TagTemplateProps = {
@@ -28,7 +28,7 @@ const messages = defineMessages({
   },
 });
 
-const TagTemplate: React.FC<TagTemplateProps> = ({ pageContext, uri }) => {
+const TagPageTemplate: React.FC<TagTemplateProps> = ({ pageContext, uri }) => {
   const { postEdges, tag } = pageContext;
 
   const { hasMore, loadMore, postsToRender, filter } = useHomeState(postEdges);
@@ -67,4 +67,4 @@ const TagTemplate: React.FC<TagTemplateProps> = ({ pageContext, uri }) => {
   );
 };
 
-export default TagTemplate;
+export default TagPageTemplate;
