@@ -6,7 +6,7 @@ import {
   CvJsonEducationExtra_Courses,
   CvJsonEducationExtra_CoursesPlatforms,
   CvJsonEducationExtra_CoursesPlatformsCourses,
-} from 'graphql-types';
+} from '@app-types/graphql';
 
 const Wrapper = styled.div`
   margin-top: 0.8rem;

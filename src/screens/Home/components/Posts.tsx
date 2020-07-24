@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 import { InfiniteScroll } from '@components/InfiniteScroll';
 import { styled } from '@styles/styled';
-import { PostEdge, PostEdges } from 'types';
+import { PostEdge, PostEdges } from '@app-types';
 import { PostCard } from '@components/PostCard';
 import { PostFilters } from '@screens/Home/types';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { styled } from '@screens/CV/styled';
-import { CvJsonInterests } from 'graphql-types';
+import { CvJsonInterests } from '@app-types/graphql';
 import {
   Section,
   SectionTitle,

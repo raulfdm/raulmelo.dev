@@ -5,7 +5,7 @@ import {
   CvJsonTechnical_Skills,
   CvJsonTechnical_SkillsSkills,
   CvJsonTechnical_SkillsSkillsTechnologies,
-} from 'graphql-types';
+} from '@app-types/graphql';
 import { deepMemo } from 'utils/components';
 import {
   SectionTitle,

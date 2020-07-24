@@ -1,4 +1,4 @@
-import { PostEdges } from 'types';
+import { PostEdges } from '@app-types';
 import React from 'react';
 import * as R from 'ramda';
 

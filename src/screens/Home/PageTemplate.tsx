@@ -9,7 +9,7 @@ import AuthorPresentation from '@screens/Home/components/AuthorPresentation';
 import Layout from '@components/Layout';
 import { Filter } from '@screens/Home/components/Filter';
 import { Posts } from '@screens/Home/components/Posts';
-import { PostEdges } from 'types';
+import { PostEdges } from '@app-types';
 
 const messages = defineMessages({
   description: {

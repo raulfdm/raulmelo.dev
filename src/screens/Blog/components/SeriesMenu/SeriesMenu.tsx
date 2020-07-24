@@ -5,7 +5,7 @@ import { AnimatePresence } from 'framer-motion';
 import { Link } from 'gatsby';
 
 import { Card } from '@components/Ui';
-import { SeriesType, PostSeries } from 'types';
+import { SeriesType, PostSeries } from '@app-types';
 import * as S from './styled';
 
 type SeriesProps = {

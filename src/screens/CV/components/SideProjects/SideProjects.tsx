@@ -5,7 +5,7 @@ import {
   SectionTitle,
   SectionBody,
 } from '@screens/CV/components/shared/Section';
-import { CvJsonSide_Projects } from 'graphql-types';
+import { CvJsonSide_Projects } from '@app-types/graphql';
 import { deepMemo } from 'utils/components';
 import { Project } from '@screens/CV/components/shared/Project';
 

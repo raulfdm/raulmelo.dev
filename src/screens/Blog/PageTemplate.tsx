@@ -14,7 +14,7 @@ import { BlogGlobalStyle } from '@styles/blogPost';
 import { GlobalStyles } from '@styles/index';
 import { Container, LineDivider } from '@components/Ui';
 import { MenuBar } from '@components/MenuBar';
-import { Frontmatter } from 'types';
+import { Frontmatter } from '@app-types';
 import SEO from '@components/SEO';
 import { ThemeProvider } from 'context/theme';
 import { styled, media, SiteTheme } from '@styles/styled';

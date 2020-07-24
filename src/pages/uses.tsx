@@ -1,7 +1,7 @@
 import React from 'react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { graphql } from 'gatsby';
-import { UsesQuery } from 'graphql-types';
+import { UsesQuery } from '@app-types/graphql';
 
 import Layout from '@components/Layout';
 import { BlogGlobalStyle } from '@styles/blogPost';

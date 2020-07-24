@@ -1,7 +1,12 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import * as R from 'ramda';
 
-import { PostEdges, PostEdge, PostTranslations, PostTranslation } from 'types';
+import {
+  PostEdges,
+  PostEdge,
+  PostTranslations,
+  PostTranslation,
+} from '@app-types';
 
 function createTranslationsField(
   postEdge: PostEdge,

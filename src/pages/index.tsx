@@ -3,7 +3,7 @@ import * as R from 'ramda';
 import { graphql } from 'gatsby';
 
 import HomeTemplate from '@screens/Home/PageTemplate';
-import { GraphQLResponse, PostEdges } from 'types';
+import { GraphQLResponse, PostEdges } from '@app-types';
 
 const Home: React.FC<GraphQLResponse> = ({ data }) => {
   const postEdges = R.path(['allMdx', 'edges'], data) as PostEdges;

@@ -6,7 +6,7 @@ import { Algolia } from '@styled-icons/boxicons-logos/Algolia';
 import debounce from 'debounce-promise';
 
 import { styled, media } from '@styles/styled';
-import { HitAlgolia, RequestsAlgoliaClient } from 'types';
+import { HitAlgolia, RequestsAlgoliaClient } from '@app-types';
 import Layout from '@components/Layout';
 import { algoliaConfig } from 'config/algolia';
 import { PostCard } from '@components/PostCard';

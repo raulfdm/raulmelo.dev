@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 
-import { CvJsonCareer_Summary } from 'graphql-types';
+import { CvJsonCareer_Summary } from '@app-types/graphql';
 import { deepMemo } from 'utils/components';
 import {
   Section,

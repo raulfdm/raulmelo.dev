@@ -15,7 +15,7 @@ import {
   Education,
   SideProjects,
 } from '@screens/CV/components';
-import { CvJson } from 'graphql-types';
+import { CvJson } from '@app-types/graphql';
 import { theme, GlobalCVStyles, StyledThemeProvider } from '@screens/CV/styled';
 import { CVMain, HomeLink, ScrollToTopButton } from '@screens/CV/components/UI';
 

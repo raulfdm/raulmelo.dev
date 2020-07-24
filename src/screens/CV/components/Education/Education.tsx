@@ -4,7 +4,7 @@ import {
   CvJsonEducation,
   CvJsonEducationFormal,
   // CvJsonEducationExtra_Courses,
-} from 'graphql-types';
+} from '@app-types/graphql';
 import {
   Section,
   SectionTitle,

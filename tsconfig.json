@@ -22,8 +22,12 @@
       "@styles/*": ["src/styles/*"],
       "@config/*": ["src/config/*"],
       "@screens/*": ["src/screens/*"],
-      "@types/*": ["src/types", "cypress", "@types/testing-library__cypress"],
-      "@types/graphql": ["./types/graphql-types.ts"],
+      "@app-types": [
+        "src/types/index.ts",
+        "cypress",
+        "@types/testing-library__cypress"
+      ],
+      "@app-types/graphql": ["./types/graphql-types.ts"],
       "@components/*": ["src/components/*"],
       "@utils/*": ["src/utils/*"],
       "@utils/test": ["src/utils/test-utils"],

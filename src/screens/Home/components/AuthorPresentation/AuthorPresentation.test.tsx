@@ -4,7 +4,7 @@ import { mergeDeepRight } from 'ramda';
 
 import { render } from 'test-utils';
 import AuthorPresentation from './AuthorPresentation';
-import { SiteMetadata } from 'types';
+import { SiteMetadata } from '@app-types';
 
 jest.mock('gatsby');
 

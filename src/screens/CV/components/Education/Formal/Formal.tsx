@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { CvJsonEducationFormal, Maybe } from 'graphql-types';
+import { CvJsonEducationFormal, Maybe } from '@app-types/graphql';
 import { styled } from '@screens/CV/styled';
 import { RangeDate } from '@screens/CV/components/shared/RangeDate';
 import { CourseList } from '@screens/CV/components/shared/Ui';
