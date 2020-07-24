@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'gatsby';
 
-import { styled, media, css } from 'styles/styled';
+import { styled, media, css } from '@styles/styled';
 import { tagUri } from 'utils/routing';
 
 export const pageTransitionAnimation = {

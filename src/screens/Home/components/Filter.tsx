@@ -2,7 +2,7 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { motion } from 'framer-motion';
 
-import { css, styled } from 'styles/styled';
+import { css, styled } from '@styles/styled';
 import { PostFilters } from '@screens/Home/types';
 
 const FilterList = styled.ul`

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-import { styled, media, SiteTheme } from 'styles/styled';
+import { styled, media, SiteTheme } from '@styles/styled';
 import { MenuBar } from './MenuBar';
 import { Container, pageTransitionVariants } from './Ui';
 import { GlobalStyles } from '../styles';

@@ -1,5 +1,9 @@
 import { ThemedStyledInterface } from 'styled-components';
-import { styled as defaultStyled, css, createGlobalStyle } from 'styles/styled';
+import {
+  styled as defaultStyled,
+  css,
+  createGlobalStyle,
+} from '@styles/styled';
 
 export const theme = {
   color: {
@@ -27,7 +31,7 @@ export const theme = {
 
 export type CvTheme = typeof theme;
 
-export * from 'styles/styled';
+export * from '@styles/styled';
 export const styled = (defaultStyled as unknown) as ThemedStyledInterface<
   CvTheme
 >;

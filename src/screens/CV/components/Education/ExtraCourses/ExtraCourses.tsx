@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { styled } from 'styles/styled';
+import { styled } from '@styles/styled';
 import { CourseList } from '@screens/CV/components/shared/Ui';
 import {
   CvJsonEducationExtra_Courses,

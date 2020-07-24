@@ -5,7 +5,7 @@ import { useIntl, defineMessages } from 'react-intl';
 import { Algolia } from '@styled-icons/boxicons-logos/Algolia';
 import debounce from 'debounce-promise';
 
-import { styled, media } from 'styles/styled';
+import { styled, media } from '@styles/styled';
 import { HitAlgolia, RequestsAlgoliaClient } from 'types';
 import Layout from 'components/Layout';
 import { algoliaConfig } from 'config/algolia';

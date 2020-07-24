@@ -1,6 +1,6 @@
 import Typography from 'typography';
 
-import { css, createGlobalStyle } from 'styles/styled';
+import { css, createGlobalStyle } from '@styles/styled';
 import { pandaPrismStyles } from './prims-panda-theme';
 import { FONTS, theme } from 'styles/theme';
 import { headingLinkStyle } from 'components/Ui';

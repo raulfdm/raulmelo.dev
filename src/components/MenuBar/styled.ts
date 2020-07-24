@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'gatsby';
 
-import { styled, media } from 'styles/styled';
+import { styled, media } from '@styles/styled';
 import { Container } from 'components/Ui';
 
 export const MenuBarWrapper = styled(motion.section)`

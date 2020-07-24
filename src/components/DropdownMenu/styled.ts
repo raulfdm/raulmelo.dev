@@ -1,4 +1,4 @@
-import { styled } from 'styles/styled';
+import { styled } from '@styles/styled';
 
 export const DropdownMenuWrapper = styled.div`
   color: ${(props) => props.theme.color.font};

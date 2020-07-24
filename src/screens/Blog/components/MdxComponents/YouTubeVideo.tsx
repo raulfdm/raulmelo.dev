@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { styled } from 'styles/styled';
+import { styled } from '@styles/styled';
 
 const ResponsiveIframe = styled.div`
   margin-bottom: 2rem;

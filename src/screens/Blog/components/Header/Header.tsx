@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { useBlogContext } from '@screens/Blog/hooks/useBlogContext';
-import { styled, media } from 'styles/styled';
+import { styled, media } from '@styles/styled';
 import { Container } from 'components/Ui';
 
 const Title = styled.h1`

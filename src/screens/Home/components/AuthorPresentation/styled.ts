@@ -1,4 +1,4 @@
-import { styled, media } from 'styles/styled';
+import { styled, media } from '@styles/styled';
 
 export const Wrapper = styled.div`
   display: flex;

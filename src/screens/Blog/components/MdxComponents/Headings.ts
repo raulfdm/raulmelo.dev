@@ -1,4 +1,4 @@
-import { styled } from 'styles/styled';
+import { styled } from '@styles/styled';
 
 import { headingLinkStyle } from 'components/Ui';
 
