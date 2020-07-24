@@ -13,7 +13,7 @@ import {
 import { Formal } from './Formal';
 import { Languages } from './Languages';
 // import { ExtraCourses } from './ExtraCourses';
-import { deepMemo } from 'utils/components';
+import { deepMemo } from '@utils/components';
 
 export const Education: React.FC<{ data: CvJsonEducation }> = deepMemo(
   ({ data }) => {

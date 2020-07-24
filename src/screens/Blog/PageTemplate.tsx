@@ -19,7 +19,7 @@ import SEO from '@components/SEO';
 import { ThemeProvider } from '@context/theme';
 import { styled, media, SiteTheme } from '@styles/styled';
 import { SideMenu } from '@components/SideMenu';
-import { joinSubtitleAndDescription } from 'utils/seo';
+import { joinSubtitleAndDescription } from '@utils/seo';
 import { AvailableTranslations } from '@screens/Blog/components/AvailableTranslations';
 
 const Article = styled(motion.article)`

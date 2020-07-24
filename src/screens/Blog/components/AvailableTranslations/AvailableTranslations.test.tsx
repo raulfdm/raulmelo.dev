@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { render, screen } from 'test-utils';
+import { render, screen } from '@utils/test';
 import { useBlogContext } from '@screens/Blog/hooks/useBlogContext';
 import { AvailableTranslations } from '.';
 

@@ -4,7 +4,7 @@ import 'sanitize.css/sanitize.css';
 import { ArrowheadUp } from '@styled-icons/evaicons-solid/ArrowheadUp';
 
 import SEO from '@components/SEO';
-import { titleWithNameAndJobTitle } from 'utils/seo';
+import { titleWithNameAndJobTitle } from '@utils/seo';
 import { useScrollToTop } from 'hooks/useScrollToTop';
 import {
   Info,

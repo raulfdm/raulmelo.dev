@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { CvJsonCareer_History } from '@app-types/graphql';
-import { deepMemo } from 'utils/components';
+import { deepMemo } from '@utils/components';
 import { Project } from '@screens/CV/components/shared/Project';
 import {
   SectionTitle,

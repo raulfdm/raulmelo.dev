@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from 'test-utils';
+import { render } from '@utils/test';
 
 import { BlogContextProvider } from '@screens/Blog/context';
 import { BlogPostContext } from '@screens/Blog/types';

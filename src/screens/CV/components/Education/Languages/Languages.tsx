@@ -2,7 +2,7 @@ import React from 'react';
 
 import { styled } from '@screens/CV/styled';
 import { CourseList } from '@screens/CV/components/shared/Ui';
-import { deepMemo } from 'utils/components';
+import { deepMemo } from '@utils/components';
 import { CvJsonEducationLanguages } from '@app-types/graphql';
 
 const StyledCourseList = styled(CourseList)`

@@ -2,7 +2,7 @@ import React from 'react';
 import { useStaticQuery } from 'gatsby';
 import { mergeDeepRight } from 'ramda';
 
-import { render } from 'test-utils';
+import { render } from '@utils/test';
 import AuthorPresentation from './AuthorPresentation';
 import { SiteMetadata } from '@app-types';
 

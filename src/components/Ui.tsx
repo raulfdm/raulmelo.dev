@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'gatsby';
 
 import { styled, media, css } from '@styles/styled';
-import { tagUri } from 'utils/routing';
+import { tagUri } from '@utils/routing';
 
 export const pageTransitionAnimation = {
   initial: { opacity: 0 },

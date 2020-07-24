@@ -1,7 +1,7 @@
 import React from 'react';
 import * as R from 'ramda';
 
-import { deepMemo } from 'utils/components';
+import { deepMemo } from '@utils/components';
 import { CvJsonInfo } from '@app-types/graphql';
 import { styled, css } from '@screens/CV/styled';
 import { Section } from '../shared/Section';

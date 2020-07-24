@@ -9,7 +9,7 @@ import AuthorPresentation from '@screens/Home/components/AuthorPresentation';
 import Layout from '@components/Layout';
 import { Posts } from '@screens/Home/components/Posts';
 import { PostEdges } from '@app-types';
-import { titleWithNameAndJobTitle } from 'utils/seo';
+import { titleWithNameAndJobTitle } from '@utils/seo';
 
 type TagTemplateProps = {
   pageContext: {
