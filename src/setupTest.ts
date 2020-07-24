@@ -8,9 +8,3 @@ import 'jest-styled-components';
  */
 // @ts-ignore
 window.___loader = { enqueue: () => {}, hovering: () => {} };
-
-/**
- * This is related to `ts-jest`
- */
-// @ts-ignore
-window.__BASE_PATH__ = '';

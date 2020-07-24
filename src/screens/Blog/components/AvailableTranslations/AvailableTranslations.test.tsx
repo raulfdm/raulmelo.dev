@@ -1,14 +1,13 @@
 import React from 'react';
-import { mocked } from 'ts-jest/utils';
 
 import { render, screen } from 'test-utils';
-
 import { useBlogContext } from '@screens/Blog/hooks/useBlogContext';
 import { AvailableTranslations } from '.';
 
 jest.mock('@screens/Blog/context');
+jest.mock('@screens/Blog/hooks/useBlogContext');
 
-const mockedUseBlogContext = mocked(useBlogContext);
+const mockedUseBlogContext = useBlogContext as jest.Mock;
 
 describe('<AvailableTranslations />', () => {
   it('does not render anything if translations is null', () => {
