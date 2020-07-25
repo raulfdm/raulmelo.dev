@@ -12,6 +12,8 @@ module.exports = {
     '^@styles/(.*)': '<rootDir>/src/styles/$1',
     '^@contexts/(.*)': '<rootDir>/src/contexts/$1',
     '^@components/(.*)': '<rootDir>/src/components/$1',
+    '^@static/(.*)': '<rootDir>/static/$1',
+    '^@locales/(.*)': '<rootDir>/src/locales/$1',
     '^@app-types': '<rootDir>/src/types/index.ts',
   },
   modulePaths: ['<rootDir>/context'],

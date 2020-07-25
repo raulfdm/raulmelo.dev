@@ -50,6 +50,8 @@ const plugins = [
         '@hooks': 'src/hooks',
         '@styles': 'src/styles',
         '@components': 'src/components',
+        '@static': 'static',
+        '@locales': 'src/locales',
       },
     },
   },

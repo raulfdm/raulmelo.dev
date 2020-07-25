@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import { getCanonicalLink } from '@utils/seo';
-import defaultImage from '../../static/me.jpg';
+import defaultImage from '@static/me.jpg';
 
 type SEOProps = {
   title: string;

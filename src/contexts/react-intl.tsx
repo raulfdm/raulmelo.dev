@@ -4,8 +4,8 @@ import flat from 'flat';
 import { useLocalStorage } from 'react-use';
 
 import { LOCALES, LocaleValues } from '@app-types';
-import enMessages from '../locales/en.json';
-import ptMessages from '../locales/pt-br.json';
+import enMessages from '@locales/en.json';
+import ptMessages from '@locales/pt-br.json';
 
 type CustomIntlShape = {
   switchToPortuguese(): void;

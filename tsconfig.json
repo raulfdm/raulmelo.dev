@@ -32,7 +32,9 @@
       "@utils/*": ["src/utils/*"],
       "@utils/test": ["src/utils/test-utils"],
       "@contexts/*": ["src/contexts/*"],
-      "@hooks/*": ["src/hooks/*"]
+      "@hooks/*": ["src/hooks/*"],
+      "@static/*": ["static/*"],
+      "@locales/*": ["src/locales/*"]
     }
   },
   "typeRoots": ["node_modules/@types", "types", "cypress"],

@@ -3756,6 +3756,8 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___aliases____hooks'
   | 'pluginCreator___pluginOptions___aliases____styles'
   | 'pluginCreator___pluginOptions___aliases____components'
+  | 'pluginCreator___pluginOptions___aliases____static'
+  | 'pluginCreator___pluginOptions___aliases____locales'
   | 'pluginCreator___pluginOptions___aliases___env'
   | 'pluginCreator___pluginOptions___aliases___gitignore'
   | 'pluginCreator___pluginOptions___aliases___gql'
@@ -3987,6 +3989,8 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___aliases____hooks'
   | 'pluginOptions___aliases____styles'
   | 'pluginOptions___aliases____components'
+  | 'pluginOptions___aliases____static'
+  | 'pluginOptions___aliases____locales'
   | 'pluginOptions___aliases___env'
   | 'pluginOptions___aliases___gitignore'
   | 'pluginOptions___aliases___gql'
@@ -4176,6 +4180,8 @@ export type SitePluginPluginOptionsAliases = {
   _hooks?: Maybe<Scalars['String']>;
   _styles?: Maybe<Scalars['String']>;
   _components?: Maybe<Scalars['String']>;
+  _static?: Maybe<Scalars['String']>;
+  _locales?: Maybe<Scalars['String']>;
   env?: Maybe<Scalars['String']>;
   gitignore?: Maybe<Scalars['String']>;
   gql?: Maybe<Scalars['String']>;
@@ -4191,6 +4197,8 @@ export type SitePluginPluginOptionsAliasesFilterInput = {
   _hooks?: Maybe<StringQueryOperatorInput>;
   _styles?: Maybe<StringQueryOperatorInput>;
   _components?: Maybe<StringQueryOperatorInput>;
+  _static?: Maybe<StringQueryOperatorInput>;
+  _locales?: Maybe<StringQueryOperatorInput>;
   env?: Maybe<StringQueryOperatorInput>;
   gitignore?: Maybe<StringQueryOperatorInput>;
   gql?: Maybe<StringQueryOperatorInput>;
