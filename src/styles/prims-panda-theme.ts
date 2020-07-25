@@ -1,4 +1,4 @@
-import { css } from 'styles/styled';
+import { css } from '@styles/styled';
 
 export const pandaPrismStyles = css`
   /*

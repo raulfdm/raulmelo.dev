@@ -1,6 +1,6 @@
 import Img from 'gatsby-image';
 
-import { styled, media } from 'styles/styled';
+import { styled, media } from '@styles/styled';
 
 export const PostCardWrapper = styled.article``;
 

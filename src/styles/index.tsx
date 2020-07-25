@@ -1,8 +1,8 @@
-import { createGlobalStyle } from './styled';
+import { createGlobalStyle } from '@styles/styled';
 
-import { customGlobals } from './globals';
-import { resets } from './reset';
-import { globalFonts } from './fonts';
+import { customGlobals } from '@styles/globals';
+import { resets } from '@styles/reset';
+import { globalFonts } from '@styles/fonts';
 
 export const GlobalStyles = createGlobalStyle`
   ${resets};

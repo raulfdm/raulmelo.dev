@@ -2,8 +2,8 @@ import React from 'react';
 import { defineMessage } from 'react-intl';
 import { observer } from 'mobx-react';
 
-import { hasWindow } from 'utils/dom';
-import { useIntl } from 'context/react-intl';
+import { hasWindow } from '@utils/dom';
+import { useIntl } from '@contexts/react-intl';
 import { sideMenuStore } from './state';
 import { Nav, StyledLink, OpacityLayer } from './styles';
 

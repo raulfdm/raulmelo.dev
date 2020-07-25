@@ -1,9 +1,11 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { StyledThemeProvider } from 'styles/styled';
 import 'sanitize.css/sanitize.css';
 import { ArrowheadUp } from '@styled-icons/evaicons-solid/ArrowheadUp';
 
+import SEO from '@components/SEO';
+import { titleWithNameAndJobTitle } from '@utils/seo';
+import { useScrollToTop } from '@hooks/useScrollToTop';
 import {
   Info,
   CareerSummary,
@@ -12,13 +14,10 @@ import {
   Interests,
   Education,
   SideProjects,
-} from 'components/CV';
-import { CvJson } from 'graphql-types';
-import { theme, GlobalCVStyles } from 'components/CV/styles';
-import { CVMain, HomeLink, ScrollToTopButton } from 'components/CV/UI';
-import SEO from 'components/SEO';
-import { titleWithNameAndJobTitle } from 'utils/seo';
-import { useScrollToTop } from 'hooks/useScrollToTop';
+} from '@screens/CV/components';
+import { CvJson } from '@app-types/graphql';
+import { theme, GlobalCVStyles, StyledThemeProvider } from '@screens/CV/styled';
+import { CVMain, HomeLink, ScrollToTopButton } from '@screens/CV/components/UI';
 
 type CvPageProps = {
   data: {

@@ -1,8 +1,8 @@
 import React from 'react';
 
+import { ClickOutside } from '@components/ClickOutside';
 import * as S from './styled';
 import { DropdownMenuProps } from './types';
-import { ClickOutside } from '../ClickOutside';
 
 export const DropdownMenu: React.FC<DropdownMenuProps> = ({
   items,

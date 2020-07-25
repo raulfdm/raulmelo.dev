@@ -1,4 +1,4 @@
-import { tagUri } from '../routing';
+import { tagUri } from '@utils/routing';
 
 describe('fn: tagUri', () => {
   it('return correct tag', () => {

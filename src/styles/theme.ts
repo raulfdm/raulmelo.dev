@@ -1,4 +1,4 @@
-import { SiteTheme } from './styled';
+import { SiteTheme } from '@styles/styled';
 
 const fontFallback = {
   serif(font: string) {

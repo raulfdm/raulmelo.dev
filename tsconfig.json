@@ -19,16 +19,22 @@
     "target": "ESNext",
     "baseUrl": ".",
     "paths": {
-      "test-utils": ["src/utils/test-utils"],
-      "styles/*": ["src/styles/*"],
-      "config/*": ["src/config/*"],
-      "types": ["src/types", "cypress", "@types/testing-library__cypress"],
-      "graphql-types": ["./types/graphql-types.ts"],
-      "components/*": ["src/components/*"],
-      "utils/*": ["src/utils/*"],
-      "context/*": ["src/context/*"],
-      "layouts/*": ["src/layouts/*"],
-      "hooks/*": ["src/hooks/*"]
+      "@styles/*": ["src/styles/*"],
+      "@config/*": ["src/config/*"],
+      "@screens/*": ["src/screens/*"],
+      "@app-types": [
+        "src/types/index.ts",
+        "cypress",
+        "@types/testing-library__cypress"
+      ],
+      "@app-types/graphql": ["./types/graphql-types.ts"],
+      "@components/*": ["src/components/*"],
+      "@utils/*": ["src/utils/*"],
+      "@utils/test": ["src/utils/test-utils"],
+      "@contexts/*": ["src/contexts/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@static/*": ["static/*"],
+      "@locales/*": ["src/locales/*"]
     }
   },
   "typeRoots": ["node_modules/@types", "types", "cypress"],

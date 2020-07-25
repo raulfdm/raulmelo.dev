@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 import { Link } from 'gatsby';
 
-import { styled, media } from 'styles/styled';
-import { Container } from 'components/Ui';
+import { styled, media } from '@styles/styled';
+import { Container } from '@components/Ui';
 
 export const MenuBarWrapper = styled(motion.section)`
   box-shadow: 0 4px 12px 0 ${({ theme }) => theme.color.shadowMenu};

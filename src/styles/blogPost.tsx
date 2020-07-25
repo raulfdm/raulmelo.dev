@@ -1,9 +1,9 @@
 import Typography from 'typography';
 
-import { css, createGlobalStyle } from 'styles/styled';
-import { pandaPrismStyles } from './prims-panda-theme';
-import { FONTS, theme } from 'styles/theme';
-import { headingLinkStyle } from 'components/Ui';
+import { css, createGlobalStyle } from '@styles/styled';
+import { pandaPrismStyles } from '@styles/prims-panda-theme';
+import { FONTS, theme } from '@styles/theme';
+import { headingLinkStyle } from '@components/Ui';
 
 const baseFontSize = '18px';
 const baseFontSizeHigherThanMobile = '18px';

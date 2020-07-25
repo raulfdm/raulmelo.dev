@@ -4,6 +4,9 @@ import * as R from 'ramda';
 import { FormattedMessage, FormattedDate, defineMessages } from 'react-intl';
 import { Link } from 'gatsby';
 
+import { Tag, Tags } from '@components/Ui';
+import { PostNode, LOCALES, LocaleValues } from '@app-types';
+import { useIntl } from '@contexts/react-intl';
 import {
   Body,
   DateAndTime,
@@ -13,10 +16,6 @@ import {
   Title,
   PostCardWrapper,
 } from './styled';
-import { Tag, Tags } from '../Ui';
-import { PostNode } from '../../types/GraphQL';
-import { LOCALES, LocaleValues } from '../../types/Locales';
-import { useIntl } from 'context/react-intl';
 
 type PostCardProps = {
   postNode: PostNode;

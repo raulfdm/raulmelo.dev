@@ -1,11 +1,11 @@
 import React from 'react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { graphql } from 'gatsby';
-import { UsesQuery } from 'graphql-types';
+import { UsesQuery } from '@app-types/graphql';
 
-import Layout from 'components/Layout';
-import { BlogGlobalStyle } from 'styles/blogPost';
-import { useIntl } from 'context/react-intl';
+import Layout from '@components/Layout';
+import { BlogGlobalStyle } from '@styles/blogPost';
+import { useIntl } from '@contexts/react-intl';
 
 const Uses: React.FC<{ data: UsesQuery }> = ({ data }) => {
   const { locale } = useIntl();

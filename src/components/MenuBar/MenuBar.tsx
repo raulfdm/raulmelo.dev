@@ -2,11 +2,11 @@ import React from 'react';
 import Link from 'gatsby-link';
 import { useViewportScroll, useMotionValue } from 'framer-motion';
 
-import { LanguageSwitch } from '../LanguageSwitch';
-import { ThemeSwitch } from '../ThemeSwitch';
-import LogoSvg from '../LogoSvg';
+import { LanguageSwitch } from '@components/LanguageSwitch';
+import { ThemeSwitch } from '@components/ThemeSwitch';
+import LogoSvg from '@components/LogoSvg';
+import { SideMenuNavIcon } from '@components/SideMenu';
 import * as S from './styled';
-import { SideMenuNavIcon } from 'components/SideMenu';
 
 export const MenuBar: React.FC = () => {
   const [showMenu, setShowMenu] = React.useState(true);

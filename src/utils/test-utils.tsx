@@ -1,8 +1,8 @@
 import React from 'react';
 import { render as renderTlr, RenderResult } from '@testing-library/react';
 
-import { ThemeProvider } from '../context/theme';
-import { IntlContextProvider } from '../context/react-intl';
+import { ThemeProvider } from '@contexts/theme';
+import { IntlContextProvider } from '@contexts/react-intl';
 
 export * from '@testing-library/react';
 
