@@ -3752,7 +3752,7 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___aliases____config'
   | 'pluginCreator___pluginOptions___aliases____app_types'
   | 'pluginCreator___pluginOptions___aliases____utils'
-  | 'pluginCreator___pluginOptions___aliases____context'
+  | 'pluginCreator___pluginOptions___aliases____contexts'
   | 'pluginCreator___pluginOptions___aliases____hooks'
   | 'pluginCreator___pluginOptions___aliases____styles'
   | 'pluginCreator___pluginOptions___aliases____components'
@@ -3983,7 +3983,7 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___aliases____config'
   | 'pluginOptions___aliases____app_types'
   | 'pluginOptions___aliases____utils'
-  | 'pluginOptions___aliases____context'
+  | 'pluginOptions___aliases____contexts'
   | 'pluginOptions___aliases____hooks'
   | 'pluginOptions___aliases____styles'
   | 'pluginOptions___aliases____components'
@@ -4172,7 +4172,7 @@ export type SitePluginPluginOptionsAliases = {
   _config?: Maybe<Scalars['String']>;
   _app_types?: Maybe<Scalars['String']>;
   _utils?: Maybe<Scalars['String']>;
-  _context?: Maybe<Scalars['String']>;
+  _contexts?: Maybe<Scalars['String']>;
   _hooks?: Maybe<Scalars['String']>;
   _styles?: Maybe<Scalars['String']>;
   _components?: Maybe<Scalars['String']>;
@@ -4187,7 +4187,7 @@ export type SitePluginPluginOptionsAliasesFilterInput = {
   _config?: Maybe<StringQueryOperatorInput>;
   _app_types?: Maybe<StringQueryOperatorInput>;
   _utils?: Maybe<StringQueryOperatorInput>;
-  _context?: Maybe<StringQueryOperatorInput>;
+  _contexts?: Maybe<StringQueryOperatorInput>;
   _hooks?: Maybe<StringQueryOperatorInput>;
   _styles?: Maybe<StringQueryOperatorInput>;
   _components?: Maybe<StringQueryOperatorInput>;

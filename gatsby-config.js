@@ -46,7 +46,7 @@ const plugins = [
         '@config': `src/config`,
         '@app-types': 'src/types',
         '@utils': 'src/utils',
-        '@contexts': 'src/context',
+        '@contexts': 'src/contexts',
         '@hooks': 'src/hooks',
         '@styles': 'src/styles',
         '@components': 'src/components',

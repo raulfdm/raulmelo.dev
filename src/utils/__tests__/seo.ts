@@ -1,4 +1,4 @@
-import { getCanonicalLink, joinSubtitleAndDescription } from '../seo';
+import { getCanonicalLink, joinSubtitleAndDescription } from '@utils/seo';
 
 describe('fn: getCanonicalLink', () => {
   it('should return full site url without duplicated brackets', () => {

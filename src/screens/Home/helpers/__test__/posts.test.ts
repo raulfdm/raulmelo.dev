@@ -2,7 +2,7 @@ import {
   filterFirstSeriesPost,
   getAndSanitizePostsFromQueryResponse,
 } from '../posts';
-import { PostEdges } from '../../../../types';
+import { PostEdges } from '@app-types';
 import * as data from './data';
 
 describe('fn: filterFirstSeriesPost', () => {

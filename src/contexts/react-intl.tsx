@@ -3,7 +3,7 @@ import { IntlProvider, IntlShape, useIntl as officialUseItl } from 'react-intl';
 import flat from 'flat';
 import { useLocalStorage } from 'react-use';
 
-import { LOCALES, LocaleValues } from '../types/Locales';
+import { LOCALES, LocaleValues } from '@app-types';
 import enMessages from '../locales/en.json';
 import ptMessages from '../locales/pt-br.json';
 

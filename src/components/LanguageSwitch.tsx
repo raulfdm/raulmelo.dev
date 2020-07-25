@@ -1,10 +1,10 @@
 import React from 'react';
 import { Language } from '@styled-icons/material/Language';
-
-import { DropdownMenu, DropdownMenuItem } from './DropdownMenu';
-import { MenuButton } from './MenuBar';
-import { useIntl } from '../contexts/react-intl';
 import { FormattedMessage } from 'react-intl';
+
+import { useIntl } from '@contexts/react-intl';
+import { DropdownMenu, DropdownMenuItem } from '@components/DropdownMenu';
+import { MenuButton } from '@components/MenuBar';
 
 export const LanguageSwitch: React.FC = () => {
   const { switchToEnglish, switchToPortuguese } = useIntl();
