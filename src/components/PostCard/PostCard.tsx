@@ -16,7 +16,7 @@ import {
 import { Tag, Tags } from '../Ui';
 import { PostNode } from '../../types/GraphQL';
 import { LOCALES, LocaleValues } from '../../types/Locales';
-import { useIntl } from '@context/react-intl';
+import { useIntl } from '@contexts/react-intl';
 
 type PostCardProps = {
   postNode: PostNode;

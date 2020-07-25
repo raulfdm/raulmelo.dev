@@ -5,7 +5,7 @@ import { styled, media, SiteTheme } from '@styles/styled';
 import { MenuBar } from './MenuBar';
 import { Container, pageTransitionVariants } from './Ui';
 import { GlobalStyles } from '../styles';
-import { ThemeProvider } from '../context/theme';
+import { ThemeProvider } from '../contexts/theme';
 import { SideMenu } from './SideMenu';
 
 interface LayoutProps {

@@ -10,7 +10,7 @@ module.exports = {
     '^@hooks/(.*)': '<rootDir>/src/hooks/$1',
     '^@config/(.*)': '<rootDir>/src/config/$1',
     '^@styles/(.*)': '<rootDir>/src/styles/$1',
-    '^@context/(.*)': '<rootDir>/src/context/$1',
+    '^@contexts/(.*)': '<rootDir>/src/contexts/$1',
     '^@components/(.*)': '<rootDir>/src/components/$1',
   },
   modulePaths: ['<rootDir>/context'],

@@ -2566,8 +2566,6 @@ export type QueryAllSitePageArgs = {
 export type QuerySiteArgs = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
-  port?: Maybe<DateQueryOperatorInput>;
-  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -2703,8 +2701,6 @@ export type QueryAllSitePluginArgs = {
 export type Site = Node & {
   buildTime?: Maybe<Scalars['Date']>;
   siteMetadata?: Maybe<SiteSiteMetadata>;
-  port?: Maybe<Scalars['Date']>;
-  host?: Maybe<Scalars['String']>;
   polyfill?: Maybe<Scalars['Boolean']>;
   pathPrefix?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
@@ -2715,14 +2711,6 @@ export type Site = Node & {
 
 
 export type SiteBuildTimeArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-
-export type SitePortArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
@@ -2919,8 +2907,6 @@ export type SiteFieldsEnum =
   | 'siteMetadata___social___twitter'
   | 'siteMetadata___social___linkedIn'
   | 'siteMetadata___social___github'
-  | 'port'
-  | 'host'
   | 'polyfill'
   | 'pathPrefix'
   | 'id'
@@ -3013,8 +2999,6 @@ export type SiteFieldsEnum =
 export type SiteFilterInput = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
-  port?: Maybe<DateQueryOperatorInput>;
-  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -3765,6 +3749,13 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___path'
   | 'pluginCreator___pluginOptions___name'
   | 'pluginCreator___pluginOptions___aliases____screens'
+  | 'pluginCreator___pluginOptions___aliases____config'
+  | 'pluginCreator___pluginOptions___aliases____app_types'
+  | 'pluginCreator___pluginOptions___aliases____utils'
+  | 'pluginCreator___pluginOptions___aliases____context'
+  | 'pluginCreator___pluginOptions___aliases____hooks'
+  | 'pluginCreator___pluginOptions___aliases____styles'
+  | 'pluginCreator___pluginOptions___aliases____components'
   | 'pluginCreator___pluginOptions___aliases___env'
   | 'pluginCreator___pluginOptions___aliases___gitignore'
   | 'pluginCreator___pluginOptions___aliases___gql'
@@ -3787,6 +3778,17 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___cacheDigest'
   | 'pluginCreator___pluginOptions___extensions'
   | 'pluginCreator___pluginOptions___google___families'
+  | 'pluginCreator___pluginOptions___appId'
+  | 'pluginCreator___pluginOptions___apiKey'
+  | 'pluginCreator___pluginOptions___indexName'
+  | 'pluginCreator___pluginOptions___queries'
+  | 'pluginCreator___pluginOptions___queries___query'
+  | 'pluginCreator___pluginOptions___queries___indexName'
+  | 'pluginCreator___pluginOptions___chunkSize'
+  | 'pluginCreator___pluginOptions___enablePartialUpdates'
+  | 'pluginCreator___pluginOptions___matchFields'
+  | 'pluginCreator___pluginOptions___trackingId'
+  | 'pluginCreator___pluginOptions___head'
   | 'pluginCreator___pluginOptions___pathCheck'
   | 'pluginCreator___nodeAPIs'
   | 'pluginCreator___browserAPIs'
@@ -3978,6 +3980,13 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___path'
   | 'pluginOptions___name'
   | 'pluginOptions___aliases____screens'
+  | 'pluginOptions___aliases____config'
+  | 'pluginOptions___aliases____app_types'
+  | 'pluginOptions___aliases____utils'
+  | 'pluginOptions___aliases____context'
+  | 'pluginOptions___aliases____hooks'
+  | 'pluginOptions___aliases____styles'
+  | 'pluginOptions___aliases____components'
   | 'pluginOptions___aliases___env'
   | 'pluginOptions___aliases___gitignore'
   | 'pluginOptions___aliases___gql'
@@ -4000,6 +4009,18 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___cacheDigest'
   | 'pluginOptions___extensions'
   | 'pluginOptions___google___families'
+  | 'pluginOptions___appId'
+  | 'pluginOptions___apiKey'
+  | 'pluginOptions___indexName'
+  | 'pluginOptions___queries'
+  | 'pluginOptions___queries___query'
+  | 'pluginOptions___queries___indexName'
+  | 'pluginOptions___queries___settings___attributesToSnippet'
+  | 'pluginOptions___chunkSize'
+  | 'pluginOptions___enablePartialUpdates'
+  | 'pluginOptions___matchFields'
+  | 'pluginOptions___trackingId'
+  | 'pluginOptions___head'
   | 'pluginOptions___pathCheck'
   | 'nodeAPIs'
   | 'browserAPIs'
@@ -4134,11 +4155,27 @@ export type SitePluginPluginOptions = {
   cacheDigest?: Maybe<Scalars['String']>;
   extensions?: Maybe<Array<Maybe<Scalars['String']>>>;
   google?: Maybe<SitePluginPluginOptionsGoogle>;
+  appId?: Maybe<Scalars['String']>;
+  apiKey?: Maybe<Scalars['String']>;
+  indexName?: Maybe<Scalars['String']>;
+  queries?: Maybe<Array<Maybe<SitePluginPluginOptionsQueries>>>;
+  chunkSize?: Maybe<Scalars['Int']>;
+  enablePartialUpdates?: Maybe<Scalars['Boolean']>;
+  matchFields?: Maybe<Array<Maybe<Scalars['String']>>>;
+  trackingId?: Maybe<Scalars['String']>;
+  head?: Maybe<Scalars['Boolean']>;
   pathCheck?: Maybe<Scalars['Boolean']>;
 };
 
 export type SitePluginPluginOptionsAliases = {
   _screens?: Maybe<Scalars['String']>;
+  _config?: Maybe<Scalars['String']>;
+  _app_types?: Maybe<Scalars['String']>;
+  _utils?: Maybe<Scalars['String']>;
+  _context?: Maybe<Scalars['String']>;
+  _hooks?: Maybe<Scalars['String']>;
+  _styles?: Maybe<Scalars['String']>;
+  _components?: Maybe<Scalars['String']>;
   env?: Maybe<Scalars['String']>;
   gitignore?: Maybe<Scalars['String']>;
   gql?: Maybe<Scalars['String']>;
@@ -4147,6 +4184,13 @@ export type SitePluginPluginOptionsAliases = {
 
 export type SitePluginPluginOptionsAliasesFilterInput = {
   _screens?: Maybe<StringQueryOperatorInput>;
+  _config?: Maybe<StringQueryOperatorInput>;
+  _app_types?: Maybe<StringQueryOperatorInput>;
+  _utils?: Maybe<StringQueryOperatorInput>;
+  _context?: Maybe<StringQueryOperatorInput>;
+  _hooks?: Maybe<StringQueryOperatorInput>;
+  _styles?: Maybe<StringQueryOperatorInput>;
+  _components?: Maybe<StringQueryOperatorInput>;
   env?: Maybe<StringQueryOperatorInput>;
   gitignore?: Maybe<StringQueryOperatorInput>;
   gql?: Maybe<StringQueryOperatorInput>;
@@ -4172,6 +4216,15 @@ export type SitePluginPluginOptionsFilterInput = {
   cacheDigest?: Maybe<StringQueryOperatorInput>;
   extensions?: Maybe<StringQueryOperatorInput>;
   google?: Maybe<SitePluginPluginOptionsGoogleFilterInput>;
+  appId?: Maybe<StringQueryOperatorInput>;
+  apiKey?: Maybe<StringQueryOperatorInput>;
+  indexName?: Maybe<StringQueryOperatorInput>;
+  queries?: Maybe<SitePluginPluginOptionsQueriesFilterListInput>;
+  chunkSize?: Maybe<IntQueryOperatorInput>;
+  enablePartialUpdates?: Maybe<BooleanQueryOperatorInput>;
+  matchFields?: Maybe<StringQueryOperatorInput>;
+  trackingId?: Maybe<StringQueryOperatorInput>;
+  head?: Maybe<BooleanQueryOperatorInput>;
   pathCheck?: Maybe<BooleanQueryOperatorInput>;
 };
 
@@ -4197,6 +4250,30 @@ export type SitePluginPluginOptionsLocalizeFilterInput = {
 
 export type SitePluginPluginOptionsLocalizeFilterListInput = {
   elemMatch?: Maybe<SitePluginPluginOptionsLocalizeFilterInput>;
+};
+
+export type SitePluginPluginOptionsQueries = {
+  query?: Maybe<Scalars['String']>;
+  indexName?: Maybe<Scalars['String']>;
+  settings?: Maybe<SitePluginPluginOptionsQueriesSettings>;
+};
+
+export type SitePluginPluginOptionsQueriesFilterInput = {
+  query?: Maybe<StringQueryOperatorInput>;
+  indexName?: Maybe<StringQueryOperatorInput>;
+  settings?: Maybe<SitePluginPluginOptionsQueriesSettingsFilterInput>;
+};
+
+export type SitePluginPluginOptionsQueriesFilterListInput = {
+  elemMatch?: Maybe<SitePluginPluginOptionsQueriesFilterInput>;
+};
+
+export type SitePluginPluginOptionsQueriesSettings = {
+  attributesToSnippet?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type SitePluginPluginOptionsQueriesSettingsFilterInput = {
+  attributesToSnippet?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePluginSortInput = {

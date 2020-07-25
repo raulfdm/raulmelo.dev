@@ -5,7 +5,7 @@ import { defineMessages } from 'react-intl';
 import { styled } from '@styles/styled';
 import { useBlogContext } from '@screens/Blog/hooks/useBlogContext';
 import { Frontmatter } from '@app-types';
-import { useIntl } from '@context/react-intl';
+import { useIntl } from '@contexts/react-intl';
 import { Container } from '@components/Ui';
 
 const StyledImg = styled(Img)`
