@@ -43,6 +43,13 @@ const plugins = [
     options: {
       aliases: {
         '@screens': `src/screens`,
+        '@config': `src/config`,
+        '@app-types': 'src/types',
+        '@utils': 'src/utils',
+        '@context': 'src/context',
+        '@hooks': 'src/hooks',
+        '@styles': 'src/styles',
+        '@components': 'src/components',
       },
     },
   },
