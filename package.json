@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "@formatjs/intl-pluralrules": "3.2.3",
-    "algoliasearch": "4.3.0",
+    "algoliasearch": "4.3.1",
     "babel-plugin-styled-components": "1.10.7",
     "dayjs": "1.8.29",
     "debounce-promise": "3.1.2",
