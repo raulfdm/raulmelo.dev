@@ -3,7 +3,6 @@ import { FormattedMessage } from 'react-intl';
 import { motion } from 'framer-motion';
 
 import { css, styled } from '@styles/styled';
-import { PostFilters } from '@screens/Home/types';
 
 const FilterList = styled.ul`
   display: grid;
@@ -39,10 +38,17 @@ const FilterItem = styled(motion.li)<{ active?: boolean }>`
   }
 `;
 
-export const Filter: React.FC<{
-  currentFilter: PostFilters;
-  setFilter(nextFilter: PostFilters): void;
-}> = ({ currentFilter, setFilter }) => {
+type Filters = 'all' | 'single' | 'series';
+
+type FilterProps = {
+  activeFilter: Filters;
+  changeFilter: (nextFilter: Filters) => void;
+};
+
+export const Filter: React.FC<FilterProps> = ({
+  activeFilter,
+  changeFilter,
+}) => {
   const variants = {
     active: {
       scale: 1.1,
@@ -52,30 +58,30 @@ export const Filter: React.FC<{
   return (
     <FilterList>
       <FilterItem
-        onClick={() => setFilter('all')}
-        active={currentFilter === 'all'}
+        onClick={() => changeFilter('all')}
+        active={activeFilter === 'all'}
         variants={variants}
-        whileHover={currentFilter !== 'all' ? 'active' : ''}
+        whileHover={activeFilter !== 'all' ? 'active' : ''}
       >
         <p>
           <FormattedMessage id="home.filter.all" />
         </p>
       </FilterItem>
       <FilterItem
-        onClick={() => setFilter('single')}
-        active={currentFilter === 'single'}
+        onClick={() => changeFilter('single')}
+        active={activeFilter === 'single'}
         variants={variants}
-        whileHover={currentFilter !== 'single' ? 'active' : ''}
+        whileHover={activeFilter !== 'single' ? 'active' : ''}
       >
         <p>
           <FormattedMessage id="home.filter.single" />
         </p>
       </FilterItem>
       <FilterItem
-        onClick={() => setFilter('series')}
-        active={currentFilter === 'series'}
+        onClick={() => changeFilter('series')}
+        active={activeFilter === 'series'}
         variants={variants}
-        whileHover={currentFilter !== 'series' ? 'active' : ''}
+        whileHover={activeFilter !== 'series' ? 'active' : ''}
       >
         <p>
           <FormattedMessage id="home.filter.series" />
