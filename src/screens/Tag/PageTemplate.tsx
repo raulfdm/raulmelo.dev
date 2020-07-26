@@ -59,7 +59,7 @@ const TagPageTemplate: React.FC<TagTemplateProps> = ({ pageContext, uri }) => {
             posts={posts}
             filter={filter}
             loadMore={loadMore}
-            hasMore={hasMore}
+            hasMore={() => hasMore}
           />
         </main>
       </Layout>

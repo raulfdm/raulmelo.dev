@@ -12,7 +12,7 @@ type PostsProps = {
   filter: PostFilters;
   posts: PostEdges;
   loadMore: () => void;
-  hasMore: boolean;
+  hasMore: () => boolean;
   customTitle?: string;
 };
 
@@ -70,7 +70,7 @@ export const Posts: React.FC<PostsProps> = ({
       <InfiniteScroll
         threshold={500}
         onLoadMore={loadMore}
-        hasMore={hasMore}
+        hasMore={hasMore()}
         Component={PostList}
       >
         <AnimatePresence initial={false}>
