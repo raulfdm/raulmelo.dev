@@ -30,7 +30,7 @@ const Layout: React.FC<LayoutProps> = ({ children, className }) => {
       <MenuBar />
       <Main
         as={motion.main}
-        initial="exit"
+        initial="enter"
         animate="enter"
         exit="exit"
         variants={pageTransitionVariants}
