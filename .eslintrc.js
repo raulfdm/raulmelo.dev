@@ -31,12 +31,8 @@ module.exports = {
             argsIgnorePattern: '^_',
           },
         ],
-        '@typescript-eslint/explicit-function-return-type': [
-          'warn',
-          {
-            allowExpressions: true,
-          },
-        ],
+        'jest/no-mocks-import': 0,
+        '@typescript-eslint/explicit-function-return-type': 0,
       },
     },
     {
