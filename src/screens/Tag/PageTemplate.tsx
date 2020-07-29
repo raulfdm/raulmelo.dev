@@ -1,7 +1,6 @@
 import React from 'react';
 import { defineMessages } from 'react-intl';
 
-import { useHomeState } from '@screens/Home/hooks/useHomeState';
 import SEO from '@components/SEO';
 import { useIntl } from '@contexts/react-intl';
 import { getAndSanitizePostsFromQueryResponse } from '@screens/Home/helpers/posts';
@@ -10,6 +9,9 @@ import Layout from '@components/Layout';
 import { Posts } from '@screens/Home/components/Posts';
 import { PostEdges } from '@app-types';
 import { titleWithNameAndJobTitle } from '@utils/seo';
+import { PostsStore } from '@screens/Home/stores';
+import { PostFilters } from '@screens/Home/types';
+import { observer } from 'mobx-react';
 
 type TagTemplateProps = {
   pageContext: {
@@ -28,43 +30,51 @@ const messages = defineMessages({
   },
 });
 
-const TagPageTemplate: React.FC<TagTemplateProps> = ({ pageContext, uri }) => {
-  const { postEdges, tag } = pageContext;
+const state = PostsStore.create({ activeFilter: 'all' });
 
-  const { hasMore, loadMore, postsToRender, filter } = useHomeState(postEdges);
+const TagPageTemplate: React.FC<TagTemplateProps> = observer(
+  ({ pageContext, uri }) => {
+    const { locale, formatMessage } = useIntl();
+    const { postEdges, tag } = pageContext;
+    const { setPosts, postsToRender, hasMore, activeFilter, loadMore } = state;
 
-  const { locale, formatMessage } = useIntl();
+    React.useEffect(() => {
+      const posts = getAndSanitizePostsFromQueryResponse({
+        postEdges,
+        preferredLang: locale,
+      });
 
-  const posts = getAndSanitizePostsFromQueryResponse({
-    postEdges: postsToRender,
-    preferredLang: locale,
-  });
+      setPosts(posts);
+    }, []);
 
-  return (
-    <>
-      <SEO
-        url={uri}
-        lang={locale}
-        description={titleWithNameAndJobTitle(
-          formatMessage(messages.description, { tag }),
-        )}
-        title={titleWithNameAndJobTitle(formatMessage(messages.title, { tag }))}
-      />
+    return (
+      <>
+        <SEO
+          url={uri}
+          lang={locale}
+          description={titleWithNameAndJobTitle(
+            formatMessage(messages.description, { tag }),
+          )}
+          title={titleWithNameAndJobTitle(
+            formatMessage(messages.title, { tag }),
+          )}
+        />
 
-      <Layout>
-        <main>
-          <AuthorPresentation />
-          <Posts
-            customTitle={formatMessage(messages.title, { tag })}
-            posts={posts}
-            filter={filter}
-            loadMore={loadMore}
-            hasMore={() => hasMore}
-          />
-        </main>
-      </Layout>
-    </>
-  );
-};
+        <Layout>
+          <main>
+            <AuthorPresentation />
+            <Posts
+              customTitle={formatMessage(messages.title, { tag })}
+              posts={postsToRender() as PostEdges}
+              filter={activeFilter as PostFilters}
+              loadMore={loadMore}
+              hasMore={hasMore()}
+            />
+          </main>
+        </Layout>
+      </>
+    );
+  },
+);
 
 export default TagPageTemplate;
