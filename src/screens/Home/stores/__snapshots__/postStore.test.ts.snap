@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`postFilters views fn: postsToRender returns the first 5 elements from the list 1`] = `
+Array [
+  Object {
+    "node": Object {
+      "fields": null,
+      "fileAbsolutePath": null,
+      "frontmatter": Object {
+        "date": null,
+        "description": null,
+        "image": null,
+        "series": Object {
+          "copy": "test",
+          "id": "testing-library",
+          "index": 1,
+        },
+        "subtitle": null,
+        "tags": null,
+        "title": "post 1",
+      },
+      "id": null,
+      "timeToRead": null,
+    },
+  },
+  Object {
+    "node": Object {
+      "fields": null,
+      "fileAbsolutePath": null,
+      "frontmatter": Object {
+        "date": null,
+        "description": null,
+        "image": null,
+        "series": Object {
+          "copy": "test",
+          "id": "testing-library",
+          "index": 2,
+        },
+        "subtitle": null,
+        "tags": null,
+        "title": "post 2",
+      },
+      "id": null,
+      "timeToRead": null,
+    },
+  },
+  Object {
+    "node": Object {
+      "fields": null,
+      "fileAbsolutePath": null,
+      "frontmatter": Object {
+        "date": null,
+        "description": null,
+        "image": null,
+        "series": null,
+        "subtitle": null,
+        "tags": null,
+        "title": "post 3",
+      },
+      "id": null,
+      "timeToRead": null,
+    },
+  },
+  Object {
+    "node": Object {
+      "fields": null,
+      "fileAbsolutePath": null,
+      "frontmatter": Object {
+        "date": null,
+        "description": null,
+        "image": null,
+        "series": null,
+        "subtitle": null,
+        "tags": null,
+        "title": "post 4",
+      },
+      "id": null,
+      "timeToRead": null,
+    },
+  },
+  Object {
+    "node": Object {
+      "fields": null,
+      "fileAbsolutePath": null,
+      "frontmatter": Object {
+        "date": null,
+        "description": null,
+        "image": null,
+        "series": null,
+        "subtitle": null,
+        "tags": null,
+        "title": "post 5",
+      },
+      "id": null,
+      "timeToRead": null,
+    },
+  },
+]
+`;

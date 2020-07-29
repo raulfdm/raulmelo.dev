@@ -1,7 +1,8 @@
 import React from 'react';
 import { defineMessages } from 'react-intl';
+import { observer } from 'mobx-react';
 
-import { useHomeState } from '@screens/Home/hooks/useHomeState';
+import { PostsStore } from '@screens/Home/stores';
 import SEO from '@components/SEO';
 import { useIntl } from '@contexts/react-intl';
 import { getAndSanitizePostsFromQueryResponse } from '@screens/Home/helpers/posts';
@@ -10,6 +11,7 @@ import Layout from '@components/Layout';
 import { Filter } from '@screens/Home/components/Filter';
 import { Posts } from '@screens/Home/components/Posts';
 import { PostEdges } from '@app-types';
+import { PostFilters } from './types';
 
 const messages = defineMessages({
   description: {
@@ -26,41 +28,57 @@ type HomePageTemplateType = {
   };
 };
 
-const HomePageTemplate: React.FC<HomePageTemplateType> = ({ pageContext }) => {
-  const { postEdges } = pageContext;
+const state = PostsStore.create({ activeFilter: 'all' });
 
-  const { locale, formatMessage } = useIntl();
+const HomePageTemplate: React.FC<HomePageTemplateType> = observer(
+  ({ pageContext }) => {
+    const { locale, formatMessage } = useIntl();
 
-  const posts = getAndSanitizePostsFromQueryResponse({
-    postEdges,
-    preferredLang: locale,
-  });
+    const {
+      setPosts,
+      postsToRender,
+      activeFilter,
+      loadMore,
+      hasMore,
+      changeFilter,
+    } = state;
 
-  const { hasMore, loadMore, postsToRender, filter, setFilter } = useHomeState(
-    posts,
-  );
+    React.useEffect(() => {
+      const { postEdges } = pageContext;
 
-  return (
-    <>
-      <SEO
-        url="/"
-        lang={locale}
-        description={formatMessage(messages.description)}
-        title={formatMessage(messages.title)}
-      />
+      const posts = getAndSanitizePostsFromQueryResponse({
+        postEdges,
+        preferredLang: locale,
+      });
 
-      <Layout>
-        <AuthorPresentation />
-        <Filter setFilter={setFilter} currentFilter={filter} />
-        <Posts
-          posts={postsToRender}
-          filter={filter}
-          loadMore={loadMore}
-          hasMore={hasMore}
+      setPosts(posts);
+    }, []);
+
+    return (
+      <>
+        <SEO
+          url="/"
+          lang={locale}
+          description={formatMessage(messages.description)}
+          title={formatMessage(messages.title)}
         />
-      </Layout>
-    </>
-  );
-};
+
+        <Layout>
+          <AuthorPresentation />
+          <Filter
+            activeFilter={activeFilter as PostFilters}
+            changeFilter={changeFilter}
+          />
+          <Posts
+            posts={postsToRender() as PostEdges}
+            filter={activeFilter as PostFilters}
+            loadMore={loadMore}
+            hasMore={hasMore()}
+          />
+        </Layout>
+      </>
+    );
+  },
+);
 
 export default HomePageTemplate;

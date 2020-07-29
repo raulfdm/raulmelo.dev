@@ -15,13 +15,11 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
+    "noImplicitReturns": true,
     "strictNullChecks": true,
     "target": "ESNext",
     "baseUrl": ".",
     "paths": {
-      "@styles/*": ["src/styles/*"],
-      "@config/*": ["src/config/*"],
-      "@screens/*": ["src/screens/*"],
       "@app-types": [
         "src/types/index.ts",
         "cypress",
@@ -29,12 +27,16 @@
       ],
       "@app-types/graphql": ["./types/graphql-types.ts"],
       "@components/*": ["src/components/*"],
-      "@utils/*": ["src/utils/*"],
-      "@utils/test": ["src/utils/test-utils"],
+      "@config/*": ["src/config/*"],
       "@contexts/*": ["src/contexts/*"],
       "@hooks/*": ["src/hooks/*"],
+      "@locales/*": ["src/locales/*"],
+      "@models": ["src/models/index.ts"],
+      "@screens/*": ["src/screens/*"],
       "@static/*": ["static/*"],
-      "@locales/*": ["src/locales/*"]
+      "@styles/*": ["src/styles/*"],
+      "@utils/*": ["src/utils/*"],
+      "@utils/test": ["src/utils/test-utils"]
     }
   },
   "typeRoots": ["node_modules/@types", "types", "cypress"],
