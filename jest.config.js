@@ -4,17 +4,22 @@
 module.exports = {
   /* This fixes custom TS aliases imports while testing */
   moduleNameMapper: {
+    '^@app-types': '<rootDir>/src/types/index.ts',
+    '^@components/(.*)': '<rootDir>/src/components/$1',
+    '^@config/(.*)': '<rootDir>/src/config/$1',
+    '^@contexts/(.*)': '<rootDir>/src/contexts/$1',
+    '^@hooks/(.*)': '<rootDir>/src/hooks/$1',
+    '^@locales/(.*)': '<rootDir>/src/locales/$1',
+    '^@models': '<rootDir>/src/models/index.ts',
     '^@screens/(.*)': '<rootDir>/src/screens/$1',
+    '^@static/(.*)': '<rootDir>/static/$1',
+    '^@styles/(.*)': '<rootDir>/src/styles/$1',
+    /**
+     * utils/test needs to become first because it solves index.ts
+     * barrel imports
+     */
     '^@utils/test': '<rootDir>/src/utils/test-utils.tsx',
     '^@utils/(.*)': '<rootDir>/src/utils/$1',
-    '^@hooks/(.*)': '<rootDir>/src/hooks/$1',
-    '^@config/(.*)': '<rootDir>/src/config/$1',
-    '^@styles/(.*)': '<rootDir>/src/styles/$1',
-    '^@contexts/(.*)': '<rootDir>/src/contexts/$1',
-    '^@components/(.*)': '<rootDir>/src/components/$1',
-    '^@static/(.*)': '<rootDir>/static/$1',
-    '^@locales/(.*)': '<rootDir>/src/locales/$1',
-    '^@app-types': '<rootDir>/src/types/index.ts',
   },
   modulePaths: ['<rootDir>/context'],
   setupFilesAfterEnv: ['./src/setupTest.ts'],

@@ -4,7 +4,7 @@ import * as R from 'ramda';
 
 import { filterFirstSeriesPost } from '@screens/Home/helpers/posts';
 import { PostEdges } from '@app-types';
-import { PostEdge } from '../../../models';
+import { PostEdge } from '@models';
 
 const POST_THRESHOLD = 5;
 
