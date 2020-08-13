@@ -20,9 +20,15 @@ const siteMetadata = {
 };
 
 const plugins = [
-  `gatsby-plugin-sitemap`,
   `gatsby-plugin-netlify`,
+  `gatsby-plugin-offline`,
   `gatsby-plugin-react-helmet`,
+  `gatsby-plugin-sharp`,
+  `gatsby-plugin-sitemap`,
+  `gatsby-plugin-styled-components`,
+  `gatsby-plugin-typescript`,
+  `gatsby-transformer-json`,
+  `gatsby-transformer-sharp`,
   {
     resolve: `gatsby-source-filesystem`,
     options: {
@@ -37,7 +43,13 @@ const plugins = [
       name: `uses`,
     },
   },
-  `gatsby-plugin-styled-components`,
+  {
+    resolve: `gatsby-source-filesystem`,
+    options: {
+      path: `${__dirname}/data/cv`,
+      name: 'data',
+    },
+  },
   {
     resolve: `gatsby-alias-imports`,
     options: {
@@ -56,24 +68,12 @@ const plugins = [
       },
     },
   },
-  `gatsby-plugin-typescript`,
-  `gatsby-transformer-sharp`,
-  `gatsby-plugin-sharp`,
-  `gatsby-transformer-json`,
   {
     resolve: `gatsby-plugin-graphql-codegen`,
     options: {
       fileName: `types/graphql-types.ts`,
     },
   },
-  {
-    resolve: `gatsby-source-filesystem`,
-    options: {
-      path: `${__dirname}/data/cv`,
-      name: 'data',
-    },
-  },
-  `gatsby-plugin-offline`,
   {
     resolve: `gatsby-plugin-manifest`,
     options: {
@@ -129,20 +129,19 @@ const plugins = [
         {
           resolve: 'gatsby-remark-code-titles',
         },
-        `gatsby-remark-prismjs`,
+        {
+          resolve: `gatsby-remark-prismjs`,
+          options: {
+            aliases: {
+              env: `bash`,
+              gitignore: `none`,
+              gql: `graphql`,
+              mdx: `markdown`,
+            },
+          },
+        },
         `gatsby-remark-smartypants`,
       ],
-    },
-  },
-  {
-    resolve: `gatsby-remark-prismjs`,
-    options: {
-      aliases: {
-        env: `bash`,
-        gitignore: `none`,
-        gql: `graphql`,
-        mdx: `markdown`,
-      },
     },
   },
   {
@@ -157,7 +156,6 @@ const plugins = [
       },
     },
   },
-  `gatsby-transformer-json`,
 ];
 
 if (isProduction) {
