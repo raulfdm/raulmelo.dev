@@ -21,23 +21,3 @@ exports.createPages = async ({ graphql, actions }) => {
   await createBlogPost({ graphql, createPage });
   await createTagPage({ graphql, createPage });
 };
-
-exports.onCreateWebpackConfig = ({ actions }) => {
-  actions.setWebpackConfig({
-    module: {
-      rules: [
-        {
-          test: /\.mdx?$/,
-          use: [
-            {
-              loader: 'html-loader',
-            },
-            {
-              loader: 'markdown-loader',
-            },
-          ],
-        },
-      ],
-    },
-  });
-};
