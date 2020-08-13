@@ -61,6 +61,7 @@ export const PostCard: React.FC<PostCardProps> = ({ postNode }) => {
     <PostCardWrapper>
       {image && (
         <ImageContainer>
+          {/* @ts-ignore */}
           <Image fluid={image.childImageSharp.fluid} />
         </ImageContainer>
       )}

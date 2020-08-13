@@ -42,6 +42,7 @@ export const FeaturedImage = () => {
       data-testid="featured-image-wrapper"
     >
       <StyledImg
+        /* @ts-ignore */
         fluid={image.childImageSharp.fluid}
         alt={imageCaption || formatMessage(messages.featuredImageLabel)}
         data-testid="featured-image"
