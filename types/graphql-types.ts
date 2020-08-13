@@ -1,5 +1,5 @@
 export type Maybe<T> = T | null;
-export type Exact<T extends { [key: string]: any }> = { [K in keyof T]: T[K] };
+export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
   ID: string;
@@ -2566,7 +2566,7 @@ export type QueryAllSitePageArgs = {
 export type QuerySiteArgs = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
-  port?: Maybe<DateQueryOperatorInput>;
+  port?: Maybe<IntQueryOperatorInput>;
   host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
@@ -2703,7 +2703,7 @@ export type QueryAllSitePluginArgs = {
 export type Site = Node & {
   buildTime?: Maybe<Scalars['Date']>;
   siteMetadata?: Maybe<SiteSiteMetadata>;
-  port?: Maybe<Scalars['Date']>;
+  port?: Maybe<Scalars['Int']>;
   host?: Maybe<Scalars['String']>;
   polyfill?: Maybe<Scalars['Boolean']>;
   pathPrefix?: Maybe<Scalars['String']>;
@@ -2715,14 +2715,6 @@ export type Site = Node & {
 
 
 export type SiteBuildTimeArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-
-export type SitePortArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
@@ -3013,7 +3005,7 @@ export type SiteFieldsEnum =
 export type SiteFilterInput = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
-  port?: Maybe<DateQueryOperatorInput>;
+  port?: Maybe<IntQueryOperatorInput>;
   host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
@@ -3764,20 +3756,17 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___version'
   | 'pluginCreator___pluginOptions___path'
   | 'pluginCreator___pluginOptions___name'
-  | 'pluginCreator___pluginOptions___aliases____screens'
-  | 'pluginCreator___pluginOptions___aliases____config'
   | 'pluginCreator___pluginOptions___aliases____app_types'
-  | 'pluginCreator___pluginOptions___aliases____utils'
+  | 'pluginCreator___pluginOptions___aliases____components'
+  | 'pluginCreator___pluginOptions___aliases____config'
   | 'pluginCreator___pluginOptions___aliases____contexts'
   | 'pluginCreator___pluginOptions___aliases____hooks'
-  | 'pluginCreator___pluginOptions___aliases____styles'
-  | 'pluginCreator___pluginOptions___aliases____components'
-  | 'pluginCreator___pluginOptions___aliases____static'
   | 'pluginCreator___pluginOptions___aliases____locales'
-  | 'pluginCreator___pluginOptions___aliases___env'
-  | 'pluginCreator___pluginOptions___aliases___gitignore'
-  | 'pluginCreator___pluginOptions___aliases___gql'
-  | 'pluginCreator___pluginOptions___aliases___mdx'
+  | 'pluginCreator___pluginOptions___aliases____models'
+  | 'pluginCreator___pluginOptions___aliases____screens'
+  | 'pluginCreator___pluginOptions___aliases____static'
+  | 'pluginCreator___pluginOptions___aliases____styles'
+  | 'pluginCreator___pluginOptions___aliases____utils'
   | 'pluginCreator___pluginOptions___fileName'
   | 'pluginCreator___pluginOptions___short_name'
   | 'pluginCreator___pluginOptions___start_url'
@@ -3986,20 +3975,17 @@ export type SitePluginFieldsEnum =
   | 'version'
   | 'pluginOptions___path'
   | 'pluginOptions___name'
-  | 'pluginOptions___aliases____screens'
-  | 'pluginOptions___aliases____config'
   | 'pluginOptions___aliases____app_types'
-  | 'pluginOptions___aliases____utils'
+  | 'pluginOptions___aliases____components'
+  | 'pluginOptions___aliases____config'
   | 'pluginOptions___aliases____contexts'
   | 'pluginOptions___aliases____hooks'
-  | 'pluginOptions___aliases____styles'
-  | 'pluginOptions___aliases____components'
-  | 'pluginOptions___aliases____static'
   | 'pluginOptions___aliases____locales'
-  | 'pluginOptions___aliases___env'
-  | 'pluginOptions___aliases___gitignore'
-  | 'pluginOptions___aliases___gql'
-  | 'pluginOptions___aliases___mdx'
+  | 'pluginOptions___aliases____models'
+  | 'pluginOptions___aliases____screens'
+  | 'pluginOptions___aliases____static'
+  | 'pluginOptions___aliases____styles'
+  | 'pluginOptions___aliases____utils'
   | 'pluginOptions___fileName'
   | 'pluginOptions___short_name'
   | 'pluginOptions___start_url'
@@ -4156,37 +4142,31 @@ export type SitePluginPluginOptions = {
 };
 
 export type SitePluginPluginOptionsAliases = {
-  _screens?: Maybe<Scalars['String']>;
-  _config?: Maybe<Scalars['String']>;
   _app_types?: Maybe<Scalars['String']>;
-  _utils?: Maybe<Scalars['String']>;
+  _components?: Maybe<Scalars['String']>;
+  _config?: Maybe<Scalars['String']>;
   _contexts?: Maybe<Scalars['String']>;
   _hooks?: Maybe<Scalars['String']>;
-  _styles?: Maybe<Scalars['String']>;
-  _components?: Maybe<Scalars['String']>;
-  _static?: Maybe<Scalars['String']>;
   _locales?: Maybe<Scalars['String']>;
-  env?: Maybe<Scalars['String']>;
-  gitignore?: Maybe<Scalars['String']>;
-  gql?: Maybe<Scalars['String']>;
-  mdx?: Maybe<Scalars['String']>;
+  _models?: Maybe<Scalars['String']>;
+  _screens?: Maybe<Scalars['String']>;
+  _static?: Maybe<Scalars['String']>;
+  _styles?: Maybe<Scalars['String']>;
+  _utils?: Maybe<Scalars['String']>;
 };
 
 export type SitePluginPluginOptionsAliasesFilterInput = {
-  _screens?: Maybe<StringQueryOperatorInput>;
-  _config?: Maybe<StringQueryOperatorInput>;
   _app_types?: Maybe<StringQueryOperatorInput>;
-  _utils?: Maybe<StringQueryOperatorInput>;
+  _components?: Maybe<StringQueryOperatorInput>;
+  _config?: Maybe<StringQueryOperatorInput>;
   _contexts?: Maybe<StringQueryOperatorInput>;
   _hooks?: Maybe<StringQueryOperatorInput>;
-  _styles?: Maybe<StringQueryOperatorInput>;
-  _components?: Maybe<StringQueryOperatorInput>;
-  _static?: Maybe<StringQueryOperatorInput>;
   _locales?: Maybe<StringQueryOperatorInput>;
-  env?: Maybe<StringQueryOperatorInput>;
-  gitignore?: Maybe<StringQueryOperatorInput>;
-  gql?: Maybe<StringQueryOperatorInput>;
-  mdx?: Maybe<StringQueryOperatorInput>;
+  _models?: Maybe<StringQueryOperatorInput>;
+  _screens?: Maybe<StringQueryOperatorInput>;
+  _static?: Maybe<StringQueryOperatorInput>;
+  _styles?: Maybe<StringQueryOperatorInput>;
+  _utils?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePluginPluginOptionsFilterInput = {
