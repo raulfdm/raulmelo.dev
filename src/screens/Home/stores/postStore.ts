@@ -41,21 +41,19 @@ export const PostsStore = types
   })
   .views((self) => {
     function getPostForFilter() {
-      let posts = self.posts;
-
       if (self.activeFilter === 'series') {
-        posts = filterFirstSeriesPost(
+        return filterFirstSeriesPost(
           self.posts as PostEdges,
         ) as PostsModelInstance;
       }
 
       if (self.activeFilter === 'single') {
-        posts = self.posts.filter((p) =>
-          R.isNil(p.node.frontmatter?.series),
-        ) as PostsModelInstance;
+        return self.posts
+          .toJS()
+          .filter((p) => R.isNil(p.node.frontmatter?.series));
       }
 
-      return posts;
+      return self.posts;
     }
 
     function postsToRender() {
