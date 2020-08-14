@@ -33,516 +33,6 @@ export type BooleanQueryOperatorInput = {
   nin?: Maybe<Array<Maybe<Scalars['Boolean']>>>;
 };
 
-export type CvJson = Node & {
-  id: Scalars['ID'];
-  parent?: Maybe<Node>;
-  children: Array<Node>;
-  internal: Internal;
-  info?: Maybe<CvJsonInfo>;
-  career_summary?: Maybe<CvJsonCareer_Summary>;
-  career_history?: Maybe<CvJsonCareer_History>;
-  technical_skills?: Maybe<CvJsonTechnical_Skills>;
-  interests?: Maybe<CvJsonInterests>;
-  education?: Maybe<CvJsonEducation>;
-  side_projects?: Maybe<CvJsonSide_Projects>;
-};
-
-export type CvJsonCareer_History = {
-  section_title?: Maybe<Scalars['String']>;
-  jobs?: Maybe<Array<Maybe<CvJsonCareer_HistoryJobs>>>;
-};
-
-export type CvJsonCareer_HistoryFilterInput = {
-  section_title?: Maybe<StringQueryOperatorInput>;
-  jobs?: Maybe<CvJsonCareer_HistoryJobsFilterListInput>;
-};
-
-export type CvJsonCareer_HistoryJobs = {
-  role?: Maybe<Scalars['String']>;
-  company?: Maybe<Scalars['String']>;
-  start_date?: Maybe<Scalars['Date']>;
-  end_date?: Maybe<Scalars['Date']>;
-  description?: Maybe<Scalars['String']>;
-  is_actual?: Maybe<Scalars['Boolean']>;
-  id?: Maybe<Scalars['String']>;
-};
-
-
-export type CvJsonCareer_HistoryJobsStart_DateArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-
-export type CvJsonCareer_HistoryJobsEnd_DateArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-export type CvJsonCareer_HistoryJobsFilterInput = {
-  role?: Maybe<StringQueryOperatorInput>;
-  company?: Maybe<StringQueryOperatorInput>;
-  start_date?: Maybe<DateQueryOperatorInput>;
-  end_date?: Maybe<DateQueryOperatorInput>;
-  description?: Maybe<StringQueryOperatorInput>;
-  is_actual?: Maybe<BooleanQueryOperatorInput>;
-  id?: Maybe<StringQueryOperatorInput>;
-};
-
-export type CvJsonCareer_HistoryJobsFilterListInput = {
-  elemMatch?: Maybe<CvJsonCareer_HistoryJobsFilterInput>;
-};
-
-export type CvJsonCareer_Summary = {
-  section_title?: Maybe<Scalars['String']>;
-  description?: Maybe<Scalars['String']>;
-};
-
-export type CvJsonCareer_SummaryFilterInput = {
-  section_title?: Maybe<StringQueryOperatorInput>;
-  description?: Maybe<StringQueryOperatorInput>;
-};
-
-export type CvJsonConnection = {
-  totalCount: Scalars['Int'];
-  edges: Array<CvJsonEdge>;
-  nodes: Array<CvJson>;
-  pageInfo: PageInfo;
-  distinct: Array<Scalars['String']>;
-  group: Array<CvJsonGroupConnection>;
-};
-
-
-export type CvJsonConnectionDistinctArgs = {
-  field: CvJsonFieldsEnum;
-};
-
-
-export type CvJsonConnectionGroupArgs = {
-  skip?: Maybe<Scalars['Int']>;
-  limit?: Maybe<Scalars['Int']>;
-  field: CvJsonFieldsEnum;
-};
-
-export type CvJsonEdge = {
-  next?: Maybe<CvJson>;
-  node: CvJson;
-  previous?: Maybe<CvJson>;
-};
-
-export type CvJsonEducation = {
-  section_title?: Maybe<Scalars['String']>;
-  formal?: Maybe<Array<Maybe<CvJsonEducationFormal>>>;
-  languages?: Maybe<Array<Maybe<CvJsonEducationLanguages>>>;
-  extra_courses?: Maybe<CvJsonEducationExtra_Courses>;
-};
-
-export type CvJsonEducationExtra_Courses = {
-  section_title?: Maybe<Scalars['String']>;
-  platforms?: Maybe<Array<Maybe<CvJsonEducationExtra_CoursesPlatforms>>>;
-};
-
-export type CvJsonEducationExtra_CoursesFilterInput = {
-  section_title?: Maybe<StringQueryOperatorInput>;
-  platforms?: Maybe<CvJsonEducationExtra_CoursesPlatformsFilterListInput>;
-};
-
-export type CvJsonEducationExtra_CoursesPlatforms = {
-  name?: Maybe<Scalars['String']>;
-  id?: Maybe<Scalars['String']>;
-  courses?: Maybe<Array<Maybe<CvJsonEducationExtra_CoursesPlatformsCourses>>>;
-};
-
-export type CvJsonEducationExtra_CoursesPlatformsCourses = {
-  name?: Maybe<Scalars['String']>;
-  hours?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['String']>;
-};
-
-export type CvJsonEducationExtra_CoursesPlatformsCoursesFilterInput = {
-  name?: Maybe<StringQueryOperatorInput>;
-  hours?: Maybe<IntQueryOperatorInput>;
-  id?: Maybe<StringQueryOperatorInput>;
-};
-
-export type CvJsonEducationExtra_CoursesPlatformsCoursesFilterListInput = {
-  elemMatch?: Maybe<CvJsonEducationExtra_CoursesPlatformsCoursesFilterInput>;
-};
-
-export type CvJsonEducationExtra_CoursesPlatformsFilterInput = {
-  name?: Maybe<StringQueryOperatorInput>;
-  id?: Maybe<StringQueryOperatorInput>;
-  courses?: Maybe<CvJsonEducationExtra_CoursesPlatformsCoursesFilterListInput>;
-};
-
-export type CvJsonEducationExtra_CoursesPlatformsFilterListInput = {
-  elemMatch?: Maybe<CvJsonEducationExtra_CoursesPlatformsFilterInput>;
-};
-
-export type CvJsonEducationFilterInput = {
-  section_title?: Maybe<StringQueryOperatorInput>;
-  formal?: Maybe<CvJsonEducationFormalFilterListInput>;
-  languages?: Maybe<CvJsonEducationLanguagesFilterListInput>;
-  extra_courses?: Maybe<CvJsonEducationExtra_CoursesFilterInput>;
-};
-
-export type CvJsonEducationFormal = {
-  title?: Maybe<Scalars['String']>;
-  foundation?: Maybe<Scalars['String']>;
-  start_date?: Maybe<Scalars['Date']>;
-  end_date?: Maybe<Scalars['Date']>;
-  id?: Maybe<Scalars['String']>;
-};
-
-
-export type CvJsonEducationFormalStart_DateArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-
-export type CvJsonEducationFormalEnd_DateArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-export type CvJsonEducationFormalFilterInput = {
-  title?: Maybe<StringQueryOperatorInput>;
-  foundation?: Maybe<StringQueryOperatorInput>;
-  start_date?: Maybe<DateQueryOperatorInput>;
-  end_date?: Maybe<DateQueryOperatorInput>;
-  id?: Maybe<StringQueryOperatorInput>;
-};
-
-export type CvJsonEducationFormalFilterListInput = {
-  elemMatch?: Maybe<CvJsonEducationFormalFilterInput>;
-};
-
-export type CvJsonEducationLanguages = {
-  name?: Maybe<Scalars['String']>;
-  proficiency?: Maybe<Scalars['String']>;
-  id?: Maybe<Scalars['String']>;
-};
-
-export type CvJsonEducationLanguagesFilterInput = {
-  name?: Maybe<StringQueryOperatorInput>;
-  proficiency?: Maybe<StringQueryOperatorInput>;
-  id?: Maybe<StringQueryOperatorInput>;
-};
-
-export type CvJsonEducationLanguagesFilterListInput = {
-  elemMatch?: Maybe<CvJsonEducationLanguagesFilterInput>;
-};
-
-export type CvJsonFieldsEnum = 
-  | 'id'
-  | 'parent___id'
-  | 'parent___parent___id'
-  | 'parent___parent___parent___id'
-  | 'parent___parent___parent___children'
-  | 'parent___parent___children'
-  | 'parent___parent___children___id'
-  | 'parent___parent___children___children'
-  | 'parent___parent___internal___content'
-  | 'parent___parent___internal___contentDigest'
-  | 'parent___parent___internal___description'
-  | 'parent___parent___internal___fieldOwners'
-  | 'parent___parent___internal___ignoreType'
-  | 'parent___parent___internal___mediaType'
-  | 'parent___parent___internal___owner'
-  | 'parent___parent___internal___type'
-  | 'parent___children'
-  | 'parent___children___id'
-  | 'parent___children___parent___id'
-  | 'parent___children___parent___children'
-  | 'parent___children___children'
-  | 'parent___children___children___id'
-  | 'parent___children___children___children'
-  | 'parent___children___internal___content'
-  | 'parent___children___internal___contentDigest'
-  | 'parent___children___internal___description'
-  | 'parent___children___internal___fieldOwners'
-  | 'parent___children___internal___ignoreType'
-  | 'parent___children___internal___mediaType'
-  | 'parent___children___internal___owner'
-  | 'parent___children___internal___type'
-  | 'parent___internal___content'
-  | 'parent___internal___contentDigest'
-  | 'parent___internal___description'
-  | 'parent___internal___fieldOwners'
-  | 'parent___internal___ignoreType'
-  | 'parent___internal___mediaType'
-  | 'parent___internal___owner'
-  | 'parent___internal___type'
-  | 'children'
-  | 'children___id'
-  | 'children___parent___id'
-  | 'children___parent___parent___id'
-  | 'children___parent___parent___children'
-  | 'children___parent___children'
-  | 'children___parent___children___id'
-  | 'children___parent___children___children'
-  | 'children___parent___internal___content'
-  | 'children___parent___internal___contentDigest'
-  | 'children___parent___internal___description'
-  | 'children___parent___internal___fieldOwners'
-  | 'children___parent___internal___ignoreType'
-  | 'children___parent___internal___mediaType'
-  | 'children___parent___internal___owner'
-  | 'children___parent___internal___type'
-  | 'children___children'
-  | 'children___children___id'
-  | 'children___children___parent___id'
-  | 'children___children___parent___children'
-  | 'children___children___children'
-  | 'children___children___children___id'
-  | 'children___children___children___children'
-  | 'children___children___internal___content'
-  | 'children___children___internal___contentDigest'
-  | 'children___children___internal___description'
-  | 'children___children___internal___fieldOwners'
-  | 'children___children___internal___ignoreType'
-  | 'children___children___internal___mediaType'
-  | 'children___children___internal___owner'
-  | 'children___children___internal___type'
-  | 'children___internal___content'
-  | 'children___internal___contentDigest'
-  | 'children___internal___description'
-  | 'children___internal___fieldOwners'
-  | 'children___internal___ignoreType'
-  | 'children___internal___mediaType'
-  | 'children___internal___owner'
-  | 'children___internal___type'
-  | 'internal___content'
-  | 'internal___contentDigest'
-  | 'internal___description'
-  | 'internal___fieldOwners'
-  | 'internal___ignoreType'
-  | 'internal___mediaType'
-  | 'internal___owner'
-  | 'internal___type'
-  | 'info___name'
-  | 'info___phone'
-  | 'info___city'
-  | 'info___email'
-  | 'info___linkedIn'
-  | 'info___github'
-  | 'career_summary___section_title'
-  | 'career_summary___description'
-  | 'career_history___section_title'
-  | 'career_history___jobs'
-  | 'career_history___jobs___role'
-  | 'career_history___jobs___company'
-  | 'career_history___jobs___start_date'
-  | 'career_history___jobs___end_date'
-  | 'career_history___jobs___description'
-  | 'career_history___jobs___is_actual'
-  | 'career_history___jobs___id'
-  | 'technical_skills___skills'
-  | 'technical_skills___skills___group_name'
-  | 'technical_skills___skills___id'
-  | 'technical_skills___skills___technologies'
-  | 'technical_skills___skills___technologies___name'
-  | 'technical_skills___skills___technologies___id'
-  | 'technical_skills___section_title'
-  | 'interests___section_title'
-  | 'interests___values'
-  | 'interests___values___name'
-  | 'interests___values___id'
-  | 'education___section_title'
-  | 'education___formal'
-  | 'education___formal___title'
-  | 'education___formal___foundation'
-  | 'education___formal___start_date'
-  | 'education___formal___end_date'
-  | 'education___formal___id'
-  | 'education___languages'
-  | 'education___languages___name'
-  | 'education___languages___proficiency'
-  | 'education___languages___id'
-  | 'education___extra_courses___section_title'
-  | 'education___extra_courses___platforms'
-  | 'education___extra_courses___platforms___name'
-  | 'education___extra_courses___platforms___id'
-  | 'education___extra_courses___platforms___courses'
-  | 'side_projects___section_title'
-  | 'side_projects___projects'
-  | 'side_projects___projects___name'
-  | 'side_projects___projects___start_date'
-  | 'side_projects___projects___end_date'
-  | 'side_projects___projects___description'
-  | 'side_projects___projects___is_ongoing'
-  | 'side_projects___projects___show'
-  | 'side_projects___projects___id';
-
-export type CvJsonFilterInput = {
-  id?: Maybe<StringQueryOperatorInput>;
-  parent?: Maybe<NodeFilterInput>;
-  children?: Maybe<NodeFilterListInput>;
-  internal?: Maybe<InternalFilterInput>;
-  info?: Maybe<CvJsonInfoFilterInput>;
-  career_summary?: Maybe<CvJsonCareer_SummaryFilterInput>;
-  career_history?: Maybe<CvJsonCareer_HistoryFilterInput>;
-  technical_skills?: Maybe<CvJsonTechnical_SkillsFilterInput>;
-  interests?: Maybe<CvJsonInterestsFilterInput>;
-  education?: Maybe<CvJsonEducationFilterInput>;
-  side_projects?: Maybe<CvJsonSide_ProjectsFilterInput>;
-};
-
-export type CvJsonGroupConnection = {
-  totalCount: Scalars['Int'];
-  edges: Array<CvJsonEdge>;
-  nodes: Array<CvJson>;
-  pageInfo: PageInfo;
-  field: Scalars['String'];
-  fieldValue?: Maybe<Scalars['String']>;
-};
-
-export type CvJsonInfo = {
-  name?: Maybe<Scalars['String']>;
-  phone?: Maybe<Scalars['String']>;
-  city?: Maybe<Scalars['String']>;
-  email?: Maybe<Scalars['String']>;
-  linkedIn?: Maybe<Scalars['String']>;
-  github?: Maybe<Scalars['String']>;
-};
-
-export type CvJsonInfoFilterInput = {
-  name?: Maybe<StringQueryOperatorInput>;
-  phone?: Maybe<StringQueryOperatorInput>;
-  city?: Maybe<StringQueryOperatorInput>;
-  email?: Maybe<StringQueryOperatorInput>;
-  linkedIn?: Maybe<StringQueryOperatorInput>;
-  github?: Maybe<StringQueryOperatorInput>;
-};
-
-export type CvJsonInterests = {
-  section_title?: Maybe<Scalars['String']>;
-  values?: Maybe<Array<Maybe<CvJsonInterestsValues>>>;
-};
-
-export type CvJsonInterestsFilterInput = {
-  section_title?: Maybe<StringQueryOperatorInput>;
-  values?: Maybe<CvJsonInterestsValuesFilterListInput>;
-};
-
-export type CvJsonInterestsValues = {
-  name?: Maybe<Scalars['String']>;
-  id?: Maybe<Scalars['String']>;
-};
-
-export type CvJsonInterestsValuesFilterInput = {
-  name?: Maybe<StringQueryOperatorInput>;
-  id?: Maybe<StringQueryOperatorInput>;
-};
-
-export type CvJsonInterestsValuesFilterListInput = {
-  elemMatch?: Maybe<CvJsonInterestsValuesFilterInput>;
-};
-
-export type CvJsonSide_Projects = {
-  section_title?: Maybe<Scalars['String']>;
-  projects?: Maybe<Array<Maybe<CvJsonSide_ProjectsProjects>>>;
-};
-
-export type CvJsonSide_ProjectsFilterInput = {
-  section_title?: Maybe<StringQueryOperatorInput>;
-  projects?: Maybe<CvJsonSide_ProjectsProjectsFilterListInput>;
-};
-
-export type CvJsonSide_ProjectsProjects = {
-  name?: Maybe<Scalars['String']>;
-  start_date?: Maybe<Scalars['Date']>;
-  end_date?: Maybe<Scalars['Date']>;
-  description?: Maybe<Scalars['String']>;
-  is_ongoing?: Maybe<Scalars['Boolean']>;
-  show?: Maybe<Scalars['Boolean']>;
-  id?: Maybe<Scalars['String']>;
-};
-
-
-export type CvJsonSide_ProjectsProjectsStart_DateArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-
-export type CvJsonSide_ProjectsProjectsEnd_DateArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-export type CvJsonSide_ProjectsProjectsFilterInput = {
-  name?: Maybe<StringQueryOperatorInput>;
-  start_date?: Maybe<DateQueryOperatorInput>;
-  end_date?: Maybe<DateQueryOperatorInput>;
-  description?: Maybe<StringQueryOperatorInput>;
-  is_ongoing?: Maybe<BooleanQueryOperatorInput>;
-  show?: Maybe<BooleanQueryOperatorInput>;
-  id?: Maybe<StringQueryOperatorInput>;
-};
-
-export type CvJsonSide_ProjectsProjectsFilterListInput = {
-  elemMatch?: Maybe<CvJsonSide_ProjectsProjectsFilterInput>;
-};
-
-export type CvJsonSortInput = {
-  fields?: Maybe<Array<Maybe<CvJsonFieldsEnum>>>;
-  order?: Maybe<Array<Maybe<SortOrderEnum>>>;
-};
-
-export type CvJsonTechnical_Skills = {
-  skills?: Maybe<Array<Maybe<CvJsonTechnical_SkillsSkills>>>;
-  section_title?: Maybe<Scalars['String']>;
-};
-
-export type CvJsonTechnical_SkillsFilterInput = {
-  skills?: Maybe<CvJsonTechnical_SkillsSkillsFilterListInput>;
-  section_title?: Maybe<StringQueryOperatorInput>;
-};
-
-export type CvJsonTechnical_SkillsSkills = {
-  group_name?: Maybe<Scalars['String']>;
-  id?: Maybe<Scalars['String']>;
-  technologies?: Maybe<Array<Maybe<CvJsonTechnical_SkillsSkillsTechnologies>>>;
-};
-
-export type CvJsonTechnical_SkillsSkillsFilterInput = {
-  group_name?: Maybe<StringQueryOperatorInput>;
-  id?: Maybe<StringQueryOperatorInput>;
-  technologies?: Maybe<CvJsonTechnical_SkillsSkillsTechnologiesFilterListInput>;
-};
-
-export type CvJsonTechnical_SkillsSkillsFilterListInput = {
-  elemMatch?: Maybe<CvJsonTechnical_SkillsSkillsFilterInput>;
-};
-
-export type CvJsonTechnical_SkillsSkillsTechnologies = {
-  name?: Maybe<Scalars['String']>;
-  id?: Maybe<Scalars['String']>;
-};
-
-export type CvJsonTechnical_SkillsSkillsTechnologiesFilterInput = {
-  name?: Maybe<StringQueryOperatorInput>;
-  id?: Maybe<StringQueryOperatorInput>;
-};
-
-export type CvJsonTechnical_SkillsSkillsTechnologiesFilterListInput = {
-  elemMatch?: Maybe<CvJsonTechnical_SkillsSkillsTechnologiesFilterInput>;
-};
-
 
 export type DateQueryOperatorInput = {
   eq?: Maybe<Scalars['Date']>;
@@ -905,7 +395,6 @@ export type File = Node & {
   children: Array<Node>;
   internal: Internal;
   childMdx?: Maybe<Mdx>;
-  childCvJson?: Maybe<CvJson>;
 };
 
 
@@ -1303,93 +792,7 @@ export type FileFieldsEnum =
   | 'childMdx___internal___ignoreType'
   | 'childMdx___internal___mediaType'
   | 'childMdx___internal___owner'
-  | 'childMdx___internal___type'
-  | 'childCvJson___id'
-  | 'childCvJson___parent___id'
-  | 'childCvJson___parent___parent___id'
-  | 'childCvJson___parent___parent___children'
-  | 'childCvJson___parent___children'
-  | 'childCvJson___parent___children___id'
-  | 'childCvJson___parent___children___children'
-  | 'childCvJson___parent___internal___content'
-  | 'childCvJson___parent___internal___contentDigest'
-  | 'childCvJson___parent___internal___description'
-  | 'childCvJson___parent___internal___fieldOwners'
-  | 'childCvJson___parent___internal___ignoreType'
-  | 'childCvJson___parent___internal___mediaType'
-  | 'childCvJson___parent___internal___owner'
-  | 'childCvJson___parent___internal___type'
-  | 'childCvJson___children'
-  | 'childCvJson___children___id'
-  | 'childCvJson___children___parent___id'
-  | 'childCvJson___children___parent___children'
-  | 'childCvJson___children___children'
-  | 'childCvJson___children___children___id'
-  | 'childCvJson___children___children___children'
-  | 'childCvJson___children___internal___content'
-  | 'childCvJson___children___internal___contentDigest'
-  | 'childCvJson___children___internal___description'
-  | 'childCvJson___children___internal___fieldOwners'
-  | 'childCvJson___children___internal___ignoreType'
-  | 'childCvJson___children___internal___mediaType'
-  | 'childCvJson___children___internal___owner'
-  | 'childCvJson___children___internal___type'
-  | 'childCvJson___internal___content'
-  | 'childCvJson___internal___contentDigest'
-  | 'childCvJson___internal___description'
-  | 'childCvJson___internal___fieldOwners'
-  | 'childCvJson___internal___ignoreType'
-  | 'childCvJson___internal___mediaType'
-  | 'childCvJson___internal___owner'
-  | 'childCvJson___internal___type'
-  | 'childCvJson___info___name'
-  | 'childCvJson___info___phone'
-  | 'childCvJson___info___city'
-  | 'childCvJson___info___email'
-  | 'childCvJson___info___linkedIn'
-  | 'childCvJson___info___github'
-  | 'childCvJson___career_summary___section_title'
-  | 'childCvJson___career_summary___description'
-  | 'childCvJson___career_history___section_title'
-  | 'childCvJson___career_history___jobs'
-  | 'childCvJson___career_history___jobs___role'
-  | 'childCvJson___career_history___jobs___company'
-  | 'childCvJson___career_history___jobs___start_date'
-  | 'childCvJson___career_history___jobs___end_date'
-  | 'childCvJson___career_history___jobs___description'
-  | 'childCvJson___career_history___jobs___is_actual'
-  | 'childCvJson___career_history___jobs___id'
-  | 'childCvJson___technical_skills___skills'
-  | 'childCvJson___technical_skills___skills___group_name'
-  | 'childCvJson___technical_skills___skills___id'
-  | 'childCvJson___technical_skills___skills___technologies'
-  | 'childCvJson___technical_skills___section_title'
-  | 'childCvJson___interests___section_title'
-  | 'childCvJson___interests___values'
-  | 'childCvJson___interests___values___name'
-  | 'childCvJson___interests___values___id'
-  | 'childCvJson___education___section_title'
-  | 'childCvJson___education___formal'
-  | 'childCvJson___education___formal___title'
-  | 'childCvJson___education___formal___foundation'
-  | 'childCvJson___education___formal___start_date'
-  | 'childCvJson___education___formal___end_date'
-  | 'childCvJson___education___formal___id'
-  | 'childCvJson___education___languages'
-  | 'childCvJson___education___languages___name'
-  | 'childCvJson___education___languages___proficiency'
-  | 'childCvJson___education___languages___id'
-  | 'childCvJson___education___extra_courses___section_title'
-  | 'childCvJson___education___extra_courses___platforms'
-  | 'childCvJson___side_projects___section_title'
-  | 'childCvJson___side_projects___projects'
-  | 'childCvJson___side_projects___projects___name'
-  | 'childCvJson___side_projects___projects___start_date'
-  | 'childCvJson___side_projects___projects___end_date'
-  | 'childCvJson___side_projects___projects___description'
-  | 'childCvJson___side_projects___projects___is_ongoing'
-  | 'childCvJson___side_projects___projects___show'
-  | 'childCvJson___side_projects___projects___id';
+  | 'childMdx___internal___type';
 
 export type FileFilterInput = {
   sourceInstanceName?: Maybe<StringQueryOperatorInput>;
@@ -1432,7 +835,6 @@ export type FileFilterInput = {
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
   childMdx?: Maybe<MdxFilterInput>;
-  childCvJson?: Maybe<CvJsonFilterInput>;
 };
 
 export type FileGroupConnection = {
@@ -2145,8 +1547,6 @@ export type MdxFieldsEnum =
   | 'frontmatter___image___childMdx___timeToRead'
   | 'frontmatter___image___childMdx___id'
   | 'frontmatter___image___childMdx___children'
-  | 'frontmatter___image___childCvJson___id'
-  | 'frontmatter___image___childCvJson___children'
   | 'frontmatter___tags'
   | 'frontmatter___description'
   | 'frontmatter___series___id'
@@ -2426,8 +1826,14 @@ export type Query = {
   allImageSharp: ImageSharpConnection;
   mdx?: Maybe<Mdx>;
   allMdx: MdxConnection;
-  cvJson?: Maybe<CvJson>;
-  allCvJson: CvJsonConnection;
+  strapiSite?: Maybe<StrapiSite>;
+  allStrapiSite: StrapiSiteConnection;
+  strapiSocial?: Maybe<StrapiSocial>;
+  allStrapiSocial: StrapiSocialConnection;
+  strapiPersonalInformation?: Maybe<StrapiPersonalInformation>;
+  allStrapiPersonalInformation: StrapiPersonalInformationConnection;
+  strapiCv?: Maybe<StrapiCv>;
+  allStrapiCv: StrapiCvConnection;
   siteBuildMetadata?: Maybe<SiteBuildMetadata>;
   allSiteBuildMetadata: SiteBuildMetadataConnection;
   sitePlugin?: Maybe<SitePlugin>;
@@ -2476,7 +1882,6 @@ export type QueryFileArgs = {
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
   childMdx?: Maybe<MdxFilterInput>;
-  childCvJson?: Maybe<CvJsonFilterInput>;
 };
 
 
@@ -2565,9 +1970,6 @@ export type QueryAllSitePageArgs = {
 
 export type QuerySiteArgs = {
   buildTime?: Maybe<DateQueryOperatorInput>;
-  siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
-  port?: Maybe<IntQueryOperatorInput>;
-  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -2636,24 +2038,104 @@ export type QueryAllMdxArgs = {
 };
 
 
-export type QueryCvJsonArgs = {
+export type QueryStrapiSiteArgs = {
   id?: Maybe<StringQueryOperatorInput>;
   parent?: Maybe<NodeFilterInput>;
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
-  info?: Maybe<CvJsonInfoFilterInput>;
-  career_summary?: Maybe<CvJsonCareer_SummaryFilterInput>;
-  career_history?: Maybe<CvJsonCareer_HistoryFilterInput>;
-  technical_skills?: Maybe<CvJsonTechnical_SkillsFilterInput>;
-  interests?: Maybe<CvJsonInterestsFilterInput>;
-  education?: Maybe<CvJsonEducationFilterInput>;
-  side_projects?: Maybe<CvJsonSide_ProjectsFilterInput>;
+  url?: Maybe<StringQueryOperatorInput>;
+  createdAt?: Maybe<DateQueryOperatorInput>;
+  updatedAt?: Maybe<DateQueryOperatorInput>;
+  created_by?: Maybe<StrapiSiteCreated_ByFilterInput>;
+  updated_by?: Maybe<StrapiSiteUpdated_ByFilterInput>;
+  strapiId?: Maybe<StringQueryOperatorInput>;
 };
 
 
-export type QueryAllCvJsonArgs = {
-  filter?: Maybe<CvJsonFilterInput>;
-  sort?: Maybe<CvJsonSortInput>;
+export type QueryAllStrapiSiteArgs = {
+  filter?: Maybe<StrapiSiteFilterInput>;
+  sort?: Maybe<StrapiSiteSortInput>;
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+};
+
+
+export type QueryStrapiSocialArgs = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  instagram?: Maybe<StrapiSocialInstagramFilterInput>;
+  linkedIn?: Maybe<StrapiSocialLinkedInFilterInput>;
+  twitter?: Maybe<StrapiSocialTwitterFilterInput>;
+  github?: Maybe<StrapiSocialGithubFilterInput>;
+  createdAt?: Maybe<DateQueryOperatorInput>;
+  updatedAt?: Maybe<DateQueryOperatorInput>;
+  created_by?: Maybe<StrapiSocialCreated_ByFilterInput>;
+  updated_by?: Maybe<StrapiSocialUpdated_ByFilterInput>;
+  strapiId?: Maybe<StringQueryOperatorInput>;
+};
+
+
+export type QueryAllStrapiSocialArgs = {
+  filter?: Maybe<StrapiSocialFilterInput>;
+  sort?: Maybe<StrapiSocialSortInput>;
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+};
+
+
+export type QueryStrapiPersonalInformationArgs = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  full_name?: Maybe<StringQueryOperatorInput>;
+  phone?: Maybe<StringQueryOperatorInput>;
+  city_country?: Maybe<StringQueryOperatorInput>;
+  email?: Maybe<StringQueryOperatorInput>;
+  createdAt?: Maybe<DateQueryOperatorInput>;
+  updatedAt?: Maybe<DateQueryOperatorInput>;
+  created_by?: Maybe<StrapiPersonalInformationCreated_ByFilterInput>;
+  updated_by?: Maybe<StrapiPersonalInformationUpdated_ByFilterInput>;
+  city?: Maybe<StringQueryOperatorInput>;
+  country?: Maybe<StringQueryOperatorInput>;
+  profile_pic?: Maybe<FileFilterInput>;
+  strapiId?: Maybe<StringQueryOperatorInput>;
+};
+
+
+export type QueryAllStrapiPersonalInformationArgs = {
+  filter?: Maybe<StrapiPersonalInformationFilterInput>;
+  sort?: Maybe<StrapiPersonalInformationSortInput>;
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+};
+
+
+export type QueryStrapiCvArgs = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  career_summary?: Maybe<StringQueryOperatorInput>;
+  jobs?: Maybe<StrapiCvJobsFilterListInput>;
+  technical_skills?: Maybe<StrapiCvTechnical_SkillsFilterListInput>;
+  interests?: Maybe<StrapiCvInterestsFilterListInput>;
+  side_projects?: Maybe<StrapiCvSide_ProjectsFilterListInput>;
+  education?: Maybe<StrapiCvEducationFilterInput>;
+  createdAt?: Maybe<DateQueryOperatorInput>;
+  updatedAt?: Maybe<DateQueryOperatorInput>;
+  created_by?: Maybe<StrapiCvCreated_ByFilterInput>;
+  updated_by?: Maybe<StrapiCvUpdated_ByFilterInput>;
+  summary?: Maybe<StringQueryOperatorInput>;
+  strapiId?: Maybe<StringQueryOperatorInput>;
+};
+
+
+export type QueryAllStrapiCvArgs = {
+  filter?: Maybe<StrapiCvFilterInput>;
+  sort?: Maybe<StrapiCvSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
@@ -2702,9 +2184,6 @@ export type QueryAllSitePluginArgs = {
 
 export type Site = Node & {
   buildTime?: Maybe<Scalars['Date']>;
-  siteMetadata?: Maybe<SiteSiteMetadata>;
-  port?: Maybe<Scalars['Int']>;
-  host?: Maybe<Scalars['String']>;
   polyfill?: Maybe<Scalars['Boolean']>;
   pathPrefix?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
@@ -2904,15 +2383,6 @@ export type SiteEdge = {
 
 export type SiteFieldsEnum = 
   | 'buildTime'
-  | 'siteMetadata___title'
-  | 'siteMetadata___author'
-  | 'siteMetadata___siteUrl'
-  | 'siteMetadata___profilePic'
-  | 'siteMetadata___social___twitter'
-  | 'siteMetadata___social___linkedIn'
-  | 'siteMetadata___social___github'
-  | 'port'
-  | 'host'
   | 'polyfill'
   | 'pathPrefix'
   | 'id'
@@ -3004,9 +2474,6 @@ export type SiteFieldsEnum =
 
 export type SiteFilterInput = {
   buildTime?: Maybe<DateQueryOperatorInput>;
-  siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
-  port?: Maybe<IntQueryOperatorInput>;
-  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -3754,6 +3221,7 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___resolve'
   | 'pluginCreator___name'
   | 'pluginCreator___version'
+  | 'pluginCreator___pluginOptions___query'
   | 'pluginCreator___pluginOptions___path'
   | 'pluginCreator___pluginOptions___name'
   | 'pluginCreator___pluginOptions___aliases____app_types'
@@ -3785,6 +3253,19 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___cacheDigest'
   | 'pluginCreator___pluginOptions___extensions'
   | 'pluginCreator___pluginOptions___google___families'
+  | 'pluginCreator___pluginOptions___apiURL'
+  | 'pluginCreator___pluginOptions___singleTypes'
+  | 'pluginCreator___pluginOptions___appId'
+  | 'pluginCreator___pluginOptions___apiKey'
+  | 'pluginCreator___pluginOptions___indexName'
+  | 'pluginCreator___pluginOptions___queries'
+  | 'pluginCreator___pluginOptions___queries___query'
+  | 'pluginCreator___pluginOptions___queries___indexName'
+  | 'pluginCreator___pluginOptions___chunkSize'
+  | 'pluginCreator___pluginOptions___enablePartialUpdates'
+  | 'pluginCreator___pluginOptions___matchFields'
+  | 'pluginCreator___pluginOptions___trackingId'
+  | 'pluginCreator___pluginOptions___head'
   | 'pluginCreator___pluginOptions___pathCheck'
   | 'pluginCreator___nodeAPIs'
   | 'pluginCreator___browserAPIs'
@@ -3794,7 +3275,6 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___packageJson___description'
   | 'pluginCreator___packageJson___version'
   | 'pluginCreator___packageJson___main'
-  | 'pluginCreator___packageJson___author'
   | 'pluginCreator___packageJson___license'
   | 'pluginCreator___packageJson___dependencies'
   | 'pluginCreator___packageJson___dependencies___name'
@@ -3973,6 +3453,7 @@ export type SitePluginFieldsEnum =
   | 'resolve'
   | 'name'
   | 'version'
+  | 'pluginOptions___query'
   | 'pluginOptions___path'
   | 'pluginOptions___name'
   | 'pluginOptions___aliases____app_types'
@@ -4004,6 +3485,20 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___cacheDigest'
   | 'pluginOptions___extensions'
   | 'pluginOptions___google___families'
+  | 'pluginOptions___apiURL'
+  | 'pluginOptions___singleTypes'
+  | 'pluginOptions___appId'
+  | 'pluginOptions___apiKey'
+  | 'pluginOptions___indexName'
+  | 'pluginOptions___queries'
+  | 'pluginOptions___queries___query'
+  | 'pluginOptions___queries___indexName'
+  | 'pluginOptions___queries___settings___attributesToSnippet'
+  | 'pluginOptions___chunkSize'
+  | 'pluginOptions___enablePartialUpdates'
+  | 'pluginOptions___matchFields'
+  | 'pluginOptions___trackingId'
+  | 'pluginOptions___head'
   | 'pluginOptions___pathCheck'
   | 'nodeAPIs'
   | 'browserAPIs'
@@ -4013,7 +3508,6 @@ export type SitePluginFieldsEnum =
   | 'packageJson___description'
   | 'packageJson___version'
   | 'packageJson___main'
-  | 'packageJson___author'
   | 'packageJson___license'
   | 'packageJson___dependencies'
   | 'packageJson___dependencies___name'
@@ -4056,7 +3550,6 @@ export type SitePluginPackageJson = {
   description?: Maybe<Scalars['String']>;
   version?: Maybe<Scalars['String']>;
   main?: Maybe<Scalars['String']>;
-  author?: Maybe<Scalars['String']>;
   license?: Maybe<Scalars['String']>;
   dependencies?: Maybe<Array<Maybe<SitePluginPackageJsonDependencies>>>;
   devDependencies?: Maybe<Array<Maybe<SitePluginPackageJsonDevDependencies>>>;
@@ -4097,7 +3590,6 @@ export type SitePluginPackageJsonFilterInput = {
   description?: Maybe<StringQueryOperatorInput>;
   version?: Maybe<StringQueryOperatorInput>;
   main?: Maybe<StringQueryOperatorInput>;
-  author?: Maybe<StringQueryOperatorInput>;
   license?: Maybe<StringQueryOperatorInput>;
   dependencies?: Maybe<SitePluginPackageJsonDependenciesFilterListInput>;
   devDependencies?: Maybe<SitePluginPackageJsonDevDependenciesFilterListInput>;
@@ -4120,6 +3612,7 @@ export type SitePluginPackageJsonPeerDependenciesFilterListInput = {
 };
 
 export type SitePluginPluginOptions = {
+  query?: Maybe<Scalars['String']>;
   path?: Maybe<Scalars['String']>;
   name?: Maybe<Scalars['String']>;
   aliases?: Maybe<SitePluginPluginOptionsAliases>;
@@ -4138,6 +3631,17 @@ export type SitePluginPluginOptions = {
   cacheDigest?: Maybe<Scalars['String']>;
   extensions?: Maybe<Array<Maybe<Scalars['String']>>>;
   google?: Maybe<SitePluginPluginOptionsGoogle>;
+  apiURL?: Maybe<Scalars['String']>;
+  singleTypes?: Maybe<Array<Maybe<Scalars['String']>>>;
+  appId?: Maybe<Scalars['String']>;
+  apiKey?: Maybe<Scalars['String']>;
+  indexName?: Maybe<Scalars['String']>;
+  queries?: Maybe<Array<Maybe<SitePluginPluginOptionsQueries>>>;
+  chunkSize?: Maybe<Scalars['Int']>;
+  enablePartialUpdates?: Maybe<Scalars['Boolean']>;
+  matchFields?: Maybe<Array<Maybe<Scalars['String']>>>;
+  trackingId?: Maybe<Scalars['String']>;
+  head?: Maybe<Scalars['Boolean']>;
   pathCheck?: Maybe<Scalars['Boolean']>;
 };
 
@@ -4170,6 +3674,7 @@ export type SitePluginPluginOptionsAliasesFilterInput = {
 };
 
 export type SitePluginPluginOptionsFilterInput = {
+  query?: Maybe<StringQueryOperatorInput>;
   path?: Maybe<StringQueryOperatorInput>;
   name?: Maybe<StringQueryOperatorInput>;
   aliases?: Maybe<SitePluginPluginOptionsAliasesFilterInput>;
@@ -4188,6 +3693,17 @@ export type SitePluginPluginOptionsFilterInput = {
   cacheDigest?: Maybe<StringQueryOperatorInput>;
   extensions?: Maybe<StringQueryOperatorInput>;
   google?: Maybe<SitePluginPluginOptionsGoogleFilterInput>;
+  apiURL?: Maybe<StringQueryOperatorInput>;
+  singleTypes?: Maybe<StringQueryOperatorInput>;
+  appId?: Maybe<StringQueryOperatorInput>;
+  apiKey?: Maybe<StringQueryOperatorInput>;
+  indexName?: Maybe<StringQueryOperatorInput>;
+  queries?: Maybe<SitePluginPluginOptionsQueriesFilterListInput>;
+  chunkSize?: Maybe<IntQueryOperatorInput>;
+  enablePartialUpdates?: Maybe<BooleanQueryOperatorInput>;
+  matchFields?: Maybe<StringQueryOperatorInput>;
+  trackingId?: Maybe<StringQueryOperatorInput>;
+  head?: Maybe<BooleanQueryOperatorInput>;
   pathCheck?: Maybe<BooleanQueryOperatorInput>;
 };
 
@@ -4215,37 +3731,33 @@ export type SitePluginPluginOptionsLocalizeFilterListInput = {
   elemMatch?: Maybe<SitePluginPluginOptionsLocalizeFilterInput>;
 };
 
+export type SitePluginPluginOptionsQueries = {
+  query?: Maybe<Scalars['String']>;
+  indexName?: Maybe<Scalars['String']>;
+  settings?: Maybe<SitePluginPluginOptionsQueriesSettings>;
+};
+
+export type SitePluginPluginOptionsQueriesFilterInput = {
+  query?: Maybe<StringQueryOperatorInput>;
+  indexName?: Maybe<StringQueryOperatorInput>;
+  settings?: Maybe<SitePluginPluginOptionsQueriesSettingsFilterInput>;
+};
+
+export type SitePluginPluginOptionsQueriesFilterListInput = {
+  elemMatch?: Maybe<SitePluginPluginOptionsQueriesFilterInput>;
+};
+
+export type SitePluginPluginOptionsQueriesSettings = {
+  attributesToSnippet?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type SitePluginPluginOptionsQueriesSettingsFilterInput = {
+  attributesToSnippet?: Maybe<StringQueryOperatorInput>;
+};
+
 export type SitePluginSortInput = {
   fields?: Maybe<Array<Maybe<SitePluginFieldsEnum>>>;
   order?: Maybe<Array<Maybe<SortOrderEnum>>>;
-};
-
-export type SiteSiteMetadata = {
-  title?: Maybe<Scalars['String']>;
-  author?: Maybe<Scalars['String']>;
-  siteUrl?: Maybe<Scalars['String']>;
-  profilePic?: Maybe<Scalars['String']>;
-  social?: Maybe<SiteSiteMetadataSocial>;
-};
-
-export type SiteSiteMetadataFilterInput = {
-  title?: Maybe<StringQueryOperatorInput>;
-  author?: Maybe<StringQueryOperatorInput>;
-  siteUrl?: Maybe<StringQueryOperatorInput>;
-  profilePic?: Maybe<StringQueryOperatorInput>;
-  social?: Maybe<SiteSiteMetadataSocialFilterInput>;
-};
-
-export type SiteSiteMetadataSocial = {
-  twitter?: Maybe<Scalars['String']>;
-  linkedIn?: Maybe<Scalars['String']>;
-  github?: Maybe<Scalars['String']>;
-};
-
-export type SiteSiteMetadataSocialFilterInput = {
-  twitter?: Maybe<StringQueryOperatorInput>;
-  linkedIn?: Maybe<StringQueryOperatorInput>;
-  github?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SiteSortInput = {
@@ -4256,6 +3768,1765 @@ export type SiteSortInput = {
 export type SortOrderEnum = 
   | 'ASC'
   | 'DESC';
+
+export type StrapiCv = Node & {
+  id: Scalars['ID'];
+  parent?: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
+  career_summary?: Maybe<Scalars['String']>;
+  jobs?: Maybe<Array<Maybe<StrapiCvJobs>>>;
+  technical_skills?: Maybe<Array<Maybe<StrapiCvTechnical_Skills>>>;
+  interests?: Maybe<Array<Maybe<StrapiCvInterests>>>;
+  side_projects?: Maybe<Array<Maybe<StrapiCvSide_Projects>>>;
+  education?: Maybe<StrapiCvEducation>;
+  createdAt?: Maybe<Scalars['Date']>;
+  updatedAt?: Maybe<Scalars['Date']>;
+  created_by?: Maybe<StrapiCvCreated_By>;
+  updated_by?: Maybe<StrapiCvUpdated_By>;
+  summary?: Maybe<Scalars['String']>;
+  strapiId?: Maybe<Scalars['String']>;
+};
+
+
+export type StrapiCvCreatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
+export type StrapiCvUpdatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+export type StrapiCvConnection = {
+  totalCount: Scalars['Int'];
+  edges: Array<StrapiCvEdge>;
+  nodes: Array<StrapiCv>;
+  pageInfo: PageInfo;
+  distinct: Array<Scalars['String']>;
+  group: Array<StrapiCvGroupConnection>;
+};
+
+
+export type StrapiCvConnectionDistinctArgs = {
+  field: StrapiCvFieldsEnum;
+};
+
+
+export type StrapiCvConnectionGroupArgs = {
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  field: StrapiCvFieldsEnum;
+};
+
+export type StrapiCvCreated_By = {
+  firstname?: Maybe<Scalars['String']>;
+  lastname?: Maybe<Scalars['String']>;
+  createdAt?: Maybe<Scalars['Date']>;
+  updatedAt?: Maybe<Scalars['Date']>;
+  id?: Maybe<Scalars['String']>;
+};
+
+
+export type StrapiCvCreated_ByCreatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
+export type StrapiCvCreated_ByUpdatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+export type StrapiCvCreated_ByFilterInput = {
+  firstname?: Maybe<StringQueryOperatorInput>;
+  lastname?: Maybe<StringQueryOperatorInput>;
+  createdAt?: Maybe<DateQueryOperatorInput>;
+  updatedAt?: Maybe<DateQueryOperatorInput>;
+  id?: Maybe<StringQueryOperatorInput>;
+};
+
+export type StrapiCvEdge = {
+  next?: Maybe<StrapiCv>;
+  node: StrapiCv;
+  previous?: Maybe<StrapiCv>;
+};
+
+export type StrapiCvEducation = {
+  formal?: Maybe<Array<Maybe<StrapiCvEducationFormal>>>;
+  languages?: Maybe<Array<Maybe<StrapiCvEducationLanguages>>>;
+  createdAt?: Maybe<Scalars['Date']>;
+  updatedAt?: Maybe<Scalars['Date']>;
+  id?: Maybe<Scalars['String']>;
+};
+
+
+export type StrapiCvEducationCreatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
+export type StrapiCvEducationUpdatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+export type StrapiCvEducationFilterInput = {
+  formal?: Maybe<StrapiCvEducationFormalFilterListInput>;
+  languages?: Maybe<StrapiCvEducationLanguagesFilterListInput>;
+  createdAt?: Maybe<DateQueryOperatorInput>;
+  updatedAt?: Maybe<DateQueryOperatorInput>;
+  id?: Maybe<StringQueryOperatorInput>;
+};
+
+export type StrapiCvEducationFormal = {
+  is_actual?: Maybe<Scalars['Boolean']>;
+  title?: Maybe<Scalars['String']>;
+  foundation?: Maybe<Scalars['String']>;
+  start_date?: Maybe<Scalars['Date']>;
+  end_date?: Maybe<Scalars['Date']>;
+  createdAt?: Maybe<Scalars['Date']>;
+  updatedAt?: Maybe<Scalars['Date']>;
+  id?: Maybe<Scalars['String']>;
+};
+
+
+export type StrapiCvEducationFormalStart_DateArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
+export type StrapiCvEducationFormalEnd_DateArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
+export type StrapiCvEducationFormalCreatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
+export type StrapiCvEducationFormalUpdatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+export type StrapiCvEducationFormalFilterInput = {
+  is_actual?: Maybe<BooleanQueryOperatorInput>;
+  title?: Maybe<StringQueryOperatorInput>;
+  foundation?: Maybe<StringQueryOperatorInput>;
+  start_date?: Maybe<DateQueryOperatorInput>;
+  end_date?: Maybe<DateQueryOperatorInput>;
+  createdAt?: Maybe<DateQueryOperatorInput>;
+  updatedAt?: Maybe<DateQueryOperatorInput>;
+  id?: Maybe<StringQueryOperatorInput>;
+};
+
+export type StrapiCvEducationFormalFilterListInput = {
+  elemMatch?: Maybe<StrapiCvEducationFormalFilterInput>;
+};
+
+export type StrapiCvEducationLanguages = {
+  name?: Maybe<Scalars['String']>;
+  proficiency?: Maybe<Scalars['String']>;
+  createdAt?: Maybe<Scalars['Date']>;
+  updatedAt?: Maybe<Scalars['Date']>;
+  id?: Maybe<Scalars['String']>;
+};
+
+
+export type StrapiCvEducationLanguagesCreatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
+export type StrapiCvEducationLanguagesUpdatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+export type StrapiCvEducationLanguagesFilterInput = {
+  name?: Maybe<StringQueryOperatorInput>;
+  proficiency?: Maybe<StringQueryOperatorInput>;
+  createdAt?: Maybe<DateQueryOperatorInput>;
+  updatedAt?: Maybe<DateQueryOperatorInput>;
+  id?: Maybe<StringQueryOperatorInput>;
+};
+
+export type StrapiCvEducationLanguagesFilterListInput = {
+  elemMatch?: Maybe<StrapiCvEducationLanguagesFilterInput>;
+};
+
+export type StrapiCvFieldsEnum = 
+  | 'id'
+  | 'parent___id'
+  | 'parent___parent___id'
+  | 'parent___parent___parent___id'
+  | 'parent___parent___parent___children'
+  | 'parent___parent___children'
+  | 'parent___parent___children___id'
+  | 'parent___parent___children___children'
+  | 'parent___parent___internal___content'
+  | 'parent___parent___internal___contentDigest'
+  | 'parent___parent___internal___description'
+  | 'parent___parent___internal___fieldOwners'
+  | 'parent___parent___internal___ignoreType'
+  | 'parent___parent___internal___mediaType'
+  | 'parent___parent___internal___owner'
+  | 'parent___parent___internal___type'
+  | 'parent___children'
+  | 'parent___children___id'
+  | 'parent___children___parent___id'
+  | 'parent___children___parent___children'
+  | 'parent___children___children'
+  | 'parent___children___children___id'
+  | 'parent___children___children___children'
+  | 'parent___children___internal___content'
+  | 'parent___children___internal___contentDigest'
+  | 'parent___children___internal___description'
+  | 'parent___children___internal___fieldOwners'
+  | 'parent___children___internal___ignoreType'
+  | 'parent___children___internal___mediaType'
+  | 'parent___children___internal___owner'
+  | 'parent___children___internal___type'
+  | 'parent___internal___content'
+  | 'parent___internal___contentDigest'
+  | 'parent___internal___description'
+  | 'parent___internal___fieldOwners'
+  | 'parent___internal___ignoreType'
+  | 'parent___internal___mediaType'
+  | 'parent___internal___owner'
+  | 'parent___internal___type'
+  | 'children'
+  | 'children___id'
+  | 'children___parent___id'
+  | 'children___parent___parent___id'
+  | 'children___parent___parent___children'
+  | 'children___parent___children'
+  | 'children___parent___children___id'
+  | 'children___parent___children___children'
+  | 'children___parent___internal___content'
+  | 'children___parent___internal___contentDigest'
+  | 'children___parent___internal___description'
+  | 'children___parent___internal___fieldOwners'
+  | 'children___parent___internal___ignoreType'
+  | 'children___parent___internal___mediaType'
+  | 'children___parent___internal___owner'
+  | 'children___parent___internal___type'
+  | 'children___children'
+  | 'children___children___id'
+  | 'children___children___parent___id'
+  | 'children___children___parent___children'
+  | 'children___children___children'
+  | 'children___children___children___id'
+  | 'children___children___children___children'
+  | 'children___children___internal___content'
+  | 'children___children___internal___contentDigest'
+  | 'children___children___internal___description'
+  | 'children___children___internal___fieldOwners'
+  | 'children___children___internal___ignoreType'
+  | 'children___children___internal___mediaType'
+  | 'children___children___internal___owner'
+  | 'children___children___internal___type'
+  | 'children___internal___content'
+  | 'children___internal___contentDigest'
+  | 'children___internal___description'
+  | 'children___internal___fieldOwners'
+  | 'children___internal___ignoreType'
+  | 'children___internal___mediaType'
+  | 'children___internal___owner'
+  | 'children___internal___type'
+  | 'internal___content'
+  | 'internal___contentDigest'
+  | 'internal___description'
+  | 'internal___fieldOwners'
+  | 'internal___ignoreType'
+  | 'internal___mediaType'
+  | 'internal___owner'
+  | 'internal___type'
+  | 'career_summary'
+  | 'jobs'
+  | 'jobs___is_actual'
+  | 'jobs___role'
+  | 'jobs___company'
+  | 'jobs___description'
+  | 'jobs___start_date'
+  | 'jobs___createdAt'
+  | 'jobs___updatedAt'
+  | 'jobs___id'
+  | 'jobs___end_date'
+  | 'technical_skills'
+  | 'technical_skills___name'
+  | 'technical_skills___technologies'
+  | 'technical_skills___technologies___name'
+  | 'technical_skills___technologies___createdAt'
+  | 'technical_skills___technologies___updatedAt'
+  | 'technical_skills___technologies___id'
+  | 'technical_skills___createdAt'
+  | 'technical_skills___updatedAt'
+  | 'technical_skills___id'
+  | 'interests'
+  | 'interests___name'
+  | 'interests___createdAt'
+  | 'interests___updatedAt'
+  | 'interests___id'
+  | 'side_projects'
+  | 'side_projects___is_ongoing'
+  | 'side_projects___description'
+  | 'side_projects___name'
+  | 'side_projects___is_visible'
+  | 'side_projects___start_date'
+  | 'side_projects___end_date'
+  | 'side_projects___createdAt'
+  | 'side_projects___updatedAt'
+  | 'side_projects___id'
+  | 'education___formal'
+  | 'education___formal___is_actual'
+  | 'education___formal___title'
+  | 'education___formal___foundation'
+  | 'education___formal___start_date'
+  | 'education___formal___end_date'
+  | 'education___formal___createdAt'
+  | 'education___formal___updatedAt'
+  | 'education___formal___id'
+  | 'education___languages'
+  | 'education___languages___name'
+  | 'education___languages___proficiency'
+  | 'education___languages___createdAt'
+  | 'education___languages___updatedAt'
+  | 'education___languages___id'
+  | 'education___createdAt'
+  | 'education___updatedAt'
+  | 'education___id'
+  | 'createdAt'
+  | 'updatedAt'
+  | 'created_by___firstname'
+  | 'created_by___lastname'
+  | 'created_by___createdAt'
+  | 'created_by___updatedAt'
+  | 'created_by___id'
+  | 'updated_by___firstname'
+  | 'updated_by___lastname'
+  | 'updated_by___createdAt'
+  | 'updated_by___updatedAt'
+  | 'updated_by___id'
+  | 'summary'
+  | 'strapiId';
+
+export type StrapiCvFilterInput = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  career_summary?: Maybe<StringQueryOperatorInput>;
+  jobs?: Maybe<StrapiCvJobsFilterListInput>;
+  technical_skills?: Maybe<StrapiCvTechnical_SkillsFilterListInput>;
+  interests?: Maybe<StrapiCvInterestsFilterListInput>;
+  side_projects?: Maybe<StrapiCvSide_ProjectsFilterListInput>;
+  education?: Maybe<StrapiCvEducationFilterInput>;
+  createdAt?: Maybe<DateQueryOperatorInput>;
+  updatedAt?: Maybe<DateQueryOperatorInput>;
+  created_by?: Maybe<StrapiCvCreated_ByFilterInput>;
+  updated_by?: Maybe<StrapiCvUpdated_ByFilterInput>;
+  summary?: Maybe<StringQueryOperatorInput>;
+  strapiId?: Maybe<StringQueryOperatorInput>;
+};
+
+export type StrapiCvGroupConnection = {
+  totalCount: Scalars['Int'];
+  edges: Array<StrapiCvEdge>;
+  nodes: Array<StrapiCv>;
+  pageInfo: PageInfo;
+  field: Scalars['String'];
+  fieldValue?: Maybe<Scalars['String']>;
+};
+
+export type StrapiCvInterests = {
+  name?: Maybe<Scalars['String']>;
+  createdAt?: Maybe<Scalars['Date']>;
+  updatedAt?: Maybe<Scalars['Date']>;
+  id?: Maybe<Scalars['String']>;
+};
+
+
+export type StrapiCvInterestsCreatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
+export type StrapiCvInterestsUpdatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+export type StrapiCvInterestsFilterInput = {
+  name?: Maybe<StringQueryOperatorInput>;
+  createdAt?: Maybe<DateQueryOperatorInput>;
+  updatedAt?: Maybe<DateQueryOperatorInput>;
+  id?: Maybe<StringQueryOperatorInput>;
+};
+
+export type StrapiCvInterestsFilterListInput = {
+  elemMatch?: Maybe<StrapiCvInterestsFilterInput>;
+};
+
+export type StrapiCvJobs = {
+  is_actual?: Maybe<Scalars['Boolean']>;
+  role?: Maybe<Scalars['String']>;
+  company?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['String']>;
+  start_date?: Maybe<Scalars['Date']>;
+  createdAt?: Maybe<Scalars['Date']>;
+  updatedAt?: Maybe<Scalars['Date']>;
+  id?: Maybe<Scalars['String']>;
+  end_date?: Maybe<Scalars['Date']>;
+};
+
+
+export type StrapiCvJobsStart_DateArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
+export type StrapiCvJobsCreatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
+export type StrapiCvJobsUpdatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
+export type StrapiCvJobsEnd_DateArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+export type StrapiCvJobsFilterInput = {
+  is_actual?: Maybe<BooleanQueryOperatorInput>;
+  role?: Maybe<StringQueryOperatorInput>;
+  company?: Maybe<StringQueryOperatorInput>;
+  description?: Maybe<StringQueryOperatorInput>;
+  start_date?: Maybe<DateQueryOperatorInput>;
+  createdAt?: Maybe<DateQueryOperatorInput>;
+  updatedAt?: Maybe<DateQueryOperatorInput>;
+  id?: Maybe<StringQueryOperatorInput>;
+  end_date?: Maybe<DateQueryOperatorInput>;
+};
+
+export type StrapiCvJobsFilterListInput = {
+  elemMatch?: Maybe<StrapiCvJobsFilterInput>;
+};
+
+export type StrapiCvSide_Projects = {
+  is_ongoing?: Maybe<Scalars['Boolean']>;
+  description?: Maybe<Scalars['String']>;
+  name?: Maybe<Scalars['String']>;
+  is_visible?: Maybe<Scalars['Boolean']>;
+  start_date?: Maybe<Scalars['Date']>;
+  end_date?: Maybe<Scalars['Date']>;
+  createdAt?: Maybe<Scalars['Date']>;
+  updatedAt?: Maybe<Scalars['Date']>;
+  id?: Maybe<Scalars['String']>;
+};
+
+
+export type StrapiCvSide_ProjectsStart_DateArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
+export type StrapiCvSide_ProjectsEnd_DateArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
+export type StrapiCvSide_ProjectsCreatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
+export type StrapiCvSide_ProjectsUpdatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+export type StrapiCvSide_ProjectsFilterInput = {
+  is_ongoing?: Maybe<BooleanQueryOperatorInput>;
+  description?: Maybe<StringQueryOperatorInput>;
+  name?: Maybe<StringQueryOperatorInput>;
+  is_visible?: Maybe<BooleanQueryOperatorInput>;
+  start_date?: Maybe<DateQueryOperatorInput>;
+  end_date?: Maybe<DateQueryOperatorInput>;
+  createdAt?: Maybe<DateQueryOperatorInput>;
+  updatedAt?: Maybe<DateQueryOperatorInput>;
+  id?: Maybe<StringQueryOperatorInput>;
+};
+
+export type StrapiCvSide_ProjectsFilterListInput = {
+  elemMatch?: Maybe<StrapiCvSide_ProjectsFilterInput>;
+};
+
+export type StrapiCvSortInput = {
+  fields?: Maybe<Array<Maybe<StrapiCvFieldsEnum>>>;
+  order?: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
+export type StrapiCvTechnical_Skills = {
+  name?: Maybe<Scalars['String']>;
+  technologies?: Maybe<Array<Maybe<StrapiCvTechnical_SkillsTechnologies>>>;
+  createdAt?: Maybe<Scalars['Date']>;
+  updatedAt?: Maybe<Scalars['Date']>;
+  id?: Maybe<Scalars['String']>;
+};
+
+
+export type StrapiCvTechnical_SkillsCreatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
+export type StrapiCvTechnical_SkillsUpdatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+export type StrapiCvTechnical_SkillsFilterInput = {
+  name?: Maybe<StringQueryOperatorInput>;
+  technologies?: Maybe<StrapiCvTechnical_SkillsTechnologiesFilterListInput>;
+  createdAt?: Maybe<DateQueryOperatorInput>;
+  updatedAt?: Maybe<DateQueryOperatorInput>;
+  id?: Maybe<StringQueryOperatorInput>;
+};
+
+export type StrapiCvTechnical_SkillsFilterListInput = {
+  elemMatch?: Maybe<StrapiCvTechnical_SkillsFilterInput>;
+};
+
+export type StrapiCvTechnical_SkillsTechnologies = {
+  name?: Maybe<Scalars['String']>;
+  createdAt?: Maybe<Scalars['Date']>;
+  updatedAt?: Maybe<Scalars['Date']>;
+  id?: Maybe<Scalars['String']>;
+};
+
+
+export type StrapiCvTechnical_SkillsTechnologiesCreatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
+export type StrapiCvTechnical_SkillsTechnologiesUpdatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+export type StrapiCvTechnical_SkillsTechnologiesFilterInput = {
+  name?: Maybe<StringQueryOperatorInput>;
+  createdAt?: Maybe<DateQueryOperatorInput>;
+  updatedAt?: Maybe<DateQueryOperatorInput>;
+  id?: Maybe<StringQueryOperatorInput>;
+};
+
+export type StrapiCvTechnical_SkillsTechnologiesFilterListInput = {
+  elemMatch?: Maybe<StrapiCvTechnical_SkillsTechnologiesFilterInput>;
+};
+
+export type StrapiCvUpdated_By = {
+  firstname?: Maybe<Scalars['String']>;
+  lastname?: Maybe<Scalars['String']>;
+  createdAt?: Maybe<Scalars['Date']>;
+  updatedAt?: Maybe<Scalars['Date']>;
+  id?: Maybe<Scalars['String']>;
+};
+
+
+export type StrapiCvUpdated_ByCreatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
+export type StrapiCvUpdated_ByUpdatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+export type StrapiCvUpdated_ByFilterInput = {
+  firstname?: Maybe<StringQueryOperatorInput>;
+  lastname?: Maybe<StringQueryOperatorInput>;
+  createdAt?: Maybe<DateQueryOperatorInput>;
+  updatedAt?: Maybe<DateQueryOperatorInput>;
+  id?: Maybe<StringQueryOperatorInput>;
+};
+
+export type StrapiPersonalInformation = Node & {
+  id: Scalars['ID'];
+  parent?: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
+  full_name?: Maybe<Scalars['String']>;
+  phone?: Maybe<Scalars['String']>;
+  city_country?: Maybe<Scalars['String']>;
+  email?: Maybe<Scalars['String']>;
+  createdAt?: Maybe<Scalars['Date']>;
+  updatedAt?: Maybe<Scalars['Date']>;
+  created_by?: Maybe<StrapiPersonalInformationCreated_By>;
+  updated_by?: Maybe<StrapiPersonalInformationUpdated_By>;
+  city?: Maybe<Scalars['String']>;
+  country?: Maybe<Scalars['String']>;
+  profile_pic?: Maybe<File>;
+  strapiId?: Maybe<Scalars['String']>;
+};
+
+
+export type StrapiPersonalInformationCreatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
+export type StrapiPersonalInformationUpdatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+export type StrapiPersonalInformationConnection = {
+  totalCount: Scalars['Int'];
+  edges: Array<StrapiPersonalInformationEdge>;
+  nodes: Array<StrapiPersonalInformation>;
+  pageInfo: PageInfo;
+  distinct: Array<Scalars['String']>;
+  group: Array<StrapiPersonalInformationGroupConnection>;
+};
+
+
+export type StrapiPersonalInformationConnectionDistinctArgs = {
+  field: StrapiPersonalInformationFieldsEnum;
+};
+
+
+export type StrapiPersonalInformationConnectionGroupArgs = {
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  field: StrapiPersonalInformationFieldsEnum;
+};
+
+export type StrapiPersonalInformationCreated_By = {
+  firstname?: Maybe<Scalars['String']>;
+  lastname?: Maybe<Scalars['String']>;
+  createdAt?: Maybe<Scalars['Date']>;
+  updatedAt?: Maybe<Scalars['Date']>;
+  id?: Maybe<Scalars['String']>;
+};
+
+
+export type StrapiPersonalInformationCreated_ByCreatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
+export type StrapiPersonalInformationCreated_ByUpdatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+export type StrapiPersonalInformationCreated_ByFilterInput = {
+  firstname?: Maybe<StringQueryOperatorInput>;
+  lastname?: Maybe<StringQueryOperatorInput>;
+  createdAt?: Maybe<DateQueryOperatorInput>;
+  updatedAt?: Maybe<DateQueryOperatorInput>;
+  id?: Maybe<StringQueryOperatorInput>;
+};
+
+export type StrapiPersonalInformationEdge = {
+  next?: Maybe<StrapiPersonalInformation>;
+  node: StrapiPersonalInformation;
+  previous?: Maybe<StrapiPersonalInformation>;
+};
+
+export type StrapiPersonalInformationFieldsEnum = 
+  | 'id'
+  | 'parent___id'
+  | 'parent___parent___id'
+  | 'parent___parent___parent___id'
+  | 'parent___parent___parent___children'
+  | 'parent___parent___children'
+  | 'parent___parent___children___id'
+  | 'parent___parent___children___children'
+  | 'parent___parent___internal___content'
+  | 'parent___parent___internal___contentDigest'
+  | 'parent___parent___internal___description'
+  | 'parent___parent___internal___fieldOwners'
+  | 'parent___parent___internal___ignoreType'
+  | 'parent___parent___internal___mediaType'
+  | 'parent___parent___internal___owner'
+  | 'parent___parent___internal___type'
+  | 'parent___children'
+  | 'parent___children___id'
+  | 'parent___children___parent___id'
+  | 'parent___children___parent___children'
+  | 'parent___children___children'
+  | 'parent___children___children___id'
+  | 'parent___children___children___children'
+  | 'parent___children___internal___content'
+  | 'parent___children___internal___contentDigest'
+  | 'parent___children___internal___description'
+  | 'parent___children___internal___fieldOwners'
+  | 'parent___children___internal___ignoreType'
+  | 'parent___children___internal___mediaType'
+  | 'parent___children___internal___owner'
+  | 'parent___children___internal___type'
+  | 'parent___internal___content'
+  | 'parent___internal___contentDigest'
+  | 'parent___internal___description'
+  | 'parent___internal___fieldOwners'
+  | 'parent___internal___ignoreType'
+  | 'parent___internal___mediaType'
+  | 'parent___internal___owner'
+  | 'parent___internal___type'
+  | 'children'
+  | 'children___id'
+  | 'children___parent___id'
+  | 'children___parent___parent___id'
+  | 'children___parent___parent___children'
+  | 'children___parent___children'
+  | 'children___parent___children___id'
+  | 'children___parent___children___children'
+  | 'children___parent___internal___content'
+  | 'children___parent___internal___contentDigest'
+  | 'children___parent___internal___description'
+  | 'children___parent___internal___fieldOwners'
+  | 'children___parent___internal___ignoreType'
+  | 'children___parent___internal___mediaType'
+  | 'children___parent___internal___owner'
+  | 'children___parent___internal___type'
+  | 'children___children'
+  | 'children___children___id'
+  | 'children___children___parent___id'
+  | 'children___children___parent___children'
+  | 'children___children___children'
+  | 'children___children___children___id'
+  | 'children___children___children___children'
+  | 'children___children___internal___content'
+  | 'children___children___internal___contentDigest'
+  | 'children___children___internal___description'
+  | 'children___children___internal___fieldOwners'
+  | 'children___children___internal___ignoreType'
+  | 'children___children___internal___mediaType'
+  | 'children___children___internal___owner'
+  | 'children___children___internal___type'
+  | 'children___internal___content'
+  | 'children___internal___contentDigest'
+  | 'children___internal___description'
+  | 'children___internal___fieldOwners'
+  | 'children___internal___ignoreType'
+  | 'children___internal___mediaType'
+  | 'children___internal___owner'
+  | 'children___internal___type'
+  | 'internal___content'
+  | 'internal___contentDigest'
+  | 'internal___description'
+  | 'internal___fieldOwners'
+  | 'internal___ignoreType'
+  | 'internal___mediaType'
+  | 'internal___owner'
+  | 'internal___type'
+  | 'full_name'
+  | 'phone'
+  | 'city_country'
+  | 'email'
+  | 'createdAt'
+  | 'updatedAt'
+  | 'created_by___firstname'
+  | 'created_by___lastname'
+  | 'created_by___createdAt'
+  | 'created_by___updatedAt'
+  | 'created_by___id'
+  | 'updated_by___firstname'
+  | 'updated_by___lastname'
+  | 'updated_by___createdAt'
+  | 'updated_by___updatedAt'
+  | 'updated_by___id'
+  | 'city'
+  | 'country'
+  | 'profile_pic___sourceInstanceName'
+  | 'profile_pic___absolutePath'
+  | 'profile_pic___relativePath'
+  | 'profile_pic___extension'
+  | 'profile_pic___size'
+  | 'profile_pic___prettySize'
+  | 'profile_pic___modifiedTime'
+  | 'profile_pic___accessTime'
+  | 'profile_pic___changeTime'
+  | 'profile_pic___birthTime'
+  | 'profile_pic___root'
+  | 'profile_pic___dir'
+  | 'profile_pic___base'
+  | 'profile_pic___ext'
+  | 'profile_pic___name'
+  | 'profile_pic___relativeDirectory'
+  | 'profile_pic___dev'
+  | 'profile_pic___mode'
+  | 'profile_pic___nlink'
+  | 'profile_pic___uid'
+  | 'profile_pic___gid'
+  | 'profile_pic___rdev'
+  | 'profile_pic___ino'
+  | 'profile_pic___atimeMs'
+  | 'profile_pic___mtimeMs'
+  | 'profile_pic___ctimeMs'
+  | 'profile_pic___atime'
+  | 'profile_pic___mtime'
+  | 'profile_pic___ctime'
+  | 'profile_pic___birthtime'
+  | 'profile_pic___birthtimeMs'
+  | 'profile_pic___blksize'
+  | 'profile_pic___blocks'
+  | 'profile_pic___publicURL'
+  | 'profile_pic___childImageSharp___fixed___base64'
+  | 'profile_pic___childImageSharp___fixed___tracedSVG'
+  | 'profile_pic___childImageSharp___fixed___aspectRatio'
+  | 'profile_pic___childImageSharp___fixed___width'
+  | 'profile_pic___childImageSharp___fixed___height'
+  | 'profile_pic___childImageSharp___fixed___src'
+  | 'profile_pic___childImageSharp___fixed___srcSet'
+  | 'profile_pic___childImageSharp___fixed___srcWebp'
+  | 'profile_pic___childImageSharp___fixed___srcSetWebp'
+  | 'profile_pic___childImageSharp___fixed___originalName'
+  | 'profile_pic___childImageSharp___resolutions___base64'
+  | 'profile_pic___childImageSharp___resolutions___tracedSVG'
+  | 'profile_pic___childImageSharp___resolutions___aspectRatio'
+  | 'profile_pic___childImageSharp___resolutions___width'
+  | 'profile_pic___childImageSharp___resolutions___height'
+  | 'profile_pic___childImageSharp___resolutions___src'
+  | 'profile_pic___childImageSharp___resolutions___srcSet'
+  | 'profile_pic___childImageSharp___resolutions___srcWebp'
+  | 'profile_pic___childImageSharp___resolutions___srcSetWebp'
+  | 'profile_pic___childImageSharp___resolutions___originalName'
+  | 'profile_pic___childImageSharp___fluid___base64'
+  | 'profile_pic___childImageSharp___fluid___tracedSVG'
+  | 'profile_pic___childImageSharp___fluid___aspectRatio'
+  | 'profile_pic___childImageSharp___fluid___src'
+  | 'profile_pic___childImageSharp___fluid___srcSet'
+  | 'profile_pic___childImageSharp___fluid___srcWebp'
+  | 'profile_pic___childImageSharp___fluid___srcSetWebp'
+  | 'profile_pic___childImageSharp___fluid___sizes'
+  | 'profile_pic___childImageSharp___fluid___originalImg'
+  | 'profile_pic___childImageSharp___fluid___originalName'
+  | 'profile_pic___childImageSharp___fluid___presentationWidth'
+  | 'profile_pic___childImageSharp___fluid___presentationHeight'
+  | 'profile_pic___childImageSharp___sizes___base64'
+  | 'profile_pic___childImageSharp___sizes___tracedSVG'
+  | 'profile_pic___childImageSharp___sizes___aspectRatio'
+  | 'profile_pic___childImageSharp___sizes___src'
+  | 'profile_pic___childImageSharp___sizes___srcSet'
+  | 'profile_pic___childImageSharp___sizes___srcWebp'
+  | 'profile_pic___childImageSharp___sizes___srcSetWebp'
+  | 'profile_pic___childImageSharp___sizes___sizes'
+  | 'profile_pic___childImageSharp___sizes___originalImg'
+  | 'profile_pic___childImageSharp___sizes___originalName'
+  | 'profile_pic___childImageSharp___sizes___presentationWidth'
+  | 'profile_pic___childImageSharp___sizes___presentationHeight'
+  | 'profile_pic___childImageSharp___original___width'
+  | 'profile_pic___childImageSharp___original___height'
+  | 'profile_pic___childImageSharp___original___src'
+  | 'profile_pic___childImageSharp___resize___src'
+  | 'profile_pic___childImageSharp___resize___tracedSVG'
+  | 'profile_pic___childImageSharp___resize___width'
+  | 'profile_pic___childImageSharp___resize___height'
+  | 'profile_pic___childImageSharp___resize___aspectRatio'
+  | 'profile_pic___childImageSharp___resize___originalName'
+  | 'profile_pic___childImageSharp___id'
+  | 'profile_pic___childImageSharp___parent___id'
+  | 'profile_pic___childImageSharp___parent___children'
+  | 'profile_pic___childImageSharp___children'
+  | 'profile_pic___childImageSharp___children___id'
+  | 'profile_pic___childImageSharp___children___children'
+  | 'profile_pic___childImageSharp___internal___content'
+  | 'profile_pic___childImageSharp___internal___contentDigest'
+  | 'profile_pic___childImageSharp___internal___description'
+  | 'profile_pic___childImageSharp___internal___fieldOwners'
+  | 'profile_pic___childImageSharp___internal___ignoreType'
+  | 'profile_pic___childImageSharp___internal___mediaType'
+  | 'profile_pic___childImageSharp___internal___owner'
+  | 'profile_pic___childImageSharp___internal___type'
+  | 'profile_pic___id'
+  | 'profile_pic___parent___id'
+  | 'profile_pic___parent___parent___id'
+  | 'profile_pic___parent___parent___children'
+  | 'profile_pic___parent___children'
+  | 'profile_pic___parent___children___id'
+  | 'profile_pic___parent___children___children'
+  | 'profile_pic___parent___internal___content'
+  | 'profile_pic___parent___internal___contentDigest'
+  | 'profile_pic___parent___internal___description'
+  | 'profile_pic___parent___internal___fieldOwners'
+  | 'profile_pic___parent___internal___ignoreType'
+  | 'profile_pic___parent___internal___mediaType'
+  | 'profile_pic___parent___internal___owner'
+  | 'profile_pic___parent___internal___type'
+  | 'profile_pic___children'
+  | 'profile_pic___children___id'
+  | 'profile_pic___children___parent___id'
+  | 'profile_pic___children___parent___children'
+  | 'profile_pic___children___children'
+  | 'profile_pic___children___children___id'
+  | 'profile_pic___children___children___children'
+  | 'profile_pic___children___internal___content'
+  | 'profile_pic___children___internal___contentDigest'
+  | 'profile_pic___children___internal___description'
+  | 'profile_pic___children___internal___fieldOwners'
+  | 'profile_pic___children___internal___ignoreType'
+  | 'profile_pic___children___internal___mediaType'
+  | 'profile_pic___children___internal___owner'
+  | 'profile_pic___children___internal___type'
+  | 'profile_pic___internal___content'
+  | 'profile_pic___internal___contentDigest'
+  | 'profile_pic___internal___description'
+  | 'profile_pic___internal___fieldOwners'
+  | 'profile_pic___internal___ignoreType'
+  | 'profile_pic___internal___mediaType'
+  | 'profile_pic___internal___owner'
+  | 'profile_pic___internal___type'
+  | 'profile_pic___childMdx___rawBody'
+  | 'profile_pic___childMdx___fileAbsolutePath'
+  | 'profile_pic___childMdx___frontmatter___title'
+  | 'profile_pic___childMdx___frontmatter___subtitle'
+  | 'profile_pic___childMdx___frontmatter___date'
+  | 'profile_pic___childMdx___frontmatter___tags'
+  | 'profile_pic___childMdx___frontmatter___description'
+  | 'profile_pic___childMdx___frontmatter___image_caption'
+  | 'profile_pic___childMdx___slug'
+  | 'profile_pic___childMdx___body'
+  | 'profile_pic___childMdx___excerpt'
+  | 'profile_pic___childMdx___headings'
+  | 'profile_pic___childMdx___headings___value'
+  | 'profile_pic___childMdx___headings___depth'
+  | 'profile_pic___childMdx___html'
+  | 'profile_pic___childMdx___mdxAST'
+  | 'profile_pic___childMdx___tableOfContents'
+  | 'profile_pic___childMdx___timeToRead'
+  | 'profile_pic___childMdx___wordCount___paragraphs'
+  | 'profile_pic___childMdx___wordCount___sentences'
+  | 'profile_pic___childMdx___wordCount___words'
+  | 'profile_pic___childMdx___fields___slug'
+  | 'profile_pic___childMdx___fields___lang'
+  | 'profile_pic___childMdx___fields___postFolderName'
+  | 'profile_pic___childMdx___id'
+  | 'profile_pic___childMdx___parent___id'
+  | 'profile_pic___childMdx___parent___children'
+  | 'profile_pic___childMdx___children'
+  | 'profile_pic___childMdx___children___id'
+  | 'profile_pic___childMdx___children___children'
+  | 'profile_pic___childMdx___internal___content'
+  | 'profile_pic___childMdx___internal___contentDigest'
+  | 'profile_pic___childMdx___internal___description'
+  | 'profile_pic___childMdx___internal___fieldOwners'
+  | 'profile_pic___childMdx___internal___ignoreType'
+  | 'profile_pic___childMdx___internal___mediaType'
+  | 'profile_pic___childMdx___internal___owner'
+  | 'profile_pic___childMdx___internal___type'
+  | 'strapiId';
+
+export type StrapiPersonalInformationFilterInput = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  full_name?: Maybe<StringQueryOperatorInput>;
+  phone?: Maybe<StringQueryOperatorInput>;
+  city_country?: Maybe<StringQueryOperatorInput>;
+  email?: Maybe<StringQueryOperatorInput>;
+  createdAt?: Maybe<DateQueryOperatorInput>;
+  updatedAt?: Maybe<DateQueryOperatorInput>;
+  created_by?: Maybe<StrapiPersonalInformationCreated_ByFilterInput>;
+  updated_by?: Maybe<StrapiPersonalInformationUpdated_ByFilterInput>;
+  city?: Maybe<StringQueryOperatorInput>;
+  country?: Maybe<StringQueryOperatorInput>;
+  profile_pic?: Maybe<FileFilterInput>;
+  strapiId?: Maybe<StringQueryOperatorInput>;
+};
+
+export type StrapiPersonalInformationGroupConnection = {
+  totalCount: Scalars['Int'];
+  edges: Array<StrapiPersonalInformationEdge>;
+  nodes: Array<StrapiPersonalInformation>;
+  pageInfo: PageInfo;
+  field: Scalars['String'];
+  fieldValue?: Maybe<Scalars['String']>;
+};
+
+export type StrapiPersonalInformationSortInput = {
+  fields?: Maybe<Array<Maybe<StrapiPersonalInformationFieldsEnum>>>;
+  order?: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
+export type StrapiPersonalInformationUpdated_By = {
+  firstname?: Maybe<Scalars['String']>;
+  lastname?: Maybe<Scalars['String']>;
+  createdAt?: Maybe<Scalars['Date']>;
+  updatedAt?: Maybe<Scalars['Date']>;
+  id?: Maybe<Scalars['String']>;
+};
+
+
+export type StrapiPersonalInformationUpdated_ByCreatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
+export type StrapiPersonalInformationUpdated_ByUpdatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+export type StrapiPersonalInformationUpdated_ByFilterInput = {
+  firstname?: Maybe<StringQueryOperatorInput>;
+  lastname?: Maybe<StringQueryOperatorInput>;
+  createdAt?: Maybe<DateQueryOperatorInput>;
+  updatedAt?: Maybe<DateQueryOperatorInput>;
+  id?: Maybe<StringQueryOperatorInput>;
+};
+
+export type StrapiSite = Node & {
+  id: Scalars['ID'];
+  parent?: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
+  url?: Maybe<Scalars['String']>;
+  createdAt?: Maybe<Scalars['Date']>;
+  updatedAt?: Maybe<Scalars['Date']>;
+  created_by?: Maybe<StrapiSiteCreated_By>;
+  updated_by?: Maybe<StrapiSiteUpdated_By>;
+  strapiId?: Maybe<Scalars['String']>;
+};
+
+
+export type StrapiSiteCreatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
+export type StrapiSiteUpdatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+export type StrapiSiteConnection = {
+  totalCount: Scalars['Int'];
+  edges: Array<StrapiSiteEdge>;
+  nodes: Array<StrapiSite>;
+  pageInfo: PageInfo;
+  distinct: Array<Scalars['String']>;
+  group: Array<StrapiSiteGroupConnection>;
+};
+
+
+export type StrapiSiteConnectionDistinctArgs = {
+  field: StrapiSiteFieldsEnum;
+};
+
+
+export type StrapiSiteConnectionGroupArgs = {
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  field: StrapiSiteFieldsEnum;
+};
+
+export type StrapiSiteCreated_By = {
+  firstname?: Maybe<Scalars['String']>;
+  lastname?: Maybe<Scalars['String']>;
+  createdAt?: Maybe<Scalars['Date']>;
+  updatedAt?: Maybe<Scalars['Date']>;
+  id?: Maybe<Scalars['String']>;
+};
+
+
+export type StrapiSiteCreated_ByCreatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
+export type StrapiSiteCreated_ByUpdatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+export type StrapiSiteCreated_ByFilterInput = {
+  firstname?: Maybe<StringQueryOperatorInput>;
+  lastname?: Maybe<StringQueryOperatorInput>;
+  createdAt?: Maybe<DateQueryOperatorInput>;
+  updatedAt?: Maybe<DateQueryOperatorInput>;
+  id?: Maybe<StringQueryOperatorInput>;
+};
+
+export type StrapiSiteEdge = {
+  next?: Maybe<StrapiSite>;
+  node: StrapiSite;
+  previous?: Maybe<StrapiSite>;
+};
+
+export type StrapiSiteFieldsEnum = 
+  | 'id'
+  | 'parent___id'
+  | 'parent___parent___id'
+  | 'parent___parent___parent___id'
+  | 'parent___parent___parent___children'
+  | 'parent___parent___children'
+  | 'parent___parent___children___id'
+  | 'parent___parent___children___children'
+  | 'parent___parent___internal___content'
+  | 'parent___parent___internal___contentDigest'
+  | 'parent___parent___internal___description'
+  | 'parent___parent___internal___fieldOwners'
+  | 'parent___parent___internal___ignoreType'
+  | 'parent___parent___internal___mediaType'
+  | 'parent___parent___internal___owner'
+  | 'parent___parent___internal___type'
+  | 'parent___children'
+  | 'parent___children___id'
+  | 'parent___children___parent___id'
+  | 'parent___children___parent___children'
+  | 'parent___children___children'
+  | 'parent___children___children___id'
+  | 'parent___children___children___children'
+  | 'parent___children___internal___content'
+  | 'parent___children___internal___contentDigest'
+  | 'parent___children___internal___description'
+  | 'parent___children___internal___fieldOwners'
+  | 'parent___children___internal___ignoreType'
+  | 'parent___children___internal___mediaType'
+  | 'parent___children___internal___owner'
+  | 'parent___children___internal___type'
+  | 'parent___internal___content'
+  | 'parent___internal___contentDigest'
+  | 'parent___internal___description'
+  | 'parent___internal___fieldOwners'
+  | 'parent___internal___ignoreType'
+  | 'parent___internal___mediaType'
+  | 'parent___internal___owner'
+  | 'parent___internal___type'
+  | 'children'
+  | 'children___id'
+  | 'children___parent___id'
+  | 'children___parent___parent___id'
+  | 'children___parent___parent___children'
+  | 'children___parent___children'
+  | 'children___parent___children___id'
+  | 'children___parent___children___children'
+  | 'children___parent___internal___content'
+  | 'children___parent___internal___contentDigest'
+  | 'children___parent___internal___description'
+  | 'children___parent___internal___fieldOwners'
+  | 'children___parent___internal___ignoreType'
+  | 'children___parent___internal___mediaType'
+  | 'children___parent___internal___owner'
+  | 'children___parent___internal___type'
+  | 'children___children'
+  | 'children___children___id'
+  | 'children___children___parent___id'
+  | 'children___children___parent___children'
+  | 'children___children___children'
+  | 'children___children___children___id'
+  | 'children___children___children___children'
+  | 'children___children___internal___content'
+  | 'children___children___internal___contentDigest'
+  | 'children___children___internal___description'
+  | 'children___children___internal___fieldOwners'
+  | 'children___children___internal___ignoreType'
+  | 'children___children___internal___mediaType'
+  | 'children___children___internal___owner'
+  | 'children___children___internal___type'
+  | 'children___internal___content'
+  | 'children___internal___contentDigest'
+  | 'children___internal___description'
+  | 'children___internal___fieldOwners'
+  | 'children___internal___ignoreType'
+  | 'children___internal___mediaType'
+  | 'children___internal___owner'
+  | 'children___internal___type'
+  | 'internal___content'
+  | 'internal___contentDigest'
+  | 'internal___description'
+  | 'internal___fieldOwners'
+  | 'internal___ignoreType'
+  | 'internal___mediaType'
+  | 'internal___owner'
+  | 'internal___type'
+  | 'url'
+  | 'createdAt'
+  | 'updatedAt'
+  | 'created_by___firstname'
+  | 'created_by___lastname'
+  | 'created_by___createdAt'
+  | 'created_by___updatedAt'
+  | 'created_by___id'
+  | 'updated_by___firstname'
+  | 'updated_by___lastname'
+  | 'updated_by___createdAt'
+  | 'updated_by___updatedAt'
+  | 'updated_by___id'
+  | 'strapiId';
+
+export type StrapiSiteFilterInput = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  url?: Maybe<StringQueryOperatorInput>;
+  createdAt?: Maybe<DateQueryOperatorInput>;
+  updatedAt?: Maybe<DateQueryOperatorInput>;
+  created_by?: Maybe<StrapiSiteCreated_ByFilterInput>;
+  updated_by?: Maybe<StrapiSiteUpdated_ByFilterInput>;
+  strapiId?: Maybe<StringQueryOperatorInput>;
+};
+
+export type StrapiSiteGroupConnection = {
+  totalCount: Scalars['Int'];
+  edges: Array<StrapiSiteEdge>;
+  nodes: Array<StrapiSite>;
+  pageInfo: PageInfo;
+  field: Scalars['String'];
+  fieldValue?: Maybe<Scalars['String']>;
+};
+
+export type StrapiSiteSortInput = {
+  fields?: Maybe<Array<Maybe<StrapiSiteFieldsEnum>>>;
+  order?: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
+export type StrapiSiteUpdated_By = {
+  firstname?: Maybe<Scalars['String']>;
+  lastname?: Maybe<Scalars['String']>;
+  createdAt?: Maybe<Scalars['Date']>;
+  updatedAt?: Maybe<Scalars['Date']>;
+  id?: Maybe<Scalars['String']>;
+};
+
+
+export type StrapiSiteUpdated_ByCreatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
+export type StrapiSiteUpdated_ByUpdatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+export type StrapiSiteUpdated_ByFilterInput = {
+  firstname?: Maybe<StringQueryOperatorInput>;
+  lastname?: Maybe<StringQueryOperatorInput>;
+  createdAt?: Maybe<DateQueryOperatorInput>;
+  updatedAt?: Maybe<DateQueryOperatorInput>;
+  id?: Maybe<StringQueryOperatorInput>;
+};
+
+export type StrapiSocial = Node & {
+  id: Scalars['ID'];
+  parent?: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
+  instagram?: Maybe<StrapiSocialInstagram>;
+  linkedIn?: Maybe<StrapiSocialLinkedIn>;
+  twitter?: Maybe<StrapiSocialTwitter>;
+  github?: Maybe<StrapiSocialGithub>;
+  createdAt?: Maybe<Scalars['Date']>;
+  updatedAt?: Maybe<Scalars['Date']>;
+  created_by?: Maybe<StrapiSocialCreated_By>;
+  updated_by?: Maybe<StrapiSocialUpdated_By>;
+  strapiId?: Maybe<Scalars['String']>;
+};
+
+
+export type StrapiSocialCreatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
+export type StrapiSocialUpdatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+export type StrapiSocialConnection = {
+  totalCount: Scalars['Int'];
+  edges: Array<StrapiSocialEdge>;
+  nodes: Array<StrapiSocial>;
+  pageInfo: PageInfo;
+  distinct: Array<Scalars['String']>;
+  group: Array<StrapiSocialGroupConnection>;
+};
+
+
+export type StrapiSocialConnectionDistinctArgs = {
+  field: StrapiSocialFieldsEnum;
+};
+
+
+export type StrapiSocialConnectionGroupArgs = {
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  field: StrapiSocialFieldsEnum;
+};
+
+export type StrapiSocialCreated_By = {
+  firstname?: Maybe<Scalars['String']>;
+  lastname?: Maybe<Scalars['String']>;
+  createdAt?: Maybe<Scalars['Date']>;
+  updatedAt?: Maybe<Scalars['Date']>;
+  id?: Maybe<Scalars['String']>;
+};
+
+
+export type StrapiSocialCreated_ByCreatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
+export type StrapiSocialCreated_ByUpdatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+export type StrapiSocialCreated_ByFilterInput = {
+  firstname?: Maybe<StringQueryOperatorInput>;
+  lastname?: Maybe<StringQueryOperatorInput>;
+  createdAt?: Maybe<DateQueryOperatorInput>;
+  updatedAt?: Maybe<DateQueryOperatorInput>;
+  id?: Maybe<StringQueryOperatorInput>;
+};
+
+export type StrapiSocialEdge = {
+  next?: Maybe<StrapiSocial>;
+  node: StrapiSocial;
+  previous?: Maybe<StrapiSocial>;
+};
+
+export type StrapiSocialFieldsEnum = 
+  | 'id'
+  | 'parent___id'
+  | 'parent___parent___id'
+  | 'parent___parent___parent___id'
+  | 'parent___parent___parent___children'
+  | 'parent___parent___children'
+  | 'parent___parent___children___id'
+  | 'parent___parent___children___children'
+  | 'parent___parent___internal___content'
+  | 'parent___parent___internal___contentDigest'
+  | 'parent___parent___internal___description'
+  | 'parent___parent___internal___fieldOwners'
+  | 'parent___parent___internal___ignoreType'
+  | 'parent___parent___internal___mediaType'
+  | 'parent___parent___internal___owner'
+  | 'parent___parent___internal___type'
+  | 'parent___children'
+  | 'parent___children___id'
+  | 'parent___children___parent___id'
+  | 'parent___children___parent___children'
+  | 'parent___children___children'
+  | 'parent___children___children___id'
+  | 'parent___children___children___children'
+  | 'parent___children___internal___content'
+  | 'parent___children___internal___contentDigest'
+  | 'parent___children___internal___description'
+  | 'parent___children___internal___fieldOwners'
+  | 'parent___children___internal___ignoreType'
+  | 'parent___children___internal___mediaType'
+  | 'parent___children___internal___owner'
+  | 'parent___children___internal___type'
+  | 'parent___internal___content'
+  | 'parent___internal___contentDigest'
+  | 'parent___internal___description'
+  | 'parent___internal___fieldOwners'
+  | 'parent___internal___ignoreType'
+  | 'parent___internal___mediaType'
+  | 'parent___internal___owner'
+  | 'parent___internal___type'
+  | 'children'
+  | 'children___id'
+  | 'children___parent___id'
+  | 'children___parent___parent___id'
+  | 'children___parent___parent___children'
+  | 'children___parent___children'
+  | 'children___parent___children___id'
+  | 'children___parent___children___children'
+  | 'children___parent___internal___content'
+  | 'children___parent___internal___contentDigest'
+  | 'children___parent___internal___description'
+  | 'children___parent___internal___fieldOwners'
+  | 'children___parent___internal___ignoreType'
+  | 'children___parent___internal___mediaType'
+  | 'children___parent___internal___owner'
+  | 'children___parent___internal___type'
+  | 'children___children'
+  | 'children___children___id'
+  | 'children___children___parent___id'
+  | 'children___children___parent___children'
+  | 'children___children___children'
+  | 'children___children___children___id'
+  | 'children___children___children___children'
+  | 'children___children___internal___content'
+  | 'children___children___internal___contentDigest'
+  | 'children___children___internal___description'
+  | 'children___children___internal___fieldOwners'
+  | 'children___children___internal___ignoreType'
+  | 'children___children___internal___mediaType'
+  | 'children___children___internal___owner'
+  | 'children___children___internal___type'
+  | 'children___internal___content'
+  | 'children___internal___contentDigest'
+  | 'children___internal___description'
+  | 'children___internal___fieldOwners'
+  | 'children___internal___ignoreType'
+  | 'children___internal___mediaType'
+  | 'children___internal___owner'
+  | 'children___internal___type'
+  | 'internal___content'
+  | 'internal___contentDigest'
+  | 'internal___description'
+  | 'internal___fieldOwners'
+  | 'internal___ignoreType'
+  | 'internal___mediaType'
+  | 'internal___owner'
+  | 'internal___type'
+  | 'instagram___url'
+  | 'instagram___createdAt'
+  | 'instagram___updatedAt'
+  | 'instagram___display_name'
+  | 'instagram___id'
+  | 'linkedIn___url'
+  | 'linkedIn___createdAt'
+  | 'linkedIn___updatedAt'
+  | 'linkedIn___display_name'
+  | 'linkedIn___id'
+  | 'twitter___url'
+  | 'twitter___createdAt'
+  | 'twitter___updatedAt'
+  | 'twitter___display_name'
+  | 'twitter___id'
+  | 'github___url'
+  | 'github___createdAt'
+  | 'github___updatedAt'
+  | 'github___display_name'
+  | 'github___id'
+  | 'createdAt'
+  | 'updatedAt'
+  | 'created_by___firstname'
+  | 'created_by___lastname'
+  | 'created_by___createdAt'
+  | 'created_by___updatedAt'
+  | 'created_by___id'
+  | 'updated_by___firstname'
+  | 'updated_by___lastname'
+  | 'updated_by___createdAt'
+  | 'updated_by___updatedAt'
+  | 'updated_by___id'
+  | 'strapiId';
+
+export type StrapiSocialFilterInput = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  instagram?: Maybe<StrapiSocialInstagramFilterInput>;
+  linkedIn?: Maybe<StrapiSocialLinkedInFilterInput>;
+  twitter?: Maybe<StrapiSocialTwitterFilterInput>;
+  github?: Maybe<StrapiSocialGithubFilterInput>;
+  createdAt?: Maybe<DateQueryOperatorInput>;
+  updatedAt?: Maybe<DateQueryOperatorInput>;
+  created_by?: Maybe<StrapiSocialCreated_ByFilterInput>;
+  updated_by?: Maybe<StrapiSocialUpdated_ByFilterInput>;
+  strapiId?: Maybe<StringQueryOperatorInput>;
+};
+
+export type StrapiSocialGithub = {
+  url?: Maybe<Scalars['String']>;
+  createdAt?: Maybe<Scalars['Date']>;
+  updatedAt?: Maybe<Scalars['Date']>;
+  display_name?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['String']>;
+};
+
+
+export type StrapiSocialGithubCreatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
+export type StrapiSocialGithubUpdatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+export type StrapiSocialGithubFilterInput = {
+  url?: Maybe<StringQueryOperatorInput>;
+  createdAt?: Maybe<DateQueryOperatorInput>;
+  updatedAt?: Maybe<DateQueryOperatorInput>;
+  display_name?: Maybe<StringQueryOperatorInput>;
+  id?: Maybe<StringQueryOperatorInput>;
+};
+
+export type StrapiSocialGroupConnection = {
+  totalCount: Scalars['Int'];
+  edges: Array<StrapiSocialEdge>;
+  nodes: Array<StrapiSocial>;
+  pageInfo: PageInfo;
+  field: Scalars['String'];
+  fieldValue?: Maybe<Scalars['String']>;
+};
+
+export type StrapiSocialInstagram = {
+  url?: Maybe<Scalars['String']>;
+  createdAt?: Maybe<Scalars['Date']>;
+  updatedAt?: Maybe<Scalars['Date']>;
+  display_name?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['String']>;
+};
+
+
+export type StrapiSocialInstagramCreatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
+export type StrapiSocialInstagramUpdatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+export type StrapiSocialInstagramFilterInput = {
+  url?: Maybe<StringQueryOperatorInput>;
+  createdAt?: Maybe<DateQueryOperatorInput>;
+  updatedAt?: Maybe<DateQueryOperatorInput>;
+  display_name?: Maybe<StringQueryOperatorInput>;
+  id?: Maybe<StringQueryOperatorInput>;
+};
+
+export type StrapiSocialLinkedIn = {
+  url?: Maybe<Scalars['String']>;
+  createdAt?: Maybe<Scalars['Date']>;
+  updatedAt?: Maybe<Scalars['Date']>;
+  display_name?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['String']>;
+};
+
+
+export type StrapiSocialLinkedInCreatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
+export type StrapiSocialLinkedInUpdatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+export type StrapiSocialLinkedInFilterInput = {
+  url?: Maybe<StringQueryOperatorInput>;
+  createdAt?: Maybe<DateQueryOperatorInput>;
+  updatedAt?: Maybe<DateQueryOperatorInput>;
+  display_name?: Maybe<StringQueryOperatorInput>;
+  id?: Maybe<StringQueryOperatorInput>;
+};
+
+export type StrapiSocialSortInput = {
+  fields?: Maybe<Array<Maybe<StrapiSocialFieldsEnum>>>;
+  order?: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
+export type StrapiSocialTwitter = {
+  url?: Maybe<Scalars['String']>;
+  createdAt?: Maybe<Scalars['Date']>;
+  updatedAt?: Maybe<Scalars['Date']>;
+  display_name?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['String']>;
+};
+
+
+export type StrapiSocialTwitterCreatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
+export type StrapiSocialTwitterUpdatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+export type StrapiSocialTwitterFilterInput = {
+  url?: Maybe<StringQueryOperatorInput>;
+  createdAt?: Maybe<DateQueryOperatorInput>;
+  updatedAt?: Maybe<DateQueryOperatorInput>;
+  display_name?: Maybe<StringQueryOperatorInput>;
+  id?: Maybe<StringQueryOperatorInput>;
+};
+
+export type StrapiSocialUpdated_By = {
+  firstname?: Maybe<Scalars['String']>;
+  lastname?: Maybe<Scalars['String']>;
+  createdAt?: Maybe<Scalars['Date']>;
+  updatedAt?: Maybe<Scalars['Date']>;
+  id?: Maybe<Scalars['String']>;
+};
+
+
+export type StrapiSocialUpdated_ByCreatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
+export type StrapiSocialUpdated_ByUpdatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+export type StrapiSocialUpdated_ByFilterInput = {
+  firstname?: Maybe<StringQueryOperatorInput>;
+  lastname?: Maybe<StringQueryOperatorInput>;
+  createdAt?: Maybe<DateQueryOperatorInput>;
+  updatedAt?: Maybe<DateQueryOperatorInput>;
+  id?: Maybe<StringQueryOperatorInput>;
+};
 
 export type StringQueryOperatorInput = {
   eq?: Maybe<Scalars['String']>;
@@ -4269,39 +5540,18 @@ export type StringQueryOperatorInput = {
 export type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type Unnamed_1_Query = { site?: Maybe<{ siteMetadata?: Maybe<(
-      Pick<SiteSiteMetadata, 'siteUrl'>
-      & { social?: Maybe<Pick<SiteSiteMetadataSocial, 'twitter'>> }
-    )> }> };
+export type Unnamed_1_Query = { strapiSite?: Maybe<Pick<StrapiSite, 'url'>>, strapiSocial?: Maybe<{ twitter?: Maybe<Pick<StrapiSocialTwitter, 'url'>> }> };
 
-export type DataQueryQueryVariables = Exact<{ [key: string]: never; }>;
+export type CvDataQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type DataQueryQuery = { cvJson?: Maybe<{ info?: Maybe<Pick<CvJsonInfo, 'name' | 'phone' | 'city' | 'email' | 'linkedIn' | 'github'>>, side_projects?: Maybe<(
-      Pick<CvJsonSide_Projects, 'section_title'>
-      & { projects?: Maybe<Array<Maybe<Pick<CvJsonSide_ProjectsProjects, 'id' | 'name' | 'start_date' | 'end_date' | 'description' | 'is_ongoing' | 'show'>>>> }
-    )>, career_summary?: Maybe<Pick<CvJsonCareer_Summary, 'section_title' | 'description'>>, technical_skills?: Maybe<(
-      Pick<CvJsonTechnical_Skills, 'section_title'>
-      & { skills?: Maybe<Array<Maybe<(
-        Pick<CvJsonTechnical_SkillsSkills, 'id' | 'group_name'>
-        & { technologies?: Maybe<Array<Maybe<Pick<CvJsonTechnical_SkillsSkillsTechnologies, 'id' | 'name'>>>> }
-      )>>> }
-    )>, education?: Maybe<(
-      Pick<CvJsonEducation, 'section_title'>
-      & { formal?: Maybe<Array<Maybe<Pick<CvJsonEducationFormal, 'id' | 'foundation' | 'start_date' | 'end_date' | 'title'>>>>, languages?: Maybe<Array<Maybe<Pick<CvJsonEducationLanguages, 'id' | 'name' | 'proficiency'>>>>, extra_courses?: Maybe<(
-        Pick<CvJsonEducationExtra_Courses, 'section_title'>
-        & { platforms?: Maybe<Array<Maybe<(
-          Pick<CvJsonEducationExtra_CoursesPlatforms, 'id' | 'name'>
-          & { courses?: Maybe<Array<Maybe<Pick<CvJsonEducationExtra_CoursesPlatformsCourses, 'id' | 'name' | 'hours'>>>> }
-        )>>> }
-      )> }
-    )>, career_history?: Maybe<(
-      Pick<CvJsonCareer_History, 'section_title'>
-      & { jobs?: Maybe<Array<Maybe<Pick<CvJsonCareer_HistoryJobs, 'id' | 'role' | 'description' | 'company' | 'end_date' | 'is_actual' | 'start_date'>>>> }
-    )>, interests?: Maybe<(
-      Pick<CvJsonInterests, 'section_title'>
-      & { values?: Maybe<Array<Maybe<Pick<CvJsonInterestsValues, 'id' | 'name'>>>> }
-    )> }> };
+export type CvDataQuery = { personal?: Maybe<Pick<StrapiPersonalInformation, 'phone' | 'email' | 'city' | 'country' | 'full_name'>>, social?: Maybe<{ github?: Maybe<Pick<StrapiSocialGithub, 'url' | 'display_name'>>, linkedIn?: Maybe<Pick<StrapiSocialLinkedIn, 'url' | 'display_name'>> }>, cv?: Maybe<(
+    Pick<StrapiCv, 'summary'>
+    & { jobs?: Maybe<Array<Maybe<Pick<StrapiCvJobs, 'id' | 'role' | 'description' | 'company' | 'start_date' | 'end_date' | 'is_actual'>>>>, technical_skills?: Maybe<Array<Maybe<(
+      Pick<StrapiCvTechnical_Skills, 'id' | 'name'>
+      & { technologies?: Maybe<Array<Maybe<Pick<StrapiCvTechnical_SkillsTechnologies, 'id' | 'name'>>>> }
+    )>>>, education?: Maybe<{ formal?: Maybe<Array<Maybe<Pick<StrapiCvEducationFormal, 'id' | 'foundation' | 'start_date' | 'end_date' | 'is_actual' | 'title'>>>>, languages?: Maybe<Array<Maybe<Pick<StrapiCvEducationLanguages, 'id' | 'name' | 'proficiency'>>>> }>, interests?: Maybe<Array<Maybe<Pick<StrapiCvInterests, 'name' | 'id'>>>>, side_projects?: Maybe<Array<Maybe<Pick<StrapiCvSide_Projects, 'id' | 'name' | 'description' | 'start_date' | 'end_date' | 'is_ongoing' | 'is_visible'>>>> }
+  )> };
 
 export type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -4325,7 +5575,7 @@ export type UsesQuery = { allMdx: { edges: Array<{ node: (
 export type Unnamed_3_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type Unnamed_3_Query = { site?: Maybe<{ siteMetadata?: Maybe<(
-      Pick<SiteSiteMetadata, 'profilePic' | 'author'>
-      & { social?: Maybe<Pick<SiteSiteMetadataSocial, 'github' | 'linkedIn' | 'twitter'>> }
-    )> }> };
+export type Unnamed_3_Query = { strapiPersonalInformation?: Maybe<(
+    Pick<StrapiPersonalInformation, 'full_name'>
+    & { profile_pic?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>> }> }> }
+  )>, strapiSocial?: Maybe<{ linkedIn?: Maybe<Pick<StrapiSocialLinkedIn, 'url'>>, github?: Maybe<Pick<StrapiSocialGithub, 'url'>>, twitter?: Maybe<Pick<StrapiSocialTwitter, 'url'>> }> };

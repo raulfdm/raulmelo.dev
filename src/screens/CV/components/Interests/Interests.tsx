@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { styled } from '@screens/CV/styled';
-import { CvJsonInterests } from '@app-types/graphql';
+import { StrapiCv } from '@app-types/graphql';
 import {
   Section,
   SectionTitle,
@@ -15,15 +15,15 @@ const InterestItem = styled.li`
   }
 `;
 
-export const Interests: React.FC<{ data: CvJsonInterests }> = ({ data }) => {
-  const { section_title, values } = data;
+type InterestsProps = Pick<StrapiCv, 'interests'>;
 
+export const Interests: React.FC<InterestsProps> = ({ interests }) => {
   return (
     <Section>
-      <SectionTitle>{section_title}</SectionTitle>
+      <SectionTitle>Interests</SectionTitle>
       <SectionBody>
         <ul>
-          {values!.map((interest) => {
+          {interests!.map((interest) => {
             const { id, name } = interest!;
 
             return <InterestItem key={id!}>{name}</InterestItem>;

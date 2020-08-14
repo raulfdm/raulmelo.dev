@@ -3,26 +3,41 @@ import { useStaticQuery } from 'gatsby';
 import { mergeDeepRight } from 'ramda';
 
 import { render } from '@utils/test';
-import AuthorPresentation from './AuthorPresentation';
-import { SiteMetadata } from '@app-types';
+import AuthorPresentation, { QueryProps } from './AuthorPresentation';
 
 jest.mock('gatsby');
+jest.mock(
+  'gatsby-image',
+  () =>
+    function MockedImage() {
+      return <div />;
+    },
+);
 
-function mockApiResult(custom?: any): Partial<SiteMetadata> {
-  const defaults = {
-    profilePic:
-      'https://miro.medium.com/fit/c/256/256/1*6jtMoNvX_MHslzBLP4aM9g.jpeg',
-    author: 'Raul Melo',
-    social: {},
+function mockApiResult(custom?: Partial<QueryProps>): Partial<QueryProps> {
+  const defaultMockedQueryResponse = {
+    strapiPersonalInformation: {
+      full_name: 'Raul Melo',
+      profile_pic: {
+        childImageSharp: {
+          fixed: {
+            url:
+              'https://miro.medium.com/fit/c/256/256/1*6jtMoNvX_MHslzBLP4aM9g.jpeg',
+          },
+        },
+      },
+    },
+    strapiSocial: {},
   };
 
-  const mergedProps = mergeDeepRight(defaults, custom || {});
+  const mergedProps = mergeDeepRight(
+    defaultMockedQueryResponse,
+    custom || {},
+  ) as QueryProps;
 
-  (useStaticQuery as jest.Mock<typeof useStaticQuery>).mockReturnValue({
-    site: {
-      siteMetadata: mergedProps,
-    },
-  } as any);
+  (useStaticQuery as jest.Mock<typeof useStaticQuery>).mockReturnValue(
+    mergedProps as any,
+  );
 
   return mergedProps;
 }
@@ -33,11 +48,13 @@ describe('<AuthorPresentation />', () => {
   });
 
   it('renders author name', () => {
-    const siteMetadata = mockApiResult();
+    const siteInfo = mockApiResult();
 
     const { getByTestId } = render(<AuthorPresentation />);
 
-    expect(getByTestId('author').textContent).toBe(siteMetadata.author);
+    expect(getByTestId('author').textContent).toBe(
+      siteInfo.strapiPersonalInformation?.full_name,
+    );
   });
 
   it('renders site description from locale', () => {
@@ -54,8 +71,10 @@ describe('<AuthorPresentation />', () => {
     const github = 'https://github.com/raulfdm';
 
     mockApiResult({
-      social: {
-        github,
+      strapiSocial: {
+        github: {
+          url: github,
+        },
       },
     });
 
@@ -68,8 +87,10 @@ describe('<AuthorPresentation />', () => {
     const twitter = 'https://twitter.com/raul_fdm';
 
     mockApiResult({
-      social: {
-        twitter,
+      strapiSocial: {
+        twitter: {
+          url: twitter,
+        },
       },
     });
 
@@ -84,8 +105,10 @@ describe('<AuthorPresentation />', () => {
     const linkedIn = 'https://www.linkedin.com/in/raulfdm/';
 
     mockApiResult({
-      social: {
-        linkedIn,
+      strapiSocial: {
+        linkedIn: {
+          url: linkedIn,
+        },
       },
     });
 

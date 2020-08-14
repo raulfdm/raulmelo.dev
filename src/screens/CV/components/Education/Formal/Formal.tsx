@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { CvJsonEducationFormal, Maybe } from '@app-types/graphql';
+import { StrapiCvEducation } from '@app-types/graphql';
 import { styled } from '@screens/CV/styled';
 import { RangeDate } from '@screens/CV/components/shared/RangeDate';
 import { CourseList } from '@screens/CV/components/shared/Ui';
@@ -19,13 +19,13 @@ const Company = styled.p`
   display: inline;
 `;
 
-export const Formal: React.FC<{ data: Maybe<CvJsonEducationFormal[]> }> = ({
-  data,
-}) => {
+type FormalProps = Pick<StrapiCvEducation, 'formal'>;
+
+export const Formal: React.FC<FormalProps> = ({ formal }) => {
   return (
     <CourseList>
-      {data!.map((formalEdu) => {
-        const { start_date, end_date, title, foundation, id } = formalEdu!;
+      {formal!.map((edu) => {
+        const { start_date, end_date, foundation, id, is_actual, title } = edu!;
 
         return (
           <FormalItem key={id!}>
@@ -33,7 +33,7 @@ export const Formal: React.FC<{ data: Maybe<CvJsonEducationFormal[]> }> = ({
               <RangeDate
                 endDate={end_date}
                 startDate={start_date}
-                isActual={false}
+                isActual={is_actual!}
               />
             </Period>
             <Company>{`${title} - ${foundation}`}</Company>
