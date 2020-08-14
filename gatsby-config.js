@@ -6,25 +6,31 @@ const { algoliaSetupOptions } = require('./helpers');
 const isProduction = R.propEq('NODE_ENV', 'production')(process.env);
 console.log('isProduction -->', isProduction);
 
-const siteMetadata = {
-  title: 'Raul Melo',
-  author: 'Raul Melo',
-  siteUrl: 'https://raulmelo.dev',
-  profilePic:
-    'https://miro.medium.com/fit/c/256/256/1*6jtMoNvX_MHslzBLP4aM9g.jpeg',
-  social: {
-    twitter: 'https://twitter.com/raul_fdm',
-    linkedIn: 'https://www.linkedin.com/in/raulfdm/',
-    github: 'https://github.com/raulfdm',
-  },
-};
-
 const plugins = [
   `gatsby-plugin-netlify`,
   `gatsby-plugin-offline`,
   `gatsby-plugin-react-helmet`,
   `gatsby-plugin-sharp`,
-  `gatsby-plugin-sitemap`,
+  {
+    resolve: `gatsby-plugin-sitemap`,
+    options: {
+      query: `
+        {
+          strapiSite {
+            url
+          }
+          allSitePage {
+            nodes {
+              path
+            }
+          }
+        }
+      `,
+      resolveSiteUrl: ({ strapiSite }) => {
+        return strapiSite.url;
+      },
+    },
+  },
   `gatsby-plugin-styled-components`,
   `gatsby-plugin-typescript`,
   `gatsby-transformer-json`,
@@ -41,13 +47,6 @@ const plugins = [
     options: {
       path: `${__dirname}/data/uses`,
       name: `uses`,
-    },
-  },
-  {
-    resolve: `gatsby-source-filesystem`,
-    options: {
-      path: `${__dirname}/data/cv`,
-      name: 'data',
     },
   },
   {
@@ -188,6 +187,5 @@ if (isProduction) {
 }
 
 module.exports = {
-  siteMetadata,
   plugins,
 };

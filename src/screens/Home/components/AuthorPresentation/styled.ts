@@ -1,6 +1,7 @@
 import { styled, media } from '@styles/styled';
+import GatsbyImage from 'gatsby-image';
 
-export const Wrapper = styled.div`
+export const AuthorPresentationWrapper = styled.div`
   display: flex;
   flex-direction: column-reverse;
   justify-content: space-between;
@@ -11,20 +12,20 @@ export const Wrapper = styled.div`
   `}
 `;
 
-export const ImageWrapper = styled.div`
-  max-width: 8rem;
+export const Image = styled(GatsbyImage)`
+  border-radius: 50%;
+  width: 100%;
   margin-bottom: 2rem;
+  max-width: 8rem;
+  max-height: 8rem;
 
   ${media.greaterThan('medium')`
     max-width: 12.8rem;
+    max-height: 12.8rem;
+
     margin-left: 4rem;
     margin-bottom: 0;
   `}
-`;
-
-export const Image = styled.img`
-  border-radius: 50%;
-  width: 100%;
 `;
 
 export const AuthorDataWrapper = styled.div`

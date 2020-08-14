@@ -3,60 +3,99 @@ import { FormattedMessage } from 'react-intl';
 import { Twitter, Linkedin, Github } from '@styled-icons/boxicons-logos';
 import { useStaticQuery, graphql } from 'gatsby';
 
-import * as S from './styled';
+import {
+  AuthorPresentationWrapper,
+  AuthorDataWrapper,
+  AuthorName,
+  AuthorSynopsis,
+  SocialWrapper,
+  SocialLink,
+  Image,
+} from './styled';
+import { StrapiSocial, StrapiPersonalInformation } from '@app-types/graphql';
 
-const AuthorPresentation: React.FC = () => {
-  const data = useStaticQuery(graphql`
-    {
-      site {
-        siteMetadata {
-          profilePic
-          author
-          social {
-            github
-            linkedIn
-            twitter
+export type QueryProps = {
+  strapiPersonalInformation: Pick<
+    StrapiPersonalInformation,
+    'full_name' | 'profile_pic'
+  >;
+  strapiSocial: Pick<StrapiSocial, 'linkedIn' | 'github' | 'twitter'>;
+};
+
+const query = graphql`
+  {
+    strapiPersonalInformation {
+      full_name
+      profile_pic {
+        childImageSharp {
+          fixed(quality: 100, width: 128, height: 128) {
+            # This fragment has a bug
+            # https://github.com/graphql/graphiql/issues/612
+            # https://github.com/gatsbyjs/gatsby/issues/13723
+            # ...GatsbyImageSharpFixed
+            base64
+            width
+            height
+            src
+            srcSet
           }
         }
       }
     }
-  `);
+    strapiSocial {
+      linkedIn {
+        url
+      }
+      github {
+        url
+      }
+      twitter {
+        url
+      }
+    }
+  }
+`;
+
+const AuthorPresentation: React.FC = () => {
+  const data: QueryProps = useStaticQuery(query);
 
   const {
-    author,
-    profilePic,
-    social: { github, linkedIn, twitter },
-  } = data.site.siteMetadata;
+    strapiPersonalInformation: { full_name, profile_pic },
+    strapiSocial: { linkedIn, github, twitter },
+  } = data;
 
   return (
-    <S.Wrapper>
-      <S.AuthorDataWrapper>
-        <S.AuthorName data-testid="author">{author}</S.AuthorName>
-        <S.AuthorSynopsis data-testid="description">
+    <AuthorPresentationWrapper>
+      <AuthorDataWrapper>
+        <AuthorName data-testid="author">{full_name}</AuthorName>
+        <AuthorSynopsis data-testid="description">
           <FormattedMessage id="siteData.description" />
-        </S.AuthorSynopsis>
-        <S.SocialWrapper>
+        </AuthorSynopsis>
+        <SocialWrapper>
           {github && (
-            <S.SocialLink href={github} data-testid="github-url">
+            <SocialLink href={github.url!} data-testid="github-url">
               <Github size={21} />
-            </S.SocialLink>
+            </SocialLink>
           )}
           {twitter && (
-            <S.SocialLink href={twitter} data-testid="twitter-url">
+            <SocialLink href={twitter.url!} data-testid="twitter-url">
               <Twitter size={21} />
-            </S.SocialLink>
+            </SocialLink>
           )}
           {linkedIn && (
-            <S.SocialLink href={linkedIn} data-testid="linkedIn-url">
+            <SocialLink href={linkedIn.url!} data-testid="linkedIn-url">
               <Linkedin size={21} />
-            </S.SocialLink>
+            </SocialLink>
           )}
-        </S.SocialWrapper>
-      </S.AuthorDataWrapper>
-      <S.ImageWrapper>
-        <S.Image src={profilePic} />
-      </S.ImageWrapper>
-    </S.Wrapper>
+        </SocialWrapper>
+      </AuthorDataWrapper>
+      <Image
+        /* @ts-ignore */
+        fixed={profile_pic!.childImageSharp?.fixed}
+        width={120}
+        height={120}
+      />
+    </AuthorPresentationWrapper>
   );
 };
 

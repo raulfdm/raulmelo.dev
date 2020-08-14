@@ -17,17 +17,18 @@ type SEOProps = {
 
 const SEO: React.FC<SEOProps> = (props) => {
   const {
-    site: {
-      siteMetadata: { social, siteUrl },
+    strapiSite: { url: siteUrl },
+    strapiSocial: {
+      twitter: { url: twitterUrl },
     },
   } = useStaticQuery(graphql`
     {
-      site {
-        siteMetadata {
-          siteUrl
-          social {
-            twitter
-          }
+      strapiSite {
+        url
+      }
+      strapiSocial {
+        twitter {
+          url
         }
       }
     }
@@ -68,7 +69,7 @@ const SEO: React.FC<SEOProps> = (props) => {
 
       {/* Twitter Card tags */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:creator" content={social.twitter} />
+      <meta name="twitter:creator" content={twitterUrl} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={metaImg} />

@@ -54,24 +54,8 @@ export type AllMarkdownRemark = {
   edges: PostEdges;
 };
 
-export type SocialSiteMetadata = {
-  github: string;
-  twitter: string;
-  linkedIn: string;
-};
-
-export type SiteMetadata = {
-  profilePic: string;
-  siteUrl: string;
-  social: SocialSiteMetadata;
-  author: string;
-};
-
 export type GraphQLResponse = {
   data: {
     allMdx: AllMarkdownRemark;
-    site?: {
-      siteMetadata: SiteMetadata;
-    };
   };
 };
