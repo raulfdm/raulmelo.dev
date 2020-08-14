@@ -5,19 +5,20 @@ import {
   SectionTitle,
   SectionBody,
 } from '@screens/CV/components/shared/Section';
-import { CvJsonSide_Projects } from '@app-types/graphql';
+import { StrapiCv } from '@app-types/graphql';
 import { deepMemo } from '@utils/components';
 import { Project } from '@screens/CV/components/shared/Project';
 
-export const SideProjects: React.FC<{ data: CvJsonSide_Projects }> = deepMemo(
-  ({ data }) => {
-    const { section_title, projects } = data;
+type SideProjectsProps = Pick<StrapiCv, 'side_projects'>;
+
+export const SideProjects: React.FC<SideProjectsProps> = deepMemo(
+  ({ side_projects }) => {
     return (
       <Section>
-        <SectionTitle>{section_title}</SectionTitle>
+        <SectionTitle>Side Projects</SectionTitle>
         <SectionBody>
-          {projects!
-            .filter((p) => p!.show)
+          {side_projects!
+            .filter((p) => p?.is_visible)
             .map((project) => {
               const {
                 name,
@@ -33,7 +34,7 @@ export const SideProjects: React.FC<{ data: CvJsonSide_Projects }> = deepMemo(
                   key={id!}
                   title={name!}
                   startDate={start_date}
-                  endDate={end_date as string | undefined}
+                  endDate={end_date}
                   onGoing={!!is_ongoing}
                   description={description!}
                 />

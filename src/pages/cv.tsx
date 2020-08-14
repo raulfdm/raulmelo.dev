@@ -15,17 +15,23 @@ import {
   Education,
   SideProjects,
 } from '@screens/CV/components';
-import { CvJson } from '@app-types/graphql';
+import {
+  StrapiPersonalInformation,
+  StrapiSocial,
+  StrapiCv,
+} from '@app-types/graphql';
 import { theme, GlobalCVStyles, StyledThemeProvider } from '@screens/CV/styled';
 import { CVMain, HomeLink, ScrollToTopButton } from '@screens/CV/components/UI';
 
 type CvPageProps = {
   data: {
-    cvJson: CvJson;
+    personal: StrapiPersonalInformation;
+    social: StrapiSocial;
+    cv: StrapiCv;
   };
 };
 
-const CvPage: React.FC<CvPageProps> = ({ data: { cvJson } }) => {
+const CvPage: React.FC<CvPageProps> = ({ data: { personal, social, cv } }) => {
   const { moveToTop } = useScrollToTop();
 
   return (
@@ -45,13 +51,21 @@ const CvPage: React.FC<CvPageProps> = ({ data: { cvJson } }) => {
       <HomeLink to="/">Back to home</HomeLink>
       <CVMain>
         <StyledThemeProvider theme={theme as any}>
-          <Info data={cvJson.info!} />
-          <CareerSummary data={cvJson.career_summary!} />
-          <TechnicalSkills data={cvJson.technical_skills!} />
-          <CareerExperience data={cvJson.career_history!} />
-          <SideProjects data={cvJson.side_projects!} />
-          <Education data={cvJson.education!} />
-          <Interests data={cvJson.interests!} />
+          <Info
+            full_name={personal.full_name}
+            phone={personal.phone}
+            city={personal.city}
+            country={personal.country}
+            email={personal.email}
+            linkedIn={social.linkedIn}
+            github={social.github}
+          />
+          <CareerSummary summary={cv.summary} />
+          <TechnicalSkills technical_skills={cv.technical_skills} />
+          <CareerExperience jobs={cv.jobs} />
+          <SideProjects side_projects={cv.side_projects} />
+          <Education education={cv.education} />
+          <Interests interests={cv.interests} />
         </StyledThemeProvider>
         <ScrollToTopButton onClick={moveToTop}>
           <ArrowheadUp size={21} />
@@ -62,50 +76,50 @@ const CvPage: React.FC<CvPageProps> = ({ data: { cvJson } }) => {
 };
 
 export const pageQuery = graphql`
-  query DataQuery {
-    cvJson {
-      info {
-        name
-        phone
-        city
-        email
-        linkedIn
-        github
+  query CVData {
+    personal: strapiPersonalInformation {
+      phone
+      email
+      city
+      country
+      full_name
+    }
+    social: strapiSocial {
+      github {
+        url
+        display_name
       }
-      side_projects {
-        section_title
-        projects {
-          id
-          name
-          start_date
-          end_date
-          description
-          is_ongoing
-          show
-        }
+      linkedIn {
+        url
+        display_name
       }
-      career_summary {
-        section_title
+    }
+    cv: strapiCv {
+      summary
+      jobs {
+        id
+        role
         description
+        company
+        start_date
+        end_date
+        is_actual
       }
       technical_skills {
-        section_title
-        skills {
+        id
+        name
+        technologies {
           id
-          technologies {
-            id
-            name
-          }
-          group_name
+          name
         }
       }
       education {
-        section_title
         formal {
           id
           foundation
           start_date
           end_date
+          is_actual
           title
         }
         languages {
@@ -113,37 +127,19 @@ export const pageQuery = graphql`
           name
           proficiency
         }
-        extra_courses {
-          section_title
-          platforms {
-            id
-            name
-            courses {
-              id
-              name
-              hours
-            }
-          }
-        }
-      }
-      career_history {
-        section_title
-        jobs {
-          id
-          role
-          description
-          company
-          end_date
-          is_actual
-          start_date
-        }
       }
       interests {
-        section_title
-        values {
-          id
-          name
-        }
+        name
+        id
+      }
+      side_projects {
+        id
+        name
+        description
+        start_date
+        end_date
+        is_ongoing
+        is_visible
       }
     }
   }

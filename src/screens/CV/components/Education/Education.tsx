@@ -1,10 +1,6 @@
 import React from 'react';
 
-import {
-  CvJsonEducation,
-  CvJsonEducationFormal,
-  // CvJsonEducationExtra_Courses,
-} from '@app-types/graphql';
+import { StrapiCv } from '@app-types/graphql';
 import {
   Section,
   SectionTitle,
@@ -12,22 +8,20 @@ import {
 } from '@screens/CV/components/shared/Section';
 import { Formal } from './Formal';
 import { Languages } from './Languages';
-// import { ExtraCourses } from './ExtraCourses';
 import { deepMemo } from '@utils/components';
 
-export const Education: React.FC<{ data: CvJsonEducation }> = deepMemo(
-  ({ data }) => {
-    const { section_title, /* extra_courses, */ formal, languages } = data;
+type EducationProps = Pick<StrapiCv, 'education'>;
 
-    return (
-      <Section>
-        <SectionTitle>{section_title}</SectionTitle>
-        <SectionBody>
-          <Formal data={formal as CvJsonEducationFormal[]} />
-          <Languages data={languages as CvJsonEducationFormal[]} />
-          {/* <ExtraCourses data={extra_courses as CvJsonEducationExtra_Courses} /> */}
-        </SectionBody>
-      </Section>
-    );
-  },
-);
+export const Education: React.FC<EducationProps> = deepMemo(({ education }) => {
+  const { formal, languages } = education!;
+
+  return (
+    <Section>
+      <SectionTitle>Education and Languages</SectionTitle>
+      <SectionBody>
+        <Formal formal={formal} />
+        <Languages languages={languages} />
+      </SectionBody>
+    </Section>
+  );
+});
