@@ -83,6 +83,7 @@ jobs:
           GATSBY_ALGOLIA_SEARCH_KEY: ${{ secrets.GATSBY_ALGOLIA_SEARCH_KEY }}
           ALGOLIA_ADMIN_KEY: ${{ secrets.ALGOLIA_ADMIN_KEY }}
           GATSBY_ALGOLIA_INDEX_NAME: ${{ secrets.GATSBY_ALGOLIA_INDEX_NAME }}
+          STRAPI_API_URL: https://raulmelo-dev-server.herokuapp.com
 
       - name: Save public folder as artifact
         uses: actions/upload-artifact@v2

@@ -156,6 +156,13 @@ const plugins = [
       },
     },
   },
+  {
+    resolve: `gatsby-source-strapi`,
+    options: {
+      apiURL: process.env.STRAPI_API_URL || `http://localhost:1337`,
+      singleTypes: [`cv`, `personal-information`, `social`, `site`],
+    },
+  },
 ];
 
 if (isProduction) {
