@@ -1,6 +1,7 @@
 const path = require('path');
+const { PROJECT_DIR_NAME } = require('./globals');
 
-const BLOGS_PATH = path.resolve(__dirname, '../blog');
+const BLOGS_PATH = path.resolve(PROJECT_DIR_NAME, '../blog');
 const DEFAULT_LANG = 'pt';
 
 function getFileLanguageForSlug(fileName) {

@@ -1,7 +1,7 @@
 require('dotenv').config();
 const R = require('ramda');
 
-const { algoliaSetupOptions } = require('./helpers');
+const { algoliaSetupOptions, PROJECT_DIR_NAME } = require('./helpers');
 
 const isProduction = R.propEq('NODE_ENV', 'production')(process.env);
 console.log('isProduction -->', isProduction);
@@ -38,14 +38,14 @@ const plugins = [
   {
     resolve: `gatsby-source-filesystem`,
     options: {
-      path: `${__dirname}/blog`,
+      path: `${PROJECT_DIR_NAME}/blog`,
       name: `blog`,
     },
   },
   {
     resolve: `gatsby-source-filesystem`,
     options: {
-      path: `${__dirname}/data/uses`,
+      path: `${PROJECT_DIR_NAME}/data/uses`,
       name: `uses`,
     },
   },
