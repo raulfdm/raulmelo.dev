@@ -55,6 +55,16 @@ So, get the **server running** first and then run:
 yarn web:dev
 ```
 
+### Both in the same time
+
+If you want to run both with a single command, after having setup the `.env` files, just run:
+
+```
+yarn dev
+```
+
+This command uses [`concurrently`](https://www.npmjs.com/package/concurrently) package to run both projects and [`wait-on`](https://www.npmjs.com/package/wait-on) to run the website only after the server is available.
+
 ## License
 
 [MIT](/LICENSE)

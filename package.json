@@ -11,21 +11,27 @@
     "projects/*"
   ],
   "scripts": {
-    "server:dev": "yarn workspace @raulmelo.dev/server dev",
-    "server:build": "yarn workspace @raulmelo.dev/server build",
-    "server:start": "yarn workspace @raulmelo.dev/server start",
-    "web:dev": "yarn workspace @raulmelo.dev/web dev",
-    "web:build": "yarn workspace @raulmelo.dev/web build",
-    "web:test": "yarn workspace @raulmelo.dev/web test",
-    "web:e2e": "yarn workspace @raulmelo.dev/web e2e:run",
-    "web:lint": "yarn workspace @raulmelo.dev/web lint"
+    "base:server": "yarn workspace @raulmelo.dev/server",
+    "server:dev": "yarn base:server dev",
+    "server:build": "yarn base:server build",
+    "server:start": "yarn base:server start",
+    "base:web": "yarn workspace @raulmelo.dev/web",
+    "web:dev": "yarn base:web dev",
+    "web:dev:wait": "wait-on http://localhost:1337 && yarn web:dev",
+    "web:build": "yarn base:web build",
+    "web:test": "yarn base:web test",
+    "web:e2e": "yarn base:web e2e:run",
+    "web:lint": "yarn base:web lint",
+    "dev": "concurrently \"yarn:server:dev\" \"yarn:web:dev:wait\""
   },
   "devDependencies": {
     "@sub-tv/prettier-config": "1.1.0",
+    "concurrently": "5.3.0",
     "husky": "4.2.5",
     "pin-dependencies-checker": "1.0.5",
     "prettier": "2.0.5",
-    "pretty-quick": "2.0.1"
+    "pretty-quick": "2.0.1",
+    "wait-on": "5.2.0"
   },
   "husky": {
     "hooks": {
