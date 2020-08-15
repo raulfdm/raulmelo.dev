@@ -1,0 +1,47 @@
+{
+  "kind": "singleType",
+  "collectionName": "cvs",
+  "info": {
+    "name": "cv"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "summary": {
+      "type": "text",
+      "required": true
+    },
+    "jobs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "cv.job",
+      "required": true
+    },
+    "technical_skills": {
+      "type": "component",
+      "repeatable": true,
+      "component": "cv.tech-skill",
+      "required": true
+    },
+    "interests": {
+      "type": "component",
+      "repeatable": true,
+      "component": "cv.interest",
+      "required": true
+    },
+    "side_projects": {
+      "type": "component",
+      "repeatable": true,
+      "component": "cv.side-project",
+      "required": true
+    },
+    "education": {
+      "type": "component",
+      "repeatable": false,
+      "component": "cv.education",
+      "required": true
+    }
+  }
+}

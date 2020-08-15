@@ -1,6 +1,10 @@
-.cache
-package.json
-package-lock.json
-public
+## General
+**/.cache
+**/public
+.history
 
-types/graphql-types.ts
+## Server
+projects/server/build
+
+## Web
+graphql-types.ts

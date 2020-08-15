@@ -1,6 +1,10 @@
-name: Platform
+name: Web
 
-on: [push]
+on:
+  push:
+    paths:
+      - "projects/web/**"
+      - ".github/workflows/web.yml"
 
 jobs:
   install-dependencies:
@@ -24,7 +28,8 @@ jobs:
         with:
           path: |
             ${{ steps.yarn-cache-dir.outputs.dir }}
-            **/node_modules
+            node_modules
+            */*/node_modules
             ~/.cache
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
@@ -55,7 +60,8 @@ jobs:
         with:
           path: |
             ${{ steps.yarn-cache-dir.outputs.dir }}
-            **/node_modules
+            node_modules
+            */*/node_modules
             ~/.cache
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
@@ -66,14 +72,14 @@ jobs:
         id: gatsby-public-folder
         with:
           path: |
-            public
-            .cache
+            projects/web/public
+            projects/web/.cache
           key: ${{ runner.os }}-public-gatsby-${{ github.ref }}
           restore-keys: |
             ${{ runner.OS }}-public-gatsby-
 
       - name: Build
-        run: yarn build --log-pages
+        run: yarn web:build --log-pages
         env:
           # incremental builds
           # https://www.gatsbyjs.org/docs/page-build-optimizations-for-incremental-data-changes/
@@ -89,13 +95,13 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: public
-          path: public/**/*
+          path: projects/web/public/**/*
 
       - name: Save .cache as artifact
         uses: actions/upload-artifact@v2
         with:
           name: .cache
-          path: .cache/**/*
+          path: projects/web/.cache/**/*
 
       # These 2 steps is only happening here and not in a another step
       # Because it seems there's no way to force update a cache.
@@ -105,17 +111,17 @@ jobs:
         uses: nwtgck/actions-netlify@v1.1
         id: deploy
         with:
-          publish-dir: './public'
+          publish-dir: "projects/web/public"
           github-token: ${{ secrets.GITHUB_TOKEN }}
           production-branch: main
-          deploy-message: 'Deploy from GitHub Actions'
+          deploy-message: "Deploy from GitHub Actions"
         env:
           NODE_ENV: production
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
 
       - name: Cypress run
-        run: yarn cypress run
+        run: yarn web:e2e
         env:
           CYPRESS_BASE_URL: ${{ steps.deploy.outputs.deploy-url }}
 
@@ -141,16 +147,17 @@ jobs:
         with:
           path: |
             ${{ steps.yarn-cache-dir.outputs.dir }}
-            **/node_modules
+            node_modules
+            */*/node_modules
             ~/.cache
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
 
       - name: Run ESLint
-        run: yarn lint
+        run: yarn web:lint
 
       - name: Run Test
-        run: yarn jest --color
+        run: yarn web:test --color
         env:
           CI: true

@@ -1,0 +1,40 @@
+name: Server
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "projects/server/**"
+      - "scripts/**"
+      - ".github/workflows/server.yml"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check branch code
+        uses: actions/checkout@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - name: Install Heroku CLI
+        run: npm install -g heroku
+
+      - name: Git globals
+        run: |
+          git config --global user.email "melo.raulf@gmail.com"
+          git config --global user.name "Raul Melo"
+
+      - name: Create netrc
+        run: ./scripts/heroku
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+
+      - name: Deploy server to Heroku
+        run: |
+          heroku git:remote -a raulmelo-dev-server
+          git push heroku `git subtree split --prefix projects/server`:main --force

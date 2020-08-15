@@ -1,0 +1,11 @@
+## Write .netrc
+NETRC_PATH=~/.netrc
+
+rm $NETRC_PATH
+
+echo "machine api.heroku.com
+  login melo.raulf@gmail.com
+  password $HEROKU_API_KEY
+machine git.heroku.com
+  login melo.raulf@gmail.com
+  password $HEROKU_API_KEY" >> $NETRC_PATH
