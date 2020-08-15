@@ -3,6 +3,10 @@
   "private": true,
   "author": "Raul Melo <melo.raulf@gmail.com>",
   "license": "MIT",
+  "engines": {
+    "node": "12.x",
+    "yarn": "1.x"
+  },
   "workspaces": [
     "projects/*"
   ],
@@ -16,8 +20,16 @@
     "web:e2e": "yarn workspace @raulmelo.dev/web e2e:run",
     "web:lint": "yarn workspace @raulmelo.dev/web lint"
   },
-  "engines": {
-    "node": "12.x",
-    "yarn": "1.x"
+  "devDependencies": {
+    "@sub-tv/prettier-config": "1.1.0",
+    "husky": "4.2.5",
+    "pin-dependencies-checker": "1.0.5",
+    "prettier": "2.0.5",
+    "pretty-quick": "2.0.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged && yarn pin-checker --devDeps=true --deps=true"
+    }
   }
 }

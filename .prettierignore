@@ -1,0 +1,10 @@
+## General
+**/.cache
+**/public
+.history
+
+## Server
+projects/server/build
+
+## Web
+graphql-types.ts
