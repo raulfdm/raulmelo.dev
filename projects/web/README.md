@@ -1,41 +1,32 @@
-# Personal Website and Blog
+# Website
 
-> Medium asks you to pay to read my articles? No problem, just hold my beer.
-
-<p align="center">
-  <a href="https://github.com/sub-tv/sub-tv-cli/actions" title="Github Actions">
-    <img src="https://github.com/raulfdm/raulmelo.dev/workflows/Node.js%20CI/badge.svg" alt="Build bagde">
-  </a>
-</p>
-
-## Language
-
-The default language is my mother lang, PT-BR 🇧🇷 but I already prepare the environment for English posts as soon I have them.
+> ![Web](https://github.com/raulfdm/raulmelo.dev/workflows/Web/badge.svg)
 
 ## Stack
 
-- TypeScript
 - [Gatsby started default](https://github.com/gatsbyjs/gatsby-starter-default);
-- [Styled Components](https://styled-components.com/);
-- [Styled Icons](styled-icons.js.org/);
-- [React Inlt](https://github.com/formatjs/react-intl) for locales
+- [TypeScript](https://www.typescriptlang.org/)
+- [Styled Components](https://styled-components.com/) for styles;
+- [Styled Icons](https://styled-icons.js.org/) - collection of svg icons as React components;
+- [React Inlt](https://github.com/formatjs/react-intl) for locales;
+- [Framer Motion](https://www.framer.com/api/motion/) for smooth animations;
+- [Mobx State Tree](https://mobx-state-tree.js.org/intro/philosophy) as easy state management;
+- [Algolia](https://www.algolia.com/) for search
 
-## How to run
+For hosting I use Netlify services. Since they have limit amount of machine usage, I build using Github Actions and only ship the files via Netlici CLI.
 
-1. Clone this repository
-1. Install all dependencies by running `yarn`
-1. Run the dev server by running `yarn dev`
+## Language
 
-## Structure
+This blog is mainly in Brazilian Portuguese (my mother language) just because when I started to write I didn't know english and I was engaged to the brazilian dev community.
+
+However the interface is translated and there are blog posts in both English and Portuguese language.
+
+## Blog post structure
 
 For new blog posts, a folder with the following structure should be created inside `blog` folder:
 
 ```txt
-blog/<post-year>/<post-month>/<post-short-title>/index.md
+blog/<post-short-title>/index.mdx
 ```
 
-For an English translation, in the post folder, just add a file `index.en.md`
-
-## License
-
-[MIT](/LICENSE)
+For an English translation, in the post folder, just add a file `index.en.mdx`
