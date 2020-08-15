@@ -72,8 +72,8 @@ jobs:
         id: gatsby-public-folder
         with:
           path: |
-            public
-            .cache
+            projects/web/public
+            projects/web/.cache
           key: ${{ runner.os }}-public-gatsby-${{ github.ref }}
           restore-keys: |
             ${{ runner.OS }}-public-gatsby-
@@ -95,13 +95,13 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: public
-          path: public/**/*
+          path: projects/web/public/**/*
 
       - name: Save .cache as artifact
         uses: actions/upload-artifact@v2
         with:
           name: .cache
-          path: .cache/**/*
+          path: projects/web/.cache/**/*
 
       # These 2 steps is only happening here and not in a another step
       # Because it seems there's no way to force update a cache.
@@ -111,7 +111,7 @@ jobs:
         uses: nwtgck/actions-netlify@v1.1
         id: deploy
         with:
-          publish-dir: "./public"
+          publish-dir: "projects/web/public"
           github-token: ${{ secrets.GITHUB_TOKEN }}
           production-branch: main
           deploy-message: "Deploy from GitHub Actions"
