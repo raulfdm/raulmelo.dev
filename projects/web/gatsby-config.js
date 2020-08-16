@@ -43,13 +43,6 @@ const plugins = [
     },
   },
   {
-    resolve: `gatsby-source-filesystem`,
-    options: {
-      path: `${PROJECT_DIR_NAME}/data/uses`,
-      name: `uses`,
-    },
-  },
-  {
     resolve: `gatsby-alias-imports`,
     options: {
       aliases: {
@@ -71,6 +64,7 @@ const plugins = [
     resolve: `gatsby-plugin-graphql-codegen`,
     options: {
       fileName: `types/graphql-types.ts`,
+      documentPaths: ['../../node_modules/gatsby-*/**/*.js'],
     },
   },
   {
@@ -159,6 +153,7 @@ const plugins = [
     resolve: `gatsby-source-strapi`,
     options: {
       apiURL: process.env.STRAPI_API_URL || `http://localhost:1337`,
+      contentTypes: [`uses`],
       singleTypes: [`cv`, `personal-information`, `social`, `site`],
     },
   },

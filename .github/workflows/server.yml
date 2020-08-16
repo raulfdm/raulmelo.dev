@@ -2,12 +2,12 @@ name: Server
 
 on:
   push:
-    branches:
-      - main
+    # branches:
+    #   - main
     paths:
-      - "projects/server/**"
-      - "scripts/**"
-      - ".github/workflows/server.yml"
+      - 'projects/server/**'
+      - 'scripts/**'
+      - '.github/workflows/server.yml'
 
 jobs:
   deploy:
