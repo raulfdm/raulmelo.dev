@@ -64,14 +64,26 @@ const createFields = ({ node, actions, createNodeId }) => {
           .digest('hex'),
       },
     };
+
     actions.createNode(newNode);
     actions.createParentChildLink({
       parent: node,
+      path: '',
       child: newNode,
     });
   }
 
-  if (node.internal.type === `Mdx`) {
+  /**
+   * Here I have to check if fileAbsolutePath because of in "handleStrapi" fn,
+   * it created a MDX node but not from a local file but via API (string format)
+   *
+   * When handling this data there, it puts into MDX umbrella and it pass
+   * both API content and File content in the same pipeline (which it's wrong).
+   *
+   * It might be changed in the future when I migrate even the posts to strapi
+   * but them it'll be necessary rethinking the fields creation.
+   */
+  if (node.internal.type === `Mdx` && node.fileAbsolutePath) {
     handleMdx();
   }
 
