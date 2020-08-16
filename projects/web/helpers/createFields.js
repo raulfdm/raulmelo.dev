@@ -1,4 +1,6 @@
 const path = require('path');
+const crypto = require('crypto');
+
 const { PROJECT_DIR_NAME } = require('./globals');
 
 const BLOGS_PATH = path.resolve(PROJECT_DIR_NAME, '../blog');
@@ -8,9 +10,10 @@ function getFileLanguageForSlug(fileName) {
   return fileName.split('.')[1] || DEFAULT_LANG;
 }
 
-const createFields = ({ node, actions }) => {
+const createFields = ({ node, actions, createNodeId }) => {
   const { createNodeField } = actions;
-  if (node.internal.type === `Mdx`) {
+
+  function handleMdx() {
     const fileName = path.basename(node.fileAbsolutePath, `.mdx`);
 
     const postDirectoryPath = path.dirname(node.fileAbsolutePath);
@@ -43,6 +46,49 @@ const createFields = ({ node, actions }) => {
       name: `postFolderName`,
       value: postPath,
     });
+  }
+
+  //https://github.com/strapi/gatsby-source-strapi/issues/89#issuecomment-559731259
+  function handleStrapi() {
+    const newNode = {
+      id: createNodeId(`StrapiUsesContent-${node.id}`),
+      parent: node.id,
+      children: [],
+      internal: {
+        content: node.content || ' ',
+        type: 'StrapiUsesContent',
+        mediaType: 'text/markdown',
+        contentDigest: crypto
+          .createHash('md5')
+          .update(node.content || ' ')
+          .digest('hex'),
+      },
+    };
+
+    actions.createNode(newNode);
+    actions.createParentChildLink({
+      parent: node,
+      path: '',
+      child: newNode,
+    });
+  }
+
+  /**
+   * Here I have to check if fileAbsolutePath because of in "handleStrapi" fn,
+   * it created a MDX node but not from a local file but via API (string format)
+   *
+   * When handling this data there, it puts into MDX umbrella and it pass
+   * both API content and File content in the same pipeline (which it's wrong).
+   *
+   * It might be changed in the future when I migrate even the posts to strapi
+   * but them it'll be necessary rethinking the fields creation.
+   */
+  if (node.internal.type === `Mdx` && node.fileAbsolutePath) {
+    handleMdx();
+  }
+
+  if (node.internal.type === 'StrapiUses') {
+    handleStrapi();
   }
 };
 

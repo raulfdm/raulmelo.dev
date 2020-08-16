@@ -1,39 +1,41 @@
 import React from 'react';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { graphql } from 'gatsby';
-import { UsesQuery } from '@app-types/graphql';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 
+import { StrapiUsesConnection } from '@app-types/graphql';
 import Layout from '@components/Layout';
 import { BlogGlobalStyle } from '@styles/blogPost';
 import { useIntl } from '@contexts/react-intl';
 
-const Uses: React.FC<{ data: UsesQuery }> = ({ data }) => {
+type UsesProps = {
+  data: {
+    allStrapiUses: StrapiUsesConnection;
+  };
+};
+
+const Uses: React.FC<UsesProps> = ({ data }) => {
   const { locale } = useIntl();
 
-  const content = data.allMdx.edges.find((t) => t.node.fields!.lang === locale);
+  const uses = data.allStrapiUses.nodes.find((t) => t.language === locale);
 
   return (
     <Layout>
       <BlogGlobalStyle />
-      <MDXRenderer>{content!.node.body}</MDXRenderer>
+      <MDXRenderer>{uses!.childStrapiUsesContent!.childMdx!.body}</MDXRenderer>
     </Layout>
   );
 };
 
 export const query = graphql`
   query Uses {
-    allMdx(
-      sort: { fields: [frontmatter___date], order: DESC }
-      limit: 1000
-      filter: { fileAbsolutePath: { regex: "//uses//" } }
-    ) {
-      edges {
-        node {
-          id
-          fields {
-            lang
+    allStrapiUses {
+      nodes {
+        id
+        language
+        childStrapiUsesContent {
+          childMdx {
+            body
           }
-          body
         }
       }
     }

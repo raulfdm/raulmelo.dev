@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "uses",
+  "info": {
+    "name": "Use"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "language": {
+      "type": "enumeration",
+      "enum": ["pt", "en"],
+      "required": true
+    },
+    "content": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}
