@@ -117,9 +117,5 @@
     "sanitize.css": "11.0.1",
     "styled-components": "5.1.1",
     "typescript": "3.9.7"
-  },
-  "resolutions": {
-    "acorn": "^6.4.1",
-    "minimist": "^1.2.3"
   }
 }

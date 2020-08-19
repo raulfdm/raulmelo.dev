@@ -23,7 +23,11 @@ const createFields = ({ node, actions, createNodeId }) => {
     const postLang = getFileLanguageForSlug(fileName);
 
     /* Gets the relative nested folder path */
-    const postPath = path.relative(BLOGS_PATH, postDirectoryPath);
+    const postPath = path
+      .relative(BLOGS_PATH, postDirectoryPath)
+      /* This is hacky but it'll be fixed as soon I migrate all posts to strapi */
+      .replace('../web/blog/', '');
+
     const localePath = isDefaultLanguage ? '' : `${postLang}/`;
     const blogPostFolderPath = `/blog/${localePath}${postPath}`;
 
