@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import React from 'react';
-import * as R from 'ramda';
 import { FormattedMessage, FormattedDate, defineMessages } from 'react-intl';
 import { Link } from 'gatsby';
 
 import { Tag, Tags } from '@components/Ui';
-import { PostNode, LOCALES, LocaleValues } from '@app-types';
+import { LOCALES, LocaleValues } from '@app-types';
 import { useIntl } from '@contexts/react-intl';
+import { isNotNilNorEmpty } from '@utils/utilities';
 import {
   Body,
   DateAndTime,
@@ -16,58 +16,67 @@ import {
   Title,
   PostCardWrapper,
 } from './styled';
+import { PostInstance, PostTagsInstance } from '@stores/apiStore';
 
 type PostCardProps = {
-  postNode: PostNode;
+  post: PostInstance;
+  tags?: PostTagsInstance;
 };
 
-const messages = defineMessages({
-  [LOCALES.PT]: {
-    id: 'languages.pt',
-  },
-  [LOCALES.EN]: {
-    id: 'languages.en',
-  },
-});
-
-export const PostCard: React.FC<PostCardProps> = ({ postNode }) => {
+export const PostCard: React.FC<PostCardProps> = ({ post, tags }) => {
   const { formatMessage } = useIntl();
-  const { frontmatter, timeToRead, fields, translations } = postNode;
-  const { image, date, title, subtitle, tags } = frontmatter!;
 
-  const shouldRenderTags = !R.pipe(R.isNil, R.isEmpty)(tags);
+  const {
+    featuredImage,
+    title,
+    language,
+    subtitle,
+    date,
+    translation,
+    childStrapiPostContent: {
+      childMdx: { timeToRead },
+    },
+    postUri,
+  } = post;
 
-  function generateLanguagesText(): string {
-    const firstLanguage = messages[fields?.lang as LocaleValues];
+  const postLanguages = React.useMemo(() => {
+    const messages = defineMessages({
+      [LOCALES.PT]: {
+        id: 'languages.pt',
+      },
+      [LOCALES.EN]: {
+        id: 'languages.en',
+      },
+    });
 
-    function getPostAvailableTranslation(): null | string {
-      if (!translations) return null;
-      const postLang = R.head(translations)!.lang as LocaleValues;
+    function generateLanguagesText(): string {
+      const firstLanguage = messages[language as LocaleValues];
+      const secondLanguage = translation?.language
+        ? messages[translation.language as LocaleValues]
+        : null;
 
-      // TODO: FIX
-      // @ts-ignore
-      return messages[postLang as LocaleValues];
+      const languages = [firstLanguage, secondLanguage]
+        .filter((l) => l)
+        .map((l) => formatMessage(l as { id: string }))
+        .join(' / ');
+
+      return `(${languages})`;
     }
 
-    const languages = [firstLanguage, getPostAvailableTranslation()]
-      .filter((l) => l)
-      .map((l) => formatMessage(l as { id: string }))
-      .join(' / ');
-
-    return `(${languages})`;
-  }
+    return generateLanguagesText();
+  }, [language, translation]);
 
   return (
     <PostCardWrapper>
-      {image && (
+      {featuredImage?.childImageSharp && (
         <ImageContainer>
           {/* @ts-ignore */}
-          <Image fluid={image.childImageSharp.fluid} />
+          <Image fluid={featuredImage?.childImageSharp.fluid} />
         </ImageContainer>
       )}
       <Body>
         <Title>
-          <Link to={fields!.slug} data-testid="post-card">
+          <Link to={postUri} data-testid="post-card">
             {title}
           </Link>
         </Title>
@@ -88,14 +97,13 @@ export const PostCard: React.FC<PostCardProps> = ({ postNode }) => {
               minutes: timeToRead,
             }}
           />{' '}
-          {generateLanguagesText()}
+          {postLanguages}
         </DateAndTime>
         {subtitle && <Subtitle>{subtitle}</Subtitle>}
-
-        {shouldRenderTags && (
+        {isNotNilNorEmpty(tags) && (
           <Tags>
-            {tags?.map((tag) => (
-              <Tag key={tag} tag={tag} />
+            {tags!.map((tag) => (
+              <Tag key={tag?.id} tag={tag?.name} slug={tag?.slug} />
             ))}
           </Tags>
         )}

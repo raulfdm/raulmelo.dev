@@ -2,7 +2,10 @@ import { PostsStore } from './postStore';
 import mockedAllPosts from './__mocks__/mockedPosts';
 
 function createState(posts = mockedAllPosts) {
-  return PostsStore.create({ posts, activeFilter: 'all' } as any);
+  const store = PostsStore.create({ activeFilter: 'all', apiData: {} } as any);
+
+  store.apiData.setPosts(posts as any);
+  return store;
 }
 
 describe('postFilters', () => {
@@ -11,10 +14,6 @@ describe('postFilters', () => {
 
     it('activeFilter is "all"', () => {
       expect(store.activeFilter).toBe('all');
-    });
-
-    it('initialize with posts send', () => {
-      expect(store.posts).toEqual(mockedAllPosts);
     });
 
     it('numberOfPostsToShow is 5', () => {
@@ -58,18 +57,6 @@ describe('postFilters', () => {
         expect(store.activeFilter).toBe('series');
       });
     });
-
-    describe('fn: setPosts', () => {
-      it('should store sent posts', () => {
-        const store = createState([]);
-
-        expect(store.posts).toEqual([]);
-
-        store.setPosts(mockedAllPosts as any);
-
-        expect(store.posts).toEqual(mockedAllPosts);
-      });
-    });
   });
 
   describe('views', () => {
@@ -101,19 +88,21 @@ describe('postFilters', () => {
     });
 
     describe('fn: postsToRender', () => {
-      it('returns the first 5 elements from the list', () => {
+      it('returns the first 5 elements from the list in a specific language', () => {
         const store = createState();
 
-        expect(store.postsToRender()).toHaveLength(5);
-        expect(store.postsToRender()).toMatchSnapshot();
+        expect(store.postsToRender('pt')).toHaveLength(5);
+        expect(store.postsToRender('pt')).toMatchSnapshot();
+        expect(store.postsToRender('en')).toHaveLength(4);
+        expect(store.postsToRender('en')).toMatchSnapshot();
       });
 
       it('returns all elements if the list has less than 5', () => {
         const posts = mockedAllPosts.slice(0, 3);
         const store = createState(posts as any);
 
-        expect(store.postsToRender()).toHaveLength(3);
-        expect(store.postsToRender()).toEqual(posts);
+        expect(store.postsToRender('pt')).toHaveLength(3);
+        expect(store.postsToRender('pt')).toEqual(posts);
       });
     });
   });

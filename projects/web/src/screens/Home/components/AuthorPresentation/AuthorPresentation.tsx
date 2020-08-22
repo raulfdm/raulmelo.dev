@@ -67,23 +67,23 @@ const AuthorPresentation: React.FC = () => {
   return (
     <AuthorPresentationWrapper>
       <AuthorDataWrapper>
-        <AuthorName data-testid="author">{full_name}</AuthorName>
-        <AuthorSynopsis data-testid="description">
+        <AuthorName data-testid="author__name">{full_name}</AuthorName>
+        <AuthorSynopsis data-testid="author__description">
           <FormattedMessage id="siteData.description" />
         </AuthorSynopsis>
         <SocialWrapper>
           {github && (
-            <SocialLink href={github.url!} data-testid="github-url">
+            <SocialLink href={github.url!} data-testid="author__githubUrl">
               <Github size={21} />
             </SocialLink>
           )}
           {twitter && (
-            <SocialLink href={twitter.url!} data-testid="twitter-url">
+            <SocialLink href={twitter.url!} data-testid="author__twitterUrl">
               <Twitter size={21} />
             </SocialLink>
           )}
           {linkedIn && (
-            <SocialLink href={linkedIn.url!} data-testid="linkedIn-url">
+            <SocialLink href={linkedIn.url!} data-testid="author__linkedInUrl">
               <Linkedin size={21} />
             </SocialLink>
           )}

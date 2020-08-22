@@ -2,15 +2,14 @@ import React from 'react';
 import { defineMessages } from 'react-intl';
 import { observer } from 'mobx-react';
 
-import { PostsStore } from '@screens/Home/stores';
+import { PostsStoreInstance } from '@screens/Home/stores';
 import SEO from '@components/SEO';
 import { useIntl } from '@contexts/react-intl';
-import { getAndSanitizePostsFromQueryResponse } from '@screens/Home/helpers/posts';
 import AuthorPresentation from '@screens/Home/components/AuthorPresentation';
 import Layout from '@components/Layout';
 import { Filter } from '@screens/Home/components/Filter';
 import { Posts } from '@screens/Home/components/Posts';
-import { PostEdges } from '@app-types';
+import { LocaleValues } from '@app-types';
 import { PostFilters } from './types';
 
 const messages = defineMessages({
@@ -24,35 +23,22 @@ const messages = defineMessages({
 
 type HomePageTemplateType = {
   pageContext: {
-    postEdges: PostEdges;
+    store: PostsStoreInstance;
   };
 };
-
-const state = PostsStore.create({ activeFilter: 'all' });
 
 const HomePageTemplate: React.FC<HomePageTemplateType> = observer(
   ({ pageContext }) => {
     const { locale, formatMessage } = useIntl();
+    const { store } = pageContext;
 
     const {
-      setPosts,
       postsToRender,
       activeFilter,
       loadMore,
       hasMore,
       changeFilter,
-    } = state;
-
-    React.useEffect(() => {
-      const { postEdges } = pageContext;
-
-      const posts = getAndSanitizePostsFromQueryResponse({
-        postEdges,
-        preferredLang: locale,
-      });
-
-      setPosts(posts);
-    }, []);
+    } = store;
 
     return (
       <>
@@ -70,7 +56,7 @@ const HomePageTemplate: React.FC<HomePageTemplateType> = observer(
             changeFilter={changeFilter}
           />
           <Posts
-            posts={postsToRender() as PostEdges}
+            posts={postsToRender(locale as LocaleValues)}
             filter={activeFilter as PostFilters}
             loadMore={loadMore}
             hasMore={hasMore()}

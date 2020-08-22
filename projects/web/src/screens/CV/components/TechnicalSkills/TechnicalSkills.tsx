@@ -26,7 +26,6 @@ export const TechnicalSkills: React.FC<TechnicalSkillsProps> = deepMemo(
                 <List>
                   {technologies!.map((tech) => {
                     const { id, name } = tech!;
-                    console.log();
                     return <Skill key={id!}>{name}</Skill>;
                   })}
                 </List>

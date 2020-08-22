@@ -1,7 +1,7 @@
 require('dotenv').config();
 const R = require('ramda');
 
-const { algoliaSetupOptions, PROJECT_DIR_NAME } = require('./helpers');
+const { algoliaSetupOptions } = require('./helpers');
 
 const isProduction = R.propEq('NODE_ENV', 'production')(process.env);
 console.log('isProduction -->', isProduction);
@@ -36,13 +36,6 @@ const plugins = [
   `gatsby-transformer-json`,
   `gatsby-transformer-sharp`,
   {
-    resolve: `gatsby-source-filesystem`,
-    options: {
-      path: `${PROJECT_DIR_NAME}/blog`,
-      name: `blog`,
-    },
-  },
-  {
     resolve: `gatsby-alias-imports`,
     options: {
       aliases: {
@@ -57,6 +50,8 @@ const plugins = [
         '@static': 'static',
         '@styles': 'src/styles',
         '@utils': 'src/utils',
+        '@stores': 'src/stores',
+        '@globalShared': 'globalShared/',
       },
     },
   },
@@ -153,7 +148,7 @@ const plugins = [
     resolve: `gatsby-source-strapi`,
     options: {
       apiURL: process.env.STRAPI_API_URL || `http://localhost:1337`,
-      contentTypes: [`uses`],
+      contentTypes: [`uses`, `posts`, `post-tags`, `post-serie`],
       singleTypes: [`cv`, `personal-information`, `social`, `site`],
     },
   },

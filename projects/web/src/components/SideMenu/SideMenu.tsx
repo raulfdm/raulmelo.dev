@@ -74,6 +74,7 @@ export const SideMenu = observer(() => {
             transform: `translate3d(100%, 0, 0)`,
           },
         }}
+        data-testid="sideMenu"
       >
         {Object.entries(links).map(([linkId, config]) => {
           return (

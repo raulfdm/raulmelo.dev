@@ -21,7 +21,7 @@ function stripStringAndSetDots(str: string, length = 160): string {
 
 export function joinSubtitleAndDescription(
   description: string,
-  subtitle?: string,
+  subtitle?: string | null,
 ): string {
   if (!subtitle) {
     return description;

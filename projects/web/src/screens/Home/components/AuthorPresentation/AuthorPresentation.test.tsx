@@ -52,7 +52,7 @@ describe('<AuthorPresentation />', () => {
 
     const { getByTestId } = render(<AuthorPresentation />);
 
-    expect(getByTestId('author').textContent).toBe(
+    expect(getByTestId('author__name').textContent).toBe(
       siteInfo.strapiPersonalInformation?.full_name,
     );
   });
@@ -62,7 +62,9 @@ describe('<AuthorPresentation />', () => {
 
     const { getByTestId } = render(<AuthorPresentation />);
 
-    expect(getByTestId('description').textContent).toMatchInlineSnapshot(
+    expect(
+      getByTestId('author__description').textContent,
+    ).toMatchInlineSnapshot(
       `"Developer, writer in my spare time, tech addicted, open-source lover who believes the only way to transform lives is through education."`,
     );
   });
@@ -80,7 +82,9 @@ describe('<AuthorPresentation />', () => {
 
     const { getByTestId } = render(<AuthorPresentation />);
 
-    expect((getByTestId('github-url') as HTMLAnchorElement).href).toBe(github);
+    expect((getByTestId('author__githubUrl') as HTMLAnchorElement).href).toBe(
+      github,
+    );
   });
 
   it('renders twitter if received', () => {
@@ -96,7 +100,7 @@ describe('<AuthorPresentation />', () => {
 
     const { getByTestId } = render(<AuthorPresentation />);
 
-    expect((getByTestId('twitter-url') as HTMLAnchorElement).href).toBe(
+    expect((getByTestId('author__twitterUrl') as HTMLAnchorElement).href).toBe(
       twitter,
     );
   });
@@ -114,7 +118,7 @@ describe('<AuthorPresentation />', () => {
 
     const { getByTestId } = render(<AuthorPresentation />);
 
-    expect((getByTestId('linkedIn-url') as HTMLAnchorElement).href).toBe(
+    expect((getByTestId('author__linkedInUrl') as HTMLAnchorElement).href).toBe(
       linkedIn,
     );
   });

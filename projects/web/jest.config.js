@@ -20,10 +20,12 @@ module.exports = {
      */
     '^@utils/test': '<rootDir>/src/utils/test-utils.tsx',
     '^@utils/(.*)': '<rootDir>/src/utils/$1',
+    '^@stores/(.*)': '<rootDir>/src/stores/$1',
+    '^@globalShared/(.*)': '<rootDir>/globalShared/$1',
   },
   modulePaths: ['<rootDir>/context'],
   setupFilesAfterEnv: ['./src/setupTest.ts'],
   testEnvironment: 'jsdom',
   testMatch: ['**/?(*.)+(spec|test).[tj]s?(x)', '**/__tests__/*.[tj]s?(x)'],
-  testPathIgnorePatterns: ['/node_modules/', '.cache', '.history'],
+  testPathIgnorePatterns: ['/node_modules/', '.cache', '.history', 'types/'],
 };

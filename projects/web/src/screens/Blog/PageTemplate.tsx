@@ -2,25 +2,25 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
-import { Header } from '@screens/Blog/components/Header';
-import { FeaturedImage } from '@screens/Blog/components/FeaturedImage';
-import { SeriesSection } from '@screens/Blog/components/SeriesSection';
-import { BlogPostProps } from '@screens/Blog/types';
+import { AvailableTranslations } from '@screens/Blog/components/AvailableTranslations';
 import { BlogContextProvider } from '@screens/Blog/context';
+import { BlogGlobalStyle } from '@styles/blogPost';
+import { Container, LineDivider } from '@components/Ui';
+import { FeaturedImage } from '@screens/Blog/components/FeaturedImage';
+import { GlobalStyles } from '@styles/index';
+import { Header } from '@screens/Blog/components/Header';
+import { joinSubtitleAndDescription } from '@utils/seo';
+import { MenuBar } from '@components/MenuBar';
+import { pageTransitionVariants, Tags, Tag } from '@components/Ui';
+import { SeriesSection } from '@screens/Blog/components/SeriesSection';
+import { SideMenu } from '@components/SideMenu';
+import { styled, media, SiteTheme } from '@styles/styled';
+import { ThemeProvider } from '@contexts/theme';
 import { useTwitterScript } from '@hooks/useTwitterScript';
 import LayoutBlog from '@screens/Blog/Layout';
-import { pageTransitionVariants, Tags, Tag } from '@components/Ui';
-import { BlogGlobalStyle } from '@styles/blogPost';
-import { GlobalStyles } from '@styles/index';
-import { Container, LineDivider } from '@components/Ui';
-import { MenuBar } from '@components/MenuBar';
-import { Frontmatter } from '@app-types';
 import SEO from '@components/SEO';
-import { ThemeProvider } from '@contexts/theme';
-import { styled, media, SiteTheme } from '@styles/styled';
-import { SideMenu } from '@components/SideMenu';
-import { joinSubtitleAndDescription } from '@utils/seo';
-import { AvailableTranslations } from '@screens/Blog/components/AvailableTranslations';
+import { BlogPostPageContext } from './types';
+import { SitePageContextPostFeaturedImageChildImageSharpOriginal } from '@app-types/graphql';
 
 const Article = styled(motion.article)`
   && {
@@ -33,32 +33,36 @@ const Article = styled(motion.article)`
   }
 `;
 
-const BlogPostPageTemplate: React.FC<BlogPostProps> = ({ pageContext }) => {
+const BlogPostPageTemplate: React.FC<{
+  pageContext: BlogPostPageContext;
+}> = ({ pageContext }) => {
   useTwitterScript();
 
-  const { series, post, translations } = pageContext;
-  const { body, frontmatter, excerpt, fields } = post!.node!;
+  const { post, postUri, serie, translation } = pageContext;
+
   const {
-    image,
-    image_caption: imageCaption,
     title,
     subtitle,
     description,
-    series: seriesInfo,
+    language,
     tags,
-  } = frontmatter as Frontmatter;
+    featuredImage,
+    childStrapiPostContent,
+  } = post;
+
+  const { body, excerpt } = childStrapiPostContent.childMdx!;
 
   return (
     <LayoutBlog>
       <SEO
-        title={title}
+        title={title!}
         description={joinSubtitleAndDescription(
           description || excerpt!,
           subtitle,
         )}
-        lang={fields?.lang!}
-        url={fields?.slug!}
-        image={image?.publicURL}
+        lang={language!}
+        url={postUri!}
+        image={featuredImage?.childImageSharp!.original!.src}
         isBlogPost
       />
       <ThemeProvider>
@@ -73,13 +77,9 @@ const BlogPostPageTemplate: React.FC<BlogPostProps> = ({ pageContext }) => {
         >
           <BlogContextProvider
             value={{
-              series,
-              seriesInfo,
-              title,
-              subtitle,
-              image,
-              imageCaption,
-              translations,
+              serie,
+              post,
+              translation,
             }}
           >
             <Header />
@@ -90,11 +90,14 @@ const BlogPostPageTemplate: React.FC<BlogPostProps> = ({ pageContext }) => {
               <MDXRenderer>{body!}</MDXRenderer>
               <SeriesSection />
               <LineDivider />
-              <Tags>
-                {tags?.map((tag) => (
-                  <Tag key={tag} tag={tag} />
-                ))}
-              </Tags>
+              {tags && (
+                <Tags>
+                  {tags.map((tag) => {
+                    const { id, name, slug } = tag!;
+                    return <Tag key={id} tag={name!} slug={slug!} />;
+                  })}
+                </Tags>
+              )}
             </Container>
           </BlogContextProvider>
         </Article>

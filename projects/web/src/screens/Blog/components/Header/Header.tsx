@@ -26,7 +26,9 @@ const Subtitle = styled.p`
 `;
 
 export const Header = () => {
-  const { title, subtitle } = useBlogContext();
+  const { post } = useBlogContext();
+
+  const { title, subtitle } = post;
 
   return (
     <Container as="header" data-testid="header">

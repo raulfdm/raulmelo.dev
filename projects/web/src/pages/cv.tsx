@@ -49,8 +49,8 @@ const CvPage: React.FC<CvPageProps> = ({ data: { personal, social, cv } }) => {
         />
       </SEO>
       <HomeLink to="/">Back to home</HomeLink>
-      <CVMain>
-        <StyledThemeProvider theme={theme as any}>
+      <CVMain data-testid="cvContent">
+        <StyledThemeProvider theme={theme as never}>
           <Info
             full_name={personal.full_name}
             phone={personal.phone}

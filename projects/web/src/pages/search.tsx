@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import algoliaSearch from 'algoliasearch/lite';
 import { InstantSearch, SearchBox, Hits, Stats } from 'react-instantsearch-dom';
 import { useIntl, defineMessages } from 'react-intl';
@@ -157,22 +157,19 @@ const SearchPage: React.FC = () => {
 
             <Hits
               hitComponent={({ hit }: { hit: HitAlgolia }) => {
-                const { title, subtitle, date, description, ...rest } = hit;
+                const { timeToRead, excerpt } = hit;
 
-                const frontmatter = {
-                  title: title,
-                  subtitle: subtitle ?? '',
-                  date: date,
-                  description: description,
+                const post = {
+                  ...hit,
+                  childStrapiPostContent: {
+                    childMdx: { excerpt, timeToRead },
+                  },
                 };
-
                 return (
-                  <PostCard
-                    postNode={{
-                      frontmatter,
-                      ...rest,
-                    }}
-                  />
+                  <Fragment key={hit.objectID}>
+                    <PostCard post={post as any} />
+                    <br />
+                  </Fragment>
                 );
               }}
             />

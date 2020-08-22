@@ -3,67 +3,127 @@ import * as R from 'ramda';
 import { graphql } from 'gatsby';
 
 import HomeTemplate from '@screens/Home/PageTemplate';
-import { GraphQLResponse, PostEdges } from '@app-types';
+import {
+  StrapiPostsConnection,
+  StrapiPosts,
+  StrapiPostTags,
+  StrapiPostSerie,
+} from '@app-types/graphql';
+import { PostsStore } from '@screens/Home/stores';
 
-const Home: React.FC<GraphQLResponse> = ({ data }) => {
-  const postEdges = R.path(['allMdx', 'edges'], data) as PostEdges;
+type HomeProps = {
+  data: {
+    allStrapiPosts: StrapiPostsConnection;
+  };
+};
+
+const store = PostsStore.create({
+  activeFilter: 'all',
+  apiData: {},
+});
+
+const Home: React.FC<HomeProps> = ({ data }) => {
+  React.useEffect(() => {
+    const posts = R.path(['posts', 'nodes'], data) as StrapiPosts[];
+    const tags = R.path(['tags', 'nodes'], data) as StrapiPostTags[];
+    const series = R.path(['series', 'nodes'], data) as StrapiPostSerie[];
+
+    store.apiData.setPosts(posts);
+    store.apiData.setTags(tags);
+    store.apiData.setSeries(series);
+  }, []);
 
   return (
     <HomeTemplate
       pageContext={{
-        postEdges,
+        store,
       }}
     />
   );
 };
 
 export const query = graphql`
-  {
-    allMdx(
-      sort: { fields: [frontmatter___date], order: DESC }
+  query BlogPosts {
+    posts: allStrapiPosts(
+      sort: { fields: date, order: DESC }
       limit: 1000
-      filter: { fileAbsolutePath: { regex: "//blog//" } }
+      filter: { is_shown: { eq: true } }
     ) {
-      edges {
-        node {
+      nodes {
+        ...BlogPost
+      }
+    }
+    tags: allStrapiPostTags {
+      nodes {
+        id: strapiId
+        slug
+        name
+      }
+    }
+    series: allStrapiPostSerie(
+      sort: { order: ASC, fields: blog_posts___date }
+    ) {
+      nodes {
+        id: strapiId
+        name
+        slug
+        blogPosts: blog_posts {
           id
-          timeToRead
-          frontmatter {
-            series {
-              id
-            }
-            title
-            subtitle
-            date
-            tags
-            description
-            image {
-              childImageSharp {
-                fluid(quality: 60, maxWidth: 700, fit: CONTAIN) {
-                  base64
-                  tracedSVG
-                  srcWebp
-                  srcSetWebp
-                  srcSet
-                  src
-                  sizes
-                  presentationWidth
-                  presentationHeight
-                  originalName
-                  originalImg
-                  aspectRatio
-                }
-              }
-            }
-          }
-          fileAbsolutePath
-          fields {
-            slug
-            lang
-            postFolderName
-          }
         }
       }
+    }
+  }
+
+  fragment BlogPost on StrapiPosts {
+    id: strapiId
+    title
+    subtitle
+    description
+    date
+    serieCopy: serie_copy
+    slug
+    translation {
+      language
+      slug
+    }
+    serie: post_serie {
+      slug
+      id
+    }
+    language
+    featuredImage: featured_image {
+      childImageSharp {
+        original {
+          src
+        }
+        fluid(quality: 100, maxWidth: 1500, fit: CONTAIN) {
+          base64
+          tracedSVG
+          srcWebp
+          srcSetWebp
+          srcSet
+          src
+          sizes
+          presentationWidth
+          presentationHeight
+          originalImg
+          aspectRatio
+        }
+      }
+    }
+    childStrapiPostContent {
+      childMdx {
+        timeToRead
+      }
+    }
+    serie: post_serie {
+      name
+      slug
+    }
+    tags: post_tags {
+      id
+      name
+      slug
     }
   }
 `;

@@ -36,6 +36,8 @@
       "@static/*": ["static/*"],
       "@styles/*": ["src/styles/*"],
       "@utils/*": ["src/utils/*"],
+      "@stores/*": ["src/stores/*"],
+      "@globalShared/*": ["globalShared/*"],
       "@utils/test": ["src/utils/test-utils"]
     }
   },

@@ -8,7 +8,8 @@
       "all": "Latest",
       "single": "Single posts",
       "series": "Series"
-    }
+    },
+    "noPosts": "There's no posts in {language} available for this filter."
   },
   "sideMenu": {
     "home": "Home",

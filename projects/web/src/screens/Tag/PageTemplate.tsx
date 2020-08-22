@@ -1,22 +1,22 @@
 import React from 'react';
 import { defineMessages } from 'react-intl';
+import { observer } from 'mobx-react';
 
 import SEO from '@components/SEO';
 import { useIntl } from '@contexts/react-intl';
-import { getAndSanitizePostsFromQueryResponse } from '@screens/Home/helpers/posts';
 import AuthorPresentation from '@screens/Home/components/AuthorPresentation';
 import Layout from '@components/Layout';
 import { Posts } from '@screens/Home/components/Posts';
-import { PostEdges } from '@app-types';
 import { titleWithNameAndJobTitle } from '@utils/seo';
 import { PostsStore } from '@screens/Home/stores';
 import { PostFilters } from '@screens/Home/types';
-import { observer } from 'mobx-react';
+import { StrapiPostTags, StrapiPosts } from '@app-types/graphql';
+import { PostsInstance } from '@stores/apiStore';
 
 type TagTemplateProps = {
   pageContext: {
-    postEdges: PostEdges;
-    tag: string;
+    posts: StrapiPosts[];
+    tag: StrapiPostTags;
   };
   uri: string;
 };
@@ -30,22 +30,20 @@ const messages = defineMessages({
   },
 });
 
-const state = PostsStore.create({ activeFilter: 'all' });
+const store = PostsStore.create({
+  activeFilter: 'all',
+  apiData: {},
+});
 
 const TagPageTemplate: React.FC<TagTemplateProps> = observer(
   ({ pageContext, uri }) => {
     const { locale, formatMessage } = useIntl();
-    const { postEdges, tag } = pageContext;
-    const { setPosts, postsToRender, hasMore, activeFilter, loadMore } = state;
+    const { posts, tag } = pageContext;
+    const { hasMore, activeFilter, loadMore } = store;
 
     React.useEffect(() => {
-      const posts = getAndSanitizePostsFromQueryResponse({
-        postEdges,
-        preferredLang: locale,
-      });
-
-      setPosts(posts);
-    }, []);
+      store.apiData.setPosts(posts);
+    }, [tag.name]);
 
     return (
       <>
@@ -53,10 +51,10 @@ const TagPageTemplate: React.FC<TagTemplateProps> = observer(
           url={uri}
           lang={locale}
           description={titleWithNameAndJobTitle(
-            formatMessage(messages.description, { tag }),
+            formatMessage(messages.description, { tag: tag.name }),
           )}
           title={titleWithNameAndJobTitle(
-            formatMessage(messages.title, { tag }),
+            formatMessage(messages.title, { tag: tag.name }),
           )}
         />
 
@@ -64,8 +62,8 @@ const TagPageTemplate: React.FC<TagTemplateProps> = observer(
           <main>
             <AuthorPresentation />
             <Posts
-              customTitle={formatMessage(messages.title, { tag })}
-              posts={postsToRender() as PostEdges}
+              customTitle={formatMessage(messages.title, { tag: tag.name })}
+              posts={store.apiData.postsList as PostsInstance}
               filter={activeFilter as PostFilters}
               loadMore={loadMore}
               hasMore={hasMore()}

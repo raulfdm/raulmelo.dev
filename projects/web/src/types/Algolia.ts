@@ -1,13 +1,23 @@
-/* TODO: Refactor this types (and all others) */
+import { LocaleValues } from './Locales';
+import {
+  StrapiPosts,
+  SitePageContextPostChildStrapiPostContentChildMdx,
+} from '@app-types/graphql';
+
 export type HitAlgolia = {
-  description: string;
-  fields: {
-    slug: string;
-  };
-  title: string;
-  subtitle: string | null;
-  timeToRead: number;
-  date: string;
+  objectID: NonNullable<StrapiPosts['id']>;
+  language: LocaleValues;
+  slug: NonNullable<StrapiPosts['slug']>;
+  description: NonNullable<StrapiPosts['description']>;
+  title: NonNullable<StrapiPosts['title']>;
+  subtitle: StrapiPosts['subtitle'];
+  timeToRead: NonNullable<
+    Pick<SitePageContextPostChildStrapiPostContentChildMdx, 'timeToRead'>
+  >;
+  excerpt: NonNullable<
+    Pick<SitePageContextPostChildStrapiPostContentChildMdx, 'timeToRead'>
+  >;
+  date: NonNullable<StrapiPosts['date']>;
 };
 
 export type RequestAlgoliaClient = {

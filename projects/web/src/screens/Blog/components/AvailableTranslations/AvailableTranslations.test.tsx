@@ -10,52 +10,47 @@ jest.mock('@screens/Blog/hooks/useBlogContext');
 const mockedUseBlogContext = useBlogContext as jest.Mock;
 
 describe('<AvailableTranslations />', () => {
-  it('does not render anything if translations is null', () => {
-    mockedUseBlogContext.mockReturnValue({ translations: null } as any);
+  it('does not render anything if translation is null, undefined or empty object', () => {
+    mockedUseBlogContext
+      .mockReturnValue({ translation: null } as any)
+      .mockReturnValueOnce({ translation: undefined })
+      .mockReturnValueOnce({ translation: {} });
+
     render(<AvailableTranslations />);
+
+    expect(
+      screen.queryByTestId('blog-available-translations'),
+    ).not.toBeInTheDocument();
+
+    expect(
+      screen.queryByTestId('blog-available-translations'),
+    ).not.toBeInTheDocument();
 
     expect(
       screen.queryByTestId('blog-available-translations'),
     ).not.toBeInTheDocument();
   });
 
-  it('renders links for all available locales', () => {
+  it('renders link for the translation', () => {
     mockedUseBlogContext.mockReturnValue({
-      translations: [
-        { lang: 'pt', slug: '/post' },
-        { lang: 'en', slug: '/en/post' },
-      ],
+      translation: { language: 'pt', postUri: '/post' },
     } as any);
     render(<AvailableTranslations />);
 
-    const linkElements = screen.queryAllByTestId(
-      'blog-available-translations-link',
-    );
+    const linkEl = screen.queryByTestId('blog-available-translations-link');
 
-    expect(linkElements).toHaveLength(2);
-    expect(linkElements).toMatchInlineSnapshot(`
-      Array [
-        @media (min-width:768px) {
+    expect(linkEl).toBeInTheDocument();
+    expect(linkEl).toMatchInlineSnapshot(`
+      @media (min-width:768px) {
 
       }
 
       <a
-          data-testid="blog-available-translations-link"
-          href="/post"
-        >
-          Portuguese
-        </a>,
-        @media (min-width:768px) {
-
-      }
-
-      <a
-          data-testid="blog-available-translations-link"
-          href="/en/post"
-        >
-          English
-        </a>,
-      ]
+        data-testid="blog-available-translations-link"
+        href="/post"
+      >
+        Portuguese
+      </a>
     `);
   });
 });

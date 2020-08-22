@@ -48,7 +48,7 @@ export const IntlContextProvider: React.FC = ({ children }) => {
   }
 
   return (
-    <IntlProvider locale={language!} messages={messages}>
+    <IntlProvider locale={language! as LocaleValues} messages={messages}>
       <IntlContext.Provider
         value={{ switchToPortuguese, switchToEnglish, switchLocale }}
       >

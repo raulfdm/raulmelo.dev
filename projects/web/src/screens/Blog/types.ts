@@ -1,16 +1,18 @@
-import { SitePageContext } from '@app-types/graphql';
-import { Frontmatter } from '@app-types';
+import {
+  SitePageContext,
+  SitePageContextSerie,
+  SitePageContextPost,
+} from '@app-types/graphql';
+import { DeepNonNullable } from '@app-types';
 
-export type BlogPostProps = {
-  pageContext: SitePageContext;
+export type BlogPostPageContext = {
+  post: DeepNonNullable<SitePageContextPost>;
+  postUri: NonNullable<SitePageContext['postUri']>;
+  serie?: DeepNonNullable<SitePageContextSerie>;
+  translation?: DeepNonNullable<SitePageContext['translation']>;
 };
 
-export type BlogPostContext = {
-  series: SitePageContext['series'];
-  seriesInfo?: Frontmatter['series'];
-  title: Frontmatter['title'];
-  subtitle: Frontmatter['subtitle'];
-  image: Frontmatter['image'];
-  imageCaption: Frontmatter['image_caption'];
-  translations: SitePageContext['translations'];
-};
+export type BlogPostContext = Pick<
+  BlogPostPageContext,
+  'post' | 'serie' | 'translation'
+>;

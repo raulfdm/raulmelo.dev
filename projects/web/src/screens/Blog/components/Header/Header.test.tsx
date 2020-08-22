@@ -1,14 +1,20 @@
 import React from 'react';
+
 import { render } from '@utils/test';
-
-import { Header } from '.';
 import { BlogContextProvider } from '@screens/Blog/context';
-import { BlogPostContext } from '@screens/Blog/types';
+import { Header } from '.';
 
-function renderWithContext(contextValues?: Partial<BlogPostContext>) {
+function renderWithContext(contextValues?: any) {
   return render(
     <BlogContextProvider
-      value={{ title: 'hey, Im a Title', ...contextValues } as any}
+      value={
+        {
+          post: {
+            title: 'hey, Im a Title',
+            ...contextValues,
+          },
+        } as any
+      }
     >
       <Header />
     </BlogContextProvider>,

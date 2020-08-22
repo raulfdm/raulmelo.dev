@@ -39,18 +39,19 @@ module.exports = {
       files: ['*.js'],
       env: {
         node: true,
+        es6: true,
       },
       extends: ['eslint:recommended'],
       parser: 'babel-eslint',
     },
     {
-      files: ['*.test.*'],
+      files: ['*.test.*', '**/__tests__/*.ts'],
       env: {
         jest: true,
         es6: true,
       },
       rules: {
-        '@typescript-eslint/no-explicit-any': 0,
+        '@typescript-eslint/no-explicit-any': 'off',
       },
     },
   ],

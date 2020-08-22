@@ -13,10 +13,16 @@ export const LanguageSwitch: React.FC = () => {
     <DropdownMenu
       items={
         <>
-          <DropdownMenuItem onClick={switchToEnglish}>
+          <DropdownMenuItem
+            onClick={switchToEnglish}
+            data-testid="language__english"
+          >
             <FormattedMessage id="languages.en" />
           </DropdownMenuItem>
-          <DropdownMenuItem onClick={switchToPortuguese}>
+          <DropdownMenuItem
+            onClick={switchToPortuguese}
+            data-testid="language__portuguese"
+          >
             <FormattedMessage id="languages.pt" />
           </DropdownMenuItem>
         </>
@@ -24,7 +30,7 @@ export const LanguageSwitch: React.FC = () => {
     >
       {({ toggleDropdown }) => {
         return (
-          <MenuButton onClick={toggleDropdown}>
+          <MenuButton onClick={toggleDropdown} data-testid="language-menu">
             <Language size={21} />
           </MenuButton>
         );

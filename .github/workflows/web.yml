@@ -3,26 +3,26 @@ name: Web
 on:
   push:
     paths:
-      - "projects/web/**"
-      - ".github/workflows/web.yml"
+      - 'projects/web/**'
+      - '.github/workflows/web.yml'
 
 jobs:
-  install-dependencies:
+  build-and-checks:
     runs-on: ubuntu-latest
     steps:
-      - name: Check branch code
+      - name: Checkout branch code
         uses: actions/checkout@v2
 
-      - name: Setup Node
+      - name: Setup nodejs environment
         uses: actions/setup-node@v1
         with:
           node-version: 12
 
-      - name: Yarn cache directory
+      - name: Defines yarn cache directory
         id: yarn-cache-dir
         run: echo "::set-output name=dir::$(yarn cache dir)"
 
-      - name: Yarn cache
+      - name: Cache yarn modules
         uses: actions/cache@v2
         id: yarn-cache
         with:
@@ -38,47 +38,15 @@ jobs:
       - name: Install dependencies
         run: yarn install --pure-lockfile
 
-  build-deploy-e2e:
-    needs: install-dependencies
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check branch code
-        uses: actions/checkout@v2
+      - name: Run lint
+        run: yarn web:lint
 
-      - name: Setup Node
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12
+      - name: Run unit tests
+        run: yarn web:test --color
+        env:
+          CI: true
 
-      - name: Yarn cache directory
-        id: yarn-cache-dir
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-
-      - name: Yarn cache
-        uses: actions/cache@v2
-        id: yarn-cache
-        with:
-          path: |
-            ${{ steps.yarn-cache-dir.outputs.dir }}
-            node_modules
-            */*/node_modules
-            ~/.cache
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-
-      - name: Gatsby Cache Folder
-        uses: actions/cache@v2
-        id: gatsby-public-folder
-        with:
-          path: |
-            projects/web/public
-            projects/web/.cache
-          key: ${{ runner.os }}-public-gatsby-${{ github.ref }}
-          restore-keys: |
-            ${{ runner.OS }}-public-gatsby-
-
-      - name: Build
+      - name: Build website
         run: yarn web:build --log-pages
         env:
           # incremental builds
@@ -91,73 +59,56 @@ jobs:
           GATSBY_ALGOLIA_INDEX_NAME: ${{ secrets.GATSBY_ALGOLIA_INDEX_NAME }}
           STRAPI_API_URL: https://raulmelo-dev-server.herokuapp.com
 
-      - name: Save public folder as artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: public
-          path: projects/web/public/**/*
+      # This is only useful for debug purposes.
+      # it might be enabled when needed.
 
-      - name: Save .cache as artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: .cache
-          path: projects/web/.cache/**/*
+      # - name: Save public folder as artifact
+      #   uses: actions/upload-artifact@v2
+      #   with:
+      #     name: public
+      #     path: projects/web/public/**/*
+
+      # - name: Save .cache as artifact
+      #   uses: actions/upload-artifact@v2
+      #   with:
+      #     name: .cache
+      #     path: projects/web/.cache/**/*
 
       # These 2 steps is only happening here and not in a another step
       # Because it seems there's no way to force update a cache.
       # It means that even if I setup the gatsby cache up here
       # for the next step it'll use the old version of it.
-      - name: Deploy to Netlify
+      - name: Deploy website to Netlify - URL Preview
         uses: nwtgck/actions-netlify@v1.1
-        id: deploy
+        id: deploy-preview
         with:
-          publish-dir: "projects/web/public"
+          publish-dir: 'projects/web/public'
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          production-branch: main
-          deploy-message: "Deploy from GitHub Actions"
+          # The goal here is never deploy to production
+          # So I can first preview and test on top of it
+          # and only if it pass, triggers another action
+          production-branch: some-weird-name-take-will-never-exists
+          deploy-message: 'Deploy from GitHub Actions - PREVIEW'
         env:
           NODE_ENV: production
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
 
-      - name: Cypress run
+      - name: Run End-to-End tests
         run: yarn web:e2e
         env:
-          CYPRESS_BASE_URL: ${{ steps.deploy.outputs.deploy-url }}
+          CYPRESS_BASE_URL: ${{ steps.deploy-preview.outputs.deploy-url }}
 
-  lint-and-unit:
-    needs: install-dependencies
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check branch code
-        uses: actions/checkout@v2
-
-      - name: Setup Node
-        uses: actions/setup-node@v1
+      - name: Deploy website to Netlify - Production
+        uses: nwtgck/actions-netlify@v1.1
+        id: deploy
+        if: github.ref == 'refs/heads/main'
         with:
-          node-version: 12
-
-      - name: Yarn cache directory
-        id: yarn-cache-dir
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-
-      - name: Yarn cache
-        uses: actions/cache@v2
-        id: yarn-cache
-        with:
-          path: |
-            ${{ steps.yarn-cache-dir.outputs.dir }}
-            node_modules
-            */*/node_modules
-            ~/.cache
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-
-      - name: Run ESLint
-        run: yarn web:lint
-
-      - name: Run Test
-        run: yarn web:test --color
+          publish-dir: 'projects/web/public'
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          production-branch: main
+          deploy-message: 'Deploy from GitHub Actions - PRODUCTION'
         env:
-          CI: true
+          NODE_ENV: production
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}

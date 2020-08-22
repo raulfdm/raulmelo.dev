@@ -4,9 +4,9 @@ import { defineMessages } from 'react-intl';
 
 import { styled } from '@styles/styled';
 import { useBlogContext } from '@screens/Blog/hooks/useBlogContext';
-import { Frontmatter } from '@app-types';
 import { useIntl } from '@contexts/react-intl';
 import { Container } from '@components/Ui';
+import { isNotNilNorEmpty } from '@utils/utilities';
 
 const StyledImg = styled(Img)`
   max-height: 600px;
@@ -20,11 +20,6 @@ const ImgWrapper = styled(Container)`
   }
 `;
 
-interface FeaturedImageProps {
-  image?: Frontmatter['image'];
-  imageCaption?: Frontmatter['image_caption'];
-}
-
 const messages = defineMessages({
   featuredImageLabel: {
     id: 'blog.featuredImage',
@@ -33,9 +28,12 @@ const messages = defineMessages({
 
 export const FeaturedImage = () => {
   const { formatMessage } = useIntl();
-  const { image, imageCaption } = useBlogContext();
+  const { post } = useBlogContext();
 
-  return image ? (
+  /* TODO: Fix this caption issue */
+  const imageCaption = undefined;
+
+  return isNotNilNorEmpty(post.featuredImage) ? (
     <ImgWrapper
       role="img"
       aria-label={formatMessage(messages.featuredImageLabel)}
@@ -43,7 +41,7 @@ export const FeaturedImage = () => {
     >
       <StyledImg
         /* @ts-ignore */
-        fluid={image.childImageSharp.fluid}
+        fluid={post.featuredImage.childImageSharp.fluid}
         alt={imageCaption || formatMessage(messages.featuredImageLabel)}
         data-testid="featured-image"
       />

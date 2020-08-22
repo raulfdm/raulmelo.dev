@@ -3,12 +3,11 @@ import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import { getCanonicalLink } from '@utils/seo';
-import defaultImage from '@static/me.jpg';
 
 type SEOProps = {
   title: string;
   description: string;
-  image?: string;
+  image?: string | null;
   url: string;
   lang: string;
   isBlogPost?: boolean;
@@ -17,16 +16,28 @@ type SEOProps = {
 
 const SEO: React.FC<SEOProps> = (props) => {
   const {
-    strapiSite: { url: siteUrl },
-    strapiSocial: {
+    site: {
+      url: siteUrl,
+      seoImage: {
+        childImageSharp: { original },
+      },
+    },
+    social: {
       twitter: { url: twitterUrl },
     },
   } = useStaticQuery(graphql`
-    {
-      strapiSite {
+    query SEO {
+      site: strapiSite {
         url
+        seoImage: seo_image {
+          childImageSharp {
+            original {
+              src
+            }
+          }
+        }
       }
-      strapiSocial {
+      social: strapiSocial {
         twitter {
           url
         }
@@ -45,7 +56,7 @@ const SEO: React.FC<SEOProps> = (props) => {
     children,
   } = props;
 
-  const metaImg = `${siteUrl}${image || defaultImage}`;
+  const metaImg = `${siteUrl}${image || original.src}`;
   const metaUrl = getCanonicalLink({ siteUrl, uri: url });
 
   return (

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'gatsby';
 
 import { styled, media, css } from '@styles/styled';
-import { tagUri } from '@utils/routing';
+import { tagUri } from '@globalShared/utils';
 
 export const pageTransitionAnimation = {
   initial: { opacity: 0 },
@@ -78,9 +78,9 @@ const StyledTag = styled.li`
   }
 `;
 
-export const Tag: React.FC<{ tag: string }> = ({ tag }) => (
+export const Tag: React.FC<{ tag: string; slug: string }> = ({ tag, slug }) => (
   <StyledTag>
-    <Link to={tagUri(tag)}>#{tag}</Link>
+    <Link to={tagUri(slug)}>#{tag}</Link>
   </StyledTag>
 );
 

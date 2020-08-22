@@ -1,10 +1,10 @@
 import React from 'react';
-import { render, screen } from '@utils/test';
+import { render, screen, userEvent } from '@utils/test';
 
 import { BlogPostContext } from '@screens/Blog/types';
 import { BlogContextProvider } from '@screens/Blog/context';
 import { SeriesSection } from '.';
-import { mockedSeries, mockedSeriesInfo } from './__mocks__/mockedData';
+import { mockedSerie } from './__mocks__/mockedData';
 
 function renderWithContext(
   contextValues?: Partial<BlogPostContext>,
@@ -14,8 +14,10 @@ function renderWithContext(
     <BlogContextProvider
       value={
         {
-          series: mockedSeries,
-          seriesInfo: mockedSeriesInfo,
+          serie: mockedSerie,
+          post: {
+            id: '5f39594b20f7cd7565227f98',
+          },
           ...contextValues,
         } as any
       }
@@ -27,7 +29,7 @@ function renderWithContext(
 
 describe('<SeriesSection />', () => {
   it('does not render anything if series is empty', () => {
-    const { queryByTestId } = renderWithContext({ series: undefined });
+    const { queryByTestId } = renderWithContext({ serie: undefined });
     expect(queryByTestId('series-section')).not.toBeInTheDocument();
   });
 
@@ -42,6 +44,31 @@ describe('<SeriesSection />', () => {
     const { queryByTestId } = renderWithContext();
 
     expect(queryByTestId('series-section-divider')).toBeInTheDocument();
+  });
+
+  it('renders no series posts by default', () => {
+    const { queryByTestId } = renderWithContext();
+
+    expect(queryByTestId('series-post-list')).not.toBeInTheDocument();
+  });
+
+  it('renders series posts when click to expand', async () => {
+    const { queryByRole, getAllByRole, getByTestId } = renderWithContext();
+
+    await userEvent.click(getByTestId('expand-button'));
+
+    expect(queryByRole('list')).toBeInTheDocument();
+    expect(getAllByRole('listitem')).toHaveLength(2);
+  });
+
+  it('add active class when is the current post', async () => {
+    const { queryByTestId, getByTestId } = renderWithContext();
+
+    await userEvent.click(getByTestId('expand-button'));
+
+    expect(queryByTestId('post_' + '5f39594b20f7cd7565227f98')).toHaveClass(
+      'active',
+    );
   });
 
   it('does not render divider when receive noDivider', () => {

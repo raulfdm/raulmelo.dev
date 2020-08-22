@@ -1,95 +1,92 @@
 /// <reference types="cypress" />
 
-import { getFullUrl } from '../support/helpers';
-
 describe('Home', () => {
-  beforeEach(() => {
+  before(() => {
     cy.visit('/');
   });
 
-  describe('Menu Bar', () => {
-    it('renders', () => {
-      cy.findByTestId('menu-bar').should('exist');
-    });
+  it('it renders in english by default', () => {
+    cy.get('html').should('have.attr', 'lang', 'en');
+    cy.findByTestId('author__description').contains(
+      'Developer, writer in my spare time, tech addicted, open-source lover who believes the only way to transform lives is through education.',
+    );
+  });
 
-    it('renders logo link with href "/"', () => {
-      const logoEl = cy.findByTestId('menu-bar__logo');
-
-      logoEl.should('exist');
-      logoEl.find('svg').should('exist');
-      logoEl.click();
-
-      cy.url().should('eq', getFullUrl());
-    });
-
-    describe('Theme Switcher', () => {
-      it('renders in the page', () => {
-        const themeSwitchEl = cy.findByTestId('theme-switch');
-        themeSwitchEl.should('exist');
-      });
-
-      it('toggle between dark and light when clicked', () => {
-        cy.get('body').should('have.class', 'light');
-
-        cy.findByTestId('theme-switch').click();
-        cy.get('body').should('have.class', 'dark');
-
-        cy.findByTestId('theme-switch').click();
-        cy.get('body').should('have.class', 'light');
-      });
-    });
-
-    describe.skip('Language switch', () => {
-      it('select portuguese', () => {});
-      it('select english', () => {});
-    });
-
-    describe('side bar navigation', () => {
-      it('home link redirects to "/"', () => {
-        cy.findByTestId('side-menu-button').click();
-        cy.findByTestId('side-menu-home-link').click();
-
-        cy.location('pathname').should('equal', '/');
-      });
-
-      it('search link redirects to "/search"', () => {
-        cy.findByTestId('side-menu-button').click();
-        cy.findByTestId('side-menu-search-link').click();
-
-        cy.location('pathname').should('equal', '/search');
-      });
-
-      it('uses link redirects to "/uses"', () => {
-        cy.findByTestId('side-menu-button').click();
-        cy.findByTestId('side-menu-uses-link').click();
-
-        cy.location('pathname').should('equal', '/uses');
-      });
-
-      it('curriculum link redirects to "/cv"', () => {
-        cy.findByTestId('side-menu-button').click();
-        cy.findByTestId('side-menu-cv-link').click();
-
-        cy.location('pathname').should('equal', '/cv');
-      });
-    });
-
-    describe.skip('Author presentation', () => {
-      it('renders author name', () => {});
-      it('renders author photo', () => {});
-      it('opens github profile', () => {});
-      it('opens twitter profile', () => {});
-      it('opens linkedin profile', () => {});
-    });
-
-    describe.skip('Panels', () => {
-      it('opens latest by default', () => {});
-      it('opens single posts when clicked', () => {});
-      it('opens series posts when clicked', () => {});
+  describe('Posts', () => {
+    it('renders posts', () => {
+      cy.findAllByTestId('post-card').should('have.length.above', 0);
     });
   });
 
-  it('renders 5 posts', () => {
-    cy.findAllByTestId('post-card').should('have.length', 5);
+  describe('Author', () => {
+    it('renders author name', () => {
+      cy.findByTestId('author__name').should('contain', 'Raul Melo');
+    });
+
+    it('renders author photo', () => {
+      cy.get('.gatsby-image-wrapper picture').should('exist');
+    });
+
+    it('opens github profile', () => {
+      const el = cy.findByTestId('author__githubUrl');
+
+      el.should('exist');
+      el.should('have.attr', 'href', 'https://github.com/raulfdm/');
+    });
+
+    it('opens twitter profile', () => {
+      const el = cy.findByTestId('author__twitterUrl');
+
+      el.should('exist');
+      el.should('have.attr', 'href', 'https://twitter.com/raul_fdm');
+    });
+
+    it('opens linkedIn profile', () => {
+      const el = cy.findByTestId('author__linkedInUrl');
+
+      el.should('exist');
+      el.should('have.attr', 'href', 'https://www.linkedin.com/in/raulfdm/');
+    });
+  });
+
+  describe('Post Filters', () => {
+    it('renders all 3 options', () => {
+      cy.get('[data-testid="postFilter__all"] > p').should('contain', 'Latest');
+
+      cy.get('[data-testid="postFilter__single"] > p').should(
+        'contain',
+        'Single posts',
+      );
+
+      cy.get('[data-testid="postFilter__series"] > p').should(
+        'contain',
+        'Series',
+      );
+    });
+
+    it('opens latest by default', () => {
+      cy.get('[data-testid="postFilter__all"] > p').should(
+        'have.class',
+        'active',
+      );
+    });
+
+    it('opens single posts when clicked', () => {
+      cy.get('[data-testid="postFilter__single"]').click();
+
+      cy.get('[data-testid="postFilter__single"] > p').should(
+        'have.class',
+        'active',
+      );
+    });
+
+    it('opens series posts when clicked', () => {
+      cy.get('[data-testid="postFilter__series"]').click();
+
+      cy.get('[data-testid="postFilter__series"] > p').should(
+        'have.class',
+        'active',
+      );
+    });
   });
 });

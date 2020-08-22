@@ -1,63 +1,60 @@
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import { types, Instance } from 'mobx-state-tree';
 import * as R from 'ramda';
 
-import { filterFirstSeriesPost } from '@screens/Home/helpers/posts';
-import { PostEdges } from '@app-types';
-import { PostEdge } from '@models';
+import { ApiStore } from '@stores/apiStore';
+import { LocaleValues } from '@app-types';
 
 const POST_THRESHOLD = 5;
 
-const Posts = types.array(PostEdge);
-
 type PossibleFilters = 'all' | 'single' | 'series';
-
-type PostsModelInstance = Instance<typeof Posts>;
 
 export const PostsStore = types
   .model('BlogFilters', {
     activeFilter: types.enumeration('Filters', ['all', 'single', 'series']),
-    posts: types.optional(Posts, []),
+    apiData: ApiStore,
     numberOfPostsToShow: POST_THRESHOLD,
   })
-  .actions((self) => {
-    function loadMore() {
+  .actions((self) => ({
+    loadMore() {
       const nextAmountOfPosts = self.numberOfPostsToShow + POST_THRESHOLD;
       self.numberOfPostsToShow =
-        nextAmountOfPosts <= self.posts.length
+        nextAmountOfPosts <= self.apiData.posts.size
           ? nextAmountOfPosts
-          : self.posts.length;
-    }
-
-    function changeFilter(nextFilter: PossibleFilters) {
+          : self.apiData.posts.size;
+    },
+    changeFilter(nextFilter: PossibleFilters) {
       self.activeFilter = nextFilter;
-    }
-
-    function setPosts(nextPosts: PostEdges) {
-      self.posts = nextPosts as PostsModelInstance;
-    }
-
-    return { loadMore, changeFilter, setPosts };
-  })
+    },
+  }))
   .views((self) => {
-    function getPostForFilter() {
+    function postsToRender(language: LocaleValues) {
+      // const postsArray = Object.values(self.apiData.posts.toJSON());
+      const postsArray = self.apiData.getPostPerLanguage()[language];
+
+      let posts = postsArray;
+
       if (self.activeFilter === 'series') {
-        return filterFirstSeriesPost(
-          self.posts as PostEdges,
-        ) as PostsModelInstance;
+        /*
+          The series query must filter by blog_posts.date ascending,
+          in other words, from the first to the latest.
+
+          Here I only want the first post of each series to be picked and showed
+          up in the "series filter"
+        */
+        const onlyFirstSeriesPosts = Object.values(
+          self.apiData.series.toJSON(),
+        ).map((serie) => {
+          return serie!.blogPosts![0].id;
+        });
+
+        posts = postsArray.filter((p) => onlyFirstSeriesPosts.includes(p.id));
       }
 
       if (self.activeFilter === 'single') {
-        return self.posts
-          .toJS()
-          .filter((p) => R.isNil(p.node.frontmatter?.series));
+        posts = postsArray.filter((p) => R.isNil(p.serie));
       }
 
-      return self.posts;
-    }
-
-    function postsToRender() {
-      return getPostForFilter().slice(0, self.numberOfPostsToShow);
+      return posts.slice(0, self.numberOfPostsToShow);
     }
 
     function hasMore() {
@@ -87,3 +84,5 @@ export const PostsStore = types
       postsToRender,
     };
   });
+
+export type PostsStoreInstance = Instance<typeof PostsStore>;

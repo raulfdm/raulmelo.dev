@@ -10,14 +10,18 @@ const { createFields, createBlogPost, createTagPage } = require('./helpers');
 exports.onCreateNode = createFields;
 
 /**
- * This page creation is ONLY need to automatically generate
- * all blog pages whitin the data queries.
+ * This page creation is ONLY needed to automatically generate
+ * all blog and tag pages within data from query. Check the methods to see
+ * it in depth.
+ *
  * All the other existing pages are created by src/pages/x
- * and have their own queries and logic
+ * and have their own queries and logic.
  */
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
-  await createBlogPost({ graphql, createPage });
-  await createTagPage({ graphql, createPage });
+  await Promise.all([
+    createBlogPost({ graphql, createPage }),
+    createTagPage({ graphql, createPage }),
+  ]);
 };

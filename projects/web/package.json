@@ -13,7 +13,7 @@
     "eslint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint": "npm-run-all eslint ts",
     "test": "jest",
-    "e2e:open": "cypress open",
+    "e2e:open": "CYPRESS_BASE_URL=http://localhost:8000 cypress open",
     "e2e:run": "cypress run"
   },
   "dependencies": {
@@ -56,6 +56,7 @@
     "@testing-library/jest-dom": "5.11.3",
     "@testing-library/react": "10.4.8",
     "@testing-library/react-hooks": "3.4.1",
+    "@testing-library/user-event": "12.1.1",
     "@types/debounce-promise": "3.1.2",
     "@types/flat": "5.0.1",
     "@types/jest": "26.0.10",
@@ -73,6 +74,7 @@
     "babel-plugin-ramda": "2.0.0",
     "babel-preset-gatsby": "0.5.5",
     "cypress": "4.12.1",
+    "cypress-image-snapshot": "3.1.1",
     "dotenv": "8.2.0",
     "eslint": "7.6.0",
     "eslint-config-prettier": "6.11.0",

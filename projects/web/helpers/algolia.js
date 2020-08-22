@@ -1,53 +1,55 @@
-const myQuery = `{
-  posts: allMdx(
-    sort: { fields: [frontmatter___date], order: DESC }
-    limit: 1000,
-    filter: { fileAbsolutePath: { regex: "//blog//" } }
-  ) {
-    edges {
-      node {
+const { blogPostUri } = require('../globalShared/utils');
+
+const myQuery = `
+  query BlogPosts {
+    posts: allStrapiPosts(sort: {fields: date, order: DESC}, limit: 1000, filter: {is_shown: {eq: true}}) {
+      nodes {
         objectID: id
-        timeToRead
-        excerpt(pruneLength: 5000)
-        fields {
-          slug
-          lang
-          postFolderName
-        }
-        frontmatter {
-          date
-          title
-          subtitle
-          description
+        language
+        slug
+        date
+        title
+        subtitle
+        description
+        childStrapiPostContent {
+          childMdx {
+            timeToRead
+            excerpt(pruneLength: 5000)
+          }
         }
       }
     }
   }
-}`;
+`;
 
 /* TODO: add Test */
-const flattenData = (data) =>
-  data.map(({ node: { frontmatter, ...rest } }) => {
-    const { series, subtitle, ...frontmatterData } = frontmatter;
-
-    const nextSubtitle = series
-      ? `${series.copy} ${series.index}: ${subtitle}`
-      : subtitle;
-
-    return {
-      ...frontmatterData,
-      subtitle: nextSubtitle,
-      date_timestamp: (new Date(frontmatterData.date).getTime() / 1000).toFixed(
-        0,
-      ),
-      ...rest,
-    };
-  });
+const normalizeQueryToAlgoliaFormat = ({
+  date,
+  slug,
+  language,
+  childStrapiPostContent: {
+    childMdx: { excerpt, timeToRead },
+  },
+  ...rest
+}) => {
+  return {
+    ...rest,
+    date,
+    slug,
+    language,
+    excerpt,
+    timeToRead,
+    postUri: blogPostUri(slug, language),
+    date_timestamp: (new Date(date).getTime() / 1000).toFixed(0),
+  };
+};
 
 const queries = [
   {
     query: myQuery,
-    transformer: ({ data }) => flattenData(data.posts.edges),
+    transformer: ({ data }) => {
+      return data.posts.nodes.map(normalizeQueryToAlgoliaFormat);
+    },
     indexName: 'posts', // overrides main index name, optional
     settings: {
       // optional, any index settings
