@@ -68,9 +68,10 @@
       "type": "richtext",
       "maxLength": 300
     },
-    "is_shown": {
-      "type": "boolean",
-      "default": true,
+    "status": {
+      "type": "enumeration",
+      "enum": ["Draft", "Published", "Archived"],
+      "default": "Draft",
       "required": true
     }
   }

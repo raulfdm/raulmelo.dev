@@ -147,6 +147,7 @@ const plugins = [
   {
     resolve: `gatsby-source-strapi`,
     options: {
+      queryLimit: 1000,
       apiURL: process.env.STRAPI_API_URL || `http://localhost:1337`,
       contentTypes: [`uses`, `posts`, `post-tags`, `post-serie`],
       singleTypes: [`cv`, `personal-information`, `social`, `site`],
