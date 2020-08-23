@@ -1,6 +1,10 @@
 name: Web
 
 on:
+  workflow_dispatch:
+    paths:
+      - 'projects/web/**'
+      - '.github/workflows/web.yml'
   push:
     paths:
       - 'projects/web/**'
