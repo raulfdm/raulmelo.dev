@@ -94,6 +94,7 @@ const AuthorPresentation: React.FC = () => {
         fixed={profile_pic!.childImageSharp?.fixed}
         width={120}
         height={120}
+        fadeIn={false}
       />
     </AuthorPresentationWrapper>
   );

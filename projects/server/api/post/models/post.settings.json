@@ -64,15 +64,15 @@
       "model": "post-serie",
       "via": "blog_posts"
     },
-    "featured_image_caption": {
-      "type": "richtext",
-      "maxLength": 300
-    },
     "status": {
       "type": "enumeration",
       "enum": ["Draft", "Published", "Archived"],
       "default": "Draft",
       "required": true
+    },
+    "featured_image_caption": {
+      "type": "text",
+      "required": false
     }
   }
 }

@@ -70,8 +70,11 @@ export const PostCard: React.FC<PostCardProps> = ({ post, tags }) => {
     <PostCardWrapper>
       {featuredImage?.childImageSharp && (
         <ImageContainer>
-          {/* @ts-ignore */}
-          <Image fluid={featuredImage?.childImageSharp.fluid} />
+          <Image
+            /* @ts-ignore */
+            fluid={featuredImage?.childImageSharp.fluid}
+            durationFadeIn={300}
+          />
         </ImageContainer>
       )}
       <Body>
