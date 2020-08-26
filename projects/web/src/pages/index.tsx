@@ -23,15 +23,13 @@ const store = PostsStore.create({
 });
 
 const Home: React.FC<HomeProps> = ({ data }) => {
-  React.useEffect(() => {
-    const posts = R.path(['posts', 'nodes'], data) as StrapiPosts[];
-    const tags = R.path(['tags', 'nodes'], data) as StrapiPostTags[];
-    const series = R.path(['series', 'nodes'], data) as StrapiPostSerie[];
+  const posts = R.path(['posts', 'nodes'], data) as StrapiPosts[];
+  const tags = R.path(['tags', 'nodes'], data) as StrapiPostTags[];
+  const series = R.path(['series', 'nodes'], data) as StrapiPostSerie[];
 
-    store.apiData.setPosts(posts);
-    store.apiData.setTags(tags);
-    store.apiData.setSeries(series);
-  }, []);
+  store.apiData.setPosts(posts);
+  store.apiData.setTags(tags);
+  store.apiData.setSeries(series);
 
   return (
     <HomeTemplate
