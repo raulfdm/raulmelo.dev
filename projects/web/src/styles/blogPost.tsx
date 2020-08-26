@@ -79,6 +79,11 @@ const blogGlobal = css`
     ${headingLinkStyle}
   }
 
+  main img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   ${pandaPrismStyles};
 `;
 
