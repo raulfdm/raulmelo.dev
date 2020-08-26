@@ -86,6 +86,8 @@ const SEO: React.FC<SEOProps> = (props) => {
       <meta name="twitter:image" content={metaImg} />
       <meta name="twitter:image" content={metaImg} />
 
+      {/* Monetize my content */}
+      <meta name="monetization" content="$ilp.uphold.com/Aa8j4MXjnPHg" />
       {children}
     </Helmet>
   );
