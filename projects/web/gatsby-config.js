@@ -12,6 +12,12 @@ const plugins = [
   `gatsby-plugin-react-helmet`,
   `gatsby-plugin-sharp`,
   {
+    resolve: `gatsby-plugin-webpack-bundle-analyzer`,
+    options: {
+      production: isProduction,
+    },
+  },
+  {
     resolve: `gatsby-plugin-sitemap`,
     options: {
       query: `

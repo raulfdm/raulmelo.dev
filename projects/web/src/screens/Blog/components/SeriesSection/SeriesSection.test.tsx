@@ -46,10 +46,12 @@ describe('<SeriesSection />', () => {
     expect(queryByTestId('series-section-divider')).toBeInTheDocument();
   });
 
-  it('renders no series posts by default', () => {
+  it('renders series collapsed by default', () => {
     const { queryByTestId } = renderWithContext();
 
-    expect(queryByTestId('series-post-list')).not.toBeInTheDocument();
+    expect(queryByTestId('series-post-list')).toHaveStyle(
+      'opacity: 0; height: 0px;',
+    );
   });
 
   it('renders series posts when click to expand', async () => {

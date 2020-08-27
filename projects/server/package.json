@@ -12,7 +12,6 @@
     "build": "strapi build",
     "strapi": "strapi"
   },
-  "devDependencies": {},
   "dependencies": {
     "strapi": "3.1.4",
     "strapi-admin": "3.1.4",

@@ -28,7 +28,7 @@ exports[`<FeaturedImage /> renders gatsby image with default alt 1`] = `
 <div>
   <div
     aria-label="Featured image"
-    class="sc-AxirZ c0"
+    class="c0"
     data-testid="featured-image-wrapper"
     role="img"
   >

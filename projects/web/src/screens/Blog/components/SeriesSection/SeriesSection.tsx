@@ -1,7 +1,6 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { Link } from 'gatsby';
-import { AnimatePresence } from 'framer-motion';
 
 import { useBlogContext } from '@screens/Blog/hooks/useBlogContext';
 import { Divider } from '@screens/Blog/components/MdxComponents/Divider';
@@ -56,34 +55,28 @@ function SeriesMenu({ serie, currentPostId }: SeriesMenuProps) {
             <ArrowIosDownwardOutline size={21} />
           </S.ExpanderButton>
         </S.Info>
-        <AnimatePresence initial={false}>
-          {isOpen && (
-            <S.List
-              initial="collapsed"
-              animate="open"
-              exit="collapsed"
-              variants={{
-                open: { opacity: 1, height: 'auto' },
-                collapsed: { opacity: 0, height: 0 },
-              }}
-              transition={{ ease: [0.4, 0, 0.2, 1] }}
-              data-testid="series-post-list"
-            >
-              {blogPosts!.map((post) => {
-                const { id, copy, uri } = post!;
-                return (
-                  <S.Item
-                    key={id}
-                    className={id === currentPostId ? 'active' : ''}
-                    data-testid={`post_${id}`}
-                  >
-                    <Link to={uri!}>{copy}</Link>
-                  </S.Item>
-                );
-              })}
-            </S.List>
-          )}
-        </AnimatePresence>
+        <S.List
+          animate={isOpen ? 'open' : 'collapsed'}
+          variants={{
+            open: { opacity: 1, height: 'auto' },
+            collapsed: { opacity: 0, height: 0 },
+          }}
+          transition={{ ease: [0.4, 0, 0.2, 1] }}
+          data-testid="series-post-list"
+        >
+          {blogPosts!.map((post) => {
+            const { id, copy, uri } = post!;
+            return (
+              <S.Item
+                key={id}
+                className={id === currentPostId ? 'active' : ''}
+                data-testid={`post_${id}`}
+              >
+                <Link to={uri!}>{copy}</Link>
+              </S.Item>
+            );
+          })}
+        </S.List>
         <S.MenuFooter expanded={isOpen} onClick={() => setIsOpen(!isOpen)}>
           <span>
             <FormattedMessage
