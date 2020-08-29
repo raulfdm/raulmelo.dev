@@ -2,30 +2,18 @@
 import React from 'react';
 import { render } from '@utils/test';
 
-import { BlogContextProvider } from '@screens/Blog/context';
 import { mockedImage } from './__mocks__/mockData';
 import { FeaturedImage } from '.';
 
-function renderWithContext(contextValues?: any) {
+function renderWithContext(props?: any) {
   return render(
-    <BlogContextProvider
-      value={
-        {
-          post: {
-            featuredImage: mockedImage,
-            ...contextValues,
-          },
-        } as any
-      }
-    >
-      <FeaturedImage />
-    </BlogContextProvider>,
+    <FeaturedImage fluid={mockedImage.childImageSharp.fluid} {...props} />,
   );
 }
 
 describe('<FeaturedImage />', () => {
   it('does not render anything if not receives image', () => {
-    const { queryByTestId } = renderWithContext({ featuredImage: undefined });
+    const { queryByTestId } = renderWithContext({ fluid: undefined });
     expect(queryByTestId('featured-image-wrapper')).not.toBeInTheDocument();
   });
 

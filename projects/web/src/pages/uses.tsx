@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 import { StrapiUsesConnection } from '@app-types/graphql';
-import Layout from '@components/Layout';
+import { Layout } from '@components/Layout';
 import { BlogGlobalStyle } from '@styles/blogPost';
 import { useIntl } from '@contexts/react-intl';
 

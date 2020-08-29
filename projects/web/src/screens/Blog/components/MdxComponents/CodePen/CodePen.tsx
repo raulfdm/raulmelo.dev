@@ -1,6 +1,11 @@
 import React from 'react';
 
-export const CodePen: React.FC<{ src: string }> = ({ src, children }) => {
+type CodePenProps = {
+  /** codepen iframe url */
+  src: string;
+};
+
+export const CodePen: React.FC<CodePenProps> = ({ src, children }) => {
   return (
     <iframe
       height="400"
@@ -8,7 +13,6 @@ export const CodePen: React.FC<{ src: string }> = ({ src, children }) => {
         width: '100%',
       }}
       scrolling="no"
-      title="raulfdm-position-absolute-3"
       src={src}
       frameBorder="no"
       allowTransparency

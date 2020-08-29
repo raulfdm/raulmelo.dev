@@ -3,10 +3,10 @@ import Img from 'gatsby-image';
 import { defineMessages } from 'react-intl';
 
 import { styled } from '@styles/styled';
-import { useBlogContext } from '@screens/Blog/hooks/useBlogContext';
 import { useIntl } from '@contexts/react-intl';
 import { Container } from '@components/Ui';
 import { isNotNilNorEmpty } from '@utils/utilities';
+import { SitePageContextPostFeaturedImageChildImageSharpFluid } from '@app-types/graphql';
 
 const StyledImg = styled(Img)`
   max-height: 600px;
@@ -26,14 +26,17 @@ const messages = defineMessages({
   },
 });
 
-export const FeaturedImage = () => {
+type FeaturedImageProps = {
+  fluid: SitePageContextPostFeaturedImageChildImageSharpFluid;
+};
+
+export const FeaturedImage: React.FC<FeaturedImageProps> = ({ fluid }) => {
   const { formatMessage } = useIntl();
-  const { post } = useBlogContext();
 
   /* TODO: Fix this caption issue */
   const imageCaption = undefined;
 
-  return isNotNilNorEmpty(post.featuredImage) ? (
+  return isNotNilNorEmpty(fluid) ? (
     <ImgWrapper
       role="img"
       aria-label={formatMessage(messages.featuredImageLabel)}
@@ -41,7 +44,7 @@ export const FeaturedImage = () => {
     >
       <StyledImg
         /* @ts-ignore */
-        fluid={post.featuredImage.childImageSharp.fluid}
+        fluid={fluid}
         alt={imageCaption || formatMessage(messages.featuredImageLabel)}
         data-testid="featured-image"
       />

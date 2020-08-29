@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { useBlogContext } from '@screens/Blog/hooks/useBlogContext';
 import { styled, media } from '@styles/styled';
 import { Container } from '@components/Ui';
 
@@ -25,11 +24,15 @@ const Subtitle = styled.p`
   `}
 `;
 
-export const Header = () => {
-  const { post } = useBlogContext();
+type HeaderProps = {
+  title: string;
+  subtitle?: string;
+};
 
-  const { title, subtitle } = post;
-
+export const Header: React.FC<HeaderProps> = React.memo(function Header({
+  title,
+  subtitle,
+}) {
   return (
     <Container as="header" data-testid="header">
       <Title data-testid="header-title">{title}</Title>
@@ -38,4 +41,4 @@ export const Header = () => {
       )}
     </Container>
   );
-};
+});

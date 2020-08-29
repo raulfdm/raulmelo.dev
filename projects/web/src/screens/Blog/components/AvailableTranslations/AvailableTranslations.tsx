@@ -3,10 +3,10 @@ import { Link } from 'gatsby';
 import { defineMessages, FormattedMessage } from 'react-intl';
 
 import { useIntl } from '@contexts/react-intl';
-import { useBlogContext } from '@screens/Blog/hooks/useBlogContext';
-import { LocaleValues } from '@app-types';
+import { LocaleValues, DeepNonNullable } from '@app-types';
 import { isNilOrEmpty } from '@utils/utilities';
 import { Phrase, Wrapper } from './styled';
+import { SitePageContextTranslation } from '@app-types/graphql';
 
 const messages = defineMessages({
   en: {
@@ -17,8 +17,13 @@ const messages = defineMessages({
   },
 });
 
-export const AvailableTranslations = () => {
-  const { translation } = useBlogContext();
+type AvailableTranslationsProps = {
+  translation?: DeepNonNullable<SitePageContextTranslation> | null;
+};
+
+export const AvailableTranslations: React.FC<AvailableTranslationsProps> = ({
+  translation,
+}) => {
   const { formatMessage, switchLocale } = useIntl();
 
   if (isNilOrEmpty(translation)) return null;

@@ -3,10 +3,10 @@ import { defineMessages } from 'react-intl';
 import { observer } from 'mobx-react';
 
 import { PostsStoreInstance } from '@screens/Home/stores';
-import SEO from '@components/SEO';
+import { SEO } from '@components/SEO';
 import { useIntl } from '@contexts/react-intl';
 import AuthorPresentation from '@screens/Home/components/AuthorPresentation';
-import Layout from '@components/Layout';
+import { Layout } from '@components/Layout';
 import { Filter } from '@screens/Home/components/Filter';
 import { Posts } from '@screens/Home/components/Posts';
 import { LocaleValues } from '@app-types';

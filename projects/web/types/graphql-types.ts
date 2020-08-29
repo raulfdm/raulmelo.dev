@@ -1744,6 +1744,8 @@ export type QueryAllSitePageArgs = {
 
 export type QuerySiteArgs = {
   buildTime?: Maybe<DateQueryOperatorInput>;
+  port?: Maybe<IntQueryOperatorInput>;
+  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -2103,6 +2105,8 @@ export type QueryAllSitePluginArgs = {
 
 export type Site = Node & {
   buildTime?: Maybe<Scalars['Date']>;
+  port?: Maybe<Scalars['Int']>;
+  host?: Maybe<Scalars['String']>;
   polyfill?: Maybe<Scalars['Boolean']>;
   pathPrefix?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
@@ -2302,6 +2306,8 @@ export type SiteEdge = {
 
 export type SiteFieldsEnum = 
   | 'buildTime'
+  | 'port'
+  | 'host'
   | 'polyfill'
   | 'pathPrefix'
   | 'id'
@@ -2393,6 +2399,8 @@ export type SiteFieldsEnum =
 
 export type SiteFilterInput = {
   buildTime?: Maybe<DateQueryOperatorInput>;
+  port?: Maybe<IntQueryOperatorInput>;
+  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -2449,21 +2457,21 @@ export type SitePageConnectionGroupArgs = {
 };
 
 export type SitePageContext = {
+  posts?: Maybe<Array<Maybe<SitePageContextPosts>>>;
+  tag?: Maybe<SitePageContextTag>;
   postUri?: Maybe<Scalars['String']>;
   post?: Maybe<SitePageContextPost>;
   serie?: Maybe<SitePageContextSerie>;
   translation?: Maybe<SitePageContextTranslation>;
-  posts?: Maybe<Array<Maybe<SitePageContextPosts>>>;
-  tag?: Maybe<SitePageContextTag>;
 };
 
 export type SitePageContextFilterInput = {
+  posts?: Maybe<SitePageContextPostsFilterListInput>;
+  tag?: Maybe<SitePageContextTagFilterInput>;
   postUri?: Maybe<StringQueryOperatorInput>;
   post?: Maybe<SitePageContextPostFilterInput>;
   serie?: Maybe<SitePageContextSerieFilterInput>;
   translation?: Maybe<SitePageContextTranslationFilterInput>;
-  posts?: Maybe<SitePageContextPostsFilterListInput>;
-  tag?: Maybe<SitePageContextTagFilterInput>;
 };
 
 export type SitePageContextPost = {
@@ -2909,6 +2917,26 @@ export type SitePageFieldsEnum =
   | 'internal___owner'
   | 'internal___type'
   | 'isCreatedByStatefulCreatePages'
+  | 'context___posts'
+  | 'context___posts___id'
+  | 'context___posts___title'
+  | 'context___posts___subtitle'
+  | 'context___posts___description'
+  | 'context___posts___date'
+  | 'context___posts___serieCopy'
+  | 'context___posts___slug'
+  | 'context___posts___translation___language'
+  | 'context___posts___translation___slug'
+  | 'context___posts___serie___slug'
+  | 'context___posts___serie___id'
+  | 'context___posts___serie___name'
+  | 'context___posts___language'
+  | 'context___posts___tags'
+  | 'context___posts___tags___id'
+  | 'context___posts___tags___name'
+  | 'context___posts___tags___slug'
+  | 'context___tag___slug'
+  | 'context___tag___name'
   | 'context___postUri'
   | 'context___post___id'
   | 'context___post___title'
@@ -2939,26 +2967,6 @@ export type SitePageFieldsEnum =
   | 'context___serie___blogPosts___uri'
   | 'context___translation___language'
   | 'context___translation___postUri'
-  | 'context___posts'
-  | 'context___posts___id'
-  | 'context___posts___title'
-  | 'context___posts___subtitle'
-  | 'context___posts___description'
-  | 'context___posts___date'
-  | 'context___posts___serieCopy'
-  | 'context___posts___slug'
-  | 'context___posts___translation___language'
-  | 'context___posts___translation___slug'
-  | 'context___posts___serie___slug'
-  | 'context___posts___serie___id'
-  | 'context___posts___serie___name'
-  | 'context___posts___language'
-  | 'context___posts___tags'
-  | 'context___posts___tags___id'
-  | 'context___posts___tags___name'
-  | 'context___posts___tags___slug'
-  | 'context___tag___slug'
-  | 'context___tag___name'
   | 'pluginCreator___id'
   | 'pluginCreator___parent___id'
   | 'pluginCreator___parent___parent___id'
@@ -3039,17 +3047,6 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___apiURL'
   | 'pluginCreator___pluginOptions___contentTypes'
   | 'pluginCreator___pluginOptions___singleTypes'
-  | 'pluginCreator___pluginOptions___appId'
-  | 'pluginCreator___pluginOptions___apiKey'
-  | 'pluginCreator___pluginOptions___indexName'
-  | 'pluginCreator___pluginOptions___queries'
-  | 'pluginCreator___pluginOptions___queries___query'
-  | 'pluginCreator___pluginOptions___queries___indexName'
-  | 'pluginCreator___pluginOptions___chunkSize'
-  | 'pluginCreator___pluginOptions___enablePartialUpdates'
-  | 'pluginCreator___pluginOptions___matchFields'
-  | 'pluginCreator___pluginOptions___trackingId'
-  | 'pluginCreator___pluginOptions___head'
   | 'pluginCreator___pluginOptions___path'
   | 'pluginCreator___pluginOptions___pathCheck'
   | 'pluginCreator___nodeAPIs'
@@ -3277,18 +3274,6 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___apiURL'
   | 'pluginOptions___contentTypes'
   | 'pluginOptions___singleTypes'
-  | 'pluginOptions___appId'
-  | 'pluginOptions___apiKey'
-  | 'pluginOptions___indexName'
-  | 'pluginOptions___queries'
-  | 'pluginOptions___queries___query'
-  | 'pluginOptions___queries___indexName'
-  | 'pluginOptions___queries___settings___attributesToSnippet'
-  | 'pluginOptions___chunkSize'
-  | 'pluginOptions___enablePartialUpdates'
-  | 'pluginOptions___matchFields'
-  | 'pluginOptions___trackingId'
-  | 'pluginOptions___head'
   | 'pluginOptions___path'
   | 'pluginOptions___pathCheck'
   | 'nodeAPIs'
@@ -3427,15 +3412,6 @@ export type SitePluginPluginOptions = {
   apiURL?: Maybe<Scalars['String']>;
   contentTypes?: Maybe<Array<Maybe<Scalars['String']>>>;
   singleTypes?: Maybe<Array<Maybe<Scalars['String']>>>;
-  appId?: Maybe<Scalars['String']>;
-  apiKey?: Maybe<Scalars['String']>;
-  indexName?: Maybe<Scalars['String']>;
-  queries?: Maybe<Array<Maybe<SitePluginPluginOptionsQueries>>>;
-  chunkSize?: Maybe<Scalars['Int']>;
-  enablePartialUpdates?: Maybe<Scalars['Boolean']>;
-  matchFields?: Maybe<Array<Maybe<Scalars['String']>>>;
-  trackingId?: Maybe<Scalars['String']>;
-  head?: Maybe<Scalars['Boolean']>;
   path?: Maybe<Scalars['String']>;
   pathCheck?: Maybe<Scalars['Boolean']>;
 };
@@ -3497,15 +3473,6 @@ export type SitePluginPluginOptionsFilterInput = {
   apiURL?: Maybe<StringQueryOperatorInput>;
   contentTypes?: Maybe<StringQueryOperatorInput>;
   singleTypes?: Maybe<StringQueryOperatorInput>;
-  appId?: Maybe<StringQueryOperatorInput>;
-  apiKey?: Maybe<StringQueryOperatorInput>;
-  indexName?: Maybe<StringQueryOperatorInput>;
-  queries?: Maybe<SitePluginPluginOptionsQueriesFilterListInput>;
-  chunkSize?: Maybe<IntQueryOperatorInput>;
-  enablePartialUpdates?: Maybe<BooleanQueryOperatorInput>;
-  matchFields?: Maybe<StringQueryOperatorInput>;
-  trackingId?: Maybe<StringQueryOperatorInput>;
-  head?: Maybe<BooleanQueryOperatorInput>;
   path?: Maybe<StringQueryOperatorInput>;
   pathCheck?: Maybe<BooleanQueryOperatorInput>;
 };
@@ -3532,30 +3499,6 @@ export type SitePluginPluginOptionsLocalizeFilterInput = {
 
 export type SitePluginPluginOptionsLocalizeFilterListInput = {
   elemMatch?: Maybe<SitePluginPluginOptionsLocalizeFilterInput>;
-};
-
-export type SitePluginPluginOptionsQueries = {
-  query?: Maybe<Scalars['String']>;
-  indexName?: Maybe<Scalars['String']>;
-  settings?: Maybe<SitePluginPluginOptionsQueriesSettings>;
-};
-
-export type SitePluginPluginOptionsQueriesFilterInput = {
-  query?: Maybe<StringQueryOperatorInput>;
-  indexName?: Maybe<StringQueryOperatorInput>;
-  settings?: Maybe<SitePluginPluginOptionsQueriesSettingsFilterInput>;
-};
-
-export type SitePluginPluginOptionsQueriesFilterListInput = {
-  elemMatch?: Maybe<SitePluginPluginOptionsQueriesFilterInput>;
-};
-
-export type SitePluginPluginOptionsQueriesSettings = {
-  attributesToSnippet?: Maybe<Array<Maybe<Scalars['String']>>>;
-};
-
-export type SitePluginPluginOptionsQueriesSettingsFilterInput = {
-  attributesToSnippet?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePluginSortInput = {

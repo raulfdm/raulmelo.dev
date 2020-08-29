@@ -200,3 +200,5 @@ build
 .history
 
 __diff_output__/
+
+storybook-public/

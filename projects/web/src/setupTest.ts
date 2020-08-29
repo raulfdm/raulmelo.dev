@@ -8,3 +8,5 @@ import 'jest-styled-components';
  */
 // @ts-ignore
 window.___loader = { enqueue: () => {}, hovering: () => {} };
+
+window.__setPreferredTheme = () => {};

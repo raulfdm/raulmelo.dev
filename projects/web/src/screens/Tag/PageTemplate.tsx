@@ -2,10 +2,10 @@ import React from 'react';
 import { defineMessages } from 'react-intl';
 import { observer } from 'mobx-react';
 
-import SEO from '@components/SEO';
+import { SEO } from '@components/SEO';
 import { useIntl } from '@contexts/react-intl';
 import AuthorPresentation from '@screens/Home/components/AuthorPresentation';
-import Layout from '@components/Layout';
+import { Layout } from '@components/Layout';
 import { Posts } from '@screens/Home/components/Posts';
 import { titleWithNameAndJobTitle } from '@utils/seo';
 import { PostsStore } from '@screens/Home/stores';

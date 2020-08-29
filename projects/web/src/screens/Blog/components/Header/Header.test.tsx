@@ -1,24 +1,11 @@
 import React from 'react';
 
 import { render } from '@utils/test';
-import { BlogContextProvider } from '@screens/Blog/context';
+
 import { Header } from '.';
 
-function renderWithContext(contextValues?: any) {
-  return render(
-    <BlogContextProvider
-      value={
-        {
-          post: {
-            title: 'hey, Im a Title',
-            ...contextValues,
-          },
-        } as any
-      }
-    >
-      <Header />
-    </BlogContextProvider>,
-  );
+function renderWithContext(props?: any) {
+  return render(<Header title="hey, Im a Title" {...props} />);
 }
 
 describe('<Header />', () => {

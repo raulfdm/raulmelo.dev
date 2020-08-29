@@ -2,8 +2,8 @@ import React from 'react';
 import { FormattedMessage, defineMessages } from 'react-intl';
 
 import { styled } from '@styles/styled';
-import Layout from '@components/Layout';
-import SEO from '@components/SEO';
+import { Layout } from '@components/Layout';
+import { SEO } from '@components/SEO';
 import { useIntl } from '@contexts/react-intl';
 
 const Wrapper = styled.div`

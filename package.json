@@ -22,7 +22,9 @@
     "web:test": "yarn base:web test",
     "web:e2e": "yarn base:web e2e:run",
     "web:lint": "yarn base:web lint",
-    "dev": "concurrently \"yarn:server:dev\" \"yarn:web:dev:wait\""
+    "dev": "concurrently \"yarn:server:dev\" \"yarn:web:dev:wait\"",
+    "web:docs:build": "yarn base:web build-storybook",
+    "web:docs:dev": "yarn base:web storybook"
   },
   "devDependencies": {
     "@sub-tv/prettier-config": "1.1.0",

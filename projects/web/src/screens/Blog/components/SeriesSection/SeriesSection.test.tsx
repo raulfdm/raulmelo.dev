@@ -1,29 +1,17 @@
 import React from 'react';
 import { render, screen, userEvent } from '@utils/test';
 
-import { BlogPostContext } from '@screens/Blog/types';
-import { BlogContextProvider } from '@screens/Blog/context';
 import { SeriesSection } from '.';
 import { mockedSerie } from './__mocks__/mockedData';
 
-function renderWithContext(
-  contextValues?: Partial<BlogPostContext>,
-  componentProps = {},
-) {
+function renderWithContext(props?: any) {
   return render(
-    <BlogContextProvider
-      value={
-        {
-          serie: mockedSerie,
-          post: {
-            id: '5f39594b20f7cd7565227f98',
-          },
-          ...contextValues,
-        } as any
-      }
-    >
-      <SeriesSection {...componentProps} />
-    </BlogContextProvider>,
+    <SeriesSection
+      serie={mockedSerie}
+      currentPostId="5f39594b20f7cd7565227f98"
+      divider
+      {...props}
+    />,
   );
 }
 
@@ -74,7 +62,7 @@ describe('<SeriesSection />', () => {
   });
 
   it('does not render divider when receive noDivider', () => {
-    const { queryByTestId } = renderWithContext(undefined, { noDivider: true });
+    const { queryByTestId } = renderWithContext({ divider: false });
 
     expect(queryByTestId('series-section-divider')).not.toBeInTheDocument();
   });

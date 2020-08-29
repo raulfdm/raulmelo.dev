@@ -2,7 +2,6 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { Link } from 'gatsby';
 
-import { useBlogContext } from '@screens/Blog/hooks/useBlogContext';
 import { Divider } from '@screens/Blog/components/MdxComponents/Divider';
 import { Container } from '@components/Ui';
 import { ArrowIosDownwardOutline } from '@styled-icons/evaicons-outline/ArrowIosDownwardOutline';
@@ -10,30 +9,31 @@ import { SitePageContextSerie } from '@app-types/graphql';
 import * as S from './styled';
 
 interface SeriesSectionProps {
-  noDivider?: boolean;
+  currentPostId: string;
+  serie: SitePageContextSerie;
+  divider?: boolean;
 }
 
-export const SeriesSection = ({ noDivider = false }: SeriesSectionProps) => {
-  const { serie, post } = useBlogContext();
-
+export const SeriesSection: React.FC<SeriesSectionProps> = ({
+  divider = false,
+  serie,
+  currentPostId,
+}) => {
   return serie ? (
     <>
-      {!noDivider && <Divider data-testid="series-section-divider" />}
+      {divider && <Divider data-testid="series-section-divider" />}
       <Container data-testid="series-section" as="section">
-        <SeriesMenu serie={serie} currentPostId={post.id} />
+        <SeriesMenu serie={serie} currentPostId={currentPostId} />
       </Container>
     </>
   ) : null;
 };
 
-type SeriesMenuProps = {
-  serie: SitePageContextSerie;
-  currentPostId: string;
-};
+type SeriesMenuProps = Pick<SeriesSectionProps, 'serie' | 'currentPostId'>;
 
 function SeriesMenu({ serie, currentPostId }: SeriesMenuProps) {
   const [isOpen, setIsOpen] = React.useState(false);
-  const { name, blogPosts } = serie;
+  const { name, blogPosts } = serie!;
 
   return (
     <S.Card data-testid="series-menu">
@@ -46,7 +46,7 @@ function SeriesMenu({ serie, currentPostId }: SeriesMenuProps) {
           <span>{name}</span>
           <S.ExpanderButton
             initial="collapsed"
-            animate={isOpen ? 'collapsed' : 'open'}
+            animate={isOpen ? 'open' : 'collapsed'}
             variants={{
               open: { rotate: '0deg' },
               collapsed: { rotate: '180deg' },

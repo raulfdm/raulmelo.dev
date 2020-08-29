@@ -2,7 +2,6 @@ import React from 'react';
 import { PreRenderHTMLArgs } from 'gatsby';
 
 import { twitterScript, themeHandlerScript } from '@config/global-scripts';
-import { themeBackgroundColor } from '@styles/globals';
 
 const GatsbyHTML: React.FC<PreRenderHTMLArgs & { body: string }> = (props) => {
   return (
@@ -14,7 +13,6 @@ const GatsbyHTML: React.FC<PreRenderHTMLArgs & { body: string }> = (props) => {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-        <meta name="theme-color" content={themeBackgroundColor.light} />
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes} className="light">

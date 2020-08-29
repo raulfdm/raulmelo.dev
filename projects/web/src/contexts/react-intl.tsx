@@ -22,8 +22,15 @@ const localizedMessages = {
 
 const supportedLanguages: string[] = [LOCALES.PT, LOCALES.EN];
 
-export const IntlContextProvider: React.FC = ({ children }) => {
-  const [language = LOCALES.EN, setLanguage] = useLocalStorage<
+type IntlContextProviderProps = {
+  lang?: LocaleValues;
+};
+
+export const IntlContextProvider: React.FC<IntlContextProviderProps> = ({
+  children,
+  lang,
+}) => {
+  const [language = lang || LOCALES.EN, setLanguage] = useLocalStorage<
     LOCALES | undefined
   >('raul-melo.dev__lang');
 
@@ -36,6 +43,10 @@ export const IntlContextProvider: React.FC = ({ children }) => {
     const navigatorLang = navigator.language.replace(/-.*/, '');
     switchLocale(navigatorLang as LOCALES);
   }, []);
+
+  React.useEffect(() => {
+    switchLocale(lang as LOCALES);
+  }, [lang]);
 
   const messages = flat(localizedMessages[language!]) as Record<string, string>;
 

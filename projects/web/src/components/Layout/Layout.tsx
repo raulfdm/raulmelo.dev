@@ -24,7 +24,7 @@ const Main = styled(Container)`
   }
 `;
 
-const Layout: React.FC<LayoutProps> = ({ children, className }) => {
+export const Layout: React.FC<LayoutProps> = ({ children, className }) => {
   return (
     <ThemeProvider>
       <MenuBar />
@@ -43,5 +43,3 @@ const Layout: React.FC<LayoutProps> = ({ children, className }) => {
     </ThemeProvider>
   );
 };
-
-export default Layout;

@@ -5,5 +5,6 @@ blog
 content
 public
 static
+storybook-public
 
 types/graphql-types.ts

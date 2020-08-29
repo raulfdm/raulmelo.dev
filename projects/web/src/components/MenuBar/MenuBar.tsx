@@ -4,7 +4,7 @@ import { useViewportScroll, useMotionValue } from 'framer-motion';
 
 import { LanguageSwitch } from '@components/LanguageSwitch';
 import { ThemeSwitch } from '@components/ThemeSwitch';
-import LogoSvg from '@components/LogoSvg';
+import { LogoSvg } from '@components/LogoSvg';
 import { SideMenuNavIcon } from '@components/SideMenu';
 import * as S from './styled';
 

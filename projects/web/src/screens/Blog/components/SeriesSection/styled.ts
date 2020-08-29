@@ -50,6 +50,10 @@ export const List = styled(motion.ul)`
   margin: 0;
   border-top: ${({ theme }) => `1px solid ${theme.color.border}`};
   border-bottom: ${({ theme }) => `1px solid ${theme.color.border}`};
+
+  /* Initial animation values */
+  opacity: 0;
+  height: 0;
 `;
 
 export const Item = styled(motion.li)`

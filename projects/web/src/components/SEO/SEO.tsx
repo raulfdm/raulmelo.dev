@@ -14,7 +14,7 @@ type SEOProps = {
   setCanonical?: boolean;
 };
 
-const SEO: React.FC<SEOProps> = (props) => {
+export const SEO: React.FC<SEOProps> = (props) => {
   const {
     site: {
       url: siteUrl,
@@ -92,5 +92,3 @@ const SEO: React.FC<SEOProps> = (props) => {
     </Helmet>
   );
 };
-
-export default SEO;

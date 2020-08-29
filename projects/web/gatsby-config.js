@@ -1,5 +1,6 @@
 require('dotenv').config();
 const R = require('ramda');
+const { webpackAliases } = require('./globalShared/aliases');
 
 const { algoliaSetupOptions } = require('./helpers');
 
@@ -44,21 +45,7 @@ const plugins = [
   {
     resolve: `gatsby-alias-imports`,
     options: {
-      aliases: {
-        '@app-types': 'src/types',
-        '@components': 'src/components',
-        '@config': `src/config`,
-        '@contexts': 'src/contexts',
-        '@hooks': 'src/hooks',
-        '@locales': 'src/locales',
-        '@models': 'src/models',
-        '@screens': `src/screens`,
-        '@static': 'static',
-        '@styles': 'src/styles',
-        '@utils': 'src/utils',
-        '@stores': 'src/stores',
-        '@globalShared': 'globalShared/',
-      },
+      aliases: webpackAliases,
     },
   },
   {

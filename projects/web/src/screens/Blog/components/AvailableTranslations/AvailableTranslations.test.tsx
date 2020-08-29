@@ -1,30 +1,30 @@
 import React from 'react';
 
 import { render, screen } from '@utils/test';
-import { useBlogContext } from '@screens/Blog/hooks/useBlogContext';
 import { AvailableTranslations } from '.';
 
 jest.mock('@screens/Blog/context');
 jest.mock('@screens/Blog/hooks/useBlogContext');
 
-const mockedUseBlogContext = useBlogContext as jest.Mock;
-
 describe('<AvailableTranslations />', () => {
-  it('does not render anything if translation is null, undefined or empty object', () => {
-    mockedUseBlogContext
-      .mockReturnValue({ translation: null } as any)
-      .mockReturnValueOnce({ translation: undefined })
-      .mockReturnValueOnce({ translation: {} });
-
-    render(<AvailableTranslations />);
+  it('does not render anything if translation is undefined', () => {
+    render(<AvailableTranslations translation={undefined} />);
 
     expect(
       screen.queryByTestId('blog-available-translations'),
     ).not.toBeInTheDocument();
+  });
+
+  it('does not render anything if translation is empty object', () => {
+    render(<AvailableTranslations translation={{} as any} />);
 
     expect(
       screen.queryByTestId('blog-available-translations'),
     ).not.toBeInTheDocument();
+  });
+
+  it('does not render anything if translation is null', () => {
+    render(<AvailableTranslations translation={null} />);
 
     expect(
       screen.queryByTestId('blog-available-translations'),
@@ -32,10 +32,11 @@ describe('<AvailableTranslations />', () => {
   });
 
   it('renders link for the translation', () => {
-    mockedUseBlogContext.mockReturnValue({
-      translation: { language: 'pt', postUri: '/post' },
-    } as any);
-    render(<AvailableTranslations />);
+    render(
+      <AvailableTranslations
+        translation={{ language: 'pt', postUri: '/post' }}
+      />,
+    );
 
     const linkEl = screen.queryByTestId('blog-available-translations-link');
 
