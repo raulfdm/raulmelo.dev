@@ -163,18 +163,19 @@ async function createTagPage({ graphql, createPage }) {
       subtitle
       description
       date
-      serieCopy: serie_copy
+      serie_copy
       slug
       translation {
         language
         slug
       }
-      serie: post_serie {
+      post_serie {
         slug
         id
+        name
       }
       language
-      featuredImage: featured_image {
+      featured_image {
         childImageSharp {
           original {
             src
@@ -199,11 +200,7 @@ async function createTagPage({ graphql, createPage }) {
           timeToRead
         }
       }
-      serie: post_serie {
-        name
-        slug
-      }
-      tags: post_tags {
+      post_tags {
         id
         name
         slug

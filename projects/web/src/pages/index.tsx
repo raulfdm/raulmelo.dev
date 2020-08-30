@@ -7,9 +7,7 @@ import {
   StrapiPostsConnection,
   StrapiPosts,
   StrapiPostTags,
-  StrapiPostSerie,
 } from '@app-types/graphql';
-import { PostsStore } from '@screens/Home/stores';
 
 type HomeProps = {
   data: {
@@ -17,19 +15,14 @@ type HomeProps = {
   };
 };
 
-const store = PostsStore.create({
-  activeFilter: 'all',
-  apiData: {},
-});
-
 const Home: React.FC<HomeProps> = ({ data }) => {
   const posts = R.path(['posts', 'nodes'], data) as StrapiPosts[];
   const tags = R.path(['tags', 'nodes'], data) as StrapiPostTags[];
-  const series = R.path(['series', 'nodes'], data) as StrapiPostSerie[];
 
-  store.apiData.setPosts(posts);
-  store.apiData.setTags(tags);
-  store.apiData.setSeries(series);
+  const store = {
+    posts,
+    tags,
+  };
 
   return (
     <HomeTemplate
@@ -54,18 +47,6 @@ export const query = graphql`
         name
       }
     }
-    series: allStrapiPostSerie(
-      sort: { order: ASC, fields: blog_posts___date }
-    ) {
-      nodes {
-        id: strapiId
-        name
-        slug
-        blogPosts: blog_posts {
-          id
-        }
-      }
-    }
   }
 
   fragment BlogPost on StrapiPosts {
@@ -74,18 +55,19 @@ export const query = graphql`
     subtitle
     description
     date
-    serieCopy: serie_copy
+    serie_copy
     slug
     translation {
       language
       slug
     }
-    serie: post_serie {
+    post_serie {
       slug
       id
+      name
     }
     language
-    featuredImage: featured_image {
+    featured_image {
       childImageSharp {
         original {
           src
@@ -110,11 +92,7 @@ export const query = graphql`
         timeToRead
       }
     }
-    serie: post_serie {
-      name
-      slug
-    }
-    tags: post_tags {
+    post_tags {
       id
       name
       slug

@@ -2457,21 +2457,21 @@ export type SitePageConnectionGroupArgs = {
 };
 
 export type SitePageContext = {
-  posts?: Maybe<Array<Maybe<SitePageContextPosts>>>;
-  tag?: Maybe<SitePageContextTag>;
   postUri?: Maybe<Scalars['String']>;
   post?: Maybe<SitePageContextPost>;
   serie?: Maybe<SitePageContextSerie>;
   translation?: Maybe<SitePageContextTranslation>;
+  posts?: Maybe<Array<Maybe<SitePageContextPosts>>>;
+  tag?: Maybe<SitePageContextTag>;
 };
 
 export type SitePageContextFilterInput = {
-  posts?: Maybe<SitePageContextPostsFilterListInput>;
-  tag?: Maybe<SitePageContextTagFilterInput>;
   postUri?: Maybe<StringQueryOperatorInput>;
   post?: Maybe<SitePageContextPostFilterInput>;
   serie?: Maybe<SitePageContextSerieFilterInput>;
   translation?: Maybe<SitePageContextTranslationFilterInput>;
+  posts?: Maybe<SitePageContextPostsFilterListInput>;
+  tag?: Maybe<SitePageContextTagFilterInput>;
 };
 
 export type SitePageContextPost = {
@@ -2586,14 +2586,14 @@ export type SitePageContextPosts = {
   subtitle?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
   date?: Maybe<Scalars['Date']>;
-  serieCopy?: Maybe<Scalars['String']>;
+  serie_copy?: Maybe<Scalars['String']>;
   slug?: Maybe<Scalars['String']>;
   translation?: Maybe<SitePageContextPostsTranslation>;
-  serie?: Maybe<SitePageContextPostsSerie>;
+  post_serie?: Maybe<SitePageContextPostsPost_Serie>;
   language?: Maybe<Scalars['String']>;
-  featuredImage?: Maybe<SitePageContextPostsFeaturedImage>;
+  featured_image?: Maybe<SitePageContextPostsFeatured_Image>;
   childStrapiPostContent?: Maybe<SitePageContextPostsChildStrapiPostContent>;
-  tags?: Maybe<Array<Maybe<SitePageContextPostsTags>>>;
+  post_tags?: Maybe<Array<Maybe<SitePageContextPostsPost_Tags>>>;
 };
 
 export type SitePageContextPostsChildStrapiPostContent = {
@@ -2624,21 +2624,21 @@ export type SitePageContextPostSerieFilterInput = {
   name?: Maybe<StringQueryOperatorInput>;
 };
 
-export type SitePageContextPostsFeaturedImage = {
-  childImageSharp?: Maybe<SitePageContextPostsFeaturedImageChildImageSharp>;
+export type SitePageContextPostsFeatured_Image = {
+  childImageSharp?: Maybe<SitePageContextPostsFeatured_ImageChildImageSharp>;
 };
 
-export type SitePageContextPostsFeaturedImageChildImageSharp = {
-  original?: Maybe<SitePageContextPostsFeaturedImageChildImageSharpOriginal>;
-  fluid?: Maybe<SitePageContextPostsFeaturedImageChildImageSharpFluid>;
+export type SitePageContextPostsFeatured_ImageChildImageSharp = {
+  original?: Maybe<SitePageContextPostsFeatured_ImageChildImageSharpOriginal>;
+  fluid?: Maybe<SitePageContextPostsFeatured_ImageChildImageSharpFluid>;
 };
 
-export type SitePageContextPostsFeaturedImageChildImageSharpFilterInput = {
-  original?: Maybe<SitePageContextPostsFeaturedImageChildImageSharpOriginalFilterInput>;
-  fluid?: Maybe<SitePageContextPostsFeaturedImageChildImageSharpFluidFilterInput>;
+export type SitePageContextPostsFeatured_ImageChildImageSharpFilterInput = {
+  original?: Maybe<SitePageContextPostsFeatured_ImageChildImageSharpOriginalFilterInput>;
+  fluid?: Maybe<SitePageContextPostsFeatured_ImageChildImageSharpFluidFilterInput>;
 };
 
-export type SitePageContextPostsFeaturedImageChildImageSharpFluid = {
+export type SitePageContextPostsFeatured_ImageChildImageSharpFluid = {
   base64?: Maybe<Scalars['String']>;
   tracedSVG?: Maybe<Scalars['String']>;
   srcWebp?: Maybe<Scalars['String']>;
@@ -2652,7 +2652,7 @@ export type SitePageContextPostsFeaturedImageChildImageSharpFluid = {
   aspectRatio?: Maybe<Scalars['Float']>;
 };
 
-export type SitePageContextPostsFeaturedImageChildImageSharpFluidFilterInput = {
+export type SitePageContextPostsFeatured_ImageChildImageSharpFluidFilterInput = {
   base64?: Maybe<StringQueryOperatorInput>;
   tracedSVG?: Maybe<StringQueryOperatorInput>;
   srcWebp?: Maybe<StringQueryOperatorInput>;
@@ -2666,16 +2666,16 @@ export type SitePageContextPostsFeaturedImageChildImageSharpFluidFilterInput = {
   aspectRatio?: Maybe<FloatQueryOperatorInput>;
 };
 
-export type SitePageContextPostsFeaturedImageChildImageSharpOriginal = {
+export type SitePageContextPostsFeatured_ImageChildImageSharpOriginal = {
   src?: Maybe<Scalars['String']>;
 };
 
-export type SitePageContextPostsFeaturedImageChildImageSharpOriginalFilterInput = {
+export type SitePageContextPostsFeatured_ImageChildImageSharpOriginalFilterInput = {
   src?: Maybe<StringQueryOperatorInput>;
 };
 
-export type SitePageContextPostsFeaturedImageFilterInput = {
-  childImageSharp?: Maybe<SitePageContextPostsFeaturedImageChildImageSharpFilterInput>;
+export type SitePageContextPostsFeatured_ImageFilterInput = {
+  childImageSharp?: Maybe<SitePageContextPostsFeatured_ImageChildImageSharpFilterInput>;
 };
 
 export type SitePageContextPostsFilterInput = {
@@ -2684,46 +2684,46 @@ export type SitePageContextPostsFilterInput = {
   subtitle?: Maybe<StringQueryOperatorInput>;
   description?: Maybe<StringQueryOperatorInput>;
   date?: Maybe<DateQueryOperatorInput>;
-  serieCopy?: Maybe<StringQueryOperatorInput>;
+  serie_copy?: Maybe<StringQueryOperatorInput>;
   slug?: Maybe<StringQueryOperatorInput>;
   translation?: Maybe<SitePageContextPostsTranslationFilterInput>;
-  serie?: Maybe<SitePageContextPostsSerieFilterInput>;
+  post_serie?: Maybe<SitePageContextPostsPost_SerieFilterInput>;
   language?: Maybe<StringQueryOperatorInput>;
-  featuredImage?: Maybe<SitePageContextPostsFeaturedImageFilterInput>;
+  featured_image?: Maybe<SitePageContextPostsFeatured_ImageFilterInput>;
   childStrapiPostContent?: Maybe<SitePageContextPostsChildStrapiPostContentFilterInput>;
-  tags?: Maybe<SitePageContextPostsTagsFilterListInput>;
+  post_tags?: Maybe<SitePageContextPostsPost_TagsFilterListInput>;
 };
 
 export type SitePageContextPostsFilterListInput = {
   elemMatch?: Maybe<SitePageContextPostsFilterInput>;
 };
 
-export type SitePageContextPostsSerie = {
+export type SitePageContextPostsPost_Serie = {
   slug?: Maybe<Scalars['String']>;
   id?: Maybe<Scalars['String']>;
   name?: Maybe<Scalars['String']>;
 };
 
-export type SitePageContextPostsSerieFilterInput = {
+export type SitePageContextPostsPost_SerieFilterInput = {
   slug?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
   name?: Maybe<StringQueryOperatorInput>;
 };
 
-export type SitePageContextPostsTags = {
+export type SitePageContextPostsPost_Tags = {
   id?: Maybe<Scalars['String']>;
   name?: Maybe<Scalars['String']>;
   slug?: Maybe<Scalars['String']>;
 };
 
-export type SitePageContextPostsTagsFilterInput = {
+export type SitePageContextPostsPost_TagsFilterInput = {
   id?: Maybe<StringQueryOperatorInput>;
   name?: Maybe<StringQueryOperatorInput>;
   slug?: Maybe<StringQueryOperatorInput>;
 };
 
-export type SitePageContextPostsTagsFilterListInput = {
-  elemMatch?: Maybe<SitePageContextPostsTagsFilterInput>;
+export type SitePageContextPostsPost_TagsFilterListInput = {
+  elemMatch?: Maybe<SitePageContextPostsPost_TagsFilterInput>;
 };
 
 export type SitePageContextPostsTranslation = {
@@ -2917,26 +2917,6 @@ export type SitePageFieldsEnum =
   | 'internal___owner'
   | 'internal___type'
   | 'isCreatedByStatefulCreatePages'
-  | 'context___posts'
-  | 'context___posts___id'
-  | 'context___posts___title'
-  | 'context___posts___subtitle'
-  | 'context___posts___description'
-  | 'context___posts___date'
-  | 'context___posts___serieCopy'
-  | 'context___posts___slug'
-  | 'context___posts___translation___language'
-  | 'context___posts___translation___slug'
-  | 'context___posts___serie___slug'
-  | 'context___posts___serie___id'
-  | 'context___posts___serie___name'
-  | 'context___posts___language'
-  | 'context___posts___tags'
-  | 'context___posts___tags___id'
-  | 'context___posts___tags___name'
-  | 'context___posts___tags___slug'
-  | 'context___tag___slug'
-  | 'context___tag___name'
   | 'context___postUri'
   | 'context___post___id'
   | 'context___post___title'
@@ -2967,6 +2947,26 @@ export type SitePageFieldsEnum =
   | 'context___serie___blogPosts___uri'
   | 'context___translation___language'
   | 'context___translation___postUri'
+  | 'context___posts'
+  | 'context___posts___id'
+  | 'context___posts___title'
+  | 'context___posts___subtitle'
+  | 'context___posts___description'
+  | 'context___posts___date'
+  | 'context___posts___serie_copy'
+  | 'context___posts___slug'
+  | 'context___posts___translation___language'
+  | 'context___posts___translation___slug'
+  | 'context___posts___post_serie___slug'
+  | 'context___posts___post_serie___id'
+  | 'context___posts___post_serie___name'
+  | 'context___posts___language'
+  | 'context___posts___post_tags'
+  | 'context___posts___post_tags___id'
+  | 'context___posts___post_tags___name'
+  | 'context___posts___post_tags___slug'
+  | 'context___tag___slug'
+  | 'context___tag___name'
   | 'pluginCreator___id'
   | 'pluginCreator___parent___id'
   | 'pluginCreator___parent___parent___id'

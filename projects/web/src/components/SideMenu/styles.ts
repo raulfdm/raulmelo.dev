@@ -24,7 +24,7 @@ export const Nav = styled(motion.nav)<{ isCollapsed: boolean }>`
     0 1px 4px;
 `;
 
-export const StyledLink = styled(Link)<{ isCurrentPage?: boolean }>`
+export const StyledLink = styled(Link)<{ $isCurrentPage?: boolean }>`
   font-size: 18px;
   padding: 8px 16px;
   color: ${({ theme }) => theme.color.font};
@@ -32,8 +32,8 @@ export const StyledLink = styled(Link)<{ isCurrentPage?: boolean }>`
   font-weight: bold;
   text-decoration: none;
 
-  ${({ theme, isCurrentPage }) =>
-    isCurrentPage &&
+  ${({ theme, $isCurrentPage }) =>
+    $isCurrentPage &&
     css`
       &::before {
         content: '';

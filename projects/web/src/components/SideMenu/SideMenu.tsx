@@ -1,11 +1,10 @@
 import React from 'react';
 import { defineMessage } from 'react-intl';
-import { observer } from 'mobx-react';
 
 import { hasWindow } from '@utils/dom';
 import { useIntl } from '@contexts/react-intl';
-import { sideMenuStore } from './state';
 import { Nav, StyledLink, OpacityLayer } from './styles';
+import { useApp } from '@hooks/useApp';
 
 const messages = defineMessage({
   home: {
@@ -41,25 +40,26 @@ const links = {
   },
 };
 
-export const SideMenu = observer(() => {
-  const { isCollapsed, toggle, hide } = sideMenuStore;
-  const animate = sideMenuStore.isCollapsed ? 'closed' : 'open';
+export const SideMenu = () => {
+  const { sideMenu } = useApp();
+  const { isCollapsed, toggle, hide } = sideMenu;
+
+  const animate = isCollapsed ? 'closed' : 'open';
   const { formatMessage } = useIntl();
   const urlPathname = hasWindow() ? window.location.pathname : '';
 
   React.useEffect(() => {
+    const hideOnScroll = (): void => {
+      if (!isCollapsed) {
+        hide();
+      }
+    };
+
     document.addEventListener('scroll', hideOnScroll);
     return () => {
-      hide();
-      document.addEventListener('scroll', hideOnScroll);
+      document.removeEventListener('scroll', hideOnScroll);
     };
-  }, []);
-
-  const hideOnScroll = (): void => {
-    if (!sideMenuStore.isCollapsed) {
-      sideMenuStore.hide();
-    }
-  };
+  }, [isCollapsed, hide]);
 
   return (
     <>
@@ -83,7 +83,7 @@ export const SideMenu = observer(() => {
               to={config.to}
               onClick={toggle}
               data-testid={`side-menu-${linkId}-link`}
-              isCurrentPage={urlPathname === config.to}
+              $isCurrentPage={urlPathname === config.to}
             >
               {formatMessage(config.localeId)}
             </StyledLink>
@@ -107,4 +107,4 @@ export const SideMenu = observer(() => {
       />
     </>
   );
-});
+};

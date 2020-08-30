@@ -7,13 +7,13 @@ import { InfiniteScroll } from '@components/InfiniteScroll';
 import { styled } from '@styles/styled';
 import { PostCard } from '@components/PostCard';
 import { PostFilters } from '@screens/Home/types';
-import { PostTagsInstance, PostsInstance } from '@stores/apiStore';
 import { useIntl } from '@contexts/react-intl';
 import { LocaleValues, LOCALES } from '@app-types';
+import { PostModel } from '@models/Post';
 
 type PostsProps = {
   filter: PostFilters;
-  posts: PostsInstance;
+  posts: PostModel[];
   loadMore: () => void;
   hasMore: boolean;
   customTitle?: string;
@@ -105,10 +105,9 @@ export const Posts: React.FC<PostsProps> = ({
           Component={PostList}
         >
           <AnimatePresence initial={false}>
-            {posts.map((post, index) => (
+            {posts.map((post) => (
               <PostListItem
                 key={post.id}
-                custom={index}
                 variants={itemsAnimationVariants}
                 initial="hidden"
                 animate="visible"
@@ -120,7 +119,7 @@ export const Posts: React.FC<PostsProps> = ({
                   },
                 }}
               >
-                <PostCard post={post} tags={post.tags as PostTagsInstance} />
+                <PostCard post={post} tags={post.post_tags} />
               </PostListItem>
             ))}
           </AnimatePresence>

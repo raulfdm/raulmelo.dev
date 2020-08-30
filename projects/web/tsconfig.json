@@ -5,7 +5,11 @@
     "forceConsistentCasingInFileNames": true,
     "importHelpers": true,
     "jsx": "preserve",
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
+    ],
     "module": "ESNext",
     "moduleResolution": "node",
     "noEmit": true,
@@ -25,22 +29,58 @@
         "cypress",
         "@types/testing-library__cypress"
       ],
-      "@app-types/graphql": ["./types/graphql-types.ts"],
-      "@components/*": ["src/components/*"],
-      "@config/*": ["src/config/*"],
-      "@contexts/*": ["src/contexts/*"],
-      "@hooks/*": ["src/hooks/*"],
-      "@locales/*": ["src/locales/*"],
-      "@models": ["src/models/index.ts"],
-      "@screens/*": ["src/screens/*"],
-      "@static/*": ["static/*"],
-      "@styles/*": ["src/styles/*"],
-      "@utils/*": ["src/utils/*"],
-      "@stores/*": ["src/stores/*"],
-      "@globalShared/*": ["globalShared/*"],
-      "@utils/test": ["src/utils/test-utils"]
+      "@app-types/graphql": [
+        "./types/graphql-types.ts"
+      ],
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@config/*": [
+        "src/config/*"
+      ],
+      "@contexts/*": [
+        "src/contexts/*"
+      ],
+      "@hooks/*": [
+        "src/hooks/*"
+      ],
+      "@locales/*": [
+        "src/locales/*"
+      ],
+      "@models/*": [
+        "src/models/*"
+      ],
+      "@screens/*": [
+        "src/screens/*"
+      ],
+      "@static/*": [
+        "static/*"
+      ],
+      "@styles/*": [
+        "src/styles/*"
+      ],
+      "@utils/*": [
+        "src/utils/*"
+      ],
+      "@stores/*": [
+        "src/stores/*"
+      ],
+      "@globalShared/*": [
+        "globalShared/*"
+      ],
+      "@utils/test": [
+        "src/utils/test-utils"
+      ]
     }
   },
-  "typeRoots": ["node_modules/@types", "types", "cypress"],
-  "exclude": [".cache", "public", "node_modules"]
+  "typeRoots": [
+    "node_modules/@types",
+    "types",
+    "cypress"
+  ],
+  "exclude": [
+    ".cache",
+    "public",
+    "node_modules"
+  ]
 }

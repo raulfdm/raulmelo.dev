@@ -1,8 +1,6 @@
 import React from 'react';
 import { defineMessages } from 'react-intl';
-import { observer } from 'mobx-react';
 
-import { PostsStoreInstance } from '@screens/Home/stores';
 import { SEO } from '@components/SEO';
 import { useIntl } from '@contexts/react-intl';
 import AuthorPresentation from '@screens/Home/components/AuthorPresentation';
@@ -11,6 +9,8 @@ import { Filter } from '@screens/Home/components/Filter';
 import { Posts } from '@screens/Home/components/Posts';
 import { LocaleValues } from '@app-types';
 import { PostFilters } from './types';
+import { useBlogPostFilters } from './hooks/useBlogPostFilters';
+import { StrapiPosts } from '@app-types/graphql';
 
 const messages = defineMessages({
   description: {
@@ -23,48 +23,47 @@ const messages = defineMessages({
 
 type HomePageTemplateType = {
   pageContext: {
-    store: PostsStoreInstance;
+    store: {
+      posts: StrapiPosts[];
+    };
   };
 };
 
-const HomePageTemplate: React.FC<HomePageTemplateType> = observer(
-  ({ pageContext }) => {
-    const { locale, formatMessage } = useIntl();
-    const { store } = pageContext;
+const HomePageTemplate: React.FC<HomePageTemplateType> = ({ pageContext }) => {
+  const { locale, formatMessage } = useIntl();
+  const { store } = pageContext;
+  const {
+    activeFilter,
+    loadMorePosts,
+    changeFilter,
+    postsToRender,
+    hasMore,
+  } = useBlogPostFilters(store.posts);
 
-    const {
-      postsToRender,
-      activeFilter,
-      loadMore,
-      hasMore,
-      changeFilter,
-    } = store;
+  return (
+    <>
+      <SEO
+        url="/"
+        lang={locale}
+        description={formatMessage(messages.description)}
+        title={formatMessage(messages.title)}
+      />
 
-    return (
-      <>
-        <SEO
-          url="/"
-          lang={locale}
-          description={formatMessage(messages.description)}
-          title={formatMessage(messages.title)}
+      <Layout>
+        <AuthorPresentation />
+        <Filter
+          activeFilter={activeFilter as PostFilters}
+          changeFilter={changeFilter}
         />
-
-        <Layout>
-          <AuthorPresentation />
-          <Filter
-            activeFilter={activeFilter as PostFilters}
-            changeFilter={changeFilter}
-          />
-          <Posts
-            posts={postsToRender(locale as LocaleValues)}
-            filter={activeFilter as PostFilters}
-            loadMore={loadMore}
-            hasMore={hasMore()}
-          />
-        </Layout>
-      </>
-    );
-  },
-);
+        <Posts
+          posts={postsToRender(locale as LocaleValues)}
+          filter={activeFilter as PostFilters}
+          loadMore={loadMorePosts}
+          hasMore={hasMore()}
+        />
+      </Layout>
+    </>
+  );
+};
 
 export default HomePageTemplate;

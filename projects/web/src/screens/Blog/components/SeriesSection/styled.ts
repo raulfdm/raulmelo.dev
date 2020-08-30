@@ -1,4 +1,3 @@
-import { transparentize } from 'polished';
 import { motion } from 'framer-motion';
 
 import { styled, media } from '@styles/styled';
@@ -74,7 +73,7 @@ export const Item = styled(motion.li)`
   }
 
   &:hover:not(.active) {
-    background-color: ${transparentize(0.8, 'rgba(3, 168, 124, 1)')};
+    background-color: rgba(3, 168, 124, 0.2);
   }
 
   a {

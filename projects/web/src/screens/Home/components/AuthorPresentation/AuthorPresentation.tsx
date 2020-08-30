@@ -1,6 +1,12 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import { Twitter, Linkedin, Github } from '@styled-icons/boxicons-logos';
+/**
+ * Keep importing like separately to
+ * grasp tree shaking and reduce bundle size.
+ */
+import { Twitter } from '@styled-icons/boxicons-logos/Twitter';
+import { Linkedin } from '@styled-icons/boxicons-logos/Linkedin';
+import { Github } from '@styled-icons/boxicons-logos/Github';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import {

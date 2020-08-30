@@ -10,7 +10,6 @@
 - [Styled Icons](https://styled-icons.js.org/) - collection of svg icons as React components;
 - [React Inlt](https://github.com/formatjs/react-intl) for locales;
 - [Framer Motion](https://www.framer.com/api/motion/) for smooth animations;
-- [Mobx State Tree](https://mobx-state-tree.js.org/intro/philosophy) as easy state management;
 - [Algolia](https://www.algolia.com/) for search
 
 For hosting I use Netlify services. Since they have limit amount of machine usage, I build using Github Actions and only ship the files via Netlici CLI.

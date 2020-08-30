@@ -36,8 +36,8 @@ export const InfiniteScroll: React.FC<InfiniteScrollProps> = ({
   children,
   isLoading,
   hasMore,
-  threshold = 100,
-  throttleAmount = 64,
+  threshold = 200,
+  throttleAmount = 128,
   onLoadMore,
 }) => {
   const wardRef = React.useRef<HTMLDivElement | null>(null);

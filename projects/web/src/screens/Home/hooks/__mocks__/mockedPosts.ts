@@ -1,4 +1,4 @@
-export default [
+export const mockedPosts = [
   {
     id: '1',
     title: 'Eu falhei em uma entrevista por causa de um algoritmo',
@@ -6,15 +6,15 @@ export default [
     description:
       'Sometimes being interviewed can be hard. Here I detailed why I failed and write my thoughts about how an code challenge beat me my job opportunity.',
     date: '2020-08-16',
-    serieCopy: null,
+    serie_copy: null,
     slug: 'eu-falhei-em-uma-entrevista-por-causa-de-um-algoritmo',
     translation: {
       language: 'en',
       slug: 'i-failed-an-interview-because-of-an-algorithm',
     },
-    serie: null,
+    post_serie: null,
     language: 'pt',
-    featuredImage: {
+    featured_image: {
       childImageSharp: {
         original: {
           src:
@@ -47,7 +47,7 @@ export default [
         timeToRead: 1,
       },
     },
-    tags: [
+    post_tags: [
       {
         id: '5f390f92f95eb21417e28f68',
         name: 'Career',
@@ -72,12 +72,12 @@ export default [
     description:
       '\n\n\ntags:\n  - saude\n  - coronavirus\n  - brasil\n  - holanda\n',
     date: '2020-03-13',
-    serieCopy: null,
+    serie_copy: null,
     slug: 'e-o-coronavirus-hein',
     translation: null,
-    serie: null,
+    post_serie: null,
     language: 'pt',
-    featuredImage: {
+    featured_image: {
       childImageSharp: {
         original: {
           src:
@@ -110,7 +110,7 @@ export default [
         timeToRead: 7,
       },
     },
-    tags: [
+    post_tags: [
       {
         id: '5f394bece57aa266137e0ffd',
         name: 'Saúde',
@@ -139,16 +139,16 @@ export default [
     subtitle: 'Matrix Origins: Onde tudo começou',
     description: 'Lorem Ipsum\n\n',
     date: '2017-12-17',
-    serieCopy: 'Ato 2',
+    serie_copy: 'Ato 2',
     slug: 'dev-js-part-2',
     translation: null,
-    serie: {
+    post_serie: {
       slug: 'desenvolvedor-java-script-do-brasil-a-europa',
       id: '5f393dcaeb6c556a2d8efd0f',
       name: 'Desenvolvedor JavaScript: do Brasil à Europa',
     },
     language: 'pt',
-    featuredImage: {
+    featured_image: {
       childImageSharp: {
         original: {
           src:
@@ -181,7 +181,7 @@ export default [
         timeToRead: 5,
       },
     },
-    tags: [
+    post_tags: [
       {
         id: '5f396fe92163ea002152caa9',
         name: 'Desenvolvimento',
@@ -211,16 +211,16 @@ export default [
     description:
       'A história da minha trajetória de uma pessoa sem profissão no Brasil até me tornar um desenvolvedor na Holanda\n',
     date: '2017-12-10',
-    serieCopy: 'Ato 1',
+    serie_copy: 'Ato 1',
     slug: 'dev-js-part-1',
     translation: null,
-    serie: {
+    post_serie: {
       slug: 'desenvolvedor-java-script-do-brasil-a-europa',
       id: '5f393dcaeb6c556a2d8efd0f',
       name: 'Desenvolvedor JavaScript: do Brasil à Europa',
     },
     language: 'pt',
-    featuredImage: {
+    featured_image: {
       childImageSharp: {
         original: {
           src:
@@ -253,7 +253,7 @@ export default [
         timeToRead: 5,
       },
     },
-    tags: [
+    post_tags: [
       {
         id: '5f396fe92163ea002152caa9',
         name: 'Desenvolvimento',
@@ -283,15 +283,15 @@ export default [
     description:
       'Sometimes being interviewed can be hard. Here I detailed why I failed and write my thoughts about how an code challenge beat me my job opportunity.',
     date: '2020-08-16',
-    serieCopy: null,
+    serie_copy: null,
     slug: 'eu-falhei-em-uma-entrevista-por-causa-de-um-algoritmo',
     translation: {
       language: 'en',
       slug: 'i-failed-an-interview-because-of-an-algorithm',
     },
-    serie: null,
+    post_serie: null,
     language: 'pt',
-    featuredImage: {
+    featured_image: {
       childImageSharp: {
         original: {
           src:
@@ -324,7 +324,7 @@ export default [
         timeToRead: 1,
       },
     },
-    tags: [
+    post_tags: [
       {
         id: '5f390f92f95eb21417e28f68',
         name: 'Career',
@@ -349,15 +349,15 @@ export default [
     description:
       'Sometimes being interviewed can be hard. Here I detailed why I failed and write my thoughts about how an code challenge beat me my job opportunity.',
     date: '2020-08-16',
-    serieCopy: null,
+    serie_copy: null,
     slug: 'i-failed-an-interview-because-of-an-algorithm',
     translation: {
       language: 'pt',
       slug: 'eu-falhei-em-uma-entrevista-por-causa-de-um-algoritmo',
     },
-    serie: null,
+    post_serie: null,
     language: 'en',
-    featuredImage: {
+    featured_image: {
       childImageSharp: {
         original: {
           src:
@@ -390,7 +390,7 @@ export default [
         timeToRead: 12,
       },
     },
-    tags: [
+    post_tags: [
       {
         id: '5f3972d3c998c60021565c2e',
         name: 'Carreira',
@@ -404,12 +404,12 @@ export default [
     subtitle: 'A quick setup to increase your build performance',
     description: 'Some description I do have to fill it in\n\n',
     date: '2020-04-27',
-    serieCopy: null,
+    serie_copy: null,
     slug: 'cache-gatsby-github-actions',
     translation: null,
-    serie: null,
+    post_serie: null,
     language: 'en',
-    featuredImage: {
+    featured_image: {
       childImageSharp: {
         original: {
           src:
@@ -442,7 +442,7 @@ export default [
         timeToRead: 5,
       },
     },
-    tags: [
+    post_tags: [
       {
         id: '5f390975f5ec161249bd8cdf',
         name: 'Front End',
@@ -472,12 +472,12 @@ export default [
     description:
       '\n\n\ntags:\n  - saude\n  - coronavirus\n  - brasil\n  - holanda\n',
     date: '2020-03-13',
-    serieCopy: null,
+    serie_copy: null,
     slug: 'e-o-coronavirus-hein',
     translation: null,
-    serie: null,
+    post_serie: null,
     language: 'pt',
-    featuredImage: {
+    featured_image: {
       childImageSharp: {
         original: {
           src:
@@ -510,7 +510,7 @@ export default [
         timeToRead: 7,
       },
     },
-    tags: [
+    post_tags: [
       {
         id: '5f394bece57aa266137e0ffd',
         name: 'Saúde',
@@ -540,15 +540,15 @@ export default [
     description:
       'Sometimes being interviewed can be hard. Here I detailed why I failed and write my thoughts about how an code challenge beat me my job opportunity.',
     date: '2020-08-16',
-    serieCopy: null,
+    serie_copy: null,
     slug: 'i-failed-an-interview-because-of-an-algorithm',
     translation: {
       language: 'pt',
       slug: 'eu-falhei-em-uma-entrevista-por-causa-de-um-algoritmo',
     },
-    serie: null,
+    post_serie: null,
     language: 'en',
-    featuredImage: {
+    featured_image: {
       childImageSharp: {
         original: {
           src:
@@ -581,7 +581,7 @@ export default [
         timeToRead: 12,
       },
     },
-    tags: [
+    post_tags: [
       {
         id: '5f3972d3c998c60021565c2e',
         name: 'Carreira',
@@ -595,12 +595,12 @@ export default [
     subtitle: 'A quick setup to increase your build performance',
     description: 'Some description I do have to fill it in\n\n',
     date: '2020-04-27',
-    serieCopy: null,
+    serie_copy: null,
     slug: 'cache-gatsby-github-actions',
     translation: null,
-    serie: null,
+    post_serie: null,
     language: 'en',
-    featuredImage: {
+    featured_image: {
       childImageSharp: {
         original: {
           src:
@@ -633,7 +633,7 @@ export default [
         timeToRead: 5,
       },
     },
-    tags: [
+    post_tags: [
       {
         id: '5f390975f5ec161249bd8cdf',
         name: 'Front End',
@@ -653,6 +653,336 @@ export default [
         id: '5f3948d4e57aa266137e0ffc',
         name: 'Github Actions',
         slug: 'github-actions',
+      },
+    ],
+  },
+  {
+    id: '1231',
+    title: 'Eu falhei em uma entrevista por causa de um algoritmo',
+    subtitle: null,
+    description:
+      'Sometimes being interviewed can be hard. Here I detailed why I failed and write my thoughts about how an code challenge beat me my job opportunity.',
+    date: '2020-08-16',
+    serie_copy: null,
+    slug: 'eu-falhei-em-uma-entrevista-por-causa-de-um-algoritmo',
+    translation: {
+      language: 'en',
+      slug: 'i-failed-an-interview-because-of-an-algorithm',
+    },
+    post_serie: null,
+    language: 'pt',
+    featured_image: {
+      childImageSharp: {
+        original: {
+          src:
+            '/static/b799f542e0b219eece163da7f4bff6a1/e029baa5a67ed0189707e60562b9bcdd.jpg',
+        },
+        fluid: {
+          base64:
+            'data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAIFBP/EABUBAQEAAAAAAAAAAAAAAAAAAAEA/9oADAMBAAIQAxAAAAFNE9GtCA//xAAaEAEBAAIDAAAAAAAAAAAAAAABAAIRAwQS/9oACAEBAAEFAthEDdl3cOTY5vn/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAcEAACAQUBAAAAAAAAAAAAAAAAARECECExUWH/2gAIAQEABj8CirE8PGbE7I//xAAaEAEAAgMBAAAAAAAAAAAAAAABABEhMUFh/9oACAEBAAE/ITn2jlmEOlEoQhbbNRbPYyH/2gAMAwEAAgADAAAAENMf/8QAFhEBAQEAAAAAAAAAAAAAAAAAEQAh/9oACAEDAQE/EHSL/8QAFhEBAQEAAAAAAAAAAAAAAAAAEQAh/9oACAECAQE/EDGb/8QAHBABAAMAAgMAAAAAAAAAAAAAAQARITFRQWGR/9oACAEBAAE/EPFR6ToxzWYWnxjD0zCVnCXh6iRW1unKInDWcT//2Q==',
+          tracedSVG:
+            "data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='400'%20height='263'%20viewBox='0%200%20400%20263'%20preserveAspectRatio='none'%3e%3cpath%20d='M8%201v2C6%203%205%206%206%207v1H5l-1%202H3L2%209l-1%202H0l2%202%202%201H1l-1%206%201%206%201%201v1l-2%202c0%204%202%204%2016%204h12v-9l-1-10v-1c2%200%202%201%202%2014%200%207%201%207%2015%206a259%20259%200%200112-2h-1l-1-1h-1l-2%201%202-3c2%200%203-3%203-5l-2-1v1l-1%201c-1-1-1%200-1%201l-1%202-1%202c0%202%200%202-3%201-1-1-2-2-1-3l-1-2-1%202-1-1c-1-3-1-3-1-1s0%202-1%201l-3-1h-2c0-1%201-2%202-1l1-1-2-1c-3%200-4-3-3-3v-2l-1-2h2l1%201%202%201%202-1%201-1%201%201v1c3%200%206%203%204%204h-2l-1%201%201%201c3%200%205-1%205-3l1-2v-3c0-1%203-1%205%201h5v-1c0-2-2-2-10-2h-9l9-1h10V0h-5l-6%201%201%201c1-1%201%200%200%200l1%202v2l2%201h-3l-1%202c1%202%201%202-4%202-3%200-5-1-4-2H31l-1-2V6l-1-1V2c0-1%200-2-1-1l-1%201-1-1-8-1L8%201m55%205c0%206%201%207%202%207%201%201%200%201-1%201-2%200-3%200-2%201l1%202%201%201c1%200%202-1%201-2l1-1%201%201%202%201%201-1h2c2%200%202%200%201-1-3-1-1-2%206-2h7l-3-1c-6%200-11-1-10-2V9c-1%200-2-1-1-2%200-3-2-7-3-5l-1-1-2-1c-3%200-3%200-3%206m65-5l3%202c3%202%203%202%201%206l-3%204%205%201%207%201h-15c-2%200-2%202%200%202%201%201%202%202%201%203h1l2-1c0-2%204%200%206%202l2%201h1l4%203c1%201%202%202%201%203%200%202%200%202%201%201%202%200%202%200%202%202s0%202-10%202c-7%200-10-1-10-2l-2-2h-1v3l-1-2c0-2%200-2-1%200s-1%203-13%203l-12%201h12l30%201%2018%201v-8c0-4%200-7%201-6l1-1-1-1-1-1c0-2-2-3-10-3l-6-1%206-1h7c2-1%202-1-6-2a6675%206675%200%2001-9-1c1-1%202-2%202-5l-1-2-3%201V4l1-1V1c1-1%201-1-1-1l-3%201h-1l-2-1-3%201m55%200c-1%201-1%201%201%201v6l-2%202v1l-2%202c-1%201%201%201%205%201h6V0h-3l-5%201M42%2036c-2%200-3%201-3%202%201%202%202%204%202%202h2c3%202%206%202%208%201h4c3%202%203%203%203%206%200%204%200%204%201%202V37l-6-1H42m85%202c-1%201%200%203%201%204%202%201%202%201%201%202-2%201-3%203-1%203l2%202%201%205c2%202%202%202%2029%203%2017%200%2028%200%2027-1l1-1%201-9v-9h-31l-31%201m107%203c-1%203-1%203%202%204%203%200%207%205%206%207l2%202c2%201-1%202-4%202l-3%201%208%201c9%200%209%200%208-5l-1-2c0%202%200%202-1%201%200-2-1-2-1-1l-2%201c-2%200-2%200-2-3v-5c1-1%202-2%201-3l1-1%201-1-7-1c-6%200-7%200-8%203m-74%200l-1%202v2c-2%201-2%201%200%203s3%204%201%204l-2-2c-1-2-3-3-3-1-1%206-1%205%207%206%207%200%209%200%2010-2h2c-1%202%200%202%204%202l6-1-6-1c-1%200-2%200-1-1%200-1%200-2-2-1l-2-1h-1l-2-1-2-1v-1l-1-1v-2h-5l1-1c1%200-1-3-3-3v1M15%2058L5%2059H4c-4-2-4-1-4%208l1%209%2012%201%2013-1h2c4%202%201%203-6%203l-7%201h-1l-1-1-1%202%201%201v3h-2v-2c0-3-1-4-7-4H1L0%2089v10h9c9%200%2018%201%2014%202H4c-3%200-4%200-4%202s2%203%2011%202l1%201h2l1%201%201%202%201-1%201-2%201%202v1l2%202%201%203v-3c0-3%202-3%202%201s-1%207-2%206H12l-4%201H4c-5%201%200%201%2011%201h11v-8c0-9%201-12%202-7l2%203%201%202h1l1%201v1c2-1%204-4%202-5-1%200%203-4%204-3l1-1c0-1-4-2-9-2l-5-1%2015-1h8v-3l-1-2-1%202-5%201c-4%200-4%200-3-2h3l4-3c3-3%208-6%2010-6l2-1%202-1c1%201%201%202-1%204l-2%207%201%203c1-1%201-1%203%201s3%202%207%202c5-1%207%200%205%205-2%204%200%2011%203%2014l4%207c2%204%205%2011%207%2011v2c-2%202-2%202%205%202%206%200%207%200%207%202l-1%201v2c1%202%200%203-2%205l-3%205h-1l-1-5c0-2%200-3-1-2v12a324%20324%200%20010%2022v4h-9l-4%201-8%202%201%201%201%202h1c0-2%202-1%202%201l1%202%201%202%201%201%201%201v2h8c1%202%200%202-5%202l-7%201%208%201%207%201-5%201c-3%200-5%203-4%205s0%207-2%2010v1l1%201-11%201H57l12%201%2017%201c3%201%202%201-2%201s-7%201-6%203c0%201%200%202-2%202v1l2%201%202%201v2c-1%201-2%202-1%203v2c-2%201-2%202-1%202%201%201-1%201-3%201l-5-1-4-1c-3%200-3-1-3-3%200-3-2-4-3-1l-2%201-1%203c1%202%201%202-2%202s-3%200-1%201h33l2-8%201-7v7l2%208c1%202%201%202-1%202l-4%201h-3l-1%203c0%203%200%203-1%202h-6l-1-3h-4c-2-2-8-3-11-3-3%201-3%201-2%203l1%206-1%203h111a796%20796%200%2000111-4l-1-1c-1%201-2%200-2-1l1-1v-1l-1-1c4%200%201-2-3-2-3%200-4%200-3-1l4-1c8%200%208%200%208-10v-9h-3l-12-1c-8%200-9%200-5-1l19-1%2016-1h-14l-12-1-3-1-4-2-3-2c-2%200-1-2%201-2v-1l-2-1v-5c2-2%201-2-4-3-4%200-5%200-6%202l-1%202v-2c-1-2-2-2-5-2s-3%200-2-1h9l3-1c4%200%204-1%200-1-3%200-4%200-4-2s0-2-1-1l-1%202-4%201c-4%200-6-1-5-3l-2-1c-2%200-6-4-6-6l-1-1c-2-1-2-5%200-5v2l3-1c5-2%205-3-2-3-6%200-10-1-10-2l3-1h25v-2h-1c-1%201-2%202-3%201h-7c-4%200-6-2-5-5h-1v-2c0-3%200-3-3-4-1-1-2-1-1-2l-2-2h-3l-2%201v4l1%203v1c2%202%201%206%200%206l-2-1-1-1-3-2c0-1-2-3-5-4-3-2-4-3-4-5s-1-3-2-3l-6-1-5-1%201%203c0%203%200%203-4%203l-8%201h-4l-4-7-3-10c0-3-1-5-3-5l-8-13%203-1c2-1%202-2%202-5v-3l-3%202c-3%204-3%204-11-1-9-7-22-13-47-23l-23-9%203-5c2-4%202-4%201-5-2-1-2-1-1-3v-3c2-1%202-2%202-3-1-1-1-2%201-2v-1l-2-4c-1-4-7-3-7%201h1c2%200%204%203%203%205-1%201-1%201-1-1l-2-2-3-1c-2-4-5-4-5-2s0%202-1%201v-3c2-2-5-1-8%200-1%202-2%202-3%200s-2-2-2-1h-2l-5%202c-3%202-4%203-6%202l-4-1c-2%200%202%203%204%203l2%201H35l-1-3h1l1-1-1-1c-2%200-1-11%201-11%203%200-3-2-5-2-3%200-3%200-3%203%200%202%200%203-1%202v-3c0-2-1-3-12-2m127%201l-6%201%207%208c6%207%208%209%2010%209h3V60l-4-1h-10m103%205l1%205-1%203c0%203%202%202%203-1l1-1v2l1%201v1l1%201h1c0%202-2%202-5%202l-2%201c-1%202%2010%202%2013%201h2l2%201c2-1%202-1%200-3l-3-2h-1c0%203-2%203-3%201-2-2-2-2%200-3v-3l-2-1%201-1c1%201%202%200%202-2%201-4%200-5-8-6h-5l2%204m-64%2067l-4%201-4%202-5%203-2%201%205%205%205%205%201%201c0%202%203%201%203-1s0-2%201-1l6%204%201-4c0-4-1-5-2-3s-3%201-3%200l1-2c2%200%203-2%203-7%200-3%200-4-2-3l-2-1h-2m-41%208v2c1%201%201%201%200%200-3%200-5%203-3%204s2%206%200%207v1l1%201c-1%203%205%208%2010%209%203%200%203%200%201%201h-3l4%204%205%203%201%201c0%202%203%202%205%200h1l1%201c2%200%201-3-3-7-2-2-4-3-6-2-2%200-2%200-1-1%202-1%202-2-3-6-7-5-7-6%200-3l5%202v-3c0-3-5-10-8-11l-2-1v-1c-2-2-3-2-5-1m-125%206l-4%201%202%201c0%202-3%202-4%201H7c-2%201%200%203%202%202%202%200%202%200%200%202s-5%202-5%200c-1-1-1-1-1%201l-1%208-2%201%203%201%204-2v-2h2c2%200%202%200%201-1l2-1h2c1-3%209%200%2011%204%201%201%201%200%201-7l-1-9H15m42%200c-8%200-9%200-9%202l-2%202v1l1%202%201%201v5l1%201h-3c1%202%200%202-1%202l-2-1c0-2%200-3-2-3-1-1-1-1%200%200l-1%201c-1-1-1%200-1%201l-1-1-1-2-1%202%201%202%203%202h-3l-3%201a433%20433%200%200051-3h2v-2l-1-2-1-1-1%201h-1l-2-1h-1c0-1%201-2%202-1%201%200%202%200%202-2s-1-2-3-2l-1-1h-1v-2l2-2H57m3%2021v8l1%202%201%202v3h-1c-1%200-2%202-1%203h20l1-1v-1h1l2-2c2-2%202-2%200-1l-2-1v-2l1-4v-5l-9-1H60m203%202l-1%201c1%200%202%201%201%202l1%201%201-1c0-1%201-2%203-1l2%202v1l2%204-3-1c-1-1-1-1-1%201v1c-1-1-3%200-3%202l-3%201-2-1h-1l-1-1c0-1-1-1-1%201v3c1%202%200%202-2%202a2568%202568%200%200137%201c5%200%205%200%204-1-2-1-2-2-1-3v-1c-1-1-2-2-1-4l-1-2h-2l-1-2v1l-1%201-1-2c1-2%200-2-1-2h-1l-1-1-2-1c0-2-14-3-20-1m23%2025l2%205v1l-2%202%201%201%201%202-2%201-1%201h11c1%201%201%201%202-1h2c1%201%201%201-1%201l1%201c3%201%2012%200%2012-1h-6l-4-1-2-2c-2%200-3-1-3-2-1-2-1-2-2-1s-1%201-1-1v-3l1-2c-1%200-1-1%200%200%202%201%201-1-1-3v-1l2%201%205%201%203-1h1c2%200%202%200%201-1%200-1-1-2-3-2s-2%200-1%201%201%201-1%201l-9-2h-6v5M22%20221c-1%202-3%203-3%200h-1c0%204-4%206-11%206l-7%201a594%20594%200%200052-3h-2l-3%201c-3%200-3%200-2-1v-2l-1-1-2-1c-1%201-2%201-3-1v4c1%202%201%203-1%203l-1-1v-2l-1-2h-1l-1-1-1-2-1%201-2%202-1%202c1%201-3%203-5%202-2%200-2-3%200-3l3-1-1-1h-2v-2l-2%202m-4%2010l-2%202-1%201-2-1h-3l-1-2-1%202-1%201-2-1-2-2H0v20l3-1%203%201h1l6-1c10%200%2010%200%2010-9%200-6%200-8-2-9l-1-2-2%201m290%201c1%201%202%203%201%204l1%205c1%201%201%201-1%203l-2%203c1%201%200%201-1%201l-6%201%205%201c4%200%206%200%206%202%201%201%200%201-3%201l-2%201%201%202c2-1%203%200%202%202v1l1%201c0%202%203%203%204%201v-6c-1-4-1-5%202-4l1%201-1%206v5h15c14%200%2020-1%2017-3-1-1-2-5%200-4l1-1-9-3c-9-1-8-2%203-2h5l-6-1c-5-1-9-3-9-5l-1-1-2-3-2%201v-1l-1-2c-1%201-3-2-2-4h-1l-1-1c1-2%200-2-8-2-7%200-8%200-7%201M0%20258v5h20c17%200%2020%200%2018-1l-4-1h-1l-2-1-1%201c1%202-1%201-3-1-3-3-5-4-5-1%200%202-2%201-2-1-1-2-1-2-4-2h-1v-2l-1%201-3%201c-5-2-5-2-7-1-1%201-1%201-1-1l-1-2c-1%200-2%202-2%206'%20fill='%23d3d3d3'%20fill-rule='evenodd'/%3e%3c/svg%3e",
+          srcWebp:
+            '/static/b799f542e0b219eece163da7f4bff6a1/00194/e029baa5a67ed0189707e60562b9bcdd.webp',
+          srcSetWebp:
+            '/static/b799f542e0b219eece163da7f4bff6a1/be31c/e029baa5a67ed0189707e60562b9bcdd.webp 375w,\n/static/b799f542e0b219eece163da7f4bff6a1/6714f/e029baa5a67ed0189707e60562b9bcdd.webp 750w,\n/static/b799f542e0b219eece163da7f4bff6a1/00194/e029baa5a67ed0189707e60562b9bcdd.webp 1500w,\n/static/b799f542e0b219eece163da7f4bff6a1/caac7/e029baa5a67ed0189707e60562b9bcdd.webp 2250w,\n/static/b799f542e0b219eece163da7f4bff6a1/d3e9f/e029baa5a67ed0189707e60562b9bcdd.webp 3000w,\n/static/b799f542e0b219eece163da7f4bff6a1/88013/e029baa5a67ed0189707e60562b9bcdd.webp 3537w',
+          srcSet:
+            '/static/b799f542e0b219eece163da7f4bff6a1/29b23/e029baa5a67ed0189707e60562b9bcdd.jpg 375w,\n/static/b799f542e0b219eece163da7f4bff6a1/32a3a/e029baa5a67ed0189707e60562b9bcdd.jpg 750w,\n/static/b799f542e0b219eece163da7f4bff6a1/febc6/e029baa5a67ed0189707e60562b9bcdd.jpg 1500w,\n/static/b799f542e0b219eece163da7f4bff6a1/d7513/e029baa5a67ed0189707e60562b9bcdd.jpg 2250w,\n/static/b799f542e0b219eece163da7f4bff6a1/b7726/e029baa5a67ed0189707e60562b9bcdd.jpg 3000w,\n/static/b799f542e0b219eece163da7f4bff6a1/a75cc/e029baa5a67ed0189707e60562b9bcdd.jpg 3537w',
+          src:
+            '/static/b799f542e0b219eece163da7f4bff6a1/febc6/e029baa5a67ed0189707e60562b9bcdd.jpg',
+          sizes: '(max-width: 1500px) 100vw, 1500px',
+          presentationWidth: 1500,
+          presentationHeight: 986,
+          originalImg:
+            '/static/b799f542e0b219eece163da7f4bff6a1/a75cc/e029baa5a67ed0189707e60562b9bcdd.jpg',
+          aspectRatio: 1.524390243902439,
+        },
+      },
+    },
+    childStrapiPostContent: {
+      childMdx: {
+        timeToRead: 1,
+      },
+    },
+    post_tags: [
+      {
+        id: '5f390f92f95eb21417e28f68',
+        name: 'Career',
+        slug: 'career',
+      },
+      {
+        id: '5f390f99f95eb21417e28f69',
+        name: 'Interview',
+        slug: 'interview',
+      },
+      {
+        id: '5f390fb6f95eb21417e28f6a',
+        name: 'Job',
+        slug: 'job',
+      },
+    ],
+  },
+  {
+    id: '198398',
+    title: 'Eu falhei em uma entrevista por causa de um algoritmo',
+    subtitle: null,
+    description:
+      'Sometimes being interviewed can be hard. Here I detailed why I failed and write my thoughts about how an code challenge beat me my job opportunity.',
+    date: '2020-08-16',
+    serie_copy: null,
+    slug: 'eu-falhei-em-uma-entrevista-por-causa-de-um-algoritmo',
+    translation: {
+      language: 'en',
+      slug: 'i-failed-an-interview-because-of-an-algorithm',
+    },
+    post_serie: null,
+    language: 'pt',
+    featured_image: {
+      childImageSharp: {
+        original: {
+          src:
+            '/static/b799f542e0b219eece163da7f4bff6a1/e029baa5a67ed0189707e60562b9bcdd.jpg',
+        },
+        fluid: {
+          base64:
+            'data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAIFBP/EABUBAQEAAAAAAAAAAAAAAAAAAAEA/9oADAMBAAIQAxAAAAFNE9GtCA//xAAaEAEBAAIDAAAAAAAAAAAAAAABAAIRAwQS/9oACAEBAAEFAthEDdl3cOTY5vn/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAcEAACAQUBAAAAAAAAAAAAAAAAARECECExUWH/2gAIAQEABj8CirE8PGbE7I//xAAaEAEAAgMBAAAAAAAAAAAAAAABABEhMUFh/9oACAEBAAE/ITn2jlmEOlEoQhbbNRbPYyH/2gAMAwEAAgADAAAAENMf/8QAFhEBAQEAAAAAAAAAAAAAAAAAEQAh/9oACAEDAQE/EHSL/8QAFhEBAQEAAAAAAAAAAAAAAAAAEQAh/9oACAECAQE/EDGb/8QAHBABAAMAAgMAAAAAAAAAAAAAAQARITFRQWGR/9oACAEBAAE/EPFR6ToxzWYWnxjD0zCVnCXh6iRW1unKInDWcT//2Q==',
+          tracedSVG:
+            "data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='400'%20height='263'%20viewBox='0%200%20400%20263'%20preserveAspectRatio='none'%3e%3cpath%20d='M8%201v2C6%203%205%206%206%207v1H5l-1%202H3L2%209l-1%202H0l2%202%202%201H1l-1%206%201%206%201%201v1l-2%202c0%204%202%204%2016%204h12v-9l-1-10v-1c2%200%202%201%202%2014%200%207%201%207%2015%206a259%20259%200%200112-2h-1l-1-1h-1l-2%201%202-3c2%200%203-3%203-5l-2-1v1l-1%201c-1-1-1%200-1%201l-1%202-1%202c0%202%200%202-3%201-1-1-2-2-1-3l-1-2-1%202-1-1c-1-3-1-3-1-1s0%202-1%201l-3-1h-2c0-1%201-2%202-1l1-1-2-1c-3%200-4-3-3-3v-2l-1-2h2l1%201%202%201%202-1%201-1%201%201v1c3%200%206%203%204%204h-2l-1%201%201%201c3%200%205-1%205-3l1-2v-3c0-1%203-1%205%201h5v-1c0-2-2-2-10-2h-9l9-1h10V0h-5l-6%201%201%201c1-1%201%200%200%200l1%202v2l2%201h-3l-1%202c1%202%201%202-4%202-3%200-5-1-4-2H31l-1-2V6l-1-1V2c0-1%200-2-1-1l-1%201-1-1-8-1L8%201m55%205c0%206%201%207%202%207%201%201%200%201-1%201-2%200-3%200-2%201l1%202%201%201c1%200%202-1%201-2l1-1%201%201%202%201%201-1h2c2%200%202%200%201-1-3-1-1-2%206-2h7l-3-1c-6%200-11-1-10-2V9c-1%200-2-1-1-2%200-3-2-7-3-5l-1-1-2-1c-3%200-3%200-3%206m65-5l3%202c3%202%203%202%201%206l-3%204%205%201%207%201h-15c-2%200-2%202%200%202%201%201%202%202%201%203h1l2-1c0-2%204%200%206%202l2%201h1l4%203c1%201%202%202%201%203%200%202%200%202%201%201%202%200%202%200%202%202s0%202-10%202c-7%200-10-1-10-2l-2-2h-1v3l-1-2c0-2%200-2-1%200s-1%203-13%203l-12%201h12l30%201%2018%201v-8c0-4%200-7%201-6l1-1-1-1-1-1c0-2-2-3-10-3l-6-1%206-1h7c2-1%202-1-6-2a6675%206675%200%2001-9-1c1-1%202-2%202-5l-1-2-3%201V4l1-1V1c1-1%201-1-1-1l-3%201h-1l-2-1-3%201m55%200c-1%201-1%201%201%201v6l-2%202v1l-2%202c-1%201%201%201%205%201h6V0h-3l-5%201M42%2036c-2%200-3%201-3%202%201%202%202%204%202%202h2c3%202%206%202%208%201h4c3%202%203%203%203%206%200%204%200%204%201%202V37l-6-1H42m85%202c-1%201%200%203%201%204%202%201%202%201%201%202-2%201-3%203-1%203l2%202%201%205c2%202%202%202%2029%203%2017%200%2028%200%2027-1l1-1%201-9v-9h-31l-31%201m107%203c-1%203-1%203%202%204%203%200%207%205%206%207l2%202c2%201-1%202-4%202l-3%201%208%201c9%200%209%200%208-5l-1-2c0%202%200%202-1%201%200-2-1-2-1-1l-2%201c-2%200-2%200-2-3v-5c1-1%202-2%201-3l1-1%201-1-7-1c-6%200-7%200-8%203m-74%200l-1%202v2c-2%201-2%201%200%203s3%204%201%204l-2-2c-1-2-3-3-3-1-1%206-1%205%207%206%207%200%209%200%2010-2h2c-1%202%200%202%204%202l6-1-6-1c-1%200-2%200-1-1%200-1%200-2-2-1l-2-1h-1l-2-1-2-1v-1l-1-1v-2h-5l1-1c1%200-1-3-3-3v1M15%2058L5%2059H4c-4-2-4-1-4%208l1%209%2012%201%2013-1h2c4%202%201%203-6%203l-7%201h-1l-1-1-1%202%201%201v3h-2v-2c0-3-1-4-7-4H1L0%2089v10h9c9%200%2018%201%2014%202H4c-3%200-4%200-4%202s2%203%2011%202l1%201h2l1%201%201%202%201-1%201-2%201%202v1l2%202%201%203v-3c0-3%202-3%202%201s-1%207-2%206H12l-4%201H4c-5%201%200%201%2011%201h11v-8c0-9%201-12%202-7l2%203%201%202h1l1%201v1c2-1%204-4%202-5-1%200%203-4%204-3l1-1c0-1-4-2-9-2l-5-1%2015-1h8v-3l-1-2-1%202-5%201c-4%200-4%200-3-2h3l4-3c3-3%208-6%2010-6l2-1%202-1c1%201%201%202-1%204l-2%207%201%203c1-1%201-1%203%201s3%202%207%202c5-1%207%200%205%205-2%204%200%2011%203%2014l4%207c2%204%205%2011%207%2011v2c-2%202-2%202%205%202%206%200%207%200%207%202l-1%201v2c1%202%200%203-2%205l-3%205h-1l-1-5c0-2%200-3-1-2v12a324%20324%200%20010%2022v4h-9l-4%201-8%202%201%201%201%202h1c0-2%202-1%202%201l1%202%201%202%201%201%201%201v2h8c1%202%200%202-5%202l-7%201%208%201%207%201-5%201c-3%200-5%203-4%205s0%207-2%2010v1l1%201-11%201H57l12%201%2017%201c3%201%202%201-2%201s-7%201-6%203c0%201%200%202-2%202v1l2%201%202%201v2c-1%201-2%202-1%203v2c-2%201-2%202-1%202%201%201-1%201-3%201l-5-1-4-1c-3%200-3-1-3-3%200-3-2-4-3-1l-2%201-1%203c1%202%201%202-2%202s-3%200-1%201h33l2-8%201-7v7l2%208c1%202%201%202-1%202l-4%201h-3l-1%203c0%203%200%203-1%202h-6l-1-3h-4c-2-2-8-3-11-3-3%201-3%201-2%203l1%206-1%203h111a796%20796%200%2000111-4l-1-1c-1%201-2%200-2-1l1-1v-1l-1-1c4%200%201-2-3-2-3%200-4%200-3-1l4-1c8%200%208%200%208-10v-9h-3l-12-1c-8%200-9%200-5-1l19-1%2016-1h-14l-12-1-3-1-4-2-3-2c-2%200-1-2%201-2v-1l-2-1v-5c2-2%201-2-4-3-4%200-5%200-6%202l-1%202v-2c-1-2-2-2-5-2s-3%200-2-1h9l3-1c4%200%204-1%200-1-3%200-4%200-4-2s0-2-1-1l-1%202-4%201c-4%200-6-1-5-3l-2-1c-2%200-6-4-6-6l-1-1c-2-1-2-5%200-5v2l3-1c5-2%205-3-2-3-6%200-10-1-10-2l3-1h25v-2h-1c-1%201-2%202-3%201h-7c-4%200-6-2-5-5h-1v-2c0-3%200-3-3-4-1-1-2-1-1-2l-2-2h-3l-2%201v4l1%203v1c2%202%201%206%200%206l-2-1-1-1-3-2c0-1-2-3-5-4-3-2-4-3-4-5s-1-3-2-3l-6-1-5-1%201%203c0%203%200%203-4%203l-8%201h-4l-4-7-3-10c0-3-1-5-3-5l-8-13%203-1c2-1%202-2%202-5v-3l-3%202c-3%204-3%204-11-1-9-7-22-13-47-23l-23-9%203-5c2-4%202-4%201-5-2-1-2-1-1-3v-3c2-1%202-2%202-3-1-1-1-2%201-2v-1l-2-4c-1-4-7-3-7%201h1c2%200%204%203%203%205-1%201-1%201-1-1l-2-2-3-1c-2-4-5-4-5-2s0%202-1%201v-3c2-2-5-1-8%200-1%202-2%202-3%200s-2-2-2-1h-2l-5%202c-3%202-4%203-6%202l-4-1c-2%200%202%203%204%203l2%201H35l-1-3h1l1-1-1-1c-2%200-1-11%201-11%203%200-3-2-5-2-3%200-3%200-3%203%200%202%200%203-1%202v-3c0-2-1-3-12-2m127%201l-6%201%207%208c6%207%208%209%2010%209h3V60l-4-1h-10m103%205l1%205-1%203c0%203%202%202%203-1l1-1v2l1%201v1l1%201h1c0%202-2%202-5%202l-2%201c-1%202%2010%202%2013%201h2l2%201c2-1%202-1%200-3l-3-2h-1c0%203-2%203-3%201-2-2-2-2%200-3v-3l-2-1%201-1c1%201%202%200%202-2%201-4%200-5-8-6h-5l2%204m-64%2067l-4%201-4%202-5%203-2%201%205%205%205%205%201%201c0%202%203%201%203-1s0-2%201-1l6%204%201-4c0-4-1-5-2-3s-3%201-3%200l1-2c2%200%203-2%203-7%200-3%200-4-2-3l-2-1h-2m-41%208v2c1%201%201%201%200%200-3%200-5%203-3%204s2%206%200%207v1l1%201c-1%203%205%208%2010%209%203%200%203%200%201%201h-3l4%204%205%203%201%201c0%202%203%202%205%200h1l1%201c2%200%201-3-3-7-2-2-4-3-6-2-2%200-2%200-1-1%202-1%202-2-3-6-7-5-7-6%200-3l5%202v-3c0-3-5-10-8-11l-2-1v-1c-2-2-3-2-5-1m-125%206l-4%201%202%201c0%202-3%202-4%201H7c-2%201%200%203%202%202%202%200%202%200%200%202s-5%202-5%200c-1-1-1-1-1%201l-1%208-2%201%203%201%204-2v-2h2c2%200%202%200%201-1l2-1h2c1-3%209%200%2011%204%201%201%201%200%201-7l-1-9H15m42%200c-8%200-9%200-9%202l-2%202v1l1%202%201%201v5l1%201h-3c1%202%200%202-1%202l-2-1c0-2%200-3-2-3-1-1-1-1%200%200l-1%201c-1-1-1%200-1%201l-1-1-1-2-1%202%201%202%203%202h-3l-3%201a433%20433%200%200051-3h2v-2l-1-2-1-1-1%201h-1l-2-1h-1c0-1%201-2%202-1%201%200%202%200%202-2s-1-2-3-2l-1-1h-1v-2l2-2H57m3%2021v8l1%202%201%202v3h-1c-1%200-2%202-1%203h20l1-1v-1h1l2-2c2-2%202-2%200-1l-2-1v-2l1-4v-5l-9-1H60m203%202l-1%201c1%200%202%201%201%202l1%201%201-1c0-1%201-2%203-1l2%202v1l2%204-3-1c-1-1-1-1-1%201v1c-1-1-3%200-3%202l-3%201-2-1h-1l-1-1c0-1-1-1-1%201v3c1%202%200%202-2%202a2568%202568%200%200137%201c5%200%205%200%204-1-2-1-2-2-1-3v-1c-1-1-2-2-1-4l-1-2h-2l-1-2v1l-1%201-1-2c1-2%200-2-1-2h-1l-1-1-2-1c0-2-14-3-20-1m23%2025l2%205v1l-2%202%201%201%201%202-2%201-1%201h11c1%201%201%201%202-1h2c1%201%201%201-1%201l1%201c3%201%2012%200%2012-1h-6l-4-1-2-2c-2%200-3-1-3-2-1-2-1-2-2-1s-1%201-1-1v-3l1-2c-1%200-1-1%200%200%202%201%201-1-1-3v-1l2%201%205%201%203-1h1c2%200%202%200%201-1%200-1-1-2-3-2s-2%200-1%201%201%201-1%201l-9-2h-6v5M22%20221c-1%202-3%203-3%200h-1c0%204-4%206-11%206l-7%201a594%20594%200%200052-3h-2l-3%201c-3%200-3%200-2-1v-2l-1-1-2-1c-1%201-2%201-3-1v4c1%202%201%203-1%203l-1-1v-2l-1-2h-1l-1-1-1-2-1%201-2%202-1%202c1%201-3%203-5%202-2%200-2-3%200-3l3-1-1-1h-2v-2l-2%202m-4%2010l-2%202-1%201-2-1h-3l-1-2-1%202-1%201-2-1-2-2H0v20l3-1%203%201h1l6-1c10%200%2010%200%2010-9%200-6%200-8-2-9l-1-2-2%201m290%201c1%201%202%203%201%204l1%205c1%201%201%201-1%203l-2%203c1%201%200%201-1%201l-6%201%205%201c4%200%206%200%206%202%201%201%200%201-3%201l-2%201%201%202c2-1%203%200%202%202v1l1%201c0%202%203%203%204%201v-6c-1-4-1-5%202-4l1%201-1%206v5h15c14%200%2020-1%2017-3-1-1-2-5%200-4l1-1-9-3c-9-1-8-2%203-2h5l-6-1c-5-1-9-3-9-5l-1-1-2-3-2%201v-1l-1-2c-1%201-3-2-2-4h-1l-1-1c1-2%200-2-8-2-7%200-8%200-7%201M0%20258v5h20c17%200%2020%200%2018-1l-4-1h-1l-2-1-1%201c1%202-1%201-3-1-3-3-5-4-5-1%200%202-2%201-2-1-1-2-1-2-4-2h-1v-2l-1%201-3%201c-5-2-5-2-7-1-1%201-1%201-1-1l-1-2c-1%200-2%202-2%206'%20fill='%23d3d3d3'%20fill-rule='evenodd'/%3e%3c/svg%3e",
+          srcWebp:
+            '/static/b799f542e0b219eece163da7f4bff6a1/00194/e029baa5a67ed0189707e60562b9bcdd.webp',
+          srcSetWebp:
+            '/static/b799f542e0b219eece163da7f4bff6a1/be31c/e029baa5a67ed0189707e60562b9bcdd.webp 375w,\n/static/b799f542e0b219eece163da7f4bff6a1/6714f/e029baa5a67ed0189707e60562b9bcdd.webp 750w,\n/static/b799f542e0b219eece163da7f4bff6a1/00194/e029baa5a67ed0189707e60562b9bcdd.webp 1500w,\n/static/b799f542e0b219eece163da7f4bff6a1/caac7/e029baa5a67ed0189707e60562b9bcdd.webp 2250w,\n/static/b799f542e0b219eece163da7f4bff6a1/d3e9f/e029baa5a67ed0189707e60562b9bcdd.webp 3000w,\n/static/b799f542e0b219eece163da7f4bff6a1/88013/e029baa5a67ed0189707e60562b9bcdd.webp 3537w',
+          srcSet:
+            '/static/b799f542e0b219eece163da7f4bff6a1/29b23/e029baa5a67ed0189707e60562b9bcdd.jpg 375w,\n/static/b799f542e0b219eece163da7f4bff6a1/32a3a/e029baa5a67ed0189707e60562b9bcdd.jpg 750w,\n/static/b799f542e0b219eece163da7f4bff6a1/febc6/e029baa5a67ed0189707e60562b9bcdd.jpg 1500w,\n/static/b799f542e0b219eece163da7f4bff6a1/d7513/e029baa5a67ed0189707e60562b9bcdd.jpg 2250w,\n/static/b799f542e0b219eece163da7f4bff6a1/b7726/e029baa5a67ed0189707e60562b9bcdd.jpg 3000w,\n/static/b799f542e0b219eece163da7f4bff6a1/a75cc/e029baa5a67ed0189707e60562b9bcdd.jpg 3537w',
+          src:
+            '/static/b799f542e0b219eece163da7f4bff6a1/febc6/e029baa5a67ed0189707e60562b9bcdd.jpg',
+          sizes: '(max-width: 1500px) 100vw, 1500px',
+          presentationWidth: 1500,
+          presentationHeight: 986,
+          originalImg:
+            '/static/b799f542e0b219eece163da7f4bff6a1/a75cc/e029baa5a67ed0189707e60562b9bcdd.jpg',
+          aspectRatio: 1.524390243902439,
+        },
+      },
+    },
+    childStrapiPostContent: {
+      childMdx: {
+        timeToRead: 1,
+      },
+    },
+    post_tags: [
+      {
+        id: '5f390f92f95eb21417e28f68',
+        name: 'Career',
+        slug: 'career',
+      },
+      {
+        id: '5f390f99f95eb21417e28f69',
+        name: 'Interview',
+        slug: 'interview',
+      },
+      {
+        id: '5f390fb6f95eb21417e28f6a',
+        name: 'Job',
+        slug: 'job',
+      },
+    ],
+  },
+  {
+    id: '901823',
+    title: 'Eu falhei em uma entrevista por causa de um algoritmo',
+    subtitle: null,
+    description:
+      'Sometimes being interviewed can be hard. Here I detailed why I failed and write my thoughts about how an code challenge beat me my job opportunity.',
+    date: '2020-08-16',
+    serie_copy: null,
+    slug: 'eu-falhei-em-uma-entrevista-por-causa-de-um-algoritmo',
+    translation: {
+      language: 'en',
+      slug: 'i-failed-an-interview-because-of-an-algorithm',
+    },
+    post_serie: null,
+    language: 'pt',
+    featured_image: {
+      childImageSharp: {
+        original: {
+          src:
+            '/static/b799f542e0b219eece163da7f4bff6a1/e029baa5a67ed0189707e60562b9bcdd.jpg',
+        },
+        fluid: {
+          base64:
+            'data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAIFBP/EABUBAQEAAAAAAAAAAAAAAAAAAAEA/9oADAMBAAIQAxAAAAFNE9GtCA//xAAaEAEBAAIDAAAAAAAAAAAAAAABAAIRAwQS/9oACAEBAAEFAthEDdl3cOTY5vn/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAcEAACAQUBAAAAAAAAAAAAAAAAARECECExUWH/2gAIAQEABj8CirE8PGbE7I//xAAaEAEAAgMBAAAAAAAAAAAAAAABABEhMUFh/9oACAEBAAE/ITn2jlmEOlEoQhbbNRbPYyH/2gAMAwEAAgADAAAAENMf/8QAFhEBAQEAAAAAAAAAAAAAAAAAEQAh/9oACAEDAQE/EHSL/8QAFhEBAQEAAAAAAAAAAAAAAAAAEQAh/9oACAECAQE/EDGb/8QAHBABAAMAAgMAAAAAAAAAAAAAAQARITFRQWGR/9oACAEBAAE/EPFR6ToxzWYWnxjD0zCVnCXh6iRW1unKInDWcT//2Q==',
+          tracedSVG:
+            "data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='400'%20height='263'%20viewBox='0%200%20400%20263'%20preserveAspectRatio='none'%3e%3cpath%20d='M8%201v2C6%203%205%206%206%207v1H5l-1%202H3L2%209l-1%202H0l2%202%202%201H1l-1%206%201%206%201%201v1l-2%202c0%204%202%204%2016%204h12v-9l-1-10v-1c2%200%202%201%202%2014%200%207%201%207%2015%206a259%20259%200%200112-2h-1l-1-1h-1l-2%201%202-3c2%200%203-3%203-5l-2-1v1l-1%201c-1-1-1%200-1%201l-1%202-1%202c0%202%200%202-3%201-1-1-2-2-1-3l-1-2-1%202-1-1c-1-3-1-3-1-1s0%202-1%201l-3-1h-2c0-1%201-2%202-1l1-1-2-1c-3%200-4-3-3-3v-2l-1-2h2l1%201%202%201%202-1%201-1%201%201v1c3%200%206%203%204%204h-2l-1%201%201%201c3%200%205-1%205-3l1-2v-3c0-1%203-1%205%201h5v-1c0-2-2-2-10-2h-9l9-1h10V0h-5l-6%201%201%201c1-1%201%200%200%200l1%202v2l2%201h-3l-1%202c1%202%201%202-4%202-3%200-5-1-4-2H31l-1-2V6l-1-1V2c0-1%200-2-1-1l-1%201-1-1-8-1L8%201m55%205c0%206%201%207%202%207%201%201%200%201-1%201-2%200-3%200-2%201l1%202%201%201c1%200%202-1%201-2l1-1%201%201%202%201%201-1h2c2%200%202%200%201-1-3-1-1-2%206-2h7l-3-1c-6%200-11-1-10-2V9c-1%200-2-1-1-2%200-3-2-7-3-5l-1-1-2-1c-3%200-3%200-3%206m65-5l3%202c3%202%203%202%201%206l-3%204%205%201%207%201h-15c-2%200-2%202%200%202%201%201%202%202%201%203h1l2-1c0-2%204%200%206%202l2%201h1l4%203c1%201%202%202%201%203%200%202%200%202%201%201%202%200%202%200%202%202s0%202-10%202c-7%200-10-1-10-2l-2-2h-1v3l-1-2c0-2%200-2-1%200s-1%203-13%203l-12%201h12l30%201%2018%201v-8c0-4%200-7%201-6l1-1-1-1-1-1c0-2-2-3-10-3l-6-1%206-1h7c2-1%202-1-6-2a6675%206675%200%2001-9-1c1-1%202-2%202-5l-1-2-3%201V4l1-1V1c1-1%201-1-1-1l-3%201h-1l-2-1-3%201m55%200c-1%201-1%201%201%201v6l-2%202v1l-2%202c-1%201%201%201%205%201h6V0h-3l-5%201M42%2036c-2%200-3%201-3%202%201%202%202%204%202%202h2c3%202%206%202%208%201h4c3%202%203%203%203%206%200%204%200%204%201%202V37l-6-1H42m85%202c-1%201%200%203%201%204%202%201%202%201%201%202-2%201-3%203-1%203l2%202%201%205c2%202%202%202%2029%203%2017%200%2028%200%2027-1l1-1%201-9v-9h-31l-31%201m107%203c-1%203-1%203%202%204%203%200%207%205%206%207l2%202c2%201-1%202-4%202l-3%201%208%201c9%200%209%200%208-5l-1-2c0%202%200%202-1%201%200-2-1-2-1-1l-2%201c-2%200-2%200-2-3v-5c1-1%202-2%201-3l1-1%201-1-7-1c-6%200-7%200-8%203m-74%200l-1%202v2c-2%201-2%201%200%203s3%204%201%204l-2-2c-1-2-3-3-3-1-1%206-1%205%207%206%207%200%209%200%2010-2h2c-1%202%200%202%204%202l6-1-6-1c-1%200-2%200-1-1%200-1%200-2-2-1l-2-1h-1l-2-1-2-1v-1l-1-1v-2h-5l1-1c1%200-1-3-3-3v1M15%2058L5%2059H4c-4-2-4-1-4%208l1%209%2012%201%2013-1h2c4%202%201%203-6%203l-7%201h-1l-1-1-1%202%201%201v3h-2v-2c0-3-1-4-7-4H1L0%2089v10h9c9%200%2018%201%2014%202H4c-3%200-4%200-4%202s2%203%2011%202l1%201h2l1%201%201%202%201-1%201-2%201%202v1l2%202%201%203v-3c0-3%202-3%202%201s-1%207-2%206H12l-4%201H4c-5%201%200%201%2011%201h11v-8c0-9%201-12%202-7l2%203%201%202h1l1%201v1c2-1%204-4%202-5-1%200%203-4%204-3l1-1c0-1-4-2-9-2l-5-1%2015-1h8v-3l-1-2-1%202-5%201c-4%200-4%200-3-2h3l4-3c3-3%208-6%2010-6l2-1%202-1c1%201%201%202-1%204l-2%207%201%203c1-1%201-1%203%201s3%202%207%202c5-1%207%200%205%205-2%204%200%2011%203%2014l4%207c2%204%205%2011%207%2011v2c-2%202-2%202%205%202%206%200%207%200%207%202l-1%201v2c1%202%200%203-2%205l-3%205h-1l-1-5c0-2%200-3-1-2v12a324%20324%200%20010%2022v4h-9l-4%201-8%202%201%201%201%202h1c0-2%202-1%202%201l1%202%201%202%201%201%201%201v2h8c1%202%200%202-5%202l-7%201%208%201%207%201-5%201c-3%200-5%203-4%205s0%207-2%2010v1l1%201-11%201H57l12%201%2017%201c3%201%202%201-2%201s-7%201-6%203c0%201%200%202-2%202v1l2%201%202%201v2c-1%201-2%202-1%203v2c-2%201-2%202-1%202%201%201-1%201-3%201l-5-1-4-1c-3%200-3-1-3-3%200-3-2-4-3-1l-2%201-1%203c1%202%201%202-2%202s-3%200-1%201h33l2-8%201-7v7l2%208c1%202%201%202-1%202l-4%201h-3l-1%203c0%203%200%203-1%202h-6l-1-3h-4c-2-2-8-3-11-3-3%201-3%201-2%203l1%206-1%203h111a796%20796%200%2000111-4l-1-1c-1%201-2%200-2-1l1-1v-1l-1-1c4%200%201-2-3-2-3%200-4%200-3-1l4-1c8%200%208%200%208-10v-9h-3l-12-1c-8%200-9%200-5-1l19-1%2016-1h-14l-12-1-3-1-4-2-3-2c-2%200-1-2%201-2v-1l-2-1v-5c2-2%201-2-4-3-4%200-5%200-6%202l-1%202v-2c-1-2-2-2-5-2s-3%200-2-1h9l3-1c4%200%204-1%200-1-3%200-4%200-4-2s0-2-1-1l-1%202-4%201c-4%200-6-1-5-3l-2-1c-2%200-6-4-6-6l-1-1c-2-1-2-5%200-5v2l3-1c5-2%205-3-2-3-6%200-10-1-10-2l3-1h25v-2h-1c-1%201-2%202-3%201h-7c-4%200-6-2-5-5h-1v-2c0-3%200-3-3-4-1-1-2-1-1-2l-2-2h-3l-2%201v4l1%203v1c2%202%201%206%200%206l-2-1-1-1-3-2c0-1-2-3-5-4-3-2-4-3-4-5s-1-3-2-3l-6-1-5-1%201%203c0%203%200%203-4%203l-8%201h-4l-4-7-3-10c0-3-1-5-3-5l-8-13%203-1c2-1%202-2%202-5v-3l-3%202c-3%204-3%204-11-1-9-7-22-13-47-23l-23-9%203-5c2-4%202-4%201-5-2-1-2-1-1-3v-3c2-1%202-2%202-3-1-1-1-2%201-2v-1l-2-4c-1-4-7-3-7%201h1c2%200%204%203%203%205-1%201-1%201-1-1l-2-2-3-1c-2-4-5-4-5-2s0%202-1%201v-3c2-2-5-1-8%200-1%202-2%202-3%200s-2-2-2-1h-2l-5%202c-3%202-4%203-6%202l-4-1c-2%200%202%203%204%203l2%201H35l-1-3h1l1-1-1-1c-2%200-1-11%201-11%203%200-3-2-5-2-3%200-3%200-3%203%200%202%200%203-1%202v-3c0-2-1-3-12-2m127%201l-6%201%207%208c6%207%208%209%2010%209h3V60l-4-1h-10m103%205l1%205-1%203c0%203%202%202%203-1l1-1v2l1%201v1l1%201h1c0%202-2%202-5%202l-2%201c-1%202%2010%202%2013%201h2l2%201c2-1%202-1%200-3l-3-2h-1c0%203-2%203-3%201-2-2-2-2%200-3v-3l-2-1%201-1c1%201%202%200%202-2%201-4%200-5-8-6h-5l2%204m-64%2067l-4%201-4%202-5%203-2%201%205%205%205%205%201%201c0%202%203%201%203-1s0-2%201-1l6%204%201-4c0-4-1-5-2-3s-3%201-3%200l1-2c2%200%203-2%203-7%200-3%200-4-2-3l-2-1h-2m-41%208v2c1%201%201%201%200%200-3%200-5%203-3%204s2%206%200%207v1l1%201c-1%203%205%208%2010%209%203%200%203%200%201%201h-3l4%204%205%203%201%201c0%202%203%202%205%200h1l1%201c2%200%201-3-3-7-2-2-4-3-6-2-2%200-2%200-1-1%202-1%202-2-3-6-7-5-7-6%200-3l5%202v-3c0-3-5-10-8-11l-2-1v-1c-2-2-3-2-5-1m-125%206l-4%201%202%201c0%202-3%202-4%201H7c-2%201%200%203%202%202%202%200%202%200%200%202s-5%202-5%200c-1-1-1-1-1%201l-1%208-2%201%203%201%204-2v-2h2c2%200%202%200%201-1l2-1h2c1-3%209%200%2011%204%201%201%201%200%201-7l-1-9H15m42%200c-8%200-9%200-9%202l-2%202v1l1%202%201%201v5l1%201h-3c1%202%200%202-1%202l-2-1c0-2%200-3-2-3-1-1-1-1%200%200l-1%201c-1-1-1%200-1%201l-1-1-1-2-1%202%201%202%203%202h-3l-3%201a433%20433%200%200051-3h2v-2l-1-2-1-1-1%201h-1l-2-1h-1c0-1%201-2%202-1%201%200%202%200%202-2s-1-2-3-2l-1-1h-1v-2l2-2H57m3%2021v8l1%202%201%202v3h-1c-1%200-2%202-1%203h20l1-1v-1h1l2-2c2-2%202-2%200-1l-2-1v-2l1-4v-5l-9-1H60m203%202l-1%201c1%200%202%201%201%202l1%201%201-1c0-1%201-2%203-1l2%202v1l2%204-3-1c-1-1-1-1-1%201v1c-1-1-3%200-3%202l-3%201-2-1h-1l-1-1c0-1-1-1-1%201v3c1%202%200%202-2%202a2568%202568%200%200137%201c5%200%205%200%204-1-2-1-2-2-1-3v-1c-1-1-2-2-1-4l-1-2h-2l-1-2v1l-1%201-1-2c1-2%200-2-1-2h-1l-1-1-2-1c0-2-14-3-20-1m23%2025l2%205v1l-2%202%201%201%201%202-2%201-1%201h11c1%201%201%201%202-1h2c1%201%201%201-1%201l1%201c3%201%2012%200%2012-1h-6l-4-1-2-2c-2%200-3-1-3-2-1-2-1-2-2-1s-1%201-1-1v-3l1-2c-1%200-1-1%200%200%202%201%201-1-1-3v-1l2%201%205%201%203-1h1c2%200%202%200%201-1%200-1-1-2-3-2s-2%200-1%201%201%201-1%201l-9-2h-6v5M22%20221c-1%202-3%203-3%200h-1c0%204-4%206-11%206l-7%201a594%20594%200%200052-3h-2l-3%201c-3%200-3%200-2-1v-2l-1-1-2-1c-1%201-2%201-3-1v4c1%202%201%203-1%203l-1-1v-2l-1-2h-1l-1-1-1-2-1%201-2%202-1%202c1%201-3%203-5%202-2%200-2-3%200-3l3-1-1-1h-2v-2l-2%202m-4%2010l-2%202-1%201-2-1h-3l-1-2-1%202-1%201-2-1-2-2H0v20l3-1%203%201h1l6-1c10%200%2010%200%2010-9%200-6%200-8-2-9l-1-2-2%201m290%201c1%201%202%203%201%204l1%205c1%201%201%201-1%203l-2%203c1%201%200%201-1%201l-6%201%205%201c4%200%206%200%206%202%201%201%200%201-3%201l-2%201%201%202c2-1%203%200%202%202v1l1%201c0%202%203%203%204%201v-6c-1-4-1-5%202-4l1%201-1%206v5h15c14%200%2020-1%2017-3-1-1-2-5%200-4l1-1-9-3c-9-1-8-2%203-2h5l-6-1c-5-1-9-3-9-5l-1-1-2-3-2%201v-1l-1-2c-1%201-3-2-2-4h-1l-1-1c1-2%200-2-8-2-7%200-8%200-7%201M0%20258v5h20c17%200%2020%200%2018-1l-4-1h-1l-2-1-1%201c1%202-1%201-3-1-3-3-5-4-5-1%200%202-2%201-2-1-1-2-1-2-4-2h-1v-2l-1%201-3%201c-5-2-5-2-7-1-1%201-1%201-1-1l-1-2c-1%200-2%202-2%206'%20fill='%23d3d3d3'%20fill-rule='evenodd'/%3e%3c/svg%3e",
+          srcWebp:
+            '/static/b799f542e0b219eece163da7f4bff6a1/00194/e029baa5a67ed0189707e60562b9bcdd.webp',
+          srcSetWebp:
+            '/static/b799f542e0b219eece163da7f4bff6a1/be31c/e029baa5a67ed0189707e60562b9bcdd.webp 375w,\n/static/b799f542e0b219eece163da7f4bff6a1/6714f/e029baa5a67ed0189707e60562b9bcdd.webp 750w,\n/static/b799f542e0b219eece163da7f4bff6a1/00194/e029baa5a67ed0189707e60562b9bcdd.webp 1500w,\n/static/b799f542e0b219eece163da7f4bff6a1/caac7/e029baa5a67ed0189707e60562b9bcdd.webp 2250w,\n/static/b799f542e0b219eece163da7f4bff6a1/d3e9f/e029baa5a67ed0189707e60562b9bcdd.webp 3000w,\n/static/b799f542e0b219eece163da7f4bff6a1/88013/e029baa5a67ed0189707e60562b9bcdd.webp 3537w',
+          srcSet:
+            '/static/b799f542e0b219eece163da7f4bff6a1/29b23/e029baa5a67ed0189707e60562b9bcdd.jpg 375w,\n/static/b799f542e0b219eece163da7f4bff6a1/32a3a/e029baa5a67ed0189707e60562b9bcdd.jpg 750w,\n/static/b799f542e0b219eece163da7f4bff6a1/febc6/e029baa5a67ed0189707e60562b9bcdd.jpg 1500w,\n/static/b799f542e0b219eece163da7f4bff6a1/d7513/e029baa5a67ed0189707e60562b9bcdd.jpg 2250w,\n/static/b799f542e0b219eece163da7f4bff6a1/b7726/e029baa5a67ed0189707e60562b9bcdd.jpg 3000w,\n/static/b799f542e0b219eece163da7f4bff6a1/a75cc/e029baa5a67ed0189707e60562b9bcdd.jpg 3537w',
+          src:
+            '/static/b799f542e0b219eece163da7f4bff6a1/febc6/e029baa5a67ed0189707e60562b9bcdd.jpg',
+          sizes: '(max-width: 1500px) 100vw, 1500px',
+          presentationWidth: 1500,
+          presentationHeight: 986,
+          originalImg:
+            '/static/b799f542e0b219eece163da7f4bff6a1/a75cc/e029baa5a67ed0189707e60562b9bcdd.jpg',
+          aspectRatio: 1.524390243902439,
+        },
+      },
+    },
+    childStrapiPostContent: {
+      childMdx: {
+        timeToRead: 1,
+      },
+    },
+    post_tags: [
+      {
+        id: '5f390f92f95eb21417e28f68',
+        name: 'Career',
+        slug: 'career',
+      },
+      {
+        id: '5f390f99f95eb21417e28f69',
+        name: 'Interview',
+        slug: 'interview',
+      },
+      {
+        id: '5f390fb6f95eb21417e28f6a',
+        name: 'Job',
+        slug: 'job',
+      },
+    ],
+  },
+  {
+    id: '912839811',
+    title: 'Eu falhei em uma entrevista por causa de um algoritmo',
+    subtitle: null,
+    description:
+      'Sometimes being interviewed can be hard. Here I detailed why I failed and write my thoughts about how an code challenge beat me my job opportunity.',
+    date: '2020-08-16',
+    serie_copy: null,
+    slug: 'eu-falhei-em-uma-entrevista-por-causa-de-um-algoritmo',
+    translation: {
+      language: 'en',
+      slug: 'i-failed-an-interview-because-of-an-algorithm',
+    },
+    post_serie: null,
+    language: 'pt',
+    featured_image: {
+      childImageSharp: {
+        original: {
+          src:
+            '/static/b799f542e0b219eece163da7f4bff6a1/e029baa5a67ed0189707e60562b9bcdd.jpg',
+        },
+        fluid: {
+          base64:
+            'data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAIFBP/EABUBAQEAAAAAAAAAAAAAAAAAAAEA/9oADAMBAAIQAxAAAAFNE9GtCA//xAAaEAEBAAIDAAAAAAAAAAAAAAABAAIRAwQS/9oACAEBAAEFAthEDdl3cOTY5vn/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAcEAACAQUBAAAAAAAAAAAAAAAAARECECExUWH/2gAIAQEABj8CirE8PGbE7I//xAAaEAEAAgMBAAAAAAAAAAAAAAABABEhMUFh/9oACAEBAAE/ITn2jlmEOlEoQhbbNRbPYyH/2gAMAwEAAgADAAAAENMf/8QAFhEBAQEAAAAAAAAAAAAAAAAAEQAh/9oACAEDAQE/EHSL/8QAFhEBAQEAAAAAAAAAAAAAAAAAEQAh/9oACAECAQE/EDGb/8QAHBABAAMAAgMAAAAAAAAAAAAAAQARITFRQWGR/9oACAEBAAE/EPFR6ToxzWYWnxjD0zCVnCXh6iRW1unKInDWcT//2Q==',
+          tracedSVG:
+            "data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='400'%20height='263'%20viewBox='0%200%20400%20263'%20preserveAspectRatio='none'%3e%3cpath%20d='M8%201v2C6%203%205%206%206%207v1H5l-1%202H3L2%209l-1%202H0l2%202%202%201H1l-1%206%201%206%201%201v1l-2%202c0%204%202%204%2016%204h12v-9l-1-10v-1c2%200%202%201%202%2014%200%207%201%207%2015%206a259%20259%200%200112-2h-1l-1-1h-1l-2%201%202-3c2%200%203-3%203-5l-2-1v1l-1%201c-1-1-1%200-1%201l-1%202-1%202c0%202%200%202-3%201-1-1-2-2-1-3l-1-2-1%202-1-1c-1-3-1-3-1-1s0%202-1%201l-3-1h-2c0-1%201-2%202-1l1-1-2-1c-3%200-4-3-3-3v-2l-1-2h2l1%201%202%201%202-1%201-1%201%201v1c3%200%206%203%204%204h-2l-1%201%201%201c3%200%205-1%205-3l1-2v-3c0-1%203-1%205%201h5v-1c0-2-2-2-10-2h-9l9-1h10V0h-5l-6%201%201%201c1-1%201%200%200%200l1%202v2l2%201h-3l-1%202c1%202%201%202-4%202-3%200-5-1-4-2H31l-1-2V6l-1-1V2c0-1%200-2-1-1l-1%201-1-1-8-1L8%201m55%205c0%206%201%207%202%207%201%201%200%201-1%201-2%200-3%200-2%201l1%202%201%201c1%200%202-1%201-2l1-1%201%201%202%201%201-1h2c2%200%202%200%201-1-3-1-1-2%206-2h7l-3-1c-6%200-11-1-10-2V9c-1%200-2-1-1-2%200-3-2-7-3-5l-1-1-2-1c-3%200-3%200-3%206m65-5l3%202c3%202%203%202%201%206l-3%204%205%201%207%201h-15c-2%200-2%202%200%202%201%201%202%202%201%203h1l2-1c0-2%204%200%206%202l2%201h1l4%203c1%201%202%202%201%203%200%202%200%202%201%201%202%200%202%200%202%202s0%202-10%202c-7%200-10-1-10-2l-2-2h-1v3l-1-2c0-2%200-2-1%200s-1%203-13%203l-12%201h12l30%201%2018%201v-8c0-4%200-7%201-6l1-1-1-1-1-1c0-2-2-3-10-3l-6-1%206-1h7c2-1%202-1-6-2a6675%206675%200%2001-9-1c1-1%202-2%202-5l-1-2-3%201V4l1-1V1c1-1%201-1-1-1l-3%201h-1l-2-1-3%201m55%200c-1%201-1%201%201%201v6l-2%202v1l-2%202c-1%201%201%201%205%201h6V0h-3l-5%201M42%2036c-2%200-3%201-3%202%201%202%202%204%202%202h2c3%202%206%202%208%201h4c3%202%203%203%203%206%200%204%200%204%201%202V37l-6-1H42m85%202c-1%201%200%203%201%204%202%201%202%201%201%202-2%201-3%203-1%203l2%202%201%205c2%202%202%202%2029%203%2017%200%2028%200%2027-1l1-1%201-9v-9h-31l-31%201m107%203c-1%203-1%203%202%204%203%200%207%205%206%207l2%202c2%201-1%202-4%202l-3%201%208%201c9%200%209%200%208-5l-1-2c0%202%200%202-1%201%200-2-1-2-1-1l-2%201c-2%200-2%200-2-3v-5c1-1%202-2%201-3l1-1%201-1-7-1c-6%200-7%200-8%203m-74%200l-1%202v2c-2%201-2%201%200%203s3%204%201%204l-2-2c-1-2-3-3-3-1-1%206-1%205%207%206%207%200%209%200%2010-2h2c-1%202%200%202%204%202l6-1-6-1c-1%200-2%200-1-1%200-1%200-2-2-1l-2-1h-1l-2-1-2-1v-1l-1-1v-2h-5l1-1c1%200-1-3-3-3v1M15%2058L5%2059H4c-4-2-4-1-4%208l1%209%2012%201%2013-1h2c4%202%201%203-6%203l-7%201h-1l-1-1-1%202%201%201v3h-2v-2c0-3-1-4-7-4H1L0%2089v10h9c9%200%2018%201%2014%202H4c-3%200-4%200-4%202s2%203%2011%202l1%201h2l1%201%201%202%201-1%201-2%201%202v1l2%202%201%203v-3c0-3%202-3%202%201s-1%207-2%206H12l-4%201H4c-5%201%200%201%2011%201h11v-8c0-9%201-12%202-7l2%203%201%202h1l1%201v1c2-1%204-4%202-5-1%200%203-4%204-3l1-1c0-1-4-2-9-2l-5-1%2015-1h8v-3l-1-2-1%202-5%201c-4%200-4%200-3-2h3l4-3c3-3%208-6%2010-6l2-1%202-1c1%201%201%202-1%204l-2%207%201%203c1-1%201-1%203%201s3%202%207%202c5-1%207%200%205%205-2%204%200%2011%203%2014l4%207c2%204%205%2011%207%2011v2c-2%202-2%202%205%202%206%200%207%200%207%202l-1%201v2c1%202%200%203-2%205l-3%205h-1l-1-5c0-2%200-3-1-2v12a324%20324%200%20010%2022v4h-9l-4%201-8%202%201%201%201%202h1c0-2%202-1%202%201l1%202%201%202%201%201%201%201v2h8c1%202%200%202-5%202l-7%201%208%201%207%201-5%201c-3%200-5%203-4%205s0%207-2%2010v1l1%201-11%201H57l12%201%2017%201c3%201%202%201-2%201s-7%201-6%203c0%201%200%202-2%202v1l2%201%202%201v2c-1%201-2%202-1%203v2c-2%201-2%202-1%202%201%201-1%201-3%201l-5-1-4-1c-3%200-3-1-3-3%200-3-2-4-3-1l-2%201-1%203c1%202%201%202-2%202s-3%200-1%201h33l2-8%201-7v7l2%208c1%202%201%202-1%202l-4%201h-3l-1%203c0%203%200%203-1%202h-6l-1-3h-4c-2-2-8-3-11-3-3%201-3%201-2%203l1%206-1%203h111a796%20796%200%2000111-4l-1-1c-1%201-2%200-2-1l1-1v-1l-1-1c4%200%201-2-3-2-3%200-4%200-3-1l4-1c8%200%208%200%208-10v-9h-3l-12-1c-8%200-9%200-5-1l19-1%2016-1h-14l-12-1-3-1-4-2-3-2c-2%200-1-2%201-2v-1l-2-1v-5c2-2%201-2-4-3-4%200-5%200-6%202l-1%202v-2c-1-2-2-2-5-2s-3%200-2-1h9l3-1c4%200%204-1%200-1-3%200-4%200-4-2s0-2-1-1l-1%202-4%201c-4%200-6-1-5-3l-2-1c-2%200-6-4-6-6l-1-1c-2-1-2-5%200-5v2l3-1c5-2%205-3-2-3-6%200-10-1-10-2l3-1h25v-2h-1c-1%201-2%202-3%201h-7c-4%200-6-2-5-5h-1v-2c0-3%200-3-3-4-1-1-2-1-1-2l-2-2h-3l-2%201v4l1%203v1c2%202%201%206%200%206l-2-1-1-1-3-2c0-1-2-3-5-4-3-2-4-3-4-5s-1-3-2-3l-6-1-5-1%201%203c0%203%200%203-4%203l-8%201h-4l-4-7-3-10c0-3-1-5-3-5l-8-13%203-1c2-1%202-2%202-5v-3l-3%202c-3%204-3%204-11-1-9-7-22-13-47-23l-23-9%203-5c2-4%202-4%201-5-2-1-2-1-1-3v-3c2-1%202-2%202-3-1-1-1-2%201-2v-1l-2-4c-1-4-7-3-7%201h1c2%200%204%203%203%205-1%201-1%201-1-1l-2-2-3-1c-2-4-5-4-5-2s0%202-1%201v-3c2-2-5-1-8%200-1%202-2%202-3%200s-2-2-2-1h-2l-5%202c-3%202-4%203-6%202l-4-1c-2%200%202%203%204%203l2%201H35l-1-3h1l1-1-1-1c-2%200-1-11%201-11%203%200-3-2-5-2-3%200-3%200-3%203%200%202%200%203-1%202v-3c0-2-1-3-12-2m127%201l-6%201%207%208c6%207%208%209%2010%209h3V60l-4-1h-10m103%205l1%205-1%203c0%203%202%202%203-1l1-1v2l1%201v1l1%201h1c0%202-2%202-5%202l-2%201c-1%202%2010%202%2013%201h2l2%201c2-1%202-1%200-3l-3-2h-1c0%203-2%203-3%201-2-2-2-2%200-3v-3l-2-1%201-1c1%201%202%200%202-2%201-4%200-5-8-6h-5l2%204m-64%2067l-4%201-4%202-5%203-2%201%205%205%205%205%201%201c0%202%203%201%203-1s0-2%201-1l6%204%201-4c0-4-1-5-2-3s-3%201-3%200l1-2c2%200%203-2%203-7%200-3%200-4-2-3l-2-1h-2m-41%208v2c1%201%201%201%200%200-3%200-5%203-3%204s2%206%200%207v1l1%201c-1%203%205%208%2010%209%203%200%203%200%201%201h-3l4%204%205%203%201%201c0%202%203%202%205%200h1l1%201c2%200%201-3-3-7-2-2-4-3-6-2-2%200-2%200-1-1%202-1%202-2-3-6-7-5-7-6%200-3l5%202v-3c0-3-5-10-8-11l-2-1v-1c-2-2-3-2-5-1m-125%206l-4%201%202%201c0%202-3%202-4%201H7c-2%201%200%203%202%202%202%200%202%200%200%202s-5%202-5%200c-1-1-1-1-1%201l-1%208-2%201%203%201%204-2v-2h2c2%200%202%200%201-1l2-1h2c1-3%209%200%2011%204%201%201%201%200%201-7l-1-9H15m42%200c-8%200-9%200-9%202l-2%202v1l1%202%201%201v5l1%201h-3c1%202%200%202-1%202l-2-1c0-2%200-3-2-3-1-1-1-1%200%200l-1%201c-1-1-1%200-1%201l-1-1-1-2-1%202%201%202%203%202h-3l-3%201a433%20433%200%200051-3h2v-2l-1-2-1-1-1%201h-1l-2-1h-1c0-1%201-2%202-1%201%200%202%200%202-2s-1-2-3-2l-1-1h-1v-2l2-2H57m3%2021v8l1%202%201%202v3h-1c-1%200-2%202-1%203h20l1-1v-1h1l2-2c2-2%202-2%200-1l-2-1v-2l1-4v-5l-9-1H60m203%202l-1%201c1%200%202%201%201%202l1%201%201-1c0-1%201-2%203-1l2%202v1l2%204-3-1c-1-1-1-1-1%201v1c-1-1-3%200-3%202l-3%201-2-1h-1l-1-1c0-1-1-1-1%201v3c1%202%200%202-2%202a2568%202568%200%200137%201c5%200%205%200%204-1-2-1-2-2-1-3v-1c-1-1-2-2-1-4l-1-2h-2l-1-2v1l-1%201-1-2c1-2%200-2-1-2h-1l-1-1-2-1c0-2-14-3-20-1m23%2025l2%205v1l-2%202%201%201%201%202-2%201-1%201h11c1%201%201%201%202-1h2c1%201%201%201-1%201l1%201c3%201%2012%200%2012-1h-6l-4-1-2-2c-2%200-3-1-3-2-1-2-1-2-2-1s-1%201-1-1v-3l1-2c-1%200-1-1%200%200%202%201%201-1-1-3v-1l2%201%205%201%203-1h1c2%200%202%200%201-1%200-1-1-2-3-2s-2%200-1%201%201%201-1%201l-9-2h-6v5M22%20221c-1%202-3%203-3%200h-1c0%204-4%206-11%206l-7%201a594%20594%200%200052-3h-2l-3%201c-3%200-3%200-2-1v-2l-1-1-2-1c-1%201-2%201-3-1v4c1%202%201%203-1%203l-1-1v-2l-1-2h-1l-1-1-1-2-1%201-2%202-1%202c1%201-3%203-5%202-2%200-2-3%200-3l3-1-1-1h-2v-2l-2%202m-4%2010l-2%202-1%201-2-1h-3l-1-2-1%202-1%201-2-1-2-2H0v20l3-1%203%201h1l6-1c10%200%2010%200%2010-9%200-6%200-8-2-9l-1-2-2%201m290%201c1%201%202%203%201%204l1%205c1%201%201%201-1%203l-2%203c1%201%200%201-1%201l-6%201%205%201c4%200%206%200%206%202%201%201%200%201-3%201l-2%201%201%202c2-1%203%200%202%202v1l1%201c0%202%203%203%204%201v-6c-1-4-1-5%202-4l1%201-1%206v5h15c14%200%2020-1%2017-3-1-1-2-5%200-4l1-1-9-3c-9-1-8-2%203-2h5l-6-1c-5-1-9-3-9-5l-1-1-2-3-2%201v-1l-1-2c-1%201-3-2-2-4h-1l-1-1c1-2%200-2-8-2-7%200-8%200-7%201M0%20258v5h20c17%200%2020%200%2018-1l-4-1h-1l-2-1-1%201c1%202-1%201-3-1-3-3-5-4-5-1%200%202-2%201-2-1-1-2-1-2-4-2h-1v-2l-1%201-3%201c-5-2-5-2-7-1-1%201-1%201-1-1l-1-2c-1%200-2%202-2%206'%20fill='%23d3d3d3'%20fill-rule='evenodd'/%3e%3c/svg%3e",
+          srcWebp:
+            '/static/b799f542e0b219eece163da7f4bff6a1/00194/e029baa5a67ed0189707e60562b9bcdd.webp',
+          srcSetWebp:
+            '/static/b799f542e0b219eece163da7f4bff6a1/be31c/e029baa5a67ed0189707e60562b9bcdd.webp 375w,\n/static/b799f542e0b219eece163da7f4bff6a1/6714f/e029baa5a67ed0189707e60562b9bcdd.webp 750w,\n/static/b799f542e0b219eece163da7f4bff6a1/00194/e029baa5a67ed0189707e60562b9bcdd.webp 1500w,\n/static/b799f542e0b219eece163da7f4bff6a1/caac7/e029baa5a67ed0189707e60562b9bcdd.webp 2250w,\n/static/b799f542e0b219eece163da7f4bff6a1/d3e9f/e029baa5a67ed0189707e60562b9bcdd.webp 3000w,\n/static/b799f542e0b219eece163da7f4bff6a1/88013/e029baa5a67ed0189707e60562b9bcdd.webp 3537w',
+          srcSet:
+            '/static/b799f542e0b219eece163da7f4bff6a1/29b23/e029baa5a67ed0189707e60562b9bcdd.jpg 375w,\n/static/b799f542e0b219eece163da7f4bff6a1/32a3a/e029baa5a67ed0189707e60562b9bcdd.jpg 750w,\n/static/b799f542e0b219eece163da7f4bff6a1/febc6/e029baa5a67ed0189707e60562b9bcdd.jpg 1500w,\n/static/b799f542e0b219eece163da7f4bff6a1/d7513/e029baa5a67ed0189707e60562b9bcdd.jpg 2250w,\n/static/b799f542e0b219eece163da7f4bff6a1/b7726/e029baa5a67ed0189707e60562b9bcdd.jpg 3000w,\n/static/b799f542e0b219eece163da7f4bff6a1/a75cc/e029baa5a67ed0189707e60562b9bcdd.jpg 3537w',
+          src:
+            '/static/b799f542e0b219eece163da7f4bff6a1/febc6/e029baa5a67ed0189707e60562b9bcdd.jpg',
+          sizes: '(max-width: 1500px) 100vw, 1500px',
+          presentationWidth: 1500,
+          presentationHeight: 986,
+          originalImg:
+            '/static/b799f542e0b219eece163da7f4bff6a1/a75cc/e029baa5a67ed0189707e60562b9bcdd.jpg',
+          aspectRatio: 1.524390243902439,
+        },
+      },
+    },
+    childStrapiPostContent: {
+      childMdx: {
+        timeToRead: 1,
+      },
+    },
+    post_tags: [
+      {
+        id: '5f390f92f95eb21417e28f68',
+        name: 'Career',
+        slug: 'career',
+      },
+      {
+        id: '5f390f99f95eb21417e28f69',
+        name: 'Interview',
+        slug: 'interview',
+      },
+      {
+        id: '5f390fb6f95eb21417e28f6a',
+        name: 'Job',
+        slug: 'job',
+      },
+    ],
+  },
+  {
+    id: '1928333',
+    title: 'Eu falhei em uma entrevista por causa de um algoritmo',
+    subtitle: null,
+    description:
+      'Sometimes being interviewed can be hard. Here I detailed why I failed and write my thoughts about how an code challenge beat me my job opportunity.',
+    date: '2020-08-16',
+    serie_copy: null,
+    slug: 'eu-falhei-em-uma-entrevista-por-causa-de-um-algoritmo',
+    translation: {
+      language: 'en',
+      slug: 'i-failed-an-interview-because-of-an-algorithm',
+    },
+    post_serie: null,
+    language: 'pt',
+    featured_image: {
+      childImageSharp: {
+        original: {
+          src:
+            '/static/b799f542e0b219eece163da7f4bff6a1/e029baa5a67ed0189707e60562b9bcdd.jpg',
+        },
+        fluid: {
+          base64:
+            'data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAIFBP/EABUBAQEAAAAAAAAAAAAAAAAAAAEA/9oADAMBAAIQAxAAAAFNE9GtCA//xAAaEAEBAAIDAAAAAAAAAAAAAAABAAIRAwQS/9oACAEBAAEFAthEDdl3cOTY5vn/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAcEAACAQUBAAAAAAAAAAAAAAAAARECECExUWH/2gAIAQEABj8CirE8PGbE7I//xAAaEAEAAgMBAAAAAAAAAAAAAAABABEhMUFh/9oACAEBAAE/ITn2jlmEOlEoQhbbNRbPYyH/2gAMAwEAAgADAAAAENMf/8QAFhEBAQEAAAAAAAAAAAAAAAAAEQAh/9oACAEDAQE/EHSL/8QAFhEBAQEAAAAAAAAAAAAAAAAAEQAh/9oACAECAQE/EDGb/8QAHBABAAMAAgMAAAAAAAAAAAAAAQARITFRQWGR/9oACAEBAAE/EPFR6ToxzWYWnxjD0zCVnCXh6iRW1unKInDWcT//2Q==',
+          tracedSVG:
+            "data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='400'%20height='263'%20viewBox='0%200%20400%20263'%20preserveAspectRatio='none'%3e%3cpath%20d='M8%201v2C6%203%205%206%206%207v1H5l-1%202H3L2%209l-1%202H0l2%202%202%201H1l-1%206%201%206%201%201v1l-2%202c0%204%202%204%2016%204h12v-9l-1-10v-1c2%200%202%201%202%2014%200%207%201%207%2015%206a259%20259%200%200112-2h-1l-1-1h-1l-2%201%202-3c2%200%203-3%203-5l-2-1v1l-1%201c-1-1-1%200-1%201l-1%202-1%202c0%202%200%202-3%201-1-1-2-2-1-3l-1-2-1%202-1-1c-1-3-1-3-1-1s0%202-1%201l-3-1h-2c0-1%201-2%202-1l1-1-2-1c-3%200-4-3-3-3v-2l-1-2h2l1%201%202%201%202-1%201-1%201%201v1c3%200%206%203%204%204h-2l-1%201%201%201c3%200%205-1%205-3l1-2v-3c0-1%203-1%205%201h5v-1c0-2-2-2-10-2h-9l9-1h10V0h-5l-6%201%201%201c1-1%201%200%200%200l1%202v2l2%201h-3l-1%202c1%202%201%202-4%202-3%200-5-1-4-2H31l-1-2V6l-1-1V2c0-1%200-2-1-1l-1%201-1-1-8-1L8%201m55%205c0%206%201%207%202%207%201%201%200%201-1%201-2%200-3%200-2%201l1%202%201%201c1%200%202-1%201-2l1-1%201%201%202%201%201-1h2c2%200%202%200%201-1-3-1-1-2%206-2h7l-3-1c-6%200-11-1-10-2V9c-1%200-2-1-1-2%200-3-2-7-3-5l-1-1-2-1c-3%200-3%200-3%206m65-5l3%202c3%202%203%202%201%206l-3%204%205%201%207%201h-15c-2%200-2%202%200%202%201%201%202%202%201%203h1l2-1c0-2%204%200%206%202l2%201h1l4%203c1%201%202%202%201%203%200%202%200%202%201%201%202%200%202%200%202%202s0%202-10%202c-7%200-10-1-10-2l-2-2h-1v3l-1-2c0-2%200-2-1%200s-1%203-13%203l-12%201h12l30%201%2018%201v-8c0-4%200-7%201-6l1-1-1-1-1-1c0-2-2-3-10-3l-6-1%206-1h7c2-1%202-1-6-2a6675%206675%200%2001-9-1c1-1%202-2%202-5l-1-2-3%201V4l1-1V1c1-1%201-1-1-1l-3%201h-1l-2-1-3%201m55%200c-1%201-1%201%201%201v6l-2%202v1l-2%202c-1%201%201%201%205%201h6V0h-3l-5%201M42%2036c-2%200-3%201-3%202%201%202%202%204%202%202h2c3%202%206%202%208%201h4c3%202%203%203%203%206%200%204%200%204%201%202V37l-6-1H42m85%202c-1%201%200%203%201%204%202%201%202%201%201%202-2%201-3%203-1%203l2%202%201%205c2%202%202%202%2029%203%2017%200%2028%200%2027-1l1-1%201-9v-9h-31l-31%201m107%203c-1%203-1%203%202%204%203%200%207%205%206%207l2%202c2%201-1%202-4%202l-3%201%208%201c9%200%209%200%208-5l-1-2c0%202%200%202-1%201%200-2-1-2-1-1l-2%201c-2%200-2%200-2-3v-5c1-1%202-2%201-3l1-1%201-1-7-1c-6%200-7%200-8%203m-74%200l-1%202v2c-2%201-2%201%200%203s3%204%201%204l-2-2c-1-2-3-3-3-1-1%206-1%205%207%206%207%200%209%200%2010-2h2c-1%202%200%202%204%202l6-1-6-1c-1%200-2%200-1-1%200-1%200-2-2-1l-2-1h-1l-2-1-2-1v-1l-1-1v-2h-5l1-1c1%200-1-3-3-3v1M15%2058L5%2059H4c-4-2-4-1-4%208l1%209%2012%201%2013-1h2c4%202%201%203-6%203l-7%201h-1l-1-1-1%202%201%201v3h-2v-2c0-3-1-4-7-4H1L0%2089v10h9c9%200%2018%201%2014%202H4c-3%200-4%200-4%202s2%203%2011%202l1%201h2l1%201%201%202%201-1%201-2%201%202v1l2%202%201%203v-3c0-3%202-3%202%201s-1%207-2%206H12l-4%201H4c-5%201%200%201%2011%201h11v-8c0-9%201-12%202-7l2%203%201%202h1l1%201v1c2-1%204-4%202-5-1%200%203-4%204-3l1-1c0-1-4-2-9-2l-5-1%2015-1h8v-3l-1-2-1%202-5%201c-4%200-4%200-3-2h3l4-3c3-3%208-6%2010-6l2-1%202-1c1%201%201%202-1%204l-2%207%201%203c1-1%201-1%203%201s3%202%207%202c5-1%207%200%205%205-2%204%200%2011%203%2014l4%207c2%204%205%2011%207%2011v2c-2%202-2%202%205%202%206%200%207%200%207%202l-1%201v2c1%202%200%203-2%205l-3%205h-1l-1-5c0-2%200-3-1-2v12a324%20324%200%20010%2022v4h-9l-4%201-8%202%201%201%201%202h1c0-2%202-1%202%201l1%202%201%202%201%201%201%201v2h8c1%202%200%202-5%202l-7%201%208%201%207%201-5%201c-3%200-5%203-4%205s0%207-2%2010v1l1%201-11%201H57l12%201%2017%201c3%201%202%201-2%201s-7%201-6%203c0%201%200%202-2%202v1l2%201%202%201v2c-1%201-2%202-1%203v2c-2%201-2%202-1%202%201%201-1%201-3%201l-5-1-4-1c-3%200-3-1-3-3%200-3-2-4-3-1l-2%201-1%203c1%202%201%202-2%202s-3%200-1%201h33l2-8%201-7v7l2%208c1%202%201%202-1%202l-4%201h-3l-1%203c0%203%200%203-1%202h-6l-1-3h-4c-2-2-8-3-11-3-3%201-3%201-2%203l1%206-1%203h111a796%20796%200%2000111-4l-1-1c-1%201-2%200-2-1l1-1v-1l-1-1c4%200%201-2-3-2-3%200-4%200-3-1l4-1c8%200%208%200%208-10v-9h-3l-12-1c-8%200-9%200-5-1l19-1%2016-1h-14l-12-1-3-1-4-2-3-2c-2%200-1-2%201-2v-1l-2-1v-5c2-2%201-2-4-3-4%200-5%200-6%202l-1%202v-2c-1-2-2-2-5-2s-3%200-2-1h9l3-1c4%200%204-1%200-1-3%200-4%200-4-2s0-2-1-1l-1%202-4%201c-4%200-6-1-5-3l-2-1c-2%200-6-4-6-6l-1-1c-2-1-2-5%200-5v2l3-1c5-2%205-3-2-3-6%200-10-1-10-2l3-1h25v-2h-1c-1%201-2%202-3%201h-7c-4%200-6-2-5-5h-1v-2c0-3%200-3-3-4-1-1-2-1-1-2l-2-2h-3l-2%201v4l1%203v1c2%202%201%206%200%206l-2-1-1-1-3-2c0-1-2-3-5-4-3-2-4-3-4-5s-1-3-2-3l-6-1-5-1%201%203c0%203%200%203-4%203l-8%201h-4l-4-7-3-10c0-3-1-5-3-5l-8-13%203-1c2-1%202-2%202-5v-3l-3%202c-3%204-3%204-11-1-9-7-22-13-47-23l-23-9%203-5c2-4%202-4%201-5-2-1-2-1-1-3v-3c2-1%202-2%202-3-1-1-1-2%201-2v-1l-2-4c-1-4-7-3-7%201h1c2%200%204%203%203%205-1%201-1%201-1-1l-2-2-3-1c-2-4-5-4-5-2s0%202-1%201v-3c2-2-5-1-8%200-1%202-2%202-3%200s-2-2-2-1h-2l-5%202c-3%202-4%203-6%202l-4-1c-2%200%202%203%204%203l2%201H35l-1-3h1l1-1-1-1c-2%200-1-11%201-11%203%200-3-2-5-2-3%200-3%200-3%203%200%202%200%203-1%202v-3c0-2-1-3-12-2m127%201l-6%201%207%208c6%207%208%209%2010%209h3V60l-4-1h-10m103%205l1%205-1%203c0%203%202%202%203-1l1-1v2l1%201v1l1%201h1c0%202-2%202-5%202l-2%201c-1%202%2010%202%2013%201h2l2%201c2-1%202-1%200-3l-3-2h-1c0%203-2%203-3%201-2-2-2-2%200-3v-3l-2-1%201-1c1%201%202%200%202-2%201-4%200-5-8-6h-5l2%204m-64%2067l-4%201-4%202-5%203-2%201%205%205%205%205%201%201c0%202%203%201%203-1s0-2%201-1l6%204%201-4c0-4-1-5-2-3s-3%201-3%200l1-2c2%200%203-2%203-7%200-3%200-4-2-3l-2-1h-2m-41%208v2c1%201%201%201%200%200-3%200-5%203-3%204s2%206%200%207v1l1%201c-1%203%205%208%2010%209%203%200%203%200%201%201h-3l4%204%205%203%201%201c0%202%203%202%205%200h1l1%201c2%200%201-3-3-7-2-2-4-3-6-2-2%200-2%200-1-1%202-1%202-2-3-6-7-5-7-6%200-3l5%202v-3c0-3-5-10-8-11l-2-1v-1c-2-2-3-2-5-1m-125%206l-4%201%202%201c0%202-3%202-4%201H7c-2%201%200%203%202%202%202%200%202%200%200%202s-5%202-5%200c-1-1-1-1-1%201l-1%208-2%201%203%201%204-2v-2h2c2%200%202%200%201-1l2-1h2c1-3%209%200%2011%204%201%201%201%200%201-7l-1-9H15m42%200c-8%200-9%200-9%202l-2%202v1l1%202%201%201v5l1%201h-3c1%202%200%202-1%202l-2-1c0-2%200-3-2-3-1-1-1-1%200%200l-1%201c-1-1-1%200-1%201l-1-1-1-2-1%202%201%202%203%202h-3l-3%201a433%20433%200%200051-3h2v-2l-1-2-1-1-1%201h-1l-2-1h-1c0-1%201-2%202-1%201%200%202%200%202-2s-1-2-3-2l-1-1h-1v-2l2-2H57m3%2021v8l1%202%201%202v3h-1c-1%200-2%202-1%203h20l1-1v-1h1l2-2c2-2%202-2%200-1l-2-1v-2l1-4v-5l-9-1H60m203%202l-1%201c1%200%202%201%201%202l1%201%201-1c0-1%201-2%203-1l2%202v1l2%204-3-1c-1-1-1-1-1%201v1c-1-1-3%200-3%202l-3%201-2-1h-1l-1-1c0-1-1-1-1%201v3c1%202%200%202-2%202a2568%202568%200%200137%201c5%200%205%200%204-1-2-1-2-2-1-3v-1c-1-1-2-2-1-4l-1-2h-2l-1-2v1l-1%201-1-2c1-2%200-2-1-2h-1l-1-1-2-1c0-2-14-3-20-1m23%2025l2%205v1l-2%202%201%201%201%202-2%201-1%201h11c1%201%201%201%202-1h2c1%201%201%201-1%201l1%201c3%201%2012%200%2012-1h-6l-4-1-2-2c-2%200-3-1-3-2-1-2-1-2-2-1s-1%201-1-1v-3l1-2c-1%200-1-1%200%200%202%201%201-1-1-3v-1l2%201%205%201%203-1h1c2%200%202%200%201-1%200-1-1-2-3-2s-2%200-1%201%201%201-1%201l-9-2h-6v5M22%20221c-1%202-3%203-3%200h-1c0%204-4%206-11%206l-7%201a594%20594%200%200052-3h-2l-3%201c-3%200-3%200-2-1v-2l-1-1-2-1c-1%201-2%201-3-1v4c1%202%201%203-1%203l-1-1v-2l-1-2h-1l-1-1-1-2-1%201-2%202-1%202c1%201-3%203-5%202-2%200-2-3%200-3l3-1-1-1h-2v-2l-2%202m-4%2010l-2%202-1%201-2-1h-3l-1-2-1%202-1%201-2-1-2-2H0v20l3-1%203%201h1l6-1c10%200%2010%200%2010-9%200-6%200-8-2-9l-1-2-2%201m290%201c1%201%202%203%201%204l1%205c1%201%201%201-1%203l-2%203c1%201%200%201-1%201l-6%201%205%201c4%200%206%200%206%202%201%201%200%201-3%201l-2%201%201%202c2-1%203%200%202%202v1l1%201c0%202%203%203%204%201v-6c-1-4-1-5%202-4l1%201-1%206v5h15c14%200%2020-1%2017-3-1-1-2-5%200-4l1-1-9-3c-9-1-8-2%203-2h5l-6-1c-5-1-9-3-9-5l-1-1-2-3-2%201v-1l-1-2c-1%201-3-2-2-4h-1l-1-1c1-2%200-2-8-2-7%200-8%200-7%201M0%20258v5h20c17%200%2020%200%2018-1l-4-1h-1l-2-1-1%201c1%202-1%201-3-1-3-3-5-4-5-1%200%202-2%201-2-1-1-2-1-2-4-2h-1v-2l-1%201-3%201c-5-2-5-2-7-1-1%201-1%201-1-1l-1-2c-1%200-2%202-2%206'%20fill='%23d3d3d3'%20fill-rule='evenodd'/%3e%3c/svg%3e",
+          srcWebp:
+            '/static/b799f542e0b219eece163da7f4bff6a1/00194/e029baa5a67ed0189707e60562b9bcdd.webp',
+          srcSetWebp:
+            '/static/b799f542e0b219eece163da7f4bff6a1/be31c/e029baa5a67ed0189707e60562b9bcdd.webp 375w,\n/static/b799f542e0b219eece163da7f4bff6a1/6714f/e029baa5a67ed0189707e60562b9bcdd.webp 750w,\n/static/b799f542e0b219eece163da7f4bff6a1/00194/e029baa5a67ed0189707e60562b9bcdd.webp 1500w,\n/static/b799f542e0b219eece163da7f4bff6a1/caac7/e029baa5a67ed0189707e60562b9bcdd.webp 2250w,\n/static/b799f542e0b219eece163da7f4bff6a1/d3e9f/e029baa5a67ed0189707e60562b9bcdd.webp 3000w,\n/static/b799f542e0b219eece163da7f4bff6a1/88013/e029baa5a67ed0189707e60562b9bcdd.webp 3537w',
+          srcSet:
+            '/static/b799f542e0b219eece163da7f4bff6a1/29b23/e029baa5a67ed0189707e60562b9bcdd.jpg 375w,\n/static/b799f542e0b219eece163da7f4bff6a1/32a3a/e029baa5a67ed0189707e60562b9bcdd.jpg 750w,\n/static/b799f542e0b219eece163da7f4bff6a1/febc6/e029baa5a67ed0189707e60562b9bcdd.jpg 1500w,\n/static/b799f542e0b219eece163da7f4bff6a1/d7513/e029baa5a67ed0189707e60562b9bcdd.jpg 2250w,\n/static/b799f542e0b219eece163da7f4bff6a1/b7726/e029baa5a67ed0189707e60562b9bcdd.jpg 3000w,\n/static/b799f542e0b219eece163da7f4bff6a1/a75cc/e029baa5a67ed0189707e60562b9bcdd.jpg 3537w',
+          src:
+            '/static/b799f542e0b219eece163da7f4bff6a1/febc6/e029baa5a67ed0189707e60562b9bcdd.jpg',
+          sizes: '(max-width: 1500px) 100vw, 1500px',
+          presentationWidth: 1500,
+          presentationHeight: 986,
+          originalImg:
+            '/static/b799f542e0b219eece163da7f4bff6a1/a75cc/e029baa5a67ed0189707e60562b9bcdd.jpg',
+          aspectRatio: 1.524390243902439,
+        },
+      },
+    },
+    childStrapiPostContent: {
+      childMdx: {
+        timeToRead: 1,
+      },
+    },
+    post_tags: [
+      {
+        id: '5f390f92f95eb21417e28f68',
+        name: 'Career',
+        slug: 'career',
+      },
+      {
+        id: '5f390f99f95eb21417e28f69',
+        name: 'Interview',
+        slug: 'interview',
+      },
+      {
+        id: '5f390fb6f95eb21417e28f6a',
+        name: 'Job',
+        slug: 'job',
       },
     ],
   },

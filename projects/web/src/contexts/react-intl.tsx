@@ -1,7 +1,7 @@
 import React from 'react';
 import { IntlProvider, IntlShape, useIntl as officialUseItl } from 'react-intl';
 import flat from 'flat';
-import { useLocalStorage } from 'react-use';
+import useLocalStorage from 'react-use/lib/useLocalStorage';
 
 import { LOCALES, LocaleValues } from '@app-types';
 import enMessages from '@locales/en.json';

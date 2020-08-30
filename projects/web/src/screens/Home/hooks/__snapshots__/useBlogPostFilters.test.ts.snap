@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`postFilters views fn: postsToRender returns the first 5 elements from the list in a specific language 1`] = `
+exports[`fn: postsToRender initial number is 5 or less 1`] = `
 Array [
   Object {
     "childStrapiPostContent": Object {
@@ -10,7 +10,7 @@ Array [
     },
     "date": "2020-08-16",
     "description": "Sometimes being interviewed can be hard. Here I detailed why I failed and write my thoughts about how an code challenge beat me my job opportunity.",
-    "featuredImage": Object {
+    "featured_image": Object {
       "childImageSharp": Object {
         "fluid": Object {
           "aspectRatio": 1.524390243902439,
@@ -42,11 +42,9 @@ Array [
     },
     "id": "1",
     "language": "pt",
-    "serie": null,
-    "serieCopy": null,
-    "slug": "eu-falhei-em-uma-entrevista-por-causa-de-um-algoritmo",
-    "subtitle": null,
-    "tags": Array [
+    "postUri": "/blog/eu-falhei-em-uma-entrevista-por-causa-de-um-algoritmo",
+    "post_serie": null,
+    "post_tags": Array [
       Object {
         "id": "5f390f92f95eb21417e28f68",
         "name": "Career",
@@ -63,6 +61,9 @@ Array [
         "slug": "job",
       },
     ],
+    "serie_copy": null,
+    "slug": "eu-falhei-em-uma-entrevista-por-causa-de-um-algoritmo",
+    "subtitle": null,
     "title": "Eu falhei em uma entrevista por causa de um algoritmo",
     "translation": Object {
       "language": "en",
@@ -85,7 +86,7 @@ tags:
   - brasil
   - holanda
 ",
-    "featuredImage": Object {
+    "featured_image": Object {
       "childImageSharp": Object {
         "fluid": Object {
           "aspectRatio": 1.5,
@@ -117,11 +118,9 @@ tags:
     },
     "id": "4",
     "language": "pt",
-    "serie": null,
-    "serieCopy": null,
-    "slug": "e-o-coronavirus-hein",
-    "subtitle": "Algumas informações básicas e links para se manter informado",
-    "tags": Array [
+    "postUri": "/blog/e-o-coronavirus-hein",
+    "post_serie": null,
+    "post_tags": Array [
       Object {
         "id": "5f394bece57aa266137e0ffd",
         "name": "Saúde",
@@ -143,6 +142,9 @@ tags:
         "slug": "holanda",
       },
     ],
+    "serie_copy": null,
+    "slug": "e-o-coronavirus-hein",
+    "subtitle": "Algumas informações básicas e links para se manter informado",
     "title": "E o coronavírus, hein?",
     "translation": null,
   },
@@ -156,7 +158,7 @@ tags:
     "description": "Lorem Ipsum
 
 ",
-    "featuredImage": Object {
+    "featured_image": Object {
       "childImageSharp": Object {
         "fluid": Object {
           "aspectRatio": 1.6519823788546255,
@@ -180,16 +182,13 @@ tags:
     },
     "id": "5",
     "language": "pt",
-    "serie": Object {
+    "postUri": "/blog/dev-js-part-2",
+    "post_serie": Object {
       "id": "5f393dcaeb6c556a2d8efd0f",
       "name": "Desenvolvedor JavaScript: do Brasil à Europa",
       "slug": "desenvolvedor-java-script-do-brasil-a-europa",
-      "tags": undefined,
     },
-    "serieCopy": "Ato 2",
-    "slug": "dev-js-part-2",
-    "subtitle": "Matrix Origins: Onde tudo começou",
-    "tags": Array [
+    "post_tags": Array [
       Object {
         "id": "5f396fe92163ea002152caa9",
         "name": "Desenvolvimento",
@@ -211,6 +210,9 @@ tags:
         "slug": "carreira",
       },
     ],
+    "serie_copy": "Ato 2",
+    "slug": "dev-js-part-2",
+    "subtitle": "Matrix Origins: Onde tudo começou",
     "title": "Desenvolvedor JavaScript — do Brasil à Europa",
     "translation": null,
   },
@@ -223,7 +225,7 @@ tags:
     "date": "2017-12-10",
     "description": "A história da minha trajetória de uma pessoa sem profissão no Brasil até me tornar um desenvolvedor na Holanda
 ",
-    "featuredImage": Object {
+    "featured_image": Object {
       "childImageSharp": Object {
         "fluid": Object {
           "aspectRatio": 1.5,
@@ -251,16 +253,13 @@ tags:
     },
     "id": "6",
     "language": "pt",
-    "serie": Object {
+    "postUri": "/blog/dev-js-part-1",
+    "post_serie": Object {
       "id": "5f393dcaeb6c556a2d8efd0f",
       "name": "Desenvolvedor JavaScript: do Brasil à Europa",
       "slug": "desenvolvedor-java-script-do-brasil-a-europa",
-      "tags": undefined,
     },
-    "serieCopy": "Ato 1",
-    "slug": "dev-js-part-1",
-    "subtitle": "Prólogo",
-    "tags": Array [
+    "post_tags": Array [
       Object {
         "id": "5f396fe92163ea002152caa9",
         "name": "Desenvolvimento",
@@ -282,6 +281,9 @@ tags:
         "slug": "carreira",
       },
     ],
+    "serie_copy": "Ato 1",
+    "slug": "dev-js-part-1",
+    "subtitle": "Prólogo",
     "title": "Desenvolvedor JavaScript — do Brasil à Europa",
     "translation": null,
   },
@@ -293,7 +295,7 @@ tags:
     },
     "date": "2020-08-16",
     "description": "Sometimes being interviewed can be hard. Here I detailed why I failed and write my thoughts about how an code challenge beat me my job opportunity.",
-    "featuredImage": Object {
+    "featured_image": Object {
       "childImageSharp": Object {
         "fluid": Object {
           "aspectRatio": 1.524390243902439,
@@ -325,11 +327,9 @@ tags:
     },
     "id": "7",
     "language": "pt",
-    "serie": null,
-    "serieCopy": null,
-    "slug": "eu-falhei-em-uma-entrevista-por-causa-de-um-algoritmo",
-    "subtitle": null,
-    "tags": Array [
+    "postUri": "/blog/eu-falhei-em-uma-entrevista-por-causa-de-um-algoritmo",
+    "post_serie": null,
+    "post_tags": Array [
       Object {
         "id": "5f390f92f95eb21417e28f68",
         "name": "Career",
@@ -346,6 +346,9 @@ tags:
         "slug": "job",
       },
     ],
+    "serie_copy": null,
+    "slug": "eu-falhei-em-uma-entrevista-por-causa-de-um-algoritmo",
+    "subtitle": null,
     "title": "Eu falhei em uma entrevista por causa de um algoritmo",
     "translation": Object {
       "language": "en",
@@ -355,7 +358,7 @@ tags:
 ]
 `;
 
-exports[`postFilters views fn: postsToRender returns the first 5 elements from the list in a specific language 2`] = `
+exports[`fn: postsToRender return all posts with it has less then 5 posts 1`] = `
 Array [
   Object {
     "childStrapiPostContent": Object {
@@ -365,7 +368,7 @@ Array [
     },
     "date": "2020-08-16",
     "description": "Sometimes being interviewed can be hard. Here I detailed why I failed and write my thoughts about how an code challenge beat me my job opportunity.",
-    "featuredImage": Object {
+    "featured_image": Object {
       "childImageSharp": Object {
         "fluid": Object {
           "aspectRatio": 1.524390243902439,
@@ -397,17 +400,18 @@ Array [
     },
     "id": "8",
     "language": "en",
-    "serie": null,
-    "serieCopy": null,
-    "slug": "i-failed-an-interview-because-of-an-algorithm",
-    "subtitle": null,
-    "tags": Array [
+    "postUri": "/blog/en/i-failed-an-interview-because-of-an-algorithm",
+    "post_serie": null,
+    "post_tags": Array [
       Object {
         "id": "5f3972d3c998c60021565c2e",
         "name": "Carreira",
         "slug": "carreira",
       },
     ],
+    "serie_copy": null,
+    "slug": "i-failed-an-interview-because-of-an-algorithm",
+    "subtitle": null,
     "title": "I failed an interview because of an algorithm ",
     "translation": Object {
       "language": "pt",
@@ -424,7 +428,7 @@ Array [
     "description": "Some description I do have to fill it in
 
 ",
-    "featuredImage": Object {
+    "featured_image": Object {
       "childImageSharp": Object {
         "fluid": Object {
           "aspectRatio": 2.1551724137931036,
@@ -450,11 +454,9 @@ Array [
     },
     "id": "9",
     "language": "en",
-    "serie": null,
-    "serieCopy": null,
-    "slug": "cache-gatsby-github-actions",
-    "subtitle": "A quick setup to increase your build performance",
-    "tags": Array [
+    "postUri": "/blog/en/cache-gatsby-github-actions",
+    "post_serie": null,
+    "post_tags": Array [
       Object {
         "id": "5f390975f5ec161249bd8cdf",
         "name": "Front End",
@@ -476,6 +478,9 @@ Array [
         "slug": "github-actions",
       },
     ],
+    "serie_copy": null,
+    "slug": "cache-gatsby-github-actions",
+    "subtitle": "A quick setup to increase your build performance",
     "title": "Gatsby Incremental Builds and Github Actions",
     "translation": null,
   },
@@ -487,7 +492,7 @@ Array [
     },
     "date": "2020-08-16",
     "description": "Sometimes being interviewed can be hard. Here I detailed why I failed and write my thoughts about how an code challenge beat me my job opportunity.",
-    "featuredImage": Object {
+    "featured_image": Object {
       "childImageSharp": Object {
         "fluid": Object {
           "aspectRatio": 1.524390243902439,
@@ -519,17 +524,18 @@ Array [
     },
     "id": "2",
     "language": "en",
-    "serie": null,
-    "serieCopy": null,
-    "slug": "i-failed-an-interview-because-of-an-algorithm",
-    "subtitle": null,
-    "tags": Array [
+    "postUri": "/blog/en/i-failed-an-interview-because-of-an-algorithm",
+    "post_serie": null,
+    "post_tags": Array [
       Object {
         "id": "5f3972d3c998c60021565c2e",
         "name": "Carreira",
         "slug": "carreira",
       },
     ],
+    "serie_copy": null,
+    "slug": "i-failed-an-interview-because-of-an-algorithm",
+    "subtitle": null,
     "title": "I failed an interview because of an algorithm ",
     "translation": Object {
       "language": "pt",
@@ -546,7 +552,7 @@ Array [
     "description": "Some description I do have to fill it in
 
 ",
-    "featuredImage": Object {
+    "featured_image": Object {
       "childImageSharp": Object {
         "fluid": Object {
           "aspectRatio": 2.1551724137931036,
@@ -572,11 +578,9 @@ Array [
     },
     "id": "3",
     "language": "en",
-    "serie": null,
-    "serieCopy": null,
-    "slug": "cache-gatsby-github-actions",
-    "subtitle": "A quick setup to increase your build performance",
-    "tags": Array [
+    "postUri": "/blog/en/cache-gatsby-github-actions",
+    "post_serie": null,
+    "post_tags": Array [
       Object {
         "id": "5f390975f5ec161249bd8cdf",
         "name": "Front End",
@@ -598,6 +602,9 @@ Array [
         "slug": "github-actions",
       },
     ],
+    "serie_copy": null,
+    "slug": "cache-gatsby-github-actions",
+    "subtitle": "A quick setup to increase your build performance",
     "title": "Gatsby Incremental Builds and Github Actions",
     "translation": null,
   },

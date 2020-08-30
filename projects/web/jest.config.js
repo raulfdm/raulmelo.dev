@@ -10,7 +10,7 @@ module.exports = {
     '^@contexts/(.*)': '<rootDir>/src/contexts/$1',
     '^@hooks/(.*)': '<rootDir>/src/hooks/$1',
     '^@locales/(.*)': '<rootDir>/src/locales/$1',
-    '^@models': '<rootDir>/src/models/index.ts',
+    '^@models/(.*)': '<rootDir>/src/models/$1',
     '^@screens/(.*)': '<rootDir>/src/screens/$1',
     '^@static/(.*)': '<rootDir>/static/$1',
     '^@styles/(.*)': '<rootDir>/src/styles/$1',
