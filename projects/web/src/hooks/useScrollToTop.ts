@@ -1,6 +1,7 @@
 import { polyfill as scrollPolyfill } from 'smoothscroll-polyfill';
+import { isBrowserApiAvailable } from '@utils/utilities';
 
-if (typeof window !== `undefined`) {
+if (isBrowserApiAvailable.window) {
   scrollPolyfill();
 }
 

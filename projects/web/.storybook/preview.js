@@ -5,7 +5,7 @@ import { addDecorator } from '@storybook/react';
 import { ThemeProvider } from '@contexts/theme';
 import { GlobalStyles } from '@styles/index';
 import { BlogGlobalStyle } from '@styles/blogPost';
-import { IntlContextProvider } from '@contexts/react-intl';
+import { IntlContextProvider, useIntl } from '@contexts/react-intl';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -60,6 +60,17 @@ window.___navigate = (pathname) => {
   action('NavigateTo:')(pathname);
 };
 
+// Just a dummy component to switch theme via storybook
+const ThemeHandler = ({ lang }) => {
+  const { switchLocale } = useIntl();
+
+  React.useEffect(() => {
+    switchLocale(lang);
+  }, [lang]);
+
+  return <></>;
+};
+
 addDecorator((story, ctx) => {
   /* I only wants to import blog globalStyles if the component is
   part of Blog/ */
@@ -75,7 +86,8 @@ addDecorator((story, ctx) => {
   }, [theme]);
 
   return (
-    <IntlContextProvider lang={locale}>
+    <IntlContextProvider>
+      <ThemeHandler lang={locale} />
       <ThemeProvider initialTheme={theme}>
         <GlobalStyles />
         {isBlog && <BlogGlobalStyle />}

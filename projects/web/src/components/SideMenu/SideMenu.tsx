@@ -1,10 +1,10 @@
 import React from 'react';
 import { defineMessage } from 'react-intl';
 
-import { hasWindow } from '@utils/dom';
 import { useIntl } from '@contexts/react-intl';
-import { Nav, StyledLink, OpacityLayer } from './styles';
 import { useApp } from '@hooks/useApp';
+import { isBrowserApiAvailable } from '@utils/utilities';
+import { Nav, StyledLink, OpacityLayer } from './styles';
 
 const messages = defineMessage({
   home: {
@@ -46,7 +46,9 @@ export const SideMenu = () => {
 
   const animate = isCollapsed ? 'closed' : 'open';
   const { formatMessage } = useIntl();
-  const urlPathname = hasWindow() ? window.location.pathname : '';
+  const urlPathname = isBrowserApiAvailable.window
+    ? window.location.pathname
+    : '';
 
   React.useEffect(() => {
     const hideOnScroll = (): void => {
