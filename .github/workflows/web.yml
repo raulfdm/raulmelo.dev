@@ -189,6 +189,7 @@ jobs:
           publish-dir: 'projects/web/public'
           github-token: ${{ secrets.GITHUB_TOKEN }}
           production-branch: main
+          production-deploy: true
           deploy-message: 'Deploy from GitHub Actions - PRODUCTION'
         env:
           NODE_ENV: production
