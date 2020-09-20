@@ -1,11 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<FeaturedImage /> renders gatsby image with default alt 1`] = `
-.c1 {
-  max-height: 600px;
-  margin-top: 42px;
-}
-
 .c0 {
   max-width: 768px;
   width: 100%;
@@ -14,7 +9,12 @@ exports[`<FeaturedImage /> renders gatsby image with default alt 1`] = `
   height: 100%;
 }
 
-.c0.c0 {
+.c2 {
+  max-height: 600px;
+  margin-top: 42px;
+}
+
+.c1.c1 {
   max-width: 1192px;
   padding-bottom: 50px;
 }
@@ -28,12 +28,12 @@ exports[`<FeaturedImage /> renders gatsby image with default alt 1`] = `
 <div>
   <div
     aria-label="Featured image"
-    class="c0"
+    class="c0 c1"
     data-testid="featured-image-wrapper"
     role="img"
   >
     <div
-      class="c1 gatsby-image-wrapper"
+      class="c2 gatsby-image-wrapper"
       style="position: relative; overflow: hidden;"
     >
       <div
