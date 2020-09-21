@@ -4,8 +4,7 @@ import { motion } from 'framer-motion';
 import { styled, media, SiteTheme } from '@styles/styled';
 import { MenuBar } from '@components/MenuBar';
 import { Container, pageTransitionVariants } from '@components/Ui';
-import { GlobalStyles } from '@styles/index';
-import { ThemeProvider } from '@contexts/theme';
+
 import { SideMenu } from '@components/SideMenu';
 
 interface LayoutProps {
@@ -26,7 +25,7 @@ const Main = styled(Container)`
 
 export const Layout: React.FC<LayoutProps> = ({ children, className }) => {
   return (
-    <ThemeProvider>
+    <>
       <MenuBar />
       <Main
         as={motion.main}
@@ -36,10 +35,9 @@ export const Layout: React.FC<LayoutProps> = ({ children, className }) => {
         variants={pageTransitionVariants}
         className={className}
       >
-        <GlobalStyles />
         {children}
       </Main>
       <SideMenu />
-    </ThemeProvider>
+    </>
   );
 };
