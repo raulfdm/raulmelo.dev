@@ -1,7 +1,5 @@
-/* eslint-disable no-unused-vars */
-import React from 'react';
-import { WrapRootElement } from './src/WrapRootElement';
+import { WrapPageElement, WrapRootElement } from './src/WrapElement';
 
-export const wrapRootElement = ({ element }) => {
-  return <WrapRootElement>{element}</WrapRootElement>;
-};
+export const wrapPageElement = WrapPageElement;
+
+export const wrapRootElement = WrapRootElement;
