@@ -1,6 +1,5 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import 'sanitize.css/sanitize.css';
 import { ArrowheadUp } from '@styled-icons/evaicons-solid/ArrowheadUp';
 
 import { SEO } from '@components/SEO';
@@ -20,7 +19,7 @@ import {
   StrapiSocial,
   StrapiCv,
 } from '@app-types/graphql';
-import { theme, GlobalCVStyles, StyledThemeProvider } from '@screens/CV/styled';
+
 import { CVMain, HomeLink, ScrollToTopButton } from '@screens/CV/components/UI';
 
 type CvPageProps = {
@@ -36,7 +35,6 @@ const CvPage: React.FC<CvPageProps> = ({ data: { personal, social, cv } }) => {
 
   return (
     <>
-      <GlobalCVStyles />
       <SEO
         title={titleWithNameAndJobTitle('Curriculum')}
         description="Raul Melo is a Software Developer focused on client-side. Have over 5 years of experience building websites and applications. Check my CV for more info."
@@ -50,23 +48,21 @@ const CvPage: React.FC<CvPageProps> = ({ data: { personal, social, cv } }) => {
       </SEO>
       <HomeLink to="/">Back to home</HomeLink>
       <CVMain data-testid="cvContent">
-        <StyledThemeProvider theme={theme as never}>
-          <Info
-            full_name={personal.full_name}
-            phone={personal.phone}
-            city={personal.city}
-            country={personal.country}
-            email={personal.email}
-            linkedIn={social.linkedIn}
-            github={social.github}
-          />
-          <CareerSummary summary={cv.summary} />
-          <TechnicalSkills technical_skills={cv.technical_skills} />
-          <CareerExperience jobs={cv.jobs} />
-          <SideProjects side_projects={cv.side_projects} />
-          <Education education={cv.education} />
-          <Interests interests={cv.interests} />
-        </StyledThemeProvider>
+        <Info
+          full_name={personal.full_name}
+          phone={personal.phone}
+          city={personal.city}
+          country={personal.country}
+          email={personal.email}
+          linkedIn={social.linkedIn}
+          github={social.github}
+        />
+        <CareerSummary summary={cv.summary} />
+        <TechnicalSkills technical_skills={cv.technical_skills} />
+        <CareerExperience jobs={cv.jobs} />
+        <SideProjects side_projects={cv.side_projects} />
+        <Education education={cv.education} />
+        <Interests interests={cv.interests} />
         <ScrollToTopButton onClick={moveToTop}>
           <ArrowheadUp size={21} />
         </ScrollToTopButton>

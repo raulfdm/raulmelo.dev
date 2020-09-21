@@ -4,7 +4,6 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 import { StrapiUsesConnection } from '@app-types/graphql';
 import { Layout } from '@components/Layout';
-import { BlogGlobalStyle } from '@styles/blogPost';
 import { useIntl } from '@contexts/react-intl';
 
 type UsesProps = {
@@ -20,7 +19,6 @@ const Uses: React.FC<UsesProps> = ({ data }) => {
 
   return (
     <Layout>
-      <BlogGlobalStyle />
       <MDXRenderer>{uses!.childStrapiUsesContent!.childMdx!.body}</MDXRenderer>
     </Layout>
   );

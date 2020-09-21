@@ -46,9 +46,6 @@ export const customGlobals = css`
     font-size: 1.6rem;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-    color: var(--font);
-
-    min-height: 100vh;
     position: relative;
   }
 
