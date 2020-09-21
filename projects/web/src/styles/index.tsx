@@ -1,11 +1,11 @@
 import { createGlobalStyle } from '@styles/styled';
 
 import { customGlobals } from '@styles/globals';
-import { resets } from '@styles/reset';
-import { globalFonts } from '@styles/fonts';
+import { FlattenSimpleInterpolation } from 'styled-components';
 
-export const GlobalStyles = createGlobalStyle`
-  ${resets};
+export const GlobalStyles = createGlobalStyle<{
+  global?: FlattenSimpleInterpolation;
+}>`
   ${customGlobals};
-  ${globalFonts};
+  ${({ global }) => global};
 `;

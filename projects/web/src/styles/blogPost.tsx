@@ -1,6 +1,6 @@
 import Typography from 'typography';
 
-import { css, createGlobalStyle } from '@styles/styled';
+import { css } from '@styles/styled';
 import { pandaPrismStyles } from '@styles/prims-panda-theme';
 import { FONTS, theme } from '@styles/theme';
 import { headingLinkStyle } from '@components/Ui';
@@ -55,7 +55,7 @@ export const typography = new Typography({
   }),
 });
 
-const blogGlobal = css`
+export const blogGlobalStyles = css`
   ${typography.toString()};
 
   body {
@@ -85,8 +85,4 @@ const blogGlobal = css`
   }
 
   ${pandaPrismStyles};
-`;
-
-export const BlogGlobalStyle = createGlobalStyle`
-  ${blogGlobal};
 `;
