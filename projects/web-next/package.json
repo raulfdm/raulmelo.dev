@@ -2,9 +2,9 @@
   "name": "@raulmelo.dev/next",
   "version": "1.0.0",
   "scripts": {
-    "dev": "GRAPHQL_ENDPOINT=http://localhost:1337/graphql yarn codegen && next",
-    "build": "GRAPHQL_ENDPOINT=https://raulmelo-dev-server.herokuapp.com/graphql yarn codegen && next build",
-    "start": "GRAPHQL_ENDPOINT=https://raulmelo-dev-server.herokuapp.com/graphql yarn codegen && next start",
+    "dev": "cross-env-shell GRAPHQL_ENDPOINT=http://localhost:1337/graphql yarn codegen && next",
+    "build": "cross-env-shell GRAPHQL_ENDPOINT=https://raulmelo-dev-server.herokuapp.com/graphql yarn codegen && next build",
+    "start": "cross-env-shell GRAPHQL_ENDPOINT=https://raulmelo-dev-server.herokuapp.com/graphql yarn codegen && next start",
     "type-check": "tsc",
     "codegen": "graphql-let"
   },
@@ -27,6 +27,7 @@
     "@types/react": "^16.9.16",
     "@types/react-dom": "^16.9.4",
     "@types/styled-components": "^5.1.3",
+    "cross-env": "^7.0.2",
     "graphql-let": "^0.16.2",
     "typescript": "4.0"
   },
