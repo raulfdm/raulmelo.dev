@@ -1,4 +1,4 @@
-schema: https://raulmelo-dev-server.herokuapp.com/graphql
+schema: http://localhost:1337/graphql
 documents: '**/*.graphql'
 plugins:
   - typescript
