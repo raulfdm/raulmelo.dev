@@ -1,6 +1,7 @@
 const path = require('path');
 
 module.exports = {
+  target: 'serverless',
   webpack: (config, options) => {
     config.resolve.alias = {
       ...config.resolve.alias,
