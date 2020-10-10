@@ -2,11 +2,11 @@
   "name": "@raulmelo.dev/next",
   "version": "1.0.0",
   "scripts": {
-    "dev": "yarn codegen && next",
-    "build": "yarn codegen && next build",
-    "start": "yarn codegen && next start",
+    "dev": "GRAPHQL_ENDPOINT=http://localhost:1337/graphql yarn codegen && next",
+    "build": "GRAPHQL_ENDPOINT=https://raulmelo-dev-server.herokuapp.com/graphql yarn codegen && next build",
+    "start": "GRAPHQL_ENDPOINT=https://raulmelo-dev-server.herokuapp.com/graphql yarn codegen && next start",
     "type-check": "tsc",
-    "codegen": "GRAPHQL_ENDPOINT=http://localhost:1337/graphql graphql-let"
+    "codegen": "graphql-let"
   },
   "dependencies": {
     "@apollo/client": "^3.2.2",
