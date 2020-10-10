@@ -25,7 +25,8 @@
     "dev": "concurrently \"yarn:server:dev\" \"yarn:web:dev:wait\"",
     "web:docs:build": "yarn base:web build-storybook",
     "web:docs:dev": "yarn base:web storybook",
-    "web:next:dev": "yarn workspace @raulmelo.dev/next dev"
+    "web:next:dev": "yarn workspace @raulmelo.dev/next dev",
+    "web:next:build:ci": "./scripts/build-next.sh"
   },
   "devDependencies": {
     "@sub-tv/prettier-config": "1.1.0",
