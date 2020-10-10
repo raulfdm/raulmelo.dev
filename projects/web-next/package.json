@@ -2,9 +2,9 @@
   "name": "@raulmelo.dev/next",
   "version": "1.0.0",
   "scripts": {
-    "dev": "yarn codegen --config graphql-let.local.yml && next",
+    "dev": "yarn codegen && next",
     "build": "yarn codegen && next build",
-    "start": "yarn codegen && next start",
+    "start": "cross-env-shell GRAPHQL_ENDPOINT=https://raulmelo-dev-server.herokuapp.com/graphql yarn codegen && next start",
     "type-check": "tsc",
     "codegen": "graphql-let"
   },
