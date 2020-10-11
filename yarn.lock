@@ -1820,12 +1820,27 @@
   resolved "https://registry.yarnpkg.com/@formatjs/ecma402-abstract/-/ecma402-abstract-1.2.2.tgz#4810bdbd696d3805c535fd0620b7c8f45ab3164f"
   integrity sha512-mLCoAPGlXCVskb/ojBO6iurGqwo6sZvAl8pRC4N25bz4LPWExAM9LsOo057zN3Br1JxUM3RZHG4YGnVt+nSRYQ==
 
+"@formatjs/ecma402-abstract@^1.2.5":
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/@formatjs/ecma402-abstract/-/ecma402-abstract-1.2.5.tgz#5a61ac1990ff2df8d1348ab12e186c1ca2a2bd71"
+  integrity sha512-k0fqS3LBNOHueAoMdgig8Ni6TchsH+zbzWBzX2gTFm50X9mxHwnuXdCk0XLlCIbvgVVlzcO254Men/mHAheMbg==
+  dependencies:
+    tslib "^2.0.1"
+
 "@formatjs/intl-displaynames@^1.2.5":
   version "1.2.10"
   resolved "https://registry.yarnpkg.com/@formatjs/intl-displaynames/-/intl-displaynames-1.2.10.tgz#bb9625cca90b099978cd967c6a98aaf4e23fc878"
   integrity sha512-GROA2RP6+7Ouu0WnHFF78O5XIU7pBfI19WM1qm93l6MFWibUk67nCfVCK3VAYJkLy8L8ZxjkYT11VIAfvSz8wg==
   dependencies:
     "@formatjs/intl-utils" "^2.3.0"
+
+"@formatjs/intl-displaynames@^3.3.12":
+  version "3.3.12"
+  resolved "https://registry.yarnpkg.com/@formatjs/intl-displaynames/-/intl-displaynames-3.3.12.tgz#2d3555bb82ed9e90eb538d033e398dcaea246e84"
+  integrity sha512-otxSrw0Wmv3qbyes/hsI4+tlg6V0dSezhusUJHyegod4dG8U9q0C6gawgDlIWrBANl+VPNvcLooJFPHhG6ni7w==
+  dependencies:
+    "@formatjs/ecma402-abstract" "^1.2.5"
+    tslib "^2.0.1"
 
 "@formatjs/intl-displaynames@^3.3.8":
   version "3.3.8"
@@ -1840,6 +1855,14 @@
   integrity sha512-WNMQlEg0e50VZrGIkgD5n7+DAMGt3boKi1GJALfhFMymslJb5i+5WzWxyj/3a929Z6MAFsmzRIJjKuv+BxKAOQ==
   dependencies:
     "@formatjs/intl-utils" "^2.3.0"
+
+"@formatjs/intl-listformat@^4.2.10":
+  version "4.2.10"
+  resolved "https://registry.yarnpkg.com/@formatjs/intl-listformat/-/intl-listformat-4.2.10.tgz#bba2ba0442f48cf9e087a549f24c05b01354928c"
+  integrity sha512-Wa9BaZnEg/km45Wj5lbRjFV89YHC/3P2ucsvk9lQklF6Kt7ybfTH6QDwITrlxo2EGvmcKPhxuBNHgrUhlxm9PQ==
+  dependencies:
+    "@formatjs/ecma402-abstract" "^1.2.5"
+    tslib "^2.0.1"
 
 "@formatjs/intl-listformat@^4.2.7":
   version "4.2.7"
@@ -1868,6 +1891,14 @@
   integrity sha512-IQ0haY97oHAH5OYUdykNiepdyEWj3SAT+Fp9ZpR85ov2JNiFx+12WWlxlVS8ehdyncC2ZMt/SwFIy2huK2+6/A==
   dependencies:
     "@formatjs/intl-utils" "^2.3.0"
+
+"@formatjs/intl-relativetimeformat@^7.2.10":
+  version "7.2.10"
+  resolved "https://registry.yarnpkg.com/@formatjs/intl-relativetimeformat/-/intl-relativetimeformat-7.2.10.tgz#51bf272cb96e3df91cd70cfae4ae8ae563849052"
+  integrity sha512-3eKfhK0X5O8JkJ9bSgkWCG9fXjFPQCxw18DWqhbZ5thTU2aKejpxBzwFYCo+o5TCIEmtn6G835nBqb2d197Gnw==
+  dependencies:
+    "@formatjs/ecma402-abstract" "^1.2.5"
+    tslib "^2.0.1"
 
 "@formatjs/intl-relativetimeformat@^7.2.7":
   version "7.2.7"
@@ -1900,6 +1931,20 @@
     fast-memoize "^2.5.2"
     intl-messageformat "^9.3.8"
     intl-messageformat-parser "^6.0.7"
+
+"@formatjs/intl@^1.3.6":
+  version "1.3.6"
+  resolved "https://registry.yarnpkg.com/@formatjs/intl/-/intl-1.3.6.tgz#daff2e30bffb9b1cf4b010f645049e52172aaab9"
+  integrity sha512-LObg69JtDEZ8+Cqsu10h7AipKrsGpWd5xspIBJjWeQL+U0hTZ/f2PTNf/M5iOH8XRqc8ljCFGkaWn9bZGlmkaw==
+  dependencies:
+    "@formatjs/ecma402-abstract" "^1.2.5"
+    "@formatjs/intl-displaynames" "^3.3.12"
+    "@formatjs/intl-listformat" "^4.2.10"
+    "@formatjs/intl-relativetimeformat" "^7.2.10"
+    fast-memoize "^2.5.2"
+    intl-messageformat "^9.3.11"
+    intl-messageformat-parser "^6.0.10"
+    tslib "^2.0.1"
 
 "@fortawesome/fontawesome-common-types@^0.2.30":
   version "0.2.30"
@@ -12516,7 +12561,7 @@ flat-cache@^2.0.1:
     rimraf "2.6.3"
     write "1.0.3"
 
-flat@5.0.2:
+flat@5.0.2, flat@^5.0.2:
   version "5.0.2"
   resolved "https://registry.yarnpkg.com/flat/-/flat-5.0.2.tgz#8ca6fe332069ffa9d324c327198c598259ceb241"
   integrity sha512-b6suED+5/3rTpUBdG1gupIl8MPFCAMA0QXwmljLhvCUKcUvdE4gWky9zpuGCcXHOsz4J9wPGNWq6OKpmIzz3hQ==
@@ -15463,6 +15508,14 @@ intl-messageformat-parser@^5.0.0, intl-messageformat-parser@^5.2.1:
   dependencies:
     "@formatjs/intl-numberformat" "^5.5.2"
 
+intl-messageformat-parser@^6.0.10:
+  version "6.0.10"
+  resolved "https://registry.yarnpkg.com/intl-messageformat-parser/-/intl-messageformat-parser-6.0.10.tgz#6202bd4e9b59eaa5bf34d4db2ef8c2af46d40037"
+  integrity sha512-xURB8PchDsdLEpedzPLzBmGCK996FPBl3yLQIUxcM3EAA3TdhXPArX6GY4LVXQNeq8V4WtwmgxaJOKtdOpA8pg==
+  dependencies:
+    "@formatjs/ecma402-abstract" "^1.2.5"
+    tslib "^2.0.1"
+
 intl-messageformat-parser@^6.0.7:
   version "6.0.7"
   resolved "https://registry.yarnpkg.com/intl-messageformat-parser/-/intl-messageformat-parser-6.0.7.tgz#de57a03466e1441b7cbfd99a02ace108745ef133"
@@ -15477,6 +15530,15 @@ intl-messageformat@^8.3.7:
   dependencies:
     intl-format-cache "^4.2.43"
     intl-messageformat-parser "^5.2.1"
+
+intl-messageformat@^9.3.11:
+  version "9.3.11"
+  resolved "https://registry.yarnpkg.com/intl-messageformat/-/intl-messageformat-9.3.11.tgz#f39d5aa96037ea210769c0b18c380387a3e254cd"
+  integrity sha512-eqnfSDa6oI/bBtPgzSAbsjUDUshhdLmMKOQds0xGhpcgp760Gq/Fk+f4HquO7VIGp9wSx7ej65e+NOJQTBe/YQ==
+  dependencies:
+    fast-memoize "^2.5.2"
+    intl-messageformat-parser "^6.0.10"
+    tslib "^2.0.1"
 
 intl-messageformat@^9.3.8:
   version "9.3.8"
@@ -21976,6 +22038,24 @@ react-intl@4.5.0:
     intl-messageformat "^8.3.7"
     intl-messageformat-parser "^5.0.0"
     shallow-equal "^1.2.1"
+
+react-intl@^5.8.6:
+  version "5.8.6"
+  resolved "https://registry.yarnpkg.com/react-intl/-/react-intl-5.8.6.tgz#1da0374367ab79bc9dcf1d28722439b95c56265e"
+  integrity sha512-+TYAKYAVh1XPhm0ZxZ+LBUIdpjMe3Beit1928jrxaHk6SY0wyf20Qt14/s2sAkM5+FbKy+72pohC+Pqt6Ixvkg==
+  dependencies:
+    "@formatjs/ecma402-abstract" "^1.2.5"
+    "@formatjs/intl" "^1.3.6"
+    "@formatjs/intl-displaynames" "^3.3.12"
+    "@formatjs/intl-listformat" "^4.2.10"
+    "@formatjs/intl-relativetimeformat" "^7.2.10"
+    "@types/hoist-non-react-statics" "^3.3.1"
+    fast-memoize "^2.5.2"
+    hoist-non-react-statics "^3.3.2"
+    intl-messageformat "^9.3.11"
+    intl-messageformat-parser "^6.0.10"
+    shallow-equal "^1.2.1"
+    tslib "^2.0.1"
 
 react-is@16.13.1, react-is@^16.12.0, react-is@^16.13.1, react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.6, react-is@^16.9.0:
   version "16.13.1"
