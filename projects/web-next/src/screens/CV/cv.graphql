@@ -1,4 +1,7 @@
+# import SEO from '../../components/SEO/seo.graphql'
+
 query Cv {
+  ...SEO
   personalInformation {
     phone
     email

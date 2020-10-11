@@ -1,13 +1,14 @@
-import { CvPage } from '@screens/CV/CvPage';
-import { CvDocument, CvQuery } from '@screens/CV/cv.graphql';
-import { theme } from '@screens/CV/styled';
-import { initializeApollo } from 'src/lib/apolloClient';
 import { ThemeProvider } from 'styled-components';
 
-const Home: React.FC<{ data: CvQuery }> = ({ data }) => {
+import { CvPage } from '@screens/CV/CvPage';
+import { CvDocument } from '@screens/CV/cv.graphql';
+import { theme } from '@screens/CV/styled';
+import { initializeApollo } from '@lib/apolloClient';
+
+const Home: React.FC = () => {
   return (
     <ThemeProvider theme={theme}>
-      <CvPage {...data} />
+      <CvPage />
     </ThemeProvider>
   );
 };
@@ -21,7 +22,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      data: apolloClient.cache.extract().ROOT_QUERY,
+      initialApolloState: apolloClient.cache.extract(),
     },
     revalidate: 1,
   };

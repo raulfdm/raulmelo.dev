@@ -2,11 +2,13 @@
   "kind": "singleType",
   "collectionName": "cvs",
   "info": {
-    "name": "cv"
+    "name": "cv",
+    "description": ""
   },
   "options": {
     "increments": true,
-    "timestamps": true
+    "timestamps": true,
+    "draftAndPublish": false
   },
   "attributes": {
     "summary": {
@@ -42,6 +44,11 @@
       "repeatable": false,
       "component": "cv.education",
       "required": true
+    },
+    "SEO": {
+      "type": "component",
+      "repeatable": false,
+      "component": "cv.seo"
     }
   }
 }
