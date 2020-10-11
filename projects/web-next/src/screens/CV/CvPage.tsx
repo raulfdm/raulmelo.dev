@@ -57,7 +57,7 @@ export const CvPage = () => {
         <TechnicalSkills technical_skills={technical_skills} />
         <CareerExperience jobs={jobs} />
         <SideProjects side_projects={side_projects} />
-        <Education education={education} />
+        <Education education={education!} />
         <Interests interests={interests} />
         <ScrollToTopButton onClick={moveToTop}>
           <ArrowheadUp size={21} />
