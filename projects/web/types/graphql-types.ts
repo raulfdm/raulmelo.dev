@@ -1854,8 +1854,6 @@ export type QueryStrapiSiteArgs = {
   url?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
-  created_by?: Maybe<StrapiSiteCreated_ByFilterInput>;
-  updated_by?: Maybe<StrapiSiteUpdated_ByFilterInput>;
   seo_image?: Maybe<FileFilterInput>;
   strapiId?: Maybe<StringQueryOperatorInput>;
 };
@@ -1880,8 +1878,6 @@ export type QueryStrapiSocialArgs = {
   github?: Maybe<StrapiSocialGithubFilterInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
-  created_by?: Maybe<StrapiSocialCreated_ByFilterInput>;
-  updated_by?: Maybe<StrapiSocialUpdated_ByFilterInput>;
   strapiId?: Maybe<StringQueryOperatorInput>;
 };
 
@@ -1905,8 +1901,6 @@ export type QueryStrapiPersonalInformationArgs = {
   email?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
-  created_by?: Maybe<StrapiPersonalInformationCreated_ByFilterInput>;
-  updated_by?: Maybe<StrapiPersonalInformationUpdated_ByFilterInput>;
   city?: Maybe<StringQueryOperatorInput>;
   country?: Maybe<StringQueryOperatorInput>;
   profile_pic?: Maybe<FileFilterInput>;
@@ -1935,9 +1929,8 @@ export type QueryStrapiCvArgs = {
   education?: Maybe<StrapiCvEducationFilterInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
-  created_by?: Maybe<StrapiCvCreated_ByFilterInput>;
-  updated_by?: Maybe<StrapiCvUpdated_ByFilterInput>;
   summary?: Maybe<StringQueryOperatorInput>;
+  SEO?: Maybe<StrapiCvSeoFilterInput>;
   strapiId?: Maybe<StringQueryOperatorInput>;
 };
 
@@ -1959,8 +1952,6 @@ export type QueryStrapiPostSerieArgs = {
   name?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
-  created_by?: Maybe<StrapiPostSerieCreated_ByFilterInput>;
-  updated_by?: Maybe<StrapiPostSerieUpdated_ByFilterInput>;
   post_tags?: Maybe<StringQueryOperatorInput>;
   blog_posts?: Maybe<StrapiPostSerieBlog_PostsFilterListInput>;
   strapiId?: Maybe<StringQueryOperatorInput>;
@@ -1983,8 +1974,6 @@ export type QueryStrapiPostTagsArgs = {
   tag?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
-  created_by?: Maybe<StrapiPostTagsCreated_ByFilterInput>;
-  updated_by?: Maybe<StrapiPostTagsUpdated_ByFilterInput>;
   slug?: Maybe<StringQueryOperatorInput>;
   name?: Maybe<StringQueryOperatorInput>;
   blog_posts?: Maybe<StrapiPostTagsBlog_PostsFilterListInput>;
@@ -2018,9 +2007,7 @@ export type QueryStrapiPostsArgs = {
   description?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
-  created_by?: Maybe<StrapiPostsCreated_ByFilterInput>;
   featured_image?: Maybe<FileFilterInput>;
-  updated_by?: Maybe<StrapiPostsUpdated_ByFilterInput>;
   strapiId?: Maybe<StringQueryOperatorInput>;
   serie_copy?: Maybe<StringQueryOperatorInput>;
   post_serie?: Maybe<StrapiPostsPost_SerieFilterInput>;
@@ -2046,8 +2033,6 @@ export type QueryStrapiUsesArgs = {
   content?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
-  created_by?: Maybe<StrapiUsesCreated_ByFilterInput>;
-  updated_by?: Maybe<StrapiUsesUpdated_ByFilterInput>;
   strapiId?: Maybe<StringQueryOperatorInput>;
   childStrapiUsesContent?: Maybe<StrapiUsesContentFilterInput>;
 };
@@ -3600,9 +3585,8 @@ export type StrapiCv = Node & {
   education?: Maybe<StrapiCvEducation>;
   createdAt?: Maybe<Scalars['Date']>;
   updatedAt?: Maybe<Scalars['Date']>;
-  created_by?: Maybe<StrapiCvCreated_By>;
-  updated_by?: Maybe<StrapiCvUpdated_By>;
   summary?: Maybe<Scalars['String']>;
+  SEO?: Maybe<StrapiCvSeo>;
   strapiId?: Maybe<Scalars['String']>;
 };
 
@@ -3641,38 +3625,6 @@ export type StrapiCvConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
   field: StrapiCvFieldsEnum;
-};
-
-export type StrapiCvCreated_By = {
-  firstname?: Maybe<Scalars['String']>;
-  lastname?: Maybe<Scalars['String']>;
-  createdAt?: Maybe<Scalars['Date']>;
-  updatedAt?: Maybe<Scalars['Date']>;
-  id?: Maybe<Scalars['String']>;
-};
-
-
-export type StrapiCvCreated_ByCreatedAtArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-
-export type StrapiCvCreated_ByUpdatedAtArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-export type StrapiCvCreated_ByFilterInput = {
-  firstname?: Maybe<StringQueryOperatorInput>;
-  lastname?: Maybe<StringQueryOperatorInput>;
-  createdAt?: Maybe<DateQueryOperatorInput>;
-  updatedAt?: Maybe<DateQueryOperatorInput>;
-  id?: Maybe<StringQueryOperatorInput>;
 };
 
 export type StrapiCvEdge = {
@@ -3950,17 +3902,10 @@ export type StrapiCvFieldsEnum =
   | 'education___id'
   | 'createdAt'
   | 'updatedAt'
-  | 'created_by___firstname'
-  | 'created_by___lastname'
-  | 'created_by___createdAt'
-  | 'created_by___updatedAt'
-  | 'created_by___id'
-  | 'updated_by___firstname'
-  | 'updated_by___lastname'
-  | 'updated_by___createdAt'
-  | 'updated_by___updatedAt'
-  | 'updated_by___id'
   | 'summary'
+  | 'SEO___title'
+  | 'SEO___description'
+  | 'SEO___id'
   | 'strapiId';
 
 export type StrapiCvFilterInput = {
@@ -3976,9 +3921,8 @@ export type StrapiCvFilterInput = {
   education?: Maybe<StrapiCvEducationFilterInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
-  created_by?: Maybe<StrapiCvCreated_ByFilterInput>;
-  updated_by?: Maybe<StrapiCvUpdated_ByFilterInput>;
   summary?: Maybe<StringQueryOperatorInput>;
+  SEO?: Maybe<StrapiCvSeoFilterInput>;
   strapiId?: Maybe<StringQueryOperatorInput>;
 };
 
@@ -4083,6 +4027,18 @@ export type StrapiCvJobsFilterInput = {
 
 export type StrapiCvJobsFilterListInput = {
   elemMatch?: Maybe<StrapiCvJobsFilterInput>;
+};
+
+export type StrapiCvSeo = {
+  title?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['String']>;
+};
+
+export type StrapiCvSeoFilterInput = {
+  title?: Maybe<StringQueryOperatorInput>;
+  description?: Maybe<StringQueryOperatorInput>;
+  id?: Maybe<StringQueryOperatorInput>;
 };
 
 export type StrapiCvSide_Projects = {
@@ -4220,38 +4176,6 @@ export type StrapiCvTechnical_SkillsTechnologiesFilterListInput = {
   elemMatch?: Maybe<StrapiCvTechnical_SkillsTechnologiesFilterInput>;
 };
 
-export type StrapiCvUpdated_By = {
-  firstname?: Maybe<Scalars['String']>;
-  lastname?: Maybe<Scalars['String']>;
-  createdAt?: Maybe<Scalars['Date']>;
-  updatedAt?: Maybe<Scalars['Date']>;
-  id?: Maybe<Scalars['String']>;
-};
-
-
-export type StrapiCvUpdated_ByCreatedAtArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-
-export type StrapiCvUpdated_ByUpdatedAtArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-export type StrapiCvUpdated_ByFilterInput = {
-  firstname?: Maybe<StringQueryOperatorInput>;
-  lastname?: Maybe<StringQueryOperatorInput>;
-  createdAt?: Maybe<DateQueryOperatorInput>;
-  updatedAt?: Maybe<DateQueryOperatorInput>;
-  id?: Maybe<StringQueryOperatorInput>;
-};
-
 export type StrapiPersonalInformation = Node & {
   id: Scalars['ID'];
   parent?: Maybe<Node>;
@@ -4263,8 +4187,6 @@ export type StrapiPersonalInformation = Node & {
   email?: Maybe<Scalars['String']>;
   createdAt?: Maybe<Scalars['Date']>;
   updatedAt?: Maybe<Scalars['Date']>;
-  created_by?: Maybe<StrapiPersonalInformationCreated_By>;
-  updated_by?: Maybe<StrapiPersonalInformationUpdated_By>;
   city?: Maybe<Scalars['String']>;
   country?: Maybe<Scalars['String']>;
   profile_pic?: Maybe<File>;
@@ -4306,38 +4228,6 @@ export type StrapiPersonalInformationConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
   field: StrapiPersonalInformationFieldsEnum;
-};
-
-export type StrapiPersonalInformationCreated_By = {
-  firstname?: Maybe<Scalars['String']>;
-  lastname?: Maybe<Scalars['String']>;
-  createdAt?: Maybe<Scalars['Date']>;
-  updatedAt?: Maybe<Scalars['Date']>;
-  id?: Maybe<Scalars['String']>;
-};
-
-
-export type StrapiPersonalInformationCreated_ByCreatedAtArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-
-export type StrapiPersonalInformationCreated_ByUpdatedAtArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-export type StrapiPersonalInformationCreated_ByFilterInput = {
-  firstname?: Maybe<StringQueryOperatorInput>;
-  lastname?: Maybe<StringQueryOperatorInput>;
-  createdAt?: Maybe<DateQueryOperatorInput>;
-  updatedAt?: Maybe<DateQueryOperatorInput>;
-  id?: Maybe<StringQueryOperatorInput>;
 };
 
 export type StrapiPersonalInformationEdge = {
@@ -4439,16 +4329,6 @@ export type StrapiPersonalInformationFieldsEnum =
   | 'email'
   | 'createdAt'
   | 'updatedAt'
-  | 'created_by___firstname'
-  | 'created_by___lastname'
-  | 'created_by___createdAt'
-  | 'created_by___updatedAt'
-  | 'created_by___id'
-  | 'updated_by___firstname'
-  | 'updated_by___lastname'
-  | 'updated_by___createdAt'
-  | 'updated_by___updatedAt'
-  | 'updated_by___id'
   | 'city'
   | 'country'
   | 'profile_pic___sourceInstanceName'
@@ -4602,8 +4482,6 @@ export type StrapiPersonalInformationFilterInput = {
   email?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
-  created_by?: Maybe<StrapiPersonalInformationCreated_ByFilterInput>;
-  updated_by?: Maybe<StrapiPersonalInformationUpdated_ByFilterInput>;
   city?: Maybe<StringQueryOperatorInput>;
   country?: Maybe<StringQueryOperatorInput>;
   profile_pic?: Maybe<FileFilterInput>;
@@ -4622,38 +4500,6 @@ export type StrapiPersonalInformationGroupConnection = {
 export type StrapiPersonalInformationSortInput = {
   fields?: Maybe<Array<Maybe<StrapiPersonalInformationFieldsEnum>>>;
   order?: Maybe<Array<Maybe<SortOrderEnum>>>;
-};
-
-export type StrapiPersonalInformationUpdated_By = {
-  firstname?: Maybe<Scalars['String']>;
-  lastname?: Maybe<Scalars['String']>;
-  createdAt?: Maybe<Scalars['Date']>;
-  updatedAt?: Maybe<Scalars['Date']>;
-  id?: Maybe<Scalars['String']>;
-};
-
-
-export type StrapiPersonalInformationUpdated_ByCreatedAtArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-
-export type StrapiPersonalInformationUpdated_ByUpdatedAtArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-export type StrapiPersonalInformationUpdated_ByFilterInput = {
-  firstname?: Maybe<StringQueryOperatorInput>;
-  lastname?: Maybe<StringQueryOperatorInput>;
-  createdAt?: Maybe<DateQueryOperatorInput>;
-  updatedAt?: Maybe<DateQueryOperatorInput>;
-  id?: Maybe<StringQueryOperatorInput>;
 };
 
 export type StrapiPostContent = Node & {
@@ -4873,9 +4719,7 @@ export type StrapiPosts = Node & {
   description?: Maybe<Scalars['String']>;
   createdAt?: Maybe<Scalars['Date']>;
   updatedAt?: Maybe<Scalars['Date']>;
-  created_by?: Maybe<StrapiPostsCreated_By>;
   featured_image?: Maybe<File>;
-  updated_by?: Maybe<StrapiPostsUpdated_By>;
   strapiId?: Maybe<Scalars['String']>;
   serie_copy?: Maybe<Scalars['String']>;
   post_serie?: Maybe<StrapiPostsPost_Serie>;
@@ -4928,38 +4772,6 @@ export type StrapiPostsConnectionGroupArgs = {
   field: StrapiPostsFieldsEnum;
 };
 
-export type StrapiPostsCreated_By = {
-  firstname?: Maybe<Scalars['String']>;
-  lastname?: Maybe<Scalars['String']>;
-  createdAt?: Maybe<Scalars['Date']>;
-  updatedAt?: Maybe<Scalars['Date']>;
-  id?: Maybe<Scalars['String']>;
-};
-
-
-export type StrapiPostsCreated_ByCreatedAtArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-
-export type StrapiPostsCreated_ByUpdatedAtArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-export type StrapiPostsCreated_ByFilterInput = {
-  firstname?: Maybe<StringQueryOperatorInput>;
-  lastname?: Maybe<StringQueryOperatorInput>;
-  createdAt?: Maybe<DateQueryOperatorInput>;
-  updatedAt?: Maybe<DateQueryOperatorInput>;
-  id?: Maybe<StringQueryOperatorInput>;
-};
-
 export type StrapiPostsEdge = {
   next?: Maybe<StrapiPosts>;
   node: StrapiPosts;
@@ -4975,8 +4787,6 @@ export type StrapiPostSerie = Node & {
   name?: Maybe<Scalars['String']>;
   createdAt?: Maybe<Scalars['Date']>;
   updatedAt?: Maybe<Scalars['Date']>;
-  created_by?: Maybe<StrapiPostSerieCreated_By>;
-  updated_by?: Maybe<StrapiPostSerieUpdated_By>;
   post_tags?: Maybe<Array<Maybe<Scalars['String']>>>;
   blog_posts?: Maybe<Array<Maybe<StrapiPostSerieBlog_Posts>>>;
   strapiId?: Maybe<Scalars['String']>;
@@ -5012,10 +4822,8 @@ export type StrapiPostSerieBlog_Posts = {
   description?: Maybe<Scalars['String']>;
   createdAt?: Maybe<Scalars['Date']>;
   updatedAt?: Maybe<Scalars['Date']>;
-  created_by?: Maybe<Scalars['String']>;
   featured_image?: Maybe<File>;
   post_serie?: Maybe<Scalars['String']>;
-  updated_by?: Maybe<Scalars['String']>;
   id?: Maybe<Scalars['String']>;
   featured_image_caption?: Maybe<Scalars['String']>;
 };
@@ -5058,10 +4866,8 @@ export type StrapiPostSerieBlog_PostsFilterInput = {
   description?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
-  created_by?: Maybe<StringQueryOperatorInput>;
   featured_image?: Maybe<FileFilterInput>;
   post_serie?: Maybe<StringQueryOperatorInput>;
-  updated_by?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
   featured_image_caption?: Maybe<StringQueryOperatorInput>;
 };
@@ -5089,38 +4895,6 @@ export type StrapiPostSerieConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
   field: StrapiPostSerieFieldsEnum;
-};
-
-export type StrapiPostSerieCreated_By = {
-  firstname?: Maybe<Scalars['String']>;
-  lastname?: Maybe<Scalars['String']>;
-  createdAt?: Maybe<Scalars['Date']>;
-  updatedAt?: Maybe<Scalars['Date']>;
-  id?: Maybe<Scalars['String']>;
-};
-
-
-export type StrapiPostSerieCreated_ByCreatedAtArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-
-export type StrapiPostSerieCreated_ByUpdatedAtArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-export type StrapiPostSerieCreated_ByFilterInput = {
-  firstname?: Maybe<StringQueryOperatorInput>;
-  lastname?: Maybe<StringQueryOperatorInput>;
-  createdAt?: Maybe<DateQueryOperatorInput>;
-  updatedAt?: Maybe<DateQueryOperatorInput>;
-  id?: Maybe<StringQueryOperatorInput>;
 };
 
 export type StrapiPostSerieEdge = {
@@ -5220,16 +4994,6 @@ export type StrapiPostSerieFieldsEnum =
   | 'name'
   | 'createdAt'
   | 'updatedAt'
-  | 'created_by___firstname'
-  | 'created_by___lastname'
-  | 'created_by___createdAt'
-  | 'created_by___updatedAt'
-  | 'created_by___id'
-  | 'updated_by___firstname'
-  | 'updated_by___lastname'
-  | 'updated_by___createdAt'
-  | 'updated_by___updatedAt'
-  | 'updated_by___id'
   | 'post_tags'
   | 'blog_posts'
   | 'blog_posts___language'
@@ -5245,7 +5009,6 @@ export type StrapiPostSerieFieldsEnum =
   | 'blog_posts___description'
   | 'blog_posts___createdAt'
   | 'blog_posts___updatedAt'
-  | 'blog_posts___created_by'
   | 'blog_posts___featured_image___sourceInstanceName'
   | 'blog_posts___featured_image___absolutePath'
   | 'blog_posts___featured_image___relativePath'
@@ -5296,7 +5059,6 @@ export type StrapiPostSerieFieldsEnum =
   | 'blog_posts___featured_image___internal___owner'
   | 'blog_posts___featured_image___internal___type'
   | 'blog_posts___post_serie'
-  | 'blog_posts___updated_by'
   | 'blog_posts___id'
   | 'blog_posts___featured_image_caption'
   | 'strapiId';
@@ -5310,8 +5072,6 @@ export type StrapiPostSerieFilterInput = {
   name?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
-  created_by?: Maybe<StrapiPostSerieCreated_ByFilterInput>;
-  updated_by?: Maybe<StrapiPostSerieUpdated_ByFilterInput>;
   post_tags?: Maybe<StringQueryOperatorInput>;
   blog_posts?: Maybe<StrapiPostSerieBlog_PostsFilterListInput>;
   strapiId?: Maybe<StringQueryOperatorInput>;
@@ -5329,38 +5089,6 @@ export type StrapiPostSerieGroupConnection = {
 export type StrapiPostSerieSortInput = {
   fields?: Maybe<Array<Maybe<StrapiPostSerieFieldsEnum>>>;
   order?: Maybe<Array<Maybe<SortOrderEnum>>>;
-};
-
-export type StrapiPostSerieUpdated_By = {
-  firstname?: Maybe<Scalars['String']>;
-  lastname?: Maybe<Scalars['String']>;
-  createdAt?: Maybe<Scalars['Date']>;
-  updatedAt?: Maybe<Scalars['Date']>;
-  id?: Maybe<Scalars['String']>;
-};
-
-
-export type StrapiPostSerieUpdated_ByCreatedAtArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-
-export type StrapiPostSerieUpdated_ByUpdatedAtArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-export type StrapiPostSerieUpdated_ByFilterInput = {
-  firstname?: Maybe<StringQueryOperatorInput>;
-  lastname?: Maybe<StringQueryOperatorInput>;
-  createdAt?: Maybe<DateQueryOperatorInput>;
-  updatedAt?: Maybe<DateQueryOperatorInput>;
-  id?: Maybe<StringQueryOperatorInput>;
 };
 
 export type StrapiPostsFieldsEnum = 
@@ -5456,8 +5184,6 @@ export type StrapiPostsFieldsEnum =
   | 'post_tags___tag'
   | 'post_tags___createdAt'
   | 'post_tags___updatedAt'
-  | 'post_tags___created_by'
-  | 'post_tags___updated_by'
   | 'post_tags___slug'
   | 'post_tags___name'
   | 'post_tags___id'
@@ -5471,11 +5197,6 @@ export type StrapiPostsFieldsEnum =
   | 'description'
   | 'createdAt'
   | 'updatedAt'
-  | 'created_by___firstname'
-  | 'created_by___lastname'
-  | 'created_by___createdAt'
-  | 'created_by___updatedAt'
-  | 'created_by___id'
   | 'featured_image___sourceInstanceName'
   | 'featured_image___absolutePath'
   | 'featured_image___relativePath'
@@ -5614,19 +5335,12 @@ export type StrapiPostsFieldsEnum =
   | 'featured_image___internal___mediaType'
   | 'featured_image___internal___owner'
   | 'featured_image___internal___type'
-  | 'updated_by___firstname'
-  | 'updated_by___lastname'
-  | 'updated_by___createdAt'
-  | 'updated_by___updatedAt'
-  | 'updated_by___id'
   | 'strapiId'
   | 'serie_copy'
   | 'post_serie___slug'
   | 'post_serie___name'
   | 'post_serie___createdAt'
   | 'post_serie___updatedAt'
-  | 'post_serie___created_by'
-  | 'post_serie___updated_by'
   | 'post_serie___id'
   | 'post_serie___post_tags'
   | 'translation___language'
@@ -5641,7 +5355,6 @@ export type StrapiPostsFieldsEnum =
   | 'translation___description'
   | 'translation___createdAt'
   | 'translation___updatedAt'
-  | 'translation___created_by'
   | 'translation___featured_image___sourceInstanceName'
   | 'translation___featured_image___absolutePath'
   | 'translation___featured_image___relativePath'
@@ -5691,7 +5404,6 @@ export type StrapiPostsFieldsEnum =
   | 'translation___featured_image___internal___mediaType'
   | 'translation___featured_image___internal___owner'
   | 'translation___featured_image___internal___type'
-  | 'translation___updated_by'
   | 'translation___id'
   | 'childStrapiPostContent___id'
   | 'childStrapiPostContent___parent___id'
@@ -5780,9 +5492,7 @@ export type StrapiPostsFilterInput = {
   description?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
-  created_by?: Maybe<StrapiPostsCreated_ByFilterInput>;
   featured_image?: Maybe<FileFilterInput>;
-  updated_by?: Maybe<StrapiPostsUpdated_ByFilterInput>;
   strapiId?: Maybe<StringQueryOperatorInput>;
   serie_copy?: Maybe<StringQueryOperatorInput>;
   post_serie?: Maybe<StrapiPostsPost_SerieFilterInput>;
@@ -5804,8 +5514,6 @@ export type StrapiPostsPost_Serie = {
   name?: Maybe<Scalars['String']>;
   createdAt?: Maybe<Scalars['Date']>;
   updatedAt?: Maybe<Scalars['Date']>;
-  created_by?: Maybe<Scalars['String']>;
-  updated_by?: Maybe<Scalars['String']>;
   id?: Maybe<Scalars['String']>;
   post_tags?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
@@ -5831,8 +5539,6 @@ export type StrapiPostsPost_SerieFilterInput = {
   name?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
-  created_by?: Maybe<StringQueryOperatorInput>;
-  updated_by?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
   post_tags?: Maybe<StringQueryOperatorInput>;
 };
@@ -5841,8 +5547,6 @@ export type StrapiPostsPost_Tags = {
   tag?: Maybe<Scalars['String']>;
   createdAt?: Maybe<Scalars['Date']>;
   updatedAt?: Maybe<Scalars['Date']>;
-  created_by?: Maybe<Scalars['String']>;
-  updated_by?: Maybe<Scalars['String']>;
   slug?: Maybe<Scalars['String']>;
   name?: Maybe<Scalars['String']>;
   id?: Maybe<Scalars['String']>;
@@ -5868,8 +5572,6 @@ export type StrapiPostsPost_TagsFilterInput = {
   tag?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
-  created_by?: Maybe<StringQueryOperatorInput>;
-  updated_by?: Maybe<StringQueryOperatorInput>;
   slug?: Maybe<StringQueryOperatorInput>;
   name?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -5897,9 +5599,7 @@ export type StrapiPostsTranslation = {
   description?: Maybe<Scalars['String']>;
   createdAt?: Maybe<Scalars['Date']>;
   updatedAt?: Maybe<Scalars['Date']>;
-  created_by?: Maybe<Scalars['String']>;
   featured_image?: Maybe<File>;
-  updated_by?: Maybe<Scalars['String']>;
   id?: Maybe<Scalars['String']>;
 };
 
@@ -5940,41 +5640,7 @@ export type StrapiPostsTranslationFilterInput = {
   description?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
-  created_by?: Maybe<StringQueryOperatorInput>;
   featured_image?: Maybe<FileFilterInput>;
-  updated_by?: Maybe<StringQueryOperatorInput>;
-  id?: Maybe<StringQueryOperatorInput>;
-};
-
-export type StrapiPostsUpdated_By = {
-  firstname?: Maybe<Scalars['String']>;
-  lastname?: Maybe<Scalars['String']>;
-  createdAt?: Maybe<Scalars['Date']>;
-  updatedAt?: Maybe<Scalars['Date']>;
-  id?: Maybe<Scalars['String']>;
-};
-
-
-export type StrapiPostsUpdated_ByCreatedAtArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-
-export type StrapiPostsUpdated_ByUpdatedAtArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-export type StrapiPostsUpdated_ByFilterInput = {
-  firstname?: Maybe<StringQueryOperatorInput>;
-  lastname?: Maybe<StringQueryOperatorInput>;
-  createdAt?: Maybe<DateQueryOperatorInput>;
-  updatedAt?: Maybe<DateQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
 };
 
@@ -5986,8 +5652,6 @@ export type StrapiPostTags = Node & {
   tag?: Maybe<Scalars['String']>;
   createdAt?: Maybe<Scalars['Date']>;
   updatedAt?: Maybe<Scalars['Date']>;
-  created_by?: Maybe<StrapiPostTagsCreated_By>;
-  updated_by?: Maybe<StrapiPostTagsUpdated_By>;
   slug?: Maybe<Scalars['String']>;
   name?: Maybe<Scalars['String']>;
   blog_posts?: Maybe<Array<Maybe<StrapiPostTagsBlog_Posts>>>;
@@ -6024,9 +5688,7 @@ export type StrapiPostTagsBlog_Posts = {
   description?: Maybe<Scalars['String']>;
   createdAt?: Maybe<Scalars['Date']>;
   updatedAt?: Maybe<Scalars['Date']>;
-  created_by?: Maybe<Scalars['String']>;
   featured_image?: Maybe<File>;
-  updated_by?: Maybe<Scalars['String']>;
   id?: Maybe<Scalars['String']>;
   serie_copy?: Maybe<Scalars['String']>;
   post_serie?: Maybe<Scalars['String']>;
@@ -6071,9 +5733,7 @@ export type StrapiPostTagsBlog_PostsFilterInput = {
   description?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
-  created_by?: Maybe<StringQueryOperatorInput>;
   featured_image?: Maybe<FileFilterInput>;
-  updated_by?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
   serie_copy?: Maybe<StringQueryOperatorInput>;
   post_serie?: Maybe<StringQueryOperatorInput>;
@@ -6103,38 +5763,6 @@ export type StrapiPostTagsConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
   field: StrapiPostTagsFieldsEnum;
-};
-
-export type StrapiPostTagsCreated_By = {
-  firstname?: Maybe<Scalars['String']>;
-  lastname?: Maybe<Scalars['String']>;
-  createdAt?: Maybe<Scalars['Date']>;
-  updatedAt?: Maybe<Scalars['Date']>;
-  id?: Maybe<Scalars['String']>;
-};
-
-
-export type StrapiPostTagsCreated_ByCreatedAtArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-
-export type StrapiPostTagsCreated_ByUpdatedAtArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-export type StrapiPostTagsCreated_ByFilterInput = {
-  firstname?: Maybe<StringQueryOperatorInput>;
-  lastname?: Maybe<StringQueryOperatorInput>;
-  createdAt?: Maybe<DateQueryOperatorInput>;
-  updatedAt?: Maybe<DateQueryOperatorInput>;
-  id?: Maybe<StringQueryOperatorInput>;
 };
 
 export type StrapiPostTagsEdge = {
@@ -6233,16 +5861,6 @@ export type StrapiPostTagsFieldsEnum =
   | 'tag'
   | 'createdAt'
   | 'updatedAt'
-  | 'created_by___firstname'
-  | 'created_by___lastname'
-  | 'created_by___createdAt'
-  | 'created_by___updatedAt'
-  | 'created_by___id'
-  | 'updated_by___firstname'
-  | 'updated_by___lastname'
-  | 'updated_by___createdAt'
-  | 'updated_by___updatedAt'
-  | 'updated_by___id'
   | 'slug'
   | 'name'
   | 'blog_posts'
@@ -6259,7 +5877,6 @@ export type StrapiPostTagsFieldsEnum =
   | 'blog_posts___description'
   | 'blog_posts___createdAt'
   | 'blog_posts___updatedAt'
-  | 'blog_posts___created_by'
   | 'blog_posts___featured_image___sourceInstanceName'
   | 'blog_posts___featured_image___absolutePath'
   | 'blog_posts___featured_image___relativePath'
@@ -6309,7 +5926,6 @@ export type StrapiPostTagsFieldsEnum =
   | 'blog_posts___featured_image___internal___mediaType'
   | 'blog_posts___featured_image___internal___owner'
   | 'blog_posts___featured_image___internal___type'
-  | 'blog_posts___updated_by'
   | 'blog_posts___id'
   | 'blog_posts___serie_copy'
   | 'blog_posts___post_serie'
@@ -6324,8 +5940,6 @@ export type StrapiPostTagsFilterInput = {
   tag?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
-  created_by?: Maybe<StrapiPostTagsCreated_ByFilterInput>;
-  updated_by?: Maybe<StrapiPostTagsUpdated_ByFilterInput>;
   slug?: Maybe<StringQueryOperatorInput>;
   name?: Maybe<StringQueryOperatorInput>;
   blog_posts?: Maybe<StrapiPostTagsBlog_PostsFilterListInput>;
@@ -6346,38 +5960,6 @@ export type StrapiPostTagsSortInput = {
   order?: Maybe<Array<Maybe<SortOrderEnum>>>;
 };
 
-export type StrapiPostTagsUpdated_By = {
-  firstname?: Maybe<Scalars['String']>;
-  lastname?: Maybe<Scalars['String']>;
-  createdAt?: Maybe<Scalars['Date']>;
-  updatedAt?: Maybe<Scalars['Date']>;
-  id?: Maybe<Scalars['String']>;
-};
-
-
-export type StrapiPostTagsUpdated_ByCreatedAtArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-
-export type StrapiPostTagsUpdated_ByUpdatedAtArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-export type StrapiPostTagsUpdated_ByFilterInput = {
-  firstname?: Maybe<StringQueryOperatorInput>;
-  lastname?: Maybe<StringQueryOperatorInput>;
-  createdAt?: Maybe<DateQueryOperatorInput>;
-  updatedAt?: Maybe<DateQueryOperatorInput>;
-  id?: Maybe<StringQueryOperatorInput>;
-};
-
 export type StrapiSite = Node & {
   id: Scalars['ID'];
   parent?: Maybe<Node>;
@@ -6386,8 +5968,6 @@ export type StrapiSite = Node & {
   url?: Maybe<Scalars['String']>;
   createdAt?: Maybe<Scalars['Date']>;
   updatedAt?: Maybe<Scalars['Date']>;
-  created_by?: Maybe<StrapiSiteCreated_By>;
-  updated_by?: Maybe<StrapiSiteUpdated_By>;
   seo_image?: Maybe<File>;
   strapiId?: Maybe<Scalars['String']>;
 };
@@ -6427,38 +6007,6 @@ export type StrapiSiteConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
   field: StrapiSiteFieldsEnum;
-};
-
-export type StrapiSiteCreated_By = {
-  firstname?: Maybe<Scalars['String']>;
-  lastname?: Maybe<Scalars['String']>;
-  createdAt?: Maybe<Scalars['Date']>;
-  updatedAt?: Maybe<Scalars['Date']>;
-  id?: Maybe<Scalars['String']>;
-};
-
-
-export type StrapiSiteCreated_ByCreatedAtArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-
-export type StrapiSiteCreated_ByUpdatedAtArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-export type StrapiSiteCreated_ByFilterInput = {
-  firstname?: Maybe<StringQueryOperatorInput>;
-  lastname?: Maybe<StringQueryOperatorInput>;
-  createdAt?: Maybe<DateQueryOperatorInput>;
-  updatedAt?: Maybe<DateQueryOperatorInput>;
-  id?: Maybe<StringQueryOperatorInput>;
 };
 
 export type StrapiSiteEdge = {
@@ -6557,16 +6105,6 @@ export type StrapiSiteFieldsEnum =
   | 'url'
   | 'createdAt'
   | 'updatedAt'
-  | 'created_by___firstname'
-  | 'created_by___lastname'
-  | 'created_by___createdAt'
-  | 'created_by___updatedAt'
-  | 'created_by___id'
-  | 'updated_by___firstname'
-  | 'updated_by___lastname'
-  | 'updated_by___createdAt'
-  | 'updated_by___updatedAt'
-  | 'updated_by___id'
   | 'seo_image___sourceInstanceName'
   | 'seo_image___absolutePath'
   | 'seo_image___relativePath'
@@ -6715,8 +6253,6 @@ export type StrapiSiteFilterInput = {
   url?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
-  created_by?: Maybe<StrapiSiteCreated_ByFilterInput>;
-  updated_by?: Maybe<StrapiSiteUpdated_ByFilterInput>;
   seo_image?: Maybe<FileFilterInput>;
   strapiId?: Maybe<StringQueryOperatorInput>;
 };
@@ -6735,38 +6271,6 @@ export type StrapiSiteSortInput = {
   order?: Maybe<Array<Maybe<SortOrderEnum>>>;
 };
 
-export type StrapiSiteUpdated_By = {
-  firstname?: Maybe<Scalars['String']>;
-  lastname?: Maybe<Scalars['String']>;
-  createdAt?: Maybe<Scalars['Date']>;
-  updatedAt?: Maybe<Scalars['Date']>;
-  id?: Maybe<Scalars['String']>;
-};
-
-
-export type StrapiSiteUpdated_ByCreatedAtArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-
-export type StrapiSiteUpdated_ByUpdatedAtArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-export type StrapiSiteUpdated_ByFilterInput = {
-  firstname?: Maybe<StringQueryOperatorInput>;
-  lastname?: Maybe<StringQueryOperatorInput>;
-  createdAt?: Maybe<DateQueryOperatorInput>;
-  updatedAt?: Maybe<DateQueryOperatorInput>;
-  id?: Maybe<StringQueryOperatorInput>;
-};
-
 export type StrapiSocial = Node & {
   id: Scalars['ID'];
   parent?: Maybe<Node>;
@@ -6778,8 +6282,6 @@ export type StrapiSocial = Node & {
   github?: Maybe<StrapiSocialGithub>;
   createdAt?: Maybe<Scalars['Date']>;
   updatedAt?: Maybe<Scalars['Date']>;
-  created_by?: Maybe<StrapiSocialCreated_By>;
-  updated_by?: Maybe<StrapiSocialUpdated_By>;
   strapiId?: Maybe<Scalars['String']>;
 };
 
@@ -6818,38 +6320,6 @@ export type StrapiSocialConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
   field: StrapiSocialFieldsEnum;
-};
-
-export type StrapiSocialCreated_By = {
-  firstname?: Maybe<Scalars['String']>;
-  lastname?: Maybe<Scalars['String']>;
-  createdAt?: Maybe<Scalars['Date']>;
-  updatedAt?: Maybe<Scalars['Date']>;
-  id?: Maybe<Scalars['String']>;
-};
-
-
-export type StrapiSocialCreated_ByCreatedAtArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-
-export type StrapiSocialCreated_ByUpdatedAtArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-export type StrapiSocialCreated_ByFilterInput = {
-  firstname?: Maybe<StringQueryOperatorInput>;
-  lastname?: Maybe<StringQueryOperatorInput>;
-  createdAt?: Maybe<DateQueryOperatorInput>;
-  updatedAt?: Maybe<DateQueryOperatorInput>;
-  id?: Maybe<StringQueryOperatorInput>;
 };
 
 export type StrapiSocialEdge = {
@@ -6967,16 +6437,6 @@ export type StrapiSocialFieldsEnum =
   | 'github___id'
   | 'createdAt'
   | 'updatedAt'
-  | 'created_by___firstname'
-  | 'created_by___lastname'
-  | 'created_by___createdAt'
-  | 'created_by___updatedAt'
-  | 'created_by___id'
-  | 'updated_by___firstname'
-  | 'updated_by___lastname'
-  | 'updated_by___createdAt'
-  | 'updated_by___updatedAt'
-  | 'updated_by___id'
   | 'strapiId';
 
 export type StrapiSocialFilterInput = {
@@ -6990,8 +6450,6 @@ export type StrapiSocialFilterInput = {
   github?: Maybe<StrapiSocialGithubFilterInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
-  created_by?: Maybe<StrapiSocialCreated_ByFilterInput>;
-  updated_by?: Maybe<StrapiSocialUpdated_ByFilterInput>;
   strapiId?: Maybe<StringQueryOperatorInput>;
 };
 
@@ -7137,38 +6595,6 @@ export type StrapiSocialTwitterFilterInput = {
   id?: Maybe<StringQueryOperatorInput>;
 };
 
-export type StrapiSocialUpdated_By = {
-  firstname?: Maybe<Scalars['String']>;
-  lastname?: Maybe<Scalars['String']>;
-  createdAt?: Maybe<Scalars['Date']>;
-  updatedAt?: Maybe<Scalars['Date']>;
-  id?: Maybe<Scalars['String']>;
-};
-
-
-export type StrapiSocialUpdated_ByCreatedAtArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-
-export type StrapiSocialUpdated_ByUpdatedAtArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-export type StrapiSocialUpdated_ByFilterInput = {
-  firstname?: Maybe<StringQueryOperatorInput>;
-  lastname?: Maybe<StringQueryOperatorInput>;
-  createdAt?: Maybe<DateQueryOperatorInput>;
-  updatedAt?: Maybe<DateQueryOperatorInput>;
-  id?: Maybe<StringQueryOperatorInput>;
-};
-
 export type StrapiUses = Node & {
   id: Scalars['ID'];
   parent?: Maybe<Node>;
@@ -7178,8 +6604,6 @@ export type StrapiUses = Node & {
   content?: Maybe<Scalars['String']>;
   createdAt?: Maybe<Scalars['Date']>;
   updatedAt?: Maybe<Scalars['Date']>;
-  created_by?: Maybe<StrapiUsesCreated_By>;
-  updated_by?: Maybe<StrapiUsesUpdated_By>;
   strapiId?: Maybe<Scalars['String']>;
   childStrapiUsesContent?: Maybe<StrapiUsesContent>;
 };
@@ -7420,38 +6844,6 @@ export type StrapiUsesContentSortInput = {
   order?: Maybe<Array<Maybe<SortOrderEnum>>>;
 };
 
-export type StrapiUsesCreated_By = {
-  firstname?: Maybe<Scalars['String']>;
-  lastname?: Maybe<Scalars['String']>;
-  createdAt?: Maybe<Scalars['Date']>;
-  updatedAt?: Maybe<Scalars['Date']>;
-  id?: Maybe<Scalars['String']>;
-};
-
-
-export type StrapiUsesCreated_ByCreatedAtArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-
-export type StrapiUsesCreated_ByUpdatedAtArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-export type StrapiUsesCreated_ByFilterInput = {
-  firstname?: Maybe<StringQueryOperatorInput>;
-  lastname?: Maybe<StringQueryOperatorInput>;
-  createdAt?: Maybe<DateQueryOperatorInput>;
-  updatedAt?: Maybe<DateQueryOperatorInput>;
-  id?: Maybe<StringQueryOperatorInput>;
-};
-
 export type StrapiUsesEdge = {
   next?: Maybe<StrapiUses>;
   node: StrapiUses;
@@ -7549,16 +6941,6 @@ export type StrapiUsesFieldsEnum =
   | 'content'
   | 'createdAt'
   | 'updatedAt'
-  | 'created_by___firstname'
-  | 'created_by___lastname'
-  | 'created_by___createdAt'
-  | 'created_by___updatedAt'
-  | 'created_by___id'
-  | 'updated_by___firstname'
-  | 'updated_by___lastname'
-  | 'updated_by___createdAt'
-  | 'updated_by___updatedAt'
-  | 'updated_by___id'
   | 'strapiId'
   | 'childStrapiUsesContent___id'
   | 'childStrapiUsesContent___parent___id'
@@ -7638,8 +7020,6 @@ export type StrapiUsesFilterInput = {
   content?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
-  created_by?: Maybe<StrapiUsesCreated_ByFilterInput>;
-  updated_by?: Maybe<StrapiUsesUpdated_ByFilterInput>;
   strapiId?: Maybe<StringQueryOperatorInput>;
   childStrapiUsesContent?: Maybe<StrapiUsesContentFilterInput>;
 };
@@ -7656,38 +7036,6 @@ export type StrapiUsesGroupConnection = {
 export type StrapiUsesSortInput = {
   fields?: Maybe<Array<Maybe<StrapiUsesFieldsEnum>>>;
   order?: Maybe<Array<Maybe<SortOrderEnum>>>;
-};
-
-export type StrapiUsesUpdated_By = {
-  firstname?: Maybe<Scalars['String']>;
-  lastname?: Maybe<Scalars['String']>;
-  createdAt?: Maybe<Scalars['Date']>;
-  updatedAt?: Maybe<Scalars['Date']>;
-  id?: Maybe<Scalars['String']>;
-};
-
-
-export type StrapiUsesUpdated_ByCreatedAtArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-
-export type StrapiUsesUpdated_ByUpdatedAtArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-export type StrapiUsesUpdated_ByFilterInput = {
-  firstname?: Maybe<StringQueryOperatorInput>;
-  lastname?: Maybe<StringQueryOperatorInput>;
-  createdAt?: Maybe<DateQueryOperatorInput>;
-  updatedAt?: Maybe<DateQueryOperatorInput>;
-  id?: Maybe<StringQueryOperatorInput>;
 };
 
 export type StringQueryOperatorInput = {
