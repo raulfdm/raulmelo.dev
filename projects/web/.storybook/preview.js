@@ -1,6 +1,5 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { addDecorator } from '@storybook/react';
 
 import { ThemeProvider } from '@contexts/theme';
 import { GlobalStyles } from '@styles/index';
@@ -60,7 +59,15 @@ window.___navigate = (pathname) => {
   action('NavigateTo:')(pathname);
 };
 
-// Just a dummy component to switch theme via storybook
+/**
+ * This is just a dummy component to handle locale.
+ * It couldn't be a custom hook because it needs to execute this code
+ * only UNDER "IntlContextProvider" and there's no easy way to do that
+ * via storybook decorators API.
+ *
+ * I also didn't want to create a HOC to surround components with it because
+ * it felt too much work for something that small.
+ */
 const ThemeHandler = ({ lang }) => {
   const { switchLocale } = useIntl();
 
@@ -68,10 +75,10 @@ const ThemeHandler = ({ lang }) => {
     switchLocale(lang);
   }, [lang]);
 
-  return <></>;
+  return null;
 };
 
-addDecorator((story, ctx) => {
+const withStorySetup = (storyFn, ctx) => {
   /* I only wants to import blog globalStyles if the component is
   part of Blog/ */
   const isBlog = ctx.kind.includes('Blog/');
@@ -91,8 +98,10 @@ addDecorator((story, ctx) => {
       <ThemeProvider initialTheme={theme}>
         <GlobalStyles />
         {isBlog && <BlogGlobalStyle />}
-        {story()}
+        {storyFn()}
       </ThemeProvider>
     </IntlContextProvider>
   );
-});
+};
+
+export const decorators = [withStorySetup];
