@@ -521,7 +521,7 @@
               }
             }
           },
-          "SEO": {
+          "seo": {
             "type": "object",
             "required": [
               "id",
@@ -750,7 +750,7 @@
               }
             }
           },
-          "SEO": {
+          "seo": {
             "type": "object",
             "required": [
               "id",
