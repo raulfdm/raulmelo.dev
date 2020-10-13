@@ -1,3 +1,13 @@
-import { CvQuery } from './cv.graphql';
+import {
+  PersonalInformationApiData,
+  CvApiData,
+  SocialApiData,
+  SiteApiData,
+} from 'types/api';
 
-export type CvData = NonNullable<CvQuery['cv']>;
+export type CvApiDataProps = {
+  cv: CvApiData;
+  personalInfo: PersonalInformationApiData;
+  social: SocialApiData;
+  site: SiteApiData;
+};
