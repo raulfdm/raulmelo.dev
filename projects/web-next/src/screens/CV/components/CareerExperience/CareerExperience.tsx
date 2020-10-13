@@ -7,13 +7,13 @@ import {
   SectionBody,
 } from '@screens/CV/components/shared/Section';
 import { styled } from '@screens/CV/styled';
-import { CvData } from '@screens/CV/types';
+import { CvApiData } from 'types/api';
 
 const StyledSection = styled(Section)`
   page-break-before: always;
 `;
 
-type CareerExperienceProps = Pick<CvData, 'jobs'>;
+type CareerExperienceProps = Pick<CvApiData, 'jobs'>;
 
 export const CareerExperience: React.FC<CareerExperienceProps> = ({ jobs }) => {
   return (

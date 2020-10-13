@@ -1,4 +1,4 @@
-interface CvJob {
+export interface CvJob {
   is_actual: boolean;
   _id: string;
   role: string;

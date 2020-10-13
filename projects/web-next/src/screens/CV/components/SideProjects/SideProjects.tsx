@@ -6,9 +6,9 @@ import {
   SectionBody,
 } from '@screens/CV/components/shared/Section';
 import { Project } from '@screens/CV/components/shared/Project';
-import { CvData } from '@screens/CV/types';
+import { CvApiData } from 'types/api';
 
-type SideProjectsProps = Pick<CvData, 'side_projects'>;
+type SideProjectsProps = Pick<CvApiData, 'side_projects'>;
 
 export const SideProjects: React.FC<SideProjectsProps> = ({
   side_projects,
