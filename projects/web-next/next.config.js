@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   target: 'serverless',
-  webpack: (config, options) => {
+  webpack: (config) => {
     config.resolve.alias = {
       ...config.resolve.alias,
       '@screens': path.resolve(__dirname, './src/screens'),
