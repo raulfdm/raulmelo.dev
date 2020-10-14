@@ -1,5 +1,4 @@
-import React from 'react';
-
+import { PersonalInformationApiData, SocialApiData } from '@types-api';
 import {
   InformationWrapper,
   Name,
@@ -12,7 +11,13 @@ function normalizePhoneNumber(phone: string): string {
   return phone.replace(/\s/g, '');
 }
 
-export const Info: React.FC<any> = ({
+type InfoProps = Pick<SocialApiData, 'github' | 'linkedIn'> &
+  Pick<
+    PersonalInformationApiData,
+    'full_name' | 'phone' | 'city' | 'email' | 'country'
+  >;
+
+export const Info: React.FC<InfoProps> = ({
   full_name,
   phone,
   city,
@@ -43,10 +48,10 @@ export const Info: React.FC<any> = ({
           <InfoLink href={`mailto:${email}`}>{email}</InfoLink>
         </InfoItem>
         <InfoItem>
-          <InfoLink href={linkedIn?.url!}>{linkedIn?.display_name}</InfoLink>
+          <InfoLink href={linkedIn.url}>{linkedIn.display_name}</InfoLink>
         </InfoItem>
         <InfoItem>
-          <InfoLink href={github?.url!}>{github?.display_name}</InfoLink>
+          <InfoLink href={github.url}>{github.display_name}</InfoLink>
         </InfoItem>
       </InfoList>
     </InformationWrapper>

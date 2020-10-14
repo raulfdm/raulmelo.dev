@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 
-import { CvApiData } from 'types/api';
+import { CvApiData } from '@types-api';
 import { Section, SectionTitle, SectionBody } from '../shared/Section';
 
 type CareerSummaryProps = Pick<CvApiData, 'summary'>;

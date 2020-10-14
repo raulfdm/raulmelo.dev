@@ -16,7 +16,7 @@ interface Thumbnail {
   width: number;
   height: number;
   size: number;
-  path?: any;
+  path?: unknown;
   url: string;
   provider_metadata: ProviderMetadata2;
 }
@@ -34,7 +34,7 @@ interface Large {
   width: number;
   height: number;
   size: number;
-  path?: any;
+  path?: unknown;
   url: string;
   provider_metadata: ProviderMetadata3;
 }
@@ -52,7 +52,7 @@ interface Medium {
   width: number;
   height: number;
   size: number;
-  path?: any;
+  path?: unknown;
   url: string;
   provider_metadata: ProviderMetadata4;
 }
@@ -70,7 +70,7 @@ interface Small {
   width: number;
   height: number;
   size: number;
-  path?: any;
+  path?: unknown;
   url: string;
   provider_metadata: ProviderMetadata5;
 }

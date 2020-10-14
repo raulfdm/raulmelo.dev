@@ -6,7 +6,7 @@ import {
   SectionTitle,
   SectionBody,
 } from '@screens/CV/components/shared/Section';
-import { CvApiData } from 'types/api';
+import { CvApiData } from '@types-api';
 
 const InterestItem = styled.li`
   display: block;

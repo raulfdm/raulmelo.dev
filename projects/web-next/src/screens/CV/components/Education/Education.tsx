@@ -9,7 +9,7 @@ import { CourseList } from '@screens/CV/components/shared/Ui';
 import { RangeDate } from '@screens/CV/components/shared/RangeDate';
 
 import { Company, Period, StyledCourseList } from './styled';
-import { CvApiData } from 'types/api';
+import { CvApiData } from '@types-api';
 
 type Education = CvApiData['education'];
 

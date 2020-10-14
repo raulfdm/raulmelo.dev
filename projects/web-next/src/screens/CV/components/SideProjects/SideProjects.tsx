@@ -6,7 +6,7 @@ import {
   SectionBody,
 } from '@screens/CV/components/shared/Section';
 import { Project } from '@screens/CV/components/shared/Project';
-import { CvApiData } from 'types/api';
+import { CvApiData } from '@types-api';
 
 type SideProjectsProps = Pick<CvApiData, 'side_projects'>;
 

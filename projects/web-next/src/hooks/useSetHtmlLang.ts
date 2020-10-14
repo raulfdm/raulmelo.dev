@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { SupportedLanguages } from '@app/types';
+import { SupportedLanguages } from '@types-app';
 
 export function useSetHtmlLang(lang: SupportedLanguages = 'en') {
   useEffect(() => {

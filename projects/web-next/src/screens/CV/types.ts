@@ -3,7 +3,7 @@ import {
   CvApiData,
   SocialApiData,
   SiteApiData,
-} from 'types/api';
+} from '@types-api';
 
 export type CvApiDataProps = {
   cv: CvApiData;

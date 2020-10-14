@@ -5,7 +5,7 @@ import {
   Section,
   SectionBody,
 } from '@screens/CV/components/shared/Section';
-import { CvApiData } from 'types/api';
+import { CvApiData } from '@types-api';
 import { Group, Skill, List, Title } from './styled';
 
 type TechnicalSkillsProps = Pick<CvApiData, 'technical_skills'>;

@@ -7,7 +7,7 @@ import {
   SectionBody,
 } from '@screens/CV/components/shared/Section';
 import { styled } from '@screens/CV/styled';
-import { CvApiData } from 'types/api';
+import { CvApiData } from '@types-api';
 
 const StyledSection = styled(Section)`
   page-break-before: always;
