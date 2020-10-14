@@ -7,10 +7,11 @@ import {
 } from '@screens/CV/components/shared/Section';
 import { CourseList } from '@screens/CV/components/shared/Ui';
 import { RangeDate } from '@screens/CV/components/shared/RangeDate';
-import { CvData } from '@screens/CV/types';
-import { Company, Period, StyledCourseList } from './styled';
 
-type Education = NonNullable<CvData['education']>;
+import { Company, Period, StyledCourseList } from './styled';
+import { CvApiData } from '@types-api';
+
+type Education = CvApiData['education'];
 
 type EducationProps = {
   education: Education;

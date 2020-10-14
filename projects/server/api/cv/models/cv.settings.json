@@ -45,7 +45,7 @@
       "component": "cv.education",
       "required": true
     },
-    "SEO": {
+    "seo": {
       "type": "component",
       "repeatable": false,
       "component": "cv.seo"

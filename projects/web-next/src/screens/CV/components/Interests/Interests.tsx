@@ -6,7 +6,7 @@ import {
   SectionTitle,
   SectionBody,
 } from '@screens/CV/components/shared/Section';
-import { CvData } from '@screens/CV/types';
+import { CvApiData } from '@types-api';
 
 const InterestItem = styled.li`
   display: block;
@@ -15,7 +15,7 @@ const InterestItem = styled.li`
   }
 `;
 
-type InterestsProps = Pick<CvData, 'interests'>;
+type InterestsProps = Pick<CvApiData, 'interests'>;
 
 export const Interests: React.FC<InterestsProps> = ({ interests }) => {
   return (

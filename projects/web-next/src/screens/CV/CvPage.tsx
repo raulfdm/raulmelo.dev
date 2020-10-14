@@ -15,11 +15,15 @@ import {
   Interests,
 } from './components';
 import { GlobalCVStyles } from './styled';
-import { useCvQuery } from './cv.graphql';
+import { CvApiDataProps } from './types';
 
-export const CvPage = () => {
+export const CvPage: React.FC<CvApiDataProps> = ({
+  cv,
+  personalInfo,
+  social,
+  site,
+}) => {
   const { moveToTop } = useScrollToTop();
-  const { personalInformation, social, cv, site } = useCvQuery().data!;
 
   const {
     summary,
@@ -28,16 +32,16 @@ export const CvPage = () => {
     side_projects,
     education,
     interests,
-  } = cv!;
+  } = cv;
 
-  const { seo_image, url: siteUrl } = site!;
+  const { seo_image, url: siteUrl } = site;
 
   return (
     <>
       <SEO
         siteUrl={siteUrl}
-        imageUrl={seo_image!.url}
-        twitterUrl={social!.twitter!.url}
+        imageUrl={seo_image.url}
+        twitterUrl={social.twitter.url}
         withDefaultTitle
         title="Curriculum"
         description="Raul Melo is a Software Developer focused on client-side. Have over 5 years of experience building websites and applications. Check my CV for more info."
@@ -52,7 +56,7 @@ export const CvPage = () => {
       <GlobalCVStyles />
       <HomeLink href="/">Back to home</HomeLink>
       <CVMain>
-        <Info {...personalInformation} {...social} />
+        <Info {...personalInfo} {...social} />
         <CareerSummary summary={summary} />
         <TechnicalSkills technical_skills={technical_skills} />
         <CareerExperience jobs={jobs} />

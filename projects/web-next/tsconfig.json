@@ -6,10 +6,7 @@
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "lib": [
-      "dom",
-      "es2017"
-    ],
+    "lib": ["dom", "es2017"],
     "module": "esnext",
     "moduleResolution": "node",
     "noEmit": true,
@@ -22,35 +19,16 @@
     "target": "esnext",
     "baseUrl": ".",
     "paths": {
-      "@screens/*": [
-        "src/screens/*"
-      ],
-      "@app/types": [
-        "src/types.ts"
-      ],
-      "@components/*": [
-        "src/components/*"
-      ],
-      "@utils/*": [
-        "src/utils/*"
-      ],
-      "@hooks/*": [
-        "src/hooks/*"
-      ],
-      "@lib/*": [
-        "src/lib/*"
-      ],
+      "@components/*": ["src/components/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@lib/*": ["src/lib/*"],
+      "@screens/*": ["src/screens/*"],
+      "@types-api": ["src/types/api/index.ts"],
+      "@types-app": ["src/types/index.ts"],
+      "@utils/*": ["src/utils/*"]
     },
-    "typeRoots": [
-      "node_modules/@types",
-      "types",
-    ],
+    "typeRoots": ["node_modules/@types", "types"]
   },
-  "exclude": [
-    "node_modules"
-  ],
-  "include": [
-    "**/*.ts",
-    "**/*.tsx"
-  ]
+  "exclude": ["node_modules"],
+  "include": ["**/*.ts", "**/*.tsx"]
 }

@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 
-import { CvData } from '@screens/CV/types';
+import { CvApiData } from '@types-api';
 import { Section, SectionTitle, SectionBody } from '../shared/Section';
 
-type CareerSummaryProps = Pick<CvData, 'summary'>;
+type CareerSummaryProps = Pick<CvApiData, 'summary'>;
 
 export const CareerSummary: React.FC<CareerSummaryProps> = ({ summary }) => {
   return (

@@ -1,31 +1,44 @@
 import { ThemeProvider } from 'styled-components';
+import { useQuery } from 'react-query';
 
 import { CvPage } from '@screens/CV/CvPage';
-import { CvDocument } from '@screens/CV/cv.graphql';
 import { theme } from '@screens/CV/styled';
-import { initializeApollo } from '@lib/apolloClient';
+import { CvApiDataProps } from '@screens/CV/types';
+import { Backend } from 'src/services/Backend';
 
-const Home: React.FC = () => {
+type CvProps = {
+  cv: CvApiDataProps;
+};
+
+const Cv: React.FC<CvProps> = (props) => {
+  const { data } = useQuery('cv', fetchCvData, { initialData: props.cv });
+
   return (
     <ThemeProvider theme={theme}>
-      <CvPage />
+      <CvPage {...data!} />
     </ThemeProvider>
   );
 };
 
 export async function getStaticProps() {
-  const apolloClient = initializeApollo();
-
-  await apolloClient.query({
-    query: CvDocument,
-  });
+  const data = await fetchCvData();
 
   return {
     props: {
-      initialApolloState: apolloClient.cache.extract(),
+      cv: data,
     },
-    revalidate: 1,
   };
 }
 
-export default Home;
+async function fetchCvData(): Promise<CvApiDataProps> {
+  const [cv, personalInfo, social, site] = await Promise.all([
+    Backend.fetch('cv'),
+    Backend.fetch('personal-information'),
+    Backend.fetch('social'),
+    Backend.fetch('site'),
+  ]);
+
+  return { cv, personalInfo, social, site };
+}
+
+export default Cv;

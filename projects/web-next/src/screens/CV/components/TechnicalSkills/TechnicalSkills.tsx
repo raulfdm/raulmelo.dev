@@ -5,10 +5,10 @@ import {
   Section,
   SectionBody,
 } from '@screens/CV/components/shared/Section';
-import { CvData } from '@screens/CV/types';
+import { CvApiData } from '@types-api';
 import { Group, Skill, List, Title } from './styled';
 
-type TechnicalSkillsProps = Pick<CvData, 'technical_skills'>;
+type TechnicalSkillsProps = Pick<CvApiData, 'technical_skills'>;
 
 export const TechnicalSkills = ({ technical_skills }: TechnicalSkillsProps) => {
   return (

@@ -18,6 +18,7 @@
     "strapi-connector-mongoose": "3.2.3",
     "strapi-plugin-content-manager": "3.2.3",
     "strapi-plugin-content-type-builder": "3.2.3",
+    "strapi-plugin-documentation": "^3.2.3",
     "strapi-plugin-email": "3.2.3",
     "strapi-plugin-graphql": "3.2.3",
     "strapi-plugin-upload": "3.2.3",

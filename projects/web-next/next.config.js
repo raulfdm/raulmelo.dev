@@ -2,34 +2,17 @@ const path = require('path');
 
 module.exports = {
   target: 'serverless',
-  webpack: (config, options) => {
+  webpack: (config) => {
     config.resolve.alias = {
       ...config.resolve.alias,
-      '@screens': path.resolve(__dirname, './src/screens'),
-      '@lib': path.resolve(__dirname, './src/lib'),
-      '@hooks': path.resolve(__dirname, './src/hooks'),
-      '@utils': path.resolve(__dirname, './src/utils'),
       '@components': path.resolve(__dirname, './src/components'),
-      '@app/types': path.resolve(__dirname, './src/types.ts'),
+      '@hooks': path.resolve(__dirname, './src/hooks'),
+      '@lib': path.resolve(__dirname, './src/lib'),
+      '@screens': path.resolve(__dirname, './src/screens'),
+      '@types-api': path.resolve(__dirname, './src/types/api/index.ts'),
+      '@types-app': path.resolve(__dirname, './src/types/index.ts'),
+      '@utils': path.resolve(__dirname, './src/utils'),
     };
-
-    config.module.rules.push({
-      test: /\.graphql$/,
-      exclude: /node_modules/,
-      use: [options.defaultLoaders.babel, { loader: 'graphql-let/loader' }],
-    });
-
-    config.module.rules.push({
-      test: /\.graphqls$/,
-      exclude: /node_modules/,
-      use: ['graphql-let/schema/loader'],
-    });
-
-    config.module.rules.push({
-      test: /\.ya?ml$/,
-      type: 'json',
-      use: 'yaml-loader',
-    });
 
     return config;
   },
