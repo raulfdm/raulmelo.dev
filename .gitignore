@@ -200,3 +200,5 @@ build
 __diff_output__/
 
 storybook-public/
+
+.vercel
