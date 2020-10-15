@@ -13,6 +13,7 @@ export type CustomIntlShape = {
   switchToPortuguese(): void;
   switchToEnglish(): void;
   switchLocale(nextLocale: SupportedLanguages): void;
+  locale: SupportedLanguages;
 };
 
 export const LocalizationContext = createContext<CustomIntlShape | undefined>(
