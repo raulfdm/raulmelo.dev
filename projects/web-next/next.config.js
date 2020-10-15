@@ -13,6 +13,7 @@ module.exports = {
       '@types-app': path.resolve(__dirname, './src/types/index.ts'),
       '@utils': path.resolve(__dirname, './src/utils'),
       '@contexts': path.resolve(__dirname, './src/contexts'),
+      '@styles': path.resolve(__dirname, './src/styles'),
     };
 
     return config;

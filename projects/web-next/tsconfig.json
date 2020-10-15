@@ -26,7 +26,8 @@
       "@types-api": ["src/types/api/index.ts"],
       "@types-app": ["src/types/index.ts"],
       "@utils/*": ["src/utils/*"],
-      "@contexts/*": ["src/contexts/*"]
+      "@contexts/*": ["src/contexts/*"],
+      "@styles/*": ["src/styles/*"]
     },
     "typeRoots": ["node_modules/@types", "../../node_modules/@types", "types"]
   },
