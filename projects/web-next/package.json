@@ -7,8 +7,8 @@
   },
   "scripts": {
     "dev": "next",
-    "build": "next build",
-    "start": "next start",
+    "build": "API_ENDPOINT=https://raulmelo-dev-server.herokuapp.com next build",
+    "start": "API_ENDPOINT=https://raulmelo-dev-server.herokuapp.com next start",
     "type-check": "tsc",
     "test": "jest",
     "eslint": "eslint . --ext .js,.jsx,.ts,.tsx",
