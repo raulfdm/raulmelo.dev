@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "dayjs": "^1.9.1",
+    "flat": "^5.0.2",
     "next": "latest",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
@@ -25,7 +26,8 @@
     "react-use": "^15.3.4",
     "smoothscroll-polyfill": "^0.4.4",
     "styled-components": "^5.2.0",
-    "styled-icons": "^10.22.0"
+    "styled-icons": "^10.22.0",
+    "styled-media-query": "^2.1.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.0",
@@ -33,6 +35,7 @@
     "@babel/preset-typescript": "^7.12.0",
     "@sub-tv/eslint-config": "^1.1.0",
     "@testing-library/jest-dom": "^5.11.4",
+    "@types/flat": "^5.0.1",
     "@types/jest": "^26.0.14",
     "@types/node": "^12.12.21",
     "@types/react": "^16.9.16",
