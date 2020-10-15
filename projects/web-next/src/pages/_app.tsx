@@ -1,21 +1,12 @@
 import { AppProps } from 'next/dist/next-server/lib/router/router';
-import { createGlobalStyle } from 'styled-components';
 import App from 'next/app';
 
 import { parseAcceptLanguage } from '@utils/headers';
 import { LocalizationProvider } from '@contexts/react-intl';
 
-const GlobalStyles = createGlobalStyle`
-  * {
-    margin: 0;
-    padding: 0;
-  }
-`;
-
 const MyApp = ({ Component, pageProps, language }: AppProps) => {
   return (
     <LocalizationProvider lang={language}>
-      <GlobalStyles />
       <Component {...pageProps} />
     </LocalizationProvider>
   );
