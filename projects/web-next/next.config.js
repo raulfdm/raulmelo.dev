@@ -12,6 +12,7 @@ module.exports = {
       '@types-api': path.resolve(__dirname, './src/types/api/index.ts'),
       '@types-app': path.resolve(__dirname, './src/types/index.ts'),
       '@utils': path.resolve(__dirname, './src/utils'),
+      '@contexts': path.resolve(__dirname, './src/contexts'),
     };
 
     return config;

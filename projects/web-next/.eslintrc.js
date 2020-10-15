@@ -39,9 +39,10 @@ module.exports = {
       parser: 'babel-eslint',
     },
     {
+      extends: ['plugin:jest/recommended'],
       files: ['*.test.*', '**/__tests__/*.ts'],
       env: {
-        jest: true,
+        'jest/globals': true,
         es6: true,
       },
       rules: {
