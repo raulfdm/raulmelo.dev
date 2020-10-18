@@ -24,6 +24,8 @@
     "react-intl": "^5.8.6",
     "react-query": "^2.23.1",
     "react-use": "^15.3.4",
+    "rehype-autolink-headings": "^4.0.0",
+    "rehype-slug": "^3.0.0",
     "smoothscroll-polyfill": "^0.4.4",
     "styled-components": "^5.2.0",
     "styled-icons": "^10.22.0",
