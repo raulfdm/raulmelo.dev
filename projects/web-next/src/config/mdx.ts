@@ -2,6 +2,8 @@ import mdxRemoteRenderToString from 'next-mdx-remote/render-to-string';
 import mdxRemoteHydrate from 'next-mdx-remote/hydrate';
 import rehypeAutoLink from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
+import mdxPrims from 'mdx-prism';
+import remarkCodeTitle from 'remark-code-titles';
 
 import { mdxComponents } from '@components/MdxComponents';
 
@@ -15,8 +17,14 @@ export function renderToString(content: string) {
   return mdxRemoteRenderToString(content, {
     components: mdxComponents,
     mdxOptions: {
-      remarkPlugins: [],
+      remarkPlugins: [remarkCodeTitle],
       rehypePlugins: [
+        [
+          mdxPrims,
+          {
+            ignoreMissing: true,
+          },
+        ],
         rehypeSlug,
         [
           rehypeAutoLink,
@@ -28,7 +36,6 @@ export function renderToString(content: string) {
           },
         ],
       ],
-      compilers: [],
     },
   });
 }

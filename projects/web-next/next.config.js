@@ -30,6 +30,7 @@ module.exports = {
     if (!isServer) {
       config.node = {
         fs: 'empty',
+        rehype: 'empty',
       };
     }
 

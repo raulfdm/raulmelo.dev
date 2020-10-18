@@ -22,13 +22,9 @@ export const pandaPrismStyles = css`
       Monaco, Consolas, Courier New, monospace;
   }
 
-  .gatsby-highlight {
-    position: relative;
-  }
-
   code[class*='language-'],
   pre[class*='language-'],
-  .gatsby-code-title {
+  .remark-code-title {
     background: var(--prism-black);
     color: var(--prism-gray-light);
     font-family: var(--prism-font-family);
@@ -193,7 +189,7 @@ export const pandaPrismStyles = css`
   }
 
   /* Styles for File name */
-  .gatsby-code-title {
+  .remark-code-title {
     padding: 0.5rem 1rem;
     background-color: var(--prism-black);
     font-size: 0.75rem;
@@ -202,14 +198,14 @@ export const pandaPrismStyles = css`
     border-top-right-radius: 3px;
   }
 
-  .gatsby-code-title + .gatsby-highlight pre {
+  .remark-code-title + pre {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
   }
   /* End:Styles for File name */
 
   /* Styles for Language label */
-  .gatsby-highlight pre[class*='language-']::before {
+  pre[class*='language-']::before {
     background: #d9d7e0;
     border-radius: 0px 0px 4px 4px;
     color: #232129;
@@ -225,96 +221,96 @@ export const pandaPrismStyles = css`
     top: 0px;
   }
 
-  .gatsby-code-title + .gatsby-highlight pre[class*='language-']::before {
+  .remark-code-title + pre[class*='language-']::before {
     top: -1px;
   }
 
-  .gatsby-highlight pre[class='language-javascript']::before,
-  .gatsby-highlight pre[class='language-js']::before {
+  pre[class='language-javascript']::before,
+  pre[class='language-js']::before {
     content: 'js';
     background: #f7df1e;
   }
 
-  .gatsby-highlight pre[class='language-jsx']::before {
+  pre[class='language-jsx']::before {
     content: 'jsx';
     background: #61dafb;
   }
 
-  .gatsby-highlight pre[class='language-typescript']::before,
-  .gatsby-highlight pre[class='language-ts']::before,
-  .gatsby-highlight pre[class='language-tsx']::before {
+  pre[class='language-typescript']::before,
+  pre[class='language-ts']::before,
+  pre[class='language-tsx']::before {
     content: 'ts';
     background: #294e80;
     color: white;
   }
 
-  .gatsby-highlight pre[class='language-tsx']::before {
+  pre[class='language-tsx']::before {
     content: 'tsx';
   }
 
-  .gatsby-highlight pre[class='language-graphql']::before {
+  pre[class='language-graphql']::before {
     content: 'GraphQL';
     background: #e10098;
     color: white;
   }
 
-  .gatsby-highlight pre[class='language-html']::before {
+  pre[class='language-html']::before {
     content: 'html';
     background: #005a9c;
     color: white;
   }
 
-  .gatsby-highlight pre[class='language-css']::before {
+  pre[class='language-css']::before {
     content: 'css';
     background: #ff9800;
     color: white;
   }
 
-  .gatsby-highlight pre[class='language-mdx']::before {
+  pre[class='language-mdx']::before {
     content: 'mdx';
     background: #f9ac00;
     color: white;
   }
 
-  .gatsby-highlight pre[class='language-shell']::before {
+  pre[class='language-shell']::before {
     content: 'shell';
   }
 
-  .gatsby-highlight pre[class='language-sh']::before {
+  pre[class='language-sh']::before {
     content: 'sh';
   }
 
-  .gatsby-highlight pre[class='language-bash']::before {
+  pre[class='language-bash']::before {
     content: 'bash';
   }
 
-  .gatsby-highlight pre[class='language-yaml']::before,
-  .gatsby-highlight pre[class='language-yml']::before {
+  pre[class='language-yaml']::before,
+  pre[class='language-yml']::before {
     content: 'yaml';
     background: #ffa8df;
   }
 
-  .gatsby-highlight pre[class='language-markdown']::before {
+  pre[class='language-markdown']::before {
     content: 'md';
   }
 
-  .gatsby-highlight pre[class='language-json']::before,
-  .gatsby-highlight pre[class='language-json5']::before {
+  pre[class='language-json']::before,
+  pre[class='language-json5']::before {
     content: 'json';
     background: linen;
   }
 
-  .gatsby-highlight pre[class='language-diff']::before {
+  pre[class='language-diff']::before {
     content: 'diff';
     background: #e6ffed;
   }
 
-  .gatsby-highlight pre[class='language-text']::before {
+  pre[class='language-text']::before {
     content: 'text';
     background: white;
   }
 
-  .gatsby-highlight pre[class='language-flow']::before {
+  pre[class='language-flow']::before {
     content: 'flow';
     background: #e8bd36;
   }
