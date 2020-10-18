@@ -3,6 +3,7 @@ import App from 'next/app';
 
 import { parseAcceptLanguage } from '@utils/headers';
 import { LocalizationProvider } from '@contexts/react-intl';
+import { head } from '@utils/utilities';
 
 const MyApp = ({ Component, pageProps, language }: AppProps) => {
   return (
@@ -17,13 +18,13 @@ const getInitialProps: typeof App.getInitialProps = async (appContext) => {
     ctx: { req },
   } = appContext;
 
-  const langs = parseAcceptLanguage(req?.headers['accept-language'] ?? 'en');
+  const langs = parseAcceptLanguage(req?.headers['accept-language']);
 
   const appProps = await App.getInitialProps(appContext);
 
   return {
     ...appProps,
-    language: langs[0],
+    language: head(langs),
   };
 };
 
