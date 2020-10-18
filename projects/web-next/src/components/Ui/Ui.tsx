@@ -16,21 +16,26 @@ export const Container = styled.div`
 export const headingLinkStyle = css`
   cursor: text;
   display: inline-block;
+  position: relative;
 
   &:hover {
-    .copy-title-icon svg {
+    .copy-title-icon:after {
       visibility: visible;
     }
   }
 
   .copy-title-icon {
+    display: inline-block;
     position: absolute;
+    right: -20px;
     top: -2px;
-    right: -28px;
-    padding-left: 4px;
+  }
 
-    svg {
-      visibility: hidden;
-    }
+  .copy-title-icon:after {
+    content: url('/icons/anchor.svg');
+    width: 20px;
+    display: block;
+    visibility: hidden;
+    transition: visibility 0.2s ease-in-out;
   }
 `;

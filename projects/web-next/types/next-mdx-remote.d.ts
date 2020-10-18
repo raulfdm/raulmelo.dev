@@ -8,22 +8,29 @@ type RenderToStringReturnType = {
   renderedOutput: any;
 };
 
+type Components = {
+  [match: string]: React.ComponentType | StyledComponent;
+};
+
 declare module 'next-mdx-remote/render-to-string' {
   export default function renderToString(
     content: string,
-    opts?: RenderToStringOpts,
+    opts?: {
+      components?: Components;
+      mdxOptions?: {
+        remarkPlugins?: any[];
+        rehypePlugins?: any[];
+        compilers?: any[];
+      };
+    },
   ): Promise<RenderToStringReturnType>;
-
-  type RenderToStringOpts = {
-    components: {
-      [match: string]: React.ComponentType | StyledComponent;
-    };
-  };
 }
 
 declare module 'next-mdx-remote/hydrate' {
   export default function hydrate(
     content: RenderToStringReturnType,
-    opts?: RenderToStringOpts,
+    opts?: {
+      components: Components;
+    },
   );
 }

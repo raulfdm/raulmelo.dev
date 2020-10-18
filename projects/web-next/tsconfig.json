@@ -6,7 +6,10 @@
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "lib": ["dom", "es2017"],
+    "lib": [
+      "dom",
+      "es2017"
+    ],
     "module": "esnext",
     "moduleResolution": "node",
     "noEmit": true,
@@ -19,18 +22,51 @@
     "target": "esnext",
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["src/components/*"],
-      "@hooks/*": ["src/hooks/*"],
-      "@lib/*": ["src/lib/*"],
-      "@screens/*": ["src/screens/*"],
-      "@types-api": ["src/types/api/index.ts"],
-      "@types-app": ["src/types/index.ts"],
-      "@utils/*": ["src/utils/*"],
-      "@contexts/*": ["src/contexts/*"],
-      "@styles/*": ["src/styles/*"]
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@config/*": [
+        "src/config/*"
+      ],
+      "@contexts/*": [
+        "src/contexts/*"
+      ],
+      "@hooks/*": [
+        "src/hooks/*"
+      ],
+      "@lib/*": [
+        "src/lib/*"
+      ],
+      "@screens/*": [
+        "src/screens/*"
+      ],
+      "@services/*": [
+        "src/services/*"
+      ],
+      "@styles/*": [
+        "src/styles/*"
+      ],
+      "@types-api": [
+        "src/types/api/index.ts"
+      ],
+      "@types-app": [
+        "src/types/index.ts"
+      ],
+      "@utils/*": [
+        "src/utils/*"
+      ],
     },
-    "typeRoots": ["node_modules/@types", "../../node_modules/@types", "types"]
+    "typeRoots": [
+      "node_modules/@types",
+      "../../node_modules/@types",
+      "types"
+    ]
   },
-  "exclude": ["node_modules"],
-  "include": ["**/*.ts", "**/*.tsx"]
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "**/*.ts",
+    "**/*.tsx"
+  ]
 }

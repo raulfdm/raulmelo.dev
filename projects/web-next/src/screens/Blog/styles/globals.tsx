@@ -84,5 +84,10 @@ export const blogGlobalStyles = css`
     margin-right: auto;
   }
 
+  /* Important for code blocks keep language label in the proper place */
+  pre {
+    position: relative;
+  }
+
   ${pandaPrismStyles};
 `;
