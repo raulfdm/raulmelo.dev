@@ -1,13 +1,11 @@
 import { GetStaticPaths } from 'next';
-import renderToString from 'next-mdx-remote/render-to-string';
-import hydrate from 'next-mdx-remote/hydrate';
+import { hydrate, renderToString } from '@config/mdx';
 
 import { UsesPage } from '@screens/Uses/UsesPage';
 import { SupportedLanguages } from '@types-app';
 import { head } from '@utils/utilities';
 import { UsesApiData } from '@types-api';
 import { Backend } from 'src/services/Backend';
-import { mdxComponents } from '@components/MdxComponents';
 import { BlogTheme } from '@screens/Blog/BlogTheme';
 
 type Params = {
@@ -23,7 +21,7 @@ type GetStaticPropsReturnType = {
 };
 
 const Uses = (props: GetStaticPropsReturnType['props']) => {
-  const content = hydrate(props.usesMd, { components: mdxComponents });
+  const content = hydrate(props.usesMd);
 
   return (
     <BlogTheme>
@@ -40,9 +38,7 @@ export const getStaticProps = async ({
     `?language=${lang}`,
   )) as UsesApiData;
 
-  const mdxSource = await renderToString(head(usesMdx).content, {
-    components: mdxComponents,
-  });
+  const mdxSource = await renderToString(head(usesMdx).content);
 
   return {
     props: { usesMd: mdxSource, lang },
