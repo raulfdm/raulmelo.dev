@@ -9,7 +9,13 @@ async function fetcher(url: string) {
 export class Backend {
   private static apiUrl = process.env.API_ENDPOINT || 'http://localhost:1337';
 
-  static fetch(endpoint: Endpoints) {
-    return fetcher(`${Backend.apiUrl}/${endpoint}`);
+  static fetch(endpoint: Endpoints, path?: string) {
+    let url = `${Backend.apiUrl}/${endpoint}`;
+
+    if (path) {
+      url += path;
+    }
+
+    return fetcher(url);
   }
 }

@@ -11,7 +11,7 @@ function removeLangWithoutWeight(lang: string) {
   return lang.includes('q=');
 }
 
-export function parseAcceptLanguage(headerParam: string) {
+export function parseAcceptLanguage(headerParam = 'en') {
   return headerParam
     .split(',')
     .filter(removeLangWithoutWeight)
