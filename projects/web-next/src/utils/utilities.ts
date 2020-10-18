@@ -6,3 +6,7 @@ export const isBrowserApiAvailable = {
     return typeof navigator !== 'undefined';
   },
 };
+
+export function head<T>(arr: T[]) {
+  return arr[0];
+}
