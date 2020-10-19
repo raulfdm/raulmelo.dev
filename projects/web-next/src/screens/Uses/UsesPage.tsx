@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
-import { CommonLayout } from '@components/CommonLayout';
+import { BlogTheme } from '@components/Themes/BlogTheme';
 
-export const UsesPage: FC = (props) => {
-  return <CommonLayout as="main">{props.children}</CommonLayout>;
+export const UsesPage: FC = ({ children }) => {
+  return <BlogTheme>{children}</BlogTheme>;
 };

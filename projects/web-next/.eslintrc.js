@@ -13,7 +13,9 @@ module.exports = {
         browser: true,
       },
       rules: {
-        'react/react-in-jsx-scope': 'off' /* This is a NEXTJS project!!11! */,
+        /* This is a NEXTJS project!!11! */
+        'react/react-in-jsx-scope': 'off',
+        'react/jsx-no-undef': 'off',
         'react/prop-types': 'off',
         camelcase: 'off',
         '@typescript-eslint/camelcase': 'off',

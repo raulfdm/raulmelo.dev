@@ -9,13 +9,9 @@ function setMetaTheme(theme: SupportedThemes): void {
     ?.setAttribute('content', themeBackgroundColor[theme]);
 }
 
-export function useThemeHandler({
-  initialTheme,
-}: {
-  initialTheme: SupportedThemes;
-}) {
+export function useThemeHandler(initialTheme?: SupportedThemes) {
   const [currentTheme, setCurrentTheme] = useState<SupportedThemes>(
-    initialTheme,
+    initialTheme || 'light',
   );
 
   useEffect(() => {
@@ -25,7 +21,9 @@ export function useThemeHandler({
   }, []);
 
   useEffect(() => {
-    toggleTheme({ theme: initialTheme });
+    if (initialTheme) {
+      toggleTheme({ theme: initialTheme });
+    }
   }, [initialTheme]);
 
   function toggleTheme(opts?: { theme: SupportedThemes }): void {

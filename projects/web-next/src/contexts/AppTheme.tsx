@@ -21,9 +21,9 @@ export const ThemeContext = createContext<Partial<ContextType>>({});
 
 export const AppThemeProvider: React.FC<ThemeProps> = ({
   children,
-  initialTheme = 'light',
+  initialTheme,
 }) => {
-  const { currentTheme, toggleTheme } = useThemeHandler({ initialTheme });
+  const { currentTheme, toggleTheme } = useThemeHandler(initialTheme);
 
   const isDarkTheme = currentTheme === 'dark';
 

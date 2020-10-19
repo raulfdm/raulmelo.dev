@@ -6,7 +6,6 @@ import { SupportedLanguages } from '@types-app';
 import { head } from '@utils/utilities';
 import { UsesApiData } from '@types-api';
 import { Backend } from 'src/services/Backend';
-import { BlogTheme } from '@screens/Blog/BlogTheme';
 
 type Params = {
   params: { lang: SupportedLanguages };
@@ -23,11 +22,7 @@ type GetStaticPropsReturnType = {
 const Uses = (props: GetStaticPropsReturnType['props']) => {
   const content = hydrate(props.usesMd);
 
-  return (
-    <BlogTheme>
-      <UsesPage>{content}</UsesPage>
-    </BlogTheme>
-  );
+  return <UsesPage>{content}</UsesPage>;
 };
 
 export const getStaticProps = async ({
