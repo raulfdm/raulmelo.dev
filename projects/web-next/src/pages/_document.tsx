@@ -40,6 +40,7 @@ export default class MyDocument extends Document {
         <Head>
           <link rel="stylesheet" href="/css/reset.css" />
           <link rel="stylesheet" href="/css/fonts.css" />
+          <link rel="stylesheet" href="/css/nextjs.css" />
         </Head>
         <body>
           {/* Global Theme handler */}
