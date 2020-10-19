@@ -537,7 +537,8 @@
             "type": "string"
           },
           "date": {
-            "type": "string"
+            "type": "string",
+            "format": "date"
           },
           "post_tags": {
             "type": "array",
@@ -791,7 +792,8 @@
             "type": "string"
           },
           "date": {
-            "type": "string"
+            "type": "string",
+            "format": "date"
           },
           "post_tags": {
             "type": "array",
