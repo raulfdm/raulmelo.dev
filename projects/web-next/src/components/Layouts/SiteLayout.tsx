@@ -1,8 +1,10 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 
+import { MenuBar } from '@components/MenuBar';
 import { Container } from '@components/Ui';
 import { styled, media } from '@styles/styled';
 import { SiteTheme } from '@types-app';
+import { SideMenu } from '@components/SideMenu';
 
 const Main = styled(Container)`
   && {
@@ -16,6 +18,12 @@ const Main = styled(Container)`
 `;
 
 // TODO: couldn't find something better for any
-export const CommonLayout: FC<{ as: any }> = ({ children, ...props }) => {
-  return <Main {...props}>{children}</Main>;
+export const SiteLayout: FC<{ as?: any }> = ({ children, ...props }) => {
+  return (
+    <>
+      <MenuBar />
+      <Main {...props}>{children}</Main>
+      <SideMenu />
+    </>
+  );
 };
