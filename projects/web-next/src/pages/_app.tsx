@@ -3,12 +3,15 @@ import App from 'next/app';
 
 import { parseAcceptLanguage } from '@utils/headers';
 import { LocalizationProvider } from '@contexts/react-intl';
+import { AppContextProvider } from '@contexts/app';
 import { head } from '@utils/utilities';
 
 const MyApp = ({ Component, pageProps, language }: AppProps) => {
   return (
     <LocalizationProvider lang={language}>
-      <Component {...pageProps} />
+      <AppContextProvider>
+        <Component {...pageProps} />
+      </AppContextProvider>
     </LocalizationProvider>
   );
 };
