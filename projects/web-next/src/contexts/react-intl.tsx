@@ -9,15 +9,15 @@ import ptMessages from 'src/locales/pt-br.json';
 
 const LOCALE_LOCAL_STORAGE_KEY = 'raul-melo.dev__lang';
 
-export type CustomIntlShape = {
+export type LocalizationContextType = {
   switchToPortuguese(): void;
   switchToEnglish(): void;
   switchLocale(nextLocale: SupportedLanguages): void;
 };
 
-export const LocalizationContext = createContext<CustomIntlShape | undefined>(
-  undefined,
-);
+export const LocalizationContext = createContext<
+  LocalizationContextType | undefined
+>(undefined);
 
 const supportedLanguagesList: SupportedLanguages[] = ['en', 'pt'];
 
