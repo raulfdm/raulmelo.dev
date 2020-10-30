@@ -24,9 +24,7 @@
     "web:lint": "yarn base:web lint",
     "dev": "concurrently \"yarn:server:dev\" \"yarn:web:dev:wait\"",
     "web:docs:build": "yarn base:web build-storybook",
-    "web:docs:dev": "yarn base:web storybook",
-    "web:next:dev": "./scripts/next.dev.sh",
-    "web:next:build": "./scripts/next.build.sh"
+    "web:docs:dev": "yarn base:web storybook"
   },
   "devDependencies": {
     "@sub-tv/prettier-config": "1.1.0",
