@@ -20,7 +20,7 @@ jobs:
       - name: Setup nodejs environment
         uses: actions/setup-node@v1
         with:
-          node-version: 12
+          node-version: 14
 
       - name: Defines yarn cache directory
         id: yarn-cache-dir
@@ -52,7 +52,7 @@ jobs:
       - name: Setup nodejs environment
         uses: actions/setup-node@v1
         with:
-          node-version: 12
+          node-version: 14
 
       - name: Defines yarn cache directory
         id: yarn-cache-dir
@@ -101,7 +101,7 @@ jobs:
       - name: Setup nodejs environment
         uses: actions/setup-node@v1
         with:
-          node-version: 12
+          node-version: 14
 
       - name: Defines yarn cache directory
         id: yarn-cache-dir
