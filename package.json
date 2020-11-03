@@ -4,7 +4,7 @@
   "author": "Raul Melo <melo.raulf@gmail.com>",
   "license": "MIT",
   "engines": {
-    "node": "12.x",
+    "node": "14.x",
     "yarn": "1.x"
   },
   "workspaces": [
