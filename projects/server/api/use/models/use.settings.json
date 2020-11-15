@@ -2,11 +2,13 @@
   "kind": "collectionType",
   "collectionName": "uses",
   "info": {
-    "name": "Use"
+    "name": "Use",
+    "description": ""
   },
   "options": {
     "increments": true,
-    "timestamps": true
+    "timestamps": true,
+    "draftAndPublish": false
   },
   "attributes": {
     "language": {
@@ -17,6 +19,11 @@
     "content": {
       "type": "richtext",
       "required": true
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "uses.seo"
     }
   }
 }

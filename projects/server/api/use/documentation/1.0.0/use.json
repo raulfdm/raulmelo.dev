@@ -50,9 +50,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Use"
-        ],
+        "tags": ["Use"],
         "parameters": [
           {
             "name": "_limit",
@@ -238,9 +236,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Use"
-        ],
+        "tags": ["Use"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -305,9 +301,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Use"
-        ],
+        "tags": ["Use"],
         "parameters": []
       }
     },
@@ -358,9 +352,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Use"
-        ],
+        "tags": ["Use"],
         "parameters": [
           {
             "name": "id",
@@ -420,9 +412,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Use"
-        ],
+        "tags": ["Use"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -494,9 +484,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Use"
-        ],
+        "tags": ["Use"],
         "parameters": [
           {
             "name": "id",
@@ -515,42 +503,63 @@
   "components": {
     "schemas": {
       "Use": {
-        "required": [
-          "id",
-          "language",
-          "content"
-        ],
+        "required": ["id", "language", "content"],
         "properties": {
           "id": {
             "type": "string"
           },
           "language": {
             "type": "string",
-            "enum": [
-              "pt",
-              "en"
-            ]
+            "enum": ["pt", "en"]
           },
           "content": {
             "type": "string"
+          },
+          "seo": {
+            "type": "object",
+            "required": ["id", "title", "description"],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string",
+                "maxLength": 160,
+                "minLength": 50
+              }
+            }
           }
         }
       },
       "NewUse": {
-        "required": [
-          "language",
-          "content"
-        ],
+        "required": ["language", "content"],
         "properties": {
           "language": {
             "type": "string",
-            "enum": [
-              "pt",
-              "en"
-            ]
+            "enum": ["pt", "en"]
           },
           "content": {
             "type": "string"
+          },
+          "seo": {
+            "type": "object",
+            "required": ["id", "title", "description"],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string",
+                "maxLength": 160,
+                "minLength": 50
+              }
+            }
           },
           "created_by": {
             "type": "string"
